@@ -1,0 +1,547 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnnnnnnnvvvnnvnnnnnnnnnnnvnnvnnnnnnnnnnnnnvnvvnvnnvnnnnnnnnnnnnnn
+
+U za.model.calculator%b	za-model-calculator.adb	df476813 OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W indirect_tax_utils%s	indirect_tax_utils.adb	indirect_tax_utils.ali  AD
+W interfaces%s		interfac.ads		interfac.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.concat_8%s	s-conca8.adb		s-conca8.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W t_utils%s		t_utils.adb		t_utils.ali
+W za%s			za.ads			za.ali
+W za.model%s		za-model.ads		za-model.ali
+W za.model.takeup%s	za-model-takeup.adb	za-model-takeup.ali
+
+U za.model.calculator%s	za-model-calculator.ads	a007aa81 EE NE OO PK IU
+W za%s			za.ads			za.ali
+W za.model%s		za-model.ads		za-model.ali
+W za.model.data%s	za-model-data.adb	za-model-data.ali
+W za.model.params%s	za-model-params.adb	za-model-params.ali
+W za.model.results%s	za-model-results.adb	za-model-results.ali
+W za.model.settings%s	za-model-settings.adb	za-model-settings.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D base_model_types.ads	20120210022130 c07d5626
+D format_utils.ads	20110503195008 de80730a
+D indirect_tax_utils.ads  20110415182054 d6dd6b89
+D indirect_tax_utils.adb  20110415182054 eeb14d0f
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20110415182054 69a11afd
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D system.ads		20110419093140 23e1f70b
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca4.ads		20110419093137 025fe3be
+D s-conca5.ads		20110419093137 1039cea1
+D s-conca8.ads		20110419093137 ea110f26
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D tax_utils.ads		20110613201228 600316b9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+D za.ads		20110415182049 e958296a
+D za-model.ads		20110415182049 b4a526d2
+D za-model-calculator.ads  20110415182049 90825b16
+D za-model-calculator.adb  20110415182049 2d27fda2
+D za-model-data.ads	20110415182049 1d87f5c8
+D za-model-params.ads	20110415182049 fc82da7b
+D za-model-results.ads	20110622103003 b15b45be
+D za-model-settings.ads	20110415182049 d47ebd48
+D za-model-takeup.ads	20110415182049 86577bd1
+D za-model_types.ads	20110415182049 a55e8de4
+X 1 ada.ads
+16K9*Ada 19e8 73|23r6 25r6 30r8 529r8 612r8
+X 2 a-assert.ads
+24K13*Assertions 36e19 73|23w10 30r12
+32U14*Assert 73|616s7
+X 19 a-strbou.ads
+162V16*"="{boolean}<21|163p13> 12|41i18[68|25]
+X 22 a-strunb.ads
+166V13*"="{boolean}<14|62p9> 12|41i18
+X 24 a-textio.ads
+49K13*Text_IO 471e16 73|25w10 529r12 612r12
+X 31 base_model_types.ads
+25F9*Real<long_float>
+29F12*Rate{25F9} 73|274r39
+30F12*Amount{25F9} 72|45r26 73|33r103 34r13 48r67 49r25 51r35 53r29 55r26
+. 56r10 75r34 83r43 84r10 87r39 90r40 93r21 96r10 97r22 101r22 105r10 121r40
+. 126r44 136r47 137r47 138r47 139r47 140r47 141r47 142r47 143r47 144r47 166r16
+. 188r46 190r16 213r27 215r24 221r28 233r10 253r22 258r32 262r16 263r25 277r32
+. 288r24 327r24 350r37 362r24 383r37 395r24 423r37 434r45 435r24 453r16 454r16
+. 466r10 467r10 483r26 484r26 485r26 486r26 608r26
+X 32 format_utils.ads
+51V13*Format{string} 73|58s60[70|60] 59s66[70|60] 60s56[70|60] 61s64[70|60]
+. 106s92[70|60] 107s82[70|60] 133s13[70|60] 193s45[70|60] 194s37[70|60] 195s47[70|60]
+. 196s61[70|60] 198s42[70|60] 199s52[70|60] 200s55[70|60] 201s45[70|60] 202s53[70|60]
+. 251s62[70|60] 497s70[70|60] 498s31[70|60] 585s45[70|60] 586s43[70|60] 629s62[70|60]
+. 630s63[70|60] 631s54[70|60]
+X 33 indirect_tax_utils.ads
+47K18 TU 73|503r53
+49k9*Indirect_Tax_Utils 108e23 73|24w6 503r33
+87U14*Calc_Indir_Tax_Components 73|514s21[503]
+X 39 logger.ads
+37U14*Log 73|58s7[71|34] 59s7[71|34] 60s7[71|34] 61s7[71|34] 106s7[71|34]
+. 107s7[71|34] 131s10[71|34] 192s13[71|34] 197s13[71|34] 251s7[71|34] 497s7[71|34]
+. 584s13[71|34] 585s13[71|34] 586s13[71|34] 629s13[71|34] 630s13[71|34] 631s13[71|34]
+X 66 t_utils.ads
+60A9*Abs_Rate_Array(31|25F9)<79|70E9>
+61A12*Rate_Array{60A9[79|469]}<79|433E9>
+63A9*Abs_Amount_Array(31|25F9)<79|223E9>
+64A12*Amount_Array{63A9[79|516]}<79|70E9>
+133V13*"*"=133:94{63A9[79|485]} 73|513s34[79|485]
+X 67 tax_utils.ads
+45R9*Tax_Result 73|216r24[71|37] 436r24[71|37] 481r24[71|37]
+46f10*due{31|25F9} 73|253m15[71|37] 253r47[71|37] 254r51[71|37] 438m15[71|37]
+. 442r22[71|37]
+58R9*Rates_And_Bands
+81V13*Calc_Tax_Due{45R9[71|37]} 73|252s18[71|37] 440s21[71|37]
+X 70 za.ads
+48K9*ZA 74e7 72|24r6 25r6 26r6 27r6 29r9 31r8 32r8 33r8 34r8 50r5 73|26r6
+. 28r14 31r8 637r5
+54n62*income_tax{54E9} 73|58r12 59r12 60r12 61r12 106r12 107r12 131r15 192r18
+. 197r18 251r12 497r12
+55n39*marginal_rates{54E9} 73|629r18 630r18 631r18
+55n55*driver{54E9} 73|584r18 585r18 586r18
+X 71 za-model.ads
+30K12*Model 70|48k9 71|41e13 72|24r9 25r9 26r9 27r9 29r12 31r11 32r11 33r11
+. 34r11 50r8 73|26r9 28r17 31r11 637r8
+X 72 za-model-calculator.ads
+29K18*Calculator 71|30k12 72|50l14 50e24 73|28b23 637l14 637t24
+36V13*Calculate{76|80R9} 37>7 38>7 39>7 73|525b13 602l8 602t17 617s21 621s29
+37r7 hh{74|91R9} 73|526b7 536r30 537r28 538r23 539r45 540r26 542r16 552r23
+. 554r26 558r19 564r19 579r16 580r16 589r13 591r13 593r13 595r13 598r27 599r19
+. 600r32
+38r7 params{75|119R9} 73|527b7 560r19 566r19 581r16 589r31 591r31 593r31
+. 595r31 598r31 600r36
+39r7 settings{77|52R9} 73|528b7 561r19 567r19 582r16 589r65 591r72 593r68
+. 595r70 598r48 599r23 600r44
+41V13*Calculate_Marginal_Rate{76|80R9} 42>7 43>7 44>7 45>7 46>7 47>7 48>7
+. 73|604b13 635l8 635t31
+42r7 hh{74|91R9} 73|605b7 614r31 617r32 623r23 625r26
+43r7 params{75|119R9} 73|606b7 617r36 621r49
+44r7 settings{77|52R9} 73|607b7 617r44 621r57
+45f7 income_increment{31|30F12} 73|608b7 616r15 620r10 628r78
+46e7 increment_target{79|433E9} 73|609b7 618r69 619r72
+47i7 which_family{79|507I12} 73|610b7 618r23 619r26
+48i7 which_person{79|504I12} 73|611b7 618r46 619r49
+X 73 za-model-calculator.adb
+33V13 Get_Personal_Allowance_Sum{31|30F12} 33b13 33>41 33>68 40l8 40t34 147s16
+33a41 pa{75|29A9} 37r23
+33i68 num_people{79|503I9} 36r23
+34f7 sum{31|30F12} 37m10 37r17 39r14
+36i11 pno<integer> 37r27
+42V13 Get_Taxable_Income{31|30F12} 42b13 43>7 44>7 45>7 46>7 47>7 48>7 63l8
+. 63t26 75s44 167s31 243s25
+43a7 incomes{79|474A12} 50r28
+44a7 taxable_items{79|475A12} 50r37
+45a7 employers_contributions{79|526A12} 52r30
+46a7 taxable_contributions{79|527A12} 52r55
+47a7 deductables{79|526A12} 54r30
+48a7 allowable_deductions{79|527A12} 54r43
+49f7 income{31|30F12} 56r27 60r64
+51f7 in_kind_expenses{31|30F12} 56r36 59r74
+53f7 deductions{31|30F12} 56r55 58r68
+55f7 taxable{31|30F12} 61r72 62r14
+65U14 Calculate_Pension_Allowances 65b14 66>7 67>7 68>7 69=7 108l8 108t36
+. 240s7
+66r7 pers{74|32R9} 78r19 88r10 89r10 91r10 92r10
+67r7 params{75|31R9} 77r19 85r13 86r13 98r10 99r10 103r10
+68r7 settings{77|52R9}
+69r7 result{76|58R9} 76r19 80r19 95m7 100r13 104m7
+71a7 ALLOWABLE_EXPENSES{79|527A12} 81r19
+73a7 TAXABLE_IN_KIND{79|527A12} 79r19
+75f7 taxable_income{31|30F12} 85r53 103r50 107r90
+83f7 pension_contribution_max{31|30F12} 96r22 106r100
+87f7 pension_contribution{31|30F12} 96r48
+90f7 annuity_contributions{31|30F12} 105r35
+93f7 annuity_max{31|30F12} 97m7 101m7 102r10 105r22
+111U14 Calculate_Health_Allowances 111b14 112>7 113>7 114>7 115>7 116=7 206l8
+. 206t35 241s7
+112r7 pers{74|32R9} 122r10 123r10 124r10 125r10 150r16 162r16 163r16 170r19
+113r7 family{74|79R9} 128r11 129r11 148r59
+114r7 params{75|31R9} 128r42 129r42 148r19 169r19 181r38
+115r7 settings{77|52R9}
+116r7 result{76|58R9} 168r19 172r19 204m10
+117a7 ALLOWABLE_EXPENSES{79|527A12} 173r19
+119a7 TAXABLE_IN_KIND{79|527A12} 171r19
+121f7 total_health_spending{31|30F12} 130r42 190r28 193r53
+126f10 amount_allowable_as_deduction{31|30F12} 130m9 133r21 183m13 188m13
+. 188r64 189m13 190r51 202r61 204r51
+136f13 emp_excess{31|30F12} 149m13 153r17 154r43 158r48
+137f13 capped_amount{31|30F12} 146m13 151r22 156m16 180r16 194r45
+138f13 employers_cont_in_gross{31|30F12} 154m16 161r16 178r16 195r55
+139f13 additional_capping{31|30F12} 179r16 198r50
+140f13 amount_subject_to_limitation{31|30F12} 160m13 165m13 166r28 184r23
+. 199r60
+141f13 income_before_medical_deduction{31|30F12} 176m13 182r16 200r63
+142f13 calculated_limitation{31|30F12} 181m13 185r23 201r53
+143f13 capped_amount_deduction{31|30F12} 155m16 158m16 164r16 186r23
+144f13 taxable_income{31|30F12} 167m13 177r16 196r69
+208U14 Calculate_SITE 208b14 209>7 210>7 211>7 212>7 213>7 214=7 255l8 255t22
+. 499s7
+209r7 pers{74|32R9} 227r11 227r40 238r46 239r10 240r37 241r36 246r16
+210r7 family{74|79R9} 241r42
+211r7 params{75|31R9} 227r22 228r31 230r31 240r43 241r50 245r16 252r32
+212r7 settings{77|52R9} 240r51 241r58
+213f7 rebate{31|30F12} 253r53
+214r7 result{76|58R9} 232m7 234r13 238m7 240m61 241m68 244r16 248r16 254m7
+215f7 taxable_income{31|30F12} 243m7 251r70 252r44
+216r7 tresult{67|45R9[71|37]} 252m7 253m7 253r39 254r43
+217a7 ALLOWABLE_EXPENSES{79|527A12} 249r16
+219a7 TAXABLE_IN_KIND{79|527A12} 247r16
+221f7 interest_exemption{31|30F12} 228m9 230m9 234r50
+257U14 Apply_Means_Test 257b14 258=7 259>7 260=7 261>7 281l8 281t24 300s7
+. 341s7 374s7 409s7
+258f7 eligible_amount{31|30F12} 275m13 277m13 278r21
+259r7 family{74|79R9} 265r11 270r23
+260r7 results{76|71R9} 271r47
+261r7 params{75|84R9} 266r23 268r23 271r77 274r14 278r50
+262f7 income{31|30F12} 271m10 271r20 273r11 278r41
+263f7 threshold{31|30F12} 266m10 268m10 273r20
+270i11 pno<integer> 271r63
+283U14 Calculate_Grant_For_Older_Persons 283b14 284>7 285>7 286>7 287=7 320l8
+. 320t41 590s10
+284r7 family{74|79R9} 292r23 293r14 293r58 300r41 312r32
+285r7 params{75|94R9} 293r42 294r48 300r80
+286r7 settings{77|52R9} 305r14
+287r7 results{76|71R9} 300m49 307m16 309m16 314m25
+288f7 amount_payable{31|30F12} 294m13 294r31 300m25 300r25 304r11 308r19
+. 310r19 314r77
+289i7 num_eligible{natural} 295m13 295r29 306r17
+290a7 eligible(boolean) 296m13 313r23
+292i11 pno<integer> 293r29 293r73 296r23
+312i20 pno<integer> 313r33 314r41
+322U14 Calculate_Disability_Grant 322b14 323>7 324>7 325>7 326=7 355l8 355t34
+. 588s10
+323r7 family{74|79R9} 331r23 332r14 332r58 333r14 333r58 334r14 341r41 347r29
+324r7 params{75|98R9} 332r42 333r42 335r48 341r80
+325r7 settings{77|52R9} 346r14
+326r7 results{76|71R9} 341m49 349m19
+327f7 amount_payable{31|30F12} 335m13 335r31 341m25 341r25 345r11 350r22
+328a7 eligible(boolean) 337m13 348r20
+329i7 num_eligible{natural} 336m13 336r29 350r44
+331i11 pno<integer> 332r29 332r73 333r29 333r73 334r29 337r23
+347i17 pno<integer> 348r30 349r35
+357U14 Calculate_Child_Support_Grant 357b14 358>7 359>7 360>7 361=7 388l8
+. 388t37 592s10
+358r7 family{74|79R9} 366r23 367r14 367r58 374r41 380r29
+359r7 params{75|108R9} 367r42 368r48 374r80
+360r7 settings{77|52R9} 379r14
+361r7 results{76|71R9} 374m49 382m19
+362f7 amount_payable{31|30F12} 368m13 368r31 374m25 374r25 378r11 383r22
+363a7 eligible(boolean) 370m13 381r20
+364i7 num_eligible{natural} 369m13 369r29 383r45
+366i11 pno<integer> 367r29 367r73 370r23
+380i17 pno<integer> 381r30 382r35
+390U14 Calculate_Care_Dependency_Grant 390b14 391>7 392>7 393>7 394=7 428l8
+. 428t39 594s10
+391r7 family{74|79R9} 399r23 400r14 400r58 401r14 401r58 402r14 409r41 415r29
+392r7 params{75|103R9} 400r42 401r42 403r48 409r80
+393r7 settings{77|52R9} 414r14
+394r7 results{76|71R9} 409m49 421m19 422r19
+395f7 amount_payable{31|30F12} 403m13 403r31 409m25 409r25 413r11 423r22
+396a7 eligible(boolean) 405m13 416r20
+397i7 num_eligible{natural} 404m13 404r29 423r44
+399i11 pno<integer> 400r29 400r73 401r29 401r73 402r29 405r23
+415i17 pno<integer> 416r30 421r35 422r35
+430V13 Calculate_UIF{31|30F12} 430b13 431>7 432>7 433>7 434>7 443l8 443t21
+. 557s16 563s16
+431r7 pers{74|32R9} 439r11 439r39
+432a7 income_so_far{79|474A12} 435r52
+433r7 params{75|56R9} 435r67 439r23 440r35
+434r7 settings{77|52R9}
+435f7 taxable_income{31|30F12} 440r47
+436r7 tresult{67|45R9[71|37]} 438m7 440m10 442r14
+448U14 Calculate_Poverty_State 448b14 449>7 450>7 451>7 452=7 472l8 472t31
+. 600s7
+449r7 hh{74|91R9} 466r18 466r39 467r18
+450r7 params{75|119R9}
+451r7 settings{77|52R9} 456r11 466r73 467r52
+452r7 results{76|80R9} 457r20 459r20 465m7 468r12 469m10 469r33 470m10
+453f7 income{31|30F12} 457m10 459m10 468r36 469r56
+454f7 line{31|30F12}
+475U14 Calculate_Income_Tax 475b14 476>7 477>7 478>7 479>7 480=7 501l8 501t28
+. 578s13
+476r7 pers{74|32R9} 491r11 491r40 499r23
+477r7 family{74|79R9} 499r29
+478r7 params{75|31R9} 488r16 490r43 491r22 492r27 494r27 495r28 499r37
+479r7 settings{77|52R9} 499r45
+480r7 result{76|58R9} 490r28 499m63
+481r7 tresult{67|45R9[71|37]}
+483f7 rebate{31|30F12} 488m6 495m9 495r19 499r55
+484f7 paye_threshold{31|30F12} 492m9 494m9 498r39
+485f7 taxable_income{31|30F12}
+486f7 threshold_income{31|30F12} 489m6 497r78
+503K12 Indir_Package[33|49] 514r7
+505U14 Calculate_Indirect 505b14 506>7 507>7 508>7 509=7 523l8 523t26 598s7
+506r7 hh{74|91R9} 511r42
+507r7 params{75|75R9} 513r36 516r10 517r10 518r10 519r10
+508r7 settings{77|52R9}
+509r7 result{76|80R9} 520m10 520r10 521m10 521r10 522m10 522r10
+511a7 consumption{79|496A12} 513m7 513r22 515r10
+530r7 result{76|80R9} 536m7 537m7 539m10 541m13 544m16 546m13 547r16 556m13
+. 559r19 562m13 565r19 573m13 574r16 575m13 576r16 583m16 583r16 585r53 586r51
+. 589m75 589r75 591m82 591r82 593m78 593r78 595m80 595r80 598m58 598r58 599m33
+. 599r33 600m54 600r54 601r14
+538i11 fno<integer> 539r25 539r56 540r37 541r28 542r27 544r31 546r28 547r31
+540i14 pno<integer> 541r42 542r41 544r45 546r42 547r45
+543e17 i{79|466E12} 544r59
+551l7 each_family 596l16 596e27
+552i11 fno<integer> 554r37 556r28 558r30 559r34 562r28 564r30 565r34 573r28
+. 574r31 575r28 576r31 579r27 580r27 583r31 584r34 585r68 586r66 589r24 589r90
+. 591r24 591r97 593r24 593r93 595r24 595r95
+553l10 each_member 587l19 587e30
+554i14 pno<integer> 556r42 558r44 559r48 562r42 564r44 565r48 573r42 574r45
+. 575r42 576r45 579r41 583r45 584r57 585r82 586r80
+613r7 res_actual{76|80R9} 617m7 626m13 628r17 629r70 631r62 634r14
+613r19 res_with_increment{76|80R9} 621m7 627r17 630r71
+614r7 hh_copy{74|91R9} 618m7 619r10 621r40
+622l7 each_family 633l16 633e27
+623i11 fno<integer> 625r37 626r32 627r44 628r36 629r89 630r98 631r81
+624l10 each_member 632l19 632e30
+625i14 pno<integer> 626r46 627r58 628r50 629r103 630r112 631r95
+X 74 za-model-data.ads
+28K18*Data 72|25w15 32r17 74|116e18
+32R9*Person_Rec 73|66r27 112r27 209r27 431r23 476r27 74|45e14
+33i7*age{79|510I12} 73|227r16 293r35 332r35 333r35 367r35 400r35 401r35 439r16
+. 491r16
+34e7*gender{79|78E9} 73|227r45 293r79 332r79 333r79 367r79 400r79 401r79
+. 439r44 491r45
+35a7*income{79|474A12} 73|542r47 618m61 619r64
+36a7*expenses{79|526A12} 73|88r15 91r15 124r15 125r15 162r21 163r21 238r51
+37a7*in_kind_and_from_employer_expenses{79|526A12} 73|78r24 89r15 92r15 122r15
+. 123r15 150r21 170r24 239r15 246r21
+41b7*is_disabled_or_blind{boolean} 73|334r35 402r35
+47A9*Person_Array(32R9)<79|503I9>
+59i7*num_children_under_16{79|503I9} 73|466r47 467r26
+69a7*consumption{79|493A12} 73|511r50
+71i7*num_people{79|503I9} 73|466r26 537r36
+72i7*num_families{79|505I9} 73|536r38 538r31 552r31 623r31
+79R9*Family_Unit_Rec 73|113r27 210r27 259r25 284r21 323r21 358r18 391r18
+. 477r24 74|87e14
+80i7*num_adults{79|503I9} 73|265r18 292r30 312r39
+82i7*num_people{79|503I9} 73|148r66 270r30 331r30 347r36 366r30 380r36 399r30
+. 415r36 539r62 540r43 554r43 625r43
+83a7*person{47A9} 73|293r21 293r65 332r21 332r65 333r21 333r65 334r21 367r21
+. 367r65 400r21 400r65 401r21 401r65 402r21 542r33 558r36 564r36 579r33 618m38
+. 619r41
+84i7*age_of_oldest_person{79|510I12} 73|128r18
+86b7*has_disabled_member{boolean} 73|129r18
+89A9*Family_Unit_Array(79R9)<79|505I9>
+91R9*Household 72|37r18 42r18 73|449r21 506r21 526r21 605r18 614r18 74|94e14
+92r7*info{54R9} 73|466r21 466r42 467r21 511r45 536r33 537r31 538r26 552r26
+. 623r26
+93a7*family{89A9} 73|539r48 540r29 542r19 554r29 558r22 564r22 579r19 580r19
+. 589r16 591r16 593r16 595r16 618m15 619r18 625r29
+X 75 za-model-params.ads
+24K18*Params 72|24w15 31r17 75|128e20
+27A9*Age_By_Gender(79|510I12)<79|78E9>
+29A9*Per_Person_Allowance(31|30F12)<79|503I9> 73|33r46
+31R9*Income_Tax_Rec 73|67r27 114r27 211r27 478r27 75|54e15
+36r7*rbs{67|58R9[71|37]} 73|252r39
+37a7*age_limit{27A9} 73|227r29 491r29
+38f7*rebate{31|30F12} 73|488r23
+39f7*age_rebate{31|30F12} 73|495r35
+40f7*threshold{31|30F12} 73|492r34
+41f7*age_threshold{31|30F12} 73|494r34
+42a7*taxable_income{79|475A12} 73|77r26 169r26 245r23
+43a7*threshold_income{79|475A12} 73|490r50
+44a7*health_capped_amount_per_person{29A9} 73|148r26
+45f7*health_income_limitation_rate{31|29F12} 73|181r45
+46i7*health_age_limit{79|510I12} 73|128r49
+47b7*health_allow_all_for_disabled{boolean} 73|129r49
+48f7*pension_contribution_limit{31|30F12} 73|86r20 98r17
+49f7*pension_income_limitation_rate{31|29F12} 73|85r20
+50f7*annuity_contribution_limit{31|30F12} 73|99r17
+51f7*annuity_income_limitation_rate{31|29F12} 73|103r17
+52f7*interest_exemption{31|30F12} 73|228r38
+53f7*age_interest_exemption{31|30F12} 73|230r38
+56R9*One_UIF_Rec 73|433r23 75|68e14
+57r7*rbs{67|58R9[71|37]} 73|440r42
+58a7*income{79|475A12} 73|435r74
+67a7*max_age{27A9} 73|439r30
+71r7*employers{56R9} 73|560r30
+72r7*employees{56R9} 73|566r30
+75R9*Indirect_Tax_Rec 73|507r21 75|81e14
+76a7*selling_price{79|496A12} 73|516r17
+77a7*vat{79|498A12} 73|517r17
+78a7*proportion_vatable{79|498A12} 73|513r43
+79a7*advalorem{79|498A12} 73|518r17
+80a7*specific{79|496A12} 73|519r17
+84R9*Means_Tested_Benefit 73|261r25 300r58 341r58 374r58 409r58 75|92e14
+85f7*income_threshold_single{31|30F12} 73|268r30
+86f7*income_threshold_couple{31|30F12} 73|266r30
+89f7*withdrawal_rate{31|29F12} 73|274r21 278r57
+90a7*incomes_list{79|475A12} 73|271r84
+91f7*amount_payable{31|30F12} 73|294r55 335r55 368r55 403r55
+94R9*Grant_For_Older_Persons_Rec<84R9> 73|285r21 75|96e14
+95a7*min_age{27A9} 73|293r49
+98R9*Disability_Grant_Rec<84R9> 73|324r21 75|101e14
+99a7*max_age{27A9} 73|332r49
+100a7*min_age{27A9} 73|333r49
+103R9*Care_Dependency_Grant_Rec<84R9> 73|392r18 75|106e14
+104a7*min_age{27A9} 73|401r49
+105a7*max_age{27A9} 73|400r49
+108R9*Child_Support_Grant_Rec<84R9> 73|359r18 75|110e14
+109a7*max_age{27A9} 73|367r49
+113r7*grant_for_older_persons{94R9} 73|591r47
+114r7*care_dependency_grant{103R9} 73|595r47
+115r7*disability_grant{98R9} 73|589r47
+116r7*child_support_grant{108R9} 73|593r47
+119R9*Parameters 72|38r18 43r18 73|450r21 527r21 606r18 75|124e14
+120r7*income_tax{31R9} 73|581r23
+121r7*uif{70R9} 73|560r26 566r26
+122r7*indirect{75R9} 73|598r38
+123r7*benefits{112R9} 73|589r38 591r38 593r38 595r38
+X 76 za-model-results.ads
+28K18*Results 72|26w15 33r17 76|162e21
+58R9*Personal_Result 73|69r31 116r31 214r31 480r31 76|67e14
+59f7*marginal_tax_rate{31|29F12} 73|626m52 631r101
+60a7*income{79|474A12} 73|76r26 234r20 254m14 271r69 307m36 309m36 314m47
+. 349m41 382m41 421m41 422r41 490r35 541m48 544m51 547r51 556m48 559r54 562m48
+. 565r54 574r51 576r51 585r88 586r86
+61a7*income_less_exemptions{79|474A12} 73|168r26 232m14 244r23 546m48 573m48
+. 575m48
+62a7*deductions{79|526A12} 73|80r26 95m14 100r20 104m14 172r26 204m17 238m14
+. 248r23
+65f7*disposable_income{31|30F12} 73|627r64 628r56 629r109 630r118
+69A9*Personal_Result_Array(58R9)<79|503I9>
+71R9*Family_Result 73|260r32 287r25 326r25 361r25 394r25 76|76e14
+72i7*num_people{79|503I9} 73|539m31
+74a7*person{69A9} 73|271r55 307m24 309m24 314m33 349m27 382m27 421m27 422r27
+. 541m34 544m37 546m34 547r37 556m34 559r40 562m34 565r40 573m34 574r37 575m34
+. 576r37 583m37 585r74 586r72 626m38 627r50 628r42 629r95 630r104 631r87
+78A9*Family_Result_Array(71R9)<79|505I9>
+80R9*Household_Result 72|39r40 48r49 73|452r25 509r25 528r43 530r16 611r49
+. 613r40 76|100e14
+81f7*disposable_income{31|30F12} 73|459r28
+83f7*net_income{31|30F12} 73|457r28
+86a7*vat{79|496A12} 73|520m17
+87a7*specific{79|496A12} 73|522m17
+88a7*ad_valorem{79|496A12} 73|521m17
+93e7*poverty{79|430E9} 73|470m18
+94f7*poverty_gap{31|30F12} 73|469m18
+95f7*poverty_line{31|30F12} 73|465m15 468r20 469r41
+97i7*num_families{79|505I9} 73|536m14
+98i7*num_people{79|503I9} 73|537m14
+99a7*family{78A9} 73|539m17 541m20 544m23 546m20 547r23 556m20 559r26 562m20
+. 565r26 573m20 574r23 575m20 576r23 583m23 585r60 586r58 589m82 591m89 593m85
+. 595m87 626m24 627r36 628r28 629r81 630r90 631r73
+116U14*Accumulate 73|599s7
+X 77 za-model-settings.ads
+27K18*Settings 72|27w15 34r17 77|74e22
+43f7*poverty_line_per_adult{31|30F12} 73|466r90
+44f7*poverty_line_per_child{31|30F12} 73|467r69
+46b7*deduct_indirect_taxes{boolean} 73|456r28
+52R9*Run_Settings 72|39r18 44r18 73|68r27 115r27 212r27 286r21 325r21 360r21
+. 393r21 434r23 451r21 479r27 508r21 528r21 607r18 77|68e15
+56r7*poverty{42R9} 73|456r20 466r82 467r61
+67a7*case_takes_up{78|34A9} 73|305r23 346r23 379r23 414r23
+X 78 za-model-takeup.ads
+28K18*Takeup 73|26w15 31r17 78|46e20
+34A9*Benefit_Takeup_Array(boolean)<79|433E9>
+X 79 za-model_types.ads
+71n7*travel_to_work{70E9} 73|238r26 238r61 239r51
+72n7*health_spending{70E9} 73|118r37 123r51 125r25 163r31
+73n7*health_insurance{70E9} 73|118r12 122r51 124r25 150r57 162r31 204r29
+74n7*pension_contributions{70E9} 73|88r25 89r51 95r26 100r32
+75n7*annuity_funds_contributions{70E9} 73|91r25 92r51 104r26
+423E12*Consumption_Range{223E9} 73|511r63
+430n28*in_poverty{430E9} 73|470r29
+433E9*Personal_Incomes_Type 72|46r26 73|609r26 79|457e22
+434n7*salaries_and_wages{433E9} 72|46r51 73|609r51
+438n7*interest_received{433E9} 73|232r38 234r28
+449n7*disability_grants{433E9} 73|346r38 349r49
+450n7*old_age_pensions{433E9} 73|305r38 307r44 309r44 314r55
+451n7*family_allowances{433E9} 73|379r38 382r49
+453n7*other_state_benefits{433E9} 73|414r38 421r49 422r49
+455n7*site_income_tax{433E9} 73|254r22 586r94
+456n7*employers_uif{433E9} 73|556r56 575r72 576r59
+457n7*employees_uif{433E9} 73|562r56 573r72 574r59 585r96
+466E12*Calculated_Incomes{433E9} 73|543r22
+474A12*Income_Array{66|64A12[469]}<433E9> 73|43r33 432r23
+475A12*Included_Income_Array{66|61A12[469]}<433E9> 73|44r33
+481V13*Calculate_Income{31|30F12} 73|50s10 271s29 435s34 490s10
+485K12*Consumption_Package[66|47] 73|503r59 510r11
+496A12*Expenditure_Array{66|63A9[485]}<223E9> 73|511r21
+498A12*Expenditure_Rate_Array{66|60A9[485]}<223E9>
+503I9*Person_Count<integer> 73|33r81
+504I12*Person_Range{503I9} 72|48r22 73|290r25 328r25 363r25 396r25 611r22
+505I9*Family_Unit_Count<integer>
+507I12*Family_Unit_Range{505I9} 72|47r22 73|610r22
+510I12*Age_Range{natural}
+526A12*Personal_Expenses_Array{66|64A12[516]}<70E9> 73|45r33 47r33
+527A12*Allowable_Expenses_Array{66|61A12[516]}<70E9> 73|46r33 48r33 71r40
+. 73r40 117r40 119r40 217r40 219r40
+529V13*Calculate_Expenses{31|30F12} 73|52s10 54s10
+

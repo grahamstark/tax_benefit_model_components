@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystemValues type="LocalTax">
+  <ParameterValue instanceName="bandDRate">
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="561.85"/>
+        </Event>
+        <Event date="1994-04-01" enclosingEvent="budget1994">
+            <Description>
+                <p>1994 budget</p>
+            </Description>
+            <Journalese>changed in 1994 budget</Journalese>
+            <OneVal val="580.00"/>
+        </Event>
+        <Event date="1995-04-01" enclosingEvent="budget1995">
+            <Description>
+                <p>1995 budget</p>
+            </Description>
+            <Journalese>changed in 1995 budget</Journalese>
+            <OneVal val="598.00"/>
+        </Event>
+        <Event date="1996-04-01" enclosingEvent="budget1996">
+            <Description>
+                <p>1996 budget</p>
+            </Description>
+            <Journalese>changed in 1996 budget</Journalese>
+            <OneVal val="636.60"/>
+        </Event>
+        <Event date="1997-04-01" enclosingEvent="budget1997">
+            <Description>
+                <p>1997 budget</p>
+            </Description>
+            <Journalese>changed in 1997 budget</Journalese>
+            <OneVal val="678.00"/>
+        </Event>
+        <Event date="1998-04-01" enclosingEvent="budget1998">
+            <Description>
+                <p>1998 budget</p>
+            </Description>
+            <Journalese>changed in 1998 budget</Journalese>
+            <OneVal val="736.30"/>
+        </Event>
+        <Event date="1999-04-01" enclosingEvent="budget1999">
+            <Description>
+                <p>1999 budget</p>
+            </Description>
+            <Journalese>changed in 1999 budget</Journalese>
+            <OneVal val="787.18"/>
+        </Event>
+    </History>
+  </ParameterValue>
+  <ParameterValue instanceName="singlePersonDiscount">
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.25"/>
+        </Event>
+    </History>
+  </ParameterValue>
+  <ParameterValue instanceName="maxSecAdRebate">
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.25"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+  <ParameterValue instanceName="singlePersonDiscount">
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.25"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+
+  <ParameterValue instanceName="bandA" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.67"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+  <ParameterValue instanceName="bandB" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.77"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+
+  <ParameterValue instanceName="bandC" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="0.88"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+  <ParameterValue instanceName="bandE" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="1.22"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+
+  <ParameterValue instanceName="bandF" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="1.44"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+  <ParameterValue instanceName="bandG" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="1.67"/>
+        </Event>
+    </History>
+  </ParameterValue>
+
+  <ParameterValue instanceName="bandH" >
+    <History>
+        <Event date="1993-04-01" enclosingEvent="budget1993">
+            <Description>
+                <p>1993 budget</p>
+            </Description>
+            <Journalese>changed in 1993 budget</Journalese>
+            <OneVal val="2.00"/>
+        </Event>
+    </History>
+  </ParameterValue>
+</ParameterSystemValues>

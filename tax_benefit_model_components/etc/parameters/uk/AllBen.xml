@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystem type="AllBen" name="All Benefits"
+    instanceName="allben">
+    <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <Description>
+            <p>abolish ni benefits</p>
+        </Description>
+        <Journalese>abolish ni benefits</Journalese>
+        <Tooltip>abolish ni benefits</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="child1AddLim" units="week" type="real" instanceName="child1AddLim">
+        <Description>
+            <p>income limit above which no 1st child addn payable</p>
+        </Description>
+        <Journalese>income limit above which no 1st child addn payable</Journalese>
+        <Tooltip>income limit above which no 1st child addn payable</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="child2AddLim" units="week" type="real" instanceName="child2AddLim">
+        <Description>
+            <p>income limit above which no 2nd child addn payable</p>
+        </Description>
+        <Journalese>income limit above which no 2nd child addn payable</Journalese>
+        <Tooltip>income limit above which no 2nd child addn payable</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="spouseAddLim" units="week" type="real" instanceName="spouseAddLim">
+        <Description>
+            <p>income limit above which no spouse addn payable</p>
+        </Description>
+        <Journalese>income limit above which no spouse addn payable</Journalese>
+        <Tooltip>income limit above which no spouse addn payable</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="over80Add" units="week" type="real" instanceName="over80Add">
+        <Description>
+            <p>over 80 addn</p>
+        </Description>
+        <Journalese>over 80 addn</Journalese>
+        <Tooltip>over 80 addn</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NIBenOwnInc" units="timeless" type="real_list"
+        instanceName="nibenOwnInc" indexName="IncomesSource">
+        <Description>
+            <p>definition of own income for ni bens</p>
+        </Description>
+        <Journalese>definition of own income for ni bens</Journalese>
+        <Tooltip>definition of own income for ni bens</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NIBenSpouseInc" units="timeless" type="real_list"
+        instanceName="nibenSpouseInc" indexName="IncomesSource">
+        <Description>
+            <p>definition of spouses income for ni bens</p>
+        </Description>
+        <Journalese>definition of spouses income for ni bens</Journalese>
+        <Tooltip>definition of spouses income for ni bens</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <ParameterSystem type="SicknessOptions" name="Sickness Options" instanceName="options">
+        <Parameter name="oldStyleSickness" units="timeless"
+            type="boolean" instanceName="oldStyleSickness">
+            <Description>
+                <p>ni based sickness benefit with ssp abolished</p>
+            </Description>
+            <Journalese>ni based sickness benefit with ssp abolished</Journalese>
+            <Tooltip>ni based sickness benefit with ssp abolished</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="SSPWeeks" units="timeless" type="int" instanceName="sspweeks">
+            <Description>
+                <p>weeks after which ssp no longer payable</p>
+            </Description>
+            <Journalese>weeks after which ssp no longer payable</Journalese>
+            <Tooltip>weeks after which ssp no longer payable</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="samBrit" units="timeless" type="int" instanceName="samBrit">
+            <Description>
+                <p>???????????????</p>
+            </Description>
+            <Journalese>???????????????</Journalese>
+            <Tooltip>???????????????</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="pensionsInFull" units="timeless" type="boolean" instanceName="pensionsInFull">
+            <Description>
+                <p>pay pensions in full regardless of contributions</p>
+            </Description>
+            <Journalese>pay pensions in full regardless of contributions</Journalese>
+            <Tooltip>pay pensions in full regardless of contributions</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>Options Common to all Benefits</p>
+        </Description>
+        <Tooltip>Options Common to all Benefits</Tooltip>
+    </ParameterSystem>
+    <Description>
+        <p>Parameters Common to all Benefits</p>
+    </Description>
+    <Tooltip>Parameters Common to all Benefits</Tooltip>
+</ParameterSystem>

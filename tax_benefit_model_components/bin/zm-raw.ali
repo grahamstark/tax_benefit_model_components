@@ -1,0 +1,428 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -g
+A -gnatQ
+A -gnat05
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U zm.raw%s		zm-raw.ads		099675a9 NE OO PK IU
+W zm%s			zm.ads			zm.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D base_model_types.ads	20110824134318 88c3d57a
+D format_utils.ads	20110503195008 de80730a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20110415182054 69a11afd
+D line_extractor.ads	20110616140359 c6f73843
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20111109193505 f389e87b
+D utils.ads		20110415182054 93874c25
+D zm.ads		20110415182048 b14e9704
+D zm-raw.ads		20110415182048 b8d8e2ad
+X 18 a-strbou.ads
+162V16*"="{boolean}<20|163p13> 11|41i18[56|25]
+X 21 a-strunb.ads
+166V13*"="{boolean}<13|62p9> 11|41i18
+X 30 base_model_types.ads
+25F9*Real<long_float>
+30F12*Amount{25F9} 59|97r16 182r14 183r14 224r16
+X 58 zm.ads
+23K9*ZM 45e7 59|1r9 369r5
+26I9*Sernum_Value<long_integer> 59|15r32 23r13 47r13 74r13 138r13 163r13
+. 168r13 223r13 229r13 366r13
+X 59 zm-raw.ads
+1K12*Raw 58|23k9 59|369l8 369e11
+3A9*Rec_Type<string><integer>
+5I9*Person_Count<integer> 6r28 16r32
+6I12*Person_Range{5I9} 12r32
+8R9*Person_Rec 10e15 12r50
+9a8*s{string}
+12A9*Person_Array(8R9)<5I9> 17r32
+14R9*Household 19e14
+15i7*hid{58|26I9}
+16i7*num_people{5I9}
+17a7*person{12A9}
+21R9*Sec00A 43e14
+22i7*RECTYPE{integer}
+23i7*hid{58|26I9}
+24i7*province{integer}
+25i7*district{integer}
+26i7*Const{integer}
+27i7*ward{integer}
+28i7*Csa{integer}
+29i7*Sea{integer}
+30i7*Rururb{integer}
+31i7*Stratum{integer}
+32i7*hhnumber{integer}
+33i7*chief{integer}
+34i7*HHstatus{integer}
+35i7*Reason{integer}
+36i7*Sample{integer}
+37i7*responde{integer}
+38i7*persons{integer}
+39i7*Srvdate{integer}
+40i7*Day{integer}
+41i7*Month{integer}
+42i7*Year{integer}
+45R9*Sec01A 70e15
+46i7*RECTYPE{integer}
+47i7*hid{58|26I9}
+48i7*province{integer}
+49i7*district{integer}
+50i7*Const{integer}
+51i7*ward{integer}
+52i7*Csa{integer}
+53i7*Sea{integer}
+54i7*Rururb{integer}
+55i7*Stratum{integer}
+56i7*hhnumber{integer}
+57i7*PID{integer}
+58i7*s1q3a{integer}
+59i7*s1q3b{integer}
+60i7*s1q4{integer}
+61i7*s1q5{integer}
+62i7*s1q6{integer}
+63i7*s1q7a{integer}
+64i7*s1q7b{integer}
+65i7*s1q7c{integer}
+66i7*s1q8{integer}
+67i7*s1q9{integer}
+68i7*s1q10{integer}
+69i7*s1q11{integer}
+72R9*Sec02A 107e14
+73i7*RECTYPE{integer}
+74i7*hid{58|26I9}
+75i7*province{integer}
+76i7*district{integer}
+77i7*Const{integer}
+78i7*ward{integer}
+79i7*Csa{integer}
+80i7*Sea{integer}
+81i7*Rururb{integer}
+82i7*Stratum{integer}
+83i7*hhnumber{integer}
+84i7*PID{integer}
+85i7*s1q3a{integer}
+86i7*s1q3b{integer}
+87i7*s1q4{integer}
+88i7*s1q5{integer}
+89i7*s1q6{integer}
+90i7*s1q7a{integer}
+91i7*s1q7b{integer}
+92i7*s1q7c{integer}
+93i7*s1q8{integer}
+94i7*s1q9{integer}
+95i7*s1q10{integer}
+96i7*s1q11{integer}
+97f7*WEIGHT{30|30F12}
+98i7*years{integer}
+99i7*HHsize{integer}
+100i7*q{integer}
+101i7*p{integer}
+102i7*r{integer}
+103i7*stratrum{integer}
+104i7*s2q1{integer}
+105i7*s2q2{integer}
+106i7*s2q3{integer}
+109R9*Sec03A 139e14
+110i7*rectype{integer}
+111i7*province{integer}
+112i7*district{integer}
+113i7*Const{integer}
+114i7*ward{integer}
+115i7*Csa{integer}
+116i7*Sea{integer}
+117i7*Rururb{integer}
+118i7*Stratum{integer}
+119i7*hhnumber{integer}
+120i7*PID{integer}
+121i7*S3Q1{integer}
+122i7*S3Q2{integer}
+123i7*S3Q3{integer}
+124i7*S3Q4{integer}
+125i7*S3Q5{integer}
+126i7*S3Q6{integer}
+127i7*S3Q7{integer}
+128i7*S3Q8{integer}
+129i7*S3Q9{integer}
+130i7*S3Q10{integer}
+131i7*S3Q11{integer}
+132i7*S3Q12{integer}
+133i7*S3Q13{integer}
+134i7*S3Q14{integer}
+135i7*S3Q15{integer}
+136i7*S3Q16{integer}
+137i7*S3Q17{integer}
+138i7*hid{58|26I9}
+141R9*Sec04A 164e14
+142i7*rectype{integer}
+143i7*province{integer}
+144i7*district{integer}
+145i7*Const{integer}
+146i7*ward{integer}
+147i7*Csa{integer}
+148i7*Sea{integer}
+149i7*Rururb{integer}
+150i7*Stratum{integer}
+151i7*hhnumber{integer}
+152i7*PID{integer}
+153i7*S4Q1{integer}
+154i7*S4Q2{integer}
+155i7*S4Q3{integer}
+156i7*S4Q4{integer}
+157i7*S4Q5{integer}
+158i7*S4Q6{integer}
+159i7*S4Q7{integer}
+160i7*S4Q8{integer}
+161i7*S4Q9{integer}
+162i7*S4Q10{integer}
+163i7*hid{58|26I9}
+166R9*Sec07A 184e14
+167i7*rectype{integer}
+168i7*hid{58|26I9}
+169i7*province{integer}
+170i7*district{integer}
+171i7*Const{integer}
+172i7*ward{integer}
+173i7*Csa{integer}
+174i7*Sea{integer}
+175i7*Rururb{integer}
+176i7*Stratum{integer}
+177i7*hhnumber{integer}
+178i7*asset{integer}
+179i7*s7q1{integer}
+180i7*s7q2{integer}
+181i7*s7q3{integer}
+182f7*s7q4{30|30F12}
+183f7*s7q5{30|30F12}
+186R9*Sec08a 225e14
+187i7*rectype{integer}
+188i7*province{integer}
+189i7*district{integer}
+190i7*Const{integer}
+191i7*ward{integer}
+192i7*Csa{integer}
+193i7*Sea{integer}
+194i7*Rururb{integer}
+195i7*Stratum{integer}
+196i7*hhnumber{integer}
+197i7*S8Q1{integer}
+198i7*S8Q2{integer}
+199i7*S8Q3{integer}
+200i7*S8Q4{integer}
+201i7*S8Q5A{integer}
+202i7*S8Q5B{integer}
+203i7*S8Q5C{integer}
+204i7*S8Q5D{integer}
+205i7*S8Q5E{integer}
+206i7*S8Q6A{integer}
+207i7*S8Q6B{integer}
+208i7*S8Q6C{integer}
+209i7*S8Q7A{integer}
+210i7*S8Q7B{integer}
+211i7*S8Q8A{integer}
+212i7*S8Q8B{integer}
+213i7*S8Q9A{integer}
+214i7*S8Q9B{integer}
+215i7*S8Q10{integer}
+216i7*S8Q11{integer}
+217i7*S8Q12{integer}
+218i7*S8Q13{integer}
+219i7*S8Q14{integer}
+220i7*S8Q15{integer}
+221i7*S8Q16{integer}
+222i7*S8Q17{integer}
+223i7*hid{58|26I9}
+224f7*WEIGHT{30|30F12}
+227R9*Sec09a 246e14
+228i7*rectype{integer}
+229i7*hid{58|26I9}
+230i7*province{integer}
+231i7*district{integer}
+232i7*Const{integer}
+233i7*ward{integer}
+234i7*Csa{integer}
+235i7*Sea{integer}
+236i7*Rururb{integer}
+237i7*Stratum{integer}
+238i7*hhnumber{integer}
+239i7*Facility{integer}
+240i7*Nearest{integer}
+241i7*Distance{integer}
+242i7*Usage{integer}
+243i7*Means{integer}
+244i7*How_long{integer}
+245i7*Reason{integer}
+248R9*Se11AA 367e14
+249i7*RECTYPE{integer}
+250i7*province{integer}
+251i7*district{integer}
+252i7*Const{integer}
+253i7*ward{integer}
+254i7*Csa{integer}
+255i7*Sea{integer}
+256i7*Rururb{integer}
+257i7*Stratum{integer}
+258i7*hhnumber{integer}
+259i7*S11Q1{integer}
+260i7*S11Q2a{integer}
+261i7*S11Q3a1{integer}
+262i7*S11Q3a2{integer}
+263i7*S11Q4a{integer}
+264i7*S11Q5a{integer}
+265i7*S11Q6a{integer}
+266i7*S11Q2b{integer}
+267i7*S11Q3b1{integer}
+268i7*S11Q3b2{integer}
+269i7*S11Q4b{integer}
+270i7*S11Q5b{integer}
+271i7*S11Q6b{integer}
+272i7*S11Q2c{integer}
+273i7*S11Q3c1{integer}
+274i7*S11Q3c2{integer}
+275i7*S11Q4c{integer}
+276i7*S11Q5c{integer}
+277i7*S11Q6c{integer}
+278i7*S11Q2d{integer}
+279i7*S11Q3d1{integer}
+280i7*S11Q3d2{integer}
+281i7*S11Q4d{integer}
+282i7*S11Q5d{integer}
+283i7*S11Q6d{integer}
+284i7*S11Q2e{integer}
+285i7*S11Q3e1{integer}
+286i7*S11Q3e2{integer}
+287i7*S11Q4e{integer}
+288i7*S11Q5e{integer}
+289i7*S11Q6e{integer}
+290i7*S11Q2f{integer}
+291i7*S11Q3f1{integer}
+292i7*S11Q3f2{integer}
+293i7*S11Q4f{integer}
+294i7*S11Q5f{integer}
+295i7*S11Q6f{integer}
+296i7*S11Q2g{integer}
+297i7*S11Q3g1{integer}
+298i7*S11Q3g2{integer}
+299i7*S11Q4g{integer}
+300i7*S11Q5g{integer}
+301i7*S11Q6g{integer}
+302i7*S11Q2h{integer}
+303i7*S11Q3h1{integer}
+304i7*S11Q3h2{integer}
+305i7*S11Q4h{integer}
+306i7*S11Q5h{integer}
+307i7*S11Q6h{integer}
+308i7*S11Q2i{integer}
+309i7*S11Q3i1{integer}
+310i7*S11Q3i2{integer}
+311i7*S11Q4i{integer}
+312i7*S11Q5i{integer}
+313i7*S11Q6i{integer}
+314i7*S11Q2j{integer}
+315i7*S11Q3j1{integer}
+316i7*S11Q3j2{integer}
+317i7*S11Q4j{integer}
+318i7*S11Q5j{integer}
+319i7*S11Q6j{integer}
+320i7*S11Q2k{integer}
+321i7*S11Q3k1{integer}
+322i7*S11Q3k2{integer}
+323i7*S11Q4k{integer}
+324i7*S11Q5k{integer}
+325i7*S11Q6k{integer}
+326i7*S11Q7l{integer}
+327i7*S11Q8la{integer}
+328i7*S11Q8lb{integer}
+329i7*S11Q8lc{integer}
+330i7*S11Q7m{integer}
+331i7*S11Q8ma{integer}
+332i7*S11Q8mb{integer}
+333i7*S11Q8mc{integer}
+334i7*S11Q7n{integer}
+335i7*S11Q8na{integer}
+336i7*S11Q8nb{integer}
+337i7*S11Q8nc{integer}
+338i7*S11Q7o{integer}
+339i7*S11Q8oa{integer}
+340i7*S11Q8ob{integer}
+341i7*S11Q8oc{integer}
+342i7*S11Q7p{integer}
+343i7*S11Q8pa{integer}
+344i7*S11Q8pb{integer}
+345i7*S11Q8pc{integer}
+346i7*S11Q9A1{integer}
+347i7*S11Q9A2{integer}
+348i7*S11Q9B1{integer}
+349i7*S11Q9B2{integer}
+350i7*S11Q9C1{integer}
+351i7*S11Q9C2{integer}
+352i7*S11Q9D1{integer}
+353i7*S11Q9D2{integer}
+354i7*S11Q10A1{integer}
+355i7*S11Q10A2{integer}
+356i7*S11Q10B1{integer}
+357i7*S11Q10B2{integer}
+358i7*S11Q10C1{integer}
+359i7*S11Q10C2{integer}
+360i7*S11Q10D1{integer}
+361i7*S11Q10D2{integer}
+362i7*S11Q11{integer}
+363i7*S11Q111{integer}
+364i7*S11Q112{integer}
+365i7*S11Q113{integer}
+366i7*hid{58|26I9}
+

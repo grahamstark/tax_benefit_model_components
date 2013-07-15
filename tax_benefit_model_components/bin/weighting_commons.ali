@@ -1,0 +1,24 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U weighting_commons%s	weighting_commons.ads	9f338ee7 NE OO PK
+
+D system.ads		20110419093140 23e1f70b
+D weighting_commons.ads	20110621153037 9f338ee7
+X 2 weighting_commons.ads
+4K9*Weighting_Commons 15l6 15e23
+8E9*Distance_Function_Type 13e28
+9n7*chi_square{8E9}
+10n7*constrained_chi_square{8E9}
+11n7*d_and_s_type_a{8E9}
+12n7*d_and_s_type_b{8E9}
+13n7*d_and_s_constrained{8E9}
+

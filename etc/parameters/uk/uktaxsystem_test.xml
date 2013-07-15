@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE ParameterSystem
+   PUBLIC "http://www.ifs.org.uk/PARAMS"
+          "/home/graham_s/veserv/data/Parameters/Parameters.dtd"   
+	  
+[
+  <!ENTITY AllBen SYSTEM 
+     "/home/graham_s/veserv/src/org/vw/Parameters/xml/AllBen.xml">
+]>
+<ParameterSystem type="UKTBSystem" name="UK Tax and Benefit System"
+    instanceName="tbsys" >
+  
+   <!-- &AllBen; -->
+   
+  
+</ParameterSystem>

@@ -1,0 +1,196 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnvnnvnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U list_of_randoms%b	list_of_randoms.adb	69c9a3ba NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W maths_functions%s	maths_functions.adb	maths_functions.ali
+
+U list_of_randoms%s	list_of_randoms.ads	462260b4 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.numerics.generic_real_arrays%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.fortran%s	i-fortra.adb		i-fortra.ali
+W interfaces.fortran.blas%s  i-forbla.adb	i-forbla.ali
+W interfaces.fortran.lapack%s  i-forlap.ads	i-forlap.ali
+W maths_functions%s	maths_functions.adb	maths_functions.ali
+W random_normal_draw%s	random_normal_draw.adb	random_normal_draw.ali
+W system%s		system.ads		system.ali
+W system.generic_array_operations%s  s-gearop.adb  s-gearop.ali
+W system.generic_real_blas%s
+W system.generic_real_lapack%s
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-numeri.ads		20110419093132 bb51c45a
+D a-numaux.ads		20110419093132 243fe0b7
+D a-nuflra.ads		20110419093132 49c50e0b
+D a-ngcoty.ads		20110419093132 e7845fd0
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngelfu.adb		20110419093132 d18bc0c2
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-unccon.ads		20110419093133 f9eb8f06
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D i-fortra.ads		20110419093135 dedf9840
+D i-forbla.ads		20110419093135 72e94996
+D i-forlap.ads		20110419093135 fc33cf68
+D list_of_randoms.ads	20120327110026 18ac4444
+D list_of_randoms.adb	20120327121758 5e4338d1
+D maths_functions.ads	20120308135219 5e8e24f0
+D maths_functions.adb	20120308141520 85120745
+D random_normal_draw.ads  20110505104328 d7117888
+D random_normal_draw.adb  20110923150105 564ce9c8
+D system.ads		20110419093140 23e1f70b
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerebl.adb		20110419093137 893920c2
+D s-gerela.ads		20110419093137 692c845e
+D s-gerela.adb		20110419093137 59ae5999
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-rannum.ads		20110419093138 5eb33f0a
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 39|2r6 3r6 7r17 32r33 56r23 59r11 73r11
+X 13 a-numeri.ads
+16K13*Numerics 32e17 39|2r10 7r21 32r37
+X 15 a-nuflra.ads
+41K22*Float_Random 72e30 39|2w19 7r30 32r46
+45R9*Generator 39|7r43
+47F12*Uniformly_Distributed{float}
+49V13*Random{47F12}<59|62p13> 39|32s59
+X 19 a-ngrear.ads
+43A9 Real_Vector<integer>
+X 23 a-strbou.ads
+162V16*"="{boolean}<25|163p13> 8|41i18[71|25]
+X 26 a-strunb.ads
+166V13*"="{boolean}<10|62p9> 8|41i18
+X 28 a-textio.ads
+49K13*Text_IO 471e16 39|3w10 56r27 59r15 73r15
+52P9*File_Type(369R9) 39|60r11 74r11
+53n23*In_File{53E9} 39|76r16
+53n32*Out_File{53E9} 39|62r18
+86U14*Create 39|62s7
+92U14*Open 39|76s7
+98U14*Close 39|69s7 81s7
+165U14*New_Line 39|67s10
+241U14*Put 39|65s10
+X 30 a-tiflio.ads
+45k21*Float_IO 88e25 39|56r35
+51U14 Get 39|78s14[56] 79s14[56]
+60U14 Put 39|64s14[56] 66s14[56]
+X 38 list_of_randoms.ads
+5F9 Real 14r52 15r59 23r39 39|32r27 37r52 46r59 56r45
+6i4 capacity{positive} 25r44 26r44 39|39r21 49r21
+8k9*List_Of_Randoms 5z9 6z4 37l5 37e20 39|5b14 84l5 84t20
+10R9*Random_List 12p14 12r36 13p14 13r32 14p14 14r31 15p14 15r38 17p14 17r25
+. 18p14 18r31 19p13 19r31 19r52 30c9 35e14 39|9r31 9r52 10r12 19r36 25r32
+. 37r31 46r38 58r25 72r31
+12U14*Reset_Pos 12=25 39|19b14 23l8 23t17 27s9
+12r25 r{10R9} 39|19b25 21m7 22m7
+13U14*Reset 13=21 39|25b14 35l8 35t13
+13r21 r{10R9} 39|25b21 27m7 27r7 31m10 32m10
+14U14*Next 14=20 14<44 14>58 39|37b14 44l8 44t12
+14r20 r{10R9} 39|37b20 39r11 40m10 42m7 42r18 43r12 43r22
+14*44 v{5F9} 39|37b44 43m7
+14b58 wrap{boolean} 39|37b58 39r36
+15U14*Next_Normal 15=27 15<51 15>65 39|46b14 54l8 54t19
+15r27 r{10R9} 39|46b27 49r11 50m10 52m7 52r18 53r12 53r22
+15*51 v{5F9} 39|46b51 53m7
+15b65 wrap{boolean} 39|46b65 49r36
+17U14*Store 17>21 17>38 39|58b14 70l8 70t13
+17r21 r{10R9} 39|58b21 64r22 66r22
+17s38 filename{string} 39|58b38 62r28
+18U14*Load 18=20 18>44 39|72b14 82l8 82t12
+18r20 r{10R9} 39|72b20 78m22 78r22 79m22 79r22
+18s44 filename{string} 39|72b44 76r25
+19V13*Make_Copy{10R9} 19>24 39|9b13 17l8 17t17
+19r24 from{10R9} 39|9b24 12r19 13r20 14r19 15r20
+23K12 MF[40|14] 24r8 28r24 39|31r27
+25I12 R_Counter{natural} 26r23 31r18 33r18
+26I12 R_Range{25I12} 28r35 39|30r16 63r16 77r16
+28A12 R_Vector{40|22A12[23]}<integer> 32r18 34r18
+31i7 r_pos{25I12} 39|12m10 12r24 21m9 39r13 40m12 42m9 42r20 43r24
+32a7 r_vals{28A12} 39|13m10 13r25 32m12 43r14 64r24 78m24
+33i7 n_pos{25I12} 39|14m10 14r24 22m9 49r13 50m12 52m9 52r20 53r24
+34a7 n_vals{28A12} 39|15m10 15r25 31m12 53r14 66r24 79m24
+X 39 list_of_randoms.adb
+7r4 Random_Gen{15|45R9} 32r67
+10r7 to{38|10R9} 12m7 13m7 14m7 15m7 16r14
+30i11 i{38|26I12} 31r20 32r20
+56K12 RIO[30|45] 64r10 66r10 78r10 79r10
+60p7 f{28|52P9} 62m15 62r15 64r19 65r15 66r19 67r20 69m14 69r14
+63i11 i{38|26I12} 64r32 66r32
+74p7 f{28|52P9} 76m13 76r13 78r19 79r19 81m14 81r14
+77i11 i{38|26I12} 78r32 79r32
+X 40 maths_functions.ads
+14k9*Maths_Functions 38|1w6 23r22 39|1w6 40|89e20
+16K12 Random_Normal_Generator[42|30] 39|31r30[38|23]
+22A12 Vector{19|43A9[20[38|23]]}<integer> 38|28r27[23]
+X 42 random_normal_draw.ads
+34V13 Draw{38|5F9} 39|31s54[40|16[38|23]]
+

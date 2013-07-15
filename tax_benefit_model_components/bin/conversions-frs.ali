@@ -1,0 +1,330 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnvnvnnnnnvnnvnnvnnnvnnnvnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnvnnnnnnnnnnnnnn
+
+U conversions.frs%b	conversions-frs.adb	98de2127 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W conversions%s		conversions.adb		conversions.ali
+W format_utils%s	format_utils.adb	format_utils.ali
+W system%s		system.ads		system.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lli%s	s-imglli.adb		s-imglli.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U conversions.frs%s	conversions-frs.ads	f8b6901b EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.ordered_maps%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.direct_io%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.unchecked_conversion%s
+W ada.unchecked_deallocation%s
+W base_model_types%s	base_model_types.adb	base_model_types.ali
+W conversions%s		conversions.adb		conversions.ali
+W data_constants%s	data_constants.adb	data_constants.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.string_split%s	g-strspl.ads		g-strspl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+W system.crtl%s		s-crtl.ads		s-crtl.ali
+W system.direct_io%s	s-direio.adb		s-direio.ali
+W system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+W system.file_io%s	s-fileio.adb		s-fileio.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorma.adb		20110419093131 2a91a047
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-convec.ads		20110419093131 49c793e4
+D a-direio.ads		20110419093131 5842da07
+D a-direio.adb		20110419093131 ddb08ceb
+D a-direct.ads		20110419093131 9d42e46d
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D conversions.ads	20110415182041 4cda1426
+D conversions-frs.ads	20110415182041 aca0ffd1
+D conversions-frs.adb	20110415182041 eb3c0c22
+D data_constants.ads	20110415182041 06452ee2
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-regpat.ads		20110419093135 b85d88ef
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D numeric_io.ads	20110415182050 f791a5cb
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-direio.ads		20110419093137 068812e8
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-fileio.ads		20110419093137 529bb6b9
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglli.ads		20110419093137 114f55d1
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+X 1 ada.ads
+16K9*Ada 19e8 42|1r6 2r6 3r6 4r6 5r6 18r8 61r28 65r34 72r38 43|3r6 4r6 5r6
+. 6r6 7r6 8r6 13r11 27r34 32r10 102r11 103r11 121r11 122r11
+X 2 a-calend.ads
+36K13*Calendar 358e17 42|1w10
+X 3 a-charac.ads
+16K13*Characters 18e19 43|6r10
+X 4 a-chlat1.ads
+20K24*Latin_1 298e27 43|6w21
+X 5 a-contai.ads
+16K13*Containers 24e19 42|2r10 72r42
+X 8 a-coorma.ads
+39+9 Key_Type 42|73r8
+40+9 Element_Type 42|74r8
+42V18 "<"{boolean} 42|76r8
+43V18 "="{boolean} 42|75r8
+45k24*Ordered_Maps 256e32 42|2w21 72r53
+51R9*Map 42|77r44[72]
+54R9*Cursor 43|89r34[42|72]
+67U14*Clear 43|109s28[42|72]
+71V13*Element{42|55R9} 43|90s31[42|72]
+104U14*Insert 43|81s10[42|72]
+114U14*Replace 43|79s10[42|72]
+151V13*Element{42|55R9} 43|69s17[42|72]
+157V13*Contains{boolean} 43|68s11[42|72] 78s11[42|72]
+173U14*Iterate 43|97s7[42|72]
+186R9 Node_Type
+187P9 Node_Access(186R9[42|72])
+X 9 a-coorma.adb
+47V13 Color{11|35E9} 14|45i19[42|72]
+50V13 Left{8|187P9[42|72]} 14|41i19[42|72]
+53V13 Parent{8|187P9} 14|39i19
+56V13 Right{8|187P9[42|72]} 14|43i19[42|72]
+59U14 Set_Parent 14|40i19
+62U14 Set_Left 14|42i19[42|72]
+65U14 Set_Right 14|44i19[42|72]
+68U14 Set_Color 14|46i19[42|72]
+X 17 a-direio.ads
+43k13*Direct_IO 191e18 42|3w10 61r32
+53P9*File_Type(59|53R9) 43|87r26[42|61] 104r25[42|61] 123r25[42|61]
+55E9*File_Mode
+55n23*In_File{55E9[42|61]} 43|108r42[42|61] 127r42[42|61]
+55n44*Out_File{55E9[42|61]} 43|96r42[42|61]
+74U14*Create 43|96s16[42|61]
+80U14*Open 43|108s19[42|61] 127s19[42|61]
+86U14*Close 43|98s16[42|61] 115s19[42|61] 133s19[42|61]
+106U14*Read 43|111s22[42|61] 129s22[42|61]
+115U14*Write 43|92s19[42|61]
+124V13*End_Of_File{boolean}<59|90p13> 43|113s33[42|61] 131s33[42|61]
+X 19 a-direct.ads
+76K13*Directories 487e20 43|7w10 102r15 121r15
+295V13*Exists{boolean} 43|107s11 126s11
+X 25 a-string.ads
+16K13*Strings 35e16 42|4r10 18r12 43|4r10 5w10 8r10 13r15
+X 26 a-strbou.ads
+162V16*"="{boolean}<29|163p13> 16|41i18[82|25]
+X 27 a-strfix.ads
+18K21*Fixed 251e22 43|4w18
+X 30 a-strunb.ads
+76K21*Unbounded 489e26 42|4w18 18r20 43|8w18 13r23
+79R9*Unbounded_String 473e14 43|15r11
+100V13*To_String{string} 43|24s14
+123V13*"&"{79R9} 43|17s14 17s27 17s62 19s17 19s45 20s29 20s77 21s28 21s75
+. 23s14 23s27 23s52
+166V13*"="{boolean}<21|62p9> 16|41i18
+X 32 a-textio.ads
+49K13*Text_IO 471e16 42|5w10 65r38 43|3w10 27r38 32r14 103r15 122r15
+52P9*File_Type(369R9) 42|65r46 43|27r46
+205U14*Get 43|32s22
+263U14*Put_Line 43|130s13
+X 40 base_model_types.ads
+18K9*Base_Model_Types 134e21 42|9w6 17r8
+52R9*Record_Indicator 55e14 42|53r58
+53i7*startPos{natural} 43|20r66 52r31 52r60
+54i7*counter{natural} 43|21r65 55r31 55r59
+X 41 conversions.ads
+13K9*Conversions 60e16 42|13r9 89r5 43|10r14 138r5
+X 42 conversions-frs.ads
+13K21*FRS 41|13k9 42|89l17 89e20 43|10b26 138l17 138t20
+20E9*RecordComponents 47e18 53r37 43|18r16 19r19 51r16
+21n7*adultRec{20E9}
+22n7*accountRec{20E9}
+23n7*adminRec{20E9}
+24n7*assetRec{20E9}
+25n7*benefitRec{20E9}
+26n7*benunitRec{20E9}
+27n7*careRec{20E9}
+28n7*childRec{20E9}
+29n7*childCareRec{20E9}
+30n7*endowmentRec{20E9}
+31n7*extChildRec{20E9}
+32n7*govPayRec{20E9}
+33n7*hbaiRec{20E9}
+34n7*householdRec{20E9}
+35n7*insuranceRec{20E9}
+36n7*jobRec{20E9}
+37n7*maintRec{20E9}
+38n7*mortContRec{20E9}
+39n7*mortgageRec{20E9}
+40n7*oddJobRec{20E9}
+41n7*ownerRec{20E9}
+42n7*penprovRec{20E9}
+43n7*penAmtRec{20E9}
+44n7*pensionRec{20E9}
+45n7*rentContRec{20E9}
+46n7*renterRec{20E9}
+47n7*vehicleRec{20E9}
+49a4*BASE_DATA_DIR{string}
+53A9*ComponentPointers(40|52R9)<20E9> 58r21
+55R9*Index_Rec 59e17 61r43 63r32 70r48 74r24 79r78 81r63 43|12r32 46r48 64r78
+. 66r16 75r63 90r18 105r16 124r16
+57i10*SERNUM{44|23I9} 43|17r54 48r16 48r32 78r38 79r36 81r35
+58a10*pointers{53A9} 43|20r52 21r51 52r19 52r48 55r19 55r47
+61K12*Index_io[17|43] 43|87r17 92r10 96r7 96r33 98r7 104r16 108r10 108r33
+. 111r13 113r24 115r10 123r16 127r10 127r33 129r13 131r24 133r10
+63V13*To_String{string} 63>24 43|12b13 25l8 25t17 130s59
+63r24 index{55R9} 43|12b24 17r48 20r46 21r45
+65V13*Read_Sernum{44|22A12} 65>27 43|27b13 39l8 39t19
+65p27 file{32|52P9} 43|27b27 32r28
+68V13*Compare_Sernums_Lt{boolean} 68>33 68>39 76r15 43|41b13 44l8 44t26
+68i33 left{44|23I9} 43|41b33 43r14
+68i39 right{44|23I9} 43|41b39 43r21
+70V13*Compare_Values_Equal{boolean} 70>35 70>41 75r15 43|46b13 60l8 60t28
+70r35 left{55R9} 43|46b35 48r11 52r14 52r43 55r14 55r42
+70r41 right{55R9} 43|46b41 48r26
+72K13*FRS_Index_Package[8|45] 77r26 43|65r11 76r11 86r11 109r10 120r11
+77R13*FRS_Index{8|51R9[72]} 79r36 81r44 83r67 85r73 43|64r36 75r44 85r67
+. 101r73
+79V13*Get_Index{55R9} 79>24 79>47 43|64b13 73l8 73t17
+79r24 index_map{77R13} 43|64b24 68r21 69r26
+79i47 sernum{44|23I9} 43|64b47 68r32 69r37
+81U14*Put_Index 81=25 81>55 43|75b14 83l8 83t17 112s13
+81r25 index_map{77R13} 43|75b25 78r21 79m19 81m18
+81r55 index{55R9} 43|75b55 78r32 79r30 79r44 81r29 81r43
+83U14*Store_Complete_Index 83>36 83>55 43|85b14 99l8 99t28
+83s36 filename{string} 43|85b36 96r52
+83r55 index_map{77R13} 43|85b55 97r16
+85U14*Restore_Complete_Index 85>38 85<57 43|101b14 117l8 117t30
+85s38 filename{string} 43|101b38 107r19 108r51
+85r57 index_map{77R13} 43|101b57 109m35 112m24
+87U14*Dump_Index 87>26 87>47 43|119b14 135l8 135t18
+87s26 Index_Name{string} 43|119b26 126r19 127r51
+87s47 name{string} 43|119b47 130r45
+X 43 conversions-frs.adb
+15r7 s{30|79R9} 17m7 17r12 19m10 19r15 23m7 23r12 24r25
+18e11 r{42|20E9} 19r42 20r62 21r61
+28a11 serstr{44|22A12} 36m10 38r14
+29e11 ch{character} 32m34 32r34 33r15 36r23
+31i11 p{integer} 36r17
+51e11 i{42|20E9} 52r28 52r57 55r28 55r56
+66r7 index{42|55R9} 71r17
+87p7 outfile{17|53P9[42|61]} 92r26 96m24 96r24 98m23 98r23
+89U17 Write_One 89b17 89>28 93l11 93t20 97r27
+89r28 pos{8|54R9[42|72]} 90r40
+90r10 index{42|55R9} 92r35
+104p7 infile{17|53P9[42|61]} 108m25 108r25 111r28 113r47 115m26 115r26
+105r7 index{42|55R9} 111m36 111r36 112r35
+123p7 infile{17|53P9[42|61]} 127m25 127r25 129r28 131r47 133m26 133r26
+124r7 index{42|55R9} 129m36 129r36 130r70
+X 44 data_constants.ads
+7K9*Data_Constants 42|10w6 15r8 44|29e19
+22A12*Sernum_String{string}<integer> 42|65r65 43|27r65 28r20 31r16
+23I9*Sernum_Value<long_integer> 42|57r21 68r46 73r20 79r56 43|17r29 41r46
+. 64r56
+X 45 format_utils.ads
+37k9*Format_Utils 43|1w6 45|95e17
+X 47 gnat.ads
+34K9*GNAT 42|7r6 16r8 47|37e9
+X 50 g-strspl.ads
+39K14*String_Split[48|58] 42|7w11 16r13
+X 82 text_utils.ads
+13K9*Text_Utils 43|2w6 14r11 82|107e15
+21a4*LINE_BREAK{string} 43|17r64 21r77 23r16 23r54
+

@@ -1,0 +1,26 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U xia_parser_shift_reduce%s  xia_parser_shift_reduce.ads  db4537df NE OO PK
+
+D system.ads		20110419093140 23e1f70b
+D xia_parser_shift_reduce.ads  20110415182051 db4537df
+X 2 xia_parser_shift_reduce.ads
+31K9*Xia_Parser_Shift_Reduce 765l5 765e28
+33I10*Small_Integer<short_integer> 36r15 37r15
+35R10*Shift_Reduce_Entry 38e15 39r17 45r57
+36i9*T{33I10}
+37i9*Act{33I10}
+41I13*Row{integer} 45r39
+45A10*Shift_Reduce_Array(35R10)<integer> 47r36
+47a5*Shift_Reduce_Matrix{45A10}
+743a1*SHIFT_REDUCE_OFFSET(integer)
+

@@ -1,0 +1,218 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnnnnvnnnvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnn
+
+U xia_parser%b		xia_parser.adb		062489cd NE OO PK IL
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W xia_parser_io%s	xia_parser_io.adb	xia_parser_io.ali
+
+U xia_parser%s		xia_parser.ads		468996e6 EE NE OO PK IL
+W ada.tags%s		a-tags.adb		a-tags.ali
+W text_io%s		text_io.ads		text_io.ali
+W xia_parser_dfa%s	xia_parser_dfa.adb	xia_parser_dfa.ali
+W xia_parser_io%s	xia_parser_io.adb	xia_parser_io.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D system.ads		20110419093140 23e1f70b
+D s-conca3.ads		20110419093137 762a026a
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_io.ads		20110419093141 45d626c9
+D xia_parser.ads	20110415182051 7422bc9c
+D xia_parser.adb	20110415182051 fed1df10
+D xia_parser_dfa.ads	20110415182051 fbaae6f2
+D xia_parser_io.ads	20110415182051 8cd7ea41
+X 8 a-textio.ads
+52P9*File_Type(369R9) 33|289r35
+104V13*Name{string} 33|291s23
+166U14*New_Line 33|631s29
+242U14*Put 33|362s21 363s21 629s29 630s29
+263U14*Put_Line 33|364s21
+X 31 text_io.ads
+24K9*Text_IO=24:29 32|32w6 32r19 33|291r15 362r13 363r13 364r13 629r21 630r21
+. 631r21
+X 32 xia_parser.ads
+41K9*xia_parser 102l5 102e15 33|32b14 658l5 658t15
+42E9*Token 94e19 97r30 33|49r26 638r30
+43n7*End_Of_Input{42E9} 33|586r12
+44n7*Error{42E9}
+45n7*NCNAME_token{42E9} 33|571r59
+46n7*DECIMAL_LITERAL_token{42E9} 33|567r59
+47n7*INTEGER_token{42E9} 33|563r59
+48n7*DQ_LITERAL_token{42E9} 33|559r59
+49n7*SQ_LITERAL_token{42E9} 33|555r59
+50n7*LE_token{42E9} 33|551r59
+51n7*LT_token{42E9} 33|547r59
+52n7*GE_token{42E9} 33|543r59
+53n7*GT_token{42E9} 33|539r59
+54n7*NE_token{42E9} 33|535r59
+55n7*EQ_token{42E9} 33|531r59
+56n7*V_BAR_token{42E9} 33|527r59
+57n7*DOLLAR_token{42E9} 33|523r59
+58n7*COMMA_token{42E9} 33|519r59
+59n7*AT_SIGN_token{42E9} 33|515r59
+60n7*DOUBLE_COLON_token{42E9} 33|511r59
+61n7*COLON_token{42E9} 33|507r59
+62n7*DOUBLE_SLASH_token{42E9} 33|503r59
+63n7*SLASH_token{42E9} 33|499r59
+64n7*DOUBLE_DOT_token{42E9} 33|495r59
+65n7*DOT_token{42E9} 33|491r59
+66n7*MINUS_token{42E9} 33|487r59
+67n7*PLUS_token{42E9} 33|483r59
+68n7*STAR_token{42E9} 33|479r59
+69n7*R_BRACKET_token{42E9} 33|475r59
+70n7*L_BRACKET_token{42E9} 33|471r59
+71n7*R_PAREN_token{42E9} 33|467r59
+72n7*L_PAREN_token{42E9} 33|463r59
+73n7*OR_token{42E9} 33|459r59
+74n7*MOD_token{42E9} 33|455r59
+75n7*DIV_token{42E9} 33|451r59
+76n7*AND_token{42E9} 33|447r59
+77n7*NODE_token{42E9} 33|443r59
+78n7*PROCESSING_INSTRUCTION_token{42E9} 33|439r59
+79n7*TEXT_token{42E9} 33|435r59
+80n7*COMMENT_token{42E9} 33|431r59
+81n7*SELF_token{42E9} 33|427r59
+82n7*PRECEDING_SIBLING_token{42E9} 33|423r59
+83n7*PRECEDING_token{42E9} 33|419r59
+84n7*PARENT_token{42E9} 33|415r59
+85n7*NAMESPACE_token{42E9} 33|411r59
+86n7*FOLLOWING_SIBLING_token{42E9} 33|407r59
+87n7*FOLLOWING_token{42E9} 33|403r59
+88n7*DESCENDANT_OR_SELF_token{42E9} 33|399r59
+89n7*DESCENDANT_token{42E9} 33|395r59
+90n7*CHILD_token{42E9} 33|391r59
+91n7*ATTRIBUTE_token{42E9} 33|387r59
+92n7*ANCESTOR_OR_SELF_token{42E9} 33|383r59
+93n7*ANCESTOR_token{42E9} 33|379r59
+94n7*Dummy_Token{42E9}
+96U14*Reset 96>20 33|35b14 41l8 41t13
+96s20 Set_String{string} 33|35b20 39r33
+97V13*Get_Token{42E9} 33|638b13 641l8 641t17
+98V13*Get_Token_String{string} 33|643b13 646l8 646t24
+99V13*Get_Current_Line{natural} 33|648b13 651l8 651t24
+100V13*Get_Current_Column{natural} 33|653b13 656l8 656t26
+101U14*Close_Files 33|43b14 47l8 47t19
+X 33 xia_parser.adb
+33i4 Current_Line{natural} 37m7 579m1 579r17 650r14
+34i4 Current_Column{natural} 38m7 379m1 379r19 383m1 383r19 387m1 387r19
+. 391m1 391r19 395m1 395r19 399m1 399r19 403m1 403r19 407m1 407r19 411m1
+. 411r19 415m1 415r19 419m1 419r19 423m1 423r19 427m1 427r19 431m1 431r19
+. 435m1 435r19 439m1 439r19 443m1 443r19 447m1 447r19 451m1 451r19 455m1
+. 455r19 459m1 459r19 463m1 463r19 467m1 467r19 471m1 471r19 475m1 475r19
+. 479m1 479r19 483m1 483r19 487m1 487r19 491m1 491r19 495m1 495r19 499m1
+. 499r19 503m1 503r19 507m1 507r19 511m1 511r19 515m1 515r19 519m1 519r19
+. 523m1 523r19 527m1 527r19 531m1 531r19 535m1 535r19 539m1 539r19 543m1
+. 543r19 547m1 547r19 551m1 551r19 555m1 555r19 559m1 559r19 563m1 563r19
+. 567m1 567r19 571m1 571r19 575m1 575r19 579m35 655r14
+49V13 YYLex{32|42E9} 49b13 635l5 635t10 640s14
+50I9 short{integer} 52r12 60r39 84r55 102r36 111r37 135r36 159r36 190r36
+. 267r12
+51i5 yy_act{integer} 357m13 363r39 368r18 607m33 630r48
+52i5 yy_c{50I9} 336m17 341r60 344m25 344r41 347r72
+55i1 YY_END_TOK{integer}
+56N1 YY_END_OF_BUFFER 245r13 585r6 587r22
+57I9 yy_state_type{integer} 58r20 265r39 266r24
+58i1 yy_current_state{57I9} 334m9 337r32 338r48 341r40 341r69 342m21 342r48
+. 343r26 347m17 347r52 349r6 354m9 357r33 373m17 621m29
+59N1 INITIAL 585r25
+60a1 yy_accept(50I9) 273r14 337r22 357r23
+84a1 yy_ec(50I9) 272r17 336r25
+102a1 yy_meta(50I9) 280r25 344r33
+111a1 yy_base(50I9) 277r24 283r36 341r32 347r44
+135a1 yy_def(50I9) 278r33 342r41
+159a1 yy_nxt(50I9) 283r29 347r37
+190a1 yy_chk(50I9) 277r17 341r25
+237U11 ENTER 237b11 237>18 240l5 240t10
+237i18 state{integer} 239r26
+243V10 YY_STATE_EOF{integer} 243b10 243>23 246l5 246t17 607s43
+243i23 state{integer} 245r32
+249U11 yyless 249b11 249>18 255l5 255t11
+249i18 n{integer} 252r26
+258U11 YY_USER_ACTION 258b11 261t4 359s13
+265V10 yy_get_previous_state{57I9} 265b10 287l5 287t26 621s49
+266i5 yy_current_state{57I9} 269m5 273r24 274r40 277r32 277r61 278m13 278r40
+. 279r18 283m9 283r44 286r12
+267i5 yy_c{50I9} 272m9 277r52 280m17 280r33 283r64
+271i9 yy_cp{integer} 272r33 275r39
+289U11 yyrestart 289b11 289>22 292l5 292t14
+289p22 input_file{8|52P9} 291r28
+295L3 new_file 613r38
+356L3 next_action 374r22 625r34
+367L3 do_action 609r38
+X 34 xia_parser_dfa.ads
+31K9*xia_parser_dfa 32|33w6 33r26 34|58e19
+32b1*aflex_debug{boolean} 33|361r12
+33i1*yytext_ptr{integer} 33|271r18 319m9 320r23 591m21 605r47 617r43 624r38
+40A6*unbounded_character_array(character)<integer>
+41A9*ch_buf_type{40A6}<integer>
+42a1*yy_ch_buf{41A9} 33|251m9 272r23 307m9 314m9 315m9 321r25 329m9 336r31
+. 371m17 589m21 618r45
+43i1*yy_cp{integer} 33|251r19 252m9 253r23 326m9 329r19 333r18 336r41 339r47
+. 348m13 348r22 353m9 371r27 372m17 589r31 623m29
+43i8*yy_bp{integer} 33|252r18 333m9 591r35 624m29
+46e1*yy_hold_char{character} 33|251r29 321m9 329r29 371r37 589r41 618m29
+47i1*yy_c_buf_p{integer} 33|253m9 271r30 320m9 321r35 326r18 605m33 617m29
+. 618r55 620m29 623r38
+49V10*YYText{string} 33|364s38 379s36 383s36 387s36 391s36 395s36 399s36
+. 403s36 407s36 411s36 415s36 419s36 423s36 427s36 431s36 435s36 439s36 443s36
+. 447s36 451s36 455s36 459s36 463s36 467s36 471s36 475s36 479s36 483s36 487s36
+. 491s36 495s36 499s36 503s36 507s36 511s36 515s36 519s36 523s36 527s36 531s36
+. 535s36 539s36 543s36 547s36 551s36 555s36 559s36 563s36 567s36 571s36 645s14
+51U11*YY_DO_BEFORE_ACTION 33|254s9 358s13
+53b1*yy_init{boolean} 33|299r10 322m9 612m33
+54i1*yy_start{integer} 33|239m6 269r25 300r14 301m13 334r29 607r57
+55I9*yy_state_type{integer}
+56i1*yy_last_accepting_state{55I9} 33|274m13 338m21 354r29 373r37
+57i1*yy_last_accepting_cpos{integer} 33|275m13 339m21 353r18 372r26
+X 35 xia_parser_io.ads
+33K9*xia_parser_io 32|34w6 34r25 33|31w6 39r7 45r7 35|62e18
+36X4*AFLEX_INTERNAL_ERROR 33|632r27
+40n30*EOB_ACT_RESTART_SCAN{40E9} 33|616r30
+41n30*EOB_ACT_END_OF_FILE{40E9} 33|594r30
+42n30*EOB_ACT_LAST_MATCH{40E9} 33|619r30
+43e4*YY_END_OF_BUFFER_CHAR{character} 33|314r34 315r38
+44i4*yy_n_chars{integer} 33|308m9 314r19 315r19 620r43
+47b4*yy_eof_has_been_seen{boolean} 33|317m9
+50V13*yy_get_next_buffer{40E9} 33|593s26
+55V13*yywrap{boolean} 33|596s34
+57U14*Open_Input 33|39s21 291s4
+58U14*Close_Input 33|45s21
+

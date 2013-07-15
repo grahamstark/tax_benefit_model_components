@@ -1,0 +1,373 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat2012
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnvvnnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnvnnnnnnnnnnnnnn
+
+U model.incomes%b	model-incomes.adb	3a4ab863 NE OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W model%s		model.ads		model.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U model.incomes%s	model-incomes.ads	0f1c10c3 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_sets%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.red_black_trees.generic_set_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W format_utils%s	format_utils.adb	format_utils.ali  AD
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W gnat.string_split%s	g-strspl.ads		g-strspl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W model%s		model.ads		model.ali
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.arith_64%s	s-arit64.adb		s-arit64.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+W t_utils%s		t_utils.adb		t_utils.ali  AD
+W tax_utils%s		tax_utils.adb		tax_utils.ali
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W utils%s		utils.adb		utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-coorse.adb		20110419093131 26de352f
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-rbtgso.ads		20110419093132 8700a961
+D a-rbtgso.adb		20110419093132 f22a83dd
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-numeri.ads		20110419093132 bb51c45a
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D financial_functions.ads  20110601102714 3e871fb9
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-regpat.ads		20110419093135 b85d88ef
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20120222165140 d58a72d7
+D keyed_text_buffer.ads	20120316154839 a5b8d868
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D maths_functions.ads	20120308135219 5e8e24f0
+D model.ads		20120420100541 2c75568d
+D model-incomes.ads	20110415182041 450fae29
+D model-incomes.adb	20110415182041 7f45164a
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D random_normal_draw.ads  20110505104328 d7117888
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-arit64.ads		20110419093136 a011a169
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerela.ads		20110419093137 692c845e
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valenu.ads		20110419093139 bb1a4295
+D s-valint.ads		20110419093139 48a52a3f
+D s-valrea.ads		20110419093139 fe297711
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D t_utils.adb		20110415182054 e4f1d2e4
+D tax_utils.ads		20110613201228 600316b9
+D tax_utils.adb		20111018144548 51f4d08b
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120313141900 f389e87b
+D utils.ads		20110415182054 93874c25
+X 10 a-coorse.ads
+50R9*Set
+68V13*Is_Empty{boolean} 67|6s20[112|54[66|94]] 36s20[112|54[66|110]]
+95U14*Include 67|15s21[112|54[66|94]] 27s13[112|54[66|110]]
+129V13*"and"=129:58{50R9[112|54[66|94]]} 67|6s36[112|54[66|94]] 36s36[112|54[66|110]]
+169V13*Contains{boolean} 67|57s14[112|54[66|110]]
+238R9 Node_Type
+239P9 Node_Access(238R9[112|54[66|30]])
+X 11 a-coorse.adb
+50V13 Color{12|35E9} 15|45i19[112|54[66|110]]
+53V13 Left{10|239P9[112|54[66|110]]} 15|41i19[112|54[66|110]]
+56V13 Parent{10|239P9[112|54[66|37]]} 15|39i19[112|54[66|37]]
+59V13 Right{10|239P9[112|54[66|110]]} 15|43i19[112|54[66|110]]
+62U14 Set_Color 15|46i19[112|54[66|110]]
+65U14 Set_Left 15|42i19[112|54[66|110]]
+68U14 Set_Right 15|44i19[112|54[66|30]]
+71U14 Set_Parent 15|40i19[112|54[66|94]]
+X 31 a-strbou.ads
+162V16*"="{boolean}<34|163p13> 19|41i18[117|25]
+X 35 a-strunb.ads
+166V13*"="{boolean}<22|62p9> 19|41i18
+X 50 base_model_types.ads
+25F9*Real<long_float>
+27D9*Counter_Type 66|30r97 37r96 94r96 110r103
+29F12*Rate{25F9} 66|30r56 37r55 94r55 110r62
+30F12*Amount{25F9} 66|30r75 37r74 94r74 104r86 110r81
+X 65 model.ads
+31K9*Model 59e10 66|13r9 117r5 67|1r14 175r5
+X 66 model-incomes.ads
+13K15*Incomes 65|31k9 66|117l11 117e18 67|1b20 175l11 175t18
+15E9*Expense_Items 28e24 30r116 100r31 67|148r31
+16n7*travel_expenses{15E9} 67|151r15
+17n7*pension{15E9} 67|152r15
+18n7*avcs{15E9} 67|153r15
+19n7*union_fees{15E9} 67|154r15
+20n7*friendly_societies{15E9} 67|155r15
+21n7*sports{15E9} 67|156r15
+22n7*loan_repayments{15E9} 67|157r15
+23n7*medical_insurance{15E9} 67|158r15
+24n7*charities{15E9} 67|159r15
+25n7*maintenance_payments{15E9} 67|160r15
+26n7*childminding{15E9} 67|161r15
+27n7*shared_rent{15E9} 67|162r15
+28n7*student_expenses{15E9} 67|163r15
+30K12*Expenses_Package[112|47] 31r30
+31A12*Expenses_Array{112|64A12[30]}<15E9>
+34E9*Finance_Items 34e64 37r115 101r31 67|167r31
+34n27*loan_repayments{34E9} 67|170r15
+34n44*fines_and_transfers{34E9} 67|171r15
+37K12*Finance_Package[112|47] 38r29
+38A12*Finance_Array{112|64A12[37]}<34E9>
+40E9*Income_Items 83e24 85r24 92r32 94r115 99r31 67|13r16 99r31
+41n7*wages{40E9} 67|102r15
+42n7*luncheon_Vouchers{40E9} 67|103r15
+43n7*self_Employment{40E9} 67|104r15
+44n7*investment_Income{40E9} 67|105r15
+45n7*pensions{40E9} 67|106r15
+46n7*other_Income{40E9} 67|107r15
+47n7*income_Tax{40E9} 92r51 67|108r15
+48n7*national_insurance{40E9} 67|109r15
+49n7*disability_living_allowance{40E9} 85r43 67|65r15 110r15
+50n7*attendance_allowance{40E9} 67|66r15 111r15
+51n7*constantattendance_allowance{40E9} 67|67r15 112r15
+52n7*social_fund{40E9} 67|92r15 113r15
+53n7*child_benefit{40E9} 67|73r15 114r15
+54n7*guaranteed_pension_credit{40E9} 67|74r15 115r15
+55n7*savings_pension_credit{40E9} 67|75r15 116r15
+56n7*retirement_pension{40E9} 67|80r15 117r15
+57n7*widows_pensions{40E9} 67|81r15 118r15
+58n7*income_support{40E9} 67|82r15 119r15
+59n7*maternity_allowance{40E9} 67|85r15 120r15
+60n7*widowed_mothers_allowance{40E9} 67|86r15 121r15
+61n7*war_disablement_pension{40E9} 67|89r15 122r15
+62n7*war_widow_pension{40E9} 67|93r15 123r15
+63n7*severe_disability_allowance{40E9} 67|68r15 124r15
+64n7*disabled_persons_tax_credit{40E9} 67|76r15 125r15
+65n7*invalid_care_allowance{40E9} 67|69r15 126r15
+66n7*income_related_jobseekers_allowance{40E9} 67|83r15 127r15
+67n7*contributory_jobseekers_allowance{40E9} 67|84r15 128r15
+68n7*industrial_injury_disablementBenefit{40E9} 67|71r15 129r15
+69n7*incapacity_benefit{40E9} 67|70r15 130r15
+70n7*working_families_tax_credit{40E9} 67|77r15 131r15
+71n7*new_deal{40E9} 67|90r15 132r15
+72n7*working_tax_credit{40E9} 67|78r15 133r15
+73n7*child_tax_credit{40E9} 67|79r15 134r15
+74n7*any_other_benefit{40E9} 67|91r15 135r15
+75n7*widows_payment{40E9} 67|87r15 136r15
+76n7*unemployment_redundancy_insurance{40E9} 67|88r15 137r15
+77n7*winter_fuel_payments{40E9} 85r74 92r65 67|94r15 138r15
+78n7*trade_union{40E9} 67|139r15
+79n7*friendly_society_benefits{40E9} 67|140r15
+80n7*private_sickness_scheme{40E9} 67|141r15
+81n7*accident_insurance_scheme{40E9} 67|142r15
+82n7*hospital_savings_scheme{40E9} 67|143r15
+83n7*health_insurance{40E9} 67|144r15
+85E12*Benefits{40E9} 90r36 114r63 67|25r16 53r63 61r36
+87E9*Broad_Benefits 87e154 89r31 90r54 110r122 67|40r31 55r21 61r54 62r12
+87n29*income_support{87E9} 67|43r15 83r60
+87n45*tax_credits{87E9} 67|44r15 79r41
+87n58*child_benefit{87E9} 67|45r15 73r38
+87n73*state_pension{87E9} 67|46r15 81r40
+87n88*illness_and_disability{87E9} 67|47r15 72r21
+87n112*contributory_unemployment{87E9} 67|48r15 84r58
+87n139*other_benefit{87E9} 67|49r15 94r45
+89V13*Pretty_Print{string} 89>27 67|40b13 51l8 51t20
+89e27 b{87E9} 67|40b27 42r12
+90V13*Map_Broad_Benefit{87E9} 90>32 67|27s27 55s39 61b13 97l8 97t25
+90e32 b{85E12} 67|61b32 64r12
+92E12*Calculated_Items{40E9}
+94K12*Incomes_Package[112|47] 95r29 96r29 97r27 104r101 105r103 106r103 67|4r8
+. 10r11
+95A12*Incomes_Array{112|64A12[94]}<40E9> 104r40 105r34 107r41 108r41 113r48
+. 115r48 67|3r41 9r41 21r48 33r48
+96A12*Incomes_Rates{112|61A12[94]}<40E9> 104r63 106r34
+97R12*Incomes_Set{112|56R12[94]} 107r64 108r64 67|3r64 9r64 11r14
+99V13*Pretty_Print{string} 99>27 67|99b13 146l8 146t20
+99e27 t{40E9} 67|99b27 101r12
+100V13*Pretty_Print{string} 100>27 67|148b13 165l8 165t20
+100e27 e{15E9} 67|148b27 150r12
+101V13*Pretty_Print{string} 101>27 67|167b13 173l8 173t20
+101e27 f{34E9} 67|167b27 169r12
+104V13*Calc_One_Income=104:117{50|25F9}
+104a30 incomes{112|63A9[94]}
+104a55 rates{112|60A9[94]}
+105V13*To_String=105:119{string}
+105a24 incomes{112|63A9[94]}
+105b49 break_lines{boolean}
+106V13*To_String=106:119{string}
+106a24 incomes{112|60A9[94]}
+106b49 break_lines{boolean}
+107V13*Non_Zero_Incomes{97R12} 107>31 67|6s40 9b13 19l8 19t24
+107a31 incomes{95A12} 67|9b31 14r14
+108V13*Contains_Incomes{boolean} 108>31 108>56 67|3b13 7l8 7t24
+108a31 incomes{95A12} 67|3b31 6r58
+108r56 which{97R12} 67|3b56 6r30
+110K12*Broad_Benefits_Package[112|47] 111r36 112r34 67|22r11 34r8 54r11
+111A12*Broad_Benefits_Array{112|64A12[110]}<87E9>
+112R12*Broad_Benefits_Set{112|56R12[110]} 113r71 114r39 115r71 67|21r71 23r13
+. 33r71 53r39
+113V13*Contains_Broad_Benefits{boolean} 113>38 113>63 67|33b13 37l8 37t31
+113a38 incomes{95A12} 67|33b38 36r65
+113r63 which{112R12} 67|33b63 36r30
+114V13*Benefit_In_Broad_Set{boolean} 114>35 114>59 67|53b13 58l8 58t28
+114r35 s{112R12} 67|53b35 57r24
+114e59 b{85E12} 67|53b59 55r58
+115V13*Non_Zero_Broad_Benefits{112R12} 115>38 67|21b13 31l8 31t31 36s40
+115a38 incomes{95A12} 67|21b38 26r14
+X 67 model-incomes.adb
+11r7 set{66|97R12} 15m30 15r30 18r14
+13e11 i{66|40E9} 14r22 15r35
+23r7 set{66|112R12} 27m22 27r22 30r14
+25e11 i{66|85E12} 26r22 27r45
+55e7 bb{66|87E9} 57r27
+62e7 bb{66|87E9} 72m15 73m32 79m35 81m34 83m54 84m52 94m39 96r14
+X 112 t_utils.ads
+31E9 T 66|30r111 37r110 94r110 110r117
+36F9 Rate_Type 66|30r45 37r44 94r44 110r51
+41F9 Amount_Type 66|30r62 37r61 94r61 110r68
+45D9 Counter_Type 66|30r83 37r82 94r82 110r89
+47k9*T_Utils 66|8w6 30r36 37r35 94r35 110r42 112|159e12
+54K12*Set_Ops[10|44] 67|4r24[66|94] 15r13[66|94] 22r34[66|110] 34r31[66|110]
+. 54r34[66|110]
+56R12*Set{10|50R9[54[66|94]]} 66|97r43[94] 112r57[110]
+60A9*Abs_Rate_Array(50|25F9)<66|40E9>
+61A12*Rate_Array{60A9[66|94]}<66|40E9> 66|96r45[94]
+63A9*Abs_Amount_Array(50|25F9)<66|15E9>
+64A12*Amount_Array{63A9[66|30]}<66|15E9> 66|31r47[30] 38r45[37] 95r45[94]
+. 111r59[110]
+81V13*To_String{string} 66|106r119[94]
+82V13*To_String{string} 66|105r119[94]
+95V13*Sum{50|25F9} 66|104r117[94]
+

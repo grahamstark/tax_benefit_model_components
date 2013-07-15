@@ -1,0 +1,341 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnvnnvnvvvnnnvnnnnvnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnn
+
+U base_model_types%b	base_model_types.adb	1caa0a2b NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U base_model_types%s	base_model_types.ads	e0c2d34a EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_maps%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali  EA
+W ada.text_io.decimal_aux%s  a-tideau.adb	a-tideau.ali
+W ada.text_io.decimal_io%s
+W ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+W system.val_bool%s	s-valboo.adb		s-valboo.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorma.adb		20110419093131 2a91a047
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideau.ads		20110419093132 d7d2561e
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-tideio.adb		20110419093132 e8a277df
+D a-tienau.ads		20110419093133 6a9c157b
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tienio.adb		20110419093133 847b34a6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D base_model_types.adb	20110629160446 8f35bf26
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-string.ads		20110419093138 46b01415
+D s-ststop.ads		20110419093139 ee472be4
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valboo.ads		20110419093139 fa926c1e
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 43|11r6 12r6 13r6 14r6 61r47 66r28 67r27 68r26 69r30 72r30
+. 82r34 85r40 88r32 91r39 125r45 126r19 129r14 44|8r6 8r23 10r6 10r31 16r11
+X 4 a-contai.ads
+16K13*Containers 24e19 43|13r10 14r10 82r38 85r44 88r36 91r43 125r49
+X 8 a-coorma.ads
+39+9 Key_Type 43|126r7
+40+9 Element_Type 43|127r7
+42V18 "<"{boolean} 43|129r7
+43V18 "="{boolean} 43|128r7
+45k24*Ordered_Maps 256e32 43|14w21 125r60
+51R9*Map 43|130r59[125]
+109U14*Include 44|22s14[43|125]
+114U14*Replace 44|20s14[43|125]
+157V13*Contains{boolean} 44|19s15[43|125]
+186R9 Node_Type
+187P9 Node_Access(186R9[43|125])
+X 9 a-coorma.adb
+47V13 Color{10|35E9} 13|45i19[43|125]
+50V13 Left{8|187P9} 13|41i19
+53V13 Parent{8|187P9[43|125]} 13|39i19[43|125]
+56V13 Right{8|187P9[43|125]} 13|43i19[43|125]
+59U14 Set_Parent 13|40i19[43|125]
+62U14 Set_Left 13|42i19
+65U14 Set_Right 13|44i19
+68U14 Set_Color 13|46i19
+X 15 a-convec.ads
+38I9 Index_Type 43|82r82 85r94 88r78 91r92
+39+9 Element_Type 43|82r58 85r64 88r56 91r63
+43k24*Vectors 378e27 43|13w21 82r49 85r55 88r47 91r54
+53R9*Vector 43|83r42[82] 86r54[85] 89r38[88] 92r52[91]
+X 22 a-string.ads
+16K13*Strings 35e16 43|12r10 126r23 129r18 44|10r10 10r35 16r15
+X 23 a-strbou.ads
+39K21*Bounded 914e24 44|10w18 10r43
+162V16*"="{boolean}<25|163p13> 15|41i18[73|25]
+X 26 a-strunb.ads
+76K21*Unbounded 489e26 43|12w18 126r31 129r26 44|16r23
+79R9*Unbounded_String 473e14 43|126r41 44|17r11
+94V13*To_Unbounded_String{79R9} 44|17s31
+166V13*"="{boolean}<18|62p9> 15|41i18
+178V13*"<"{boolean} 43|129r36
+X 28 a-textio.ads
+49K13*Text_IO 471e16 43|11w10 61r51 66r32 67r31 68r30 69r34 72r34 44|8w10
+. 8r27
+X 30 a-tideio.ads
+45k21*Decimal_IO 88e27 43|66r40
+X 33 a-tienio.ads
+44E9 Enum 43|72r58
+46k21*Enumeration_IO 75e31 43|72r42
+X 36 a-tiflio.ads
+45k21*Float_IO 88e25 43|67r39
+X 39 a-tiinio.ads
+45k21*Integer_IO 84e27 43|61r59 68r38 69r42
+X 43 base_model_types.ads
+18K9*Base_Model_Types 134l5 134e21 44|13b14 237l5 237t21
+25F9*Real<long_float> 29r20 30r22 31r27 67r49 105r30 105r55 107r31 107r45
+. 112r30 112r43 113r52 114r35 115r35 117r32 117r44 119r34 119r46 44|69r31
+. 69r45 70r12 71r12 82r30 82r55 133r30 133r43 134r12 135r12 147r30 147r44
+. 155r35 164r52 169r14 172r34 227r32 227r44 232r34 232r46
+27D9*Counter_Type 35r20 66r52 80r60 85r80
+29F12*Rate{25F9} 38r22 49r80 50r89 75r52 88r72 94r43 95r39 96r45 97r41 44|27r89
+. 28r11 63r80 65r14 65r51 83r12 84r12 85r12 86r12 87r12 88r12 89r12 90r12
+. 188r43 197r45
+30F12*Amount{25F9} 39r22 76r54 82r74 100r44 105r76 121r35 121r51 122r35 122r51
+. 127r23 132r80 44|15r80 79r14 82r75 116r14 178r35 178r51 183r35 183r51 206r44
+. 207r12 216r23
+31F12*Probability{25F9}
+33I9*Big_Integer<long_integer> 69r54 78r59 91r79
+35d4*C100{27D9}
+37N4*MISS 44|124r16 127r16 166r15
+38f4*MISS_R{29F12} 44|73r15 76r15 92r16 95r16 98r16 101r16 104r16 107r16
+. 110r16 113r16 137r16 140r16 149r15 157r15 174r33
+39f4*MISS_M{30F12}
+46E9*Periods 46e46 47r38 49r41 49r63 50r50 50r72 44|27r50 27r72 63r41 63r63
+46n22*day{46E9} 44|31r12 33r18 40r18 47r18 54r18
+46n27*week{46E9} 44|34r18 38r12 41r18 48r18 55r18
+46n33*month{46E9} 44|35r18 42r18 45r12 49r18 56r18
+46n40*year{46E9} 44|36r18 43r18 50r18 52r12 57r18
+47a4*DAYS_PER_PERIOD(positive) 44|65r20 65r57
+49V13*Ratio_Between{29F12} 49>28 49>50 44|63b13 66l8 66t21
+49e28 old_period{46E9} 44|63b28 65r37
+49e50 new_period{46E9} 44|63b50 65r74
+50V13*Standard_Ratio_Between{29F12} 50>37 50>59 44|27b13 61l8 61t30
+50e37 old_period{46E9} 44|27b37 30r12
+50e59 new_period{46E9} 44|27b59 32r15 39r15 46r15 53r15
+52R9*Record_Indicator 55e14
+53i7*startPos{natural}
+54i7*counter{natural}
+60I9*Very_Large_Positive_Type<long_integer> 61r71
+61K12*Very_Large_Positive_Text_IO[39|45]
+66K12*Count_IO[30|45]
+67K12*Real_IO[36|45] 70r28 71r30
+68K12*Int_IO[39|45]
+69K12*Big_Int_IO[39|45]
+70K12*Rate_IO=70:28
+71K12*Amount_IO=71:30
+72K12*Boolean_IO[33|46]
+75A9*Rate_Array(29F12)<integer> 94r27 94r57 95r23 95r53 44|188r27 188r57
+. 189r11
+76A9*Amount_Array(30F12)<integer> 96r27 96r59 97r23 97r55 99r29 99r51 100r22
+. 44|197r27 197r59 198r11 206r22 215r29 215r51 217r13
+77A9*Integer_Array(integer)<integer>
+78A9*Big_Integer_Array(33I9)<integer>
+79A9*Boolean_Array(boolean)<integer>
+80A9*Counter_Type_Array(27D9)<integer>
+82K12*Amount_Package[15|43] 83r27
+83R12*Amount_List{15|53R9[82]}
+85K12*Counter_Type_Package[15|43] 86r33
+86R12*Counter_Type_List{15|53R9[85]}
+88K12*Rate_Package[15|43] 89r25
+89R12*Rate_List{15|53R9[88]}
+91K12*Big_Integer_Package[15|43] 92r32
+92R12*Big_Integer_List{15|53R9[91]}
+94V13*Multiply{75A9} 94>23 94>39 95r72 44|188b13 195l8 195t16
+94a23 r{75A9} 44|188b23 189r23 191r16 192r18
+94f39 m{29F12} 44|188b39 192r25
+95V13*"*"=95:72{75A9}
+95a19 r{75A9}
+95f35 m{29F12}
+96V13*Multiply{76A9} 96>23 96>41 97r76 44|197b13 204l8 204t16
+96a23 a{76A9} 44|197b23 198r25 200r16 201r18
+96f41 m{29F12} 44|197b41 201r25
+97V13*"*"=97:76{76A9}
+97a19 r{76A9}
+97f37 m{29F12}
+99V13*To_Percent{76A9} 99>25 44|215b13 225l8 225t18
+99a25 r{76A9} 44|215b25 216r38 217r27 220r19 221r29
+100V13*Sum{30F12} 100>18 44|206b13 213l8 213t11 216s33
+100a18 r{76A9} 44|206b18 209r16 210r21
+105V13*Safe_Add{30F12} 105>23 105>26 105>36 105>39 105>42 105>45 105>48 105>51
+. 44|82b13 118l8 118t16
+105f23 a{25F9} 44|82b23 83r20
+105f26 b{25F9} 44|82b26 84r20
+105f36 c{25F9} 44|82b36 85r20
+105f39 d{25F9} 44|82b39 86r20
+105f42 e{25F9} 44|82b42 87r20
+105f45 f{25F9} 44|82b45 88r20
+105f48 g{25F9} 44|82b48 89r20
+105f51 h{25F9} 44|82b51 90r20
+106V13*Safe_Add{integer} 106>23 106>26 44|120b13 131l8 131t16
+106i23 a{integer} 44|120b23 121r23
+106i26 b{integer} 44|120b26 122r23
+107V13*Safe_Mult{25F9} 107>24 107>27 44|69b13 80l8 80t17
+107f24 a{25F9} 44|69b24 70r20 73r11
+107f27 b{25F9} 44|69b27 71r20 76r11
+112V13*Safe_Assign{25F9} 112>26 44|147b13 153l8 153t19
+112f26 r{25F9} 44|147b26 149r11 152r14
+113V13*Safe_Int_To_Real{25F9} 113>31 44|164b13 170l8 170t24
+113i31 r{integer} 44|164b31 166r11 169r19
+114V13*Safe_Real_To_Int{integer} 114>31 44|155b13 161l8 161t24
+114f31 r{25F9} 44|155b31 157r11 160r22
+115V13*Zero_Or_Missing{boolean} 115>31 44|172b13 175l8 175t23
+115f31 r{25F9} 44|172b30 174r16 174r29
+117V13*Differs_By{boolean} 117>25 117>28 117>38 44|227b13 230l8 230t18
+117f25 a{25F9} 44|227b25 229r19
+117f28 b{25F9} 44|227b28 229r23
+117f38 tol{25F9} 44|227b38 229r29
+119V13*Nearly_Equal{boolean} 119>27 119>30 119>40 44|232b13 235l8 235t20
+119f27 a{25F9} 44|232b27 234r19
+119f30 b{25F9} 44|232b30 234r23
+119f40 tol{25F9} 44|232b40 234r29
+121V13*Annual_To_Weekly{30F12} 121>31 44|178b13 181l8 181t24
+121f31 m{30F12} 44|178b31 180r14
+122V13*Weekly_To_Annual{30F12} 122>31 44|183b13 186l8 186t24
+122f31 m{30F12} 44|183b31 185r14
+125K12*Auxiliary_Results_Package[8|45] 130r33
+130R12*Auxiliary_Results{8|51R9[125]} 132r39 44|15r39
+132U14*Add_To_Map 132=26 132>58 132>72 44|15b14 24l8 24t18
+132r26 map{130R12} 44|15b26 19r11 20m10 20r10 22m10 22r10
+132s58 key{string} 44|15b58 17r52
+132f72 value{30F12} 44|15b72 20r26 22r26
+X 44 base_model_types.adb
+17r7 s{26|79R9} 19r25 20r23 22r23
+28f7 r{43|29F12} 33m25 34m26 35m27 36m26 40m25 41m26 42m27 43m26 47m25 48m26
+. 49m27 50m26 54m25 55m26 56m27 57m26 60r14
+70f7 as{43|25F9} 74m10 79r22
+71f7 bs{43|25F9} 77m10 79r27
+83f7 as{43|29F12} 92r11 93m10 116r22
+84f7 bs{43|29F12} 95r11 96m10 116r27
+85f7 cs{43|29F12} 98r11 99m10 116r32
+86f7 ds{43|29F12} 101r11 102m10 116r37
+87f7 es{43|29F12} 104r11 105m10 116r42
+88f7 fs{43|29F12} 107r11 108m10 116r47
+89f7 gs{43|29F12} 110r11 111m10 116r52
+90f7 hs{43|29F12} 113r11 114m10 116r57
+121i7 as{integer} 124r11 125m10 130r14
+122i7 bs{integer} 127r11 128m10 130r19
+133V13 Safe_Add{43|25F9} 133b13 133>23 133>26 144l8 144t16
+133f23 a{43|25F9} 134r20
+133f26 b{43|25F9} 135r20
+134f7 as{43|25F9} 137r11 138m10 143r14
+135f7 bs{43|25F9} 140r11 141m10 143r19
+189a7 x{43|75A9} 192m10 194r14
+191i11 i{integer} 192r12 192r20
+198a7 x{43|76A9} 201m10 203r14
+200i11 i{integer} 201r12 201r20
+207f7 sm{43|30F12} 210m10 210r16 212r14
+209i11 i{integer} 210r23
+216f7 sm{43|30F12} 219r11 221r34
+217a7 x{43|76A9} 221m13 224r14
+220i14 i{integer} 221r15 221r31
+X 73 text_utils.ads
+13K9*Text_Utils 44|11w6 73|107e15
+

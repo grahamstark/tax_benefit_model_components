@@ -1,0 +1,152 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnvvnnnnnnnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U bc.containers.collections%b  bc-containers-collections.adb  6513d350 NE OO PK GE IU
+W bc.containers%s	bc-containers.adb	bc-containers.ali
+W system%s		system.ads		system.ali
+
+U bc.containers.collections%s  bc-containers-collections.ads  fea41724 BN EB NE OO PK GE IU
+W bc%s			bc.ads			bc.ali
+W bc.containers%s	bc-containers.adb	bc-containers.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-stream.ads		20110419093132 2ca4ee37
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D bc.ads		20110415182050 45d2adcb
+D bc-containers.ads	20110415182050 b97da3db
+D bc-containers-collections.ads  20110415182050 47d9b4ff
+D bc-containers-collections.adb  20110415182050 012b90a4
+D system.ads		20110419093140 23e1f70b
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-traent.ads		20110419093139 5221ee41
+X 3 a-finali.ads
+49U14*Initialize<13|46p14>
+50U14*Adjust<13|44p14>
+51U14*Finalize<13|45p14>
+X 7 bc.ads
+29K9*BC 78e7 9|29r9 129r5 10|30r14 119r16 129r16 139r16 144r5
+42X4*Not_Found 10|119r19 129r19 139r19
+X 8 bc-containers.ads
+32+9 Item 9|53r61 57r29 61r61 65r29 74r51 87r52 90r51 94r50 99r30 123r60
+. 10|114r60
+33V18 "="{boolean} 10|47r41
+34k12*Containers 7|29k9 8|171e18 9|29r12 129r8 10|30r17 144r8
+41H9*Container 141e79 9|33r45 105r45
+43y13*Null_Container{41R9}
+47H9*Iterator 164e14 9|111r36 10|42r22 43r23 59r14
+49y13*New_Iterator<47R9> 10|42R40 43R41 59R32
+53x14*Reset 10|63R10
+56x14*Next 10|50R13 51R13 68R13
+59y13*Is_Done{boolean} 10|45R20 46R16 64R20
+62y13*Current_Item{32+9} 10|47R16 47R44 67R25
+138P9 Item_Ptr(32+9) 9|125r64 10|124r64
+155V13 Item_At{138P9} 10|121R14 131R14
+159P9 Container_Ptr(41R9)
+163p7 For_The_Container{159P9} 10|93r47 104r44 116r44 126r44 136r47
+X 9 bc-containers-collections.ads
+29k23 Collections 8|34k12 9|129l19 129e30 10|30b28 144l19 144t30
+33H9*Abstract_Collection<8|41R9> 3|49P14 50P14 51P14 8|43p13 49p13 155p13
+. 9|39r38 45r27 46r32 50p14 50r32 53p14 53r33 56p14 56r33 61p14 61r33 64p14
+. 64r33 69p14 69r33 73p14 73r34 77p13 77r28 80p13 80r25 83p13 83r27 87p13
+. 87r24 90p13 90r23 93p13 93r26 98p13 98r27 105c9 105e71 107P14 107r31 109P14
+. 109r33 10|33r21 57r27 58r32 73r28 79r31 85r33 92r11 93r17 103r11 104r14
+. 115r11 116r14 125r11 126r14 135r11 136r17
+39V13*Are_Equal{boolean} 39>24 39>30 10|32b13 55l8 55t17
+39c24 Left<33R9> 10|33b7 35r22 38r18 42r54
+39c30 Right<33R9> 10|33b13 35r36 38r35 43r55
+45U14*Copy 45>20 46=20 10|57b14 71l8 71t12
+45c20 From<33R9> 10|57b20 59r46 61r23
+46c20 To<33R9> 10|58b20 61m37 61r37 62m17 67m21
+50x14*Clear 50=21 10|62R10
+50r21 C{33R9}
+53x14*Insert 53=22 53>54
+53r22 C{33R9}
+53*54 Elem{8|32+9}
+56x14*Insert 56=22 57>22 57>35
+56r22 C{33R9}
+57*22 Elem{8|32+9}
+57i35 Before{positive}
+61x14*Append 61=22 61>54 10|67R13
+61r22 C{33R9}
+61*54 Elem{8|32+9}
+64x14*Append 64=22 65>22 66>22
+64r22 C{33R9}
+65*22 Elem{8|32+9}
+66i22 After{positive}
+69x14*Remove 69=22 70>22 10|141R7
+69r22 C{33R9}
+70i22 At_Index{positive}
+73x14*Replace 73=23 74>23 74>44
+73r23 C{33R9}
+74i23 At_Index{positive}
+74*44 Elem{8|32+9}
+77V13*Available{natural} 77>24 10|73b13 77l8 77t17
+77r24 C{33R9} 10|73b24 74r29
+80y13*Length{natural} 80>21 10|38R10 38R27 95R10 106R46
+80r21 C{33R9}
+83y13*Is_Empty{boolean} 83>23
+83r23 C{33R9}
+87y13*First{8|32+9} 87>20
+87r20 C{33R9}
+90y13*Last{8|32+9} 90>19
+90r19 C{33R9}
+93y13*Item_At{8|32+9} 93>22 94>22
+93r22 C{33R9}
+94i22 At_Index{positive}
+98y13*Location{natural} 98>23 99>23
+98r23 C{33R9}
+99*23 Elem{8|32+9}
+107U14 Lock<8|147p14> 107=20 10|79b14 83l8 83t12
+107r20 C{33R9} 10|79b20 80r29
+109U14 Unlock<8|149p14> 109=22 10|85b14 89l8 89t14
+109r22 C{33R9} 10|85b22 86r29
+111R9 Collection_Iterator<8|47R9> 113e14 117P14 117r33 119P14 119r32 121P13
+. 121r27 123P13 123r32 125P13 125r36 127P14 127r42 10|91r33 102r27 109r32
+. 114r32 124r36 134r42
+112i7 Index{natural} 10|96m13 98m13 106r17 106r38 111m10 111r22 121r29 131r29
+. 141r21
+117U14 Reset<8|53p14> 117=21 10|91b14 100l8 100t13
+117r21 It{111R9} 10|91b21 93r44 96m10 98m10
+119U14 Next<8|56p14> 119=20 10|109b14 112l8 112t12
+119r20 It{111R9} 10|109b20 111m7 111r19
+121V13 Is_Done{boolean}<8|59p13> 121>22 10|102b13 107l8 107t15 118s10 128s10
+. 138s10
+121r22 It{111R9} 10|102b22 104r41 106r14 106r35
+123V13 Current_Item{8|32+9}<8|62p13> 123>27 10|114b13 122l8 122t20
+123r27 It{111R9} 10|114b27 116r41 118r19 121r26
+125V13 Current_Item_Ptr{8|138P9}<8|169p13> 125>31 10|124b13 132l8 132t24
+125r31 It{111R9} 10|124b31 126r41 128r19 131r26
+127U14 Delete_Item_At<8|70p14> 127=30 10|134b14 142l8 142t22
+127r30 It{111R9} 10|134b30 136r44 138r19 141r18
+X 10 bc-containers-collections.adb
+42c10 Left_Iter<8|47R9> 45r29 47r30 50m19 50r19
+43c10 Right_Iter<8|47R9> 46r25 47r58 51m19 51r19
+59c7 Iter<8|47R9> 63m17 63r17 64r29 67r39 68m19 68r19
+92c7 C<9|33R9> 95r18
+103c7 C<9|33R9> 106r54
+115c7 C<9|33R9> 121r23
+125c7 C<9|33R9> 131r23
+135c7 C<9|33R9> 141r15
+X 11 system.ads
+37K9*System 10|28w6 35r10 61r10 11|153e11
+78V13*"="{boolean} 10|35r16 35r17 61r16
+

@@ -1,0 +1,152 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnvnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U maths_functions.simple_statistics%b  maths_functions-simple_statistics.adb  3fdd31d9 NE OO PK GE
+W maths_functions%s	maths_functions.adb	maths_functions.ali
+
+U maths_functions.simple_statistics%s  maths_functions-simple_statistics.ads  c08ceca6 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.vectors%s
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W maths_functions%s	maths_functions.adb	maths_functions.ali
+W statistics_commons%s	statistics_commons.ads	statistics_commons.ali
+W system%s		system.ads		system.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-numeri.ads		20110419093132 bb51c45a
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D maths_functions.ads	20120308135219 5e8e24f0
+D maths_functions-simple_statistics.ads  20111121114641 0d4b8409
+D maths_functions-simple_statistics.adb  20111121152121 3296b5d0
+D random_normal_draw.ads  20110505104328 d7117888
+D statistics_commons.ads  20111120195708 da8edfbb
+D system.ads		20110419093140 23e1f70b
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerela.ads		20110419093137 692c845e
+D s-parame.ads		20110419093138 03aa3b01
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-traent.ads		20110419093139 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 17|2r6 21r35
+X 2 a-contai.ads
+16K13*Containers 24e19 17|2r10 21r39
+20I9*Count_Type<integer>
+X 4 a-convec.ads
+38I9 Index_Type 17|21r81
+39+9 Element_Type 17|21r59
+43k24*Vectors 378e27 17|2w21 21r50
+53R9 Vector 17|22r40[21] 18|25r44[17|21]
+85V13 Length{2|20I9} 18|20s28[17|21]
+93U14 Clear 18|10s12[17|21]
+101V13 Element{16|12F9} 18|15s19[17|21]
+197U14 Append 18|5s12[17|21]
+292V21 "<"{boolean} 17|23r67[21]
+293k12 Generic_Sorting 17|23r50[21]
+297U17 Sort 18|25s22[17|23]
+X 9 a-ngelfu.ads
+22V13 Sqrt 18|83s34[16|33]
+X 16 maths_functions.ads
+12F9 Real 17|9r55 11r46 13r56 17r73 21r75 18|3r46 13r56 28r73 30r24 30r32
+. 31r24 32r24 32r40 34r24 34r37 50r21 50r29 51r13 52r11 73r26 91r27 92r27
+14k9*Maths_Functions 89e20 17|4r17 25r5 18|1r14 109r5
+33K12*Elementary_Functions[9|19] 18|46r11
+X 17 maths_functions-simple_statistics.ads
+4k33 Simple_Statistics 16|14k9 17|25l21 25e38 18|1b30 109l21 109t38
+7R9*Dataset 7|49P14 17|11p14 11r33 12p14 12r40 13p13 13r25 14p13 14r26 15p14
+. 15r34 16p13 16r30 17p13 17r36 22c9 22e63 18|3r33 8r40 13r25 18r26 23r34
+. 28r36 45r30 53r15
+9A9*Measures_Array(16|12F9)<20|7E9> 16r47 18|45r47 48r11
+11U14*Add 11=19 11>42 18|3b14 6l8 6t11
+11r19 data{7R9} 18|3b19 5m7 5r7
+11*42 v{16|12F9} 18|3b42 5r20
+12U14*Remove_All 12=26 18|8b14 11l8 11t18
+12r26 data{7R9} 18|8b26 10m7 10r7
+13V13*Get{16|12F9} 13>18 13>34 18|13b13 16l8 16t11 37s22 39s22 41s22 41s53
+. 59s29 60s29 62s21 71s21 91s41 92s41 100s34
+13r18 data{7R9} 18|13b18 15r14
+13i34 n{positive} 18|13b34 15r28
+14V13*Size{natural} 14>19 18|18b13 21l8 21t12 29s40 49s36
+14r19 data{7R9} 18|18b19 20r23
+15U14*Sort 15=20 18|23b14 26l8 26t12 58s13
+15r20 data{7R9} 18|23b20 25m52 25r52
+16V13*Generate{9A9} 16>23 18|45b13 107l8 107t16
+16r23 data{7R9} 18|45b23 49r31 53r26
+17V13*Nth_Percentile{16|12F9} 17>29 17>45 18|28b13 43l8 43t22 103s34 104s35
+17r29 data{7R9} 18|28b29 29r35 37r17 39r17 41r17 41r48
+17i45 which{20|3I12} 18|28b45 32r46 36r11 38r14
+21K12 Dataset_Package[4|43] 22r24 23r34 18|25r28 47r11
+23K12 Dataset_Sorter[4|293] 18|25r7
+X 18 maths_functions-simple_statistics.adb
+29i7 N{natural} 30r38 39r27
+30*7 RN{16|12F9} 31r32
+31*7 PCT_1{16|12F9} 32r32
+32*7 RP{16|12F9} 33r46 34r32 34r49
+33i7 P{positive} 41r27 41r58
+34*7 RM{16|12F9} 41r41 41r68
+48a7 v{17|9A9} 56r17 59m7 60m7 65m7 67m10 67r25 68r17 73r38 75m13 75r39 76m13
+. 76r30 77m13 77r30 78m13 78r30 81m7 81r33 82m7 82r24 83m7 83r40 84r11 85m10
+. 85r27 85r50 86m10 86r27 86r52 94m13 100m13 103m7 104m7 106r14
+49i7 N{natural} 50r35 55r11 59r34 61r21 62r26 66r11 70r21 71r26 88r11 90r39
+. 98r39
+50*7 RN{16|12F9} 65r26 81r56 82r41 85r43 86r45
+51*7 sum{16|12F9} 63m10 63r17 65r20
+52*7 x{16|12F9} 62m10 63r23 71m10 73r34
+53r7 sdata{17|7R9} 58m7 58r7 59r23 60r23 62r15 71r15 91r35 92r35 100r28 103r28
+. 104r29
+61i11 i{integer}
+70i11 i{integer}
+73*13 a{16|12F9} 75r69 76r46 77r46 78r46
+90i13 P{positive} 91r46 92r46
+91*13 V1{16|12F9} 94r30
+92*13 V2{16|12F9} 94r35
+98i13 P{positive} 100r39
+X 20 statistics_commons.ads
+1K9*Statistics_Commons 17|1w6 6r8 20|20e23
+3I12*Percentile{integer} 17|17r53 18|28r53
+7E9*Simple_Measures 17|9r34 20|18e22
+8n7*mean{7E9} 18|65r10 67r28 73r41
+9n7*median{7E9} 18|67r13 94r16 100r16
+10n7*average_deviation{7E9} 18|75r16 75r42 81r10 81r36
+11n7*standard_deviation{7E9} 18|83r10 85r53
+12n7*variance{7E9} 18|76r16 76r33 82r10 82r27 83r43 84r14 86r55
+13n7*skewness{7E9} 18|77r16 77r33 85r13 85r30
+14n7*kurtosis{7E9} 18|78r16 78r33 86r13 86r30
+15n7*minimum{7E9} 18|60r10
+16n7*maximum{7E9} 18|59r10
+17n7*percentile_5{7E9} 18|103r10
+18n7*percentile_95{7E9} 18|104r10
+

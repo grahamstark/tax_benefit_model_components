@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystem type="NISys" instanceName="ni" >
+    <Parameter name="NumNIRateBands" units="timeless" type="int" instanceName="numNIRateBands">
+        <Description>
+            <p>NumNIRateBands</p>
+        </Description>
+        <Journalese>NumNIRateBands</Journalese>
+        <Tooltip>NumNIRateBands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="outRebate" units="percent" type="real" instanceName="outRebate">
+        <Description>
+            <p>rebate for those contracted out of serps</p>
+        </Description>
+        <Journalese>rebate for those contracted out of serps</Journalese>
+        <Tooltip>rebate for those contracted out of serps</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="reducedRate" units="percent" type="real" instanceName="reducedRate">
+        <Description>
+            <p>old lower rate for married women (%)</p>
+        </Description>
+        <Journalese>old lower rate for married women (%)</Journalese>
+        <Tooltip>old lower rate for married women (%)</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class2Rate" units="week" type="real" instanceName="class2Rate">
+        <Description>
+            <p>flat rate for self employed (%)</p>
+        </Description>
+        <Journalese>flat rate for self employed (%)</Journalese>
+        <Tooltip>flat rate for self employed (%)</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class2Floor" units="week" type="real" instanceName="class2Floor">
+        <Description>
+            <p>earnings floor for flat rate self employed ni</p>
+        </Description>
+        <Journalese>earnings floor for flat rate self employed ni</Journalese>
+        <Tooltip>earnings floor for flat rate self employed ni</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class4Rate" units="percent" type="real" instanceName="class4Rate">
+        <Description>
+            <p>proportionate rate for self employed (%)</p>
+        </Description>
+        <Journalese>proportionate rate for self employed (%)</Journalese>
+        <Tooltip>proportionate rate for self employed (%)</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class4Floor" units="week" type="real" instanceName="class4Floor">
+        <Description>
+            <p>earnings floor for class4 self employed ni</p>
+        </Description>
+        <Journalese>earnings floor for class4 self employed ni</Journalese>
+        <Tooltip>earnings floor for class4 self employed ni</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class4Ceiling" units="week" type="real" instanceName="class4Ceiling">
+        <Description>
+            <p>earnings ceiling for class4 self employed ni</p>
+        </Description>
+        <Journalese>earnings ceiling for class4 self employed ni</Journalese>
+        <Tooltip>earnings ceiling for class4 self employed ni</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class1Ceiling" units="week" type="real" instanceName="class1Ceiling">
+        <Description>
+            <p>earnings ceiling for employee ni</p>
+        </Description>
+        <Journalese>earnings ceiling for employee ni</Journalese>
+        <Tooltip>earnings ceiling for employee ni</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NIMain" units="timeless" type="real_list"
+        instanceName="nimain" indexName="IncomesSource">
+        <Description>
+            <p>definition of income from main employment</p>
+        </Description>
+        <Journalese>definition of income from main employment</Journalese>
+        <Tooltip>definition of income from main employment</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NIMainSelf" units="timeless" type="real_list"
+        instanceName="nimainSelf" indexName="IncomesSource">
+        <Description>
+            <p>definition of income from main self employment</p>
+        </Description>
+        <Journalese>definition of income from main self employment</Journalese>
+        <Tooltip>definition of income from main self employment</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NISubsid" units="timeless" type="real_list"
+        instanceName="nisubsid" indexName="IncomesSource">
+        <Description>
+            <p>definition of income from subsid employment</p>
+        </Description>
+        <Journalese>definition of income from subsid employment</Journalese>
+        <Tooltip>definition of income from subsid employment</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NISubsidSelf" units="timeless" type="real_list"
+        instanceName="nisubsidSelf" indexName="IncomesSource">
+        <Description>
+            <p>definition of income from subsid self-employment</p>
+        </Description>
+        <Journalese>definition of income from subsid self-employment</Journalese>
+        <Tooltip>definition of income from subsid self-employment</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compCarInBase" units="timeless" type="boolean" instanceName="compCarInBase">
+        <Description>
+            <p>company cars chargable for employee ni</p>
+        </Description>
+        <Journalese>company cars chargable for employee ni</Journalese>
+        <Tooltip>company cars chargable for employee ni</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <ArrayGroup name="NIRateBands" instanceName="nirateBands" counterId="numNIRateBands">
+        <Parameter name="InRates" units="percent" type="real" instanceName="inRates">
+            <Description>
+                <p>In</p>
+            </Description>
+            <Journalese>In</Journalese>
+            <Tooltip>In</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="OutRates" units="percent" type="real" instanceName="outRates">
+            <Description>
+                <p>Out</p>
+            </Description>
+            <Journalese>Out</Journalese>
+            <Tooltip>Out</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="FeeRates" units="percent" type="real" instanceName="feeRates">
+            <Description>
+                <p>Fee</p>
+            </Description>
+            <Journalese>Fee</Journalese>
+            <Tooltip>Fee</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="Floors" units="week" type="real" instanceName="floors">
+            <Description>
+                <p>Floor</p>
+            </Description>
+            <Journalese>Floor</Journalese>
+            <Tooltip>Floor</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>national insurance rates and thresholds</p>
+        </Description>
+        <Tooltip>national insurance rates and thresholds</Tooltip>
+        <Journalese>national insurance rates and thresholds</Journalese>
+    </ArrayGroup>
+    <Description>
+        <p>Employee&apos;s National Insurance</p>
+    </Description>
+    <Tooltip>Employee&apos;s National Insurance</Tooltip>
+</ParameterSystem>

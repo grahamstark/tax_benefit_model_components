@@ -1,0 +1,255 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat2012
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnat2012
+A -gnatA
+P SS ZX
+R nnnnnnnvnvvnnnnvnnnnnnnnvvnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U time_series_chart_generator%b  time_series_chart_generator.adb  4109983f NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W aws%s			aws.ads			aws.ali
+W aws.url%s		aws-url.adb		aws-url.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U time_series_chart_generator%s  time_series_chart_generator.ads  4f80410c BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.vectors%s
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W colours%s		colours.adb		colours.ali
+W general_chart_constants%s  general_chart_constants.ads  general_chart_constants.ali
+W standard_colours%s	standard_colours.ads	standard_colours.ali
+W system%s		system.ads		system.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-cihama.ads		20110419093131 2e09bd21
+D a-coinve.ads		20110419093131 5c90b260
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strhas.ads		20110419093132 0fca75f9
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-teioed.ads		20110419093132 8ca49dac
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D aws.ads		20110419100014 6b5be055
+D aws-containers.ads	20110419100014 675acf9b
+D aws-containers-tables.ads  20110419100014 3dc2e113
+D aws-parameters.ads	20110419100014 0f8312c2
+D aws-url.ads		20110419100014 f581e002
+D colours.ads		20110415182054 24708896
+D general_chart_constants.ads  20120404123915 843e9c9c
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D standard_colours.ads	20110415182055 6474f2a0
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-string.ads		20110419093138 46b01415
+D s-ststop.ads		20110419093139 ee472be4
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+D time_series_chart_generator.ads  20120411162316 c9d0635a
+D time_series_chart_generator.adb  20120413135952 42a53d49
+X 1 ada.ads
+16K9*Ada 19e8 63|1r6 5r6 7r6 20r8 23r8 58r37 64|2r6 4r6 5r6 37r8 38r8 39r8
+X 2 a-calend.ads
+36K13*Calendar 358e17 63|5w10 23r12
+44I12*Year_Number{integer} 63|32r29 73r29 64|15r29 95r58 96r33 97r58
+X 5 a-contai.ads
+16K13*Containers 24e19 63|7r10 58r41
+20I9*Count_Type<integer>
+X 11 a-convec.ads
+38I9 Index_Type 63|60r7
+39+9 Element_Type 63|59r7
+43k24*Vectors 378e27 63|7w21 58r52
+53R9 Vector 63|61r43[58]
+85V13 Length{5|20I9} 64|59s33[63|58] 98s99[63|58] 98s138[63|58]
+101V13 Element{63|52R9} 64|61s38[63|58]
+197U14 Append 64|87s34[63|58]
+X 18 a-string.ads
+16K13*Strings 35e16 63|1r10 20r12 64|2r10 5w10 37r12 39r12
+33n37*Both{33E9} 64|43r79
+X 19 a-strbou.ads
+162V16*"="{boolean}<23|163p13> 11|41i18[62|25]
+X 20 a-strfix.ads
+18K21*Fixed 251e22 64|2w18 37r20
+195V13*Trim{string} 64|43s44
+X 24 a-strunb.ads
+76K21*Unbounded 489e26 63|1w18 20r20
+79R9*Unbounded_String 473e14 63|45r93 55r18 66r18 67r18 68r29 69r29 70r29
+. 64|35r48 36r21 56r37 57r17 90r93 101r13
+82r4*Null_Unbounded_String{79R9} 64|67r29
+119V13*"&"{79R9} 64|65s65 118s21 121s21
+123V13*"&"{79R9} 64|45s40 48s40 65s20 65s30 65s38 65s47 65s53 65s59 66s20
+. 66s30 66s39 66s48 66s54 66s60 66s66 68s23 68s33 68s41 68s50 68s56 68s62
+. 68s68 101s51 101s57 102s19 102s30 103s24 103s35 104s25 104s37 105s31 105s41
+. 106s30 106s47 107s30 107s47 108s28 108s43 109s23 112s21 112s37 113s21 113s40
+. 114s21 114s38 115s21 115s38
+166V13*"="{boolean}<14|62p9> 11|41i18 64|67r26
+X 26 a-textio.ads
+49K13*Text_IO 471e16 64|4r10 38r12
+X 27 a-teioed.ads
+36K21*Editing 194e24 64|4w18 38r20
+X 30 aws.ads
+28K9*AWS 39e8 64|3r6 43r28 68r70 112r39 113r42 114r40 115r40
+X 34 aws-url.ads
+33K13*URL 214e12 64|3w10 43r32 68r74 112r43 113r46 114r44 115r44
+173V13*Encode{string} 64|43s36 68s78 112s47 113s50 114s48 115s48
+X 35 colours.ads
+20K9*Colours 29e12 63|4w6 22r8
+22I9*Byte<short_integer>
+24A9*Colour(22I9)<23E9>
+26V13*To_String{string} 64|63s41
+X 36 general_chart_constants.ads
+1K9*General_Chart_Constants 9e28 63|2w6 21r8
+4E9*Chart_Type 4e87 63|35r29 71r29 64|18r29 91r58
+5E9*Chart_Size 5e47 63|45r55 64|90r55 92r58
+5n25*thumb{5E9} 64|111r19
+6E9*Chart_Style 6e48 63|72r29 64|93r58
+6n33*normal{6E9} 63|72r45
+7E9*Pre_Or_Post 7e67 63|36r29 74r29 64|19r29 94r58
+7n26*pre{7E9} 64|117r25
+7n31*post{7E9} 64|98r64 120r25
+7n37*both{7E9} 64|120r48
+7n43*abs_change{7E9} 64|117r76
+7n55*pct_change{7E9} 64|117r47
+X 39 standard_colours.ads
+3K9*Standard_Colours 69e21 63|3w6 24r8
+7E9*Standard_Colours_Type 36e17 63|42r22 54r18 64|80r22
+38a4*STD_COLOURS(35|24A9) 64|63r52
+X 62 text_utils.ads
+13K9*Text_Utils 107e15 64|1w6 9r8
+30V13*Censor_String{string} 64|91s43 92s43 93s43 94s43 95s43 97s43 99s43
+48V13*TS=48:72{string} 64|68s86 112s55 113s58 114s56 115s56
+49V13*TuS=49:73{24|79R9} 64|22s28 23s22 24s25 26s29 27s29 84s19
+X 63 time_series_chart_generator.ads
+11E9 Index_Type 13r37
+12F9 Real_Type 13r53 64|43r50
+13A9 Time_Series_Array(12F9)<11E9> 40r22 53r18 64|35r21 78r22 96r67
+14i4 num_systems{positive} 62r40
+15k9*Time_Series_Chart_Generator 11z9 12z9 13z9 14z4 77l5 77e32 64|7b14 127l5
+. 127t32
+26R9*Time_Series_Chart 28p13 36r50 38p14 39r29 45p13 45r29 64c9 75e14 64|19r50
+. 20r15 77r29 90r29
+28V13*Construct{26R9} 29>7 30>7 31>7 32>7 33>7 34>7 35>7 36>7 64|11b13 31l8
+. 31t17
+29s7 plotter_url{string} 64|12b7 22r33
+30s7 title{string} 64|13b7 23r27
+31s7 subtitle{string} 64|14b7 24r30
+32i7 start_year{2|44I12} 64|15b7 25r27
+33s7 x_axis_label{string} 64|16b7 26r34
+34s7 y_axis_label{string} 64|17b7 27r34
+35e7 ctype{36|4E9} 64|18b7 28r22
+36e7 system{36|7E9} 64|19b7 29r23
+38U14*Add_Data_Series 39=7 40>7 41>7 42>7 43>7 64|76b14 88l9 88t24
+39r7 chart{26R9} 64|77b7 87m7 87r7
+40*7 data{13A9} 64|78b7 86r18
+41s7 label{string} 64|79b7 84r24
+42e7 colour{39|7E9} 64|80b7 85r20
+43i7 which_system{positive} 64|81b7 87r19
+45V13*To_URL{24|79R9} 45>21 45>48 45>67 64|90b13 124l8 124t14
+45r21 chart{26R9} 64|90b21 91r76 93r77 94r77 95r77 96r48 98r49 98r83 98r122
+. 101r33 112r59 113r62 114r60 115r60 117r10 117r32 117r61 118r48 120r10 120r33
+. 121r49
+45e48 size{36|5E9} 64|90b48 92r76 111r11
+45b67 is_svg{boolean} 64|90b67 100r48
+52R9 Data_Item 56e14 59r23 64|61r22 82r12
+53*7 data{13A9} 64|65r83 86m10
+54e7 colour{39|7E9} 64|63r68 85m10
+55r7 label{24|79R9} 64|67r20 68r93 84m10
+58K12 Data_List_Package[11|43] 61r25
+61R12 Data_List{11|53R9[58]} 62r57 64|56r18
+62A9 Data_List_Array(61R12)<integer> 65r18
+65a7 data{62A9} 64|87m13 98r89 98r128 118r54 121r55
+66r7 title{24|79R9} 64|23m13 112r65
+67r7 subtitle{24|79R9} 64|24m13 113r68
+68r7 x_axis_label{24|79R9} 64|26m13 114r66
+69r7 y_axis_label{24|79R9} 64|27m13 115r66
+70r7 plotter_url{24|79R9} 64|22m13 101r39
+71e7 ctype{36|4E9} 64|28m13 91r82
+72e7 style{36|6E9} 64|93r83
+73i7 start_year{2|44I12} 64|25m13 95r83 96r54
+74e7 system{36|7E9} 64|29m13 94r83 98r55 117r16 117r38 117r67 120r16 120r39
+X 64 time_series_chart_generator.adb
+20r7 chart{63|26R9} 22m7 23m7 24m7 25m7 26m7 27m7 28m7 29m7 30r14
+34V13 Data_To_Str{24|79R9} 34b13 35>7 52l9 52t20 65s67
+35*7 data{63|13A9} 41r16 43r67 47r19
+36r7 data_string{24|79R9} 45m13 45r28 48m13 48r28 51r14
+41e11 i 43r73 47r14
+43a13 ds{string} 45r42
+54V14 Write_Data_Group{24|79R9} 54b14 55>8 56>9 73l8 73t24 118s23 121s23
+55s8 prefix{string} 65r40 66r41 68r43
+56r9 dl{63|61R12} 59r30 61r35
+57r8 s{24|79R9} 65m13 65r18 66m13 66r18 68m16 68r21 72r14
+59i11 i{integer} 61r47 62r56 62r81
+61r13 it{63|52R9} 63r65 65r80 67r17 68r90
+62a13 iss{string} 65r55 66r56 68r58
+63a13 colstr{string} 66r68
+82r7 di{63|52R9} 84m7 85m7 86m7 87r42
+91a7 type_str{string} 102r21
+92a7 size_str{string} 103r26
+93a7 style_str{string} 104r27
+94a7 sys_str{string} 105r33
+95a7 start_year_str{string} 107r32
+96i7 end_year{2|44I12} 97r77
+97a7 end_year_str{string} 108r30
+98i7 num_series{natural} 99r73
+99a7 num_series_str{string} 106r32
+100a7 svg_str{string} 109r25
+101r7 url{24|79R9} 112m10 112r17 113m10 113r17 114m10 114r17 115m10 115r17
+. 118m10 118r17 121m10 121r17 123r16
+

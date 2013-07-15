@@ -1,0 +1,191 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnvnnnnnvvnvnnvvvnnvnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnn
+
+U za.model.params%b	za-model-params.adb	13f6473c NE OO PK IU
+W za.model%s		za-model.ads		za-model.ali
+
+U za.model.params%s	za-model-params.ads	4827fca9 EE OO PF PK IU
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W za.model%s		za-model.ads		za-model.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D base_model_types.ads	20120210022130 c07d5626
+D format_utils.ads	20110503195008 de80730a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20110415182054 69a11afd
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D tax_utils.ads		20110613201228 600316b9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+D za.ads		20110415182049 e958296a
+D za-model.ads		20110415182049 b4a526d2
+D za-model-params.ads	20110415182049 fc82da7b
+D za-model-params.adb	20110415182049 ef749d47
+D za-model_types.ads	20110415182049 a55e8de4
+X 18 a-strbou.ads
+162V16*"="{boolean}<20|163p13> 11|41i18[59|25]
+X 21 a-strunb.ads
+166V13*"="{boolean}<13|62p9> 11|41i18
+X 30 base_model_types.ads
+25F9*Real<long_float>
+29F12*Rate{25F9} 63|45r39 49r40 51r40 89r34 89r42 126r54 64|25r54
+30F12*Amount{25F9} 63|26r53 29r58 38r26 39r26 40r26 41r26 48r36 50r36 52r28
+. 53r32 85r34 85r44 86r34 86r44 87r34 87r44 88r34 88r44 91r34
+X 57 t_utils.ads
+60A9*Abs_Rate_Array(30|25F9)<65|223E9>
+61A12*Rate_Array{60A9[65|469]}<65|433E9>
+63A9*Abs_Amount_Array(30|25F9)<65|223E9>
+X 58 tax_utils.ads
+58R9*Rates_And_Bands 63|36r26[62|37] 57r23[62|37]
+X 61 za.ads
+48K9*ZA 74e7 63|24r9 128r5 64|23r14 32r5
+X 62 za-model.ads
+30K12*Model 61|48k9 62|41e13 63|24r12 128r8 64|23r17 32r8
+X 63 za-model-params.ads
+24K18*Params 62|30k12 63|128l14 128e20 64|23b23 32l14 32t20
+26A9*Amount_By_Gender(30|30F12)<65|78E9>
+27A9*Age_By_Gender(65|510I12)<65|78E9> 37r26 67r17 95r17 99r17 100r17 104r17
+. 105r17 109r17
+29A9*Per_Person_Allowance(30|30F12)<65|503I9> 44r41
+31R9*Income_Tax_Rec 54e15 120r20
+36r7*rbs{58|58R9[62|37]}
+37a7*age_limit{27A9}
+38f7*rebate{30|30F12}
+39f7*age_rebate{30|30F12}
+40f7*threshold{30|30F12}
+41f7*age_threshold{30|30F12}
+42a7*taxable_income{65|475A12}
+43a7*threshold_income{65|475A12}
+44a7*health_capped_amount_per_person{29A9}
+45f7*health_income_limitation_rate{30|29F12}
+46i7*health_age_limit{65|510I12}
+47b7*health_allow_all_for_disabled{boolean}
+48f7*pension_contribution_limit{30|30F12}
+49f7*pension_income_limitation_rate{30|29F12}
+50f7*annuity_contribution_limit{30|30F12}
+51f7*annuity_income_limitation_rate{30|29F12}
+52f7*interest_exemption{30|30F12}
+53f7*age_interest_exemption{30|30F12}
+56R9*One_UIF_Rec 68e14 72r19
+57r7*rbs{58|58R9[62|37]}
+58a7*income{65|475A12}
+63i7*minimum_hours{65|514I12}
+67a7*max_age{27A9}
+70R9*UIF_Rec 73e14 121r20
+71r7*employers{56R9}
+72r7*employees{56R9}
+75R9*Indirect_Tax_Rec 81e14 122r20
+76a7*selling_price{65|496A12}
+77a7*vat{65|498A12}
+78a7*proportion_vatable{65|498A12}
+79a7*advalorem{65|498A12}
+80a7*specific{65|496A12}
+84R9*Means_Tested_Benefit 92e14 94r44 98r37 103r42 108r40
+85f7*income_threshold_single{30|30F12}
+86f7*income_threshold_couple{30|30F12}
+87f7*capital_threshold_single{30|30F12}
+88f7*capital_threshold_couple{30|30F12}
+89f7*withdrawal_rate{30|29F12}
+90a7*incomes_list{65|475A12}
+91f7*amount_payable{30|30F12}
+94R9*Grant_For_Older_Persons_Rec<84R9> 96e14 113r33
+95a7*min_age{27A9}
+98R9*Disability_Grant_Rec<84R9> 101e14 115r33
+99a7*max_age{27A9}
+100a7*min_age{27A9}
+103R9*Care_Dependency_Grant_Rec<84R9> 106e14 114r33
+104a7*min_age{27A9}
+105a7*max_age{27A9}
+108R9*Child_Support_Grant_Rec<84R9> 110e14 116r33
+109a7*max_age{27A9}
+112R9*Benefit_Rec 117e14 123r20
+113r7*grant_for_older_persons{94R9}
+114r7*care_dependency_grant{103R9}
+115r7*disability_grant{98R9}
+116r7*child_support_grant{108R9}
+119R9*Parameters 124e14 126r38 64|25r38
+120r7*income_tax{31R9}
+121r7*uif{70R9}
+122r7*indirect{75R9}
+123r7*benefits{112R9}
+126U14*Uprate 126=22 126>50 64|25b14 28l8 28t14
+126r22 params{119R9} 64|25b22
+126f50 r{30|29F12} 64|25b50
+X 65 za-model_types.ads
+78E9*Gender_Type 63|26r36 27r33 65|81e20
+475A12*Included_Income_Array{57|61A12[469]}<433E9> 63|42r26 43r26 58r23 90r34
+496A12*Expenditure_Array{57|63A9[485]}<223E9> 63|76r25 80r25
+498A12*Expenditure_Rate_Array{57|60A9[485]}<223E9> 63|77r25 78r28 79r25
+503I9*Person_Count<integer>
+504I12*Person_Range{503I9} 63|29r40
+510I12*Age_Range{natural} 63|27r50 37r54 46r26 46r39 67r45 95r45 99r45 100r45
+. 104r45 105r45 109r45
+514I12*Hours_Of_Work_Per_Month{natural} 63|63r23 63r50
+

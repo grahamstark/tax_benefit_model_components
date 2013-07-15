@@ -1,0 +1,104 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnvnvnnnnnnnnnnnnvnnvnnnnnnnnnvnnvnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U tb_suite%b		tb_suite.adb		e3c3f07a NE OO SU
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W aunit%s		aunit.adb		aunit.ali
+W aunit.test_suites%s	aunit-test_suites.adb	aunit-test_suites.ali
+W bhps_tests%s		bhps_tests.adb		bhps_tests.ali
+W component_tests%s	component_tests.adb	component_tests.ali
+W input_collection_tests%s  input_collection_tests.adb  input_collection_tests.ali
+W legal_aid_tests%s	legal_aid_tests.adb	legal_aid_tests.ali
+W povline_tests%s	povline_tests.adb	povline_tests.ali
+W system%s		system.ads		system.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D ada_containers.ads	20110816111611 11329e00
+D ada_containers-aunit_lists.ads  20110816111611 d9ebc89a
+D aunit.ads		20110816111611 76cdf7c6
+D aunit-assertions.ads	20110816111611 b7f9ecd6
+D aunit-options.ads	20110816111611 2fedf7fb
+D aunit-simple_test_cases.ads  20110816111611 4111c32f
+D aunit-test_cases.ads	20110816111611 3fb77584
+D aunit-test_filters.ads  20110816111611 f10b2127
+D aunit-test_results.ads  20110816111611 171847c9
+D aunit-test_suites.ads	20110816111611 6821dc24
+D aunit-tests.ads	20110816111611 1da11d49
+D aunit-time_measure.ads  20110816111611 58355f18
+D bhps_tests.ads	20110415182037 a98b9856
+D component_tests.ads	20110415182037 b84cc0a6
+D gnat.ads		20110419093135 fd2ad2f1
+D g-souinf.ads		20110419093135 e66ff50e
+D input_collection_tests.ads  20110415182037 cc97b1d2
+D legal_aid_tests.ads	20110415182037 8359f27c
+D povline_tests.ads	20110415182037 74e1543c
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D tb_suite.adb		20110415182037 a10a633c
+X 16 aunit.ads
+29K9*AUnit 43e10 50|1r6 9r26 11r8
+X 23 aunit-test_suites.ads
+36K15*Test_Suites 81e22 50|1w12 9r32 11r14
+38R9*Test_Suite<24|33R9> 79e14 50|13r38
+39P9*Access_Test_Suite(38R9) 50|9r44 13r13
+43U14*Add_Test 50|15s4 16s4 17s4 18s4 19s4
+X 26 bhps_tests.ads
+7K9*BHPS_Tests 26e15 50|7w6 15r26
+12R9*Test_Case<20|36R9> 12e69 50|15r37
+X 27 component_tests.ads
+4K9*Component_Tests 23e20 50|3w6 16r26
+9R9*Test_Case<20|36R9> 9e69 50|16r42
+X 30 input_collection_tests.ads
+3K9*Input_Collection_Tests 22e27 50|6w6 19r26
+8R9*Test_Case<20|36R9> 8e69 50|19r49
+X 31 legal_aid_tests.ads
+7K9*Legal_Aid_Tests 26e20 50|4w6 17r26
+12R9*Test_Case<20|36R9> 12e69 50|17r42
+X 32 povline_tests.ads
+3K9*PovLine_Tests 21e18 50|5w6 18r26
+7R9*Test_Case<20|36R9> 7e69 50|18r40
+X 50 tb_suite.adb
+9V10*TB_Suite{23|39P9} 9b10
+13p4 result{23|39P9} 15r14 16r14 17r14 18r14 19r14 20r11
+

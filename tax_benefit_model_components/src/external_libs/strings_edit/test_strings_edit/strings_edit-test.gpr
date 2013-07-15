@@ -1,0 +1,19 @@
+with "../strings_edit.gpr";
+
+project Strings_Edit.Test is
+
+   for Main use
+       (  "test_strings_edit.adb",
+          "strings_edit-utf8-categorization_generator.adb",
+          "strings_edit-utf8-mapping_generator.adb"
+       );
+   for Source_Files use
+       (  "test_strings_edit.adb",
+          "strings_edit-utf8-categorization_generator.adb",
+          "strings_edit-utf8-mapping_generator.adb"
+       );
+   for Exec_Dir use ".";
+   for Languages use ("Ada");
+
+end Strings_Edit.Test;
+

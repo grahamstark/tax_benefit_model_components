@@ -1,0 +1,159 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnvnnnnnnnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U tabulator.text_io%b	tabulator-text_io.adb	52a21f28 NE OO PK GE
+W io_commons%s		io_commons.adb		io_commons.ali
+W tabulator%s		tabulator.adb		tabulator.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U tabulator.text_io%s	tabulator-text_io.ads	a8fb6a62 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W tabulator%s		tabulator.adb		tabulator.ali
+W za%s			za.ads			za.ali
+W za.model_types%s	za-model_types.adb	za-model_types.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D base_model_types.ads	20120210022130 c07d5626
+D format_utils.ads	20110503195008 de80730a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D io_commons.ads	20110622204001 cb801e8f
+D key_value_io.ads	20120222165140 d58a72d7
+D keyed_text_buffer.ads	20120316154839 a5b8d868
+D line_extractor.ads	20110616140359 c6f73843
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D tabulator.ads		20110415182054 45ad63e2
+D tabulator-text_io.ads	20110622202857 706571b0
+D tabulator-text_io.adb	20110622202857 1ace986c
+D tabulator_commons.ads	20110415182054 c4bdc325
+D text_utils.ads	20120313141900 f389e87b
+D utils.ads		20110415182054 93874c25
+D za.ads		20110415182049 e958296a
+D za-model_types.ads	20110415182049 a55e8de4
+X 1 ada.ads
+16K9*Ada 19e8 60|24r6 31r8
+X 2 a-calend.ads
+44I12*Year_Number{integer}
+X 18 a-strbou.ads
+162V16*"="{boolean}<20|163p13> 11|41i18[63|25]
+X 21 a-strunb.ads
+166V13*"="{boolean}<13|62p9> 11|41i18
+X 23 a-textio.ads
+49K13*Text_IO 471e16 60|24w10 31r12
+52P9*File_Type(369R9) 60|35r29 61|31r29
+165U14*New_Line 61|76s10 85s7
+241U14*Put 61|69s10 71s13 73s10 74s10 75s10 78s7 80s10 82s7 83s7 84s7
+259U14*Put_Line 61|67s7
+X 34 io_commons.ads
+27K9*IO_Commons 54e15 61|22w6 27r8
+35n40*gain_lose_table{35E9} 61|65r10
+39a4*STD_GAIN_LOSE_SCALE_STR{string} 61|67r20
+42U14*Write_Header 61|56s7
+X 59 tabulator.ads
+39F9 Data_Type 61|71r21 73r18 74r18 75r18 80r18 82r15 83r15 84r15
+47E9 Row_Range 61|61r10 61r25 68r18 69r40
+51E9 Col_Range 61|62r10 62r25 70r21 79r18
+60E9 Cell_Values_Range 61|44r10 49r10 54r10
+86k9*Tabulator 202e14 60|29r9 44r5 61|25r14 88r5
+90R9*Table_Type 200e17 60|37r29 61|33r29
+112A9*Simple_Cell_Array(39F9)<47E9><51E9>
+113A9*Simple_Row_Array(39F9)<47E9>
+114A9*Simple_Col_Array(39F9)<51E9>
+119R9*Table_Expression 124e14 61|40r21 45r24 50r24
+120a7 cells{112A9} 61|71r41
+121a7 row_totals{113A9} 61|73r38 74r41 75r41
+122a7 col_totals{114A9} 61|80r38
+123*7 total{39F9} 61|82r35 83r38 84r38
+167V13*Express_Table{119R9} 61|40s41 45s44 50s44
+X 60 tabulator-text_io.ads
+29k19 Text_IO 59|86k9 60|44l15 44e22 61|25b24 88l15 88t22
+34U14*Print 35>10 36>10 37>10 38>10 39>10 40>10 41>10 42>10 61|30b14 86l8
+. 86t13
+35p10 f{23|52P9} 61|31b10 57r10 67r17 69r15 71r18 73r15 74r15 75r15 76r20
+. 78r12 80r15 82r12 83r12 84r12 85r17
+36s10 table_name{string} 61|32b10 59r10
+37r10 tab{59|90R9} 61|33b10 41r10 46r10 51r10
+38i10 table_number{positive} 61|34b10 58r10
+39s10 row_var_name{string} 61|35b10 64r10
+40s10 col_var_name{string} 61|36b10 63r10
+41i10 year{66|37I12} 61|37b10
+42i10 no_change_column{integer} 61|38b10 60r10
+X 61 tabulator-text_io.adb
+40r7 ts{59|119R9} 71r38 73r35 80r35 82r32
+45r7 net_1{59|119R9} 74r35 83r32
+50r7 net_2{59|119R9} 75r35 84r32
+68*11 row{59|47E9} 69r57 71r48 73r50 74r53 75r53
+70*14 col{59|51E9} 71r53
+79*11 col{59|51E9} 80r50
+X 62 tabulator_commons.ads
+36n27*current_cell{36E9} 61|42r10 47r10 52r10
+37n32*counter{37E9} 61|43r10
+37n41*sys1_level{37E9} 61|48r10
+37n53*sys2_level{37E9} 61|53r10
+X 63 text_utils.ads
+13K9*Text_Utils 61|23w6 28r8 63|107e15
+30V13*Censor_String{string} 61|69s25
+X 65 za.ads
+48K9*ZA 60|25r6 32r8 65|74e7
+X 66 za-model_types.ads
+35K12*Model_Types 60|25w9 32r11 66|533e19
+37I12*Simulation_Year_Range{2|44I12} 60|41r29 61|37r29
+

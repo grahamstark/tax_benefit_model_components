@@ -1,0 +1,177 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnnnnnnnvvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnvvnnnnvnnnnnnnnnnnnnn
+
+U financial_functions%b	financial_functions.adb	d275ab85 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W optimiser%s		optimiser.adb		optimiser.ali
+W text_io%s		text_io.ads		text_io.ali
+
+U financial_functions%s	financial_functions.ads	50032820 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.ordered_maps%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-contai.ads		20110419093131 61e5e089
+D a-coorma.ads		20110419093131 6e843799
+D a-coorma.adb		20110419093131 2a91a047
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D financial_functions.ads  20110601102714 3e871fb9
+D financial_functions.adb  20110601102713 92076be0
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D optimiser.ads		20110415182054 7c7a15fb
+D optimiser.adb		20110415182054 415e0923
+D system.ads		20110419093140 23e1f70b
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_io.ads		20110419093141 45d626c9
+X 1 ada.ads
+16K9*Ada 19e8 20|32r6 85r42 21|33r6 105r8
+X 2 a-contai.ads
+16K13*Containers 24e19 20|32r10 85r46
+X 3 a-coorma.ads
+39+9 Key_Type 20|87r7
+40+9 Element_Type 20|86r7
+45k24*Ordered_Maps 256e32 20|32w21 85r57
+51R9 Map 20|89r54[85] 21|63r21[20|85] 64r28[20|85] 65r19[20|85] 67r18[20|85]
+54R9 Cursor 21|75r35[20|85]
+69V13 Key{integer} 21|77s35[20|85]
+71V13 Element{20|40F9} 21|76s33[20|85]
+104U14 Insert 21|67s10[20|85]
+114U14 Replace 21|65s10[20|85]
+151V13 Element{20|40F9} 21|64s19[20|85]
+157V13 Contains{boolean} 21|63s11[20|85]
+173U14 Iterate 21|84s7[20|85]
+186R9 Node_Type
+187P9 Node_Access(186R9)
+X 4 a-coorma.adb
+47V13 Color{5|35E9} 8|45i19
+50V13 Left{3|187P9[20|85]} 8|41i19[20|85]
+53V13 Parent{3|187P9} 8|39i19
+56V13 Right{3|187P9} 8|43i19
+59U14 Set_Parent 8|40i19
+62U14 Set_Left 8|42i19
+65U14 Set_Right 8|44i19[20|85]
+68U14 Set_Color 8|46i19
+X 11 a-except.ads
+55K13*Exceptions 376e19 21|33w10 105r12
+95U14*Raise_Exception 21|112s10 116s10
+X 20 financial_functions.ads
+38F9 Rate 58r25 64r80 64r94 69r61 71r76 76r56 21|38r76 39r11 44r80 44r94
+. 51r14 71r61 88r61 88r75 90r19 99r20 103r56 107r11 108r11
+40F9 Amount 48r98 51r25 52r25 53r25 57r25 69r75 71r42 71r90 86r23 21|38r42
+. 38r90 41r24 53r31 53r56 53r68 53r99 54r54 59r98 61r11 71r75 73r13 76r23
+. 78r23 78r33
+43k9*Financial_Functions 38z9 40z9 91l5 91e24 21|36b14 129l5 129t24
+46R9*Payment_Stream 48r53 69r41 76r32 89c9 89e74 21|59r53 71r41 88r41 100r22
+. 103r32
+48U14*Add_To_Payment_Stream 48=37 48>69 48>88 21|59b14 69l8 69t29
+48r37 stream{46R9} 21|59b37 63r25 64r32 65m23 65r23 67m22 67r22
+48i69 period{positive} 21|59b69 63r34 64r41 65r32 67r31
+48*88 payment{40F9} 21|59b88 61r21
+50R9*Loan_Output 54e14 62r56 80r28 21|49r56 50r14 122r28
+51*7 monthly_payment{40F9} 21|53m12 54r36 124r39
+52*7 total_interest{40F9} 21|55m12 125r38
+53*7 total_payments{40F9} 21|54m12 55r36 126r38
+56R9*Loan_Input 60e14 62r36 21|49r36
+57*7 principal{40F9} 21|53r44 55r58
+58*7 interest_rate{38F9} 21|51r34 53r80
+59i7 num_payments{positive} 21|51r57 54r67
+62V13*Calculate_Loan{50R9} 62>29 21|49b13 57l8 57t22
+62r29 loan{56R9} 21|49b29 51r29 51r52 53r39 53r75 54r62 55r53
+64V13*Monthly_Equivalent_Of_Annual_Interest{38F9} 64>52 21|44b13 47l8 47t45
+64*52 rate_as_annual_percentage{38F9} 21|44b52 46r14
+69V13*Net_Present_Value{40F9} 69>32 69>57 21|71b13 86l8 86t25 90s24
+69r32 stream{46R9} 21|71b32 84r16
+69*57 r{38F9} 21|71b57 78r47
+71V13*Net_Present_Value{40F9} 71>32 71>50 71>72 21|38b13 42l8 42t25
+71*32 payment{40F9} 21|38b32 41r14
+71i50 num_times{positive} 21|38b50 41r41
+71*72 r{38F9} 21|38b72 39r33
+76V13*Find_Apr{38F9} 76>23 21|103b13 120l8 120t16
+76r23 stream{46R9} 21|103b23 110r28
+78X4*Financial_Exception 21|112r27 116r27
+80V13*To_String{string} 80>24 21|122b13 127l8 127t17
+80r24 l{50R9} 21|122b24 124r37 125r36 126r36
+85K12 Payment_Stream_Package[3|45] 89r31 21|60r8 72r8
+X 21 financial_functions.adb
+39*7 u{20|38F9} 41r33 41r37 41r63
+50r7 outp{20|50R9} 53m7 54m7 54r31 55m7 55r31 56r14
+51*7 x{20|38F9} 53r63 53r106
+61*7 v{20|40F9} 64m10 64r15 65r40 67r39
+73*7 npv{20|40F9} 80m10 80r17 85r14
+75U17 accumulate 75b17 75>29 81l11 81t21 84r24
+75r29 pos{3|54R9[20|85]} 76r42 77r40
+76*10 x{20|40F9} 80r24
+77i10 p{positive} 78r57
+78*10 d{20|40F9} 80r28
+88V13 Abs_Present_Value{20|38F9} 88b13 88>32 88>57 91l8 91t25 101r19
+88r32 stream{20|46R9} 90r43
+88*57 r{20|38F9} 90r51
+93K12 Apr_Finder[24|31] 104r8 110r7
+106e7 err{24|34E9[93]} 110m42 110r42 111r11 113r39
+107*7 x{20|38F9} 110m36 110r36 119r14
+108*7 y{20|38F9} 110m39 110r39 115r15 117r35
+X 24 optimiser.ads
+18F9 Real 21|99r7
+20i4 MAX_ITERATIONS{positive} 21|94r7
+21*4 Tolerance{18F9} 21|95r7
+22*4 Increment{18F9} 21|96r7
+23*4 Start{18F9} 21|97r7
+24*4 Stop{18F9} 21|98r7
+25+9 Control_Rec 21|100r7
+29V18 Minimand{18F9} 21|101r7
+31k9*Optimiser 21|32w6 93r30 24|45e14
+34E9 Error_Conditions 21|106r13[93]
+34n30 NoError{34E9[21|93]} 21|106r33[93] 111r18[93]
+39U14 Optimise 21|110s18[93]
+X 43 text_io.ads
+24K9*Text_IO=24:29 21|34w6
+

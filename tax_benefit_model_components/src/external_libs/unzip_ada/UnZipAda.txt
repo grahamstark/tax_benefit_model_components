@@ -1,0 +1,319 @@
+What is UnZip-Ada ?
+===================
+
+UnZip-Ada is a decompression library for zipped files,
+i.e. files compressed by PKZIP (PKWARE Inc. - http://www.pkware.com/)
+or a compatible file compressor like Winzip.
+The presently best Zip-Deflate compressors, in terms of
+compression ratio, are certainly 7-Zip (http://www.7-zip.org/),
+KZip (http://www.advsys.net/ken/utils.htm#kzip) or BJWFlate.
+Of course, there are way better compression methods than what the
+Deflate format allows, but it is another story.
+
+The full source is in Ada - pure Ada, not even a single dependency
+to a compiler, an OS or to an external package or library!
+The price for the *absolute* portability of UnZip-Ada hold in two details:
+time stamps and attributes of decompressed files are not restored 
+as original. That's it!
+
+In addition to UnZip, there is also an UnZip.Streams in order to read
+mixed data _directly from a zip file_ as any input stream,
+without needing to write a temporary uncompressed file.
+
+For details about the code's history, read the file unzip.ads.
+
+
+Features
+========
+
+ - unconditionally portable (see below a list of in-use platforms)
+ - archive can be a file or any other data stream
+ - data to be archived or extracted can be a file or any other data stream
+ - possibility to read the Zip archive's directory once into a Zip_info
+   variable and use it to search quickly and decompress selected archived
+   files, or traverse completely the directory to do some specific task
+ - UnZip decompresses all Zip methods up to and including Deflate (v. 2.x);
+     this includes files made by PKZip, Winzip, Info-Zip's Zip,
+     Java's JARs, OpenDocument files, and many others
+ - Zip.Create for creating archives and Zip.Compress for compression
+     only store & shrink methods so far
+ - decryption (v. 2.x)
+ - task-safe
+
+
+Warning
+=======
+
+There is NO WARRANTY in this software. Read copyright notice in unzip.ads.
+
+Contents
+========
+
+* The subdirectory Zip_Lib contains the full source of the UnZip-Ada library
+  as well as a more general Zip manipulation library, Zip-Ada.
+  All you need for unpacking zip files is there.
+  These sources are in Ada 95, so any Ada 95 and above compiler
+  will like them.
+  I suggest to simply copy this Zip_Lib folder as a sub-folder of your
+  project's sources.
+  The library's "front-end" packages are:
+    - UnZip for uncompressing archives to files
+    - UnZip.Streams for uncompressing archive entries to streams
+    - Zip for some definitions (e.g. the Zip_Info type)
+  The back-end packages are set as private. You don't need (and cannot)
+  refer to them, even to care of them...
+
+* In the main directory, you have the following command-line demo
+  procedures for testing UnZip-Ada:
+
+  - UnZipAda.adb        : a minimal standalone unzipping tool
+  - Comp_Zip.adb        : a small tool for comparing two .zip archives
+  - Test_UnZ_Streams.adb: a tiny demo for UnZip.Streams
+  - ZipAda.adb          : a minimal standalone zipping tool
+                            (only weak compression so far!)
+  - ReZip.adb           : a tool for recompressing Zip archives
+  - ZipTest.adb         : a test for zip archive creation as a general stream
+
+  These demos can be built as main programs. 
+  Some are using Ada 2005's Ada.Directories for directory creation (UnZipAda)
+  or reading time stamps (ZipAda). A Ada 95-only compiler will protest and
+  you can use custom functions instead of the Ada 2005 ones.
+
+* To build the tests, simply "gnatmake" or "adamake" them !
+  You can also start "make_uza" for minimal effort with GNAT.
+
+  There are also the following project files for building them
+  with various systems:
+  - UnZipAda.gpr for GNAT or the GNAT Programming Studio
+  - UnZipAda_A#.sln for Microsoft Visual Studio and A# (uses files
+      UnZipAda_A#.adaproj and UnZipAda_Asharp.gpr)
+  - UnZipAda_ObjectAda.prj for Aonix's ObjectAda 7.2.2 and later  
+
+* The file extensions of source files are GNAT-ish:
+  .ads is specification; .adb is body
+  Rename the files if necessary.
+
+* The Zip format specification is as always in a file called appnote.txt.
+  You find a copy within the Unzip-Ada pack but might find a fresher
+  version here:
+  http://www.pkware.com/business_and_developers/developer/appnote/
+
+Other infos are in zip.ads and unzip.ads, specifications of Zip and UnZip
+packages.
+
+Finally, here are a list of various historical pkzip executables on my PC.
+The names are appended with version number.
+I also add the method names.
+
+  26'334  10.02.89   0:00   pkzip090.exe  Shrink, Reduce 1-4
+  26'796   6.03.89   0:00   pkzip092.exe  Shrink, Reduce 1-4
+  31'342  21.07.89   1:01   pkzip101.exe  Implode (-ex), Shrink (-es)
+  31'408   1.10.89   1:02   pkzip102.exe  Implode (-ex), Shrink (-es)
+  32'880  15.03.90   1:10   pkzip110.exe  Implode (-ei), Shrink (-es)
+  24'411  15.10.91  19:30   pkzip193.exe  Deflate with a benign bug
+  42'166  25.02.93  11:52   pkzip204.exe  Deflate
+  50'663   1.03.99   2:50   pkzip250.exe  Deflate
+
+They come from the Web, under the following
+names (original shareware packages):
+
+  91'520   4.07.99   8:03   pkz090.zip
+ 102'499   4.07.99   8:03   pkz092.zip
+ 131'517   4.07.99   8:03   pkz101.zip
+ 136'192   4.07.99   8:03   pkz102.zip
+ 140'116   4.07.99   8:03   pkz110.zip
+  60'695   9.11.00  16:18   pkz193a.zip
+
+Do a "ftpsearch" to find them - or contact me...
+
+Latest changes
+==============
+
+* Changes in '26', 30-Aug-2008:
+  - zip archive can be any kind of stream (not only a file), for both 
+      extraction (unzip) and creation (zip)
+
+* Changes in '25', 1-May-2008:
+  - some improvements in the demo-tools, no change in the library
+
+* Changes in '24', 27-Mar-2008:
+  - Added case-sensitivity to UnZip.Streams.Open(...)
+  - tl parameter is 'out' from 'in out'
+  - UnZip.Decompress: hinted compressed size limited to Type'Last-2
+      to avoid modular type wraparound
+  - Replaced loop in UnZip.Streams.Read by slice copies
+  - UnZip.Streams.Read doesn't raise End_Error anymore (it's T'Read's job)
+     -> Read is conform to the Ada 2005 standard RM 13.13.1/.2
+  - Zip: exception with message
+
+* Changes in '23', 11-Jan-2008:
+  - Added a new tool, ReZip: recompression using several zippers
+  - Cleanup; buffer-reading up to an eventual end-of-file is simplified,
+      now in a new Zip.ReadBlock
+
+* Changes in '22', 14-Dec-2007:
+  - Added a new Compose_File_Name to UnZip.File_System_Routines
+      see new "-d dir" option in the UnZipAda tool
+  - Added Zip.Compress, Zip.Compress.Shrink
+      see the ZipAda tool, which has now the light "Shrink" compression
+
+* Changes in '21', 12-Sep-2007:
+  - New license: MIT License (more explicit rights, recognized)
+  - Password permanent over multiple files (bug appeared in v. 20)
+
+* Changes in '20', 16-Mar-2007:
+  - UnZ_Glob, UnZ_IO, UnZ_Olds, UnZ_Infl now sub-packages of procedure
+      UnZip.Decompress.Decompress_data (UnZip.Decompress is a private
+      child package of UnZip);
+      no more global variables, then UnZip-Ada is now task-safe.
+  - UnZ_Huft becomes UnZip.Decompress.Huffman
+  - Zip_info dictionary tree is now balanced: optimally fast access to
+      entries, much faster loading too
+
+* Changes in '19', 9-Mar-2007:
+  - New Zip library with Zip stuff concerning not only decompression;
+      packages: Zip, Zip.Headers, Zip.CRC
+
+* Changes in '18', 2-Mar-2007:
+  - Zip_Headers package replaces of UnZ_Head; this packages not only copies
+    various headers from buffers but also directly manages streamed inputs
+    and outputs - it can be then also used for writing Zip archives
+  - Improved support for 1-pass written archives, without compression
+    - needs a hint about "compressed" size! E.g. OpenDocument .ODS
+
+* Changes in '17', 8-Dec-2006:
+  - Long file names in sources
+  - Cleanup with GNAT GPL 2006 and AdaControl 1.6r8
+
+* Changes in '16', 22-Apr-2006:
+  - All I/O via Streams_IO; doesn't help the speed on GNAT and ObjectAda
+    but lets room for it, since whole blocks are read and written
+
+* Changes in '15', 28-Sep-2005:
+  - Compatible with 1-pass written archives (e.g. JAR):
+    fixed parts with data descriptors
+  - "Out" parameter flaw not detected by GNAT or Aonix
+  - Cleanup with GNAT GPL 2005 and AdaControl 
+
+* Changes in '14', 8-Jul-2003:
+  - Cleanup. Looks more like Ada code...
+
+* Changes in '13', 22-Jun-2003:
+  -  Fixed workaround for an incomplete d-tree ("Bug" in PKZIP 1.93a &
+     a 2001 version of KZIP). Test with "incdtree.zip".
+
+* Changes in '12', 13-Dec-2002:
+  -   Fixed decryption for 'stored' mode.
+
+* Changes in '11', 29-Nov-2002:
+  -   New generic procedure for traversing a Zip directory structure
+      As demo, a tool (comp_zip) for comparing two .Zip files, useful
+      when combining zip, pkzip, 7zip, kzip and zipmix to shrink archives
+      and check them after.
+
+* Changes in '10':
+  - improvements around zip_info
+
+* Changes in '09':
+  - appended zipfiles (e.g. self-extracting archives) work for "extract_all"
+  - tolerance for '/' & '\' in directory names
+  - faster recognition of a non-.zip archive
+  - procedure Extract_all_files renamed Extract (coherent with
+    the other Extract's)
+  - test_only option completed with the following:
+    - case_sensitive_match : match file names case sensitively; could be
+      useful for some operating systems designed before 1980
+    - option junk_directories (ignore dir. info : extract to current one)
+  - decryption
+
+* Changes in '08':
+  - exceptions declarations moved from Unz_Glob to the more public Unzip
+
+* Changes in '07':
+  - generic dropped for abandoned implode method (no need for speed)
+    -> smaller code
+  - UnZ_Olds glues all non-inflate decompressions
+
+* New in `06':
+  - Streams implemented (Package Unzip.Streams) !
+    see procedure test_unz_streams (teunzstr.adb) for a small example
+
+* New in `05' (1-Dec-1999):
+  - changed long_long_integer to long_integer (-> purer Ada 95);
+  - demo (unzipada.adb) doesn't use the GNAT-specific `unrestricted_access'
+    attribute (-> purer Ada 95);
+  - now tested successfully on GNAT/DOS, GNAT/NT, GNAT/Linux, ObjectAda
+
+Thanks to...
+============
+
+The ITEC team (NXP Semiconductors), for extending the medium for
+   zip archives from file only to streams of any sort (v.26)
+
+Jérôme Haguet, CADWIN, for nice discussions and contributions
+   (UnZip.File_System_Routines.Compose_File_Name)
+
+Arnaud Lefebvre, CADWIN
+
+Tucker Taft (himself!), SofCheck, for providing fixes (v.24) and
+   an impressive targets in-use list
+
+Pascal Pignard, for testing the UnZipAda.adb tool under Mac OS X
+
+To do
+=====
+  - a serious profiling/optimization exercise, sorting out the
+      external I/O part; see prof_uza.bat
+  - store file attributes in Zip_info
+  - streaming decoding in UnZip.Streams
+
+To do further
+=============
+  - ZipAda with a strong compression
+  - Make a public access to UnZip.Decompress, as a zlib proxy
+
+To do even further, beyond the .zip area
+========================================
+  - translate the free UnRAR source
+  - make a compressor / decompressor with recent techniques (e.g. PAQ)
+
+
+Note on portability
+===================
+
+Portability is unconditional and unrestricted!
+If you still have doubts, here is a list of OS/CPU/Compiler
+combinations where UnZip-Ada was reported to be in use:
+
+OS				CPU			Compiler
+----------------------------------------------------------------------------
+
+MS Windows 95,98,NT,2K,XP	Intel x86 (32 bit)	GNU - GNAT
+MS Windows x64			Intel x64 (64 bit)
+Linux				Intel x86 (32 bit)
+Mac OS X			PowerPC (64 bit)
+Mac OS X			Intel x64 (64 bit)
+Solaris				SPARC (32 or 64 bit)
+Solaris				Intel x64 (64 bit)
+MS-DOS, DR-DOS (Novell)		Intel x86 (16/32 bit)
+OpenBSD				(one of several)
+
+MS Windows 95,98,NT,2K,XP	Intel x86 (32 bit)	Aonix - ObjectAda
+
+MS Windows 95,98,NT,2K,XP	Intel x86 (32 bit)	RR Software - Janus/Ada
+
+MS Windows NT+			Intel x86 (32 bit)	SofCheck - AdaMagic
+MS Windows NT+			Intel x64 (64 bit)
+Linux				Intel x86 (32 bit)
+Mac OS X			PowerPC (64 bit)
+Mac OS X			Intel x64 (64 bit)
+Solaris				SPARC (32 or 64 bit)
+Solaris				Intel x64 (64 bit)
+----------------------------------------------------------------------------
+
+
+=======================
+
+Enjoy!
+
+Gautier de Montmollin

@@ -1,0 +1,26 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U bc.support%s		bc-support.ads		b888a450 NE OO PK IU
+W bc%s			bc.ads			bc.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-unccon.ads		20110419093133 f9eb8f06
+D bc.ads		20110415182050 45d2adcb
+D bc-support.ads	20110415182050 fd5a099b
+D system.ads		20110419093140 23e1f70b
+D s-exctab.ads		20110419093137 66e51330
+D s-stalib.ads		20110419093138 f78bcf95
+X 3 bc.ads
+29K9*BC 78e7 4|29r9 29r27
+X 4 bc-support.ads
+29K12*Support 3|29k9 4|29l30 29e37
+

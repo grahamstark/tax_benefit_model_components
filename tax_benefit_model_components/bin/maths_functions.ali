@@ -1,0 +1,336 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnvnnvnnvvnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnvnvvnnnnvnnnnnnnnnnnnnn
+
+U maths_functions%b	maths_functions.adb	2b5ad216 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U maths_functions%s	maths_functions.ads	f41fd66e BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.numerics.generic_real_arrays%s
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.fortran%s	i-fortra.adb		i-fortra.ali
+W interfaces.fortran.blas%s  i-forbla.adb	i-forbla.ali
+W interfaces.fortran.lapack%s  i-forlap.ads	i-forlap.ali
+W random_normal_draw%s	random_normal_draw.adb	random_normal_draw.ali
+W system%s		system.ads		system.ali
+W system.generic_array_operations%s  s-gearop.adb  s-gearop.ali
+W system.generic_real_blas%s
+W system.generic_real_lapack%s
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-numeri.ads		20110419093132 bb51c45a
+D a-numaux.ads		20110419093132 243fe0b7
+D a-nuflra.ads		20110419093132 49c50e0b
+D a-ngcoty.ads		20110419093132 e7845fd0
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngelfu.adb		20110419093132 d18bc0c2
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D i-fortra.ads		20110419093135 dedf9840
+D i-forbla.ads		20110419093135 72e94996
+D i-forlap.ads		20110419093135 fc33cf68
+D maths_functions.ads	20120308135219 5e8e24f0
+D maths_functions.adb	20120308141520 85120745
+D random_normal_draw.ads  20110505104328 d7117888
+D random_normal_draw.adb  20110923150105 564ce9c8
+D system.ads		20110419093140 23e1f70b
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerebl.adb		20110419093137 893920c2
+D s-gerela.ads		20110419093137 692c845e
+D s-gerela.adb		20110419093137 59ae5999
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-rannum.ads		20110419093138 5eb33f0a
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 35|4r6 5r6 20r36 33r40 36|3r6 4r6 5r6 6r6 8r6 12r8 13r8 42r32
+. 58r27 64r8 78r8 401r20 490r4
+X 2 a-assert.ads
+24K13*Assertions 36e19 36|3w10 12r12
+34U14*Assert 36|328s7 376s7
+X 13 a-numeri.ads
+16K13*Numerics 32e17 35|4r10 5r10 20r40 33r44 36|5r10 8r10 42r36 58r31 401r24
+. 490r8
+X 15 a-nuflra.ads
+41K22*Float_Random 72e30 36|8w19 42r45 401r33 490r17
+45R9*Generator 36|42r58
+47F12*Uniformly_Distributed{float}
+49V13*Random{47F12}<54|62p13> 36|401s46
+51U14*Reset<54|91p14> 36|490s30
+X 17 a-ngelfu.ads
+17F9 Float_Type 35|33r83
+19k22*Generic_Elementary_Functions 73e46 35|5w19 33r53 36|5w19 58r40
+22V13 Sqrt<long_long_float> 36|238s45[58] 381s15[58] 392s15[58]
+23V13 Log<long_long_float> 36|381s28[58] 392s28[58]
+25V13 Exp<long_long_float> 36|261s17[58] 277s15[58] 308s17[58] 323s15[58]
+X 19 a-ngrear.ads
+37F9 Real 35|20r70
+38k22*Generic_Real_Arrays 139e37 35|4w19 20r49
+43A9 Real_Vector<integer> 35|22r39[20]
+44A9 Real_Matrix<integer><integer> 35|21r39[20]
+54V13 "+"{43A9[35|20]} 36|471s20[35|20]
+100V13 Solve{43A9[35|20]} 36|470s23[35|20]
+X 22 a-string.ads
+16K13*Strings 35e16 36|6r10 64r12 78r12
+X 23 a-strbou.ads
+162V16*"="{boolean}<25|163p13> 8|41i18[66|25]
+X 26 a-strunb.ads
+76K21*Unbounded 489e26 36|6w18 64r20 78r20
+79R9*Unbounded_String 473e14 36|66r11 80r11
+123V13*"&"{79R9} 36|70s20 70s45 72s17 83s17 83s39 84s17
+166V13*"="{boolean}<10|62p9> 8|41i18
+X 28 a-textio.ads
+49K13*Text_IO 471e16 36|4w10 13r12
+263U14*Put_Line 36|454s16 455s16 456s16 457s16 458s16 459s16 460s16 461s16
+X 35 maths_functions.ads
+12F9 Real 16r63 18r34 20r78 31r38 33r97 38r44 38r58 40r30 40r60 45r36 45r50
+. 52r30 59r30 60r30 78r20 79r20 36|16r30 16r60 29r27 30r27 31r27 32r27 33r27
+. 34r27 35r27 36r27 37r27 38r32 70r22 83r19 121r38 122r11 141r36 141r50 329r14
+. 332r44 332r58 376r106 396r14 399r34 401r14 405r30 406r30 408r22 409r22
+. 410r22 421r30 423r22 424r22 437r20 438r20 450r23 451r23
+14k9*Maths_Functions 12z9 89l5 89e20 36|10b14 492l5 492t20
+16K12*Random_Normal_Generator[37|30] 36|413r17
+18V13*Random_0_To_1{12F9} 36|399b13 402l8 402t21 427s26
+20K12*Matrix_Functions[19|38] 21r22 22r22 36|441r8
+21A12*Matrix{19|44A9[20]}<integer><integer> 24r28 27r30 28r30 29r34 30r34
+. 72r38 36|63r28 89r30 98r30 107r34 114r34 442r17
+22A12*Vector{19|43A9[20]}<integer> 25r28 27r61 28r61 29r61 30r61 31r22 71r38
+. 73r38 76r27 36|77r28 89r61 90r11 98r61 99r11 107r61 114r61 121r22 435r27
+. 443r17 444r17
+24V13*To_String{string} 24>24 36|63b13 75l8 75t17 459s26
+24a24 m{21A12} 36|63b24 68r16 69r19 70r34
+25V13*To_String{string} 25>24 36|77b13 87l8 87t17 457s26 461s26
+25a24 v{22A12} 36|77b24 82r16 83r31
+27V13*Extract_Row{22A12} 27>26 27>38 36|89b13 96l8 96t19
+27a26 m{21A12} 36|89b26 90r19 92r18 93r22
+27i38 row{integer} 36|89b38 93r25
+28V13*Extract_Col{22A12} 28>26 28>38 36|98b13 105l8 105t19
+28a26 m{21A12} 36|98b26 99r19 101r18 102r22
+28i38 col{integer} 36|98b38 102r30
+29U14*Set_Row 29=23 29>42 29>57 36|114b14 119l8 119t15
+29a23 m{21A12} 36|114b23 116r18 117m10
+29i42 row{integer} 36|114b42 117r13
+29a57 v{22A12} 36|114b57 117r27
+30U14*Set_Col 30=23 30>42 30>57 36|107b14 112l8 112t15
+30a23 m{21A12} 36|107b23 109r18 110m10
+30i42 col{integer} 36|107b42 110r18
+30a57 v{22A12} 36|107b57 110r27
+31V13*Sum{12F9} 31>18 36|121b13 128l8 128t11
+31a18 v{22A12} 36|121b18 124r16 125r19
+33K12*Elementary_Functions[17|19]
+38V13*Inverse_Cumulative_Normal{12F9} 38>40 36|332b13 397l8 397t33
+38*40 p{12F9} 36|332b40 376r15 376r28 376r118 379r26
+40V13*Truncate_To{12F9} 40>26 40>36 36|16b13 40l8 40t19
+40*26 r{12F9} 36|16b26 29r38 30r38 31r38 32r38 33r38 34r38 35r38 36r38 37r38
+. 38r44
+40i36 prec{natural} 36|16b36 28r12
+45V13*Cumulative_Normal{12F9} 45>32 36|141b13 330l8 330t25 415s15 424s31
+45*32 x{12F9} 36|141b32 241r26
+51V13*Evaluate_Probit{boolean} 52>7 53>7 36|420b13 430l8 430t23
+52*7 v{12F9} 36|421b7 424r50
+53b7 use_random_threshold{boolean} 36|422b7 426r11
+58V13*Evaluate_Probit{boolean} 59>7 60>7 61>7 36|404b13 417l8 417t23
+59*7 v{12F9} 36|405b7 415r34
+60*7 threshold{12F9} 36|406b7 408r31
+61b7 add_random_component{boolean} 36|407b7 412r11
+64E9*Eval_Error_Type 64e72 81r24 36|440r24
+64n31*normal{64E9} 36|446r16
+64n39*underflow{64E9}
+64n50*interations_exceeded{64E9} 36|485r19
+70U20 Evaluate 71>11 72<11 73<11 36|463s13
+71a11 inputs{22A12}
+72a11 hessian{21A12}
+73a11 beta{22A12}
+75u15*Solve_Non_Linear_Equation_System 76=7 77>7 78>7 79>7 80<7 81<7 36|434b14
+. 487l8 487t40
+76a7 x{22A12} 36|435b7 442r25 442r34 443r25 444r25 461r37 463r23 464r22 471m13
+. 471r18 472r22
+77i7 num_trials{natural} 36|436b7 448r21 484r24
+78*7 tolx{12F9} 36|437b7 475r25
+79*7 tolf{12F9} 36|438b7 467r25
+80i7 iterations{natural} 36|439b7 447m7 479m10 479r24 484r11
+81e7 error{64E9} 36|440b7 446m7 485m10
+83U14*Do_Debug 83>24 36|52b14 55l8 55t16
+83b24 onoff{boolean} 36|52b24 54r18
+87V13 Debug{boolean} 36|47b13 50l8 50t13 453s17
+X 36 maths_functions.adb
+17F12 LR1<short_float> 29r33
+18F12 LR2<short_float> 30r33
+19F12 LR3<short_float> 31r33
+20F12 LR4<short_float> 32r33
+21F12 LR5<short_float> 33r33
+22F12 LR6<short_float> 34r33
+23F12 LR7<long_float> 35r33
+24F12 LR8<long_float> 36r33
+25F12 LR9<long_float> 37r33
+26F12 LR10<long_float> 38r38
+42r4 zero_one_random_generator{15|45R9} 401r54 490r37
+45b4 L_DEBUG{boolean} 49r14 54m7
+57F9 Local_Float<long_long_float> 58r70 61r59 130r61 130r82 133r12 144r24
+. 145r24 146r24 147r24 217r14 218r14 219r14 220r14 221r14 222r14 223r14 224r14
+. 225r14 236r23 238r23 241r13 328r111 368r25 369r25 371r16 372r16 373r16
+. 374r16 379r13
+58K12 R_Funcs[17|19] 59r8
+61A9 Local_Float_Array(57F9)<integer> 130r38 149r21 172r21 198r21 338r20
+. 346r20 353r20 361r20
+66r7 s{26|79R9} 70m13 70r18 72m10 72r15 74r18
+68i11 i{integer} 70r37
+69i14 j{integer} 70r40
+80r7 s{26|79R9} 83m10 83r15 84m10 84r15 86r18
+82i11 i{integer} 83r34
+90a7 v{35|22A12} 93m10 95r14
+92i11 col{integer} 93r13 93r30
+99a7 v{35|22A12} 102m10 104r14
+101i11 row{integer} 102r13 102r25
+109i11 row{integer} 110r13 110r30
+116i11 col{integer} 117r18 117r30
+122*7 s{35|12F9} 125m10 125r15 127r14
+124i11 i{integer} 125r22
+130V13 Evaluate_Polynomial{57F9} 130b13 130>34 130>57 139l8 139t27
+130a34 a{61A9} 133r27 133r30 135r23 135r35 136r16
+130f57 x{57F9} 136r33
+133f6 sum{57F9} 136m9 136r27 138r13
+135i10 i{integer} 136r19
+144f7 rtwo{57F9} 264r21 282r27 310r22
+145f7 trtwo{57F9} 263r19 281r21
+146f7 frtwo{57F9} 248r19 249r15 294r21 296r15
+147f7 srtwo{57F9} 246r17
+149a7 A1{61A9} 285r16 290r32 293r34
+172a7 A2{61A9} 252r16 257r34 260r29 299r16 304r32 307r29
+198a7 A3{61A9} 268r16 273r32 276r29 314r16 319r32 322r29
+217f7 p{57F9} 247m10 261m10 262m10 262r21 277m10 279m13 279r24 293m10 308m10
+. 323m10 325m13 325r24 328r15 328r36 328r130 329r20
+218f7 xx{57F9} 241m7 242r11 246r11 248r14 249r23 261r23 261r28 261r41 263r14
+. 264r16 278r14 281r14 282r20 293r15 294r14 295m10 295r17 296r21 308r23 308r28
+. 308r41 310r17 324r15
+219f7 z{57F9} 249m10 250r16 250r20 260r17 265m10 266r16 266r20 276r17 282m10
+. 283r16 283r20 293r22 296m10 297r16 297r20 307r17 311m10 312r16 312r20 322r17
+220f7 tz{57F9} 250m10 257r19 266m10 273r19 283m10 290r19 297m10 304r19 312m10
+. 319r19
+221f7 b1{57F9} 252m10 256r21 257m13 257r24 260r19 268m10 272r21 273m13 273r22
+. 276r19 285m10 289r21 290m13 290r22 293r24 299m10 303r21 304m13 304r22 307r19
+. 314m10 318r21 319m13 319r22 322r19
+222f7 b2{57F9} 253m10 257r29 258m13 260r24 269m10 273r27 274m13 276r24 286m10
+. 290r27 291m13 293r29 300m10 304r27 305m13 307r24 315m10 319r27 320m13 322r24
+223f7 temp{57F9} 256m13 258r19 272m13 274r19 289m13 291r19 303m13 305r19
+. 318m13 320r19
+224f7 ans{57F9} 260m10 261r48 276m10 277r33 307m10 308r48 322m10 323r27
+225f7 xs{57F9} 264m10 265r16 277r21 277r26 277r39 310m10 311r15 323r20 323r23
+. 323r31
+227i7 j{natural} 251m10 252r19 255m13 255r18 257r37 267m10 268r19 271m13
+. 271r18 273r35 284m10 285r19 288m13 288r18 290r35 298m10 299r19 302m13 302r18
+. 304r35 313m10 314r19 317m13 317r18 319r35
+229N7 n1 284r15
+230N7 n2 251r15 298r15
+231N7 n3 267r16 313r15
+232N7 m1 287r24
+233N7 m2 254r24 301r24
+234N7 m3 270r24 316r24
+236f7 elim{57F9} 238r57
+238f7 xlim{57F9} 242r16
+254i14 i{integer}
+270i14 i{integer}
+287i14 i{integer}
+301i14 i{integer}
+316i14 i{integer}
+338a7 A{61A9} 388r26 388r39 388r53 388r67 388r81 388r95
+346a7 B{61A9} 389r17 389r30 389r44 389r58 389r72
+353a7 C{61A9} 382r26 382r39 382r53 382r67 382r81 382r95 393r27 393r40 393r54
+. 393r68 393r82 393r96
+361a7 D{61A9} 383r17 383r30 383r44 383r58 394r18 394r31 394r45 394r59
+368f7 P_LOW{57F9} 369r46 380r15
+369f7 P_HIGH{57F9} 385r19
+371f7 q{57F9} 381m10 382r35 382r49 382r63 382r77 382r91 383r26 383r40 383r54
+. 383r68 386m10 387r15 388r105 392m10 393r36 393r50 393r64 393r78 393r92
+. 394r27 394r41 394r55 394r69
+372f7 r{57F9} 387m10 388r35 388r49 388r63 388r77 388r91 389r26 389r40 389r54
+. 389r68 389r82
+373f7 result{57F9} 382m10 388m10 393m10 396r20
+374f7 lp{57F9} 379m7 380r10 381r33 385r13 386r15 392r39
+408*7 local_thresh{35|12F9} 416r22
+409*7 prob{35|12F9} 415m7 416r14
+410*7 err{35|12F9} 413m10 415r38
+423*7 local_thresh{35|12F9} 427m10 429r22
+424*7 prob{35|12F9} 429r14
+442a7 hessian{35|21A12} 454r44 454r75 459r37 463m26 463r26 470r30
+443a7 beta{35|22A12} 455r41 457r37 463m35 463r35 465r36 470r39
+444a7 deltas{35|22A12} 470m13 471r22 473r36
+448i11 k{integer}
+450*13 errf{35|12F9} 465m16 465r24 467r17
+451*13 errx{35|12F9} 473m16 473r24 475r17
+464i17 i{integer} 465r42
+472i17 i{integer} 473r44
+X 37 random_normal_draw.ads
+30k9*Random_Normal_Draw 35|3w6 16r43 37|38e23
+34V13 Draw{35|12F9} 36|413s41[35|16]
+35*7 mean{35|12F9} 36|413r47[35|16]
+36*7 standard_deviation{35|12F9} 36|413r60[35|16]
+X 66 text_utils.ads
+13K9*Text_Utils 36|7w6 65r8 79r8 66|107e15
+21a4*LINE_BREAK{string} 36|72r19 84r19
+48V13*TS=48:72{string} 36|74s14 86s14
+

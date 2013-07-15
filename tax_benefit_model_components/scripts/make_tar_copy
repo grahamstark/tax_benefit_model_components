@@ -1,0 +1,13 @@
+tar zcvf ~/archives/tb_components.tgz \
+  --exclude='.svn' \
+  --exclude='model_datasets/*' \
+  --exclude='bin/*' \
+  --exclude='tmp/*' \
+  --exclude='model_output/*' \
+  --exclude='*.pdf' \
+  --exclude='*.doc' \
+  --exclude='*.xls' \
+  --exclude='*.odt' \
+  --exclude='*.odf' \
+  --exclude='docs/uk/*' \
+  --exclude='run/*' .

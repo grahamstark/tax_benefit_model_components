@@ -1,0 +1,224 @@
+V "GNAT Lib v2011"
+M P W=b
+A -fstack-check
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnvnnvnnvnnvnnvvvnnvnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U bhps_tabulator%b	bhps_tabulator.adb	fb15e1ea NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W base_model_types%s	base_model_types.adb	base_model_types.ali
+W bhps%s		bhps.adb		bhps.ali
+W bhps.binary_io%s	bhps-binary_io.adb	bhps-binary_io.ali
+W bhps.print%s		bhps-print.adb		bhps-print.ali
+W bhps_indexes%s	bhps_indexes.adb	bhps_indexes.ali
+W costs_tabulator%s	costs_tabulator.adb	costs_tabulator.ali
+W costs_tabulator.text_io%s  costs_tabulator-text_io.adb  costs_tabulator-text_io.ali
+W interfaces%s		interfac.ads		interfac.ali
+W io_commons%s		io_commons.adb		io_commons.ali
+W ons_definitions%s	ons_definitions.adb	ons_definitions.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W tabulator_commons%s	tabulator_commons.ads	tabulator_commons.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-comlin.ads		20110419093131 e0accaa5
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-direio.ads		20110419093131 5842da07
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20110824134318 88c3d57a
+D bhps.ads		20110707092530 3f1aacd7
+D bhps-binary_io.ads	20110419141534 19a5a972
+D bhps-print.ads	20110415182046 84577554
+D bhps-xlookup.ads	20110420114441 8fe6877d
+D bhps_enums.ads	20110710184656 ac2cbfb4
+D bhps_indexes.ads	20110825133532 c56cfe01
+D bhps_tabulator.adb	20110825141039 4b746fd6
+D costs_tabulator.ads	20110825125844 6687abd8
+D costs_tabulator.adb	20110415182054 a491a3c4
+D costs_tabulator-text_io.ads  20110622202747 cd1d4dcb
+D costs_tabulator-text_io.adb  20110622202747 aee03d24
+D data_constants.ads	20110415182041 06452ee2
+D data_index.ads	20110702150512 9b0b9651
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D io_commons.ads	20110622204001 cb801e8f
+D ons_definitions.ads	20110825124752 e065306a
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-direio.ads		20110419093137 068812e8
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imgrea.ads		20110419093137 c7a851e2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D tabulator_commons.ads	20110415182054 c4bdc325
+D text_utils.ads	20110802182110 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 38|1r6 2r6 3r6 18r5 19r5 20r5
+X 5 a-comlin.ads
+38K13*Command_Line 139e21 38|1w10 20r9
+48V13*Argument{string} 38|70s25
+X 9 a-coorma.ads
+51R9*Map
+54R9*Cursor
+71V13*Element{44|18R9[37|61]} 38|50s28[44|28[37|61]]
+X 18 a-string.ads
+16K13*Strings 35e16 38|2r10 19r9
+X 19 a-strbou.ads
+162V16*"="{boolean}<21|163p13> 11|41i18[81|25]
+X 22 a-strunb.ads
+76K21*Unbounded 489e26 38|2w18 19r17
+166V13*"="{boolean}<14|62p9> 11|41i18
+X 24 a-textio.ads
+49K13*Text_IO 471e16 38|3w10 18r9
+52P9*File_Type(369R9) 38|67r18
+53n32*Out_File{53E9} 38|70r15
+86U14*Create 38|70s4
+98U14*Close 38|84s4
+263U14*Put_Line 38|54s7 60s7
+X 31 base_model_types.ads
+18K9*Base_Model_Types 128e21 38|5w6 21r5
+25F9*Real<long_float>
+30F12*Amount{25F9} 38|32r49 35r26 52r20 60r32
+X 32 bhps.ads
+9K9*BHPS 4153e9 38|11w6 12r6 13r6 23r5 24r5 25r5
+586f7*xewght{31|30F12} 38|56r30 58r30
+3999R9*Adult 4036e14 38|51r20
+4000i7*pid{37|57I9} 38|61r14
+4009r7*indall{510R9} 38|56r23 58r23
+X 33 bhps-binary_io.ads
+3K14*Binary_IO 101e19 38|12w11 24r10
+5R9*Record_Pointers 97e14 38|46r18
+8U14*Open 38|75s7
+12U14*Close 38|80s7
+44V13*Load_Adult{32|3999R9} 38|51s29
+X 34 bhps-print.ads
+1K14*Print 49e15 38|13w11 25r10
+X 37 bhps_indexes.ads
+18K9*BHPS_Indexes 78e17 38|14w6 26r5
+25E12*Waves{character} 38|43r36 47r18
+26E12*Waves_With_Data{25E12} 38|72r16
+57I9*Sernum_Value<integer> 38|54r32
+61K12*BHPS_Index_Package[44|9] 38|27r5
+63K12*BHPS_Map_Package=63:56 38|28r5
+66R12*BHPS_Index{44|34R12[61]} 38|68r18
+70R12*Index_Rec{44|18R9[61]} 38|50r15
+73R12*Index_Cursor{44|35R12[61]} 38|49r30
+X 38 bhps_tabulator.adb
+17U11*BHPS_Tabulator 17b11 85l5 85t19
+30E9 Tab_Component 30e54 32r30 37r26
+30n28 death{30E9}
+30n35 birth{30E9}
+30n42 population{30E9}
+32A9 Table_Col(31|30F12)<30E9> 38r26
+34K12 BHPS_Tab[39|46] 39r31 41r21
+39K12 BHPS_Tab_IO[41|28] 78r7
+41R12 Table{39|58R9[34]} 43r47
+43A9 Tables_All_Waves(41R12)<character> 45r18
+45a4 tables{43A9} 78r46
+46r4 ptrs{33|5R9} 51r48 75m13 75r13 80m14 80r14
+47e4 this_wave{37|25E12} 51r54 55r10 73m7
+49U14 Load_Adult 49b14 49>26 64l8 64t18
+49r26 c{37|73R12} 50r37
+50r7 index{37|70R12} 51r41 54r52
+51r7 ad{32|3999R9} 56r20 58r20 61r11
+52f7 weight{31|30F12} 56m10 58m10 60r46
+66i4 year{positive} 78r87 79m7 79r15
+67p4 f{24|52P9} 70m12 70r12 78r26 84m11 84r11
+68r4 index_map{37|66R12} 74m87 74r87
+72e8 wave{37|26E12} 73r20 74r55 75r19 78r40 78r54 80r20
+X 39 costs_tabulator.ads
+31F9 Data_Type 38|35r7
+35E9 Breakdown_Range 38|36r7
+39E9 Values_Range 38|37r7
+44A9 Values_Array(31F9)<39E9> 38|38r7
+46k9*Costs_Tabulator 38|6r6 7w6 34r28 39|92e20
+58R9 Table_Type 38|41r30[34]
+X 41 costs_tabulator-text_io.ads
+28k25 Text_IO 38|6w22 41|43e28
+32U14 Print 38|78s19[39]
+X 44 data_index.ads
+18R9*Data_Index_Rec
+20i10*SERNUM{37|57I9} 38|54r58[37|61]
+34R12*Data_Index_Map{9|51R9[28[37|61]]}
+35R12*Data_Index_Cursor{9|54R9[28[37|61]]}
+43U14*Restore_Complete_Index 38|74s7[37|61]
+X 51 ons_definitions.ads
+1K9*ONS_Definitions 38|8w6 36r26 51|21e20
+5E9*Age_Band 38|36r42 51|16e20
+X 81 text_utils.ads
+13K9*Text_Utils 38|9w6 81|107e15
+

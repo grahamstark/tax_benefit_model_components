@@ -1,0 +1,870 @@
+﻿Unique number (UQNo)  (@1  14.)
+
+Person number (personno)  (@15  2.)
+
+Gender (Gender)  (@17  1.)
+1  = Male
+2  = Female
+9 = Unspecified
+
+Population group (PopGrp)  (@18  1.)
+1 = African/Black
+2 = Coloured
+3 = Indian/Asian
+4 = White
+9 = Other and unspecified
+
+Age group (Agegrp)  (@19  2.)
+01 = 00  to  04 years
+02 = 05  to  09 years
+03 = 10  to  14 years
+04 = 15  to  19 years
+05 = 20  to  24 years
+06 = 25  to  29 years
+07 = 30  to  34 years
+08 = 35  to  39 years
+09 = 40  to  44 years
+10 = 45  to  49 years
+11 = 50  to  54 years
+12 = 55  to  59 years
+13 = 60  to  64 years
+14 = 65  to  69 years
+15 = 70  to  74 years
+16 = 75  to  79 years
+17 = 80  to  84 years
+18 = 85 Plus
+99 = Unspecified 
+
+1. 1st  to  7th of the month (week2) (SpentW2)  (@21  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+2. 8th  to  14th of the month (week3) (SpentW3)  (@22  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+3. 15th  to  21st of the month (week4) (SpentW4)  (@23  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+4. 22nd - last day of the month (week5) (SpentW5)  (@24  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+01. Salaries and Wages (Q11a01SrcInc)  (@25  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+02. Net profit from business (Q11a02SrcInc)  (@26  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+03. Income from subsistence farming (Q11a03SrcInc)  (@27  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+04. Income from letting of fixed property (Q11a04SrcInc)  (@28  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+05. Royalties (Q11a05SrcInc)  (@29  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+  
+06. Interest received (Q11a06SrcInc)  (@30  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+07. Dividends on shares (Q11a07SrcInc)  (@31  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+08. Regular receipts from pension (Q11a08SrcInc)  (@32  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+09. Other social welfare grants (Q11a09SrcInc)  (@33  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+10. Alimony, maintenance (Q11a10SrcInc)  (@34  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+11. Regular allowances (Q11a11SrcInc)  (@35  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+
+12. Other income (Q11a12SrcInc)  (@36  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+13. No income (Q11a13SrcInc)  (@37  1.)
+
+
+Main Income (Q11bMainlnc)  (@38  2.)
+01 =  Salaries and wages 
+02 =  Net profit from business or professional practice/ activities or commercial farming 
+03 =  Income from subsistence farming 
+04 =  Income from letting of fixed property 
+05 =  Royalties 
+06 =  Interest received and/or accrued on deposits, loans, savings certificates, and dividends on building society shares
+07 =  Dividends on shares other than building society shares
+08 =  Regular receipts from pension such as private pension, government pension and pension from other annuity funds
+09 =  Other social welfare grants
+10 =  Alimony, maintenance and similar allowances received from divorced spouse, family members, etc., living elsewhere
+11 =  Regular allowances received from non-household members
+12 =  Other income
+88 =  Not applicable
+99 =  Unspecified
+
+1) No use of tobacco products (Q12Tobacco1)  (@40  1.)
+0 = Smoking
+1 = Not smoking
+9 = Unspecified
+
+2) Cigarettes (Q12Tobacco2)  (@41  1.)
+0 = Not smoking cigarettes
+1 = Yes: Cigarettes
+8 = Not applicable
+9 = Unspecified
+
+3) Cigar (Q12Tobacco3)  (@42  1.)
+0 = Not smoking cigars
+1 = Yes: Cigars
+8 = Not applicable
+9 = Unspecified
+
+4) Tobacco, including snuff (Tobacco4)  (@43  1.)
+0 = Not using other tobacco products
+1 = Yes: Tobacco
+8 = Not applicable
+9 = Unspecified
+
+5) Other items for smoking (Tobacco5)  (@44  1.)
+0 = Not using other items for smoking
+1 = Yes: Other
+8 = Not applicable
+9 = Unspecified
+
+Reading (Q13Read)  (@45  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+Writing (Q14Write)  (@46  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+Education (Q15HighEduc)  (@47  2.)
+00  = No schooling
+01  = Grade R / 0
+02  = Grade 1 / Sub A
+03  = Grade 2 / Sub B
+04  = Grade 3 / Standard 1
+05  = Grade 4 / Standard 2
+06  = Grade 5 / Standard 3
+07  = Grade 6 / Standard 4
+08  = Grade 7 / Standard 5
+09  = Grade 8 / Standard 6 / Form 1
+10  = Grade 9 / Standard 7 / Form 2  
+11  = Grade 10 / Standard 8 / Form 3
+12  = Grade 11 / Standard 9 / Form 4
+13  = Grade 12 / Standard 10 / Form 5/Matric
+14  = NTC l
+15  = NTC II
+16  = NTC III
+17  = Diploma / certificate with less than Grade 12 / Std 10 
+18  = Diploma with less than Grade 12 / Std 10
+19  = Certificate with Grade 12 / Std 10
+20  = Diploma with Grade 12 / Std 10
+21  = Bachelors Degree
+22  = Bachelors Degree and Diploma
+23  = Honours Degree
+24  = Higher Degree (Masters, Doctorate)
+25  = Other 
+26  = Don't know/Unspecified
+
+Weight (weight)  (@49  12.6)
+
+DATA FILE: SUPPORTED_PERSONS
+Unique number (UQNo)  (@1  14.)
+
+Number of supported person (PersonSupported)  (@15  2.)
+
+Accommodation (Q19DwellType)  (@17  2.)
+Final code list
+01 = Boarding school/university hostel
+02 = Old-age home
+03 = Frail care centre
+04 = Home for the disabled
+05 = Initiation school
+06 = Prison
+07 = Retirement village
+08 = Hospital/medical facility/clinic
+09 = Private house
+10 = Other, specify
+99 = Unspecified
+
+Gender (Q110Gender)  (@19  1.)
+1 = Male
+2 = Female
+8 = Not applicable
+9 = Unspecified
+
+Age group (Agegrp)  (@20  2.)
+01 = 00 to 04 years
+02 = 05 to 09 years
+03 = 10 to 14 years
+04 = 15 to 19 years
+05 = 20 to 24 years
+06 = 25 to 29 years
+07 = 30 to 34 years
+08 = 35 to 39 years
+09 = 40 to 44 years
+10 = 45 to 49 years
+11 = 50 to 54 years
+13 = 60 to 64 years
+14 = 65 to 69 years
+15 = 70 to 74 years
+16 = 75_Plus
+88 = Not applicable
+99 = Unspecified
+
+Population group (Q112PopGroup)  (@22  1.)
+1 = African/Black
+2 = Coloured
+3 = Indian/Asian
+4 = White
+5 = Other
+8 = Not applicable
+9 = Unspecified
+
+1. Financial support (Q113Support1)  (@23  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+2. Clothing (Q113Support2)  (@24  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+3. Food (Q113Support3)  (@25  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+4. Personal care products (Q113Support4)  (@26  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+5. Appliances (Q113Support5)  (@27  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+6. Furniture (Q113Support6)  (@28  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+7. Transport (Q113Support7)  (@29  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+8. Boarding/Lodging/Accommodation (Q113Support8)  (@30  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+9. Other, specify (Q113Support9)  (@31  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+Financial aid amount (Q114FinAid)  (@32  5.)
+
+01. Clothing (Q115MoneyUse1)  (@37  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+02. Food (Q115MoneyUse2)  (@38  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+03. Personal care products (Q115MoneyUse3)  (@39  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+04. Appliances (Q115MoneyUse4)  (@40  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+05. Furniture (Q115MoneyUse5)  (@41  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+06. Alcoholic beverages (Q115MoneyUse6)  (@42  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+07. Tobacco products (Q115MoneyUse7)  (@43  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+08. Transport (Q115MoneyUse8)  (@44  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+09. Boarding/Lodging/Accommodation (Q115MoneyUse9)  (@45  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+10. Pocket money (Q115MoneyUse10)  (@46  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+11. Other, specify (Q115MoneyUse11)  (@47  1.)
+1 = Yes
+2 = No
+8 = Not applicable
+9 = Unspecified
+
+Unique number (UQNo)  (@1  14.)
+
+Product code (ProdCode)  (@15  2.)
+
+Area of purchase (Q21AAreaPurch)  (@17  1.)
+0 = Not applicable
+1 = In the town/city where the household lives
+2 = In another town or city away from where the household lives
+3 = In the rural area
+
+Type of retailer (Q21BTypeRetailer)  (@18  1.)
+1 = Formal sector - Chain store
+2 = Formal sector - Other retailer
+3 = Informal sector - Street trading
+4 = Informal sector - Other
+8 = Not applicable
+9 = Unspecified
+
+Weight (weight)  (@19  12.6)
+
+Unique number (UQNo)  (@1  14.)
+
+Province (Prov)  (@15  1.)
+Final code list
+1 = Western Cape
+2 = Eastern Cape
+3 = Northern Cape
+4 = Free State
+5 = KwaZulu-Natal
+6 = North West
+7 = Gauteng
+8 = Mpumalanga
+9 = Limpopo
+
+Settlement type (settlement)  (@16  1.)
+Type of settlement where the dwelling unit is situated
+Final code list
+1 = Urban
+2 = Rural
+
+Survey year (SurveyYear)  (@17  4.)
+
+Survey month (SurveyMonth)  (@21  2.)
+Final code list:
+ 1 = January
+ 2 = February
+ 3 = March
+ 4 = April
+ 5 = May
+ 6 = June
+ 7 = July
+ 8 = August
+ 9 = September
+10 = October
+11 = November
+12 = December
+
+Household size (hsize)  (@23  2.)
+
+Population group of head (PopGrpofhead)  (@25  1.)
+1 = African/Black
+2 = Coloured
+3 = Indian/Asian
+4 = White
+9 = Unspecified
+
+Gender of head (Genderofhead)  (@26  1.)
+1 = Male
+2 = Female
+9 = Unspecified
+
+Support (Q16Support)  (@27  1.)
+1 = Yes
+2 = No
+
+Number supported (Q17NumSupport)  (@28  2.)
+
+1. Main Dwelling (Q31DwellTypeMain)  (@30  2.)
+01 = Dwelling or brick structure on a separate stand or yard or on farm
+02 = Traditional dwelling/hut/structure made of traditional material
+03 = Flat or apartment in a block of flats
+04 = Town/cluster/semi-detached house (simplex, duplex or triplex)
+05 = Unit in retirement village
+06 = Dwelling/flat/room in backyard
+07 = Informal dwelling/shack in backyard  
+08 = Informal dwelling/shack not in backyard e.g. in an informal/squatter settlement or on farm
+09 = Room/flatlet or a larger dwelling/servants quarters/granny flat
+10 = Caravan/tent
+11 = Workers’ hostel
+12 = Family unit (formerly workers’ hostel)
+13 = Other
+99 = Unspecified
+
+2. Other Dwelling (Q31DwellTypeOth)  (@32  2.)
+01 = Dwelling or brick structure on a separate stand or yard or on farm
+02 = Traditional dwelling/Hut/Structure made of traditional material
+03 = Flat or apartment in a block of flats
+04 = Town/Cluster/Semi-detached house (Simplex, Duplex or Triplex)
+05 = Unit in retirement village
+06 = Dwelling/Flat/Room in backyard
+07 = Informal dwelling/shack in backyard
+08 = Informal dwelling/shack not in backyard e.g. in an informal/squatter settlement or on farm
+09 = Room/Flatlet or a larger dwelling/ servants quarters/granny flat
+10 = Caravan/Tent
+11 = Workers’ hostel
+12 = Family unit (formerly workers’ hostel)
+13 = Other
+99 = Unspecified
+
+1. Walls (Q32MaterialWalls)  (@34  2.)
+01 = Bricks
+02 = Cement block/concrete
+03 = Corrugated iron/zinc
+04 = Wood
+05 = Plastic
+06 = Cardboard
+07 = Mixture of mud and cement
+08 = Wattle and daub
+09 = Tile
+10 = Mud
+11 = Thatching
+12 = Asbestos 
+13 = Other 
+99 = Unspecified
+
+2. Roof (Q32MaterialRoof)  (@36  2.)
+01 = Bricks
+02 = Cement block/concrete
+03 = Corrugated iron/zinc
+04 = Wood
+05 = Plastic
+06 = Cardboard
+07 = Mixture of mud and cement
+08 = Wattle and daub
+09 = Tile
+10 = Mud
+11 = Thatching
+12 = Asbestos 
+13 = Other 
+99 = Unspecified
+
+Government land grant (Q33GovGrant)  (@38  1.)
+1 = Yes
+2 = No
+3 = don’t know/Unspecified
+
+1. Toilet facility (Q35TypeToilet)  (@39  2.)
+11 = Flush toilet in dwelling with offsite disposal
+12 = Flush toilet on site with offsite disposal
+13 = Flush toilet off site with offsite disposal
+21 = Flush toilet in dwelling with onsite disposal (septic tank)
+22 = Flush toilet on site with onsite disposal (septic tank)
+23 = Flush toilet off site with onsite disposal (septic tank)
+32 = Chemical toilet on site
+33 = Chemical toilet off site
+42 = Pit latrine on site with ventilation pipe
+43 = Pit latrine off site with ventilation pipe
+52 = Pit latrine on site without ventilation pipe
+53 = Pit latrine off site without ventilation pipe
+62 = Bucket toilet on site
+63 = Bucket toilet off site
+73 = None
+99 = Unspecified
+
+Sharing toilet (Q36ShareToilet)  (@41  1.)
+1 = Yes
+2 = No
+9 = Unspecified/not applicable
+
+Street lighting (Q37StreetLight)  (@42  1.)
+1 = Yes
+2 = No
+9 = Unspecified
+
+Connection to electricity supply (Q38ElecSupply)  (@43  1.)
+Final code list
+1 = Yes
+2 = No
+9 = Unspecified
+
+Cooking (Q39EnergyCook )  (@44  2.)
+01 = Electricity from mains
+02 = Electricity from generator
+03 = Gas
+04 = Paraffin
+05 = Wood
+06 = Coal
+08 = Animal dung
+09 = Electricity from solar
+10 = Other
+11 = None
+99 = Unspecified
+
+Heating (Q39EnergyHeat)  (@46  2.)
+01 = Electricity from mains
+02 = Electricity from generator
+03 = Gas
+04 = Paraffin
+05 = Wood
+06 = Coal
+07 = Candles
+08 = Animal dung
+09 = Electricity from solar
+10 = Other
+11 = None
+99 = Unspecified
+
+Lighting (Q39EnergyLight)  (@48  2.)
+01 = Electricity from mains
+02 = Electricity from generator
+03 = Gas
+04 = Paraffin
+07 = Candles
+09 = Electricity from solar
+10 = Other
+11 = None
+99 = Unspecified
+
+Refuse or rubbish collection (Q310Refuse)  (@50  1.)
+1 = Removed by local authority at least once a week
+2 = Removed by local authority less often than once a week
+3 = Removed by community members at least once a week
+4 = Removed by community members less often than once a week
+5 = Communal refuse dump/communal container
+6 = Own refuse dump
+7 = No rubbish removal
+8 = Other
+9 = Unspecified
+
+1. Radio (Radio)  (@51  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+2. Stereo/HiFi (Stereo_HiFi)  (@52  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+3. Tape recorder (Tape_ recorder)  (@53  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+4. Television (Television)  (@54  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+5. Video cassette recorder/DVD (Video_cassette_recorder_DVD)  (@55  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+6. Refrigerator/freezer (Refrigerator_Freezer)  (@56  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+7. Stove, gas or electric (Stove_gas_or_electric)  (@57  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+8. Microwave oven (Microwave)  (@58  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+9. Washing machine (Washing_Machine)  (@59  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+10. Motor vehicle (Motor_vehicle )  (@60  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+11. Motorcycle/scooter (Motor cycle_Scooter)  (@61  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+12. Sewing/knitting machine (Sewing_Knitting_machine)  (@62  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+13. Donkey cart/ox cart (Donkey_cart_ox_cart)  (@63  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+14. Plough (Plough )  (@64  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+15. Tractor (Tractor)  (@65  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+16. Wheelbarrow (Wheelbarrow)  (@66  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+17. Grinding mill (Grinding_mill)  (@67  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+18. Bicycle (Bicycle)  (@68  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+19. Computer (Computer)  (@69  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+20. Canoe/boat (Canoe_Boat)  (@70  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+21. Motorboat (Motorboat)  (@71  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+
+22. Camera (Camera)  (@72  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+23. Bed (Bed)  (@73  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+24. Cellular phone (Cellular_telephone)  (@74  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+25. Landline telephone (Landline_telephone )  (@75  1.)
+1 = Owns 
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+25. Satellite dish (Satellite_dish)  (@76  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+27. Internet service (Internet)  (@77  1.)
+1 = Owns
+2 = Does not own, but has access to
+3 = Neither owns nor has access
+9 = Unspecified
+
+a) Bedrooms (Q41aOccRooms)  (@78    1.)
+
+a) Bedrooms (Q41aNoRooms)  (@79  1.)
+
+b) Living rooms (Q41bOccRooms)  (@80    1.)
+
+b) Living rooms (Q41bNoRooms)  (@81  1.)
+
+c) Dining rooms (Q41cOccRooms)  (@82  1.)
+
+c) Dining rooms (Q41cNoRooms)  (@83  1.)
+
+d) Kitchens (Q41dOccRooms  (@84  1.)
+
+d) Kitchens (Q41dNoRooms)  (@85  1.)
+
+e) Bathrooms (Q41eOccRooms)  (@86  1.)
+
+e) Bathrooms (Q41eNoRooms)  (@87  1.)
+
+f) Other (Q41fOccRooms)  (@88  1.)
+
+f) Other (Q41fNoRooms)  (@89  1.)
+
+Number of cars (Q42NoCars)  (@91  1.)
+
+Value of the dwelling unit (Q44value)  (@92  7.)
+
+Imputed value of the dwelling unit (Q44ValueImputed)  (@99  6.)
+
+Dwelling ownership (Q45OwnRent)  (@105  1.)
+1 = Owned and fully paid off
+2 = Owned, but not yet fully paid off (e.g. with a mortgage)
+3 = Rented as part of employment contract of household member
+4 = Rented not as part of employment contract of household member
+5 = Occupied rent-free as part of employment contract of household member
+6 = Occupied rent-free not as part of employment contract of household member
+7 = Occupied as a boarder/lodger
+8 = Other
+9 = Unspecified
+
+Total number of rooms that this household occupies (Q41TotOccRooms)  (@106  2.)
+
+Total number of rooms in the dwelling unit (Q41TotNoRooms)  (@108  2.)
+
+Household consumption (Consumptions)  (@110  7.)
+
+Household in-kind consumption (InKindConsumptions)  (@117  7.)
+
+Household income (Income)  (@124  7.)
+
+Household in-kind-income (InKindIncome)  (@131  7.)
+
+Final Result code (ResultCode)  (@138  1.)
+1  Completed
+2  Non-contact
+3  Refused
+4  Partly complete
+5  No usable information  COMMENT!
+6  Vacant dwelling 
+7  Listing error
+8  Other
+9  Ended at question B
+
+Weight of the household (Weight)  (@139  12.6)
+
+Unique number (UQNo)  (@1  14.)
+
+Coicop code (COICOP)  (@15  8.)
+
+Value in main questionnaire (ValueMain)  (@25  8.)
+
+Valid range: 0-7160000
+
+Value in diary (ValueDiary)  (@33  8.)
+
+Value of expenditure on the item (Value)  (@41  8.)
+
+Annualized value in main questionnaire (ValueMainannualized)  (@49  8.)
+
+Annualized value of the item in the diary (ValueDiaryannualized)  (@57  8.)
+
+Annualized value of expenditure on the item (Valueannualized)  (@65  8.)
+
+Weight (weight)  (@73  12.6)
+
+Unique number (UQNo)  (@1  14.)
+
+Person number (personno)  (@15  2.)
+
+Coicop code (COICOP)  (@17  8.)
+
+Annual individual income (value)  (@25  7.)
+
+Weight (weight)  (@32  12.6)
+

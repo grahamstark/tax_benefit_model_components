@@ -1,0 +1,151 @@
+<!-- 
+   a simple XML DTD for describing a Parameter system 
+   new, much simplified version 14/12/2004
+
+   all the main elements have these:
+    - Description: as much text as you like about whatever this is
+    - Tooltip: about 1 sentence of plain text e.g. "increase this to raise revenue"
+    - Journalese: 3-4 words, maybe usable in simple input forms e.g. "starting rate of tax"
+-->
+
+<!ELEMENT Description (#PCDATA)>
+<!ATTLIST Description 
+   lang CDATA "en"
+   country CDATA "GB"
+   type   (tooltip|journalese|description|label) "description"
+>
+
+<!ELEMENT ParameterSystem (
+                (
+		Description | 		
+		EditInfo |
+                Parameter |
+		ParameterSystem |
+                ParameterSystemReference |
+                EnumeratedType
+                )*
+                
+          )
+>
+
+
+<!ELEMENT ParameterSystemReference (
+                (
+		Description |
+		EditInfo
+                )*
+           )
+>
+
+<!ATTLIST ParameterSystemReference 
+                       instanceName CDATA #REQUIRED
+	               indexType (integer|enumerated|string) #IMPLIED 
+	               indexEnumTypeRef IDREF #IMPLIED
+                       indexSubsetRef IDREF #IMPLIED
+	               type IDREF #REQUIRED
+                       maximumSize NMTOKEN #IMPLIED
+	               collectionType (set|map|list|singular) #IMPLIED
+>
+
+
+<!ATTLIST ParameterSystem
+                       name CDATA #REQUIRED
+                       id ID #IMPLIED
+                       logicalType CDATA #IMPLIED
+                       instanceName CDATA #IMPLIED
+                       enabled (true|false) "true" 
+>
+
+<!-- a single Parameter (e.g an income tax allowance) -->
+
+
+		
+
+<!-- an optional set of actual Values associated with a Parameter -->
+
+<!ELEMENT EditInfo EMPTY>
+
+<!ATTLIST EditInfo
+   type CDATA "default"
+   output_index CDATA  #IMPLIED
+   uprate (dont_uprate|rooker_wise|standard_uprate) "dont_uprate"
+   country CDATA "GB"
+   lang CDATA "en"
+   currencyCode CDATA "GBP"
+   next   NMTOKEN #IMPLIED
+   display (hidden|normal|password|label_only) "normal"
+   check (dont_check|warn|halt) "dont_check"
+   min NMTOKEN "-9999999999.99"
+   max  NMTOKEN "99999999999.99"
+   prec NMTOKEN "2"
+   format CDATA #IMPLIED
+   match  CDATA #IMPLIED
+   length NMTOKEN #IMPLIED
+   asArray (true|false) "false"
+   topset (true|false) "false"
+   order  (asc|desc|none) "none"
+   treatAsPercentage (true|false) "true"
+   sumsTo100 (true|false) "false"
+   macroVariableClass CDATA #IMPLIED 
+   levelChangePossible (true|false) "true"
+   isExogenous (true|false) "false"
+   inputFileStartPos NMTOKEN #IMPLIED
+   outputFileStartPos NMTOKEN #IMPLIED
+   numVariables NMTOKEN #IMPLIED
+   percentChangePossible (true|false) "false"
+   realOutputFileStartPos NMTOKEN #IMPLIED
+   exceptions  CDATA #IMPLIED 
+   enabled (true|false) "true"
+   access CDATA  "all"
+>
+
+<!-- 
+    from  macroeconomic things mostly junk and could be got rid of in a well-ordered universe, but needed for the ADRS macro models  
+-->
+
+<!ELEMENT Parameter ( ( Description | EditInfo )* )>
+
+
+<!ATTLIST Parameter 
+		    name CDATA #IMPLIED
+         	    instanceName CDATA #REQUIRED
+                    indexType (none|integer|enumerated|string) "none"
+        	    units  (timeless|day|week|month|year|percent|level|counts|money|rate|no_unit) "money"
+                    type   (real|integer|enumerated|boolean|string|date|decimal) "real"
+		    logicalType CDATA #IMPLIED
+                    enumTypeRef IDREF #IMPLIED
+                    indexEnumTypeRef IDREF #IMPLIED
+                    indexSubsetRef IDREF #IMPLIED
+                    collectionType (set|map|list|singular) "singular"
+                    maximumSize NMTOKEN #IMPLIED
+ 		>
+
+
+<!-- a simple EnumeratedType with numbers and Values -->
+<!-- the id is a simple way which allows lots of Parameters to refer to it -->
+<!ELEMENT EnumeratedType (Description*,EnumValue*, Subset* ) >
+
+<!-- allow values="one two three", as well as a more complicated version -->
+<!ATTLIST EnumeratedType 
+          id ID #REQUIRED
+          name   CDATA #IMPLIED
+          Values CDATA #IMPLIED >
+
+<!ELEMENT EnumValue (Description*, Text+)>
+<!ATTLIST EnumValue 
+          name   CDATA #REQUIRED
+          value  NMTOKEN #IMPLIED
+          default  (true|false) "false">
+<!ELEMENT Text (#PCDATA)>
+<!ATTLIST Text 
+          lang CDATA 'en'
+          country CDATA 'GB'                    
+>
+
+<!ELEMENT Subset ( Description* ) >
+
+<!ATTLIST Subset 
+          id ID  #REQUIRED
+          start   CDATA #REQUIRED
+          stop    CDATA #REQUIRED >
+

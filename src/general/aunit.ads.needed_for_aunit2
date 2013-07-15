@@ -1,0 +1,18 @@
+--
+-- This is a single instantation of AUnit_Framework.Framework, needed for the 
+-- mk 2 version of AUnit
+-- I don't entirely understand why you need this, or why it has to be so different
+-- from the mk1 version, but there you go.
+-- 
+-- see this:  file:///opt/ada_sources/aunit-2.03-src/docs/aunit.html#Overview
+-- 
+pragma Restrictions( No_Implicit_Dynamic_Code );
+
+with AUnit_Framework.Framework;
+
+package AUnit is new AUnit_Framework.Framework(
+   Max_Exceptions_Per_Harness => 5,
+   Max_Failures_Per_Harness   => 20,
+   Max_Routines_Per_Test_Case => 1_000,
+   Max_Test_Cases_Per_Suite   => 5_000,
+   Message_String_Pool_Size     => (4_096 * 16) );

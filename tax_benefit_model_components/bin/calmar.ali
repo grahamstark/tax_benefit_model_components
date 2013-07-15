@@ -1,0 +1,202 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -g
+A -gnatQ
+A -gnat05
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnvnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U calmar%b		calmar.adb		4d1f58df NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.generic_elementary_functions%s
+
+U calmar%s		calmar.ads		ab369a5d BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_real_arrays%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.fortran%s	i-fortra.adb		i-fortra.ali
+W interfaces.fortran.blas%s  i-forbla.adb	i-forbla.ali
+W interfaces.fortran.lapack%s  i-forlap.ads	i-forlap.ali
+W system%s		system.ads		system.ali
+W system.generic_array_operations%s  s-gearop.adb  s-gearop.ali
+W system.generic_real_blas%s
+W system.generic_real_lapack%s
+
+D ada.ads		20110419093133 3ffc8e18
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-numeri.ads		20110419093132 bb51c45a
+D a-numaux.ads		20110419093132 243fe0b7
+D a-ngcoty.ads		20110419093132 e7845fd0
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngelfu.adb		20110419093132 d18bc0c2
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D calmar.ads		20110517095259 ae54d967
+D calmar.adb		20110509092344 a4389c51
+D interfac.ads		20110419093135 f77d8799
+D i-fortra.ads		20110419093135 dedf9840
+D i-forbla.ads		20110419093135 72e94996
+D i-forlap.ads		20110419093135 fc33cf68
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerebl.adb		20110419093137 893920c2
+D s-gerela.ads		20110419093137 692c845e
+D s-gerela.adb		20110419093137 59ae5999
+D s-parame.ads		20110419093138 03aa3b01
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 19|1r6 2r6 17r8 48r35 20|1r6 5r28
+X 6 a-numeri.ads
+16K13*Numerics 32e17 19|1r10 48r39 20|1r10 5r32
+X 9 a-ngelfu.ads
+17F9 Float_Type 20|6r7
+19k22*Generic_Elementary_Functions 73e46 20|1w19 5r41
+25V13 Exp 20|39s16[5]
+X 11 a-ngrear.ads
+37F9 Real 19|49r7
+38k22*Generic_Real_Arrays 139e37 19|1w19 48r48
+43A9 Real_Vector<integer> 19|59r28[48] 93r39[48]
+44A9 Real_Matrix<integer><integer> 19|58r30[48]
+57V13 "*" 20|35s26[19|48]
+X 14 a-string.ads
+16K13*Strings 35e16 19|2r10 17r12
+X 16 a-strunb.ads
+76K21*Unbounded 489e26 19|2w18 17r20
+79R9*Unbounded_String 473e14 19|33r17
+123V13*"&"{79R9} 20|64s59 65s56 65s80 66s27 66s49 72s59 73s56 73s80 74s27
+. 74s49 83s56 84s99 85s35 86s30 86s59 87s30
+X 19 calmar.ads
+10F8 Data_Type 38r28 39r28 39r41 40r28 40r41 49r15 20|6r21 31r12 54r26 86r32
+. 87r32
+11i3 Num_Controls{positive} 45r49 88r51
+12i3 Num_Observations{positive} 46r54
+13i3 Max_Breakdown_Size{positive} 52r46 58r64 88r66
+15k9*Calmar 10z8 11z3 12z3 13z3 113l5 113e11 20|3b14 134l5 134t11
+21E9*Method_Type 21e73 41r28
+21n26*linear{21E9} 41r43
+21n34*raking_ratio{21E9}
+21n48*logit{21E9}
+21n55*truncated_linear{21E9}
+23E9*Calmar_Error 29e28 32r15
+24n7*no_error{23E9} 32r31 20|109r32
+25n7*mismatched_zeros{23E9} 20|63r37 71r37
+26n7*marginal_totals_not_equal{23E9} 20|82r34
+27n7*bounds_not_set{23E9}
+28n7*no_convergence{23E9}
+29n7*too_many_iterations{23E9}
+31R9*Error_Record 34e14 68r31 75r55 20|51r55 55r26 101r31
+32e7 state{23E9} 20|63m28 71m28 82m25 109r23
+33r7 message{16|79R9} 20|64m28 64r51 72m28 72r51 83m25 83r48
+36R9*Control_Record 42e14 67r31 75r31 20|51r31 100r31
+37i7 max_iterations{positive}
+38*7 stopping_tolerance{10F8} 20|81r62
+39*7 lower_bound{10F8}
+40*7 upper_bound{10F8}
+41e7 method{21E9}
+45I12*Controls_Range{integer} 55r31 57r37 58r43 20|15r18 57r18 125r21
+46I12*Observations_Range{integer} 57r53 59r41 94r44 20|16r21 34r21 124r18
+48K12*Dataset_Package[11|38] 50r8 20|29r11
+52I12*Enum_Range{positive} 53r71 55r51 20|13r12
+53A9*Enum_Matrix(52I12)<integer><integer> 57r24
+55A9*Enum_Vector(52I12)<integer> 65r31 74r30 79r31 101r32 20|10r31 50r31
+. 98r30 117r30
+57A9*Dataset<53A9><integer><integer> 62r31 71r27 78r27 99r32 20|9r27 47r27
+. 95r31 115r30
+58A9*Control_Table<11|44A9[48]><integer><integer> 64r31 73r27 80r48 100r32
+. 20|11r48 12r12 49r27 52r29 97r31 116r31
+59A9*Data_Column<11|43A9[48]><integer> 63r31 66r31 72r27 80r27 106r28 20|11r27
+. 48r27 96r31 99r31
+61U14*Calculate_Weights 62>7 63>7 64>7 65>7 66<7 67>7 68<7 20|94b14 112l9
+. 112t26
+62a7 data{57A9} 20|95b7 104r10
+63a7 initial_weights{59A9} 20|96b7 105r10
+64a7 marginal_totals{58A9} 20|97b7 106r10
+65a7 size_of_each_enum{55A9} 20|98b7 107r10
+66a7 final_weights{59A9} 20|99b7
+67r7 ctl_rec{36R9} 20|100b7 108r10
+68r7 error_state{31R9} 20|101b7 103m7 109r11
+70V13*Run_Integrity_Check{31R9} 71>7 72>7 73>7 74>7 75>7 20|46b13 92l8 92t27
+. 103s22
+71a7 data{57A9} 20|47b7 53r22
+72a7 weights{59A9} 20|48b7 53r47
+73a7 marginal_totals{58A9} 20|49b7 61r17 69r20 78r34
+74a7 size_of_each_enum{55A9} 20|50b7 53r28 60r24
+75r7 ctl_rec{36R9} 20|51b7 81r54
+77V13*Accumulate{58A9} 78>7 79>7 80>7 20|8b13 22l8 22t18 53s10
+78a7 data{57A9} 20|9b7 17r18
+79a7 size_of_each_enum{55A9} 20|10b7
+80a7 weights{59A9} 20|11b7 18r44
+84R9*Passed_Through_Data 105c9 110e14 20|27r16
+88i4 Information_Matrix_Size{positive} 90r59
+90I12 Information_Matrix_Range{integer} 93r52 103r32 108r28 20|119r31 120r11
+93A9 Information_Matrix_Row<11|43A9[48]><integer> 94r68 107r29 20|26r16 27r45
+. 30r11
+94A9 Information_Matrix_Type(93A9)<integer> 102r32 109r28 20|118r32
+98U14 Dataset_To_Information_Matrix 99>7 100>7 101>7 102<7 103<7 20|114b14
+. 132l8 132t37
+99a7 data{57A9} 20|115b7 126r32
+100a7 marginal_totals{58A9} 20|116b7
+101a7 size_of_each_enum{55A9} 20|117b7 128r42
+102a7 information_matrix{94A9} 20|118b7 123m7 127m13
+103i7 matrix_size{90I12} 20|119b7 122m7 126r18 128m13 128r28 131m7 131r22
+106a7 initial_weights{59A9} 20|38r21
+107a7 control_totals{93A9} 20|41r38
+108i7 matrix_size{90I12} 20|33r28
+109a7 information_matrix{94A9} 20|35r33 37r21
+X 20 calmar.adb
+5K12 Numerics[9|19] 28r11
+12a7 ct{19|58A9} 18m13 18r29 21r14
+13i7 p{19|52I12} 17m13 18r22 18r38
+15i11 ctl{19|45I12} 17r24 18r17 18r33
+16i14 obs{19|46I12} 17r29 18r53
+25V13 Entopy_Minimand{19|93A9} 25b13 26>7 27>7 44l8 44t23
+26a7 lamdas{19|93A9} 35r19
+27r7 data{19|84R9} 33r23 35r28 37r16 38r16 41r33
+30a7 x{19|93A9} 36m13 36r25 41m10 41r22 43r14
+31*7 ip{19|10F8} 35m13 39r21
+33i11 ctl{integer} 36r16 36r28 37r48 38r38 41r13 41r25 41r54
+34i14 obs{19|46I12} 35r53 37r41
+52a7 new_totals{19|58A9} 62r17 70r17 79r34
+54*7 old_sum{19|10F8} 58m10 78m13 78r24 81r20 81r42 86r49
+54*16 new_sum{19|10F8} 59m10 79m13 79r24 81r30 87r49
+55r7 error_state{19|31R9} 63m16 64m16 64r39 68r23 71m16 72m16 72r39 76r25
+. 82m13 83m13 83r36 88r20 91r14
+57i11 ctl{19|45I12} 60r43 61r34 62r29 65r74 69r37 70r29 73r74 78r51 79r46
+. 85r29
+60i14 p{integer} 61r39 62r34 66r45 69r42 70r34 74r45 78r56 79r51
+120i7 p{19|90I12} 126m13 127r40
+124i11 obs{19|46I12} 126r38 127r33
+125i14 ctl{19|45I12} 126r43 128r61
+

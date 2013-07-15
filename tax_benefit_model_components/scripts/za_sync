@@ -1,0 +1,9 @@
+ #!/bin/sh
+
+export PATH=/usr/local/bin:/usr/bin:/bin
+
+HOME='/home/za/micro/'
+REMOTE_TARGET='adrs-global.com:/home/za/micro/'
+
+rsync -avz -e ssh  $HOME $REMOTE_TARGET
+

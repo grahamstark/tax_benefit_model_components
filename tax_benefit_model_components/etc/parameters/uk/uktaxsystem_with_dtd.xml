@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE ParameterSet
+  PUBLIC "http://www.ifs.org.uk/PARAMS" 
+          "/home/graham_s/veserv/data/parameters/parameters.dtd" [
+
+<!ENTITY pound "&#163;">
+<!ENTITY AllBen SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/AllBen.xml">
+<!ENTITY LocalTax SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/LocalTax.xml"> 
+<!ENTITY ChildBenefit SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/ChildBenefit.xml" >                 
+<!ENTITY NationalInsuranceBenefits SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/NationalInsuranceBenefits.xml" >
+<!ENTITY CompanyCars SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/CompanyCars.xml" >                 
+<!ENTITY NISys SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/NISys.xml" >
+<!ENTITY EmployersNationalInsurance SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/EmployersNationalInsurance.xml" >  
+<!ENTITY SicknessBenefits SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/SicknessBenefits.xml" >
+<!ENTITY Fowler SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/Fowler.xml" >
+<!ENTITY IncTaxSys SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/IncTaxSys.xml" >                   
+<!ENTITY IndirectTax SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/IndirectTax.xml" >
+
+<!ENTITY BudgetHistory SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/BudgetHistory.xml">
+<!ENTITY AllBen_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/AllBen.xml">
+<!ENTITY LocalTax_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/LocalTax.xml"> 
+<!ENTITY ChildBenefit_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/ChildBenefit.xml" >                 
+<!ENTITY NationalInsuranceBenefits_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/NationalInsuranceBenefits.xml" >
+<!ENTITY CompanyCars_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/CompanyCars.xml" >                 
+<!ENTITY NISys_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/NISys.xml" >
+<!ENTITY EmployersNationalInsurance_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/EmployersNationalInsurance.xml" >  
+<!ENTITY SicknessBenefits_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/SicknessBenefits.xml" >
+<!ENTITY Fowler_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/Fowler.xml" >
+<!ENTITY IncTaxSys_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/IncTaxSys.xml" >                   
+<!ENTITY IndirectTax_Values SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/values/IndirectTax.xml" >
+
+<!ENTITY Menus SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/Menus.xml" >
+<!ENTITY EnumeratedTypes SYSTEM "/home/graham_s/veserv/src/org/vw/parameters/xml/EnumeratedTypes.xml" >
+
+]>
+
+<!--
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+   xmlns="http://www.ifs.org.uk/PARAMS"
+   xsi:schemaLocation='//home/graham_s/veserv/data/parameters/Parameters.xsd'>
+-->
+
+<ParameterSet>
+
+<ParameterSystem type="UKTBSystem" name="UK Tax and Benefit System"
+    instanceName="tbsys" >
+    &IncTaxSys;
+    &NISys;
+    &EmployersNationalInsurance;
+    &Fowler;
+    &ChildBenefit;
+    &AllBen;
+    &CompanyCars;
+    &SicknessBenefits;
+    &IndirectTax;
+    &LocalTax;
+    
+    <ParameterSystemValues type="UKTBSystem">
+       
+       
+       &IncTaxSys_Values;
+       &CompanyCars_Values;
+       &NISys_Values;
+       &SicknessBenefits_Values;
+       &Fowler_Values;
+       &ChildBenefit_Values;
+       &AllBen_Values;
+       &SicknessBenefits_Values;
+       &IndirectTax_Values;
+      
+       <!--
+         not done yet:
+         &EmployersNationalInsurance_Values;
+         &LocalTax_Values;
+       -->
+       &BudgetHistory;
+    </ParameterSystemValues>
+    
+</ParameterSystem>
+
+&EnumeratedTypes;
+&Menus;
+</ParameterSet>

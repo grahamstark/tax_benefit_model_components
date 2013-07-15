@@ -1,0 +1,8 @@
+cat ../tops_n_tails/bhps.ads.top bits/bhps_body.ads ../tops_n_tails/bhps.ads.tail > ../bhps.ads
+cat ../tops_n_tails/bhps-binary_io-conversion_to_binary.adb.top bits/conversion_inserts.adb ../tops_n_tails/bhps-binary_io-conversion_to_binary.adb.tail > ../bhps-binary_io-conversion_to_binary.adb
+cat ../tops_n_tails/bhps-print.adb.top bits/bhps_print.adb ../tops_n_tails/bhps-print.adb.tail > ../bhps-print.adb
+
+vim  -e ../bhps.ads < enum_rename.vim
+vim  -e ../bhps-binary_io-conversion_to_binary.adb < enum_rename.vim
+vim  -e ../bhps-print.adb  < enum_rename.vim
+

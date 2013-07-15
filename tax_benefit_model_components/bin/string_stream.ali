@@ -1,0 +1,97 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnvvnnnnnvvnvnnnnnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnn
+
+U string_stream%b	string_stream.adb	4cdc0635 NE OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U string_stream%s	string_stream.ads	48f7f983 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D string_stream.ads	20110415182054 5bc2c371
+D string_stream.adb	20110415182054 171ec544
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 12|34r6 34r33 35r6 35r33
+X 6 a-stream.ads
+36K13*Streams 69e16 12|34w10 34r37
+39H9*Root_Stream_Type 67e64 12|39r35
+42M9*Stream_Element 13|76r22
+44I9*Stream_Element_Offset<long_integer> 12|46r23 13|69r23 73r13
+51A9*Stream_Element_Array(42M9)<44I9> 12|45r23 49r17 13|38r16 68r23
+X 7 a-string.ads
+16K13*Strings 35e16 12|35r10 35r37
+X 9 a-strunb.ads
+76K21*Unbounded 489e26 12|35w18 35r45
+79R9*Unbounded_String 473e14 12|40r20
+94V13*To_Unbounded_String{79R9} 13|58s28
+111U14*Append 13|47s7
+148V13*Slice{string} 13|71s32
+X 12 string_stream.ads
+37K9*String_Stream 55l5 55e18 13|30b14 83l5 83t18
+39R9*String_Stream_Type<6|39R9> 42e14 43P14 44r23 47P14 48r24 51r24 13|37r23
+. 55r23 67r23
+40r7*Str{9|79R9} 13|47m22 58m14 72r17
+41i7*Read_Index{natural} 13|59m14 72r29 72r48 80m14 80r35
+43U14*Read<6|54p14> 44=7 45<7 46<7 13|66b14 81l8 81t12
+44r7 Stream{39R9} 13|67b7 72r10 72r22 72r41 80m7 80r28
+45a7 Item{6|51A9} 13|68b7 72r61 73r38 76m10 79r15 80r48
+46i7 Last{6|44I9} 13|69b7 79m7
+47U14*Write<6|60p14> 48=8 49>8 13|36b14 48l8 48t13
+48r8 Stream{39R9} 13|37b7 47m15 47r15
+49a8 Item{6|51A9} 13|38b7 40r35 43r16 44r36
+50U14*Open 51=8 52>8 13|54b14 60l8 60t12
+51c8 Stream<39R9> 13|55b7 58m7 59m7
+52s8 Str{string} 13|56b7 58r49
+X 13 string_stream.adb
+40a7 Str{string} 41r24 44m10 47r27
+41i7 S{integer} 44r15 45m10 45r15
+43i11 J<long_integer> 44r42
+71a7 Str{string} 75r16 76r53 79r28
+73i7 J{6|44I9} 76r16 77m10 77r15
+75i11 S{integer} 76r58
+

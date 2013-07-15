@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystem type="CompanyCars" name="Car Taxation"
+    instanceName="car" >
+    <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <Description>
+            <p>abolish post 1994 car tax system</p>
+        </Description>
+        <Journalese>abolish post 1994 car tax system</Journalese>
+        <Tooltip>abolish post 1994 car tax system</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compCarSystem" units="timeless" type="enum"
+        instanceName="compCarSystem" enumName="CompCarSystem">
+        <Description>
+            <p>which car tax system to use</p>
+        </Description>
+        <Journalese>which car tax system to use</Journalese>
+        <Tooltip>which car tax system to use</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compCarFuel" units="percent" type="real" instanceName="compCarFuel">
+        <Description>
+            <p>fuel scale charge for pre 1994 system</p>
+        </Description>
+        <Journalese>fuel scale charge for pre 1994 system</Journalese>
+        <Tooltip>fuel scale charge for pre 1994 system</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compCarScale" units="percent" type="real" instanceName="compCarScale">
+        <Description>
+            <p>car scale charge for pre 1994 system</p>
+        </Description>
+        <Journalese>car scale charge for pre 1994 system</Journalese>
+        <Tooltip>car scale charge for pre 1994 system</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="priceCalcType" units="timeless" type="enum"
+        instanceName="priceCalcType" enumName="StepsOrBands">
+        <Description>
+            <p>type of calculation on price bands</p>
+        </Description>
+        <Journalese>type of calculation on price bands</Journalese>
+        <Tooltip>type of calculation on price bands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="businessReductionType" units="timeless" type="enum"
+        instanceName="businessReductionType" enumName="StepsOrBands">
+        <Description>
+            <p>type of calculation on business miles bands</p>
+        </Description>
+        <Journalese>type of calculation on business miles bands</Journalese>
+        <Tooltip>type of calculation on business miles bands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ageReductionType" units="timeless" type="enum"
+        instanceName="ageReductionType" enumName="StepsOrBands">
+        <Description>
+            <p>type of calculation on business age bands</p>
+        </Description>
+        <Journalese>type of calculation on business age bands</Journalese>
+        <Tooltip>type of calculation on business age bands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="fuelScaleType" units="timeless" type="enum"
+        instanceName="fuelScaleType" enumName="StepsOrBands">
+        <Description>
+            <p>type of calculation on fuel bands</p>
+        </Description>
+        <Journalese>type of calculation on fuel bands</Journalese>
+        <Tooltip>type of calculation on fuel bands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumListPriceMultiples" units="timeless" type="int" instanceName="numListPriceMultiples">
+        <Description>
+            <p>NumListPriceMultiples</p>
+        </Description>
+        <Journalese>NumListPriceMultiples</Journalese>
+        <Tooltip>NumListPriceMultiples</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumBusinessBands" units="timeless" type="int" instanceName="numBusinessBands">
+        <Description>
+            <p>NumBusinessBands</p>
+        </Description>
+        <Journalese>NumBusinessBands</Journalese>
+        <Tooltip>NumBusinessBands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumAgeReductions" units="timeless" type="int" instanceName="numAgeReductions">
+        <Description>
+            <p>NumAgeReductions</p>
+        </Description>
+        <Journalese>NumAgeReductions</Journalese>
+        <Tooltip>NumAgeReductions</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumFuelScaleBands" units="timeless" type="int" instanceName="numFuelScaleBands">
+        <Description>
+            <p>NumFuelScaleBands</p>
+        </Description>
+        <Journalese>NumFuelScaleBands</Journalese>
+        <Tooltip>NumFuelScaleBands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumVEDRates" units="timeless" type="int" instanceName="numVEDRates">
+        <Description>
+            <p>NumVEDRates</p>
+        </Description>
+        <Journalese>NumVEDRates</Journalese>
+        <Tooltip>NumVEDRates</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <ArrayGroup name="CarListPrices" instanceName="price_bands" counterId="numListPriceMultiples">
+        <Parameter name="ListPriceLimit" units="timeless" type="real" instanceName="listPriceLimit">
+            <Description>
+                <p>Price</p>
+            </Description>
+            <Journalese>Price</Journalese>
+            <Tooltip>Price</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ListPriceMultiple" units="percent" type="real" instanceName="listPriceMultiple">
+            <Description>
+                <p>PriceRates</p>
+            </Description>
+            <Journalese>PriceRates</Journalese>
+            <Tooltip>PriceRates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>car tax rates and bands for imputed income</p>
+        </Description>
+        <Tooltip>car tax rates and bands for imputed income</Tooltip>
+        <Journalese>car tax rates and bands for imputed income</Journalese>
+    </ArrayGroup>
+    <ArrayGroup name="miles_bands" instanceName="miles_bands" counterId="numBusinessBands">
+        <Parameter name="BusinessReductionMiles" units="year"
+            type="real" instanceName="businessReductionMiles">
+            <Description>
+                <p>Miles</p>
+            </Description>
+            <Journalese>Miles</Journalese>
+            <Tooltip>Miles</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="BusinessReduction" units="percent" type="real" instanceName="businessReduction">
+            <Description>
+                <p>MileRates</p>
+            </Description>
+            <Journalese>MileRates</Journalese>
+            <Tooltip>MileRates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>business miles reduction rates</p>
+        </Description>
+        <Tooltip>business miles reduction rates</Tooltip>
+        <Journalese>business miles reduction rates</Journalese>
+    </ArrayGroup>
+    <ArrayGroup name="age_bands" instanceName="age_bands" counterId="numAgeReductions">
+        <Parameter name="AgeReductionLimit" units="timeless" type="real" instanceName="ageReductionLimit">
+            <Description>
+                <p>Age</p>
+            </Description>
+            <Journalese>Age</Journalese>
+            <Tooltip>Age</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="AgeReduction" units="percent" type="real" instanceName="ageReduction">
+            <Description>
+                <p>AgeRates</p>
+            </Description>
+            <Journalese>AgeRates</Journalese>
+            <Tooltip>AgeRates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>business age reduction rates</p>
+        </Description>
+        <Tooltip>business age reduction rates</Tooltip>
+        <Journalese>business age reduction rates</Journalese>
+    </ArrayGroup>
+    <ArrayGroup name="fuel_scales" instanceName="fuel_scales" counterId="numFuelScaleBands">
+        <Parameter name="FuelScaleCCs" units="timeless" type="real" instanceName="fuelScaleCCs">
+            <Description>
+                <p>CCs</p>
+            </Description>
+            <Journalese>CCs</Journalese>
+            <Tooltip>CCs</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="UnleadedPetrol" units="year" type="real" instanceName="unleadedPetrol">
+            <Description>
+                <p>Unleaded Petrol</p>
+            </Description>
+            <Journalese>Unleaded Petrol</Journalese>
+            <Tooltip>Unlead</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="LeadedPetrol" units="year" type="real" instanceName="leadedPetrol">
+            <Description>
+                <p>Leaded</p>
+            </Description>
+            <Journalese>Leaded</Journalese>
+            <Tooltip>Leaded</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="DieselFuel" units="year" type="real" instanceName="dieselFuel">
+            <Description>
+                <p>Diesel</p>
+            </Description>
+            <Journalese>Diesel</Journalese>
+            <Tooltip>Diesel</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="OtherFuel" units="year" type="real" instanceName="otherFuel">
+            <Description>
+                <p>Other</p>
+            </Description>
+            <Journalese>Other</Journalese>
+            <Tooltip>Other</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>fuel scale charges</p>
+        </Description>
+        <Tooltip>fuel scale charges</Tooltip>
+        <Journalese>fuel scale charges</Journalese>
+    </ArrayGroup>
+    <ArrayGroup name="ved" instanceName="ved" counterId="numVEDRates">
+        <Parameter name="VEDBand" units="timeless" type="real" instanceName="vedBand">
+            <Description>
+                <p>VEDCCs</p>
+            </Description>
+            <Journalese>VEDCCs</Journalese>
+            <Tooltip>VEDCCs</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="VEDRate" units="year" type="real" instanceName="vedrate">
+            <Description>
+                <p>VEDRates</p>
+            </Description>
+            <Journalese>VEDRates</Journalese>
+            <Tooltip>VEDRates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>vehicle excise duty rates</p>
+        </Description>
+        <Tooltip>vehicle excise duty rates</Tooltip>
+        <Journalese>vehicle excise duty rates</Journalese>
+    </ArrayGroup>
+    <Description>
+        <p>Car Taxation, Including Company Cars and VED</p>
+    </Description>
+    <Tooltip>Car Taxation, Including Company Cars and VED</Tooltip>
+</ParameterSystem>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameter-system type="EmployersNationalInsurance" instanceName="empni" >
+    <parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <description>
+            <p>abolish employers ni system</p>
+        </description>
+        <journalese>abolish employers ni system</journalese>
+        <tooltip>abolish employers ni system</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </parameter>
+    <parameter name="banded" units="timeless" type="boolean" instanceName="banded">
+        <description>
+            <p>make employers ni banded (as in income tax)</p>
+        </description>
+        <journalese>make employers ni banded (as in income tax)</journalese>
+        <tooltip>make employers ni banded (as in income tax)</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </parameter>
+    <parameter name="contractedOutRebate" units="week" type="real" instanceName="contractedOutRebate">
+        <description>
+            <p>contracted out rebate for employers ni</p>
+        </description>
+        <journalese>contracted out rebate for employers ni</journalese>
+        <tooltip>contracted out rebate for employers ni</tooltip>
+        <edit-info uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="contFloorBand" units="timeless" type="int" instanceName="contFloorBand">
+        <description>
+            <p>band at which contracted out rebate starts</p>
+        </description>
+        <journalese>band at which contracted out rebate starts</journalese>
+        <tooltip>band at which contracted out rebate starts</tooltip>
+        <edit-info uprate="dont_uprate" check="warn" min="14.0"
+            format="#######" topset="true" order="none"/>
+    </parameter>
+    <parameter name="contCeilingBand" units="timeless" type="int" instanceName="contCeilingBand">
+        <description>
+            <p>band at which contracted out rebate ends</p>
+        </description>
+        <journalese>band at which contracted out rebate ends</journalese>
+        <tooltip>band at which contracted out rebate ends</tooltip>
+        <edit-info uprate="dont_uprate" check="warn" min="14.0"
+            format="#######" topset="true" order="none"/>
+    </parameter>
+    <parameter name="NumBands" units="timeless" type="int" instanceName="numBands">
+        <description>
+            <p>NumBands</p>
+        </description>
+        <journalese>NumBands</journalese>
+        <tooltip>NumBands</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </parameter>
+    <parameter name="employerCompCarInBase" units="timeless"
+        type="boolean" instanceName="employerCompCarInBase">
+        <description>
+            <p>company cars chargable for employer ni</p>
+        </description>
+        <journalese>company cars chargable for employer ni</journalese>
+        <tooltip>company cars chargable for employer ni</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </parameter>
+    <array-group name="ratesAndBands" instanceName="ratesAndBands" counterId="numBands">
+        <parameter name="Rates" units="percent" type="real" instanceName="rates">
+            <description>
+                <p>Rates</p>
+            </description>
+            <journalese>Rates</journalese>
+            <tooltip>Rates</tooltip>
+            <edit-info uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </parameter>
+        <parameter name="Bands" units="week" type="real" instanceName="bands">
+            <description>
+                <p>Bands</p>
+            </description>
+            <journalese>Bands</journalese>
+            <tooltip>Bands</tooltip>
+            <edit-info uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </parameter>
+        <description>
+            <p>employer ni contracted in rates and bands</p>
+        </description>
+        <tooltip>employer ni contracted in rates and bands</tooltip>
+        <journalese>employer ni contracted in rates and bands</journalese>
+    </array-group>
+    <description>
+        <p>Employer&apos;s National Insurance</p>
+    </description>
+    <tooltip>Employer&apos;s National Insurance</tooltip>
+</parameter-system>

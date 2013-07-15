@@ -1,0 +1,58 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U google_chart_constants%b  google_chart_constants.adb  307a76be NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U google_chart_constants%s  google_chart_constants.ads  0def927f EE NE OO PK
+
+D ada.ads		20110419093133 3ffc8e18
+D a-unccon.ads		20110419093133 f9eb8f06
+D google_chart_constants.ads  20110415182055 0def927f
+D google_chart_constants.adb  20110415182055 3d95e4c1
+D interfac.ads		20110419093135 f77d8799
+D system.ads		20110419093140 23e1f70b
+D s-secsta.ads		20110419093138 eea35a36
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+X 3 google_chart_constants.ads
+1K9*Google_Chart_Constants 31l5 31e27 4|1b14 70l5 70t27
+5E9*Chart_Type 21e5 23r28 24r31 26r34 27r36 28r29 29r29 4|6r28 27r31 48r34
+. 54r36 59r29 64r29
+6n7*line{5E9} 4|9r15 30r15 50r24
+7n7*sparkline{5E9} 4|10r15 31r15 50r44
+8n7*xy{5E9} 4|11r15 32r15 50r69
+9n7*horizontal_bar{5E9} 4|12r15 33r15 56r62 66r25
+10n7*vertical_bar{5E9} 4|13r15 34r15 51r24 66r55
+11n7*horizontal_bar_grouped{5E9} 4|14r15 35r15 56r24 67r25
+12n7*vertical_bar_grouped{5E9} 4|15r15 36r15 51r52 67r63
+13n7*pie{5E9} 4|16r15 37r15 61r24
+14n7*pie_3d{5E9} 4|17r15 38r15 61r43
+15n7*pie_concentric{5E9} 4|18r15 39r15
+16n7*venn_diagram{5E9} 4|19r15 40r15
+17n7*scatter{5E9} 4|20r15 41r15
+18n7*radar{5E9} 4|21r15 42r15
+19n7*radar_spline{5E9} 4|22r15 43r15
+20n7*map{5E9} 4|23r15 44r15
+23V13*To_String{string} 23>24 4|6b13 25l8 25t17
+23e24 t{5E9} 4|6b24 8r12
+24V13*Pretty_Print{string} 24>27 4|27b13 46l8 46t20
+24e27 t{5E9} 4|27b27 29r12
+26V13*Is_Vertical{boolean} 26>26 4|48b13 52l8 52t19
+26e26 ctype{5E9} 4|48b26 50r16 50r36 50r61 51r16 51r44
+27V13*Is_Horizontal{boolean} 27>28 4|54b13 57l8 57t21
+27e28 ctype{5E9} 4|54b28 56r16 56r54
+28V13*Is_Pie{boolean} 28>21 4|59b13 62l8 62t14
+28e21 ctype{5E9} 4|59b21 61r16 61r35
+29V13*Is_Bar{boolean} 29>21 4|64b13 68l8 68t14
+29e21 ctype{5E9} 4|64b21 66r17 66r47 67r17 67r55
+

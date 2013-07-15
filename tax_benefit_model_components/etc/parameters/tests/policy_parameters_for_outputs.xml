@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ParameterSystem SYSTEM "../dtds/parameters2.dtd" >
+
+<!-- FIXME point to  SYSTEM "http://www.virtual-worlds.biz/dtds/parameters2.dtd"  -->
+
+
+<ParameterSystem name="PolicyVariables" instanceName="policyVariables" enabled="true">
+        <ParameterSystem name="SummaryBlock" instanceName="summaryBlock" enabled="true">
+                <Description type="journalese" lang="en">Selected Macroeconomic Indicators</Description>
+                <Description type="label" lang="en">Selected Macroeconomic Indicators</Description>
+                <Description type="description" lang="en">Selected Macroeconomic Indicators</Description>
+                <ParameterSystem name="SummaryBlockExpenditure" instanceName="summaryBlockExpenditure" enabled="true">
+                        <Description type="journalese" lang="en">Real expenditure on GDP (Rbn at constant 2000 market prices)</Description>
+                        <Description type="label" lang="en">Real expenditure (Rbn at constant 2000 market prices)</Description>
+                        <Description type="description" lang="en">Real expenditure on GDP (Rbn at constant 2000 market prices)</Description>
+                        <Parameter instanceName="gdpAtMarketPrices" type="real">
+                                <Description type="journalese" lang="en">GDP at Market Prices</Description>
+                                <Description type="label" lang="en">GDP at Market Prices</Description>
+                                <Description type="description" lang="en">GDP at Market Prices</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="18" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="privateConsumption" type="real">
+                                <Description type="journalese" lang="en">Private consumption</Description>
+                                <Description type="label" lang="en">Private consumption</Description>
+                                <Description type="description" lang="en">Private consumption</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="3" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="governmentConsumption" type="real">
+                                <Description type="journalese" lang="en">Government consumption</Description>
+                                <Description type="label" lang="en">Government consumption</Description>
+                                <Description type="description" lang="en">Government consumption</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="4" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="investment" type="real">
+                                <Description type="journalese" lang="en">Investment</Description>
+                                <Description type="label" lang="en">Investment</Description>
+                                <Description type="description" lang="en">Investment</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="7" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="exports" type="real">
+                                <Description type="journalese" lang="en">Exports of goods  and  services</Description>
+                                <Description type="label" lang="en">Exports of goods  and  services</Description>
+                                <Description type="description" lang="en">Exports of goods  and  services</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="12" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="imports" type="real">
+                                <Description type="journalese" lang="en">Imports of goods  and  services</Description>
+                                <Description type="label" lang="en">Imports of goods  and  services</Description>
+                                <Description type="description" lang="en">Imports of goods  and  services</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="17" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="grossDomesticExpenditure" type="real">
+                                <Description type="journalese" lang="en">Gross Domestic Expenditure (GDE)</Description>
+                                <Description type="label" lang="en">Gross Domestic Expenditure</Description>
+                                <Description type="description" lang="en">Gross Domestic Expenditure (GDE)</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="11" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+                <ParameterSystem name="SummaryBlockExpenditureGrowth" instanceName="summaryBlockExpenditureGrowth" enabled="true">
+                        <Description type="journalese" lang="en">Real expenditure on GDP (% change)</Description>
+                        <Description type="label" lang="en">Real expenditure Growth (% change)</Description>
+                        <Description type="description" lang="en">Real expenditure on GDP (% change)</Description>
+                        <Parameter instanceName="gdpAtMarketPrices" type="real">
+                                <Description type="journalese" lang="en">GDP at Market Prices</Description>
+                                <Description type="label" lang="en">GDP at Market Prices</Description>
+                                <Description type="description" lang="en">GDP at Market Prices</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10018" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="privateConsumption" type="real">
+                                <Description type="journalese" lang="en">Private consumption</Description>
+                                <Description type="label" lang="en">Private consumption</Description>
+                                <Description type="description" lang="en">Private consumption</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10003" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="governmentConsumption" type="real">
+                                <Description type="journalese" lang="en">Government consumption</Description>
+                                <Description type="label" lang="en">Government consumption</Description>
+                                <Description type="description" lang="en">Government consumption</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10004" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="investment" type="real">
+                                <Description type="journalese" lang="en">Investment</Description>
+                                <Description type="label" lang="en">Investment</Description>
+                                <Description type="description" lang="en">Investment</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10007" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="exports" type="real">
+                                <Description type="journalese" lang="en">Exports of goods  and  services</Description>
+                                <Description type="label" lang="en">Exports of goods  and  services</Description>
+                                <Description type="description" lang="en">Exports of goods  and  services</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10012" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="imports" type="real">
+                                <Description type="journalese" lang="en">Imports of goods  and  services</Description>
+                                <Description type="label" lang="en">Imports of goods  and  services</Description>
+                                <Description type="description" lang="en">Imports of goods  and  services</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10017" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="grossDomesticExpenditure" type="real">
+                                <Description type="journalese" lang="en">Gross Domestic Expenditure (GDE)</Description>
+                                <Description type="label" lang="en">Gross Domestic Expenditure</Description>
+                                <Description type="description" lang="en">Gross Domestic Expenditure (GDE)</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10011" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+           
+                </ParameterSystem>
+                
+                <ParameterSystem name="SummaryBlockOriginOfGDP" instanceName="summaryBlockOriginOfGDP" enabled="true">
+                        <Description type="journalese" lang="en">Origin of GDP (Rbn at constant 2000 prices)</Description>
+                        <Description type="label" lang="en">Origin of GDP (Rbn at constant 2000 prices)</Description>
+                        <Description type="description" lang="en">Origin of GDP (Rbn at constant 2000 prices)</Description>
+                        <Parameter instanceName="gdpAtBasicPrices" type="real">
+                                <Description type="journalese" lang="en">GDP at basic prices</Description>
+                                <Description type="label" lang="en">GDP at basic prices</Description>
+                                <Description type="description" lang="en">GDP at basic prices</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="563" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="primary" type="real">
+                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                <Description type="label" lang="en">Primary</Description>
+                                <Description type="description" lang="en">Primary Sector</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="560" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="manufacturing" type="real">
+                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                <Description type="label" lang="en">Manufacturing</Description>
+                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="561" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="services" type="real">
+                                <Description type="journalese" lang="en">Services Sector</Description>
+                                <Description type="label" lang="en">Services</Description>
+                                <Description type="description" lang="en">Services Sector</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="562" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+                
+                
+                <ParameterSystem name="SummaryBlockOriginOfGDPGrowth" instanceName="summaryBlockOriginOfGDPGrowth" enabled="true">
+                        <Description type="journalese" lang="en">Origin of GDP (Real Percentage Change)</Description>
+                        <Description type="label" lang="en">Origin of GDP (% growth)</Description>
+                        <Description type="description" lang="en">Origin of GDP (Real Percentage Change)</Description>
+                        <Parameter instanceName="gdpAtBasicPrices" type="real">
+                                <Description type="journalese" lang="en">GDP at basic prices</Description>
+                                <Description type="label" lang="en">GDP at basic prices</Description>
+                                <Description type="description" lang="en">GDP at basic prices</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10563" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="primary" type="real">
+                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                <Description type="label" lang="en">Primary</Description>
+                                <Description type="description" lang="en">Primary Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10560" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="manufacturing" type="real">
+                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                <Description type="label" lang="en">Manufacturing</Description>
+                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10561" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="services" type="real">
+                                <Description type="journalese" lang="en">Services Sector</Description>
+                                <Description type="label" lang="en">Services</Description>
+                                <Description type="description" lang="en">Services Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="10562" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+
+                <ParameterSystem name="SummaryBlockEconomicStructure" instanceName="summaryBlockEconomicStructure" enabled="true">
+                        <Description type="journalese" lang="en">Economic structure (% of GDP at current market prices)</Description>
+                        <Description type="label" lang="en">Economic structure (% of GDP at current market prices)</Description>
+                        <Description type="description" lang="en">(% of GDP at current market prices)</Description>
+                        <Parameter instanceName="privateConsumption" type="real">
+                                <Description type="journalese" lang="en">Private consumption</Description>
+                                <Description type="label" lang="en">Private consumption</Description>
+                                <Description type="description" lang="en">Private consumption</Description>
+                                <EditInfo  treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20001" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="governmentConsumption" type="real">
+                                <Description type="journalese" lang="en">Government consumption</Description>
+                                <Description type="label" lang="en">Government consumption</Description>
+                                <Description type="description" lang="en">Government consumption</Description>
+                                <EditInfo  treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20002" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="investment" type="real">
+                                <Description type="journalese" lang="en">Investment</Description>
+                                <Description type="label" lang="en">Investment</Description>
+                                <Description type="description" lang="en">Investment</Description>
+                                <EditInfo  treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20003" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="exports" type="real">
+                                <Description type="journalese" lang="en">Exports of goods  and  services</Description>
+                                <Description type="label" lang="en">Exports</Description>
+                                <Description type="description" lang="en">Exports of goods  and  services</Description>
+                                <EditInfo  treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20004" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="imports" type="real">
+                                <Description type="journalese" lang="en">Imports of goods  and  services</Description>
+                                <Description type="label" lang="en">Imports</Description>
+                                <Description type="description" lang="en">Imports of goods  and  services</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20005" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+
+                <ParameterSystem name="SummaryBlockOriginOfGDPShare" instanceName="summaryBlockOriginOfGDPShare" enabled="true">
+                        <Description type="journalese" lang="en">Origin of GDP (% of factor cost GDP)</Description>
+                        <Description type="label" lang="en">Origin of GDP (% share)</Description>
+                        <Description type="description" lang="en">Origin of GDP (% of factor cost GDP)</Description>
+                       <Parameter instanceName="primary" type="real">
+                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                <Description type="label" lang="en">Primary</Description>
+                                <Description type="description" lang="en">Primary Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20006" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="manufacturing" type="real">
+                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                <Description type="label" lang="en">Manufacturing</Description>
+                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20007" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="services" type="real">
+                                <Description type="journalese" lang="en">Services Sector</Description>
+                                <Description type="label" lang="en">Services</Description>
+                                <Description type="description" lang="en">Services Sector</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20008" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+                
+                <ParameterSystem name="SummaryBlockPrices" instanceName="summaryBlockPrices" enabled="true">
+                        <Description type="journalese" lang="en">Prices and Financial Indicators</Description>
+                        <Description type="label" lang="en">Financial Indicators</Description>
+                        <Description type="description" lang="en">Prices and Financial Indicators</Description>
+                        <Parameter instanceName="inflation" type="real">
+                                <Description type="journalese" lang="en">Inflation (Consumer Prices Index)</Description>
+                                <Description type="label" lang="en">Inflation</Description>
+                                <Description type="description" lang="en">Inflation (Consumer Prices Index)</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="1165" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="averageWage" type="real">
+                                <Description type="journalese" lang="en">Average Real Wage Rate</Description>
+                                <Description type="label" lang="en">Average Real Wage Rate</Description>
+                                <Description type="description" lang="en">Average Real Wage Rate</Description>
+                                <EditInfo treatAsPercentage="false" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="516" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="reer" type="real">
+                                <Description type="journalese" lang="en">Real Effective Exchange Rate - REER</Description>
+                                <Description type="label" lang="en">REER</Description>
+                                <Description type="description" lang="en">Real Effective Exchange Rate - REER</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="3055" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="interestRate" type="real">
+                                <Description type="journalese" lang="en">Interest Rate</Description>
+                                <Description type="label" lang="en">Interest Rate</Description>
+                                <Description type="description" lang="en">Interest Rate</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="3063" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+                <ParameterSystem name="SummaryBlockOther" instanceName="summaryBlockOther" enabled="true">
+                        <Description type="journalese" lang="en">Other Policy Indicators</Description>
+                        <Description type="label" lang="en">Other Indicators</Description>
+                        <Description type="description" lang="en">Other Policy Indicators</Description>
+                        <Parameter instanceName="gdpPC" type="real">
+                                <Description type="journalese" lang="en">GDP Per Capita (Real)</Description>
+                                <Description type="label" lang="en">GDP Per Capita (Real)</Description>
+                                <Description type="description" lang="en">GDP Per Capita (Real)</Description>
+                                <EditInfo treatAsPercentage="false" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20009" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="deficitGDP" type="real">
+                                <Description type="journalese" lang="en">Deficit to GDP Ratio (percent) </Description>
+                                <Description type="label" lang="en">Deficit/GDP Ratio (percent)</Description>
+                                <Description type="description" lang="en">Deficit/GDP Ratio (percent)</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="113" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="debtGDP" type="real">
+                                <Description type="journalese" lang="en">National Debt to GDP Ratio (percent)</Description>
+                                <Description type="label" lang="en">National Debt to GDP (percent)</Description>
+                                <Description type="description" lang="en">National Debt/GDP (percent) </Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="188" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        
+                        <Parameter instanceName="labourProductivity" type="real">
+                                <Description type="journalese" lang="en">Labour productivity</Description>
+                                <Description type="label" lang="en">Labour productivity </Description>
+                                <Description type="description" lang="en">Labour productivity </Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="1870" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        
+                        <Parameter instanceName="govGDP" type="real">
+                                <Description type="journalese" lang="en">Government expenditure to GDP Ratio(percent)</Description>
+                                <Description type="label" lang="en">Government expenditure to GDP  Ratio (percent)</Description>
+                                <Description type="description" lang="en">Government expenditure/GDP (percent)</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20010" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="revGDP" type="real">
+                                <Description type="journalese" lang="en">Government revenue to GDP Ratio(percent)</Description>
+                                <Description type="label" lang="en">Government revenue to GDP  Ratio(percent)</Description>
+                                <Description type="description" lang="en">Government revenue to GDP Ratio(percent)</Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20011" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="caGDP" type="real">
+                                <Description type="journalese" lang="en">Balance on current account (percent of GDP) </Description>
+                                <Description type="label" lang="en">Balance on current account (percent) </Description>
+                                <Description type="description" lang="en">Balance on current account (percent of GDP) </Description>
+                                <EditInfo treatAsPercentage="true" sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="20012" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+        </ParameterSystem>
+     
+        <ParameterSystem name="ExpenditureBlock" instanceName="expenditureBlock" enabled="true">
+                <Description type="journalese" lang="en">Expenditure</Description>
+                <Description type="label" lang="en">Expenditure</Description>
+                <Description type="description" lang="en">Expenditure</Description>
+                <ParameterSystem name="Consumption" instanceName="consumption" enabled="true">
+                        <Description type="journalese" lang="en">Consumption</Description>
+                        <Description type="label" lang="en">Consumption</Description>
+                        <Description type="description" lang="en">Consumption</Description>
+                        <ParameterSystem name="FinalConsumptionExpenditureByHouseholds" instanceName="finalConsumptionExpenditureByHouseholds" enabled="true">
+                                <Description type="journalese" lang="en">Final consumption expenditure by households</Description>
+                                <Description type="label" lang="en">Final consumption expenditure by households</Description>
+                                <Description type="description" lang="en">Final consumption expenditure by households</Description>
+                                <Parameter instanceName="shocksToDisaggregatedConsumption" type="real" enumTypeRef="Consumption">
+                                        <Description type="journalese" lang="en">Shocks to disaggregated consumption</Description>
+                                        <Description type="label" lang="en">Shocks to disaggregated consumption</Description>
+                                        <Description type="description" lang="en">Shocks to disaggregated consumption</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="251" isExogenous="false" outputFileStartPos="303" numVariables="21" percentChangePossible="true"/>
+                                </Parameter>
+                                <ParameterSystem name="AggregateShock" instanceName="aggregateShock" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregate shock</Description>
+                                        <Description type="label" lang="en">Aggregate shock</Description>
+                                        <Description type="description" lang="en">Aggregate shock</Description>
+                                        <Parameter instanceName="totalFinalConsumptionExpenditureByHouseholds" type="real">
+                                                <Description type="journalese" lang="en">Total Final Consumption Expenditure by Households</Description>
+                                                <Description type="label" lang="en">Total Final Consumption Expenditure by Households</Description>
+                                                <Description type="description" lang="en">Total Final Consumption Expenditure by Households</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="276" isExogenous="false" outputFileStartPos="328" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="totalConsumptionOfDurableGoodsByHouseholds" type="real">
+                                                <Description type="journalese" lang="en">Total Consumption of Durable Goods by Households</Description>
+                                                <Description type="label" lang="en">Total Consumption of Durable Goods by Households</Description>
+                                                <Description type="description" lang="en">Total Consumption of Durable Goods by Households</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="272" isExogenous="false" outputFileStartPos="324" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="totalConsumptionOfSemiDurableGoodsByHouseholds" type="real">
+                                                <Description type="journalese" lang="en">Total Consumption of Semi-Durable Goods by Households</Description>
+                                                <Description type="label" lang="en">Total Consumption of Semi-Durable Goods by Households</Description>
+                                                <Description type="description" lang="en">Total Consumption of Semi-Durable Goods by Households</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="273" isExogenous="false" outputFileStartPos="325" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="totalConsumptionOfNonDurableGoodsByHouseholds" type="real">
+                                                <Description type="journalese" lang="en">Total Consumption of  Non-Durable Goods by Households</Description>
+                                                <Description type="label" lang="en">Total Consumption of  Non-Durable Goods by Households</Description>
+                                                <Description type="description" lang="en">Total Consumption of  Non-Durable Goods by Households</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="274" isExogenous="false" outputFileStartPos="326" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="totalConsumptionOfServicesByHouseholds" type="real">
+                                                <Description type="journalese" lang="en">Total Consumption of Services by Households</Description>
+                                                <Description type="label" lang="en">Total Consumption of Services by Households</Description>
+                                                <Description type="description" lang="en">Total Consumption of Services by Households</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="275" isExogenous="false" outputFileStartPos="327" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>
+                        <ParameterSystem name="GovernmentFinalConsumptionExpenditure" instanceName="governmentFinalConsumptionExpenditure" enabled="true">
+                                <Description type="journalese" lang="en">Government Final Consumption Expenditure</Description>
+                                <Description type="label" lang="en">Government Final Consumption Expenditure</Description>
+                                <Description type="description" lang="en">Government Final Consumption Expenditure</Description>
+                                <Parameter instanceName="governmentsSocialTransfersInKindToHouseholdsIndividualConsumptionByGeneralGovernment" type="real">
+                                        <Description type="journalese" lang="en">Government&apos;s social transfers in kind to households (Individual Consumption by General Government)</Description>
+                                        <Description type="label" lang="en">Government&apos;s social transfers in kind to households (Individual Consumption by General Government)</Description>
+                                        <Description type="description" lang="en">Government&apos;s social transfers in kind to households (Individual Consumption by General Government)</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="155" isExogenous="false" outputFileStartPos="80" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="expenditureOnGoodsAndOtherServicesOfNoCapitalNatureByServiceDepartment" type="real">
+                                        <Description type="journalese" lang="en">Expenditure on Goods and Other Services of no-capital nature by service department</Description>
+                                        <Description type="label" lang="en">Expenditure on Goods and Other Services of no-capital nature by service department</Description>
+                                        <Description type="description" lang="en">Expenditure on Goods and Other Services of no-capital nature by service department</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="182" isExogenous="false" outputFileStartPos="107" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>                     <!-- consumption 
+                    -->
+
+                <ParameterSystem name="Investment" instanceName="investment" enabled="true">
+                        <Description type="journalese" lang="en">Investment</Description>
+                        <Description type="label" lang="en">Investment</Description>
+                        <Description type="description" lang="en">Investment</Description>
+                        <Parameter instanceName="sectorPrivateInvestment" type="real" enumTypeRef="Industries">
+                                <Description type="journalese" lang="en">Sector private investment</Description>
+                                <Description type="label" lang="en">Sector private investment</Description>
+                                <Description type="description" lang="en">Sector private investment</Description>
+                                <EditInfo sumsTo100="false" exceptions="660" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="329" isExogenous="false" outputFileStartPos="659" numVariables="39" percentChangePossible="true"/>
+                        </Parameter>
+                        <ParameterSystem name="PrivateInvestment" instanceName="privateInvestment" enabled="true">
+                                <Description type="journalese" lang="en">Private investment</Description>
+                                <Description type="label" lang="en">Private investment</Description>
+                                <Description type="description" lang="en">Private investment</Description>
+                                <ParameterSystem name="Aggregates" instanceName="aggregates" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregates</Description>
+                                        <Description type="label" lang="en">Aggregates</Description>
+                                        <Description type="description" lang="en">Aggregates</Description>
+                                        <Parameter instanceName="totalInvestment" type="real">
+                                                <Description type="journalese" lang="en">Total Investment </Description>
+                                                <Description type="label" lang="en">Total Investment </Description>
+                                                <Description type="description" lang="en">Total Investment </Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="375" isExogenous="false" outputFileStartPos="705" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="primarySector" type="real">
+                                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                                <Description type="label" lang="en">Primary Sector</Description>
+                                                <Description type="description" lang="en">Primary Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="372" isExogenous="false" outputFileStartPos="702" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="manufacturingSector" type="real">
+                                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                                <Description type="label" lang="en">Manufacturing Sector</Description>
+                                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="373" isExogenous="false" outputFileStartPos="703" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="serviceSector" type="real">
+                                                <Description type="journalese" lang="en">Service Sector</Description>
+                                                <Description type="label" lang="en">Service Sector</Description>
+                                                <Description type="description" lang="en">Service Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="374" isExogenous="false" outputFileStartPos="704" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>
+                        
+
+                </ParameterSystem>                     <!-- investment 
+                    -->
+
+                <ParameterSystem name="Exports" instanceName="exports" enabled="true">
+                        <Description type="journalese" lang="en">Exports</Description>
+                        <Description type="label" lang="en">Exports</Description>
+                        <Description type="description" lang="en">Exports</Description>
+                        <ParameterSystem name="Exports" instanceName="exports" enabled="true">
+                                <Description type="journalese" lang="en">Exports</Description>
+                                <Description type="label" lang="en">Exports</Description>
+                                <Description type="description" lang="en">Exports</Description>
+                                <Parameter instanceName="sectorSpecificExports" type="real" enumTypeRef="Industries">
+                                        <Description type="journalese" lang="en">Sector Specific Exports</Description>
+                                        <Description type="label" lang="en">Sector Specific Exports</Description>
+                                        <Description type="description" lang="en">Sector Specific Exports</Description>
+                                        <EditInfo sumsTo100="false" exceptions="565" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="847" isExogenous="false" outputFileStartPos="564" numVariables="39" percentChangePossible="true"/>
+                                </Parameter>
+                                <ParameterSystem name="Aggregates" instanceName="aggregates" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregates</Description>
+                                        <Description type="label" lang="en">Aggregates</Description>
+                                        <Description type="description" lang="en">Aggregates</Description>
+                                        <Parameter instanceName="totalExports" type="real">
+                                                <Description type="journalese" lang="en">Total Exports</Description>
+                                                <Description type="label" lang="en">Total Exports</Description>
+                                                <Description type="description" lang="en">Total Exports</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="893" isExogenous="false" outputFileStartPos="610" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="primarySector" type="real">
+                                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                                <Description type="label" lang="en">Primary Sector</Description>
+                                                <Description type="description" lang="en">Primary Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="890" isExogenous="false" outputFileStartPos="607" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="manufacturingSector" type="real">
+                                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                                <Description type="label" lang="en">Manufacturing Sector</Description>
+                                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="891" isExogenous="false" outputFileStartPos="608" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="serviceSector" type="real">
+                                                <Description type="journalese" lang="en">Service Sector</Description>
+                                                <Description type="label" lang="en">Service Sector</Description>
+                                                <Description type="description" lang="en">Service Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="892" isExogenous="false" outputFileStartPos="609" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>
+                </ParameterSystem>                     <!-- exports 
+                    -->
+
+                <ParameterSystem name="Imports" instanceName="imports" enabled="true">
+                        <Description type="journalese" lang="en">Imports</Description>
+                        <Description type="label" lang="en">Imports</Description>
+                        <Description type="description" lang="en">Imports</Description>
+                        <ParameterSystem name="Imports" instanceName="imports" enabled="true">
+                                <Description type="journalese" lang="en">Imports</Description>
+                                <Description type="label" lang="en">Imports</Description>
+                                <Description type="description" lang="en">Imports</Description>
+                                <Parameter instanceName="sectorSpecificImports" type="real" enumTypeRef="Industries">
+                                        <Description type="journalese" lang="en">Sector Specific Imports</Description>
+                                        <Description type="label" lang="en">Sector Specific Imports</Description>
+                                        <Description type="description" lang="en">Sector Specific Imports</Description>
+                                        <EditInfo sumsTo100="false" exceptions="895 897" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="611" isExogenous="false" outputFileStartPos="894" numVariables="39" percentChangePossible="true"/>
+                                </Parameter>
+                                <ParameterSystem name="Aggregates" instanceName="aggregates" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregates</Description>
+                                        <Description type="label" lang="en">Aggregates</Description>
+                                        <Description type="description" lang="en">Aggregates</Description>
+                                        <Parameter instanceName="totalImports" type="real">
+                                                <Description type="journalese" lang="en">Total Imports</Description>
+                                                <Description type="label" lang="en">Total Imports</Description>
+                                                <Description type="description" lang="en">Total Imports</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="657" isExogenous="false" outputFileStartPos="940" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="primarySector" type="real">
+                                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                                <Description type="label" lang="en">Primary Sector</Description>
+                                                <Description type="description" lang="en">Primary Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="654" isExogenous="false" outputFileStartPos="937" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="manufacturingSector" type="real">
+                                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                                <Description type="label" lang="en">Manufacturing Sector</Description>
+                                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="655" isExogenous="false" outputFileStartPos="938" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="serviceSector" type="real">
+                                                <Description type="journalese" lang="en">Service Sector</Description>
+                                                <Description type="label" lang="en">Service Sector</Description>
+                                                <Description type="description" lang="en">Service Sector</Description>
+                                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="656" isExogenous="false" outputFileStartPos="939" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>
+                </ParameterSystem> 
+        </ParameterSystem>
+
+        <ParameterSystem name="SupplyOutputBlock" instanceName="supplyOutputBlock" enabled="true">
+                <Description type="journalese" lang="en">Supply (Output) Block</Description>
+                <Description type="label" lang="en">Supply (Output) Block</Description>
+                <Description type="description" lang="en">Supply (Output) Block</Description>
+
+                <ParameterSystem name="OutputGVABP" instanceName="outputGVABP" enabled="true">
+                        <Description type="journalese" lang="en">Output (GVA-BP)</Description>
+                        <Description type="label" lang="en">Output (GVA-BP)</Description>
+                        <Description type="description" lang="en">Output (GVA-BP)</Description>
+                        <ParameterSystem name="AggregateShocks" instanceName="aggregateShocks" enabled="true">
+                                <Description type="journalese" lang="en">Aggregate shocks</Description>
+                                <Description type="label" lang="en">Aggregate shocks</Description>
+                                <Description type="description" lang="en">Aggregate shocks</Description>
+                                <Parameter instanceName="totalOutput" type="real">
+                                        <Description type="journalese" lang="en">Total Output </Description>
+                                        <Description type="label" lang="en">Total Output </Description>
+                                        <Description type="description" lang="en">Total Output </Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="563" isExogenous="false" outputFileStartPos="846" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="primarySector" type="real">
+                                        <Description type="journalese" lang="en">Primary Sector</Description>
+                                        <Description type="label" lang="en">Primary Sector</Description>
+                                        <Description type="description" lang="en">Primary Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="560" isExogenous="false" outputFileStartPos="843" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="manufacturingSector" type="real">
+                                        <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                        <Description type="label" lang="en">Manufacturing Sector</Description>
+                                        <Description type="description" lang="en">Manufacturing Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="561" isExogenous="false" outputFileStartPos="844" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="serviceSector" type="real">
+                                        <Description type="journalese" lang="en">Service Sector</Description>
+                                        <Description type="label" lang="en">Service Sector</Description>
+                                        <Description type="description" lang="en">Service Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="562" isExogenous="false" outputFileStartPos="845" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                        <ParameterSystem name="SectorSpecificOutputShocks" instanceName="sectorSpecificOutputShocks" enabled="true">
+                                <Description type="journalese" lang="en">Sector specific output shocks</Description>
+                                <Description type="label" lang="en">Sector specific output shocks</Description>
+                                <Description type="description" lang="en">Sector specific output shocks</Description>
+                                <Parameter instanceName="industrialSectors" type="real" enumTypeRef="Industries">
+                                        <Description type="journalese" lang="en">Industrial Sectors</Description>
+                                        <Description type="label" lang="en">Industrial Sectors</Description>
+                                        <Description type="description" lang="en">Industrial Sectors</Description>
+                                        <EditInfo sumsTo100="false" exceptions="801" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="517" isExogenous="false" outputFileStartPos="800" numVariables="39" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="generalGovernment" type="real">
+                                        <Description type="journalese" lang="en">General Government</Description>
+                                        <Description type="label" lang="en">General Government</Description>
+                                        <Description type="description" lang="en">General Government</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="558" isExogenous="false" outputFileStartPos="841" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="householdsSector" type="real">
+                                        <Description type="journalese" lang="en">Households Sector</Description>
+                                        <Description type="label" lang="en">Households Sector</Description>
+                                        <Description type="description" lang="en">Households Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="557" isExogenous="false" outputFileStartPos="840" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="informalSector" type="real">
+                                        <Description type="journalese" lang="en">Informal Sector</Description>
+                                        <Description type="label" lang="en">Informal Sector</Description>
+                                        <Description type="description" lang="en">Informal Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="518" isExogenous="false" outputFileStartPos="801" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem> 
+        </ParameterSystem>
+        <ParameterSystem name="PriceAndProfit" instanceName="priceAndProfit" enabled="true">
+                <Description type="journalese" lang="en">Price and Profit</Description>
+                <Description type="label" lang="en">Price and Profit</Description>
+                <Description type="description" lang="en">Price and Profit</Description>
+
+                <ParameterSystem name="PricesInflation" instanceName="pricesInflation" enabled="true">
+                        <Description type="journalese" lang="en">Prices (inflation)</Description>
+                        <Description type="label" lang="en">Prices (inflation)</Description>
+                        <Description type="description" lang="en">Prices (inflation)</Description>
+                        <ParameterSystem name="AggregatePrices" instanceName="aggregatePrices" enabled="true">
+                                <Description type="journalese" lang="en">Aggregate Prices</Description>
+                                <Description type="label" lang="en">Aggregate Prices</Description>
+                                <Description type="description" lang="en">Aggregate Prices</Description>
+                                <ParameterSystem name="GeneralPrices" instanceName="generalPrices" enabled="true">
+                                        <Description type="journalese" lang="en">General Prices</Description>
+                                        <Description type="label" lang="en">General Prices</Description>
+                                        <Description type="description" lang="en">General Prices</Description>
+                                        <Parameter instanceName="consumerPriceIndexCPI" type="real">
+                                                <Description type="journalese" lang="en">Consumer Price Index (CPI)</Description>
+                                                <Description type="label" lang="en">Consumer Price Index (CPI)</Description>
+                                                <Description type="description" lang="en">Consumer Price Index (CPI)</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="302" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="producerPriceIndexPPI" type="real">
+                                                <Description type="journalese" lang="en">Producer Price Index (PPI)</Description>
+                                                <Description type="label" lang="en">Producer Price Index (PPI)</Description>
+                                                <Description type="description" lang="en">Producer Price Index (PPI)</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="752" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                                <ParameterSystem name="AggregateIndustrialSectorPrices" instanceName="aggregateIndustrialSectorPrices" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregate Industrial Sector Prices</Description>
+                                        <Description type="label" lang="en">Aggregate Industrial Sector Prices</Description>
+                                        <Description type="description" lang="en">Aggregate Industrial Sector Prices</Description>
+                                        <Parameter instanceName="overallOutputPrice" type="real">
+                                                <Description type="journalese" lang="en">Overall Output Price</Description>
+                                                <Description type="label" lang="en">Overall Output Price</Description>
+                                                <Description type="description" lang="en">Overall Output Price</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="752" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="primarySector" type="real">
+                                                <Description type="journalese" lang="en">Primary Sector</Description>
+                                                <Description type="label" lang="en">Primary Sector</Description>
+                                                <Description type="description" lang="en">Primary Sector</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="749" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="manufacturingSector" type="real">
+                                                <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                                <Description type="label" lang="en">Manufacturing Sector</Description>
+                                                <Description type="description" lang="en">Manufacturing Sector</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="750" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="serviceSector" type="real">
+                                                <Description type="journalese" lang="en">Service Sector</Description>
+                                                <Description type="label" lang="en">Service Sector</Description>
+                                                <Description type="description" lang="en">Service Sector</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="751" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                                <ParameterSystem name="AggregateConsumerPrices" instanceName="aggregateConsumerPrices" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregate Consumer Prices</Description>
+                                        <Description type="label" lang="en">Aggregate Consumer Prices</Description>
+                                        <Description type="description" lang="en">Aggregate Consumer Prices</Description>
+                                        <Parameter instanceName="overallPricesOfConsumptionGoodsAndServices" type="real">
+                                                <Description type="journalese" lang="en">Overall Prices of Consumption Goods and Services</Description>
+                                                <Description type="label" lang="en">Overall Prices of Consumption Goods and Services</Description>
+                                                <Description type="description" lang="en">Overall Prices of Consumption Goods and Services</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="302" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="durableGoodsPrice" type="real">
+                                                <Description type="journalese" lang="en">Durable Goods Price</Description>
+                                                <Description type="label" lang="en">Durable Goods Price</Description>
+                                                <Description type="description" lang="en">Durable Goods Price</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="298" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="semiDurableGoodsPrice" type="real">
+                                                <Description type="journalese" lang="en">Semi-durable Goods Price</Description>
+                                                <Description type="label" lang="en">Semi-durable Goods Price</Description>
+                                                <Description type="description" lang="en">Semi-durable Goods Price</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="299" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="nonDurableGoodsPrice" type="real">
+                                                <Description type="journalese" lang="en">Non-durable Goods Price</Description>
+                                                <Description type="label" lang="en">Non-durable Goods Price</Description>
+                                                <Description type="description" lang="en">Non-durable Goods Price</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="300" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="services" type="real">
+                                                <Description type="journalese" lang="en">Services</Description>
+                                                <Description type="label" lang="en">Services</Description>
+                                                <Description type="description" lang="en">Services</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="301" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                                <ParameterSystem name="AggregateInvestmentDeflators" instanceName="aggregateInvestmentDeflators" enabled="true">
+                                        <Description type="journalese" lang="en">Aggregate Investment Deflators</Description>
+                                        <Description type="label" lang="en">Aggregate Investment Deflators</Description>
+                                        <Description type="description" lang="en">Aggregate Investment Deflators</Description>
+                                        <Parameter instanceName="totalInvestmentDeflator" type="real">
+                                                <Description type="journalese" lang="en">Total Investment Deflator </Description>
+                                                <Description type="label" lang="en">Total Investment Deflator </Description>
+                                                <Description type="description" lang="en">Total Investment Deflator </Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1177" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="manufacturingInvestmentDeflator" type="real">
+                                                <Description type="journalese" lang="en">Manufacturing Investment Deflator </Description>
+                                                <Description type="label" lang="en">Manufacturing Investment Deflator </Description>
+                                                <Description type="description" lang="en">Manufacturing Investment Deflator </Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1175" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="servicesInvestmentDeflator" type="real">
+                                                <Description type="journalese" lang="en">Services Investment Deflator </Description>
+                                                <Description type="label" lang="en">Services Investment Deflator </Description>
+                                                <Description type="description" lang="en">Services Investment Deflator </Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1176" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>                       <!-- aggretate prices 
+                      -->
+                        <ParameterSystem name="SectorPrices" instanceName="sectorPrices" enabled="true">
+                                <Description type="journalese" lang="en">Sector Prices</Description>
+                                <Description type="label" lang="en">Sector Prices</Description>
+                                <Description type="description" lang="en">Sector Prices</Description>
+                                <Parameter instanceName="industrialSectorPrices" type="real" enumTypeRef="Industries">
+                                        <Description type="journalese" lang="en">Industrial Sector Prices</Description>
+                                        <Description type="label" lang="en">Industrial Sector Prices</Description>
+                                        <Description type="description" lang="en">Industrial Sector Prices</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" max="30" exceptions="707" macroVariableClass="2" levelChangePossible="false" min="0" isExogenous="false" outputFileStartPos="706" numVariables="42" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="consumerGoodsAndServicesPrices" type="real" enumTypeRef="Consumption">
+                                        <Description type="journalese" lang="en">Consumer goods and Services prices</Description>
+                                        <Description type="label" lang="en">Consumer goods and Services prices</Description>
+                                        <Description type="description" lang="en">Consumer goods and Services prices</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" max="50" exceptions="" macroVariableClass="2" levelChangePossible="false" min="-10" isExogenous="false" outputFileStartPos="277" numVariables="21" percentChangePossible="true"/>
+                                </Parameter>
+                                <ParameterSystem name="InvestmentDeflatorsBySector" instanceName="investmentDeflatorsBySector" enabled="true">
+                                        <Description type="journalese" lang="en">Investment Deflators by sector</Description>
+                                        <Description type="label" lang="en">Investment Deflators by sector</Description>
+                                        <Description type="description" lang="en">Investment Deflators by sector</Description>
+                                        <Parameter instanceName="agricultureForestryAndFishing" type="real">
+                                                <Description type="journalese" lang="en">Agriculture, Forestry and Fishing</Description>
+                                                <Description type="label" lang="en">Agriculture, Forestry and Fishing</Description>
+                                                <Description type="description" lang="en">Agriculture, Forestry and Fishing</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1167" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="miningAndQuarrying" type="real">
+                                                <Description type="journalese" lang="en">Mining and Quarrying</Description>
+                                                <Description type="label" lang="en">Mining and Quarrying</Description>
+                                                <Description type="description" lang="en">Mining and Quarrying</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1174" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="electricityGasAndWater" type="real">
+                                                <Description type="journalese" lang="en">Electricity, Gas and Water</Description>
+                                                <Description type="label" lang="en">Electricity, Gas and Water</Description>
+                                                <Description type="description" lang="en">Electricity, Gas and Water</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1168" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="construction" type="real">
+                                                <Description type="journalese" lang="en">Construction</Description>
+                                                <Description type="label" lang="en">Construction</Description>
+                                                <Description type="description" lang="en">Construction</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1169" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="wholesaleAndRetailTradeCateringAndAccommodation" type="real">
+                                                <Description type="journalese" lang="en">Wholesale and Retail Trade, Catering and Accommodation</Description>
+                                                <Description type="label" lang="en">Wholesale and Retail Trade, Catering and Accommodation</Description>
+                                                <Description type="description" lang="en">Wholesale and Retail Trade, Catering and Accommodation</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1170" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="transportStorageAndCommunication" type="real">
+                                                <Description type="journalese" lang="en">Transport, Storage and Communication</Description>
+                                                <Description type="label" lang="en">Transport, Storage and Communication</Description>
+                                                <Description type="description" lang="en">Transport, Storage and Communication</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1171" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="financialIntermediationInsuranceRealEstate and BusinessServices" type="real">
+                                                <Description type="journalese" lang="en">Financial Intermediation, Insurance, Real Estate  and  Business Services</Description>
+                                                <Description type="label" lang="en">Financial Intermediation, Insurance, Real Estate  and  Business Services</Description>
+                                                <Description type="description" lang="en">Financial Intermediation, Insurance, Real Estate  and  Business Services</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1172" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                        <Parameter instanceName="communitySocialAndPersonalServices" type="real">
+                                                <Description type="journalese" lang="en">Community, Social and Personal Services</Description>
+                                                <Description type="label" lang="en">Community, Social and Personal Services</Description>
+                                                <Description type="description" lang="en">Community, Social and Personal Services</Description>
+                                                <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1173" numVariables="1" percentChangePossible="true"/>
+                                        </Parameter>
+                                </ParameterSystem>
+                        </ParameterSystem>                   
+                </ParameterSystem>                   
+                <ParameterSystem name="ProfitRate" instanceName="profitRate" enabled="true">
+                        <Description type="journalese" lang="en">Profit rate</Description>
+                        <Description type="label" lang="en">Profit rate</Description>
+                        <Description type="description" lang="en">Profit rate</Description>
+                        <Parameter instanceName="sectorSpecificProfitRate" type="real" enumTypeRef="Industries">
+                                <Description type="journalese" lang="en">Sector Specific Profit Rate</Description>
+                                <Description type="label" lang="en">Sector Specific Profit Rate</Description>
+                                <Description type="description" lang="en">Sector Specific Profit Rate</Description>
+                                <EditInfo sumsTo100="false" treatAsPercentage="true" exceptions="1966" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="1965" isExogenous="false" outputFileStartPos="1965" numVariables="39" percentChangePossible="true"/>
+                        </Parameter>
+                        <ParameterSystem name="AggregateProfitRates" instanceName="aggregateProfitRates" enabled="true">
+                                <Description type="journalese" lang="en">Aggregate Profit Rates</Description>
+                                <Description type="label" lang="en">Aggregate Profit Rates</Description>
+                                <Description type="description" lang="en">Aggregate Profit Rates</Description>
+                                <Parameter instanceName="averageEconomyWideProfitRate" type="real">
+                                        <Description type="journalese" lang="en">Average economy wide profit rate</Description>
+                                        <Description type="label" lang="en">Average economy wide profit rate</Description>
+                                        <Description type="description" lang="en">Average economy wide profit rate</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="2011" isExogenous="false" outputFileStartPos="2011" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="primarySectorProfitRate" type="real">
+                                        <Description type="journalese" lang="en">Primary Sector Profit Rate</Description>
+                                        <Description type="label" lang="en">Primary Sector Profit Rate</Description>
+                                        <Description type="description" lang="en">Primary Sector Profit Rate</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="2008" isExogenous="false" outputFileStartPos="2008" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="manufacturingProfitRate" type="real">
+                                        <Description type="journalese" lang="en">Manufacturing Profit Rate</Description>
+                                        <Description type="label" lang="en">Manufacturing Profit Rate</Description>
+                                        <Description type="description" lang="en">Manufacturing Profit Rate</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="2009" isExogenous="false" outputFileStartPos="2009" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="serviceSectorProfitRate" type="real">
+                                        <Description type="journalese" lang="en">Service Sector Profit Rate</Description>
+                                        <Description type="label" lang="en">Service Sector Profit Rate</Description>
+                                        <Description type="description" lang="en">Service Sector Profit Rate</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="2010" isExogenous="false" outputFileStartPos="2010" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>
+        </ParameterSystem>                
+        <ParameterSystem name="LaborMarket" instanceName="laborMarket" enabled="true">
+                <Description type="journalese" lang="en">Labour Market</Description>
+                <Description type="label" lang="en">Labour Market</Description>
+                <Description type="description" lang="en">Labour Market</Description>
+                <ParameterSystem name="WageRates" instanceName="wageRates" enabled="true">
+                        <Description type="journalese" lang="en">Wage rates</Description>
+                        <Description type="label" lang="en">Wage rates</Description>
+                        <Description type="description" lang="en">Wage rates</Description>
+                        <ParameterSystem name="AverageAnnualRealWageRate" instanceName="averageAnnualRealWageRate" enabled="true">
+                                <Description type="journalese" lang="en">Average Annual Real Wage Rate</Description>
+                                <Description type="label" lang="en">Average Annual Real Wage Rate</Description>
+                                <Description type="description" lang="en">Average Annual Real Wage Rate</Description>
+                                <Parameter instanceName="aggregateAverageWageRate" type="real">
+                                        <Description type="journalese" lang="en">Aggregate Average Wage Rate</Description>
+                                        <Description type="label" lang="en">Aggregate Average Wage Rate</Description>
+                                        <Description type="description" lang="en">Aggregate Average Wage Rate</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="516" isExogenous="false" outputFileStartPos="799" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="primarySector" type="real">
+                                        <Description type="journalese" lang="en">Primary Sector</Description>
+                                        <Description type="label" lang="en">Primary Sector</Description>
+                                        <Description type="description" lang="en">Primary Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="513" isExogenous="false" outputFileStartPos="796" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="manufacturingSector" type="real">
+                                        <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                        <Description type="label" lang="en">Manufacturing Sector</Description>
+                                        <Description type="description" lang="en">Manufacturing Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="514" isExogenous="false" outputFileStartPos="797" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="serviceSector" type="real">
+                                        <Description type="journalese" lang="en">Service Sector</Description>
+                                        <Description type="label" lang="en">Service Sector</Description>
+                                        <Description type="description" lang="en">Service Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="515" isExogenous="false" outputFileStartPos="798" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                        <ParameterSystem name="SectorAverageAnnualRealRemunerationRate" instanceName="sectorAverageAnnualRealRemunerationRate" enabled="true">
+                                <Description type="journalese" lang="en">Sector Average Annual Real Remuneration Rate</Description>
+                                <Description type="label" lang="en">Sector Average Annual Real Remuneration Rate</Description>
+                                <Description type="description" lang="en">Sector Average Annual Real Remuneration Rate</Description>
+                                <Parameter instanceName="industrialSectorAverageRemunerationRatePrivateSector" type="real" enumTypeRef="Industries">
+                                        <Description type="journalese" lang="en">Industrial Sector Average Remuneration Rate (private sector)</Description>
+                                        <Description type="label" lang="en">Industrial Sector Average Remuneration Rate (private sector)</Description>
+                                        <Description type="description" lang="en">Industrial Sector Average Remuneration Rate (private sector)</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" exceptions="754" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="470" isExogenous="false" outputFileStartPos="753" numVariables="40" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>                
+                <ParameterSystem name="Employment" instanceName="employment" enabled="true">
+                        <Description type="journalese" lang="en">Employment</Description>
+                        <Description type="label" lang="en">Employment</Description>
+                        <Description type="description" lang="en">Employment</Description>
+                        <ParameterSystem name="AggregateEmployment" instanceName="aggregateEmployment" enabled="true">
+                                <Description type="journalese" lang="en">Aggregate Employment</Description>
+                                <Description type="label" lang="en">Aggregate Employment</Description>
+                                <Description type="description" lang="en">Aggregate Employment</Description>
+                                <Parameter instanceName="allSectors" type="real" units='counts'>
+                                        <Description type="journalese" lang="en">All Sectors</Description>
+                                        <Description type="label" lang="en">All Sectors</Description>
+                                        <Description type="description" lang="en">All Sectors</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="469" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="primarySector" type="real"  units='counts'>
+                                        <Description type="journalese" lang="en">Primary Sector</Description>
+                                        <Description type="label" lang="en">Primary Sector</Description>
+                                        <Description type="description" lang="en">Primary Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="466" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="manufacturingSector" type="real"  units='counts'>
+                                        <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                        <Description type="label" lang="en">Manufacturing Sector</Description>
+                                        <Description type="description" lang="en">Manufacturing Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="467" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="serviceSector" type="real"  units='counts'>
+                                        <Description type="journalese" lang="en">Service Sector</Description>
+                                        <Description type="label" lang="en">Service Sector</Description>
+                                        <Description type="description" lang="en">Service Sector</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="468" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                        <ParameterSystem name="SectorEmployment" instanceName="sectorEmployment" enabled="true">
+                                <Description type="journalese" lang="en">Sector Employment</Description>
+                                <Description type="label" lang="en">Sector Employment</Description>
+                                <Description type="description" lang="en">Sector Employment</Description>
+                                <Parameter instanceName="industrialSectors" type="real" enumTypeRef="Industries"  units='counts'>
+                                        <Description type="journalese" lang="en">Industrial Sectors</Description>
+                                        <Description type="label" lang="en">Industrial Sectors</Description>
+                                        <Description type="description" lang="en">Industrial Sectors</Description>
+                                        <EditInfo sumsTo100="false" exceptions="423 424" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="423" numVariables="40" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>
+        </ParameterSystem> 
+        <ParameterSystem name="FinancialMarket" instanceName="financialMarket" enabled="true">
+                <Description type="journalese" lang="en">Financial Market</Description>
+                <Description type="label" lang="en">Financial Market</Description>
+                <Description type="description" lang="en">Financial Market</Description>
+                <Parameter instanceName="moneySupply" type="real">
+                        <Description type="journalese" lang="en">Money Supply</Description>
+                        <Description type="label" lang="en">Money Supply</Description>
+                        <Description type="description" lang="en">Money Supply</Description>
+                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="3" levelChangePossible="true" isExogenous="false" outputFileStartPos="3054" numVariables="1" percentChangePossible="true"/>
+                </Parameter>
+                <Parameter instanceName="interestRateSeeMPRules" type="real">
+                        <Description type="journalese" lang="en">Interest Rate (see MP Rules)</Description>
+                        <Description type="label" lang="en">Interest Rate (see MP Rules)</Description>
+                        <Description type="description" lang="en">Interest Rate (see MP Rules)</Description>
+                        <EditInfo sumsTo100="false" macroVariableClass="1" levelChangePossible="true" isExogenous="false" outputFileStartPos="3063" numVariables="1" percentChangePossible="false"/>
+                </Parameter>
+                <Parameter instanceName="creditExtensionToPrivateSector" type="real">
+                        <Description type="journalese" lang="en">Credit Extension to Private Sector</Description>
+                        <Description type="label" lang="en">Credit Extension to Private Sector</Description>
+                        <Description type="description" lang="en">Credit Extension to Private Sector</Description>
+                        <EditInfo sumsTo100="false" levelChangePossible="true" isExogenous="false" outputFileStartPos="3053" numVariables="1" percentChangePossible="true"/>
+                </Parameter>
+                <Parameter instanceName="nationalWealth" type="real">
+                        <Description type="journalese" lang="en">National Wealth</Description>
+                        <Description type="label" lang="en">National Wealth</Description>
+                        <Description type="description" lang="en">National Wealth</Description>
+                        <EditInfo sumsTo100="false" levelChangePossible="false" isExogenous="false" outputFileStartPos="3062" numVariables="1" percentChangePossible="true"/>
+                </Parameter>
+                <ParameterSystem name="TermsOfTrade" instanceName="termsOfTrade" enabled="true">
+                        <Description type="journalese" lang="en">Terms of Trade</Description>
+                        <Description type="label" lang="en">Terms of Trade</Description>
+                        <Description type="description" lang="en">Terms of Trade</Description>
+                        <Parameter instanceName="industrialSectorPrices" type="real" enumTypeRef="Industries">
+                                <Description type="journalese" lang="en">Industrial Sector Prices</Description>
+                                <Description type="label" lang="en">Industrial Sector Prices</Description>
+                                <Description type="description" lang="en">Industrial Sector Prices</Description>
+                                <EditInfo sumsTo100="false" treatAsPercentage="true" exceptions="1872" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1871" numVariables="39" percentChangePossible="true"/>
+                        </Parameter>
+                        <ParameterSystem name="AggregatesTermsOfTrade" instanceName="aggregatesTermsOfTrade" enabled="true">
+                                <Description type="journalese" lang="en">Aggregates Terms of Trade</Description>
+                                <Description type="label" lang="en">Aggregates Terms of Trade</Description>
+                                <Description type="description" lang="en">Aggregates Terms of Trade</Description>
+                                <Parameter instanceName="overallTermsOfTrade" type="real">
+                                        <Description type="journalese" lang="en">Overall Terms of Trade</Description>
+                                        <Description type="label" lang="en">Overall Terms of Trade</Description>
+                                        <Description type="description" lang="en">Overall Terms of Trade</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1917" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="tOTForThePrimarySector" type="real">
+                                        <Description type="journalese" lang="en">TOT for the Primary Sector</Description>
+                                        <Description type="label" lang="en">TOT for the Primary Sector</Description>
+                                        <Description type="description" lang="en">TOT for the Primary Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1914" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="tOTForTheManufacturingSector" type="real">
+                                        <Description type="journalese" lang="en">TOT for the Manufacturing Sector</Description>
+                                        <Description type="label" lang="en">TOT for the Manufacturing Sector</Description>
+                                        <Description type="description" lang="en">TOT for the Manufacturing Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1915" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="tOTForTheServiceSector" type="real">
+                                        <Description type="journalese" lang="en">TOT for the Service Sector</Description>
+                                        <Description type="label" lang="en">TOT for the Service Sector</Description>
+                                        <Description type="description" lang="en">TOT for the Service Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1916" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem> 
+        </ParameterSystem>
+
+        <ParameterSystem name="ForeignSector" instanceName="foreignSector" enabled="true">
+                <Description type="journalese" lang="en">Foreign Sector</Description>
+                <Description type="label" lang="en">Foreign Sector</Description>
+                <Description type="description" lang="en">Foreign Sector</Description>
+
+                <ParameterSystem name="ImportPrices" instanceName="importPrices" enabled="true">
+                        <Description type="journalese" lang="en">Import Prices</Description>
+                        <Description type="label" lang="en">Import Prices</Description>
+                        <Description type="description" lang="en">Import Prices</Description>
+                        <Parameter instanceName="importPricesForIndustrialSectors" type="real" enumTypeRef="Industries">
+                                <Description type="journalese" lang="en">Import Prices for Industrial Sectors</Description>
+                                <Description type="label" lang="en">Import Prices for Industrial Sectors</Description>
+                                <Description type="description" lang="en">Import Prices for Industrial Sectors</Description>
+                                <EditInfo sumsTo100="false" treatAsPercentage="true" exceptions="2 4 34" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1229" numVariables="39" percentChangePossible="true"/>
+                        </Parameter>
+                        <ParameterSystem name="AggregateImportPrices" instanceName="aggregateImportPrices" enabled="true">
+                                <Description type="journalese" lang="en">Aggregate Import Prices</Description>
+                                <Description type="label" lang="en">Aggregate Import Prices</Description>
+                                <Description type="description" lang="en">Aggregate Import Prices</Description>
+                                <Parameter instanceName="importPriceIndexForTotalOfAllSectors" type="real">
+                                        <Description type="journalese" lang="en">Import Price Index for Total of All Sectors</Description>
+                                        <Description type="label" lang="en">Import Price Index for Total of All Sectors</Description>
+                                        <Description type="description" lang="en">Import Price Index for Total of All Sectors</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1275" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="primarySector" type="real">
+                                        <Description type="journalese" lang="en">Primary Sector</Description>
+                                        <Description type="label" lang="en">Primary Sector</Description>
+                                        <Description type="description" lang="en">Primary Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1272" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="manufacturingSector" type="real">
+                                        <Description type="journalese" lang="en">Manufacturing Sector</Description>
+                                        <Description type="label" lang="en">Manufacturing Sector</Description>
+                                        <Description type="description" lang="en">Manufacturing Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1273" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="serviceSector" type="real">
+                                        <Description type="journalese" lang="en">Service Sector</Description>
+                                        <Description type="label" lang="en">Service Sector</Description>
+                                        <Description type="description" lang="en">Service Sector</Description>
+                                        <EditInfo sumsTo100="false" treatAsPercentage="true" macroVariableClass="2" levelChangePossible="false" isExogenous="false" outputFileStartPos="1274" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>
+        </ParameterSystem>  
+
+        <ParameterSystem name="IncomesTaxesTransfers" instanceName="incomesTaxesTransfers" enabled="true">
+                <Description type="journalese" lang="en">Incomes, Taxes, Transfers, and Subsidies</Description>
+                <Description type="label" lang="en">Incomes, Taxes, Transfers, and Subsidies</Description>
+                <Description type="description" lang="en">Incomes, Taxes, Transfers, and Subsidies</Description>
+
+                <Parameter instanceName="totalCurrentIncomeOfIncorporatedBusinessEnterprises" type="real">
+                        <Description type="journalese" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <Description type="label" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <Description type="description" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="134" isExogenous="false" outputFileStartPos="59" numVariables="1" percentChangePossible="true"/>
+                </Parameter>
+                <ParameterSystem name="TotalCurrentIncomeOfHouseholds" instanceName="totalCurrentIncomeOfHouseholds" enabled="true">
+                        <Description type="journalese" lang="en">Total Current Income of Households</Description>
+                        <Description type="label" lang="en">Total Current Income of Households</Description>
+                        <Description type="description" lang="en">Total Current Income of Households</Description>
+                        <Parameter instanceName="totalCurrentIncomeOfHouseholds" type="real">
+                                <Description type="journalese" lang="en">Total Current Income of Households</Description>
+                                <Description type="label" lang="en">Total Current Income of Households</Description>
+                                <Description type="description" lang="en">Total Current Income of Households</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="150" isExogenous="false" outputFileStartPos="75" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="householdIncomeFromProperty" type="real">
+                                <Description type="journalese" lang="en">Household Income From Property</Description>
+                                <Description type="label" lang="en">Household Income From Property</Description>
+                                <Description type="description" lang="en">Household Income From Property</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="146" isExogenous="false" outputFileStartPos="71" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="householdsIncomeFromGeneralGovernmentTransfers" type="real">
+                                <Description type="journalese" lang="en">Households Income from General Government Transfers</Description>
+                                <Description type="label" lang="en">Households Income from General Government Transfers</Description>
+                                <Description type="description" lang="en">Households Income from General Government Transfers</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="147" isExogenous="false" outputFileStartPos="72" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="householdIncomeFromTransfersFromBusinessEnterprises" type="real">
+                                <Description type="journalese" lang="en">Household Income from Transfers from Business Enterprises</Description>
+                                <Description type="label" lang="en">Household Income from Transfers from Business Enterprises</Description>
+                                <Description type="description" lang="en">Household Income from Transfers from Business Enterprises</Description>
+                                <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="148" isExogenous="false" outputFileStartPos="73" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="householdsIncomeFromRestOfTheWorld" type="real">
+                                <Description type="journalese" lang="en">Households Income from Rest of the World</Description>
+                                <Description type="label" lang="en">Households Income from Rest of the World</Description>
+                                <Description type="description" lang="en">Households Income from Rest of the World</Description>
+                                <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="149" isExogenous="false" outputFileStartPos="74" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                </ParameterSystem>
+                <ParameterSystem name="TotalCurrentIncomeOfIncorporatedBusinessEnterprises" instanceName="totalCurrentIncomeOfIncorporatedBusinessEnterprises" enabled="true">
+                        <Description type="journalese" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <Description type="label" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <Description type="description" lang="en">Total Current Income of Incorporated Business Enterprises</Description>
+                        <Parameter instanceName="totalNetOperatingSurplusOfBusinessEnterprises" type="real">
+                                <Description type="journalese" lang="en">Total Net Operating Surplus of Business Enterprises</Description>
+                                <Description type="label" lang="en">Total Net Operating Surplus of Business Enterprises</Description>
+                                <Description type="description" lang="en">Total Net Operating Surplus of Business Enterprises</Description>
+                                <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="129" isExogenous="false" outputFileStartPos="54" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <Parameter instanceName="incomeReceivedFromProperty" type="real">
+                                <Description type="journalese" lang="en">Income Received From Property</Description>
+                                <Description type="label" lang="en">Income Received From Property</Description>
+                                <Description type="description" lang="en">Income Received From Property</Description>
+                                <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="130" isExogenous="false" outputFileStartPos="55" numVariables="1" percentChangePossible="true"/>
+                        </Parameter>
+                        <ParameterSystem name="IncomeReceivedFromProperty" instanceName="incomeReceivedFromProperty" enabled="true">
+                                <Description type="journalese" lang="en">Income Received From Property</Description>
+                                <Description type="label" lang="en">Income Received From Property</Description>
+                                <Description type="description" lang="en">Income Received From Property</Description>
+                                <Parameter instanceName="interestIncome" type="real">
+                                        <Description type="journalese" lang="en">Interest Income</Description>
+                                        <Description type="label" lang="en">Interest Income</Description>
+                                        <Description type="description" lang="en">Interest Income</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="131" isExogenous="false" outputFileStartPos="56" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="bDividends" type="real">
+                                        <Description type="journalese" lang="en">b     Dividends</Description>
+                                        <Description type="label" lang="en">b     Dividends</Description>
+                                        <Description type="description" lang="en">b     Dividends</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="132" isExogenous="false" outputFileStartPos="57" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="rentAndOtherPropertyIncome" type="real">
+                                        <Description type="journalese" lang="en">Rent and other property income</Description>
+                                        <Description type="label" lang="en">Rent and other property income</Description>
+                                        <Description type="description" lang="en">Rent and other property income</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="133" isExogenous="false" outputFileStartPos="58" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                </ParameterSystem>
+                <ParameterSystem name="TaxesSubsidiesAndTransfers" instanceName="taxesSubsidiesAndTransfers" enabled="true">
+                        <Description type="journalese" lang="en">Taxes, Subsidies, and Transfers</Description>
+                        <Description type="label" lang="en">Taxes, Subsidies, and Transfers</Description>
+                        <Description type="description" lang="en">Taxes, Subsidies, and Transfers</Description>
+
+                        <ParameterSystem name="Taxes" instanceName="taxes" enabled="true">
+                                <Description type="journalese" lang="en">Taxes</Description>
+                                <Description type="label" lang="en">Taxes</Description>
+                                <Description type="description" lang="en">Taxes</Description>
+                                <Parameter instanceName="taxesOnIncomeAndWealthIncorporatedBusinessEnterprises" type="real">
+                                        <Description type="journalese" lang="en">Taxes on income and wealth (Incorporated Business Enterprises)</Description>
+                                        <Description type="label" lang="en">Taxes on income and wealth (Incorporated Business Enterprises)</Description>
+                                        <Description type="description" lang="en">Taxes on income and wealth (Incorporated Business Enterprises)</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="139" isExogenous="false" outputFileStartPos="64" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="taxesOnIncomeAndWealthHouseholds" type="real">
+                                        <Description type="journalese" lang="en">Taxes on income and wealth (Households)</Description>
+                                        <Description type="label" lang="en">Taxes on income and wealth (Households)</Description>
+                                        <Description type="description" lang="en">Taxes on income and wealth (Households)</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="151" isExogenous="false" outputFileStartPos="76" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="taxesOnProducts" type="real">
+                                        <Description type="journalese" lang="en">Taxes on Products</Description>
+                                        <Description type="label" lang="en">Taxes on Products</Description>
+                                        <Description type="description" lang="en">Taxes on Products</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="163" isExogenous="false" outputFileStartPos="88" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="taxesOnProduction" type="real">
+                                        <Description type="journalese" lang="en">Taxes on Production</Description>
+                                        <Description type="label" lang="en">Taxes on Production</Description>
+                                        <Description type="description" lang="en">Taxes on Production</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="164" isExogenous="false" outputFileStartPos="89" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+
+                        <ParameterSystem name="Subsidies" instanceName="subsidies" enabled="true">
+                                <Description type="journalese" lang="en">Subsidies</Description>
+                                <Description type="label" lang="en">Subsidies</Description>
+                                <Description type="description" lang="en">Subsidies</Description>
+                                <Parameter instanceName="subsidiesOnProducts" type="real">
+                                        <Description type="journalese" lang="en">Subsidies on Products</Description>
+                                        <Description type="label" lang="en">Subsidies on Products</Description>
+                                        <Description type="description" lang="en">Subsidies on Products</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="172" isExogenous="false" outputFileStartPos="97" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="subsidiesOnProduction" type="real">
+                                        <Description type="journalese" lang="en">Subsidies on Production</Description>
+                                        <Description type="label" lang="en">Subsidies on Production</Description>
+                                        <Description type="description" lang="en">Subsidies on Production</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="173" isExogenous="false" outputFileStartPos="98" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>
+                        <ParameterSystem name="Transfers" instanceName="transfers" enabled="true">
+                                <Description type="journalese" lang="en">Transfers</Description>
+                                <Description type="label" lang="en">Transfers</Description>
+                                <Description type="description" lang="en">Transfers</Description>
+                                <Parameter instanceName="currentTransfersFromIncorporatedBusinessEnterprisesToHouseholds" type="real">
+                                        <Description type="journalese" lang="en">Current Transfers from Incorporated Business Enterprises to Households</Description>
+                                        <Description type="label" lang="en">Current Transfers from Incorporated Business Enterprises to Households</Description>
+                                        <Description type="description" lang="en">Current Transfers from Incorporated Business Enterprises to Households</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="148" isExogenous="false" outputFileStartPos="73" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="transfersFromIncorporatedBusinessEnterprisesToTheGovernment" type="real">
+                                        <Description type="journalese" lang="en">Transfers from Incorporated Business Enterprises to the Government</Description>
+                                        <Description type="label" lang="en">Transfers from Incorporated Business Enterprises to the Government</Description>
+                                        <Description type="description" lang="en">Transfers from Incorporated Business Enterprises to the Government</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="167" isExogenous="false" outputFileStartPos="92" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="transfersFromIncorporatedBusinessEnterprisesToTheRestOfTheWorld" type="real">
+                                        <Description type="journalese" lang="en">Transfers from Incorporated Business Enterprises to the Rest of the World</Description>
+                                        <Description type="label" lang="en">Transfers from Incorporated Business Enterprises to the Rest of the World</Description>
+                                        <Description type="description" lang="en">Transfers from Incorporated Business Enterprises to the Rest of the World</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="142" isExogenous="false" outputFileStartPos="67" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="governmentsCurrentTransfersToHouseholds" type="real">
+                                        <Description type="journalese" lang="en">Government&apos;s Current Transfers to Households</Description>
+                                        <Description type="label" lang="en">Government&apos;s Current Transfers to Households</Description>
+                                        <Description type="description" lang="en">Government&apos;s Current Transfers to Households</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="147" isExogenous="false" outputFileStartPos="72" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="governmentsSocialTransfersInKindToHouseholds" type="real">
+                                        <Description type="journalese" lang="en">Government&apos;s Social Transfers in Kind to Households</Description>
+                                        <Description type="label" lang="en">Government&apos;s Social Transfers in Kind to Households</Description>
+                                        <Description type="description" lang="en">Government&apos;s Social Transfers in Kind to Households</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="155" isExogenous="false" outputFileStartPos="80" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="governmentsCurrentTransfersToTheRestOfTheWorld" type="real">
+                                        <Description type="journalese" lang="en">Government&apos;s Current Transfers to the Rest of the World</Description>
+                                        <Description type="label" lang="en">Government&apos;s Current Transfers to the Rest of the World</Description>
+                                        <Description type="description" lang="en">Government&apos;s Current Transfers to the Rest of the World</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="175" isExogenous="false" outputFileStartPos="100" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="householdsCurrentTransfersToGeneralGovernment" type="real">
+                                        <Description type="journalese" lang="en">Households&apos; Current Transfers to General Government</Description>
+                                        <Description type="label" lang="en">Households&apos; Current Transfers to General Government</Description>
+                                        <Description type="description" lang="en">Households&apos; Current Transfers to General Government</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="152" isExogenous="false" outputFileStartPos="77" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="householdsCurrentTransfersToTheRestOfTheWorld" type="real">
+                                        <Description type="journalese" lang="en">Households&apos; Current Transfers to the Rest of the World</Description>
+                                        <Description type="label" lang="en">Households&apos; Current Transfers to the Rest of the World</Description>
+                                        <Description type="description" lang="en">Households&apos; Current Transfers to the Rest of the World</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="153" isExogenous="false" outputFileStartPos="78" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="transfersFromTheRestOfTheWorldToHouseholds" type="real">
+                                        <Description type="journalese" lang="en">Transfers from the Rest of the World to Households</Description>
+                                        <Description type="label" lang="en">Transfers from the Rest of the World to Households</Description>
+                                        <Description type="description" lang="en">Transfers from the Rest of the World to Households</Description>
+                                        <EditInfo sumsTo100="false" levelChangePossible="true" realOutputFileStartPos="149" isExogenous="false" outputFileStartPos="74" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                                <Parameter instanceName="transfersFromTheRestOfTheGeneralGovernment" type="real">
+                                        <Description type="journalese" lang="en">Transfers from the Rest of the General Government</Description>
+                                        <Description type="label" lang="en">Transfers from the Rest of the General Government</Description>
+                                        <Description type="description" lang="en">Transfers from the Rest of the General Government</Description>
+                                        <EditInfo sumsTo100="false" macroVariableClass="3" levelChangePossible="true" realOutputFileStartPos="168" isExogenous="false" outputFileStartPos="93" numVariables="1" percentChangePossible="true"/>
+                                </Parameter>
+                        </ParameterSystem>  
+                </ParameterSystem> 
+        </ParameterSystem>
+        
+        <EnumeratedType id="Consumption">
+                <EnumValue name="FurnitureHouseholdAppliancesEtc" value="1">
+                        <Text lang="en">Furniture, household appliances, etc.</Text>
+                </EnumValue>
+                <EnumValue name="PersonalTransportEquipment" value="2">
+                        <Text lang="en">Personal Transport equipment</Text>
+                </EnumValue>
+                <EnumValue name="RecreationalAndEntertainmentGoods" value="3">
+                        <Text lang="en">Recreational and entertainment goods</Text>
+                </EnumValue>
+                <EnumValue name="OtherDurableGoods" value="4">
+                        <Text lang="en">Other durable goods</Text>
+                </EnumValue>
+                <EnumValue name="ClothingAndFootwear" value="5">
+                        <Text lang="en">Clothing and footwear</Text>
+                </EnumValue>
+                <EnumValue name="HHTextilesFurnishingsGlasswearetc" value="6">
+                        <Text lang="en">HH textiles, furnishings, glasswear,etc.</Text>
+                </EnumValue>
+                <EnumValue name="MotorcarTyresPartsAndAccessories" value="7">
+                        <Text lang="en">Motorcar tyres, parts and accessories</Text>
+                </EnumValue>
+                <EnumValue name="RecreationalAndEntertainmentGoods" value="8">
+                        <Text lang="en">Recreational and entertainment goods</Text>
+                </EnumValue>
+                <EnumValue name="MiscGoods" value="9">
+                        <Text lang="en">Misc goods</Text>
+                </EnumValue>
+                <EnumValue name="FoodBeveragesAndTobacco" value="10">
+                        <Text lang="en">Food, beverages and tobacco</Text>
+                </EnumValue>
+                <EnumValue name="HouseholdFuelAndPower" value="11">
+                        <Text lang="en">Household fuel and power</Text>
+                </EnumValue>
+                <EnumValue name="HouseholdConsumerGoods" value="12">
+                        <Text lang="en">Household consumer goods</Text>
+                </EnumValue>
+                <EnumValue name="MedicalAndPharmaceuticalGoods" value="13">
+                        <Text lang="en">Medical and pharmaceutical goods</Text>
+                </EnumValue>
+                <EnumValue name="PetroleumProducts" value="14">
+                        <Text lang="en">Petroleum products</Text>
+                </EnumValue>
+                <EnumValue name="RecreationalAndEntertainmentGoods" value="15">
+                        <Text lang="en">Recreational and entertainment goods</Text>
+                </EnumValue>
+                <EnumValue name="Rent" value="16">
+                        <Text lang="en">Rent</Text>
+                </EnumValue>
+                <EnumValue name="HouseholdServicesIncludingDomesticServices" value="17">
+                        <Text lang="en">Household services, including domestic services</Text>
+                </EnumValue>
+                <EnumValue name="MedicalServices" value="18">
+                        <Text lang="en">Medical services</Text>
+                </EnumValue>
+                <EnumValue name="TransportAndCommunicationServices" value="19">
+                        <Text lang="en">Transport and communication services</Text>
+                </EnumValue>
+                <EnumValue name="RecreationalAndEntertainmentGoods" value="20">
+                        <Text lang="en">Recreational and entertainment goods</Text>
+                </EnumValue>
+                <EnumValue name="MiscServices" value="21">
+                        <Text lang="en">Misc Services</Text>
+                </EnumValue>
+                <EnumValue name="TotalDurableGoods" value="22">
+                        <Text lang="en">Total Durable Goods</Text>
+                </EnumValue>
+                <EnumValue name="TotalSemiDurableGoods" value="23">
+                        <Text lang="en">Total Semi-Durable Goods</Text>
+                </EnumValue>
+                <EnumValue name="TotalNonDurableGoods" value="24">
+                        <Text lang="en">Total Non-Durable Goods</Text>
+                </EnumValue>
+                <EnumValue name="TotalServices" value="25">
+                        <Text lang="en">Total Services</Text>
+                </EnumValue>
+                <EnumValue name="TotalPrivateHouseholdsConsumptionExpenditure" value="26">
+                        <Text lang="en">Total Private Households Consumption Expenditure</Text>
+                </EnumValue>
+        </EnumeratedType>
+
+        <EnumeratedType id="Industries">
+                <EnumValue name="AgricultureForestryAndFishing" value="1">
+                        <Text lang="en">Agriculture, Forestry and Fishing</Text>
+                </EnumValue>
+                <EnumValue name="InformalSector" value="2">
+                        <Text lang="en">Informal Sector</Text>
+                </EnumValue>
+                <EnumValue name="CoalMining" value="3">
+                        <Text lang="en">Coal Mining</Text>
+                </EnumValue>
+                <EnumValue name="GoldUraniumAndOreMining" value="4">
+                        <Text lang="en">Gold, uranium and ore mining</Text>
+                </EnumValue>
+                <EnumValue name="OtherMining" value="5">
+                        <Text lang="en">Other mining</Text>
+                </EnumValue>
+                <EnumValue name="Food" value="6">
+                        <Text lang="en">Food</Text>
+                </EnumValue>
+                <EnumValue name="Beverage" value="7">
+                        <Text lang="en">Beverage</Text>
+                </EnumValue>
+                <EnumValue name="Tobacco" value="8">
+                        <Text lang="en">Tobacco</Text>
+                </EnumValue>
+                <EnumValue name="Textiles" value="9">
+                        <Text lang="en">Textiles</Text>
+                </EnumValue>
+                <EnumValue name="WearingApparel" value="10">
+                        <Text lang="en">Wearing Apparel</Text>
+                </EnumValue>
+                <EnumValue name="LeatherAndLeatherProducts" value="11">
+                        <Text lang="en">Leather and Leather products</Text>
+                </EnumValue>
+                <EnumValue name="Footwear" value="12">
+                        <Text lang="en">Footwear</Text>
+                </EnumValue>
+                <EnumValue name="WoodAndWoodProducts" value="13">
+                        <Text lang="en">Wood and wood products</Text>
+                </EnumValue>
+                <EnumValue name="PaperAndPaperProducts" value="14">
+                        <Text lang="en">Paper and paper products</Text>
+                </EnumValue>
+                <EnumValue name="PrintingPublishingAndRecordedMedia" value="15">
+                        <Text lang="en">Printing, publishing and recorded media</Text>
+                </EnumValue>
+                <EnumValue name="CokeRefinedPetroleumProducts" value="16">
+                        <Text lang="en">Coke  and  refined petroleum products</Text>
+                </EnumValue>
+                <EnumValue name="BasicChemicals" value="17">
+                        <Text lang="en">Basic chemicals</Text>
+                </EnumValue>
+                <EnumValue name="OtherChemicalsManMadeFibres" value="18">
+                        <Text lang="en">Other chemicals  and  man made fibres</Text>
+                </EnumValue>
+                <EnumValue name="RubberProducts" value="19">
+                        <Text lang="en">Rubber products</Text>
+                </EnumValue>
+                <EnumValue name="PlasticProducts" value="20">
+                        <Text lang="en">Plastic products</Text>
+                </EnumValue>
+                <EnumValue name="GlassAndGlassProducts" value="21">
+                        <Text lang="en">Glass and glass products</Text>
+                </EnumValue>
+                <EnumValue name="NonMetalicMinerals" value="22">
+                        <Text lang="en">Non-metalic minerals</Text>
+                </EnumValue>
+                <EnumValue name="BasicIronSteel" value="23">
+                        <Text lang="en">Basic iron  and  steel</Text>
+                </EnumValue>
+                <EnumValue name="BasicNonFerrousMetals" value="24">
+                        <Text lang="en">Basic non-ferrous metals</Text>
+                </EnumValue>
+                <EnumValue name="MetalProductsExclmachinery" value="25">
+                        <Text lang="en">Metal products excl.machinery</Text>
+                </EnumValue>
+                <EnumValue name="MachineryAndEquipment" value="26">
+                        <Text lang="en">Machinery and equipment </Text>
+                </EnumValue>
+                <EnumValue name="ElectricalEquipment" value="27">
+                        <Text lang="en">Electrical equipment</Text>
+                </EnumValue>
+                <EnumValue name="TvRadioCommunicationEquipment" value="28">
+                        <Text lang="en">Tv, radio  and  communication equipment</Text>
+                </EnumValue>
+                <EnumValue name="ProfessionalScientificEquipment" value="29">
+                        <Text lang="en">Professional  and  scientific equipment</Text>
+                </EnumValue>
+                <EnumValue name="MotorVehiclesPartsAccessories" value="30">
+                        <Text lang="en">Motor vehicles, parts  and  accessories</Text>
+                </EnumValue>
+                <EnumValue name="OtherTransportEquipment" value="31">
+                        <Text lang="en">Other transport equipment</Text>
+                </EnumValue>
+                <EnumValue name="Furniture" value="32">
+                        <Text lang="en">Furniture</Text>
+                </EnumValue>
+                <EnumValue name="OtherIndustries" value="33">
+                        <Text lang="en">Other industries</Text>
+                </EnumValue>
+                <EnumValue name="ElectricityGasAndWater" value="34">
+                        <Text lang="en">Electricity, Gas and water</Text>
+                </EnumValue>
+                <EnumValue name="BuildingConstructionAndEngineering" value="35">
+                        <Text lang="en">Building construction and engineering</Text>
+                </EnumValue>
+                <EnumValue name="WholesaleRetailTradeCateringAndAccomodationServices" value="36">
+                        <Text lang="en">Wholesale, retail trade, catering and accomodation services</Text>
+                </EnumValue>
+                <EnumValue name="TransportStorageAndCommunication" value="37">
+                        <Text lang="en">Transport, storage, and communication</Text>
+                </EnumValue>
+                <EnumValue name="FinancialServicesBusinessIntermediationInsuranceRealEstate" value="38">
+                        <Text lang="en">Financial services, business intermediation, insurance  and  real estate</Text>
+                </EnumValue>
+                <EnumValue name="CommunitySocialPersonalServices" value="39">
+                        <Text lang="en">Community, social  and  personal services</Text>
+                </EnumValue>
+                <EnumValue name="OtherServices" value="40">
+                        <Text lang="en">Other services</Text>
+                </EnumValue>
+                <EnumValue name="Households" value="41">
+                        <Text lang="en">Households</Text>
+                </EnumValue>
+                <EnumValue name="GeneralGovernment" value="42">
+                        <Text lang="en">General government</Text>
+                </EnumValue>
+                <EnumValue name="TotalEconomy" value="43">
+                        <Text lang="en">Total economy</Text>
+                </EnumValue>
+                <EnumValue name="TotalMining" value="44">
+                        <Text lang="en">Total mining</Text>
+                </EnumValue>
+                <EnumValue name="TotalManufacturing" value="45">
+                        <Text lang="en">Total manufacturing</Text>
+                </EnumValue>
+                <EnumValue name="TotalServices" value="46">
+                        <Text lang="en">Total services</Text>
+                </EnumValue>
+                <EnumValue name="TotalEconomyIncludingHouseholdsGovernment" value="47">
+                        <Text lang="en">Total economy ( including households  and  government )</Text>
+                </EnumValue>
+        </EnumeratedType>
+
+        <EnumeratedType id="PublicCorportationsInvestment">
+                <EnumValue name="shareOfTotalPCIInGasWaterAndElectricity" value="1">
+                        <Text lang="en">Share of total PCI in Gas Water and Electricity</Text>
+                </EnumValue>
+                <EnumValue name="shareOfTotalPCIInConstruction" value="2">
+                        <Text lang="en">Share of total PCI in Construction</Text>
+                </EnumValue>
+                <EnumValue name="shareOfTotalPCIInTransport" value="3">
+                        <Text lang="en">Share of total PCI in Transport</Text>
+                </EnumValue>
+                <EnumValue name="shareOfTotalPCIInOtherSectors" value="7">
+                        <Text lang="en">Share of total PCI in Other Sectors</Text>
+                </EnumValue>
+        </EnumeratedType>
+</ParameterSystem>

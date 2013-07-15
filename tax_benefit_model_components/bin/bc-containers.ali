@@ -1,0 +1,138 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnvvnnnnnnnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U bc.containers%b	bc-containers.adb	4b6a686e NE OO PK GE IU
+W bc%s			bc.ads			bc.ali
+
+U bc.containers%s	bc-containers.ads	4f9cdd15 BN EB NE OO PK GE IU
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W bc%s			bc.ads			bc.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-stream.ads		20110419093132 2ca4ee37
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D bc.ads		20110415182050 45d2adcb
+D bc-containers.ads	20110415182050 b97da3db
+D bc-containers.adb	20110415182050 f217cbb5
+D system.ads		20110419093140 23e1f70b
+D s-exctab.ads		20110419093137 66e51330
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-traent.ads		20110419093139 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 8|29r6 141r35
+X 3 a-finali.ads
+42K13*Finalization 71e21 8|29w10 141r39
+46H9*Controlled 62e72 8|141r52
+X 7 bc.ads
+29K9*BC 78e7 8|34r9 171r5 9|29r14 134r5
+69X4*Should_Have_Been_Overridden 9|124r13 130r13
+X 8 bc-containers.ads
+32+9 Item 33r30 62r49 66r43 76r39 84r39 95r39 105r43 113r43 124r43 138r32
+33V18 "="{boolean} 33>23 33>26
+33*23 L{32+9}
+33*26 R{32+9}
+34k12*Containers 7|29k9 8|32z9 33z18 171l8 171e18 9|29b17 134l8 134t18
+41H9*Container 3|49P14 50P14 51P14 8|43p13 43r35 49p13 49r47 141c9 141e79
+. 147p14 147r31 149p14 149r33 155p13 155r26 159r37 9|110r31 116r33 122r26
+43y13*Null_Container{41R9}
+47H9*Iterator 49r65 53p14 53r33 56p14 56r32 59p13 59r27 62p13 62r32 67r53
+. 70p14 70r42 77r36 87r50 98r54 106r37 116r51 127r55 162c9 164e14 169p13
+. 169r36 9|33r53 38r36 49r50 61r54 73r37 84r51 96r55 128r36
+49y13*New_Iterator<47R9> 49>27
+49r27 For_The_Container{41R9}
+53x14*Reset 53=21 9|41R7 53R7 65R7 76R7 88R7 100R7
+53r21 It{47R9}
+56x14*Next 56=20 9|45R10 57R10 69R10 80R10 92R10 104R10
+56r20 It{47R9}
+59y13*Is_Done{boolean} 59>22 9|42R17 54R17 66R17 77R17 89R17 101R17
+59r22 It{47R9}
+62y13*Current_Item{32+9} 62>27
+62r27 It{47R9}
+66U22 Apply 66=29 9|35s7
+66*29 Elem{32+9}
+67u14*Access_Current_Item 67>35 9|33b14 36l8 36t27
+67c35 In_The_Iterator<47R9> 9|33b35 35r32
+70x14*Delete_Item_At 70=30
+70r30 It{47R9}
+76U22 Apply 76>29 76<45 9|43s10
+76*29 Elem{32+9}
+76b45 OK{boolean}
+77u14*Visit 77=21 9|38b14 47l8 47t13
+77c21 Using<47R9> 9|38b21 41m14 42r26 43r35 45m16
+83+12 Param_Type 85r40 88r46 9|50r43
+84U22 Apply 84>29 85>29 86<29 9|55s10
+84*29 Elem{32+9}
+85*29 Param{83+12}
+86b29 OK{boolean}
+87u14*Visit_With_In_Param 87=35 88>35 9|49b14 59l8 59t27
+87c35 Using<47R9> 9|49b35 53m14 54r26 55r35 57m16
+88*35 Param{83+12} 9|50b35 55r47
+94+12 Param_Type 96r44 99r54 9|62r54
+95U22 Apply 95>29 96=29 97<29 9|67s10
+95*29 Elem{32+9}
+96*29 Param{94+12}
+97b29 OK{boolean}
+98u14*Visit_With_In_Out_Param 98=39 99=39 9|61b14 71l8 71t31
+98c39 Using<47R9> 9|61b39 65m14 66r26 67r35 69m16
+99*39 Param{94+12} 9|62b39 67m47
+105U22 Apply 105=29 105<49 9|78s10
+105*29 Elem{32+9}
+105b49 OK{boolean}
+106u14*Modify 106=22 9|73b14 82l8 82t14
+106c22 Using<47R9> 9|73b22 76m14 77r26 78r35 80m16
+112+12 Param_Type 114r40 117r47 9|85r47
+113U22 Apply 113=29 114>29 115<29 9|90s10
+113*29 Elem{32+9}
+114*29 Param{112+12}
+115b29 OK{boolean}
+116u14*Modify_With_In_Param 116=36 117>36 9|84b14 94l8 94t28
+116c36 Using<47R9> 9|84b36 88m14 89r26 90r35 92m16
+117*36 Param{112+12} 9|85b36 90r47
+123+12 Param_Type 125r44 128r55 9|97r55
+124U22 Apply 124=29 125=29 126<29 9|102s10
+124*29 Elem{32+9}
+125*29 Param{123+12}
+126b29 OK{boolean}
+127u14*Modify_With_In_Out_Param 127=40 128=40 9|96b14 106l8 106t32
+127c40 Using<47R9> 9|96b40 100m14 101r26 102r35 104m16
+128*40 Param{123+12} 9|97b40 102m47
+138P9 Item_Ptr(32+9) 139r8 155r62 169r53 9|122r62 128r53
+147U14 Lock 147=20 9|110b14 114l8 114t12
+147r20 C{41R9} 9|110b20 111r29
+149U14 Unlock 149=22 9|116b14 120l8 120t14
+149r22 C{41R9} 9|116b22 117r29
+155V13 Item_At{138P9} 155>22 155>37 9|122b13 126l8 126t15
+155r22 C{41R9} 9|122b22
+155i37 Index{positive} 9|122b37
+159P9 Container_Ptr(41R9) 160r8 163r27
+163p7 For_The_Container{159P9}
+169V13 Current_Item_Ptr{138P9} 169>31 9|35R14 43R17 55R17 67R17 78R17 90R17
+. 102R17 128b13 132l8 132t24
+169r31 It{47R9} 9|128b31
+X 9 bc-containers.adb
+39b7 Success{boolean} 43m47 43r47 44r24
+51b7 Success{boolean} 55m54 55r54 56r24
+63b7 Success{boolean} 67m54 67r54 68r24
+74b7 Success{boolean} 78m47 78r47 79r24
+86b7 Success{boolean} 90m54 90r54 91r24
+98b7 Success{boolean} 102m54 102r54 103r24
+

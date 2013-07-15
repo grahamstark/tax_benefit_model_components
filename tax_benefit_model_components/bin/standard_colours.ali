@@ -1,0 +1,51 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U standard_colours%s	standard_colours.ads	40047a36 NE OO PK
+W colours%s		colours.adb		colours.ali
+
+D colours.ads		20110415182054 24708896
+D standard_colours.ads	20110415182055 6474f2a0
+D system.ads		20110419093140 23e1f70b
+X 1 colours.ads
+20K9*Colours 29e12 2|1w6 5r8
+22I9*Byte<short_integer>
+24A9*Colour(22I9)<23E9> 2|38r62
+X 2 standard_colours.ads
+3K9*Standard_Colours 69l5 69e21
+7E9*Standard_Colours_Type 36e17 38r35
+9n10*vw_red{7E9}
+10n10*vw_blue{7E9}
+11n10*pale_orange{7E9}
+12n10*dark_gray_blue{7E9}
+13n10*light_purple{7E9}
+14n10*sun_primary_2{7E9}
+15n10*vw_light_blue{7E9}
+16n10*pink{7E9}
+17n10*slate_blue{7E9}
+18n10*light_turquoise{7E9}
+19n10*pale_blue{7E9}
+20n10*sun_primary_1{7E9}
+21n10*gray_blue{7E9}
+23n10*pale_brown{7E9}
+24n10*vw_med_blue{7E9}
+25n10*vw_dark_blue{7E9}
+26n10*vw_text_blue{7E9}
+28n10*scarlet{7E9}
+29n10*royal_blue{7E9}
+30n10*rich_purple{7E9}
+32n10*sun_secondary_1{7E9}
+33n10*sun_secondary_2{7E9}
+34n10*vw_gray_1{7E9}
+35n10*white{7E9}
+36n10*black{7E9}
+38a4*STD_COLOURS(1|24A9)
+

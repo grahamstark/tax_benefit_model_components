@@ -1,0 +1,28 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U parameter_system_io_commons%s  parameter_system_io_commons.ads  08c3fee4 NE OO PK
+
+D parameter_system_io_commons.ads  20120321115336 08c3fee4
+D system.ads		20110419093140 23e1f70b
+X 1 parameter_system_io_commons.ads
+1K9*Parameter_System_IO_Commons 6l5 6e32
+3E9*Get_Operation 3e79
+3n28*actual_value{3E9}
+3n42*base_value{3E9}
+3n54*pc_change{3E9}
+3n65*level_change{3E9}
+4E9*Buffer_Retrieval_Type 4e83
+4n36*get_all{4E9}
+4n45*get_changed_values{4E9}
+4n65*get_changed_base{4E9}
+

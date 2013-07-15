@@ -1,0 +1,59 @@
+--
+-- This is the top-level package for the UK model. It does very little: just
+-- imports some standard types and generic formatting and calculation routines, so these can  
+-- be used easily in the model itself, which is (almost) all declared in child packages.
+-- 
+-- Putting anything else in here may cause nasty cross-dependencies.
+--
+--  $Author: graham_s $
+--  $Date: 2011-06-05 22:43:03 +0100 (Sun, 05 Jun 2011) $
+--  $Revision: 11931 $
+
+pragma License( Modified_GPL );
+
+
+with Ada.Numerics.Generic_Elementary_Functions;
+with Base_Model_Types;
+with Financial_Functions;
+with Format_Utils;
+with Key_Value_IO;
+with Logger;
+with Maths_Functions;
+with Tax_Utils;
+with Text_Utils;
+-- 
+pragma Elaborate_All (Text_Utils);
+pragma Elaborate_All (Base_Model_Types);
+pragma Elaborate_All (Logger);
+pragma Elaborate_All (Format_Utils);
+-- pragma Elaborate_All (Tax_Utils);
+
+package Model is
+   
+   --  pragma Preelaborate;
+   
+   type Loggable_Modules is ( model_household, model_uprate, means_tested, non_means_tested, legal_aid_calcs, income_calcs, charging_model, misc, runner );
+   
+   use Base_Model_Types;
+   
+   package UK_Logger is new Logger( Target_Type => Loggable_Modules );
+   package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
+   package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );
+   package UK_Key_Value_IO is new Key_Value_IO( Real_Type=>Amount,  Counter_Type=>Counter_Type );
+
+   package Amount_Math is new Ada.Numerics.Generic_Elementary_Functions( Amount );
+   use Amount_Math;
+   package Maths_Funcs is new Maths_Functions( Amount );
+   use Maths_Funcs;
+   package Financial_Funcs is new Financial_Functions( Rate=>Rate, Amount=>Amount );
+   use Financial_Funcs;
+
+   use UK_Format_Utils;
+   use UK_Logger;
+   use UK_Tax_Utils;
+   --
+   -- Just a Bounded String used for labels
+   --
+   use Text_Utils.Std_Bounded_String;
+
+end Model;

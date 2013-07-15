@@ -1,0 +1,127 @@
+Downloads
+========
+
+
+Build Instructions
+===================
+
+Get Ada 2012 from http://libre.adacore.com/libre/ Also download AWS, AdaXML and AUnit.
+Follow Instructions in 
+
+Ada 2012 Clean Install
+=======================
+
+  mkdir /opt/ada_libraries/2012
+  (give write permission to this pro-tem)
+
+  paths (in e.g. /etc/profile.d/grahams.sh)
+  
+        #
+        # ada compilation; given all the projects in /opt/ada_libraries/
+        # and the compiler in /opt/gnat/2012
+        
+        unset ADA_HOME
+        unset ADA_HOME
+	export ADA_VERSION=2012
+	export ADA_HOME=/opt/gnat/$ADA_VERSION/
+	export ADA_INCLUDE_PATH=/opt/ada_libraries/$ADA_VERSION/
+	export ADA_PROJECT_PATH=$ADA_INCLUDE_PATH:$ADA_INCLUDE_PATH/lib/gnat/
+
+Note the ADA_HOME/bin is in front of the default PATH : pick up ada version of GCC first (may break other projects?).
+Change '/lib/gcc/x86_64-pc-linux-gnu/4.3.4/adainclude' to the supplied gcc lib in Gnat
+
+xmlada
+------
+        tar zxvf xmlada-gpl-4.3-src.tgz
+        cd xmlada-4.3w-src
+
+        ./configure --prefix=/opt/ada_libraries/2012/
+        make 
+        make install
+        
+   
+florist
+--------
+	tar zxvf florist-gpl-2012-src.tgz
+	cd florist-gpl-2012-src/
+        ./configure --prefix /opt/ada_libraries/2012/
+        make
+        make install
+   
+   
+GNAT collection
+---------------
+
+        tar zxvf gnatcoll-gpl-2012-src.tgz
+        cd gnatcoll-gpl-2012-src
+        ./configure --prefix=/opt/ada_libraries/2012/
+        make install
+        in source dir:
+        
+        cp gnatcoll-mmap__unix.adb gnatcoll-mmap.adb
+        gnatcoll-io-native-codec__unix.adb gnatcoll-io-native-codec.adb
+
+        (or Windows equiv)
+        
+ASIS
+-----
+
+        tar zxvf asis-gpl-2012-src.tgz
+        cd asis-gpl-2012-src/
+        cd gnat/
+        gnatmake xsnamest.adb
+        ./xsnamest
+        mv snames.ns snames.ads
+        mv snames.nb snames.adb
+        cd ..
+        gnat make -Pasis_bld
+        make all install prefix=/opt/ada_libraries/2012/
+   
+AUNIT V3
+-------
+        tar zxvf aunit-gpl-2012-src.tgz 
+        cd aunit-gpl-2012-src/
+        make
+        make install INSTALL=/opt/ada_libraries/2012/
+   
+AWS
+----
+
+This is all default values (no SSL)
+        tar zxvf aws-gpl-2.11.0-src.tgz 
+        cd aws-gpl-2.11.0-src
+        make setup build  
+        make prefix=/opt/ada_libraries/2012/ install
+   
+POLYORB
+-------
+
+If you're using a version from Adacore, put the Ada compiler before standard GCC, e.g.:
+
+        PATH=/opt/gnat/2012/bin/:$PATH
+
+(Default Options compile)
+
+        tar zxvf polyorb-gpl-2012-src.tgz
+        cd polyorb-gpl-2012-src/
+        ./configure --prefix=/opt/ada_libraries/2012/
+        make
+        make install
+        
+        
+   
+   
+Missing maths library in Ada 2009
+---------------------------------
+
+See: http://gcc.gnu.org/ml/gcc/2008-04/msg00543.html 
+
+Get libgnalasup.a from somewhere!
+
+Then on top level: 
+
+   gnatmake tb_2012.gpr 
+
+That should be it.
+
+

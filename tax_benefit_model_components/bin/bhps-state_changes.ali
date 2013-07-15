@@ -1,0 +1,107 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnnnnnnnvnnvnnnnnnnnnvnnnnnnnnnnvnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U bhps.state_changes%b	bhps-state_changes.adb	913d5d3f NE OO PK IU
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W bhps%s		bhps.adb		bhps.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U bhps.state_changes%s	bhps-state_changes.ads	7cded216 EE NE OO PK IU
+W bhps%s		bhps.adb		bhps.ali
+W t_utils%s		t_utils.adb		t_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-direio.ads		20110419093131 5842da07
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D bhps.ads		20110707092530 3f1aacd7
+D bhps-state_changes.ads  20110415182046 25a296a6
+D bhps-state_changes.adb  20110415182046 b49fcb99
+D bhps_enums.ads	20110825183250 ac2cbfb4
+D bhps_indexes.ads	20110825133532 c56cfe01
+D data_constants.ads	20110415182041 06452ee2
+D data_index.ads	20110702150512 9b0b9651
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-direio.ads		20110419093137 068812e8
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+X 9 a-convec.ads
+53R9*Vector
+X 28 bhps.ads
+9K9*BHPS 4153e9 29|3r9 11r6 30|1r14 23r6
+15I12*Age_Range{natural}
+3999R9*Adult 4036e14 29|5r31 30|5r34 10r31
+4002i7*age{15I12} 30|12m10 12r20
+4056R9*Household 4148e14 29|6r23 30|17r23
+4060R12*Household_Vector{9|53R9[4059]} 29|6r42 30|17r42 18r12
+X 29 bhps-state_changes.ads
+3K14*State_Changes 28|9k9 29|11l11 11e24 30|1b19 23l11 23t24
+5U14*Age 5=19 30|10b14 15l8 15t11
+5r19 ad{28|3999R9} 30|10b19 12m7 12r17 13m15
+6V13*Age{28|4060R12} 6>18 30|17b13 21l8 21t11
+6r18 hh{28|4056R9} 30|17b18
+X 30 bhps-state_changes.adb
+5U14 Uprate 5b14 5=22 8l8 8t14 13s7
+5r22 ad{28|3999R9}
+18r7 hv{28|4060R12} 20r14
+X 61 t_utils.ads
+47k9*T_Utils 29|1w6 61|159e12
+

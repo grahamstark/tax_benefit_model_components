@@ -1,0 +1,210 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnvnnvnnnvnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U keyed_text_buffer%b	keyed_text_buffer.adb	dba0bc14 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.strings.unbounded.text_io%s  a-suteio.adb	a-suteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.unbounded_io%s  a-tiunio.ads	a-tiunio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W line_extractor%s	line_extractor.adb	line_extractor.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U keyed_text_buffer%s	keyed_text_buffer.ads	69a0e4d6 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-suteio.ads		20110419093132 26d8e9aa
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tiunio.ads		20110419093133 759c6b0c
+D a-unccon.ads		20110419093133 f9eb8f06
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D keyed_text_buffer.ads	20120316154839 a5b8d868
+D keyed_text_buffer.adb	20120316163810 1531130e
+D line_extractor.ads	20110616140359 c6f73843
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 26|1r6 6r8 27|1r6 3r6 5r6 42r68 43r80 60r28 62r22 70r7 70r34
+. 71r18 74r30 84r68 85r80 93r7 101r12 103r12 114r20 117r43 118r45
+X 5 a-contai.ads
+20I9*Count_Type<integer>
+X 7 a-cohama.ads
+50R9*Map
+53R9*Cursor 27|15r26[50|95] 16r20[50|95]
+98V13*Key{18|79R9} 27|19s21[50|95]
+101V13*Element{18|79R9} 27|19s31[50|95]
+129U14*Insert 27|19s13[50|95]
+156U14*Insert 27|120s16[50|95]
+167U14*Include 27|45s26[50|95] 87s26[50|95]
+235V13*Element{18|79R9} 27|130s37[50|95] 135s26[50|95]
+253U14*Iterate 27|23s14[50|95]
+X 8 a-convec.ads
+53R9*Vector
+85V13*Length{5|20I9} 27|31s47[50|82]
+101V13*Element{18|79R9} 27|37s23[50|82]
+X 14 a-string.ads
+16K13*Strings 35e16 26|1r10 6r12 27|5r10 42r72 43r84 60r32 74r34 84r72 85r84
+. 114r24 117r47 118r49
+33n37*Both{33E9} 27|42r80 43r92 74r42 84r80 85r92 114r32 117r55 118r57
+X 15 a-strbou.ads
+162V16*"="{boolean}<17|163p13> 8|41i18[50|25]
+X 18 a-strunb.ads
+76K21*Unbounded 489e26 26|1w18 6r20 27|5r18 60r40
+79R9*Unbounded_String 473e14 26|15r27 18r51 18r77 27|28r22 32r22 53r27 64r22
+. 67r22 106r12 107r12 108r12 133r51 133r77
+84V13*Length{natural} 27|38s25 44s20 44s46 80s25 86s20 86s46 116s14
+94V13*To_Unbounded_String{79R9} 27|64s42 91s18 130s46
+100V13*To_String{string} 27|55s21 130s14
+119V13*"&"{79R9} 27|76s26
+153V13*Unbounded_Slice{79R9} 27|42s28 43s30 84s28 85s30
+166V13*"="{boolean}<10|62p9> 8|41i18
+230V13*Index{natural} 27|40s23 82s23
+378V13*Trim{79R9} 27|42s23 43s25 84s23 85s25 117s19 118s19
+382U14*Trim 27|74s13 114s11
+X 19 a-suteio.ads
+39K31*Text_IO 61e34 27|5w28 60r50
+47U14*Get_Line 27|73s18
+X 21 a-textio.ads
+49K13*Text_IO 471e16 27|1w10 3r10 62r26 70r11 70r38 71r22 93r11 101r16 103r16
+52P9*File_Type(369R9) 27|62r34 109r15
+53n23*In_File{53E9} 27|70r46 111r20
+92U14*Open 27|70s19 111s8
+98U14*Close 27|93s19 124s8
+183V13*End_Of_File{boolean} 27|71s30 122s21
+263U14*Put_Line 27|119s14
+X 22 a-tiunio.ads
+25K21*Unbounded_IO 61e29 27|3w18 103r24
+52U14*Get_Line=55:42 27|113s11
+X 26 keyed_text_buffer.ads
+4K9*Keyed_Text_Buffer 22l5 22e22 27|7b14 146l5 146t22
+8R12*Text_Buffer{50|103R12} 12r70 14r60 15r70 17r32 18r32 20r33 20r55 27|11r33
+. 11r55 26r60 29r22 53r70 58r56 68r22 98r60 105r12 128r32 133r32 138r70
+10E9*Load_Type 10e58 12r51 27|138r51
+10n24*single_line_delimited{10E9} 27|141r12
+10n47*multiline{10E9} 27|142r12
+12V13*Load{8R12} 12>19 12>38 27|138b13 144l8 144t12
+12s19 filename{string} 27|138b19 141r63 142r48
+12e38 which_load{10E9} 27|138b38 140r12
+14V13*Parse{8R12} 14>20 14>35 27|26b13 51l8 51t13 55s14
+14s20 data{string} 27|26b20 30r54
+14e35 sep{character} 27|26b35 30r60
+15V13*Parse{8R12} 15>20 15>45 27|53b13 56l8 56t13
+15r20 data{18|79R9} 27|53b20 55r32
+15e45 sep{character} 27|53b45 55r40
+17V13*Get{string} 17>18 17>45 27|128b13 131l8 131t11
+17r18 this_buffer{8R12} 27|128b18 130r25
+17s45 key{string} 27|128b45 130r67
+18V13*Get{18|79R9} 18>18 18>45 27|133b13 136l8 136t11
+18r18 this_buffer{8R12} 27|133b18 135r14
+18r45 key{18|79R9} 27|133b45 135r35
+20U14*Merge 20=21 20>46 27|11b14 24l8 24t13
+20r21 to{8R12} 27|11b21 19m10 19r10
+20r46 to_add{8R12} 27|11b46 23r7
+X 27 keyed_text_buffer.adb
+15U17 Add 15b17 15>22 20l11 20t14 23r23
+15r22 c{7|53R9[50|95]} 19r26 19r40
+16r10 new_pos{7|53R9[50|95]} 19m45 19r45
+17b10 inserted{boolean} 19m54 19r54
+28r7 key{18|79R9} 42m16 44r28 45r35
+28r12 value{18|79R9} 43m16 44r54 45r40
+29r7 buffer{26|8R12} 45m19 45r19 50r14
+30r7 list{50|84R12} 31r42 37r18
+31i7 n{natural} 36r21
+32r7 line{18|79R9} 37m10 38r33 40r30 42r45 43r47
+33i7 eq_pos{natural} 40m13 41r17 42r54 43r53
+34i7 line_length{natural} 38m10 39r14 43r65
+36i11 i{integer} 37r32
+58V13 Load_Multiline{26|8R12} 58b13 58>29 95l9 95t23 142s32
+58s29 filename{string} 70r55
+60K15 usut=60:50 73r13
+62p7 in_file{21|52P9} 70m25 70r25 71r43 73r28 93m26 93r26
+63r7 this_line{18|79R9} 73m37 73r37 74m19 74r19 75m35 75r35 76r28 77r39
+64r7 line{18|79R9} 76m13 76r21 79m25 79r25 80r33 82r30 84r45 85r47 91m10
+65i7 eq_pos{natural} 82m13 83r17 84r54 85r53
+66i7 line_length{natural} 80m10 81r14 85r65
+67r7 key{18|79R9} 84m16 86r28 87r35
+67r12 value{18|79R9} 85m16 86r54 87r40
+68r7 buffer{26|8R12} 87m19 87r19 94r14
+98V14 Load_Single_Lines{26|8R12} 98b14 98>33 126l8 126t25 141s44
+98s33 filename{string} 111r29
+105r8 b{26|8R12} 120m14 120r14 125r15
+106r8 k{18|79R9} 117m14 119r37 120r24
+107r8 v{18|79R9} 118m14 120r27
+108r8 s{18|79R9} 113m27 113r27 114m17 114r17 115m33 115r33 116r22 117r38
+. 118r40
+109p8 file{21|52P9} 111m14 111r14 113r21 122r34 124m15 124r15
+X 28 line_extractor.ads
+4K9*Line_Extractor 27|2w6 4w6 9r8 102r12 28|76e19
+33V13*Extract_Key{18|79R9} 27|117s25
+34V13*Extract_Value{18|79R9} 27|118s25
+39U14*Strip_Escapes 27|79s10
+40V13*Last_Character{character} 27|77s23
+42U14*Delete_After_Comment 27|75s13 115s11
+X 50 text_utils.ads
+13K9*Text_Utils 26|2w6 8r27 27|13r11 27r8 99r12 50|107e15
+48V13*TS=48:72{string} 27|119s33
+84R12*Unbounded_String_List{8|53R9[82]} 27|30r22
+87V13*Split{84R12} 27|30s47
+95K12*String_Maps_Package[7|46] 27|13r22 100r12
+103R12*Unbounded_String_Map{7|50R9[95]} 26|8r38
+

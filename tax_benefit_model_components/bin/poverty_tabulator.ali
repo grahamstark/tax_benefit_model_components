@@ -1,0 +1,78 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnvnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U poverty_tabulator%b	poverty_tabulator.adb	714669db NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+
+U poverty_tabulator%s	poverty_tabulator.ads	b93cb6ad BN EE NE OO PK GE
+W tabulator_commons%s	tabulator_commons.ads	tabulator_commons.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-unccon.ads		20110419093133 f9eb8f06
+D poverty_tabulator.ads	20110415182054 7d817588
+D poverty_tabulator.adb	20110415182054 06c23778
+D system.ads		20110419093140 23e1f70b
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-exctab.ads		20110419093137 66e51330
+D s-stalib.ads		20110419093138 f78bcf95
+D tabulator_commons.ads	20110415182054 c4bdc325
+X 1 ada.ads
+16K9*Ada 19e8 5|1r6 5r8
+X 2 a-assert.ads
+24K13*Assertions 36e19 5|1w10 5r12
+34U14*Assert 5|11s10
+X 4 poverty_tabulator.ads
+5F9 Data_Type 15r64 26r32 29r32 5|12r65 13r23 30r32 33r32 34r21 34r43
+7I9 People_Count 27r32 5|31r32
+11E9 Breakdown_Range 16r30 28r32 5|10r16 13r88 32r32 56r16
+13k9*Poverty_Tabulator 5z9 7z9 11z9 33l5 33e22 5|3b14 80l5 80t22
+15A9*Poverty_Elements_Array(5F9)<10|42E9> 16r51 19r16
+16A9*Cells_Type(15A9)<11E9> 18r16
+17R9*Table_Type 20e14 22r32 22r51 22r71 25r39 31r44 5|7r32 7r51 7r71 8r11
+. 29r39 54r45
+18a7 cells{16A9} 5|11r23 11r55 12r87 13r45 15m12 15r45 18m15 18r39 18r62
+. 36m13 37r16 41m16 42r19 43m16 44r19 57r20 58m19 59r22 60r25 62r20 63m19
+. 64r22 65r25
+19a7 totals{15A9} 5|22m12 22r32 22r51 24m9 24r38 38m13 39r16 46m16 47r19
+. 48m16 49r19 68r17 69m16 70r19 71r22 73r17 74m16 75r19 76r22
+22V13*Difference{17R9} 22>25 22>44 5|7b13 26l8 26t18
+22r25 newt{17R9} 5|7b25 11r18 12r82 15r40 18r34 22r27 24r33
+22r44 oldt{17R9} 5|7b44 11r50 13r40 18r57 22r46
+24U14*Add_Observation 25=7 26>7 27>7 28>7 29>7 5|28b14 52l8 52t23
+25r7 table{17R9} 5|29b7 36m7 37r10 38m7 39r10 41m10 42r13 43m10 44r13 46m10
+. 47r13 48m10 49r13
+26*7 poverty_gap_per_person{5F9} 5|30b7 40r11 45r23 50r23
+27*7 num_people{7I9} 5|31b7 34r54
+28*7 which_bd{11E9} 5|32b7 36r20 37r23 41r23 42r26 43r23 44r26
+29*7 weight{5F9} 5|33b7 34r34
+31U13*Complete_Table 31=29 5|54b14 78l8 78t22
+31r29 table{17R9} 5|54b30 57r14 58m13 59r16 60r19 62r14 63m13 64r16 65r19
+. 68r11 69m10 70r13 71r16 73r11 74m10 75r13 76r16
+X 5 poverty_tabulator.adb
+8r7 p{4|17R9} 15m10 18m13 22m10 24m7 25r14
+10*11 b{4|11E9} 11r30 11r62 12r94 13r52 13r111 15r19 15r52 18r22 18r46 18r69
+17e14 e{10|42E9} 18r27 18r51 18r74
+21e11 e{10|42E9} 22r20 22r40 22r59
+34*7 wp{4|5F9} 37r50 39r39 42r60 45r18 47r49 50r18
+56*11 b{4|11E9} 57r27 58r26 59r29 60r32 62r27 63r26 64r29 65r32
+X 10 tabulator_commons.ads
+32K9*Tabulator_Commons 4|1w6 1r29 10|51e22
+42E9*Poverty_Elements 4|15r42 5|17r40 21r37 10|48e5
+43n7*population{42E9} 5|11r35 11r67 12r99 13r57 15r24 15r57 24r17 24r46 36r32
+. 37r35 38r21 39r24 57r32 60r37 68r25 71r30
+44n7*people_in_poverty{42E9} 5|17r19 21r16 41r35 42r38 46r24 47r27 59r34
+. 62r32 65r37 70r27 73r25 76r30
+45n7*poverty_rate{42E9} 5|58r31 69r24
+46n7*poverty_gap_total{42E9} 5|43r35 44r38 48r24 49r27 64r34 75r27
+47n7*poverty_gap_per_poor_person{42E9} 5|63r31 74r24
+

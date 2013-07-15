@@ -1,0 +1,705 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnvnvnnnnnnnnvnnvnvvvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnn
+
+U za.model_types%b	za-model_types.adb	f3d8ffa9 NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W za%s			za.ads			za.ali
+
+U za.model_types%s	za-model_types.ads	de219912 EE OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_sets%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.red_black_trees.generic_set_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W base_model_types%s	base_model_types.adb	base_model_types.ali
+W format_utils%s	format_utils.adb	format_utils.ali  AD
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W gnat.string_split%s	g-strspl.ads		g-strspl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.arith_64%s	s-arit64.adb		s-arit64.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+W t_utils%s		t_utils.adb		t_utils.ali  AD
+W tax_utils%s		tax_utils.adb		tax_utils.ali
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W utils%s		utils.adb		utils.ali
+W za%s			za.ads			za.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-coorse.adb		20110419093131 26de352f
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-rbtgso.ads		20110419093132 8700a961
+D a-rbtgso.adb		20110419093132 f22a83dd
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-regpat.ads		20110419093135 b85d88ef
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20120222165140 d58a72d7
+D keyed_text_buffer.ads	20120316154839 a5b8d868
+D line_extractor.ads	20110616140359 c6f73843
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-arit64.ads		20110419093136 a011a169
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valenu.ads		20110419093139 bb1a4295
+D s-valint.ads		20110419093139 48a52a3f
+D s-valrea.ads		20110419093139 fe297711
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D t_utils.adb		20110415182054 e4f1d2e4
+D tax_utils.ads		20110613201228 600316b9
+D tax_utils.adb		20111018144548 51f4d08b
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120313141900 f389e87b
+D utils.ads		20110415182054 93874c25
+D za.ads		20110415182049 e958296a
+D za-model_types.ads	20110415182049 a55e8de4
+D za-model_types.adb	20110415182049 517a535c
+X 1 ada.ads
+16K9*Ada 19e8 106|33r6 37r37 107|23r6 24r6 28r8
+X 2 a-calend.ads
+36K13*Calendar 358e17 106|33w10 37r41
+44I12*Year_Number{integer} 106|37r50
+X 10 a-coorse.ads
+238R9 Node_Type
+239P9 Node_Access(238R9[98|54[106|162]])
+X 11 a-coorse.adb
+50V13 Color{12|35E9} 15|45i19[98|54[106|469]]
+53V13 Left{10|239P9[98|54[106|214]]} 15|41i19[98|54[106|214]]
+56V13 Parent{10|239P9[98|54[106|143]]} 15|39i19[98|54[106|143]]
+59V13 Right{10|239P9[98|54[106|162]]} 15|43i19[98|54[106|162]]
+62U14 Set_Color 15|46i19
+65U14 Set_Left 15|42i19[98|54[106|143]]
+68U14 Set_Right 15|44i19[98|54[106|485]]
+71U14 Set_Parent 15|40i19[98|54[106|173]]
+X 26 a-string.ads
+16K13*Strings 35e16 107|23r10
+X 27 a-strbou.ads
+162V16*"="{boolean}<30|163p13> 19|41i18[103|25]
+X 31 a-strunb.ads
+76K21*Unbounded 489e26 107|23w18
+166V13*"="{boolean}<22|62p9> 19|41i18
+X 33 a-textio.ads
+49K13*Text_IO 471e16 107|24w10 28r12
+X 46 base_model_types.ads
+18K9*Base_Model_Types 134e21 106|32w6
+25F9*Real<long_float>
+27D9*Counter_Type 106|86r23 146r23 165r23 176r23 217r23 472r23 488r23 519r23
+29F12*Rate{25F9} 106|84r23 144r23 163r23 174r23 215r23 470r23 486r23 517r23
+30F12*Amount{25F9} 106|85r23 145r23 164r23 175r23 216r23 471r23 483r48 487r23
+. 518r23 531r51 107|32r47 39r51
+X 98 t_utils.ads
+31E9 T 106|87r7 147r7 166r7 177r7 218r7 473r7 489r7 520r7
+36F9 Rate_Type 106|84r7 144r7 163r7 174r7 215r7 470r7 486r7 517r7
+41F9 Amount_Type 106|85r7 145r7 164r7 175r7 216r7 471r7 487r7 518r7
+45D9 Counter_Type 106|86r7 146r7 165r7 176r7 217r7 472r7 488r7 519r7
+47k9*T_Utils 159e12 106|30w6 83r34 143r38 162r36 173r38 214r34 469r34 485r39
+. 516r36
+60A9*Abs_Rate_Array(46|25F9)<106|70E9> 106|499r27[485]
+61A12*Rate_Array{60A9[106|469]}<106|433E9> 106|475r52[469] 494r62[485] 527r57[516]
+63A9*Abs_Amount_Array(46|25F9)<106|78E9> 106|477r22[469] 479r22[469] 497r27[485]
+64A12*Amount_Array{63A9[106|83]}<106|78E9> 106|88r43[83] 148r51[143] 167r47[162]
+. 178r51[173] 219r43[214] 474r43[469] 493r53[485] 526r56[516]
+95V13*Sum{46|25F9} 107|34s29[106|469] 41s31[106|516]
+X 105 za.ads
+48K9*ZA 74e7 106|35r9 533r5 107|26r14 476r5
+X 106 za-model_types.ads
+35K12*Model_Types 105|48k9 106|533l8 533e19 107|26b17 476l8 476t19
+37I12*Simulation_Year_Range{2|44I12}
+39I9*System_Number<integer> 40r28
+40I12*System_Range{39I9}
+42E9*Poverty_Type 42e83 43r31 107|263r31
+42n27*extreme_poverty{42E9} 107|266r14
+42n44*poverty{42E9} 107|267r14
+42n53*mild_poverty{42E9} 107|268r14
+42n67*not_in_poverty{42E9} 107|269r14
+43V13*Pretty_Print{string} 43>27 107|263b13 271l8 271t20
+43e27 p{42E9} 107|263b27 265r11
+45E9*Age_Group_Type 64e20 66r31 107|93r31
+46n7*age_00_to_04_years{45E9} 107|96r16
+47n7*age_05_to_09_years{45E9} 107|97r16
+48n7*age_10_to_14_years{45E9} 107|98r16
+49n7*age_15_to_19_years{45E9} 107|99r16
+50n7*age_20_to_24_years{45E9} 107|100r16
+51n7*age_25_to_29_years{45E9} 107|101r16
+52n7*age_30_to_34_years{45E9} 107|102r16
+53n7*age_35_to_39_years{45E9} 107|103r16
+54n7*age_40_to_44_years{45E9} 107|104r16
+55n7*age_45_to_49_years{45E9} 107|105r16
+56n7*age_50_to_54_years{45E9} 107|106r16
+57n7*age_55_to_59_years{45E9} 107|107r16
+58n7*age_60_to_64_years{45E9} 107|108r16
+59n7*age_65_to_69_years{45E9} 107|109r16
+60n7*age_70_to_74_years{45E9} 107|110r16
+61n7*age_75_to_79_years{45E9} 107|111r16
+62n7*age_80_to_84_years{45E9} 107|112r16
+63n7*age_85_plus{45E9} 107|113r16
+64n7*unspecified{45E9} 107|114r16
+66V13*Pretty_Print{string} 66>27 107|93b13 116l8 116t20
+66e27 i{45E9} 107|93b27 95r12
+68E9*Expenses_Conditional_Type 68e63
+68n40*is_disabled{68E9}
+68n53*is_blind{68E9}
+70E9*Personal_Expenses_Type 75e36 76r31 520r23 107|44r31
+71n7*travel_to_work{70E9} 107|47r15
+72n7*health_spending{70E9} 107|48r15
+73n7*health_insurance{70E9} 107|49r15
+74n7*pension_contributions{70E9} 107|50r15
+75n7*annuity_funds_contributions{70E9} 107|51r15
+76V13*Pretty_Print{string} 76>27 107|44b13 53l8 53t20
+76e27 i{70E9} 107|44b27 46r12
+78E9*Gender_Type 81e20 82r31 87r23 107|119r31
+79n7*male{78E9} 107|122r16
+80n7*female{78E9} 107|123r16
+81n7*unspecified{78E9} 107|124r16
+82V13*Pretty_Print{string} 82>27 107|119b13 126l8 126t20
+82e27 i{78E9} 107|119b27 121r12
+83K12*Gender_Package[98|47] 88r28
+88A12*Gender_Array{98|64A12[83]}<78E9>
+91E9*Education_Level 118e33 119r31 107|129r31
+92n7*no_schooling{91E9} 107|132r16
+93n7*grade_r_or_0{91E9} 107|133r16
+94n7*grade_1_or_sub_a{91E9} 107|134r16
+95n7*grade_2_or_sub_b{91E9} 107|135r16
+96n7*grade_3_or_standard_1{91E9} 107|136r16
+97n7*grade_4_or_standard_2{91E9} 107|137r16
+98n7*grade_5_or_standard_3{91E9} 107|138r16
+99n7*grade_6_or_standard_4{91E9} 107|139r16
+100n7*grade_7_or_standard_5{91E9} 107|140r16
+101n7*grade_8_or_standard_6_or_form_1{91E9} 107|141r16
+102n7*grade_9_or_standard_7_or_form_2{91E9} 107|142r16
+103n7*grade_10_or_standard_8_or_form_3{91E9} 107|143r16
+104n7*grade_11_or_standard_9_or_form_4{91E9} 107|144r16
+105n7*grade_12_or_standard_10_or_form_5_or_matric{91E9} 107|145r16
+106n7*ntc_l{91E9} 107|146r16
+107n7*ntc_ii{91E9} 107|147r16
+108n7*ntc_iii{91E9} 107|148r16
+109n7*diploma_or_certificate_with_less_than_grade_12_or_std_10{91E9} 107|149r16
+110n7*diploma_with_less_than_grade_12_or_std_10{91E9} 107|150r16
+111n7*certificate_with_grade_12_or_std_10{91E9} 107|151r16
+112n7*diploma_with_grade_12_or_std_10{91E9} 107|152r16
+113n7*bachelors_degree{91E9} 107|153r16
+114n7*bachelors_degree_and_diploma{91E9} 107|154r16
+115n7*honours_degree{91E9} 107|155r16
+116n7*higher_degree_masters_doctorate{91E9} 107|156r16
+117n7*other_education{91E9} 107|157r16
+118n7*dont_know_or_unspecified{91E9} 107|158r16
+119V13*Pretty_Print{string} 119>27 107|129b13 160l8 160t20
+119e27 i{91E9} 107|129b27 131r12
+121E9*Dwelling_Type 132e20 133r31 107|162r31
+122n7*boarding_school_or_university_hostel{121E9} 107|165r16
+123n7*old_age_home{121E9} 107|166r16
+124n7*frail_care_centre{121E9} 107|167r16
+125n7*home_for_the_disabled{121E9} 107|168r16
+126n7*initiation_school{121E9} 107|169r16
+127n7*prison{121E9} 107|170r16
+128n7*retirement_village{121E9} 107|171r16
+129n7*hospital_or_medical_facility_or_clinic{121E9} 107|172r16
+130n7*private_house{121E9} 107|173r16
+131n7*other_dwelling_type{121E9} 107|174r16
+132n7*unspecified{121E9} 107|175r16
+133V13*Pretty_Print{string} 133>27 107|162b13 177l8 177t20
+133e27 i{121E9} 107|162b27 164r12
+135E9*Population_Group 140e31 142r31 147r23 107|180r31
+136n7*african_or_black{135E9} 107|183r16
+137n7*coloured{135E9} 107|184r16
+138n7*indian_or_asian{135E9} 107|185r16
+139n7*white{135E9} 107|186r16
+140n7*other_population_group{135E9} 107|187r16
+142V13*Pretty_Print{string} 142>27 107|180b13 191l8 191t20
+142e27 i{135E9} 107|180b27 182r12
+143K12*Population_Package[98|47] 148r32
+148A12*Population_Array{98|64A12[143]}<135E9>
+150E9*Province_Type 159e16 160r31 166r23 107|193r31
+151n7*western_cape{150E9} 107|196r16
+152n7*eastern_cape{150E9} 107|197r16
+153n7*northern_cape{150E9} 107|198r16
+154n7*free_state{150E9} 107|199r16
+155n7*kwazulu_natal{150E9} 107|200r16
+156n7*north_west{150E9} 107|201r16
+157n7*gauteng{150E9} 107|202r16
+158n7*mpumalanga{150E9} 107|203r16
+159n7*limpopo{150E9} 107|204r16
+160V13*Pretty_Print{string} 160>27 107|193b13 206l8 206t20
+160e27 i{150E9} 107|193b27 195r12
+162K12*Province_Package[98|47] 167r30
+167A12*Province_Array{98|64A12[162]}<150E9>
+169E9*Settlement_Type 171e14 172r31 177r23 107|208r31
+170n7*urban{169E9} 107|211r16
+171n7*rural{169E9} 107|212r16
+172V13*Pretty_Print{string} 172>27 107|208b13 214l8 214t20
+172e27 i{169E9} 107|208b27 210r12
+173K12*Settlement_Package[98|47] 178r32
+178A12*Settlement_Array{98|64A12[173]}<169E9>
+180E9*Main_Dwelling_Type 194e20 195r31 107|216r31
+181n7*dwelling_or_brick_structure_on_a_separate_stand_or_yard_or_on_farm{180E9}
+. 107|219r16
+182n7*traditional_dwelling_or_hut_or_structure_made_of_traditional_material{180E9}
+. 107|220r16
+183n7*flat_or_apartment_in_a_block_of_flats{180E9} 107|221r16
+184n7*town_or_cluster_or_semi_detached_house_simplex_duplex_or_triplex{180E9}
+. 107|222r16
+185n7*unit_in_retirement_village{180E9} 107|223r16
+186n7*dwelling_or_flat_or_room_in_backyard{180E9} 107|224r16
+187n7*informal_dwelling_or_shack_in_backyard{180E9} 107|225r16
+188n7*informal_dwelling_or_shack_not_in_backyard_eg_in_an_informal_or_squatter_settlement_or_on_farm{180E9}
+. 107|226r16
+189n7*room_or_flatlet_or_a_larger_dwelling_or_servants_quarters_or_granny_flat{180E9}
+. 107|227r16
+190n7*caravan_or_tent{180E9} 107|228r16
+191n7*workers_hostel{180E9} 107|229r16
+192n7*family_unit_formerly_workers_hostel{180E9} 107|230r16
+193n7*other_dwelling_type{180E9} 107|231r16
+194n7*unspecified{180E9} 107|232r16
+195V13*Pretty_Print{string} 195>27 107|216b13 234l8 234t20
+195e27 i{180E9} 107|216b27 218r12
+197E9*Ownership_Type 201e20 202r31 107|237r31
+198n7*owns{197E9} 107|240r16
+199n7*does_not_own_but_has_access_to{197E9} 107|241r16
+200n7*neither_owns_nor_has_access{197E9} 107|242r16
+201n7*unspecified{197E9} 107|243r16
+202V13*Pretty_Print{string} 202>27 107|237b13 245l8 245t20
+202e27 i{197E9} 107|237b27 239r12
+204E9*Tenure_Type 213e20 218r23 221r31 107|248r31
+205n7*owned_and_fully_paid_off{204E9} 107|251r16
+206n7*owned_but_not_yet_fully_paid_off_eg_with_a_mortgage{204E9} 107|252r16
+207n7*rented_as_part_of_employment_contract_of_household_member{204E9} 107|253r16
+208n7*rented_not_as_part_of_employment_contract_of_household_member{204E9}
+. 107|254r16
+209n7*occupied_rent_free_as_part_of_employment_contract_of_household_member{204E9}
+. 107|255r16
+210n7*occupied_rent_free_not_as_part_of_employment_contract_of_household_member{204E9}
+. 107|256r16
+211n7*occupied_as_a_boarder_or_lodger{204E9} 107|257r16
+212n7*other_tenure_type{204E9} 107|258r16
+213n7*unspecified{204E9} 107|259r16
+214K12*Tenure_Package[98|47] 219r28
+219A12*Tenure_Array{98|64A12[214]}<204E9>
+221V13*Pretty_Print{string} 221>27 107|248b13 261l8 261t20
+221e27 i{204E9} 107|248b27 250r12
+223E9*Consumption_Type 421e39 423r33 428r31 489r23 107|273r31
+224n7*bread_and_cereals{223E9} 424r7 426r7 107|329r16
+225n7*meat{223E9} 107|320r16
+226n7*fish{223E9} 107|469r16
+227n7*milk_cheese_and_eggs{223E9} 107|301r16
+228n7*oils_and_fats{223E9} 107|343r16
+229n7*fruits{223E9} 107|412r16
+230n7*vegetables{223E9} 107|328r16
+231n7*sugar_jam_honey_chocolate_and_confectionery{223E9} 107|443r16
+232n7*food_products_nec{223E9} 107|300r16
+233n7*coffee_tea_and_cocoa{223E9} 107|413r16
+234n7*mineral_waters_soft_drinks_fruit_and_vegetable_juices{223E9} 107|401r16
+235n7*unclassified_food_items{223E9} 426r28 107|378r16
+236n7*spirits{223E9} 107|342r16
+237n7*wine{223E9} 107|462r16
+238n7*beer{223E9} 107|292r16
+239n7*tobacco{223E9} 107|419r16
+240n7*clothing_materials{223E9} 107|420r16
+241n7*garments{223E9} 107|391r16
+242n7*other_articles_of_clothing_and_clothing_accessories{223E9} 107|433r16
+243n7*cleaning_repair_and_hire_of_clothing{223E9} 107|434r16
+244n7*shoes_and_other_footwear{223E9} 107|425r16
+245n7*repair_and_hire_of_foowear{223E9} 107|334r16
+246n7*actual_rentals_paid_by_tenants{223E9} 107|362r16
+247n7*imputed_rentals_of_owner_occupiers{223E9} 107|432r16
+248n7*materials_for_maintenance_and_repair_of_the_dwelling{223E9} 107|369r16
+249n7*service_of_the_maintenance_and_repair_of_the_dwelling{223E9} 107|461r16
+250n7*water_and_electricity{223E9} 107|372r16
+251n7*water_supply{223E9} 107|290r16
+252n7*refuse_collection{223E9} 107|452r16
+253n7*sewarage_collection{223E9} 107|367r16
+254n7*other_services_relating_to_the_dwelling{223E9} 107|453r16
+255n7*electricity{223E9} 107|341r16
+256n7*gas{223E9} 107|382r16
+257n7*liquid_fuels{223E9} 107|435r16
+258n7*solid_fuels{223E9} 107|416r16
+259n7*furniture_and_furnishings{223E9} 107|365r16
+260n7*carpets_and_other_floor_covering{223E9} 107|374r16
+261n7*repair_of_furniture_furnishings_and_floor_covering{223E9} 107|472r16
+262n7*household_textile{223E9} 107|406r16
+263n7*major_household_appliances_wheter_or_no_aelectriccal{223E9} 107|327r16
+264n7*small_electrical_household_appliance{223E9} 107|384r16
+265n7*repair_of_household_appliance{223E9} 107|333r16
+266n7*glassware_tableware_and_household_utensils{223E9} 107|383r16
+267n7*major_tools_and_equipment{223E9} 107|437r16
+268n7*small_tools_and_miscellaneous_accessories{223E9} 107|347r16
+269n7*non_durable_household_goods{223E9} 107|380r16
+270n7*domestics_services_and_household_arcticles{223E9} 107|297r16
+271n7*pharmaceutical_products{223E9} 107|349r16
+272n7*other_medical_products{223E9} 107|291r16
+273n7*therapeutic_appliances_and_equipment{223E9} 107|340r16
+274n7*medical_services{223E9} 107|296r16
+275n7*dental_services{223E9} 107|426r16
+276n7*paramedic_services{223E9} 107|321r16
+277n7*hospital_services{223E9} 107|359r16
+278n7*motor_cars{223E9} 107|423r16
+279n7*motor_cycles{223E9} 107|364r16
+280n7*bicycles{223E9} 107|397r16
+281n7*animal_drawn_vehicle{223E9} 107|415r16
+282n7*spare_parts_and_accessories{223E9} 107|348r16
+283n7*fuels_and_lubricants{223E9} 107|399r16
+284n7*maintenance_and_repairs_of_personal_transport_equipment{223E9} 107|358r16
+285n7*other_services_in_respect_of_personal_transport_equipment{223E9} 107|370r16
+286n7*passenger_transport_by_railway{223E9} 107|441r16
+287n7*passenger_transport_by_road{223E9} 107|460r16
+288n7*passenger_transport_by_air{223E9} 107|354r16
+289n7*passenger_transport_by_sea_and_inland_waterway{223E9} 107|361r16
+290n7*other_puchased_transport_services{223E9} 107|373r16
+291n7*cost_for_other_modes_of_transport{223E9} 107|414r16
+292n7*postal_services{223E9} 107|316r16
+293n7*telephone_and_telefax_equipment{223E9} 107|408r16
+294n7*telephone_and_telefax_services{223E9} 107|332r16
+295n7*equipment_for_the_reception_recording_and_reproduction_of_sound_and_pictures{223E9}
+. 107|366r16
+296n7*photographic_and_cinematographic_equipment_and_optical_instruments{223E9}
+. 107|375r16
+297n7*information_processing_equipment{223E9} 107|307r16
+298n7*recording_meedia{223E9} 107|447r16
+299n7*major_durables_for_outdoor_recreation{223E9} 107|396r16
+300n7*musical_instrument_and_major_durables_for_outdoor_recreation{223E9}
+. 107|471r16
+301n7*maintenance_and_repair_of_other_major_durables_for_recreation_and_culture{223E9}
+. 107|448r16
+302n7*games_toys_and_hobbies{223E9} 107|417r16
+303n7*equipment_for_sport_camping_and_open_air_recreation{223E9} 107|379r16
+304n7*gardens_plants_and_flowers{223E9} 107|376r16
+305n7*pets_and_related_products{223E9} 107|427r16
+306n7*veterinary_and_other_services{223E9} 107|325r16
+307n7*recreational_and_sporting_services{223E9} 107|310r16
+308n7*cultural_services{223E9} 107|400r16
+309n7*games_of_chances{223E9} 107|442r16
+310n7*books{223E9} 107|470r16
+311n7*newspaper_and_periodicals{223E9} 107|390r16
+312n7*miscellaneous_printed_matter{223E9} 107|436r16
+313n7*stationery_and_drawing_materials{223E9} 107|279r16
+314n7*package_holidays{223E9} 107|468r16
+315n7*pre_primary_and_primary_education{223E9} 107|418r16
+316n7*scondary_education{223E9} 107|311r16
+317n7*tertiary_education{223E9} 107|368r16
+318n7*education_not_definable_by_level{223E9} 107|454r16
+319n7*beverages_in_restaurants_cafes_canteens_and_the_likes{223E9} 107|288r16
+320n7*meals_in_restaurants_cafes_canteens_and_the_likes{223E9} 107|308r16
+321n7*accommodation_services{223E9} 107|309r16
+322n7*hairdressing_salons_and_personal_grooming_astablishment{223E9} 107|302r16
+323n7*elecrtical_appliances_for_personal_care{223E9} 107|424r16
+324n7*other_appliances_articles_and_products_for_personal_care{223E9} 107|407r16
+325n7*jewellery_clocks_and_watches{223E9} 107|317r16
+326n7*other_personal_effects{223E9} 107|360r16
+327n7*social_protection_services{223E9} 107|409r16
+328n7*insurance_connected_with_the_dwelling{223E9} 107|455r16
+329n7*insurance_connected_with_the_health{223E9} 107|371r16
+330n7*insurance_connected_with_the_transport{223E9} 107|315r16
+331n7*other_insurance{223E9} 107|278r16
+332n7*financial_services_nec{223E9} 107|303r16
+333n7*other_services{223E9} 107|451r16
+334n7*consumption_unclassified_diary_items{223E9} 107|402r16
+335n7*consumption_others_expenditures{223E9} 424r28 107|385r16
+336n7*in_kind_consumption{223E9} 107|389r16
+337n7*income_from_salaries_and_wages{223E9} 107|298r16
+338n7*income_from_self_employment_and_business{223E9} 107|411r16
+339n7*income_from_property{223E9} 107|395r16
+340n7*income_from_royalties{223E9} 107|405r16
+341n7*income_interest_received{223E9} 107|287r16
+342n7*income_from_dividends{223E9} 107|440r16
+343n7*income_from_other_dividends{223E9} 107|299r16
+344n7*income_from_pension_from_previous_employment{223E9} 107|324r16
+345n7*income_from_annuities_from_own_investment{223E9} 107|353r16
+346n7*income_from_social_pensions{223E9} 107|431r16
+347n7*income_from_alimony_palimony_and_other_allowances{223E9} 107|430r16
+348n7*other_income_from_individuals{223E9} 107|467r16
+349n7*other_income{223E9} 107|388r16
+350n7*income_from_imputed_rent_on_owned_dwellingi_7pct_per_year_of_dwelling{223E9}
+. 107|459r16
+351n7*in_kind_income_from_free_water{223E9} 107|439r16
+352n7*in_kind_income_from_free_sanitation{223E9} 107|404r16
+353n7*in_kind_income_from_free_electricity{223E9} 107|446r16
+354n7*in_kind_income_from_estimated_value_of_private_use_of_company_vehicle{223E9}
+. 107|286r16
+355n7*in_kind_income_from_value_of_discounted_fares_for_educational_purposes{223E9}
+. 107|339r16
+356n7*in_kind_income_from_value_of_discounted_fares_for_non_educational_purposes{223E9}
+. 107|394r16
+357n7*in_kind_income_from_schools_and_other_edu_inst_publice_grant{223E9}
+. 107|306r16
+358n7*in_kind_income_from_schools_and_other_edu_inst_privat_grant{223E9}
+. 107|387r16
+359n7*in_kind_income_from_library_fees_fines_grant{223E9} 107|295r16
+360n7*in_kind_income_from_library_services_grant{223E9} 107|352r16
+361n7*in_kind_income_from_textbooks_for_public_institutions_grant{223E9}
+. 107|338r16
+362n7*in_kind_income_from_textbooks_for_private_institutions_grant{223E9}
+. 107|284r16
+363n7*in_kind_income_from_stationery_public_grant{223E9} 107|351r16
+364n7*in_kind_income_from_stationery_private_grant{223E9} 107|277r16
+365n7*in_kind_income_from_other_specify_public_grant{223E9} 107|313r16
+366n7*in_kind_income_from_other_specify_private_grant{223E9} 107|314r16
+367n7*in_kind_income_from_pre_primary_primary_education_and_vocational_training_grants_public_and_private{223E9}
+. 107|464r16
+368n7*in_kind_income_from_computer_certification_excursions_and_other_grants_public_and_private{223E9}
+. 107|357r16
+369n7*in_kind_income_from_schools_boarding_fees_in_public_institutions_grant_public{223E9}
+. 107|337r16
+370n7*in_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions_grant{223E9}
+. 107|331r16
+371n7*in_kind_income_from_universities_boarding_fees_in_public_institution_grant{223E9}
+. 107|429r16
+372n7*in_kind_income_from_schools_boarding_fees_in_private_institutions_grant{223E9}
+. 107|466r16
+373n7*in_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions_grant{223E9}
+. 107|465r16
+374n7*in_kind_income_from_universities_boarding_fees_in_private_institution_grant{223E9}
+. 107|346r16
+375n7*in_kind_income_from_universities_boarding_fees_in_private_institution_and_medical_aidby_employer_grant{223E9}
+. 107|363r16
+376n7*savings_from_improvements_additions_and_alterations{223E9} 107|294r16
+377n7*savings_from_services_for_improvements_additions_and_alterations{223E9}
+. 107|377r16
+378n7*savings_from_security_structures{223E9} 107|330r16
+379n7*savings_from_building_materials_not_included_in_q813{223E9} 107|283r16
+380n7*savings_from_labour_and_material_for_improvements_additions_and_alterations{223E9}
+. 107|356r16
+381n7*savings_from_cost_of_other_dewlling{223E9} 107|410r16
+382n7*savings_from_capital_payments{223E9} 107|293r16
+383n7*savings_from_monthly_capital_payments{223E9} 107|422r16
+384n7*savings_from_other_payments{223E9} 107|305r16
+385n7*savings_from_purchase_and_levy_of_timeshare{223E9} 107|355r16
+386n7*savings_from_life_and_endownment_policies{223E9} 107|326r16
+387n7*savings_from_life_insurance_covering_mortgage_debt{223E9} 107|323r16
+388n7*savings_from_repayment_on_loans_and_overdrafts{223E9} 107|345r16
+389n7*savings_from_contribution_to_pension_provident_and_annuity_funds_and_employer_contribution{223E9}
+. 107|336r16
+390n7*savings_from_contributions_to_a_stokvel{223E9} 107|344r16
+391n7*savings_from_listed_company_shares{223E9} 107|445r16
+392n7*savings_from_unlisted_company_shares{223E9} 107|393r16
+393n7*savings_from_unit_trusts{223E9} 107|319r16
+394n7*savings_from_investment_plans{223E9} 107|428r16
+395n7*savings_from_offshore{223E9} 107|322r16
+396n7*savings_from_other_investments{223E9} 107|438r16
+397n7*savings_from_deposits_into_savings{223E9} 107|304r16
+398n7*savings_from_wthdrawals_from_savings{223E9} 107|335r16
+399n7*taxes_site_income_tax{223E9} 107|289r16
+400n7*taxes_paye_income_tax{223E9} 107|282r16
+401n7*taxes_according_to_assessment_income_tax{223E9} 107|386r16
+402n7*taxes_amnesty_tax{223E9} 107|403r16
+403n7*taxes_unemployment_insurance_fund_uif{223E9} 107|398r16
+404n7*transfer_toothers{223E9} 107|458r16
+405n7*debts_bond_loan_from_the_bank{223E9} 107|281r16
+406n7*debts_other_loans{223E9} 107|392r16
+407n7*debts_motor_vehicle_loan_from_the_bank{223E9} 107|312r16
+408n7*debts_bank_overdraft{223E9} 107|421r16
+409n7*debts_other_bank_loans{223E9} 107|444r16
+410n7*debts_furniture_and_appliances_amount_oustanding{223E9} 107|381r16
+411n7*debts_retail_stores{223E9} 107|350r16
+412n7*debts_loans_from_friends_and_family{223E9} 107|463r16
+413n7*debts_loans_from_money_lenders{223E9} 107|450r16
+414n7*debts_arreas_on_municipal_bills{223E9} 107|285r16
+415n7*loss_expenditure_incurred_in_obtaining_income{223E9} 107|457r16
+417n7*panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party{223E9}
+. 107|456r16
+418n7*interest_on_mortgage_bonds{223E9} 107|318r16
+419n7*subsidy_on_payment_of_mortgage{223E9} 107|280r16
+420n7*imputed_cost_for_home_production{223E9} 107|276r16
+421n7*other_products_not_consumption{223E9} 107|449r16
+423E12*Consumption_Range{223E9} 425r26 497r45 499r43
+425E12*Food_Range{423E12}
+428V13*Pretty_Print{string} 428>27 107|273b13 474l8 474t20
+428e27 i{223E9} 107|273b27 275r12
+430E9*Poverty_State 430e56 431r31 107|85r31
+430n28*in_poverty{430E9} 107|88r15
+430n40*not_in_poverty{430E9} 107|89r15
+431V13*Pretty_Print{string} 431>27 107|85b13 91l8 91t20
+431e27 i{430E9} 107|85b27 87r12
+433E9*Personal_Incomes_Type 457e22 459r7 461r7 463r7 465r7 467r7 473r23 501r31
+. 107|55r31
+434n7*salaries_and_wages{433E9} 459r35 107|58r15
+435n7*self_employment_and_business_income{433E9} 107|59r15
+436n7*property_income{433E9} 107|60r15
+437n7*royalties{433E9} 107|61r15
+438n7*interest_received{433E9} 107|62r15
+439n7*dividends{433E9} 107|63r15
+440n7*private_pensions{433E9} 107|64r15
+441n7*annuities{433E9} 107|65r15
+442n7*alimony_palimony_and_other_allowances{433E9} 107|66r15
+443n7*income_from_other_individuals{433E9} 107|67r15
+444n7*other_income{433E9} 459r57 107|68r15
+445n7*in_kind_water_sanitation_electricity{433E9} 465r35 107|69r15
+446n7*in_kind_company_vehicle_or_discounted_fares{433E9} 107|70r15
+447n7*in_kind_education{433E9} 107|71r15
+448n7*in_kind_child_care{433E9} 465r75 107|72r15
+449n7*disability_grants{433E9} 463r35 467r35 107|73r15
+450n7*old_age_pensions{433E9} 107|74r15
+451n7*family_allowances{433E9} 107|75r15
+453n7*other_state_benefits{433E9} 463r56 107|77r15
+455n7*site_income_tax{433E9} 461r35 107|79r15
+456n7*employers_uif{433E9} 107|80r15
+457n7*employees_uif{433E9} 461r54 467r56 107|81r15
+458E12*Gross_Personal_Incomes_Range{433E9}
+460E12*Personal_Taxes_Range{433E9}
+462E12*Personal_State_Benefits_Range{433E9} 479r40
+464E12*In_Kind_Personal_Incomes_Range{433E9}
+466E12*Calculated_Incomes{433E9} 477r40
+469K12*Income_Package[98|47] 474r28 475r37 477r7 479r7 107|34r14
+474A12*Income_Array{98|64A12[469]}<433E9> 482r17 107|31r17
+475A12*Included_Income_Array{98|61A12[469]}<433E9> 483r17 107|32r16
+476A12*Calculated_Incomes_Array{98|63A9[469]}<433E9>
+478A12*Benefits_Array{98|63A9[469]}<433E9>
+481V13*Calculate_Income{46|30F12} 482>7 483>7 107|30b13 35l8 35t24
+482a7 incomes{474A12} 107|31b7 34r34
+483a7 propns{475A12} 107|32b7 34r43
+485K12*Consumption_Package[98|47] 493r33 494r42 497r7 499r7
+493A12*Consumption_Array{98|64A12[485]}<223E9>
+494A12*Included_Consumption_Array{98|61A12[485]}<223E9>
+496A12*Expenditure_Array{98|63A9[485]}<223E9>
+498A12*Expenditure_Rate_Array{98|60A9[485]}<223E9>
+501V13*Pretty_Print{string} 501>27 107|55b13 83l8 83t20
+501e27 i{433E9} 107|55b27 57r12
+503I9*Person_Count<integer> 504r28 504r52
+504I12*Person_Range{503I9}
+505I9*Family_Unit_Count<integer> 508r7 508r36
+507I12*Family_Unit_Range{505I9}
+510I12*Age_Range{natural}
+514I12*Hours_Of_Work_Per_Month{natural}
+516K12*Expenses_Package[98|47] 526r39 527r40 107|41r14
+526A12*Personal_Expenses_Array{98|64A12[516]}<70E9> 530r18 107|38r18
+527A12*Allowable_Expenses_Array{98|61A12[516]}<70E9> 531r16 107|39r16
+529V13*Calculate_Expenses{46|30F12} 530>7 531>7 107|37b13 42l8 42t26
+530a7 expenses{526A12} 107|38b7 41r36
+531a7 propns{527A12} 107|39b7 41r46
+

@@ -1,0 +1,233 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnvnvnvvnnnnnvvnvnnnvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvvnvnnnnnnnnnnnnnn
+
+U zip_streams%b		zip_streams.adb		f7b54545 NE OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U zip_streams%s		zip_streams.ads		8dc9e11d EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-ststio.ads		20110419093132 7ca49e01
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-unccon.ads		20110419093133 f9eb8f06
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D zip_streams.ads	20110415182050 46c8a1a4
+D zip_streams.adb	20110415182050 b17de4e1
+X 1 ada.ads
+16K9*Ada 19e8 37|5r6 5r33 6r6 6r33 7r6 7r33 8r6 8r33 9r6 9r33 13r44 78r37
+. 123r37 38|100r7 105r7 110r7 121r10 130r7 135r7 140r23 145r23 170r14
+X 2 a-calend.ads
+36K13*Calendar 358e17 37|5w10 5r37 78r41 123r41
+38I9*Time 37|36r41 40r28 78r29 109r41 112r57 123r29 154r41 157r55 38|75r69
+. 80r57 158r67 163r55
+52V13*Clock{38I9} 37|78s50 123s50
+X 9 a-stream.ads
+36K13*Streams 69e16 37|6w10 6r37 9r10 9r37 13r48 38|100r11 105r11 110r11
+. 121r14 130r11 135r11 140r27 145r27 170r18
+39H9*Root_Stream_Type 67e64 37|13r56
+42M9*Stream_Element
+44I9*Stream_Element_Offset<long_integer> 37|84r20 129r20 38|23r20 116r20
+51A9*Stream_Element_Array(42M9)<44I9> 37|83r20 90r16 128r20 135r16 38|22r20
+. 33r16 115r20 119r22 128r16
+54x14*Read
+60x14*Write
+X 10 a-ststio.ads
+39K21*Stream_IO 221e26 37|9w18 9r45 38|100r19 105r19 110r19 121r22 130r19
+. 135r19 140r35 145r35 170r26
+43P9*File_Type(184R9) 37|121r17
+45E9*File_Mode 45e54 37|62r56 66r58 38|98r56 103r58
+56I9*Count<9|44I9>
+59I12*Positive_Count{56I9} 38|135r49
+66U14*Create 38|105s29
+72U14*Open 38|100s29
+78U14*Close 38|110s29
+88V13*End_Of_File{boolean} 38|170s36
+102U14*Read 38|121s32
+112U14*Write 38|130s29
+120U14*Set_Index 38|135s29
+122V13*Index{59I12} 38|145s45
+123V13*Size{56I9} 38|140s45
+X 11 a-string.ads
+16K13*Strings 35e16 37|7w10 7r37 8r10 8r37
+X 13 a-strunb.ads
+76K21*Unbounded 489e26 37|8w18 8r45
+79R9*Unbounded_String 473e14 37|52r53 56r56 75r16 77r17 122r17 38|8r53 13r56
+82r4*Null_Unbounded_String{79R9} 38|15r18
+84V13*Length{natural} 38|36s13 47s10 48s19 57s14
+94V13*To_Unbounded_String{79R9} 38|67s17 150s17
+100V13*To_String{string} 38|72s14 100s50 105s52 155s14
+115U14*Append 38|37s13 49s13
+139V13*Element{character} 38|26s42
+143U14*Replace_Element 38|39s13
+X 37 zip_streams.ads
+11K9*Zip_Streams 162l5 162e16 38|4b14 173l5 173t16
+13H8*Root_Zipstream_Type<9|39R9> 9|54p14 60p14 37|13e89 14r38 17p14 17r36
+. 21p13 21r31 24p13 24r30 27p14 27r33 31p13 31r32 35p14 35r33 39p13 39r32
+. 43p13 43r39 49r33 58r31 73r33 119r31
+14P8*Zipstream_Class(13R8)
+17x14*Set_Index 17^25 18>25
+17p25 S(13R8)
+18i25 To{positive}
+21y13*Index{integer} 21^20
+21p20 S(13R8)
+24y13*Size{integer} 24^19
+24p19 S(13R8)
+27x14*SetName 27^22 28>22
+27p22 S(13R8)
+28s22 Name{string}
+31y13*GetName{string} 31^21
+31p21 S(13R8)
+35x14*SetTime 35^22 36>22
+35p22 S(13R8)
+36i22 ModificationTime{2|38I9}
+39y13*GetTime{2|38I9} 39^21
+39p21 S(13R8)
+43y13*End_Of_Stream{boolean} 43^28
+43p28 S(13R8)
+49R9*Unbounded_Stream<13R8> 52p14 52r25 56p14 56r32 73c9 79e17 81P14 82r23
+. 88P14 89r23 93P14 93r36 96P13 96r31 99P13 99r30 102P14 102r34 105P13 105r32
+. 108P14 108r33 112P13 112r32 115P13 115r39 38|8r25 13r32 21r23 32r23 45r36
+. 55r30 60r31 65r33 70r32 75r33 80r32 85r39
+52U14*Get 52>19 52<43 38|8b14 11l8 11t11
+52r19 Str{49R9} 38|8b19 10r14
+52r43 Unb{13|79R9} 38|8b43 10m7
+56U14*Set 56=19 56>50 38|13b14 18l8 18t11
+56r19 Str{49R9} 38|13b19 15m7 16m7 17m7
+56r50 Unb{13|79R9} 38|13b50 16r18
+58R9*ZipFile_Stream<13R8> 62p14 62r33 66p14 66r35 69p14 69r34 119c9 124e17
+. 126P14 127r23 133P14 134r23 138P14 138r36 141P13 141r31 144P13 144r30 147P14
+. 147r34 150P13 150r32 153P14 153r33 157P13 157r32 160P13 160r39 38|98r33
+. 103r35 108r34 114r23 127r23 133r36 138r30 143r31 148r33 153r32 158r33 163r32
+. 168r39
+62U14*Open 62=20 62>49 38|98b14 101l8 101t12
+62r20 Str{58R9} 38|98b20 100m34 100r34 100r60
+62e49 Mode{10|45E9} 38|98b49 100r44
+66U14*Create 66=22 66>51 38|103b14 106l8 106t14
+66r22 Str{58R9} 38|103b22 105m36 105r36 105r63
+66e51 Mode{10|45E9} 38|103b51 105r46
+69U14*Close 69=21 38|108b14 111l8 111t13
+69r21 Str{58R9} 38|108b21 110m35 110r35
+75r10 Unb{13|79R9} 38|10r18 15m11 16m11 26r57 36r27 37m27 39m36 47r19 48r28
+. 49m22 57r23
+76i10 Loc{integer} 38|17m11 26r69 27m14 27r28 36r41 39r48 41m17 41r31 52m8
+. 62r16
+77r10 Name{13|79R9} 38|67m9 72r26
+78i10 ModificationTime{2|38I9} 38|77m9 82r16
+81U14 Read<9|54p14> 82=7 83<7 84<7 38|20b14 29l8 29t12
+82r7 Stream{49R9} 38|21b7 26r50 26r62 27m7 27r21
+83a7 Item{9|51A9} 38|22b7 26m7 26r12 28r15
+84i7 Last{9|44I9} 38|23b7 28m7
+88U14 Write<9|60p14> 89=7 90>7 38|31b14 43l8 43t13
+89r7 Stream{49R9} 38|32b7 36r20 36r34 37m20 37r20 39m29 39r29 39r41 41m10
+. 41r24
+90a7 Item{9|51A9} 38|33b7 35r16 37r46 39r67
+93U14 Set_Index<17p14> 93^25 93>54 38|45b14 53l8 53t17
+93p25 S(49R9) 38|45b25 47r17 48r26 49r20 52m6 52r6
+93i54 To{positive} 38|45b54 47r26 48r36 52r15
+96V13 Index{integer}<21p13> 96^20 38|60b13 63l8 63t13 87s20
+96p20 S(49R9) 38|60b20 62r14
+99V13 Size{integer}<24p13> 99^19 38|55b13 58l8 58t12 87s10
+99p19 S(49R9) 38|55b19 57r21
+102U14 SetName<27p14> 102^23 102>52 38|65b14 68l8 68t15
+102p23 S(49R9) 38|65b23 67m7 67r7
+102s52 Name{string} 38|65b51 67r37
+105V13 GetName{string}<31p13> 105^21 38|70b13 73l8 73t15
+105p21 S(49R9) 38|70b22 72r24
+108U14 SetTime<35p14> 108^22 109>22 38|75b14 78l8 78t15
+108p22 S(49R9) 38|75b23 77m7 77r7
+109i22 ModificationTime{2|38I9} 38|75b51 77r29
+112V13 GetTime{2|38I9}<39p13> 112^21 38|80b13 83l8 83t15
+112p21 S(49R9) 38|80b22 82r14
+115V13 End_Of_Stream{boolean}<43p13> 115^28 38|85b13 92l8 92t21
+115p28 S(49R9) 38|85b28 87r15 87r26
+121p10 File{10|43P9} 38|100m38 105m40 110m39 121r45 130r43 135r43 140r52
+. 145r53 170r50
+122r10 Name{13|79R9} 38|100r64 105r67 150m9 155r26
+123i10 ModificationTime{2|38I9} 38|160m9 165r16
+126U14 Read<9|54p14> 127=7 128<7 129<7 38|113b14 124l8 124t12
+127r7 Stream{58R9} 38|114b7 121r38
+128a7 Item{9|51A9} 38|115b7 122m10
+129i7 Last{9|44I9} 38|116b7 121m62
+133U14 Write<9|60p14> 134=7 135>7 38|126b14 131l8 131t13
+134r7 Stream{58R9} 38|127b7 130r36
+135a7 Item{9|51A9} 38|128b7 130r49
+138U14 Set_Index<17p14> 138^25 138>52 38|133b14 136l8 136t17
+138p25 S(58R9) 38|133b25 135r41
+138i52 To{positive} 38|133b52 135r64
+141V13 Index{integer}<21p13> 141^20 38|143b13 146l8 146t13
+141p20 S(58R9) 38|143b20 145r51
+144V13 Size{integer}<24p13> 144^19 38|138b13 141l8 141t12
+144p19 S(58R9) 38|138b19 140r50
+147U14 SetName<27p14> 147^23 147>50 38|148b14 151l8 151t15
+147p23 S(58R9) 38|148b23 150m7 150r7
+147s50 Name{string} 38|148b49 150r37
+150V13 GetName{string}<31p13> 150^21 38|153b13 156l8 156t15
+150p21 S(58R9) 38|153b22 155r24
+153U14 SetTime<35p14> 153^22 154>22 38|158b14 161l8 161t15
+153p22 S(58R9) 38|158b23 160m7 160r7
+154i22 ModificationTime{2|38I9} 38|158b49 160r29
+157V13 GetTime{2|38I9}<39p13> 157^21 38|163b13 166l8 166t15
+157p21 S(58R9) 38|163b22 165r14
+160V13 End_Of_Stream{boolean}<43p13> 160^28 38|168b13 171l8 171t21
+160p28 S(58R9) 38|168b28 170r48
+X 38 zip_streams.adb
+35i11 I<long_integer> 37r51 39r72
+48i14 I{integer}
+119a10 TempArray{9|51A9} 121m51 121r51 122r21
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameter-system type="LocalTax" instanceName="localtax" >
+    <parameter name="RegionalLocalTaxSys" units="timeless"
+        type="enum_list" instanceName="regionalLocalTaxSys"
+        enumName="ToBeRebated" indexName="StandardRegion">
+        <description>
+            <p>local tax system for hhlds</p>
+        </description>
+        <journalese>local tax system for hhlds</journalese>
+        <tooltip>tax system for hhlds</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </parameter>
+    <parameter name="RegionalPollTaxRate" units="week" type="real_list"
+        instanceName="regionalPollTaxRate" indexName="StandardRegion">
+        <description>
+            <p>poll tax rate</p>
+        </description>
+        <journalese>poll tax rate for hhlds</journalese>
+        <tooltip>poll tax rate for hhlds</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandDRate" units="percent" type="real" instanceName="bandDRate">
+        <description>
+            <p>average band d council tax rate</p>
+        </description>
+        <journalese>average band d council tax rate</journalese>
+        <tooltip>average band d council tax rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0"
+            max="1000.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="singlePersonDiscount" units="percent" type="real" instanceName="singlePersonDiscount">
+        <description>
+            <p>single person rate of discount</p>
+        </description>
+        <journalese>single person rate of discount</journalese>
+        <tooltip>single person rate of discount</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="1.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="maxSecAdRebate" units="percent" type="real" instanceName="maxSecAdRebate">
+        <description>
+            <p>maximum rebate for a poor second adult</p>
+        </description>
+        <journalese>maximum rebate for a poor second adult</journalese>
+        <tooltip>maximum rebate for a poor second adult</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="1.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandA" units="percent" type="real" instanceName="bandA">
+        <description>
+            <p>band a proportion of band d rate</p>
+        </description>
+        <journalese>band a proportion of band d rate</journalese>
+        <tooltip>band a proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandB" units="percent" type="real" instanceName="bandB">
+        <description>
+            <p>band b proportion of band d rate</p>
+        </description>
+        <journalese>band b proportion of band d rate</journalese>
+        <tooltip>band b proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandC" units="percent" type="real" instanceName="bandC">
+        <description>
+            <p>band c proportion of band d rate</p>
+        </description>
+        <journalese>band c proportion of band d rate</journalese>
+        <tooltip>band c proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandE" units="percent" type="real" instanceName="bandE">
+        <description>
+            <p>band e proportion of band d rate</p>
+        </description>
+        <journalese>band e proportion of band d rate</journalese>
+        <tooltip>band e proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandF" units="percent" type="real" instanceName="bandF">
+        <description>
+            <p>band f proportion of band d rate</p>
+        </description>
+        <journalese>band f proportion of band d rate</journalese>
+        <tooltip>band f proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandG" units="percent" type="real" instanceName="bandG">
+        <description>
+            <p>band g proportion of band d rate</p>
+        </description>
+        <journalese>band g proportion of band d rate</journalese>
+        <tooltip>band g proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="bandH" units="percent" type="real" instanceName="bandH">
+        <description>
+            <p>band h proportion of band d rate</p>
+        </description>
+        <journalese>band h proportion of band d rate</journalese>
+        <tooltip>band h proportion of band d rate</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0" max="5.0"
+            format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <description>
+        <p>Local Tax Systems, one per standard region</p>
+    </description>
+    <tooltip>Local Tax Systems, one per standard region</tooltip>
+</parameter-system>

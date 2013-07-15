@@ -1,0 +1,145 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnvnvvnnnnvnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U logger%b		logger.adb		825c612e NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.calendar.formatting%s  a-calfor.adb	a-calfor.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.ordered_sets%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W time_format%s		time_format.adb		time_format.ali
+
+U logger%s		logger.ads		d3b895b5 BN EE NE OO PK GE
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-calfor.ads		20110419093130 0a6f9afc
+D a-catizo.ads		20110419093130 409d7e5b
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-coorse.ads		20110419093131 a1d9557e
+D a-coorse.adb		20110419093131 26de352f
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-rbtgso.ads		20110419093132 8700a961
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D logger.ads		20110415182054 d3b895b5
+D logger.adb		20110701202319 b4a7ba23
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D time_format.ads	20110505105611 7d3523f6
+X 1 ada.ads
+16K9*Ada 19e8 29|8r6 9r6 10r6 11r6 13r6 18r8 19r8 31r50 31r81
+X 2 a-calend.ads
+36K13*Calendar 358e17 29|10w10 11r10 31r54 31r85
+38I9*Time
+52V13*Clock{38I9} 29|31s94
+X 3 a-calfor.ads
+24K22*Formatting 215e28 29|11w19 31r63
+176V13*Image{string} 29|31s74
+X 7 a-contai.ads
+16K13*Containers 24e19 29|8r10
+X 8 a-coorse.ads
+44k24*Ordered_Sets 307e32 29|8w21
+238R9 Node_Type
+239P9 Node_Access(238R9)
+X 9 a-coorse.adb
+50V13 Color{10|35E9} 12|45i19
+53V13 Left{8|239P9} 12|41i19
+56V13 Parent{8|239P9} 12|39i19
+59V13 Right{8|239P9} 12|43i19
+62U14 Set_Color 12|46i19
+65U14 Set_Left 12|42i19
+68U14 Set_Right 12|44i19
+71U14 Set_Parent 12|40i19
+X 19 a-string.ads
+16K13*Strings 35e16 29|13r10 19r12
+X 21 a-strunb.ads
+76K21*Unbounded 489e26 29|13w18 19r20
+79R9*Unbounded_String 473e14 29|26r26 27r16
+94V13*To_Unbounded_String{79R9} 29|26s46 76s30 77s23
+166V13*"="{boolean}<15|62p9> 29|40s27 76r58
+X 23 a-textio.ads
+49K13*Text_IO 471e16 29|9w10 18r12
+52P9*File_Type(369R9) 29|25r16
+53n42*Append_File{53E9} 29|78r28 84r24
+86U14*Create 29|78s10
+100U14*Reset 29|84s7
+118V13*Standard_Output{52P9} 29|41s26
+142U14*Flush 29|44s16
+259U14*Put_Line 29|41s16 43s16
+X 28 logger.ads
+29E9 Target_Type 36r22 36r40 36r61 37r27 38r34 41r37 29|21r32 29r37 31r14
+. 34r27 50r34 57r16 62r37 69r16
+31k9*Logger 29z9 53l5 53e11 29|16b14 87l5 87t11
+36E12*TRange{29E9}
+37U14*Log 37>19 37>40 29|34b14 48l8 48t11
+37*19 which{29E9} 29|34b19 36r20 38r58
+37s40 s{string} 29|34b40 38r76
+38U14*Add_Target 38>26 29|50b14 53l8 53t18 58s10
+38*26 which{29E9} 29|50b26 52r16
+39U14*Add_All_Targets 29|55b14 60l8 60t23
+41U14*Remove_Target 41>29 29|62b14 65l8 65t21
+41*29 which{29E9} 29|62b29 64r16
+42U14*Clear_All_Targets 29|67b14 72l8 72t25
+47U14*Set_Output 47>26 29|74b14 80l8 80t18
+47s26 name{string} 29|74b26 76r11 76r51 77r44 78r41
+51U14*Flush 29|82b14 85l8 85t13
+X 29 logger.adb
+21A9 Target_Array(boolean)<28|29E9> 23r14
+23a4 targets{21A9} 36r11 52m7 64m7 70m10
+25p4 out_file{23|52P9} 43r26 44r23 78m18 78r18 84m14 84r14
+26r4 blank_name{21|79R9} 27r36 40r29
+27r4 file_name{21|79R9} 40r17 76r61 77m10
+29V13 Message_Header{string} 29b13 29>29 32l8 32t22 38s42
+29*29 which{28|29E9} 31r33
+38a13 out_str{string} 41r43 43r36
+57*11 r{28|29E9} 58r22
+69*11 r{28|29E9} 70r19
+X 50 time_format.ads
+22K9*Time_Format 29|14w6 50|26e16
+

@@ -1,0 +1,18 @@
+Patches to external code
+==========================
+
+Matrix Mult
+-------------------------
+
+The file
+
+ada_2012-s-gearop.adb-bugfix.diff
+
+patches indexing problems in Gnat2012 s-gearop.adb matrix multiplication file.
+
+32/64 bit problems GNU ODBC interface.
+--------------------------------------
+Dmitry's code?
+See: 
+
+

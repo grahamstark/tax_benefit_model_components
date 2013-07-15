@@ -1,0 +1,1025 @@
+   Create_Account_0304( 
+      "/mnt/data/frs/0304/tab/accounts.tab", 
+      "/mnt/data/frs/0304/bin/accounts.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Admin_0304( 
+      "/mnt/data/frs/0304/tab/admin.tab", 
+      "/mnt/data/frs/0304/bin/admin.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Adult_0304( 
+      "/mnt/data/frs/0304/tab/adult.tab", 
+      "/mnt/data/frs/0304/bin/adult.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Asset_0304( 
+      "/mnt/data/frs/0304/tab/assets.tab", 
+      "/mnt/data/frs/0304/bin/assets.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Benefit_0304( 
+      "/mnt/data/frs/0304/tab/benefits.tab", 
+      "/mnt/data/frs/0304/bin/benefits.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Benunit_0304( 
+      "/mnt/data/frs/0304/tab/benunit.tab", 
+      "/mnt/data/frs/0304/bin/benunit.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Care_0304( 
+      "/mnt/data/frs/0304/tab/care.tab", 
+      "/mnt/data/frs/0304/bin/care.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Child_0304( 
+      "/mnt/data/frs/0304/tab/child.tab", 
+      "/mnt/data/frs/0304/bin/child.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Endowment_0304( 
+      "/mnt/data/frs/0304/tab/endowmnt.tab", 
+      "/mnt/data/frs/0304/bin/endowmnt.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_ExtChild_0304( 
+      "/mnt/data/frs/0304/tab/extchild.tab", 
+      "/mnt/data/frs/0304/bin/extchild.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_GovPay_0304( 
+      "/mnt/data/frs/0304/tab/govpay.tab", 
+      "/mnt/data/frs/0304/bin/govpay.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Hbai_0304( 
+      "/mnt/data/frs/0304/tab/hbai.tab", 
+      "/mnt/data/frs/0304/bin/hbai.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Household_0304( 
+      "/mnt/data/frs/0304/tab/househol.tab", 
+      "/mnt/data/frs/0304/bin/househol.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Insurance_0304( 
+      "/mnt/data/frs/0304/tab/insuranc.tab", 
+      "/mnt/data/frs/0304/bin/insuranc.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Job_0304( 
+      "/mnt/data/frs/0304/tab/job.tab", 
+      "/mnt/data/frs/0304/bin/job.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Maint_0304( 
+      "/mnt/data/frs/0304/tab/maint.tab", 
+      "/mnt/data/frs/0304/bin/maint.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_MortCont_0304( 
+      "/mnt/data/frs/0304/tab/mortcont.tab", 
+      "/mnt/data/frs/0304/bin/mortcont.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Mortgage_0304( 
+      "/mnt/data/frs/0304/tab/mortgage.tab", 
+      "/mnt/data/frs/0304/bin/mortgage.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_OddJob_0304( 
+      "/mnt/data/frs/0304/tab/oddjob.tab", 
+      "/mnt/data/frs/0304/bin/oddjob.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Owner_0304( 
+      "/mnt/data/frs/0304/tab/owner.tab", 
+      "/mnt/data/frs/0304/bin/owner.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_PenAmt_0304( 
+      "/mnt/data/frs/0304/tab/penamt.tab", 
+      "/mnt/data/frs/0304/bin/penamt.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_PenProv_0304( 
+      "/mnt/data/frs/0304/tab/penprov.tab", 
+      "/mnt/data/frs/0304/bin/penprov.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Pension_0304( 
+      "/mnt/data/frs/0304/tab/pension.tab", 
+      "/mnt/data/frs/0304/bin/pension.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_RentCont_0304( 
+      "/mnt/data/frs/0304/tab/rentcont.tab", 
+      "/mnt/data/frs/0304/bin/rentcont.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Renter_0304( 
+      "/mnt/data/frs/0304/tab/renter.tab", 
+      "/mnt/data/frs/0304/bin/renter.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Vehicle_0304( 
+      "/mnt/data/frs/0304/tab/vehicle.tab", 
+      "/mnt/data/frs/0304/bin/vehicle.bin", 
+      "/mnt/data/frs/0304/bin/index.bin");
+
+   Create_Account_0405( 
+      "/mnt/data/frs/0405/tab/accounts.tab", 
+      "/mnt/data/frs/0405/bin/accounts.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Admin_0405( 
+      "/mnt/data/frs/0405/tab/admin.tab", 
+      "/mnt/data/frs/0405/bin/admin.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Adult_0405( 
+      "/mnt/data/frs/0405/tab/adult.tab", 
+      "/mnt/data/frs/0405/bin/adult.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Asset_0405( 
+      "/mnt/data/frs/0405/tab/assets.tab", 
+      "/mnt/data/frs/0405/bin/assets.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Benefit_0405( 
+      "/mnt/data/frs/0405/tab/benefits.tab", 
+      "/mnt/data/frs/0405/bin/benefits.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Benunit_0405( 
+      "/mnt/data/frs/0405/tab/benunit.tab", 
+      "/mnt/data/frs/0405/bin/benunit.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Care_0405( 
+      "/mnt/data/frs/0405/tab/care.tab", 
+      "/mnt/data/frs/0405/bin/care.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Child_0405( 
+      "/mnt/data/frs/0405/tab/child.tab", 
+      "/mnt/data/frs/0405/bin/child.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Endowment_0405( 
+      "/mnt/data/frs/0405/tab/endowmnt.tab", 
+      "/mnt/data/frs/0405/bin/endowmnt.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_ExtChild_0405( 
+      "/mnt/data/frs/0405/tab/extchild.tab", 
+      "/mnt/data/frs/0405/bin/extchild.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_GovPay_0405( 
+      "/mnt/data/frs/0405/tab/govpay.tab", 
+      "/mnt/data/frs/0405/bin/govpay.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Hbai_0405( 
+      "/mnt/data/frs/0405/tab/hbai.tab", 
+      "/mnt/data/frs/0405/bin/hbai.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Household_0405( 
+      "/mnt/data/frs/0405/tab/househol.tab", 
+      "/mnt/data/frs/0405/bin/househol.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Insurance_0405( 
+      "/mnt/data/frs/0405/tab/insuranc.tab", 
+      "/mnt/data/frs/0405/bin/insuranc.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Job_0405( 
+      "/mnt/data/frs/0405/tab/job.tab", 
+      "/mnt/data/frs/0405/bin/job.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Maint_0405( 
+      "/mnt/data/frs/0405/tab/maint.tab", 
+      "/mnt/data/frs/0405/bin/maint.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_MortCont_0405( 
+      "/mnt/data/frs/0405/tab/mortcont.tab", 
+      "/mnt/data/frs/0405/bin/mortcont.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Mortgage_0405( 
+      "/mnt/data/frs/0405/tab/mortgage.tab", 
+      "/mnt/data/frs/0405/bin/mortgage.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_OddJob_0405( 
+      "/mnt/data/frs/0405/tab/oddjob.tab", 
+      "/mnt/data/frs/0405/bin/oddjob.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Owner_0405( 
+      "/mnt/data/frs/0405/tab/owner.tab", 
+      "/mnt/data/frs/0405/bin/owner.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_PenAmt_0405( 
+      "/mnt/data/frs/0405/tab/penamt.tab", 
+      "/mnt/data/frs/0405/bin/penamt.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_PenProv_0405( 
+      "/mnt/data/frs/0405/tab/penprov.tab", 
+      "/mnt/data/frs/0405/bin/penprov.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Pension_0405( 
+      "/mnt/data/frs/0405/tab/pension.tab", 
+      "/mnt/data/frs/0405/bin/pension.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_RentCont_0405( 
+      "/mnt/data/frs/0405/tab/rentcont.tab", 
+      "/mnt/data/frs/0405/bin/rentcont.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Renter_0405( 
+      "/mnt/data/frs/0405/tab/renter.tab", 
+      "/mnt/data/frs/0405/bin/renter.bin", 
+      "/mnt/data/frs/0405/bin/index.bin");
+
+   Create_Account_0506( 
+      "/mnt/data/frs/0506/tab/accounts.tab", 
+      "/mnt/data/frs/0506/bin/accounts.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Admin_0506( 
+      "/mnt/data/frs/0506/tab/admin.tab", 
+      "/mnt/data/frs/0506/bin/admin.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Adult_0506( 
+      "/mnt/data/frs/0506/tab/adult.tab", 
+      "/mnt/data/frs/0506/bin/adult.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Asset_0506( 
+      "/mnt/data/frs/0506/tab/assets.tab", 
+      "/mnt/data/frs/0506/bin/assets.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Benefit_0506( 
+      "/mnt/data/frs/0506/tab/benefits.tab", 
+      "/mnt/data/frs/0506/bin/benefits.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Benunit_0506( 
+      "/mnt/data/frs/0506/tab/benunit.tab", 
+      "/mnt/data/frs/0506/bin/benunit.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Care_0506( 
+      "/mnt/data/frs/0506/tab/care.tab", 
+      "/mnt/data/frs/0506/bin/care.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Child_0506( 
+      "/mnt/data/frs/0506/tab/child.tab", 
+      "/mnt/data/frs/0506/bin/child.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_ChildCare_0506( 
+      "/mnt/data/frs/0506/tab/chldcare.tab", 
+      "/mnt/data/frs/0506/bin/chldcare.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Endowment_0506( 
+      "/mnt/data/frs/0506/tab/endowmnt.tab", 
+      "/mnt/data/frs/0506/bin/endowmnt.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_ExtChild_0506( 
+      "/mnt/data/frs/0506/tab/extchild.tab", 
+      "/mnt/data/frs/0506/bin/extchild.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_GovPay_0506( 
+      "/mnt/data/frs/0506/tab/govpay.tab", 
+      "/mnt/data/frs/0506/bin/govpay.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Hbai_0506( 
+      "/mnt/data/frs/0506/tab/hbai.tab", 
+      "/mnt/data/frs/0506/bin/hbai.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Household_0506( 
+      "/mnt/data/frs/0506/tab/househol.tab", 
+      "/mnt/data/frs/0506/bin/househol.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Job_0506( 
+      "/mnt/data/frs/0506/tab/job.tab", 
+      "/mnt/data/frs/0506/bin/job.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Maint_0506( 
+      "/mnt/data/frs/0506/tab/maint.tab", 
+      "/mnt/data/frs/0506/bin/maint.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_MortCont_0506( 
+      "/mnt/data/frs/0506/tab/mortcont.tab", 
+      "/mnt/data/frs/0506/bin/mortcont.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Mortgage_0506( 
+      "/mnt/data/frs/0506/tab/mortgage.tab", 
+      "/mnt/data/frs/0506/bin/mortgage.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_OddJob_0506( 
+      "/mnt/data/frs/0506/tab/oddjob.tab", 
+      "/mnt/data/frs/0506/bin/oddjob.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Owner_0506( 
+      "/mnt/data/frs/0506/tab/owner.tab", 
+      "/mnt/data/frs/0506/bin/owner.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_PenAmt_0506( 
+      "/mnt/data/frs/0506/tab/penamt.tab", 
+      "/mnt/data/frs/0506/bin/penamt.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_PenProv_0506( 
+      "/mnt/data/frs/0506/tab/penprov.tab", 
+      "/mnt/data/frs/0506/bin/penprov.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Pension_0506( 
+      "/mnt/data/frs/0506/tab/pension.tab", 
+      "/mnt/data/frs/0506/bin/pension.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_RentCont_0506( 
+      "/mnt/data/frs/0506/tab/rentcont.tab", 
+      "/mnt/data/frs/0506/bin/rentcont.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Renter_0506( 
+      "/mnt/data/frs/0506/tab/renter.tab", 
+      "/mnt/data/frs/0506/bin/renter.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Vehicle_0506( 
+      "/mnt/data/frs/0506/tab/vehicle.tab", 
+      "/mnt/data/frs/0506/bin/vehicle.bin", 
+      "/mnt/data/frs/0506/bin/index.bin");
+
+   Create_Account_0607( 
+      "/mnt/data/frs/0607/tab/accounts.tab", 
+      "/mnt/data/frs/0607/bin/accounts.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Admin_0607( 
+      "/mnt/data/frs/0607/tab/admin.tab", 
+      "/mnt/data/frs/0607/bin/admin.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Adult_0607( 
+      "/mnt/data/frs/0607/tab/adult.tab", 
+      "/mnt/data/frs/0607/bin/adult.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Asset_0607( 
+      "/mnt/data/frs/0607/tab/assets.tab", 
+      "/mnt/data/frs/0607/bin/assets.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Benefit_0607( 
+      "/mnt/data/frs/0607/tab/benefits.tab", 
+      "/mnt/data/frs/0607/bin/benefits.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Benunit_0607( 
+      "/mnt/data/frs/0607/tab/benunit.tab", 
+      "/mnt/data/frs/0607/bin/benunit.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Care_0607( 
+      "/mnt/data/frs/0607/tab/care.tab", 
+      "/mnt/data/frs/0607/bin/care.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Child_0607( 
+      "/mnt/data/frs/0607/tab/child.tab", 
+      "/mnt/data/frs/0607/bin/child.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_ChildCare_0607( 
+      "/mnt/data/frs/0607/tab/chldcare.tab", 
+      "/mnt/data/frs/0607/bin/chldcare.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Endowment_0607( 
+      "/mnt/data/frs/0607/tab/endowmnt.tab", 
+      "/mnt/data/frs/0607/bin/endowmnt.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_ExtChild_0607( 
+      "/mnt/data/frs/0607/tab/extchild.tab", 
+      "/mnt/data/frs/0607/bin/extchild.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_GovPay_0607( 
+      "/mnt/data/frs/0607/tab/govpay.tab", 
+      "/mnt/data/frs/0607/bin/govpay.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Hbai_0607( 
+      "/mnt/data/frs/0607/tab/hbai.tab", 
+      "/mnt/data/frs/0607/bin/hbai.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Household_0607( 
+      "/mnt/data/frs/0607/tab/househol.tab", 
+      "/mnt/data/frs/0607/bin/househol.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Job_0607( 
+      "/mnt/data/frs/0607/tab/job.tab", 
+      "/mnt/data/frs/0607/bin/job.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Maint_0607( 
+      "/mnt/data/frs/0607/tab/maint.tab", 
+      "/mnt/data/frs/0607/bin/maint.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_MortCont_0607( 
+      "/mnt/data/frs/0607/tab/mortcont.tab", 
+      "/mnt/data/frs/0607/bin/mortcont.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Mortgage_0607( 
+      "/mnt/data/frs/0607/tab/mortgage.tab", 
+      "/mnt/data/frs/0607/bin/mortgage.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_OddJob_0607( 
+      "/mnt/data/frs/0607/tab/oddjob.tab", 
+      "/mnt/data/frs/0607/bin/oddjob.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Owner_0607( 
+      "/mnt/data/frs/0607/tab/owner.tab", 
+      "/mnt/data/frs/0607/bin/owner.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_PenAmt_0607( 
+      "/mnt/data/frs/0607/tab/penamt.tab", 
+      "/mnt/data/frs/0607/bin/penamt.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_PenProv_0607( 
+      "/mnt/data/frs/0607/tab/penprov.tab", 
+      "/mnt/data/frs/0607/bin/penprov.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Pension_0607( 
+      "/mnt/data/frs/0607/tab/pension.tab", 
+      "/mnt/data/frs/0607/bin/pension.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_RentCont_0607( 
+      "/mnt/data/frs/0607/tab/rentcont.tab", 
+      "/mnt/data/frs/0607/bin/rentcont.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Renter_0607( 
+      "/mnt/data/frs/0607/tab/renter.tab", 
+      "/mnt/data/frs/0607/bin/renter.bin", 
+      "/mnt/data/frs/0607/bin/index.bin");
+
+   Create_Account_0708( 
+      "/mnt/data/frs/0708/tab/accounts.tab", 
+      "/mnt/data/frs/0708/bin/accounts.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Admin_0708( 
+      "/mnt/data/frs/0708/tab/admin.tab", 
+      "/mnt/data/frs/0708/bin/admin.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Adult_0708( 
+      "/mnt/data/frs/0708/tab/adult.tab", 
+      "/mnt/data/frs/0708/bin/adult.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Asset_0708( 
+      "/mnt/data/frs/0708/tab/assets.tab", 
+      "/mnt/data/frs/0708/bin/assets.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Benefit_0708( 
+      "/mnt/data/frs/0708/tab/benefits.tab", 
+      "/mnt/data/frs/0708/bin/benefits.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Benunit_0708( 
+      "/mnt/data/frs/0708/tab/benunit.tab", 
+      "/mnt/data/frs/0708/bin/benunit.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Care_0708( 
+      "/mnt/data/frs/0708/tab/care.tab", 
+      "/mnt/data/frs/0708/bin/care.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Child_0708( 
+      "/mnt/data/frs/0708/tab/child.tab", 
+      "/mnt/data/frs/0708/bin/child.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_ChildCare_0708( 
+      "/mnt/data/frs/0708/tab/chldcare.tab", 
+      "/mnt/data/frs/0708/bin/chldcare.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Endowment_0708( 
+      "/mnt/data/frs/0708/tab/endowmnt.tab", 
+      "/mnt/data/frs/0708/bin/endowmnt.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_ExtChild_0708( 
+      "/mnt/data/frs/0708/tab/extchild.tab", 
+      "/mnt/data/frs/0708/bin/extchild.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_GovPay_0708( 
+      "/mnt/data/frs/0708/tab/govpay.tab", 
+      "/mnt/data/frs/0708/bin/govpay.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Hbai_0708( 
+      "/mnt/data/frs/0708/tab/hbai.tab", 
+      "/mnt/data/frs/0708/bin/hbai.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Household_0708( 
+      "/mnt/data/frs/0708/tab/househol.tab", 
+      "/mnt/data/frs/0708/bin/househol.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Job_0708( 
+      "/mnt/data/frs/0708/tab/job.tab", 
+      "/mnt/data/frs/0708/bin/job.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Maint_0708( 
+      "/mnt/data/frs/0708/tab/maint.tab", 
+      "/mnt/data/frs/0708/bin/maint.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_MortCont_0708( 
+      "/mnt/data/frs/0708/tab/mortcont.tab", 
+      "/mnt/data/frs/0708/bin/mortcont.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Mortgage_0708( 
+      "/mnt/data/frs/0708/tab/mortgage.tab", 
+      "/mnt/data/frs/0708/bin/mortgage.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_OddJob_0708( 
+      "/mnt/data/frs/0708/tab/oddjob.tab", 
+      "/mnt/data/frs/0708/bin/oddjob.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Owner_0708( 
+      "/mnt/data/frs/0708/tab/owner.tab", 
+      "/mnt/data/frs/0708/bin/owner.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_PenAmt_0708( 
+      "/mnt/data/frs/0708/tab/penamt.tab", 
+      "/mnt/data/frs/0708/bin/penamt.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_PenProv_0708( 
+      "/mnt/data/frs/0708/tab/penprov.tab", 
+      "/mnt/data/frs/0708/bin/penprov.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Pension_0708( 
+      "/mnt/data/frs/0708/tab/pension.tab", 
+      "/mnt/data/frs/0708/bin/pension.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_RentCont_0708( 
+      "/mnt/data/frs/0708/tab/rentcont.tab", 
+      "/mnt/data/frs/0708/bin/rentcont.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Renter_0708( 
+      "/mnt/data/frs/0708/tab/renter.tab", 
+      "/mnt/data/frs/0708/bin/renter.bin", 
+      "/mnt/data/frs/0708/bin/index.bin");
+
+   Create_Account_0809( 
+      "/mnt/data/frs/0809/tab/accounts.tab", 
+      "/mnt/data/frs/0809/bin/accounts.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Admin_0809( 
+      "/mnt/data/frs/0809/tab/admin.tab", 
+      "/mnt/data/frs/0809/bin/admin.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Adult_0809( 
+      "/mnt/data/frs/0809/tab/adult.tab", 
+      "/mnt/data/frs/0809/bin/adult.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Asset_0809( 
+      "/mnt/data/frs/0809/tab/assets.tab", 
+      "/mnt/data/frs/0809/bin/assets.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Benefit_0809( 
+      "/mnt/data/frs/0809/tab/benefits.tab", 
+      "/mnt/data/frs/0809/bin/benefits.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Benunit_0809( 
+      "/mnt/data/frs/0809/tab/benunit.tab", 
+      "/mnt/data/frs/0809/bin/benunit.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Care_0809( 
+      "/mnt/data/frs/0809/tab/care.tab", 
+      "/mnt/data/frs/0809/bin/care.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Child_0809( 
+      "/mnt/data/frs/0809/tab/child.tab", 
+      "/mnt/data/frs/0809/bin/child.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_ChildCare_0809( 
+      "/mnt/data/frs/0809/tab/chldcare.tab", 
+      "/mnt/data/frs/0809/bin/chldcare.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Endowment_0809( 
+      "/mnt/data/frs/0809/tab/endowmnt.tab", 
+      "/mnt/data/frs/0809/bin/endowmnt.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_ExtChild_0809( 
+      "/mnt/data/frs/0809/tab/extchild.tab", 
+      "/mnt/data/frs/0809/bin/extchild.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_GovPay_0809( 
+      "/mnt/data/frs/0809/tab/govpay.tab", 
+      "/mnt/data/frs/0809/bin/govpay.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Hbai_0809( 
+      "/mnt/data/frs/0809/tab/hbai.tab", 
+      "/mnt/data/frs/0809/bin/hbai.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Household_0809( 
+      "/mnt/data/frs/0809/tab/househol.tab", 
+      "/mnt/data/frs/0809/bin/househol.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Job_0809( 
+      "/mnt/data/frs/0809/tab/job.tab", 
+      "/mnt/data/frs/0809/bin/job.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Maint_0809( 
+      "/mnt/data/frs/0809/tab/maint.tab", 
+      "/mnt/data/frs/0809/bin/maint.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_MortCont_0809( 
+      "/mnt/data/frs/0809/tab/mortcont.tab", 
+      "/mnt/data/frs/0809/bin/mortcont.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Mortgage_0809( 
+      "/mnt/data/frs/0809/tab/mortgage.tab", 
+      "/mnt/data/frs/0809/bin/mortgage.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Nimigr_0809( 
+      "/mnt/data/frs/0809/tab/nimigr.tab", 
+      "/mnt/data/frs/0809/bin/nimigr.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_OddJob_0809( 
+      "/mnt/data/frs/0809/tab/oddjob.tab", 
+      "/mnt/data/frs/0809/bin/oddjob.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Owner_0809( 
+      "/mnt/data/frs/0809/tab/owner.tab", 
+      "/mnt/data/frs/0809/bin/owner.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_PenAmt_0809( 
+      "/mnt/data/frs/0809/tab/penamt.tab", 
+      "/mnt/data/frs/0809/bin/penamt.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_PenProv_0809( 
+      "/mnt/data/frs/0809/tab/penprov.tab", 
+      "/mnt/data/frs/0809/bin/penprov.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Pension_0809( 
+      "/mnt/data/frs/0809/tab/pension.tab", 
+      "/mnt/data/frs/0809/bin/pension.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_RentCont_0809( 
+      "/mnt/data/frs/0809/tab/rentcont.tab", 
+      "/mnt/data/frs/0809/bin/rentcont.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Renter_0809( 
+      "/mnt/data/frs/0809/tab/renter.tab", 
+      "/mnt/data/frs/0809/bin/renter.bin", 
+      "/mnt/data/frs/0809/bin/index.bin");
+
+   Create_Account_0910( 
+      "/mnt/data/frs/0910/tab/accounts.tab", 
+      "/mnt/data/frs/0910/bin/accounts.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Admin_0910( 
+      "/mnt/data/frs/0910/tab/admin.tab", 
+      "/mnt/data/frs/0910/bin/admin.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Adult_0910( 
+      "/mnt/data/frs/0910/tab/adult.tab", 
+      "/mnt/data/frs/0910/bin/adult.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Asset_0910( 
+      "/mnt/data/frs/0910/tab/assets.tab", 
+      "/mnt/data/frs/0910/bin/assets.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Benefit_0910( 
+      "/mnt/data/frs/0910/tab/benefits.tab", 
+      "/mnt/data/frs/0910/bin/benefits.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Benunit_0910( 
+      "/mnt/data/frs/0910/tab/benunit.tab", 
+      "/mnt/data/frs/0910/bin/benunit.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Care_0910( 
+      "/mnt/data/frs/0910/tab/care.tab", 
+      "/mnt/data/frs/0910/bin/care.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Child_0910( 
+      "/mnt/data/frs/0910/tab/child.tab", 
+      "/mnt/data/frs/0910/bin/child.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_ChildCare_0910( 
+      "/mnt/data/frs/0910/tab/chldcare.tab", 
+      "/mnt/data/frs/0910/bin/chldcare.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Endowment_0910( 
+      "/mnt/data/frs/0910/tab/endowmnt.tab", 
+      "/mnt/data/frs/0910/bin/endowmnt.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_ExtChild_0910( 
+      "/mnt/data/frs/0910/tab/extchild.tab", 
+      "/mnt/data/frs/0910/bin/extchild.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_GovPay_0910( 
+      "/mnt/data/frs/0910/tab/govpay.tab", 
+      "/mnt/data/frs/0910/bin/govpay.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Hbai_0910( 
+      "/mnt/data/frs/0910/tab/hbai.tab", 
+      "/mnt/data/frs/0910/bin/hbai.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Household_0910( 
+      "/mnt/data/frs/0910/tab/househol.tab", 
+      "/mnt/data/frs/0910/bin/househol.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Job_0910( 
+      "/mnt/data/frs/0910/tab/job.tab", 
+      "/mnt/data/frs/0910/bin/job.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Maint_0910( 
+      "/mnt/data/frs/0910/tab/maint.tab", 
+      "/mnt/data/frs/0910/bin/maint.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_MortCont_0910( 
+      "/mnt/data/frs/0910/tab/mortcont.tab", 
+      "/mnt/data/frs/0910/bin/mortcont.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Mortgage_0910( 
+      "/mnt/data/frs/0910/tab/mortgage.tab", 
+      "/mnt/data/frs/0910/bin/mortgage.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Nimigr_0910( 
+      "/mnt/data/frs/0910/tab/nimigr.tab", 
+      "/mnt/data/frs/0910/bin/nimigr.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_OddJob_0910( 
+      "/mnt/data/frs/0910/tab/oddjob.tab", 
+      "/mnt/data/frs/0910/bin/oddjob.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Owner_0910( 
+      "/mnt/data/frs/0910/tab/owner.tab", 
+      "/mnt/data/frs/0910/bin/owner.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_PenAmt_0910( 
+      "/mnt/data/frs/0910/tab/penamt.tab", 
+      "/mnt/data/frs/0910/bin/penamt.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_PenProv_0910( 
+      "/mnt/data/frs/0910/tab/penprov.tab", 
+      "/mnt/data/frs/0910/bin/penprov.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Pension_0910( 
+      "/mnt/data/frs/0910/tab/pension.tab", 
+      "/mnt/data/frs/0910/bin/pension.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_RentCont_0910( 
+      "/mnt/data/frs/0910/tab/rentcont.tab", 
+      "/mnt/data/frs/0910/bin/rentcont.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Renter_0910( 
+      "/mnt/data/frs/0910/tab/renter.tab", 
+      "/mnt/data/frs/0910/bin/renter.bin", 
+      "/mnt/data/frs/0910/bin/index.bin");
+
+   Create_Account_1011( 
+      "/mnt/data/frs/1011/tab/accounts.tab", 
+      "/mnt/data/frs/1011/bin/accounts.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Admin_1011( 
+      "/mnt/data/frs/1011/tab/admin.tab", 
+      "/mnt/data/frs/1011/bin/admin.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Adult_1011( 
+      "/mnt/data/frs/1011/tab/adult.tab", 
+      "/mnt/data/frs/1011/bin/adult.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Asset_1011( 
+      "/mnt/data/frs/1011/tab/assets.tab", 
+      "/mnt/data/frs/1011/bin/assets.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Benefit_1011( 
+      "/mnt/data/frs/1011/tab/benefits.tab", 
+      "/mnt/data/frs/1011/bin/benefits.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Benunit_1011( 
+      "/mnt/data/frs/1011/tab/benunit.tab", 
+      "/mnt/data/frs/1011/bin/benunit.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Care_1011( 
+      "/mnt/data/frs/1011/tab/care.tab", 
+      "/mnt/data/frs/1011/bin/care.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Child_1011( 
+      "/mnt/data/frs/1011/tab/child.tab", 
+      "/mnt/data/frs/1011/bin/child.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_ChildCare_1011( 
+      "/mnt/data/frs/1011/tab/chldcare.tab", 
+      "/mnt/data/frs/1011/bin/chldcare.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Endowment_1011( 
+      "/mnt/data/frs/1011/tab/endowmnt.tab", 
+      "/mnt/data/frs/1011/bin/endowmnt.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_ExtChild_1011( 
+      "/mnt/data/frs/1011/tab/extchild.tab", 
+      "/mnt/data/frs/1011/bin/extchild.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_GovPay_1011( 
+      "/mnt/data/frs/1011/tab/govpay.tab", 
+      "/mnt/data/frs/1011/bin/govpay.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Hbai_1011( 
+      "/mnt/data/frs/1011/tab/hbai.tab", 
+      "/mnt/data/frs/1011/bin/hbai.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Household_1011( 
+      "/mnt/data/frs/1011/tab/househol.tab", 
+      "/mnt/data/frs/1011/bin/househol.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Job_1011( 
+      "/mnt/data/frs/1011/tab/job.tab", 
+      "/mnt/data/frs/1011/bin/job.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Maint_1011( 
+      "/mnt/data/frs/1011/tab/maint.tab", 
+      "/mnt/data/frs/1011/bin/maint.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_MortCont_1011( 
+      "/mnt/data/frs/1011/tab/mortcont.tab", 
+      "/mnt/data/frs/1011/bin/mortcont.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Mortgage_1011( 
+      "/mnt/data/frs/1011/tab/mortgage.tab", 
+      "/mnt/data/frs/1011/bin/mortgage.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Nimigr_1011( 
+      "/mnt/data/frs/1011/tab/nimigr.tab", 
+      "/mnt/data/frs/1011/bin/nimigr.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_OddJob_1011( 
+      "/mnt/data/frs/1011/tab/oddjob.tab", 
+      "/mnt/data/frs/1011/bin/oddjob.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Owner_1011( 
+      "/mnt/data/frs/1011/tab/owner.tab", 
+      "/mnt/data/frs/1011/bin/owner.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_PenProv_1011( 
+      "/mnt/data/frs/1011/tab/penprov.tab", 
+      "/mnt/data/frs/1011/bin/penprov.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Pension_1011( 
+      "/mnt/data/frs/1011/tab/pension.tab", 
+      "/mnt/data/frs/1011/bin/pension.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Prscrptn_1011( 
+      "/mnt/data/frs/1011/tab/prscrptn.tab", 
+      "/mnt/data/frs/1011/bin/prscrptn.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_RentCont_1011( 
+      "/mnt/data/frs/1011/tab/rentcont.tab", 
+      "/mnt/data/frs/1011/bin/rentcont.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+
+   Create_Renter_1011( 
+      "/mnt/data/frs/1011/tab/renter.tab", 
+      "/mnt/data/frs/1011/bin/renter.bin", 
+      "/mnt/data/frs/1011/bin/index.bin");
+

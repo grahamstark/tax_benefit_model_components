@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ParameterSystem
+ type="Fowler" instanceName="fowler">
+  
+    <ParameterSystem type="AllFowl" name="All Fowler" instanceName="allfowl">
+        <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+            <Description>
+                <p>abolish the entire means tested benefit system</p>
+            </Description>
+            <Journalese>abolish the entire means tested benefit system</Journalese>
+            <Tooltip>abolish the entire means tested benefit system</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="NumAgeRanges" units="timeless" type="int" instanceName="numAgeRanges">
+            <Description>
+                <p>NumAgeRanges</p>
+            </Description>
+            <Journalese>NumAgeRanges</Journalese>
+            <Tooltip>NumAgeRanges</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                min="100.0" format="#######" topset="true" order="none"/>
+        </Parameter>
+        <ArrayGroup name="childCredit" instanceName="childCredit" counterId="numAgeRanges">
+            <Parameter name="AgeLim" units="timeless" type="int" instanceName="ageLim">
+                <Description>
+                    <p>Age</p>
+                </Description>
+                <Journalese>Age</Journalese>
+                <Tooltip>Age</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Description>
+                <p>child credits by age</p>
+            </Description>
+            <Tooltip>child credits by age</Tooltip>
+            <Journalese>child credits by age</Journalese>
+        </ArrayGroup>
+        <Description>
+            <p>Parameters Common to the means-tested benefit system</p>
+        </Description>
+        <Tooltip>Parameters Common to the means-tested benefit system</Tooltip>
+    </ParameterSystem>
+    <ParameterSystem type="FamilyCredit" name="FamilyCredit" instanceName="fc">
+        <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+            <Description>
+                <p>abolish family credit</p>
+            </Description>
+            <Journalese>abolish family credit</Journalese>
+            <Tooltip>abolish family credit</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="indivEarnDis" units="week" type="real" instanceName="indivEarnDis">
+            <Description>
+                <p>family credit individual earnings disregard rate</p>
+            </Description>
+            <Journalese>family credit individual earnings disregard rate</Journalese>
+            <Tooltip>family credit individual earnings disregard rate</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="secondEarnDis" units="week" type="real" instanceName="secondEarnDis">
+            <Description>
+                <p>family credit second earner disregard rate</p>
+            </Description>
+            <Journalese>family credit second earner disregard rate</Journalese>
+            <Tooltip>family credit second earner disregard rate</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capLim1" units="timeless" type="real" instanceName="capLim1">
+            <Description>
+                <p>level below which all capital ignored</p>
+            </Description>
+            <Journalese>level below which all capital ignored</Journalese>
+            <Tooltip>level below which all capital ignored</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capLim2" units="timeless" type="real" instanceName="capLim2">
+            <Description>
+                <p>capital above which no fc payable</p>
+            </Description>
+            <Journalese>capital above which no fc payable</Journalese>
+            <Tooltip>capital above which no fc payable</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capitalTaperSum" units="percent" type="real" instanceName="capitalTaperSum">
+            <Description>
+                <p>capital for which income imputed</p>
+            </Description>
+            <Journalese>capital for which income imputed</Journalese>
+            <Tooltip>capital for which income imputed</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100000.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="mainDis" units="week" type="real" instanceName="mainDis">
+            <Description>
+                <p>value of maintenance disregard</p>
+            </Description>
+            <Journalese>value of maintenance disregard</Journalese>
+            <Tooltip>value of maintenance disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="adultCredit" units="week" type="real" instanceName="adultCredit">
+            <Description>
+                <p>family credit adult credit</p>
+            </Description>
+            <Journalese>family credit adult credit</Journalese>
+            <Tooltip>family credit adult credit</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="FTPremium" units="week" type="real" instanceName="ftpremium">
+            <Description>
+                <p>family credit adult full time premium</p>
+            </Description>
+            <Journalese>family credit adult full time premium</Journalese>
+            <Tooltip>family credit adult full time premium</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="threshold" units="week" type="real" instanceName="threshold">
+            <Description>
+                <p>family credit threshold</p>
+            </Description>
+            <Journalese>family credit threshold</Journalese>
+            <Tooltip>family credit threshold</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="1000.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="taper" units="percent" type="real" instanceName="taper">
+            <Description>
+                <p>family credit taper (%)</p>
+            </Description>
+            <Journalese>family credit taper (%)</Journalese>
+            <Tooltip>family credit taper (%)</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="NumAgeRanges" units="timeless" type="int" instanceName="numAgeRanges">
+            <Description>
+                <p>NumAgeRanges</p>
+            </Description>
+            <Journalese>NumAgeRanges</Journalese>
+            <Tooltip>NumAgeRanges</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                min="100.0" format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="inc" units="timeless" type="real_list"
+            instanceName="inc" indexName="IncomesSource">
+            <Description>
+                <p>definition of income for family credit</p>
+            </Description>
+            <Journalese>definition of income for family credit</Journalese>
+            <Tooltip>definition of income for family credit</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="minHours" units="timeless" type="int" instanceName="minHours">
+            <Description>
+                <p>number of hours below which no fc payable</p>
+            </Description>
+            <Journalese>number of hours below which no fc payable</Journalese>
+            <Tooltip>number of hours below which no fc payable</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="FTHours" units="timeless" type="int" instanceName="fthours">
+            <Description>
+                <p>number of hours above which full time
+                    premium payable</p>
+            </Description>
+            <Journalese>number of hours above which full time
+                premium payable</Journalese>
+            <Tooltip>number of hours above which full time premium payable</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="minKids" units="timeless" type="int" instanceName="minKids">
+            <Description>
+                <p>number of children below which no fc payable</p>
+            </Description>
+            <Journalese>number of children below which no fc payable</Journalese>
+            <Tooltip>number of children below which no fc payable</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="assign" units="timeless" type="enum"
+            instanceName="assign" enumName="AssignmentType">
+            <Description>
+                <p>who fc should be assigned to</p>
+            </Description>
+            <Journalese>who fc should be assigned to</Journalese>
+            <Tooltip>who fc should be assigned to</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <ParameterSystemPointer name="CCreditInfo" type="CCStyleInfo" instanceName="ccCreditInfo">
+            <Description>
+                <p>Child Care Parameters</p>
+            </Description>
+        </ParameterSystemPointer>
+        <ArrayGroup name="childCredit" instanceName="childCredit" counterId="numAgeRanges">
+            <Parameter name="AgeLim" units="timeless" type="int" instanceName="ageLim">
+                <Description>
+                    <p>Age</p>
+                </Description>
+                <Journalese>Age</Journalese>
+                <Tooltip>Age</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Parameter name="ChildAdd" units="week" type="real" instanceName="childAdd">
+                <Description>
+                    <p>Rate</p>
+                </Description>
+                <Journalese>Rate</Journalese>
+                <Tooltip>Rate</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Description>
+                <p>child credits by age</p>
+            </Description>
+            <Tooltip>child credits by age</Tooltip>
+            <Journalese>child credits by age</Journalese>
+        </ArrayGroup>
+        <Description>
+            <p>family credit, a benefit for low paid families
+                with children which existed 1988-2000</p>
+        </Description>
+        <Tooltip>a benefit for low paid families with children</Tooltip>
+    </ParameterSystem>
+    <ParameterSystem type="IncomeSupport" name="Income Support" instanceName="is">
+        <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+            <Description>
+                <p>abolish income support</p>
+            </Description>
+            <Journalese>abolish income support</Journalese>
+            <Tooltip>abolish income support</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="splitPayment" units="timeless" type="boolean" instanceName="splitPayment">
+            <Description>
+                <p>split payment of is between husband and wife</p>
+            </Description>
+            <Journalese>split payment of is between husband and wife</Journalese>
+            <Tooltip>split payment of is between husband and wife</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="rentCredit" units="timeless" type="boolean" instanceName="rentCredit">
+            <Description>
+                <p>add rent credit to income support</p>
+            </Description>
+            <Journalese>add rent credit to income support</Journalese>
+            <Tooltip>add rent credit to income support</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="locTaxCredit" units="timeless" type="boolean" instanceName="locTaxCredit">
+            <Description>
+                <p>add local tax credit to income support</p>
+            </Description>
+            <Journalese>add local tax credit to income support</Journalese>
+            <Tooltip>add local tax credit to income support</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="couOver18" units="week" type="real" instanceName="couOver18">
+            <Description>
+                <p>personal allowance for couple aged &gt;= 18</p>
+            </Description>
+            <Journalese>personal allowance for couple aged &gt;= 18</Journalese>
+            <Tooltip>personal allowance for couple aged &gt;= 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="couUnder18" units="week" type="real" instanceName="couUnder18">
+            <Description>
+                <p>personal allowance for couple aged &lt; 18</p>
+            </Description>
+            <Journalese>personal allowance for couple aged &lt; 18</Journalese>
+            <Tooltip>personal allowance for couple aged &lt; 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="OPFOver18" units="week" type="real" instanceName="opfover18">
+            <Description>
+                <p>personal allowance for single parents aged
+                    &gt;= 18</p>
+            </Description>
+            <Journalese>personal allowance for single parents aged
+                &gt;= 18</Journalese>
+            <Tooltip>personal allowance for single parents aged
+                &gt;= 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="OPFUnder18" units="week" type="real" instanceName="opfunder18">
+            <Description>
+                <p>personal allowance for single parents aged
+                    &lt; 18</p>
+            </Description>
+            <Journalese>personal allowance for single parents aged
+                &lt; 18</Journalese>
+            <Tooltip>personal allowance for single parents aged &lt; 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="sinYoung" units="week" type="real" instanceName="sinYoung">
+            <Description>
+                <p>personal allowance for single person aged
+                    under 25</p>
+            </Description>
+            <Journalese>personal allowance for single person aged
+                under 25</Journalese>
+            <Tooltip>personal allowance for single person aged under 25</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="sinOld" units="week" type="real" instanceName="sinOld">
+            <Description>
+                <p>personal allowance for single person aged
+                    &gt; 24</p>
+            </Description>
+            <Journalese>personal allowance for single person aged
+                &gt; 24</Journalese>
+            <Tooltip>personal allowance for single person aged &gt; 24</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="NumAgeRanges" units="timeless" type="int" instanceName="numAgeRanges">
+            <Description>
+                <p>NumAgeRanges</p>
+            </Description>
+            <Journalese>NumAgeRanges</Journalese>
+            <Tooltip>NumAgeRanges</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                min="100.0" format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="valFreeSchoolMeal" units="week" type="real" instanceName="valFreeSchoolMeal">
+            <Description>
+                <p>cash value of free school meals</p>
+            </Description>
+            <Journalese>cash value of free school meals</Journalese>
+            <Tooltip>cash value of free school meals</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="disregard1" units="week" type="real" instanceName="disregard1">
+            <Description>
+                <p>higher is earnings disregard</p>
+            </Description>
+            <Journalese>higher is earnings disregard</Journalese>
+            <Tooltip>higher is earnings disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="disregard2" units="week" type="real" instanceName="disregard2">
+            <Description>
+                <p>normal is earnings disregard</p>
+            </Description>
+            <Journalese>normal is earnings disregard</Journalese>
+            <Tooltip>normal is earnings disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="mainDis" units="week" type="real" instanceName="mainDis">
+            <Description>
+                <p>value of maintenance disregard</p>
+            </Description>
+            <Journalese>value of maintenance disregard</Journalese>
+            <Tooltip>value of maintenance disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capLim1" units="timeless" type="real" instanceName="capLim1">
+            <Description>
+                <p>level below which all capital ignored</p>
+            </Description>
+            <Journalese>level below which all capital ignored</Journalese>
+            <Tooltip>level below which all capital ignored</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capLim2" units="timeless" type="real" instanceName="capLim2">
+            <Description>
+                <p>capital above which no is payable</p>
+            </Description>
+            <Journalese>capital above which no is payable</Journalese>
+            <Tooltip>capital above which no is payable</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="capitalTaperSum" units="timeless" type="real" instanceName="capitalTaperSum">
+            <Description>
+                <p>capital for which &#163;1 income imputed</p>
+            </Description>
+            <Journalese>capital for which &#163;1 income imputed</Journalese>
+            <Tooltip>capital for which &#163;1 income imputed</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="taper" units="percent" type="real" instanceName="taper">
+            <Description>
+                <p>taper for income support</p>
+            </Description>
+            <Journalese>taper for income support</Journalese>
+            <Tooltip>taper for income support</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="1.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="NumNDDRates" units="timeless" type="int" instanceName="numNDDRates">
+            <Description>
+                <p>NumNDDRates</p>
+            </Description>
+            <Journalese>NumNDDRates</Journalese>
+            <Tooltip>NumNDDRates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                min="100.0" format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="prem" units="week" type="real_list"
+            instanceName="prem" indexName="Premia">
+            <Description>
+                <p>family premium</p>
+            </Description>
+            <Journalese>family premium</Journalese>
+            <Tooltip>family premium</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageEnBenChange" units="timeless" type="int" instanceName="ageEnBenChange">
+            <Description>
+                <p>age at which enhanced pensioner rate applies</p>
+            </Description>
+            <Journalese>age at which enhanced pensioner rate applies</Journalese>
+            <Tooltip>age at which enhanced pensioner rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageOldBenChange" units="timeless" type="int" instanceName="ageOldBenChange">
+            <Description>
+                <p>age at which highest pensioner rate applies</p>
+            </Description>
+            <Journalese>age at which highest pensioner rate applies</Journalese>
+            <Tooltip>age at which highest pensioner rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageYoungBenChange" units="timeless" type="int" instanceName="ageYoungBenChange">
+            <Description>
+                <p>age below which lower adult rate applies</p>
+            </Description>
+            <Journalese>age below which lower adult rate applies</Journalese>
+            <Tooltip>age below which lower adult rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="minimumAge" units="timeless" type="int" instanceName="minimumAge">
+            <Description>
+                <p>lowest age at which you can get is (except
+                    single parents)</p>
+            </Description>
+            <Journalese>lowest age at which you can get is (except
+                single parents)</Journalese>
+            <Tooltip>lowest age at which you can get is (except
+                single parents)</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="earnInc" units="timeless" type="real_list"
+            instanceName="earnInc" indexName="IncomesSource">
+            <Description>
+                <p>definition of earnings for is</p>
+            </Description>
+            <Journalese>definition of earnings for is</Journalese>
+            <Tooltip>definition of earnings for is</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="othInc" units="timeless" type="real_list"
+            instanceName="othInc" indexName="IncomesSource">
+            <Description>
+                <p>definition of other income for is</p>
+            </Description>
+            <Journalese>definition of other income for is</Journalese>
+            <Tooltip>definition of other income for is</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <ArrayGroup name="childAdditions" instanceName="childAdditions" counterId="numAgeRanges">
+            <Parameter name="AgeLim" units="timeless" type="int" instanceName="ageLim">
+                <Description>
+                    <p>Age</p>
+                </Description>
+                <Journalese>Age</Journalese>
+                <Tooltip>Age</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Parameter name="ChildAdd" units="week" type="real" instanceName="childAdd">
+                <Description>
+                    <p>Rate</p>
+                </Description>
+                <Journalese>Rate</Journalese>
+                <Tooltip>Rate</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Description>
+                <p>personal allowances for children by age</p>
+            </Description>
+            <Tooltip>personal allowances for children by age</Tooltip>
+            <Journalese>personal allowances for children by age</Journalese>
+        </ArrayGroup>
+        <ArrayGroup name="nonDepDeds" instanceName="nonDepDeps" counterId="numNDDRates">
+            <Parameter name="NonDepFloors" units="week" type="real" instanceName="nonDepFloors">
+                <Description>
+                    <p>Floors</p>
+                </Description>
+                <Journalese>Floors</Journalese>
+                <Tooltip>Floors</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Parameter name="NonDepDed" units="week" type="real" instanceName="nonDepDed">
+                <Description>
+                    <p>Deduct</p>
+                </Description>
+                <Journalese>Deduct</Journalese>
+                <Tooltip>Deduct</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Description>
+                <p>non dependent deductions</p>
+            </Description>
+            <Tooltip>non dependent deductions</Tooltip>
+            <Journalese>non dependent deductions</Journalese>
+        </ArrayGroup>
+        <Description>
+            <p>Income Support (IS), a benefit for non-working
+                families on low incomes</p>
+        </Description>
+        <Tooltip>Income Support (IS), a benefit for non-working
+            families on low incomes</Tooltip>
+    </ParameterSystem>
+    <ParameterSystem type="Rebate" name="Rebate System" instanceName="reb">
+        <Parameter name="couOver18" units="week" type="real" instanceName="couOver18">
+            <Description>
+                <p>personal allowance for couple aged &gt;= 18</p>
+            </Description>
+            <Journalese>personal allowance for couple aged &gt;= 18</Journalese>
+            <Tooltip>personal allowance for couple aged &gt;= 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="couUnder18" units="week" type="real" instanceName="couUnder18">
+            <Description>
+                <p>personal allowance for couple aged &lt; 18</p>
+            </Description>
+            <Journalese>personal allowance for couple aged &lt; 18</Journalese>
+            <Tooltip>personal allowance for couple aged &lt; 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="OPFOver18" units="week" type="real" instanceName="opfover18">
+            <Description>
+                <p>personal allowance for single parents aged
+                    &gt;= 18</p>
+            </Description>
+            <Journalese>personal allowance for single parents aged
+                &gt;= 18</Journalese>
+            <Tooltip>personal allowance for single parents aged
+                &gt;= 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="OPFUnder18" units="week" type="real" instanceName="opfunder18">
+            <Description>
+                <p>personal allowance for single parents aged
+                    &lt; 18</p>
+            </Description>
+            <Journalese>personal allowance for single parents aged
+                &lt; 18</Journalese>
+            <Tooltip>personal allowance for single parents aged &lt; 18</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="sinYoung" units="week" type="real" instanceName="sinYoung">
+            <Description>
+                <p>personal allowance for single person under25</p>
+            </Description>
+            <Journalese>personal allowance for single person under25</Journalese>
+            <Tooltip>personal allowance for single person under25</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="sinOld" units="week" type="real" instanceName="sinOld">
+            <Description>
+                <p>personal allowance for single person aged
+                    &gt; 24</p>
+            </Description>
+            <Journalese>personal allowance for single person aged
+                &gt; 24</Journalese>
+            <Tooltip>personal allowance for single person aged &gt; 24</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100000.0" format="#######.##"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="NumAgeRanges" units="timeless" type="int" instanceName="numAgeRanges">
+            <Description>
+                <p>NumAgeRanges</p>
+            </Description>
+            <Journalese>NumAgeRanges</Journalese>
+            <Tooltip>NumAgeRanges</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                min="100.0" format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="disregard1" units="week" type="real" instanceName="disregard1">
+            <Description>
+                <p>highest earnings disregard</p>
+            </Description>
+            <Journalese>highest earnings disregard</Journalese>
+            <Tooltip>highest earnings disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="disregard2" units="week" type="real" instanceName="disregard2">
+            <Description>
+                <p>lowest earnings disregard</p>
+            </Description>
+            <Journalese>lowest earnings disregard</Journalese>
+            <Tooltip>lowest earnings disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="disregard3" units="week" type="real" instanceName="disregard3">
+            <Description>
+                <p>middle earnings disregard (for couples)</p>
+            </Description>
+            <Journalese>middle earnings disregard (for couples)</Journalese>
+            <Tooltip>middle earnings disregard (for couples)</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="mainDis" units="week" type="real" instanceName="mainDis">
+            <Description>
+                <p>value of maintenance disregard</p>
+            </Description>
+            <Journalese>value of maintenance disregard</Journalese>
+            <Tooltip>value of maintenance disregard</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="prem" units="week" type="real_list"
+            instanceName="prem" indexName="Premia">
+            <Description>
+                <p>family premium</p>
+            </Description>
+            <Journalese>family premium</Journalese>
+            <Tooltip>family premium</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="FTHoursPrem" units="week" type="real" instanceName="fthoursPrem">
+            <Description>
+                <p>optional full time hours premium for hb, ctb</p>
+            </Description>
+            <Journalese>optional full time hours premium for hb, ctb</Journalese>
+            <Tooltip>optional full time hours premium for hb, ctb</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                min="0.0" max="200.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageOldBenChange" units="timeless" type="int" instanceName="ageOldBenChange">
+            <Description>
+                <p>age at which higher pensioner rate applies</p>
+            </Description>
+            <Journalese>age at which higher pensioner rate applies</Journalese>
+            <Tooltip>age at which higher pensioner rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageYoungBenChange" units="timeless" type="int" instanceName="ageYoungBenChange">
+            <Description>
+                <p>age below which under 18 rate applies</p>
+            </Description>
+            <Journalese>age below which under 18 rate applies</Journalese>
+            <Tooltip>age below which under 18 rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="ageEnBenChange" units="timeless" type="int" instanceName="ageEnBenChange">
+            <Description>
+                <p>age at which enhanced rate applies</p>
+            </Description>
+            <Journalese>age at which enhanced rate applies</Journalese>
+            <Tooltip>age at which enhanced rate applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="FTHours" units="timeless" type="int" instanceName="fthours">
+            <Description>
+                <p>number of hours above which full time
+                    premium payable</p>
+            </Description>
+            <Journalese>number of hours above which full time
+                premium payable</Journalese>
+            <Tooltip>number of hours above which full time premium payable</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictCTB" units="timeless" type="boolean" instanceName="restrictCTB">
+            <Description>
+                <p>restrict council tax benefit</p>
+            </Description>
+            <Journalese>restrict council tax benefit</Journalese>
+            <Tooltip>restrict council tax benefit</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="bandToRestrict" units="timeless" type="enum"
+            instanceName="bandToRestrict" enumName="BandToRestrict">
+            <Description>
+                <p>band to restrict council tax benefit to</p>
+            </Description>
+            <Journalese>band to restrict council tax benefit to</Journalese>
+            <Tooltip>band to restrict council tax benefit to</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="earnInc" units="timeless" type="real_list"
+            instanceName="earnInc" indexName="IncomesSource">
+            <Description>
+                <p>definition of earnings for hb</p>
+            </Description>
+            <Journalese>definition of earnings for hb</Journalese>
+            <Tooltip>definition of earnings for hb</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="othInc" units="timeless" type="real_list"
+            instanceName="othInc" indexName="IncomesSource">
+            <Description>
+                <p>definition of other inc for hb</p>
+            </Description>
+            <Journalese>definition of other inc for hb</Journalese>
+            <Tooltip>definition of other inc for hb</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="assignNDDsToHoH" units="timeless"
+            type="boolean" instanceName="assignNDDsToHoH">
+            <Description>
+                <p>assign ndds to hoh for post housing cost income</p>
+            </Description>
+            <Journalese>assign ndds to hoh for post housing cost income</Journalese>
+            <Tooltip>assign ndds to hoh for post housing cost income</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <ParameterSystem type="OneRebate">
+            <Parameter name="MIGCapLim1" units="timeless" type="real" instanceName="migCapLim1">
+                <Description>
+                    <p>level below which all capital ignored- Minumum
+                        Income Guarantee</p>
+                </Description>
+                <Journalese>level below which all capital ignored -
+                    ignored Minumum Income Guarante</Journalese>
+                <Tooltip>level below which all capital ignored ignored -
+                    Minumum Income Guarante</Tooltip>
+                <EditInfo uprate="rooker_wise" next="100.0"
+                    check="halt" min="0.0" max="100000.0"
+                    format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="MIGCapLim2" units="timeless" type="real" instanceName="migCapLim2">
+                <Description>
+                    <p>capital above which no rebate payable - Minumum
+                        Income Guarantee</p>
+                </Description>
+                <Journalese>capital above which no rebate payable-
+                    Minumum Income Guarantee</Journalese>
+                <Tooltip>capital above which no rebate payable ignored -
+                    Minumum Income Guarantee</Tooltip>
+                <EditInfo uprate="rooker_wise" next="100.0"
+                    check="halt" min="0.0" max="100000.0"
+                    format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="capLim1" units="timeless" type="real" instanceName="capLim1">
+                <Description>
+                    <p>level below which all capital ignored</p>
+                </Description>
+                <Journalese>level below which all capital ignored</Journalese>
+                <Tooltip>level below which all capital ignored</Tooltip>
+                <EditInfo uprate="rooker_wise" next="100.0"
+                    check="halt" min="0.0" max="100000.0"
+                    format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="capLim2" units="timeless" type="real" instanceName="capLim2">
+                <Description>
+                    <p>capital above which no rebate payable</p>
+                </Description>
+                <Journalese>capital above which no rebate payable</Journalese>
+                <Tooltip>capital above which no rebate payable</Tooltip>
+                <EditInfo uprate="rooker_wise" next="100.0"
+                    check="halt" min="0.0" max="100000.0"
+                    format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="capitalTaperSum" units="timeless"
+                type="real" instanceName="capitalTaperSum">
+                <Description>
+                    <p>capital for which &#163;1 income imputed</p>
+                </Description>
+                <Journalese>capital for which &#163;1 income imputed</Journalese>
+                <Tooltip>capital for which &#163;1 income imputed</Tooltip>
+                <EditInfo uprate="rooker_wise" next="0.0" check="halt"
+                    min="0.0" max="100000.0" format="#######.##"
+                    topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="minPayment" units="week" type="real" instanceName="minPayment">
+                <Description>
+                    <p>minimum rebate</p>
+                </Description>
+                <Journalese>minimum rebate</Journalese>
+                <Tooltip>minimum rebate</Tooltip>
+                <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                    min="0.0" max="99999.0" format="#######.##"
+                    topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="maxElig" units="week" type="real" instanceName="maxElig">
+                <Description>
+                    <p>max mortgage eligible for rebate</p>
+                </Description>
+                <Journalese>max mortgage eligible for rebate</Journalese>
+                <Tooltip>max mortgage eligible for rebate</Tooltip>
+                <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+                    min="0.0" max="99999.0" format="#######.##"
+                    topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="propElig" units="percent" type="real" instanceName="propElig">
+                <Description>
+                    <p>proportion eligible for rebate</p>
+                </Description>
+                <Journalese>proportion eligible for rebate</Journalese>
+                <Tooltip>proportion eligible for rebate</Tooltip>
+                <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                    max="100.0" format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="taper" units="percent" type="real" instanceName="taper">
+                <Description>
+                    <p>housing benefit taper (%)</p>
+                </Description>
+                <Journalese>housing benefit taper (%)</Journalese>
+                <Tooltip>housing benefit taper (%)</Tooltip>
+                <EditInfo uprate="dont_uprate" check="warn" min="0.0"
+                    max="100.0" format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="NumNDDRates" units="timeless" type="int" instanceName="numNDDRates">
+                <Description>
+                    <p>NumNDDRates</p>
+                </Description>
+                <Journalese>NumNDDRates</Journalese>
+                <Tooltip>NumNDDRates</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    min="100.0" format="#######" topset="true" order="none"/>
+            </Parameter>
+            <ArrayGroup name="nonDepDed" instanceName="nonDepDed" counterId="numNDDRates">
+                <Parameter name="NonDepFloors" units="week" type="real" instanceName="nonDepFloors">
+                    <Description>
+                        <p>Floors</p>
+                    </Description>
+                    <Journalese>Floors</Journalese>
+                    <Tooltip>Floors</Tooltip>
+                    <EditInfo uprate="dont_uprate" check="dont_check"
+                        topset="false" order="none"/>
+                </Parameter>
+                <Parameter name="NonDepDed" units="week" type="real" instanceName="nonDepDed">
+                    <Description>
+                        <p>Deduct</p>
+                    </Description>
+                    <Journalese>Deduct</Journalese>
+                    <Tooltip>Deduct</Tooltip>
+                    <EditInfo uprate="dont_uprate" check="dont_check"
+                        topset="false" order="none"/>
+                </Parameter>
+                <Description>
+                    <p>non dependent deductions</p>
+                </Description>
+                <Tooltip>non dependent deductions</Tooltip>
+                <Journalese>non dependent deductions</Journalese>
+            </ArrayGroup>
+            <Description>
+                <p>One Rebate</p>
+            </Description>
+            <Tooltip>One Rebate</Tooltip>
+        </ParameterSystem>
+        <ParameterSystem type="RebateOptions" name="Rebate Options" instanceName="options">
+            <Parameter name="doMortgageBenefit" units="timeless"
+                type="boolean" instanceName="doMortgageBenefit">
+                <Description>
+                    <p>introduce a mortgage benefit like
+                        housing benefit</p>
+                </Description>
+                <Journalese>introduce a mortgage benefit like
+                    housing benefit</Journalese>
+                <Tooltip>introduce a mortgage benefit like housing benefit</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="true" order="none"/>
+            </Parameter>
+            <Parameter name="mortgageBenefitTaper" units="percent"
+                type="real" instanceName="mortgageBenefitTaper">
+                <Description>
+                    <p>taper on mortgage benefit(%)</p>
+                </Description>
+                <Journalese>taper on mortgage benefit(%)</Journalese>
+                <Tooltip>taper on mortgage benefit(%)</Tooltip>
+                <EditInfo uprate="dont_uprate" check="warn" min="0.0"
+                    max="100.0" format="#######.##" topset="true" order="none"/>
+            </Parameter>
+            <Description>
+                <p>Rebate Options</p>
+            </Description>
+            <Tooltip>Rebate Options</Tooltip>
+        </ParameterSystem>
+        <ParameterSystemPointer name="oneRebate" type="OneRebate"
+            instanceName="oneRebate" indexName="ToBeRebated"/>
+        <ArrayGroup name="childAllowances"
+            instanceName="childAllowances" counterId="numAgeRanges">
+            <Parameter name="AgeLim" units="timeless" type="int" instanceName="ageLim">
+                <Description>
+                    <p>Age</p>
+                </Description>
+                <Journalese>Age</Journalese>
+                <Tooltip>Age</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Parameter name="ChildAdd" units="week" type="real" instanceName="childAdd">
+                <Description>
+                    <p>Rate</p>
+                </Description>
+                <Journalese>Rate</Journalese>
+                <Tooltip>Rate</Tooltip>
+                <EditInfo uprate="dont_uprate" check="dont_check"
+                    topset="false" order="none"/>
+            </Parameter>
+            <Description>
+                <p>personal allowances for children by age</p>
+            </Description>
+            <Tooltip>personal allowances for children by age</Tooltip>
+            <Journalese>personal allowances for children by age</Journalese>
+        </ArrayGroup>
+        <Description>
+            <p>Rebate System</p>
+        </Description>
+        <Tooltip>Rebates</Tooltip>
+    </ParameterSystem>
+    <Description>
+        <p>means-tested benefits, post 1988</p>
+    </Description>
+    <Tooltip>means-tested benefits, post 1988</Tooltip>
+</ParameterSystem>

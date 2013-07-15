@@ -1,0 +1,30 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U bc.containers.trees%s	bc-containers-trees.ads	ccbcb717 NE OO PK GE IU
+W bc%s			bc.ads			bc.ali
+W bc.containers%s	bc-containers.adb	bc-containers.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-finali.ads		20110419093131 b333d305
+D a-stream.ads		20110419093132 2ca4ee37
+D bc.ads		20110415182050 45d2adcb
+D bc-containers.ads	20110415182050 b97da3db
+D bc-containers-trees.ads  20110415182050 75c114cc
+D system.ads		20110419093140 23e1f70b
+D s-finroo.ads		20110419093137 2dd85ce2
+X 4 bc.ads
+29K9*BC 78e7 6|29r17 92r5
+X 5 bc-containers.ads
+34k12*Containers 4|29k9 5|171e18 6|29r20 92r8
+X 6 bc-containers-trees.ads
+29k31 Trees 5|34k12 6|92l19 92e24
+

@@ -1,0 +1,25 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U mckae.xml.xpath%s	mckae-xml-xpath.ads	8ba07b6d NE OO PU PK
+W mckae.xml%s		mckae-xml.ads		mckae-xml.ali
+
+D mckae.ads		20110415182051 cc2fc41c
+D mckae-xml.ads		20110415182051 851397d2
+D mckae-xml-xpath.ads	20110415182051 0eb3ecbf
+D system.ads		20110419093140 23e1f70b
+X 1 mckae.ads
+30K9*McKae 34e10 3|31r9 35r5
+X 2 mckae-xml.ads
+31K15*XML 1|30k9 2|35e14 3|31r15 35r11
+X 3 mckae-xml-xpath.ads
+31K19*XPath 2|31k15 3|35l15 35e20
+

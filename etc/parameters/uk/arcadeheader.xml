@@ -1,0 +1,238 @@
+<?xml version="1.0"?> 
+<!-- 
+	this is a file containing xslified headers abnd footers for the new Bized 
+	design.
+	
+	Graham Stark 8/10/2002
+
+ -->
+ 
+ <!--
+ 	cvs
+ 	$Log: $
+ -->
+ 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                version="1.0">
+<xsl:output method="html" encoding="iso-8859-1" indent="yes" />
+<xsl:strip-space elements="*" />
+
+<!-- 
+   a new header, with (gks) everybody's name in it and a title,subject and Description passed in
+ -->
+<xsl:template name="vwheader">
+
+  <xsl:param name="title"/>
+  <xsl:param name="subject"/>
+  <xsl:param name="Description"/>
+
+
+<head>
+
+     <title>
+       Virtual Learning Arcade: Virtual Worlds Group: <xsl:value-of select="$title" />
+    </title>
+<meta name="package" content="(type=begin) Dublin Core" />
+<meta name="DC.creator" content="(type=name) Biz/ed, Institute for Learning and Research Technology, University of Bristol, 8-10 Berkeley Square, Bristol BS8 1HH, UK" />
+<meta name="DC.creator" content="(type=email) bized-info@bized.ac.uk" />
+<meta name="DC.author" content="(type=name) Andy Ramsden" />
+<meta name="DC.author" content="(type=name) Andy Beharrell" />
+<meta name="DC.author" content="(type=name) Jocelyn Paine" />
+<meta name="DC.author" content="(type=name) Keiren Pitts" />
+<meta name="DC.author" content="(type=name) Keith Church" />
+<meta name="DC.author" content="(type=name) Graham Stark" />
+
+<meta name="DC.author" content="(type=email) bized-info@bized.ac.uk" />
+<meta name="DC.Description" content="(type=long) Models and simulations on various economics and business topics. Each simulation has a range of supporting materials including interactive worksheets, theoretical explanations and multiple choice questions." />
+<meta name="DC.Description" content="(type=short) {$Description}" />
+<meta name="DC.publisher" content="(type=name) Biz/ed, Institute for Learning and Research Technology, University of Bristol, 8-10 Berkeley Square, Bristol BS8 1HH, UK" />
+<meta name="DC.publisher" content="(type=homepage) http://www.bized.ac.uk/" />
+<meta name="DC.date" content="(type=creation) 2002-10-08" />
+<meta name="DC.language" content="en" />
+<meta name="DC.format" content="(scheme=imt) text/html" />
+<meta name="DC.relation" content="(type=IsChildOf) (IDENTIFIER=url) /virtual/" />
+<meta name="DC.rights" content="(type=long) http://www.bized.ac.uk/copyrght.htm" />
+<meta name="DC.subject" content="(scheme=keyword) learning materials, simulations, models" />
+<meta name="DC.subject" content="(type=bizedresource) model" />
+<meta name="DC.subject" content="{$subject}" />
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="package" content="(type=end) Dublin Core" />
+    <!-- <script type="text/javascript" language="JavaScript" src="/scripts/bized/pickStylesheet.js"> </script> --> 
+    <link rel="stylesheet" type="text/css" href="http://www.bized.ac.uk/style.css" />
+</head>
+
+
+</xsl:template>
+
+<!-- paints the new dark blue top table -->
+<xsl:template name="vwtoptable">
+ <!--header 1-->
+        <form style="margin:0" method="get" action="http://www.bized.ac.uk/cgi-bin/htsearch">
+        <a id="top" name="top"></a>
+        <!--anchor for top of page-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Header containing Bized logo and search">
+                <tr>
+                    <td class="header" width="106" valign="top">
+                        <!--anchor image for screen readers to jump to content--><a href="#content" title="jump to content of this page"><img src="/images/newbized/clear.gif" class="block" width="1" height="1" border="0" alt="jump to content of this page" /></a><a href="http://www.bized.ac.uk/index.htm"><img src="/images/newbized/bized_logo.gif" width="106" height="63" border="0" class="block" alt="Bized logo linked to homepage" /></a></td>
+                    <td class="header" valign="top" align="right">
+                    
+                    <table border="0" cellpadding="0" cellspacing="0" summary="Search function">
+                             <tr>
+                                <td class="search" colspan="3"><img src="/images/newbized/clear.gif" width="1" class="block" height="3" border="0" alt=" " /></td>
+                            </tr>
+                            <tr>
+                                <td width="7" class="search">
+                                <img src="/images/newbized/clear.gif" width="1" class="block" height="3" border="0" alt=" " /></td>
+                                <td class="search"><input type="text" name="words" size="20" /><input type="hidden" name="config" value="htdig" /><input type="hidden" name="method" value="and" /><input type="hidden" name="sort" value="score" /><input type="hidden" name="format" value="builtin-long" /><input type="hidden" name="restrict" value="" /><input type="hidden" name="exclude" value="" /></td><td class="search"><input type="image" src="/images/newbized/search_button.gif" align="top" alt="Search" /></td>
+                            </tr>
+                            <tr>
+                                <td class="search" width="7" height="7"><img src="/images/newbized/clear.gif" width="1" class="block" height="1" border="0" alt=" " /></td>
+                                <td height="7" class="search" align="left"><a href="http://www.bized.ac.uk/search/advsearch.htm" class="searchtext">Advanced Search</a></td>
+                                <td height="7" class="search"><img src="/images/newbized/clear.gif" width="1" class="block" height="1" border="0" alt=" " /></td>
+                            </tr>
+                            <tr>
+                                <td width="7" class="search" height="7"><img src="/images/newbized/search_corner.gif" width="7" height="7" border="0" class="block" alt=" " /></td>
+                                <td height="7" class="search"><img src="/images/newbized/clear.gif" width="1" height="7" border="0" class="block" alt=" " /></td>
+                                <td height="7" class="search"><img src="/images/newbized/clear.gif" width="1" height="7" border="0" class="block" alt=" " /></td>
+                            </tr>
+                        </table>
+                     </td>
+                </tr>
+            </table>
+            <!--end of header 1--><!--header 2 (main navigation)-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Main navigation">
+                <tr>
+                    <td class="headernav" width="7"><img src="/images/newbized/clear.gif" width="7" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" valign="middle" align="center" width="126"><a class="mainnav" href="http://catalogue.bized.ac.uk/">Internet Resources</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" align="center" width="125"><a class="mainnav" href="http://www.bized.ac.uk/learn/learn.htm">Learning Materials</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" align="center" width="29"><a class="mainnav" href="http://www.bized.ac.uk/dataserv/datahome.htm">Data</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" align="center" width="95"><a class="mainnav" href="http://www.bized.ac.uk/compfact/comphome.htm">Company Info</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" align="center" width="99"><a class="mainnav" href="http://www.bized.ac.uk/virtual/">Virtual Worlds</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav" align="center" width="99"><a class="mainnav" href="http://www.bized.ac.uk/current/index.htm">Current Topics</a></td>
+                    <td class="headernav" width="14"><img src="/images/newbized/nav_divide.gif" width="14" height="21" border="0" alt="divide" class="block" /></td>
+                    <td class="headernav"><img src="/images/newbized/clear.gif" width="1" height="1" border="0" alt=" " class="block" /></td>
+                </tr>
+            </table>
+            <!--end of header 2 (main navigation)--><!--header 3 (decorative rule)-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="decorative rule">
+                <tr>
+                    <td class="header3"><img src="/images/newbized/clear.gif" width="1" height="8" border="0" class="block" alt=" " /></td>
+                </tr>
+            </table>
+            </form>
+</xsl:template>
+
+<!-- 
+     paints a table containing a breadcrumb trail, with the home (bized) url and model name passed in. 
+     This goes underneath the top table 
+-->
+<xsl:template name="vwbreadcrumb">
+    <xsl:param name="model"/>
+    <xsl:param name="url" />
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="breadcrumbs">
+      <tr>
+        <td width="8" class="breadcrumbs"><img src="/images/newbized/clear.gif" width="8" height="22" border="0" class="block" alt=" " /></td>
+
+        <td class="breadcrumbs"><span class="boldgrey">You are here:</span> 
+	    <a href="http://www.bized.ac.uk">Home</a> &gt;<a href="http://www.bized.ac.uk/virtual/">Virtual Worlds</a> &gt; <a href="http://www.bized.ac.uk/virtual/vla">Virtual Learning Arcade</a> &gt; <a href="{$url}"> <xsl:value-of select="$model"/></a> &gt; Results
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="breadcrumbs" colspan="2" height="1"><img src="/images/newbized/clear.gif" width="1" height="1" class="block" border="0" alt=" " /></td>
+      </tr>
+    </table>
+</xsl:template>
+
+<!-- 
+    paints the new left hand side yellow table 
+-->
+<xsl:template name="vwlhstable">
+   <table border="0" cellpadding="8" cellspacing="0" width="100%" summary="content">
+      <tr>
+        <td width="145" valign="top">
+          <!--left hand nav-->
+
+          <table border="0" cellpadding="0" cellspacing="0" width="145" summary="Quicklinks to jump to resources most suitable for your level">
+            <tr>
+              <td width="10"><img src="/images/newbized/sidenav_arrow_a.gif" width="10" class="block" height="10" border="0" alt=" " /></td>
+
+              <td class="sidenavtop"><img src="/images/newbized/clear.gif" width="1" class="block" height="1" border="0" alt=" " /></td>
+
+              <td width="10"><img src="/images/newbized/sidenav_arrow_b.gif" width="10" height="10" border="0" class="block" alt=" " /></td>
+            </tr>
+
+            <tr>
+              <td class="sidenavleft" width="10"><img src="/images/newbized/clear.gif" class="block" width="1" height="1" border="0" alt=" " /></td>
+
+              <td class="sidenavback" valign="top">
+	      <p class="sidenav">
+	      Virtual ....<br />
+	      <a href="http://www.bized.ac.uk/virtual/vla/index.htm">Learning Arcade</a><br />
+	      <a href="http://www.bized.ac.uk/virtual/dc/index.htm">Developing Country</a><br /> 
+	      <a href="http://www.bized.ac.uk/virtual/cb/welcome.htm">Factory</a><br />
+	      <a href="http://www.bized.ac.uk/virtual/economy/index.htm">Economy</a><br />
+	                                     
+	      <br />
+	      </p>
+	      </td>
+
+
+              <td class="sidenavright" width="10"><img src="/images/newbized/clear.gif" class="block" width="1" height="1" border="0" alt=" " /></td>
+            </tr>
+
+            <tr>
+              <td width="10" class="sidenavleft2"><img src="/images/newbized/clear.gif" class="block" width="1" height="1" border="0" alt=" " /></td>
+
+              <td class="sidenavbottom">
+                <p class="sidenav"><a href="http://www.bized.ac.uk/help/helphome.htm">Help</a><br />
+                 <a href="http://www.bized.ac.uk/homeinfo/sitemap.htm">Sitemap</a></p>
+              </td>
+
+              <td width="10" class="sidenavright2"><img src="/images/newbized/clear.gif" class="block" width="1" height="1" border="0" alt=" " /></td>
+            </tr>
+
+            <tr>
+              <td width="10" height="10"><img src="/images/newbized/sidenav_corner_d.gif" width="10" height="10" border="0" class="block" alt=" " /></td>
+
+              <td class="sidenavbottom" height="10"><img src="/images/newbized/sidenav_bottom.gif" width="125" height="10" border="0" class="block" alt=" " /></td>
+
+              <td width="10" height="10"><img src="/images/newbized/sidenav_corner_c.gif" width="10" height="10" border="0" class="block" alt=" " /></td>
+            </tr>
+          </table>
+        </td>
+
+        <td valign="top">
+	</td>
+	</tr>
+    </table>
+	
+</xsl:template>
+
+<!-- 
+	paints the new footer 
+-->
+<xsl:template name="vwfooter">
+ <hr width="98%" size="1" />
+        
+        <table width="100%">
+        <tr>
+        <td class="footer" align="left" width="50%"><a href="http://www.bized.ac.uk/talkback/talkhome.htm">Contact Us</a> | &#169; <a href="http://www.bized.ac.uk/copyrght.htm">1996-2002 Biz/ed</a>
+        
+       </td>
+       <td class="footer" align="right" width="50%">
+	In association with the <a href="http://www.ifs.org.uk/"><img src="http://www.bized.ac.uk/virtual/vla/images/ifs_logo.gif" border="0" align="top" alt="Institute for Fiscal Studies" /></a>
+	</td>
+	</tr>
+	</table>
+  	
+</xsl:template>
+
+
+</xsl:stylesheet> 

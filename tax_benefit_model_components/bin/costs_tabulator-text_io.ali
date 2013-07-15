@@ -1,0 +1,118 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnvnnnnnnnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U costs_tabulator.text_io%b  costs_tabulator-text_io.adb  5bf4861b NE OO PK GE
+W costs_tabulator%s	costs_tabulator.adb	costs_tabulator.ali
+W io_commons%s		io_commons.adb		io_commons.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U costs_tabulator.text_io%s  costs_tabulator-text_io.ads  93f713c7 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W costs_tabulator%s	costs_tabulator.adb	costs_tabulator.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D costs_tabulator.ads	20110825125844 6687abd8
+D costs_tabulator-text_io.ads  20110622202747 cd1d4dcb
+D costs_tabulator-text_io.adb  20110622202747 aee03d24
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D io_commons.ads	20110622204001 cb801e8f
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D tabulator_commons.ads	20110415182054 c4bdc325
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 22|24r6 30r8
+X 14 a-strbou.ads
+162V16*"="{boolean}<16|163p13> 7|41i18[48|25]
+X 17 a-strunb.ads
+166V13*"="{boolean}<9|62p9> 7|41i18
+X 19 a-textio.ads
+49K13*Text_IO 471e16 22|24w10 30r12
+52P9*File_Type(369R9) 22|33r29 23|31r29
+165U14*New_Line 23|55s7 61s10 67s7
+241U14*Put 23|51s7 53s11 57s10 59s14 63s7 65s11
+X 21 costs_tabulator.ads
+31F9 Data_Type 23|59r22 65r19
+35E9 Breakdown_Range 23|45r10 45r31 56r16 57r33
+39E9 Values_Range 23|46r10 46r28 52r16 53r41 58r19 64r16
+46k9*Costs_Tabulator 92e20 22|28r9 43r5 23|25r14 70r5
+54*7 amount{31F9} 23|59r61 65r54
+58R9*Table_Type 90e14 22|35r29 23|33r29
+84A9 Results_Row(53R9)<39E9>
+85A9 Cells_Array(84A9)<35E9>
+88a7 cells{85A9} 23|59r45
+89a7 totals{84A9} 23|65r42
+X 22 costs_tabulator-text_io.ads
+28k25 Text_IO 21|46k9 22|43l21 43e28 23|25b30 70l21 70t28
+32U14*Print 33>10 34>10 35>10 36>10 37>10 38>10 39>10 40>10 23|30b14 68l8
+. 68t13
+33p10 f{19|52P9} 23|31b10 41r10 51r12 53r16 55r17 57r15 59r19 61r20 63r12
+. 65r16 67r17
+34s10 table_name{string} 23|32b10 43r10
+35r10 table{21|58R9} 23|33b10 59r39 65r36
+36i10 table_number{positive} 23|34b10 42r10
+37s10 row_var_name{string} 23|35b10 47r10
+38s10 col_var_name{string} 23|36b10 48r10
+39i10 year{positive} 23|37b10
+40i10 sysno{positive} 23|38b10 50r10
+X 23 costs_tabulator-text_io.adb
+52*11 v{21|39E9} 53r61
+56*11 b{21|35E9} 57r56 59r52
+58*14 v{21|39E9} 59r57
+64*11 v{21|39E9} 65r50
+X 26 io_commons.ads
+27K9*IO_Commons 23|22w6 27r8 26|54e15
+35n32*budget{35E9} 23|49r10
+42U14*Write_Header 23|40s7
+X 48 text_utils.ads
+13K9*Text_Utils 23|23w6 28r8 48|107e15
+30V13*Censor_String{string} 23|53s26 57s18
+

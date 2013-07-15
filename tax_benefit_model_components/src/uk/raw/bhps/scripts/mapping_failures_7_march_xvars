@@ -1,0 +1,10 @@
+Convert_Plbornc_Type: Unmatched string |10|
+Convert_Plbornc_Type: Unmatched string |7|
+Convert_Plbornd_Type: Unmatched string |0|
+found a funny |122- s( matches (1).first .. matches (1).last ) |122|
+found a funny |131- s( matches (1).first .. matches (1).last ) |131|
+found a funny |2--- s( matches (1).first .. matches (1).last ) |2|
+found a funny |311- s( matches (1).first .. matches (1).last ) |311|
+found a funny |815- s( matches (1).first .. matches (1).last ) |815|
+found a funny |822- s( matches (1).first .. matches (1).last ) |822|
+found a funny |827- s( matches (1).first .. matches (1).last ) |827|

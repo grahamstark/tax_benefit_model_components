@@ -1,0 +1,108 @@
+--
+-- dummy just to make sure (almost!) every package here gets compiled, no matter what
+-- commented out things here need fixed or removing
+-- 
+with FRS_Enums;
+with Legal_Aid_Output_Types;
+with Model;
+with Model.Calculations;
+with Model.Calculations.Complete;
+with Model.Calculations.Legal_Aid;
+with Model.Calculations.Legal_Aid.Costs_Model;
+with Model.Calculations.Means_Tested_Benefits;
+with Model.Calculations.Non_Means_Tested_Benefits;
+with Model.Charging;
+with Model.Charging.Io;
+with Model.Equivalence_Scales;
+with Model.Household;
+with Model.Income_Measures;
+with Model.Income_Measure_Types;
+with Model.Incomes;
+with Model.Output;
+with Model.Output.Complete;
+with Model.Output.Legal_Aid;
+with Model.Output.Means_tested_benefits;
+with Model.Output.Non_means_tested_benefits;
+with Model.Parameters;
+with Model.Parameters.Complete;
+with Model.Parameters.Legal_Aid;
+with Model.Parameters.Means_tested_benefits;
+with Model.Parameters.Non_means_tested_benefits;
+-- with Model.Runner;
+with Model.Run_settings;
+with Model.Run_settings.Io;
+with Model.Uprate;
+with Conversions;
+with Conversions.FRS;
+with Data_Constants;
+with ONS_Definitions;
+
+with Base_Model_Types;
+with Colours;
+with Costs_Tabulator;
+with Costs_Tabulator.Text_Io;
+with Data_Index;
+with Financial_Functions;
+with Format_Utils;
+with Google_Chart_Generator;
+with Indirect_Tax_Utils;
+with Inequality_Generator;
+with Inequality_Generator.Utils;
+with Io_Commons;
+with Keyed_Text_Buffer;
+with Key_Value_Io;
+with Line_Extractor;
+with List_Of_Randoms;
+with Logger;
+with Maths_Functions;
+with Maths_Functions.Simple_Statistics;
+with Maths_Functions.Weights_Generator;
+with Monitor;
+with Optimiser;
+with Parameter_System;
+with Parameter_System.Iterator;
+with Parameter_System.Visitor;
+with Parameter_System.Xml;
+with Piecewise_Linear_Generator;
+-- with Poverty_Tabulator;
+with Random_Normal_Draw;
+with Statistics_Commons;
+with Tabulator;
+with Tabulator_Commons;
+with Tabulator.Text_Io;
+with Tax_Utils;
+-- with Tax_Utils_Using_Arrays;
+with Text_Buffer;
+with Text_Utils;
+with Time_Format;
+with T_Utils;
+with T_Utils.Conditional_Amount_Calculator;
+with Utils;
+with Weighting_Commons;
+with Xml_Utils;
+with Xml_Utils.Conversions;
+
+with Extra_Mime_Constants;
+with General_Chart_Constants;
+with Google_Chart_Constants;
+with Html_Header_Commons;
+-- with Html_Header_Generator;
+with Html_Utils;
+-- with Ldap_Utils;
+with Parameter_System.Input_Buffer;
+with Parameter_System.Input_Buffer.Html_Renderer;
+with Parameter_System_IO_Commons;
+with Parameter_System_Renderer_Commons;
+with Standard_Colours;
+with Time_Series_Chart_Generator;
+with Translate_Utils;
+-- with T_Utils.Google_Chart_Generator;
+with T_Utils.Standard_Chart_Generator;
+with T_Utils.Web_Io;
+with Web_Utils;
+with FRS_Enums.Templates;
+
+procedure Compile_Everything is
+begin
+   null;
+end Compile_Everything;

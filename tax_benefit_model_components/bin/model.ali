@@ -1,0 +1,346 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat2012
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnvvnnnnnnvvvnnvnnvvnvnvvnvnnvnvnnvnnvnnnvnnvnvnnnnnnvnnnnvnvvnvnnvnnnnnnnnnnnnnn
+
+U model%s		model.ads		804a4ca1 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.calendar.formatting%s  a-calfor.adb	a-calfor.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_maps%s
+W ada.containers.ordered_sets%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.numerics.generic_real_arrays%s
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.strings.unbounded.text_io%s  a-suteio.adb	a-suteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_conversion%s
+W ada.unchecked_deallocation%s
+W base_model_types%s	base_model_types.adb	base_model_types.ali  EA
+W financial_functions%s	financial_functions.adb	financial_functions.ali  AD
+W format_utils%s	format_utils.adb	format_utils.ali  EA
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.fortran%s	i-fortra.adb		i-fortra.ali
+W interfaces.fortran.blas%s  i-forbla.adb	i-forbla.ali
+W interfaces.fortran.lapack%s  i-forlap.ads	i-forlap.ali
+W key_value_io%s	key_value_io.adb	key_value_io.ali  AD
+W keyed_text_buffer%s	keyed_text_buffer.adb	keyed_text_buffer.ali
+W line_extractor%s	line_extractor.adb	line_extractor.ali
+W logger%s		logger.adb		logger.ali  EA
+W maths_functions%s	maths_functions.adb	maths_functions.ali  AD
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W optimiser%s		optimiser.adb		optimiser.ali
+W random_normal_draw%s	random_normal_draw.adb	random_normal_draw.ali
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.fat_llf%s	s-fatllf.ads		s-fatllf.ali
+W system.generic_array_operations%s  s-gearop.adb  s-gearop.ali
+W system.generic_real_blas%s
+W system.generic_real_lapack%s
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_bool%s	s-valboo.adb		s-valboo.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W system.val_lld%s	s-vallld.adb		s-vallld.ali
+W tax_utils%s		tax_utils.adb		tax_utils.ali  AD
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali  EA
+W time_format%s		time_format.adb		time_format.ali
+W utils%s		utils.adb		utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-calend.ads		20110419093130 343c83dd
+D a-calfor.ads		20110419093130 0a6f9afc
+D a-catizo.ads		20110419093130 409d7e5b
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorma.adb		20110419093131 2a91a047
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-numeri.ads		20110419093132 bb51c45a
+D a-numaux.ads		20110419093132 243fe0b7
+D a-nuflra.ads		20110419093132 49c50e0b
+D a-ngcoty.ads		20110419093132 e7845fd0
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngelfu.adb		20110419093132 d18bc0c2
+D a-ngrear.ads		20110419093132 3af397ff
+D a-ngrear.adb		20110419093132 f2c33d37
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-suteio.ads		20110419093132 26d8e9aa
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D financial_functions.ads  20110601102714 3e871fb9
+D financial_functions.adb  20110601102713 92076be0
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-regpat.ads		20110419093135 b85d88ef
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D i-fortra.ads		20110419093135 dedf9840
+D i-forbla.ads		20110419093135 72e94996
+D i-forlap.ads		20110419093135 fc33cf68
+D key_value_io.ads	20120222165140 d58a72d7
+D key_value_io.adb	20120222170328 32d55b56
+D keyed_text_buffer.ads	20120316154839 a5b8d868
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D logger.adb		20110701202319 b4a7ba23
+D maths_functions.ads	20120308135219 5e8e24f0
+D maths_functions.adb	20120308141520 85120745
+D model.ads		20120420100541 2c75568d
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D optimiser.ads		20110415182054 7c7a15fb
+D optimiser.adb		20110415182054 415e0923
+D random_normal_draw.ads  20110505104328 d7117888
+D random_normal_draw.adb  20110923150105 564ce9c8
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-conca5.ads		20110419093137 1039cea1
+D s-conca6.ads		20110419093137 c7caf514
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-fatllf.ads		20110419093137 4d5c1475
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-gearop.ads		20110419093137 1600db72
+D s-gearop.adb		20110419093137 38a0ac8f
+D s-gerebl.ads		20110419093137 578dc38e
+D s-gerebl.adb		20110419093137 893920c2
+D s-gerela.ads		20110419093137 692c845e
+D s-gerela.adb		20110419093137 59ae5999
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-imgrea.ads		20110419093137 c7a851e2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-rannum.ads		20110419093138 5eb33f0a
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valboo.ads		20110419093139 fa926c1e
+D s-valint.ads		20110419093139 48a52a3f
+D s-vallld.ads		20110419093139 4587af92
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D tax_utils.ads		20110613201228 600316b9
+D tax_utils.adb		20111018144548 51f4d08b
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120313141900 f389e87b
+D time_format.ads	20110505105611 7d3523f6
+D utils.ads		20110415182054 93874c25
+X 1 ada.ads
+16K9*Ada 19e8 76|15r6 44r31
+X 12 a-coorma.ads
+186R9 Node_Type
+187P9 Node_Access(186R9)
+X 13 a-coorma.adb
+47V13 Color{15|35E9} 18|45i19[57|85[76|48]]
+50V13 Left{12|187P9[57|85[76|48]]} 18|41i19[57|85[76|48]]
+53V13 Parent{12|187P9} 18|39i19
+56V13 Right{12|187P9} 18|43i19
+59U14 Set_Parent 18|40i19
+62U14 Set_Left 18|42i19
+65U14 Set_Right 18|44i19[57|85[76|48]]
+68U14 Set_Color 18|46i19[57|85[76|48]]
+X 26 a-numeri.ads
+16K13*Numerics 32e17 76|15r10 44r35
+X 30 a-ngelfu.ads
+19k22*Generic_Elementary_Functions 73e46 76|15w19 44r44
+X 32 a-ngrear.ads
+43A9*Real_Vector(long_float)<integer>
+44A9*Real_Matrix(long_float)<integer><integer>
+X 33 a-ngrear.adb
+68U14 Transpose[103|342] 104|409b14[74|20[76|46]]
+76V13 Length[103|42]{natural} 104|46b13[74|20[76|46]]
+83V16*"+"[103|55]{32|43A9[74|20[76|46]]} 104|121b13[74|20[76|46]]
+91V16*"+"[103|68]{32|44A9[74|20[76|46]]} 104|104b13[74|20[76|46]]
+99V16*"+"[103|84]{32|43A9[74|20[76|46]]} 104|201b13[74|20[76|46]]
+109V16*"+"[103|126]{32|44A9[74|20[76|46]]} 104|136b13[74|20[76|46]]
+119V16*"-"[103|55]{32|43A9[74|20[76|46]]} 104|121b13[74|20[76|46]]
+127V16*"-"[103|68]{32|44A9[74|20[76|46]]} 104|104b13[74|20[76|46]]
+135V16*"-"[103|84]{32|43A9[74|20[76|46]]} 104|201b13[74|20[76|46]]
+145V16*"-"[103|126]{32|44A9[74|20[76|46]]} 104|136b13[74|20[76|46]]
+155V16*"*"[103|201]{32|43A9[74|20[76|46]]} 104|306b13[74|20[76|46]]
+164V16*"*"[103|220]{32|44A9[74|20[76|46]]} 104|286b13[74|20[76|46]]
+173V16*"*"[103|165]{32|43A9[74|20[76|46]]} 104|268b13[74|20[76|46]]
+182V16*"*"[103|184]{32|44A9[74|20[76|46]]} 104|248b13[74|20[76|46]]
+191V16*"*"[103|260]{32|44A9[74|20[76|46]]} 104|389b13[74|20[76|46]]
+200V16*"/"[103|165]{32|43A9[74|20[76|46]]} 104|268b13[74|20[76|46]]
+209V16*"/"[103|184]{32|44A9[74|20[76|46]]} 104|248b13[74|20[76|46]]
+218V16*"abs"[103|55]{32|43A9[74|20[76|46]]} 104|121b13[74|20[76|46]]
+226V16*"abs"[103|68]{32|44A9[74|20[76|46]]} 104|104b13[74|20[76|46]]
+234V16*Unit_Matrix[103|377]{32|44A9[74|20[76|46]]} 104|460b13[74|20[76|46]]
+241V16*Unit_Vector[103|391]{32|43A9[74|20[76|46]]} 104|482b13[74|20[76|46]]
+X 36 a-strbou.ads
+162V16*"="{boolean}<39|163p13> 20|41i18[135|25]
+X 40 a-strunb.ads
+166V13*"="{boolean}<23|62p9> 20|41i18
+X 56 base_model_types.ads
+18K9*Base_Model_Types 134e21 76|16w6 37r8
+25F9*Real<long_float>
+27D9*Counter_Type 76|40r65 42r83
+29F12*Rate{25F9} 76|40r93 41r75 48r62
+30F12*Amount{25F9} 76|41r56 42r60 44r74 46r48 48r76
+X 57 financial_functions.ads
+38F9 Rate 76|48r56
+40F9 Amount 76|48r68
+43k9*Financial_Functions 91e24 76|17w6 48r35
+X 59 format_utils.ads
+20F9 Float_Type 76|40r79
+24D9 Counter_Type 76|40r49
+37k9*Format_Utils 95e17 76|18w6 40r35
+X 65 i-fortra.ads
+24F9*Double_Precision<long_float>
+X 66 i-forbla.ads
+59A9*Double_Precision_Vector(65|24F9)<integer>
+69A9*Double_Precision_Matrix(65|24F9)<integer><integer>
+X 68 key_value_io.ads
+11F9 Real_Type 76|42r49
+15D9 Counter_Type 76|42r69
+17k9*Key_Value_IO 155e17 76|19w6 42r35
+X 72 logger.ads
+29E9 Target_Type 76|39r37
+31k9*Logger 53e11 76|20w6 39r29
+X 74 maths_functions.ads
+14k9*Maths_Functions 89e20 76|21w6 46r31
+X 76 model.ads
+31K9*Model 59l5 59e10
+35E9*Loggable_Modules 35e155 39r52
+35n31*model_household{35E9}
+35n48*model_uprate{35E9}
+35n62*means_tested{35E9}
+35n76*non_means_tested{35E9}
+35n94*legal_aid_calcs{35E9}
+35n111*income_calcs{35E9}
+35n125*charging_model{35E9}
+35n141*misc{35E9}
+35n147*runner{35E9}
+39K12*UK_Logger[72|31] 52r8
+40K12*UK_Format_Utils[59|37] 51r8
+41K12*UK_Tax_Utils[132|43] 53r8
+42K12*UK_Key_Value_IO[68|17]
+44K12*Amount_Math[30|19] 45r8
+46K12*Maths_Funcs[74|14] 47r8
+48K12*Financial_Funcs[57|43] 49r8
+X 106 s-gerebl.adb
+62V13 To_Double_Precision[103|55]{66|59A9} 104|121b13[33|52[74|20[76|46]]]
+70V13 To_Real[103|55]{32|43A9[74|20[76|46]]} 104|121b13[33|52[74|20[76|46]]]
+78V13 To_Double_Precision[103|68]{66|69A9} 104|104b13[33|52[74|20[76|46]]]
+86V13 To_Real[103|68]{32|44A9[74|20[76|46]]} 104|104b13[33|52[74|20[76|46]]]
+X 108 s-gerela.adb
+66V13 To_Double_Precision[103|55]{66|59A9} 104|121b13[33|55[74|20[76|46]]]
+74V13 To_Real[103|55]{32|43A9[74|20[76|46]]} 104|121b13[33|55[74|20[76|46]]]
+82V13 To_Double_Precision[103|68]{66|69A9} 104|104b13[33|55[74|20[76|46]]]
+90V13 To_Real[103|68]{32|44A9[74|20[76|46]]} 104|104b13[33|55[74|20[76|46]]]
+X 132 tax_utils.ads
+37F9 Amount_Type 76|41r43
+41F9 Rate_Type 76|41r64
+43k9*Tax_Utils 76|22w6 41r32 132|167e14
+X 135 text_utils.ads
+13K9*Text_Utils 76|23w6 57r8 135|107e15
+25K12*Std_Bounded_String[36|46] 76|57r19
+

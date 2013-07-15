@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystemValues type="Integrated" >
+    <ParameterSystemValues type="ETCSys">
+    	<ParameterValue instanceName="adultCreditNoKidsSingle">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="29.20"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+    	    <ParameterValue instanceName="adultCreditNoKidsCouple">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="58.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="minimumAgeNoKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="25"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="minimumAgeKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="18"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="minimumHoursNoKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="30"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="minimumHoursKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="16"/>
+                    </Event>
+	        </History>
+            </ParameterValue>	    
+	    <ParameterValue instanceName="taperNoKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.37"/>
+                    </Event>
+	        </History>
+            </ParameterValue>  
+	    <ParameterValue instanceName="taperKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.37"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="thresholdNoKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="97.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="thresholdKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="97.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="ftHours">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="30.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="ftPremiumNoKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="ftPremiumKids">
+		<History>
+                    <Event date="2003" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="11.90"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    
+    </ParameterSystemValues>
+    <ParameterSystemValues type="ICCSys">
+        <ParameterValue instanceName="taper">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.370"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="threshold">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="97.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="familyPremium">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="10.45"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="bigFamilyPremium">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="bigFamilyMinKids">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="99999"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="highIncomeThreshold">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="961.538"/>
+                    </Event>
+	        </History>
+            </ParameterValue>    
+	    <ParameterValue instanceName="highIncomeTaper">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0666666666667"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    
+            <ParameterValue instanceName="ageLim">
+            <History>
+                <Event date="2003-04-01" enclosingEvent="budget2002">
+                    <Description>
+                        <p>Introduced April 2003</p>
+                    </Description>
+                    <Journalese>Introduced April 2003</Journalese>
+                    <Values>
+                        <OneVal index="0" val="18"/>
+                    </Values>
+                </Event>
+            </History>
+        </ParameterValue>	  
+	<ParameterValue instanceName="childCredit">
+            <History>
+                <Event date="2003-04-01" enclosingEvent="budget2002">
+                    <Description>
+                        <p>Introduced April 2003</p>
+                    </Description>
+                    <Journalese>Introduced April 2003</Journalese>
+                    <Values>
+                        <OneVal index="0" val="27.75"/>
+                    </Values>
+                </Event>
+            </History>
+        </ParameterValue>	 
+	
+        <ParameterSystemValues type="CCStyleInfo" instanceName="ccCreditInfo">
+	    <ParameterValue instanceName="numCredits"/>
+	    <ParameterValue instanceName="maxAge">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="16"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="giveToAll">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="true"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="receiptProp">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.70"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	        <ParameterValue instanceName="give100Ent">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="false"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="numCredits">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="2"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	     <ParameterValue instanceName="ageLim">
+            <History>
+                <Event date="2003-04-01" enclosingEvent="budget2002">
+                    <Description>
+                        <p>Introduced April 2003</p>
+                    </Description>
+                    <Journalese>Introduced April 2003</Journalese>
+                    <Values>
+                        <OneVal index="0" val="135.0"/>
+                        <OneVal index="1" val="200.0"/>
+                    </Values>
+                </Event>
+            </History>
+        </ParameterValue>
+     </ParameterSystemValues>
+     
+  	    <ParameterValue instanceName="assignmentUnit">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="Spouse"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="assessmentUnit">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="Joint"/>
+                    </Event>
+	        </History>
+		</ParameterValue>
+		<ParameterValue instanceName="capLim1">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="99999999999.999"/>
+                    </Event>
+	        </History>
+		</ParameterValue>
+		<ParameterValue instanceName="capLim2">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="99999999999.999"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="disregard1">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue> 
+	    <ParameterValue instanceName="disregard2">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue> 
+	    <ParameterValue instanceName="indivEarnDis">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="secondEarnDis">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="mainDis">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="0.0"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="enabled">
+		<History>
+                    <Event date="2003-04-01" enclosingEvent="budget2002">
+                        <Description>
+                            <p>Introduced April 2003</p>
+                        </Description>
+                        <Journalese>Introduced April 2003</Journalese>
+                        <OneVal val="true"/>
+                    </Event>
+	        </History>
+            </ParameterValue>
+	    <ParameterValue instanceName="inc" index="IncomesSource">
+            <History>
+               
+                <Event date="2003-04-01" enclosingEvent="budget2002">
+                    <Description>
+                        <p>Introduced April 2003</p>
+                    </Description>
+                    <Journalese>Introduced April 2003</Journalese>
+		    
+		    <Values>
+                        <OneVal index="CurrentGrossMain" val="1.0"/>
+                        <OneVal index="CurrentGrossSubsid" val="1.0"/>
+                        <OneVal index="ProfitRelatedPay" val="1.0"/>
+                        <OneVal index="GrossMainSelfEmp" val="1.0"/>
+                        <OneVal index="GrossSubsidSelfEmp" val="1.0"/>
+                        <OneVal index="Annuities" val="1.0"/>
+                        <OneVal index="PrivatePensions" val="1.0"/>
+                        <OneVal index="WarPensions" val="1.0"/>
+                        <OneVal index="MailOrdOrBabySit" val="3.0"/>
+                        <OneVal index="OtherSocialSecurity" val="1.0"/>
+                        <OneVal index="AllowNonSpouse" val="1.0"/>
+                        <OneVal index="Maintenance" val="1.0"/>
+                        <OneVal index="AllowFromAbsentSpouse" val="1.0"/>
+                        <OneVal index="Superann" val="-2.0"/>
+                        <OneVal index="SelfEmpNetLosses" val="-1.0"/>
+                        <OneVal index="WidowsPension" val="1.0"/>
+                        <OneVal index="MaternityAllowance" val="1.0"/>
+                        <OneVal index="SevereDisablement" val="1.0"/>
+                        <OneVal index="InvalidCare" val="1.0"/>
+                        <OneVal index="UnemploymentBenefit" val="1.0"/>
+                        <OneVal index="Invalidity" val="1.0"/>
+                        <OneVal index="SicknessBenefit" val="1.0"/>
+                        <OneVal index="StatutorySickPay" val="1.0"/>
+                        <OneVal index="StatePension" val="1.0"/>
+                        <OneVal index="PAYEIncomeTax" val="-1.0"/>
+                        <OneVal index="NationalInsurance" val="-1.0"/>
+                    </Values>
+		    
+                </Event>
+            </History>
+        </ParameterValue>
+</ParameterSystemValues>	    
+
+	
+   
+

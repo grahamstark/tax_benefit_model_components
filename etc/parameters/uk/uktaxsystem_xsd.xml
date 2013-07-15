@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+   xmlns="http://org.vw.parameters.jaxb">
+
+ <ParameterSystem type="UKTBSystem" name="UK Tax and Benefit System"
+    instanceName="tbsys" >
+   <ParameterSystem type="IncTaxSys" name="Income Tax"
+       instanceName="inctax">
+        <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <Description>
+            abolish income tax
+        </Description>
+        <Journalese>Hello Mum</Journalese>Journalese>
+    </Parameter>
+  </ParameterSystem>
+</ParameterSystem>
+
+
+</ParameterSet>

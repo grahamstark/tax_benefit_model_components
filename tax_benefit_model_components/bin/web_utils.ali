@@ -1,0 +1,296 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat2012
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnvnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnvvnvnnvnnnnnnnnnnnnnn
+
+U web_utils%b		web_utils.adb		3b337beb NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W templates_parser%s	templates_parser.adb	templates_parser.ali
+W templates_parser.query%s  templates_parser-query.adb  templates_parser-query.ali
+
+U web_utils%s		web_utils.ads		00694a5e EE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W aws%s			aws.ads			aws.ali
+W aws.parameters%s	aws-parameters.adb	aws-parameters.ali
+W aws.response%s	aws-response.adb	aws-response.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W templates_parser%s	templates_parser.adb	templates_parser.ali  ED
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chahan.ads		20110419093131 1d381dcd
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-cihama.ads		20110419093131 2e09bd21
+D a-cihase.ads		20110419093131 18e34e9d
+D a-coinve.ads		20110419093131 5c90b260
+D a-convec.ads		20110419093131 49c793e4
+D a-direct.ads		20110419093131 9d42e46d
+D a-envvar.ads		20110419093131 0a4572ed
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-reatim.ads		20110419093132 63f07669
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strhas.ads		20110419093132 0fca75f9
+D a-shcain.ads		20110419093132 08af52df
+D a-strmap.ads		20110419093132 9cb836fb
+D a-stmaco.ads		20110419093132 cef4434b
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-taside.ads		20110419093132 a4888134
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D aws.ads		20110419100014 6b5be055
+D aws-attachments.ads	20110419100014 ba5fe9d1
+D aws-containers.ads	20110419100014 675acf9b
+D aws-containers-memory_streams.ads  20110419100014 ea28c859
+D aws-containers-tables.ads  20110419100014 3dc2e113
+D aws-headers.ads	20110419100014 eae08740
+D aws-messages.ads	20110419100014 a0a63817
+D aws-mime.ads		20110419100014 b188039e
+D aws-net.ads		20110419100014 8f94700a
+D aws-parameters.ads	20110419100014 0f8312c2
+D aws-resources.ads	20110419100014 425d4c31
+D aws-resources-streams.ads  20110419100014 ab2ae19d
+D aws-response.ads	20110419100014 3386f480
+D aws-session.ads	20110419100014 e057bcb6
+D aws-status.ads	20110419100014 bd908bc1
+D aws-url.ads		20110419100014 f581e002
+D aws-utils.ads		20110419100014 279cf4fb
+D gnat.ads		20110419093135 fd2ad2f1
+D g-calend.ads		20110419093134 ed16288f
+D g-catiio.ads		20110419093134 b8a4f3d4
+D g-regpat.ads		20110419093135 b85d88ef
+D interfac.ads		20110419093135 f77d8799
+D i-c.ads		20110419093135 5421119b
+D i-cstrea.ads		20110419093135 1bd72c32
+D memory_streams.ads	20110419100017 e7c465d7
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-atacco.ads		20110419093136 1dc856ad
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-carun8.ads		20110419093137 da3bf6cd
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-conca5.ads		20110419093137 1039cea1
+D s-conca6.ads		20110419093137 c7caf514
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-linux.ads		20110419093137 47911ab1
+D s-multip.ads		20110419093137 38ac9f73
+D s-osinte.ads		20110419093137 6e2d2e09
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stausa.ads		20110419093138 017a0a05
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-string.ads		20110419093138 46b01415
+D s-ststop.ads		20110419093139 ee472be4
+D s-tasinf.ads		20110419093139 21316953
+D s-taspri.ads		20110419093139 af44aca8
+D s-taprop.ads		20110419093139 07f79e46
+D s-taskin.ads		20110419093139 b2eaee08
+D s-taprob.ads		20110419093139 502249e3
+D s-tpoben.ads		20110419093139 e8374469
+D s-tassta.ads		20110419093139 e88ef99e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valint.ads		20110419093139 48a52a3f
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D templates_parser.ads	20110419100012 f71c2abd
+D templates_parser.adb	20110419100012 4a3c5ebf
+D templates_parser-cached_files.adb  20110419100012 2809b585 templates_parser.cached_files
+D templates_parser-configuration__aws.ads  20110419100017 3c15dad5
+D templates_parser-data.adb  20110419100012 34b4c43c templates_parser.data
+D templates_parser-definitions.adb  20110419100012 c20aa6ba templates_parser.definitions
+D templates_parser-expr.adb  20110419100012 98ba692d templates_parser.expr
+D templates_parser-filter.adb  20110419100012 61207aed templates_parser.filter
+D templates_parser-input.ads  20110419100012 a3934732
+D templates_parser-macro.adb  20110419100012 71d55c9e templates_parser.macro
+D templates_parser-print_tree.adb  20110419100012 0f6b15a7 templates_parser.print_tree
+D templates_parser-query.ads  20110419100012 d3ae967d
+D templates_parser-simplifier.adb  20110419100012 59b7f7f5 templates_parser.simplifier
+D templates_parser-utils.ads  20110419100012 e4b5594f
+D templates_parser_tasking.ads  20110419100012 4c0209f0
+D text_utils.ads	20120313141900 f389e87b
+D web_utils.ads		20120531110303 0768ba1f
+D web_utils.adb		20120411164234 57c621f2
+D zlib.ads		20110419100017 03de6427
+X 1 ada.ads
+16K9*Ada 19e8 121|17r6 26r8 122|18r6 19r6 20r6 29r14 77r11 107r11 129r11
+. 136r12
+X 3 a-charac.ads
+16K13*Characters 18e19 122|18r10 29r18
+X 4 a-chahan.ads
+36K24*Handling 150e28 122|18w21 29r29
+66V13*To_Lower{string} 122|29s38
+X 6 a-contai.ads
+20I9*Count_Type<integer>
+X 12 a-convec.ads
+53R9*Vector
+85V13*Length{6|20I9} 122|46s55[120|82]
+101V13*Element{29|79R9} 122|56s46[120|82] 57s44[120|82]
+X 13 a-direct.ads
+76K13*Directories 487e20 122|19w10
+X 21 a-string.ads
+16K13*Strings 35e16 121|17r10 26r12 122|77r15 129r15 136r16
+X 22 a-strbou.ads
+162V16*"="{boolean}<28|163p13> 12|41i18[120|25]
+X 29 a-strunb.ads
+76K21*Unbounded 489e26 121|17w18 26r20 122|77r23 129r23 136r24
+79R9*Unbounded_String 473e14 121|32r30 39r22 40r44 43r14 44r62 56r14 63r39
+. 122|27r30 41r22 42r44 45r14 56r21 57r19 79r11 90r14 98r14 99r62 128r38
+. 138r12
+94V13*To_Unbounded_String{79R9} 122|132s14
+100V13*To_String{string} 122|30s10 145s14
+119V13*"&"{79R9} 122|62s79 64s70
+123V13*"&"{79R9} 122|50s23 52s20 52s31 60s26 60s40 62s29 62s57 62s72 62s86
+. 62s95 64s29 64s77 64s89 66s26 66s41 69s20 69s36 101s46 141s17 141s27 141s33
+. 141s47 142s16 142s54 142s68 143s51 143s58
+166V13*"="{boolean}<16|62p9> 12|41i18 122|61s20
+X 32 a-textio.ads
+49K13*Text_IO 471e16 122|20w10 107r15
+166U14*New_Line 122|114s7
+242U14*Put 122|109s7 111s10
+X 35 aws.ads
+28K9*AWS 39e8 121|18r6 19r6 53r42 58r42 61r16 65r33 122|76r42 78r11 83r17
+. 85r17 92r42 126r16 130r11 135r33 140r21 142r17 143r13
+X 39 aws-containers-tables.ads
+52V13*Count{natural} 122|140s36
+69V13*Get{string} 122|132s35
+76V13*Get_Name{string} 122|142s32
+81V13*Get_Value{string} 122|143s28
+X 44 aws-parameters.ads
+32K13*Parameters 53e19 121|18w10 61r20 65r37 122|78r15 126r20 130r15 135r37
+. 140r25 142r21 143r17
+34R9*List<39|38R9> 51e14 121|61r31 65r48 122|126r31 135r48
+X 47 aws-response.ads
+46K13*Response 411e17 121|19w10 53r46 58r46 122|76r46 83r21 85r21 92r46
+51R9*Data 402e14 121|53r55 58r55 122|76r55 92r55
+103V13*Build{51R9} 122|83s30 85s30
+X 105 templates_parser.ads
+41K9*Templates_Parser 604e21 121|20w6 44r22 48r22 52r22 57r22 67r34 68r39
+. 122|21r6 75r22 81r12 91r22 99r22 101r14 104r34 105r11 106r11 120r22 122r14
+129R9*Association 552e14 121|67r51 122|104r51
+133n30*Std{133E9} 122|110r26
+178V13*Get{string} 122|111s30
+194R9*Translate_Set 587e14 121|44r39 48r39 52r39 57r39 122|75r39 91r39 99r39
+. 120r39
+247U22 Action 121|68r79
+248u14*For_Every_Association 121|68r56
+434V13*Parse{string} 122|122s31
+444V13*Parse{29|79R9} 122|81s29 101s31
+X 116 templates_parser-query.ads
+28K26*Query 47e27 122|21w23 106r28
+30V13*Kind{105|133E9} 122|110s11
+34V13*Variable{string} 122|109s25
+X 120 text_utils.ads
+13K9*Text_Utils 107e15 121|21w6 25r8 122|25r8 31r13 137r12
+21a4*LINE_BREAK{string} 122|52r33 60r42 62r97 64r91 66r43 69r38 143r60
+30V13*Censor_String{string} 122|50s25
+31V13*Censor_String{29|79R9} 122|31s24
+48V13*TS=48:72{string} 122|58s71 94s32 101s38
+49V13*TuS=49:73{29|79R9} 122|48s15
+82K12*Unbounded_String_Vector_Package[12|43] 122|44r28
+84R12*Unbounded_String_List{12|53R9[82]} 121|37r22 38r22 122|39r22 40r22
+X 121 web_utils.ads
+23K9*Web_Utils 71l5 71e14 122|23b14 148l5 148t14
+28a4*GAIN_STRING{string}
+29a4*LOSE_STRING{string}
+30a4*NO_CHANGE_STRING{string}
+32V13*To_Dir_Name{string} 32>26 122|27b13 34l8 34t19
+32r26 u{29|79R9} 122|27b26 31r39
+34V13*Make_Menu{29|79R9} 35>7 36>7 37>7 38>7 39>7 40>7 122|36b13 71l8 71t17
+35s7 root{string} 122|37b7 58r39
+36s7 item_name{string} 122|38b7 58r53
+37r7 names{120|84R12} 122|39b7 46r63 56r55
+38r7 ids{120|84R12} 122|40b7 57r53
+39r7 this_id{29|79R9} 122|41b7 61r23
+40i7 level{natural} 122|42b7 49r11 50r56
+42V13*Parse_Template{29|79R9} 43>7 44>7 122|97b13 102l8 102t22
+43r7 page{29|79R9} 122|98b7 101r41
+44r7 translations{105|194R9} 122|99b7 101r59
+46V13*Parse_Template{string} 47>7 48>7 122|118b13 123l8 123t22
+47s7 page{string} 122|119b7 122r38
+48r7 translations{105|194R9} 122|120b7 122r55
+50V13*Build_Input_Page{47|51R9} 51>7 52>7 53>7 122|73b13 87l8 87t24 94s14
+51s7 page{string} 122|74b7 81r36
+52r7 translations{105|194R9} 122|75b7 81r53
+53b7 is_xml{boolean} 122|76b7 82r11
+55V13*Build_Input_Page{47|51R9} 56>7 57>7 58>7 122|89b13 95l8 95t24
+56r7 page{29|79R9} 122|90b7 94r36
+57r7 translations{105|194R9} 122|91b7 94r44
+58b7 is_xml{boolean} 122|92b7 94r58
+60V13*Get_Param{29|79R9} 61>7 62>7 63>7 122|125b13 133l8 133t17
+61r7 params{44|34R9} 122|126b7 132r40
+62s7 name{string} 122|127b7 132r48
+63i7 which{positive} 122|128b7 132r54
+65V13*To_String{string} 65>24 122|135b13 146l8 146t17
+65r24 params{44|34R9} 122|135b24 140r43 142r42 143r39
+67U14*Print_Assoc 67>27 67=64 68r89 122|104b14 115l8 115t19
+67r27 item{105|129R9} 122|104b27 109r35 110r17 111r35
+67b64 quit{boolean} 122|104b64 113m8
+68U14*Dump_Translations[105|248] 106|1884b14
+X 122 web_utils.adb
+44K15 usvp=44:28 46r50 56r41 57r39
+45r7 outs{29|79R9} 48m7 50m10 50r18 52m7 52r15 60m13 60r21 62m16 62r24 64m16
+. 64r24 66m13 66r21 69m7 69r15 70r14
+46i7 NUM_ITEMS{positive} 54r21
+53l7 Each_Element 68l16 68e28
+54i11 i{integer} 56r62 57r58
+56r14 name{29|79R9} 62r81 64r72
+57r14 id{29|79R9} 58r74 61r17
+58a14 relative_dir=58:69{string} 62r59
+79r7 s{29|79R9} 81m7 83r51 85r50
+138r8 s{29|79R9} 141m10 141r15 145r25
+140i11 i{integer} 141r28 142r50 143r47
+

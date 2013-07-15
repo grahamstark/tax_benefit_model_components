@@ -1,0 +1,115 @@
+V "GNAT Lib v2011"
+M P W=b
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnvnnnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U append_to_file%b	append_to_file.adb	0bb50069 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-comlin.ads		20110419093131 e0accaa5
+D a-contai.ads		20110419093131 61e5e089
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-direct.ads		20110419093131 9d42e46d
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D append_to_file.adb	20111020165952 822ee7cb
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120209204134 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 24|1r6 1r22 3r6 4r6 4r33 5r6 5r27 15r15 18r11
+X 5 a-comlin.ads
+38K13*Command_Line 139e21 24|5w10 5r31
+41V13*Argument_Count{natural} 24|13s8
+48V13*Argument{string} 24|15s39 18s35 19s46 22s43 24s31
+65I9*Exit_Status<integer> 24|11r13
+70U14*Set_Exit_Status 24|30s4
+X 10 a-direct.ads
+76K13*Directories 487e20 24|3w10 15r19 18r15
+295V13*Exists{boolean} 24|15s31 18s27
+X 16 a-string.ads
+16K13*Strings 35e16 24|4r10 4r37
+X 17 a-strbou.ads
+162V16*"="{boolean}<19|163p13> 9|41i18[47|25]
+X 20 a-strunb.ads
+76K21*Unbounded 489e26 24|4w18 4r45
+79R9*Unbounded_String 473e14 24|8r22 9r18
+84V13*Length{natural} 24|21s11
+123V13*"&"{79R9} 24|23s37 23s50
+166V13*"="{boolean}<12|62p9> 9|41i18
+X 22 a-textio.ads
+49K13*Text_IO 471e16 24|1w10 1r26
+52P9*File_Type(369R9) 24|10r8
+53n32*Out_File{53E9} 24|24r21
+86U14*Create 24|24s10
+98U14*Close 24|27s10
+259U14*Put_Line 24|25s10
+263U14*Put_Line 24|14s7 16s7
+X 24 append_to_file.adb
+7U11*Append_To_File 7b11 31l5 31t19
+8r4 checkfile_lines{20|79R9} 19m10 21r19
+9r4 outputlines{20|79R9} 22m10 23m10 23r25 25r27
+10p4 f{22|52P9} 24m18 24r18 25r20 27m17 27r17
+11i4 status{5|65I9} 26m10 30r21
+X 47 text_utils.ads
+13K9*Text_Utils 24|2w6 2r22 47|107e15
+21a4*LINE_BREAK{string} 24|23r39
+48V13*TS=48:72{string} 24|25s23
+66V13*Read_Whole_File{20|79R9} 24|19s29 22s26
+

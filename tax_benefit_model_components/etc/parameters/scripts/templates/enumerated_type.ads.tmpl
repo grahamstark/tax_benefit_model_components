@@ -1,0 +1,13 @@
+   
+   type $etype is ( $e_members );
+   
+   package ${etype}_Package is new T_Utils( T=>$etype, Amount_Type=>Money, Rate_Type=>Rate ); 
+   subtype ${etype}_Set is ${etype}_Package.Set;
+   
+#for $r in $ranges:
+   $r;
+#end for;   
+   
+   function To_String( t : $etype ) return String;
+   function From_Value( i : Integer ) return $etype;
+   function To_Value( t : $etype ) return Integer;

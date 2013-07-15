@@ -1,0 +1,46 @@
+
+<History>
+
+  <Event date='1979-08-13' id='budget1979'>
+	
+	<Description>
+		<p>The first Conservative Budget after the 1979 General Election</p>
+		<ul>
+		   <li>Income tax: Basic rate cut from 33% to 30%.</li> 
+		   <li>Top rate cut from 83% to 60% on earned income and from 98% to 75
+		       on unearned income.
+		   </li>
+		   <li> 
+		     VAT: Two-tier rates of 8% and 12.5% replaced by single 15% rate. 
+		   </li>
+		   <li>
+		    Excise duties: Alcohol and tobacco duties reduced; petrol duty
+		    increased.
+		   </li>
+		   <li> 
+		    Company taxes: Petroleum revenue tax rate increased from 45% to 60%.
+		   </li>
+		</ul>
+	</Description>
+	<Journalese>
+		1979 Budget, Geoffrey Howe 
+	</Journalese>
+   </Event>
+   <Event date='1980-04-01' id='budget1980'>
+	<Description>
+	<p>1980 Budget</p>
+	<ul>
+	<li>Income tax: Reduced rate of 25% abolished.</li>
+	<li>National Insurance: Employee rate increased from 6.5% to 6.75% (contracted in).</li>
+	<li>Employer rate increased from 10% to 10.2% (contracted in).</li>
+	<li>Capital taxes: Stamp duty threshold on property increased from &#163;15,000 to &#163;20,000.</li>
+	<li>Capital transfer tax: threshold doubled from &#163;25,000 to &#163;50,000.</li>
+	<li>Company taxes:       Petroleum revenue tax rate increased from 60% to 70%.</li>
+	</ul>
+        </Description>
+        <Journalese>
+		1980 Budget, Geoffrey Howe 
+	</Journalese>
+  </Event>
+</History>
+

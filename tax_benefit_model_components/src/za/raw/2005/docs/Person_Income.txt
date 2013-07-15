@@ -1,0 +1,12 @@
+﻿
+
+
+DATA FILE:  PERSON_INCOME
+
+Question		Description           				     Variable name    	   Start position   Length
+    
+Identification		Unique number 	      					UqNo 		         	     1            14
+Identification		Person number	      					PersonNo	         	   15              2
+Code               	COICOP code                                                                   Coicop      		   17              8   
+Income                       Regular income (Question 19.1 and 19.2)                         Value                                 25              7    
+Weight                     Record weight                                                             Weight                           32           12.6

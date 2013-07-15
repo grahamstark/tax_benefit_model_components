@@ -1,0 +1,42 @@
+-- From : http://repositories.jacob-sparre.dk
+-- example abstract project
+--
+abstract project Ada_2012 is
+   for Source_Dirs use ();
+
+   package Compiler is
+      for Default_Switches ("Ada")
+        use ("-fstack-check", --  Generate stack checking code (part of Ada)
+             "-gnata",        --  Enable assertions            (part of Ada)
+             "-gnatE",        --  Dynamic elaboration checking (part of Ada)
+             "-gnato",        --  Overflow checking            (part of Ada)
+             "-gnatf",                      --  Full, verbose error messages
+             "-gnatwa",                     --  All optional warnings
+             "-gnatVa",                     --  All validity checks
+             "-gnaty3abcdefhiklmnoOprstux", --  Style checks
+             "-gnatwe",                     --  Treat warnings as errors
+             "-gnat2012",                   --  Use Ada 2012
+             "-Wall",
+             "-O2",                         --  Optimise (level 2/3)
+             "-g");
+   end Compiler;
+end Ada_2012;
+
+with "ada_2005";
+
+
+--
+-- usage
+--
+project ALSA_Binding is
+   for Main use ("test_alsa_binding",
+                 "microphone_to_wav",
+                 "record_stereo_wav",
+                 "play_mono");
+
+   package Compiler renames Ada_2005.Compiler;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-lasound");
+   end Linker;
+end ALSA_Binding;

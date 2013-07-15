@@ -1,0 +1,425 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat2012
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnnnnnnvvvnnnnnnnnvnnvnnnnnnvnnnnnnnnnnnnnvnnvnnnnvnnnnnnnnnnnnnn
+
+U parameter_system%b	parameter_system.adb	8411bd06 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+U parameter_system%s	parameter_system.ads	dfa718d1 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.vectors%s
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D parameter_system.ads	20120504094203 5a78b78b
+D parameter_system.adb	20120416185825 9018f97b
+D system.ads		20110419093140 23e1f70b
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D text_utils.ads	20120313141900 f389e87b
+X 1 ada.ads
+16K9*Ada 19e8 26|1r6 2r6 19r8 110r41 129r46 153r43 163r48 178r58 27|1r6 3r6
+. 4r6 5r6 6r6 9r8 86r11 103r11 125r14 145r11 146r11 224r8
+X 4 a-contai.ads
+16K13*Containers 24e19 26|2r10 110r45 129r50 153r47 163r52 178r62 27|3w10
+20I9*Count_Type<integer>
+X 7 a-cohama.ads
+50R9*Map
+X 8 a-convec.ads
+38I9 Index_Type 26|112r7 131r7 155r7 165r7 180r7
+39+9 Element_Type 26|111r7 130r7 154r7 164r7 179r7
+43k24*Vectors 378e27 26|2w21 110r56 129r61 153r58 163r63 178r73
+47I12 Extended_Index{integer} 27|313r29[26|129] 313r47[26|129] 314r29[26|129]
+53R9 Vector 26|114r56[110] 133r58[129] 157r60[153] 167r70[163] 182r90[178]
+85V13 Length{4|20I9} 27|15s78[26|163] 33s80[26|163] 34s64[48|82] 65s38[48|82]
+. 88s65[26|153] 105s65[26|153] 129s58[26|110] 152s57[48|82] 163s62[26|163]
+. 187s59[26|163] 265s40[26|129] 313s72[26|129]
+93U14 Clear 27|277s16[26|129]
+101V13 Element{26|161P9} 27|19s36[26|163] 20s54[26|163] 41s39[48|82] 43s53[26|163]
+. 55s57[26|163] 69s28[48|82] 93s40[26|153] 109s45[26|153] 132s34[26|110]
+. 157s40[48|82] 164s49[26|163] 188s46[26|163] 268s23[26|129] 319s23[26|129]
+. 324s27[26|129] 334s27[26|129]
+107U14 Replace_Element 27|111s38[26|153] 307s19[26|129] 331s19[26|129] 336s19[26|129]
+193U14*Append 27|56s21[48|82]
+197U14*Append 27|17s7[48|82] 115s32[26|153] 305s19[26|129]
+213U14*Delete 27|162s21[48|82] 284s19[26|129]
+X 10 a-except.ads
+55K13*Exceptions 376e19 27|4w10 86r15 103r15 125r18 145r15
+95U14*Raise_Exception 27|98s10 137s10 211s10
+X 15 a-string.ads
+16K13*Strings 35e16 26|1r10 19r12 27|1r10 6r10 146r15 224r12
+X 16 a-strbou.ads
+162V16*"="{boolean}<18|163p13> 8|41i18[48|25]
+X 17 a-strmap.ads
+38K21*Maps 412e21 27|6w18 224r20
+X 19 a-strunb.ads
+76K21*Unbounded 489e26 26|1w18 19r20 27|1w18 146r23
+79R9*Unbounded_String 473e14 26|28r16 31r49 80r31 98r23 99r23 104r23 105r29
+. 119r22 136r16 137r16 170r23 172r23 173r29 185r14 186r14 188r23 214r35 214r105
+. 27|35r29 62r35 62r105 66r13 90r27 128r29 175r75 218r21 223r33
+82r4*Null_Unbounded_String{79R9} 26|84r68 98r43 99r43 104r43 105r49 119r42
+. 122r50 136r36 137r36 170r43 172r43 173r49 185r34 186r34 188r43 27|19r72
+. 235r53 239r52 244r49 250r48
+94V13*To_Unbounded_String{79R9} 27|90s47 128s49 208s28 218s41 297s18 300s30
+100V13*To_String{string} 27|182s37 182s69 226s31
+119V13*"&"{79R9} 27|69s21
+123V13*"&"{79R9} 27|66s40 71s21 74s29
+127V13*"&"{79R9} 27|74s23
+166V13*"="{boolean}<11|62p9> 8|41i18 27|19r69 44s46 94s22 110s22 133s33 157s33
+. 183s24 235r50 239r49 244r46 250r45
+X 21 a-textio.ads
+49K13*Text_IO 471e16 27|5w10 9r12
+263U14*Put_Line 27|182s10
+X 26 parameter_system.ads
+9F9 Float_Type 21r29 21r43 67r31 70r31 70r45 71r31 71r45
+13D9 Counter_Type
+15E9 Languages 31r34 95r18 95r31 27|233r18 233r31 243r16 248r16
+17k9*Parameter_System 9z9 13z9 15z9 222l5 222e21 27|8b14 342l5 342t21
+21*4*MAX_SAFE_REAL{9F9}
+23X4*Param_Exception 27|98r27 137r27 211r27
+25U14*Set_Delimiter 25>29 27|77b14 81l8 81t21
+25e29 del{character} 27|77b29 79r20 80r27
+27R9*Text_Block 29e14
+28r9 text{19|79R9}
+31A9*Language_Texts(19|79R9)<15E9> 57r60 122r22
+33E9*Uprate_Kind 33e69 66r31
+33n26*standard_uprate{33E9}
+33n43*dont_uprate{33E9} 66r46
+33n56*rooker_wise{33E9}
+34E9*Display_Kind 34e76 68r31
+34n27*hidden{34E9} 27|260r39
+34n35*normal{34E9} 68r47
+34n43*password{34E9}
+34n53*label_only{34E9}
+34n65*read_only{34E9}
+35E9*Access_Level_Kind 35e47 78r31
+35n32*normal{35E9} 78r52
+35n40*admin{35E9}
+36E9*Check_Kind 36e49 69r31
+36n25*dont_check{36E9}
+36n37*warn{36E9}
+36n43*halt{36E9} 69r45
+40E9*Logical_Kind 42e44 102r23 187r23
+40n27*any_kind{40E9} 102r43 187r43
+40n37*rate{40E9}
+40n43*tax_allowance{40E9}
+40n58*tax_band{40E9}
+41n27*benefit{40E9}
+41n36*age_limit{40E9}
+41n47*quickies{40E9}
+41n57*poverty_line{40E9}
+42n27*rates_and_bands{40E9}
+43E9*Data_Kind 43e118 103r23
+43n24*real_type{43E9} 103r43
+43n35*integer_type{43E9}
+43n49*enumerated_type{43E9}
+43n66*boolean_type{43E9}
+43n80*string_type{43E9}
+43n93*date_type{43E9}
+43n104*decimal_type{43E9}
+44E9*Units_Kind 55e18 101r23
+45n9*timeless{44E9}
+46n9*day{44E9}
+47n9*week{44E9}
+48n9*month{44E9}
+49n9*year{44E9}
+50n9*percent{44E9}
+51n9*level{44E9}
+52n9*counts{44E9}
+53n9*money{44E9}
+54n9*rate{44E9}
+55n9*no_unit{44E9} 101r43
+56E9*Description_Kind 56e72 57r38 94r15 27|232r15 238r16 249r19
+56n31*tooltip{56E9}
+56n40*journalese{56E9} 94r35 27|232r35
+56n52*description{56E9}
+56n65*label{56E9}
+57A9*Descriptions_Array(31A9)<56E9> 84r22
+58E9*Index_Kind 58e75 100r23 171r23
+58n25*none{58E9} 100r43 171r43
+58n31*integer_type{58E9}
+58n45*enumerated_type{58E9}
+58n62*string_type{58E9}
+59E9*Collection_Kind 59e56 106r25 174r25
+59n30*set{59E9}
+59n35*map{59E9}
+59n40*list{59E9}
+59n46*singular{59E9} 106r44 174r44
+61R9*Edit_Info_Rec 81e14 85r22
+62b7 enabled{boolean}
+63b7 sums_to_100{boolean}
+64b7 level_change_possible{boolean}
+65b7 is_exogenous{boolean}
+66e7 uprate{33E9}
+67*7 next{9F9}
+68e7 display{34E9} 27|260r29
+69e7 check{36E9}
+70*7 min{9F9}
+71*7 max{9F9}
+72i7 prec{natural}
+73i7 length{natural}
+74b7 as_array{boolean}
+75b7 topset{boolean}
+76b7 order{boolean}
+77b7 treat_As_Percentage{boolean}
+78e7 access_level{35E9}
+79r7 extras{48|103R12}
+80r7 onchange{19|79R9}
+83R9*Describable 87e14 88p13 88r31 90p13 90r31 92p13 93r14 97r30 169r47 184r37
+. 27|217r31 231r14 258r31
+84a7 descriptions{57A9} 27|235r16 236r38 239r19 240r41 244r19 245r41 250r22
+. 251r44
+85r7 edit_info{61R9} 27|260r19
+86r7 extras{48|103R12} 27|220r35
+88V13*Get_Extra{string} 88>24 88>44 27|217b13 221l8 221t17
+88r24 this{83R9} 27|217b24 220r30
+88s44 key{string} 27|217b44 218r62 220r43
+90V13*Is_Hidden{boolean} 90>24 27|258b13 261l8 261t17
+90r24 this{83R9} 27|258b24 260r14
+92V13*Description{string} 93>7 94>7 95>7 27|230b13 256l8 256t19
+93r7 this{83R9} 27|231b7 235r11 236r33 239r14 240r36 244r14 245r36 250r17
+. 251r39
+94e7 which{56E9} 27|232b7 235r30 236r52 244r33 245r55
+95*7 language{15E9} 27|233b7 235r39 236r61 239r38 240r60
+97R9*Parameter_Rec<83R9> 88p13 90p13 92p13 108e14 111r23 204r92 27|124r42
+. 127r14
+98r7 name{19|79R9}
+99r7 instance_name{19|79R9} 27|133r19
+100e7 index_type{58E9}
+101e7 units{44E9}
+102e7 logical_type{40E9}
+103e7 data_type{43E9}
+104r7 enum_type_ref{19|79R9}
+105r7 index_enum_type_ref{19|79R9}
+106e7 collection_type{59E9}
+107i7 maximum_size{natural}
+110K12*Parameter_Rec_Package[8|43] 114r34 27|126r14
+114R12*Parameter_Rec_List{8|53R9[110]} 191r20
+118R9*Enum_Value_Rec 123e14 130r23 27|296r14 316r29
+119r9 name{19|79R9} 27|297m10
+120i9 value{integer} 27|268r36 298m10 325r19
+121b9 is_default{boolean} 27|299m10 319r36 326m18 329m18 335m15
+122a9 text{31A9} 27|300m10
+129K12*Enumerated_Element_Package[8|43] 133r31 27|264r11 312r11
+133R12*Enum_Value_List{8|53R9[129]} 138r16
+135R9*Enumerated_Type_Rec 139e14 141p13 141r31 142p14 142r46 143p14 143r41
+. 144p14 144r45 145p14 146r18 154r23 208r81 209r76 27|85r76 89r14 102r81
+. 106r19 263r31 275r45 280r41 289r18 311r46
+136r7 id{19|79R9} 27|94r19 110r19 110r31
+137r7 name{19|79R9}
+138r7 values{133R12} 27|265r33 268r16 277m9 284m12 305m12 307m12 313r65 319r16
+. 324r20 331m12 334r20 336m12
+141V13*Pos_Of_Value{natural} 141>27 141>52 27|263b13 273l8 273t20 281s24
+. 295s24
+141r27 e{135R9} 27|263b27 265r31 268r14
+141i52 which{integer} 27|263b52 268r44
+142U14*Set_Default_Element 142=35 142>67 27|311b14 338l8 338t27
+142r35 e{135R9} 27|311b35 313r63 319r14 324r18 331m10 331r10 334r18 336m10
+. 336r10
+142i67 which{integer} 27|311b67 325r27
+143U14*Delete_Element 143=30 143>62 27|280b14 286l8 286t22
+143r30 e{135R9} 27|280b30 281r22 284m10 284r10
+143i62 which{integer} 27|280b62 281r38
+144U14*Clear_All_Elements 144=34 27|275b14 278l8 278t26
+144r34 e{135R9} 27|275b34 277m7 277r7
+145U14*Add_Element 146=7 147>7 148>7 149>7 150>7 151>7 27|288b14 309l8 309t19
+146r7 e{135R9} 27|289b7 295r22 305m10 305r10 307m10 307r10
+147i7 after{integer} 27|290b7 295r38
+148s7 name{string} 27|291b7 297r39
+149i7 value{integer} 27|292b7 298r19
+150b7 is_default{boolean} 27|293b7 299r24
+151s7 default_text{string} 27|294b7 300r51
+153K12*Enumerated_Type_Package[8|43] 157r36 27|87r11 104r11
+157R12*Enumerated_Type_List{8|53R9[153]} 192r26
+159R9*Parameter_System_Rec 161r46 184c9 199r14 201r48 204r38 208r55 209r33
+. 212r39 213r43 27|11r39 27r13 36r29 85r33 102r55 123r17 143r25 143r103 148r44
+. 151r18 175r45 177r19 198r14
+161P9*Parameter_System_Rec_A(159R9) 164r23
+163K12*Parameter_System_Rec_Package[8|43] 167r41 27|14r8 31r9 150r14 176r14
+167R12*Parameter_System_Rec_List{8|53R9[163]} 190r27
+169R9*Parameter_System_Reference_Rec<83R9> 88p13 90p13 92p13 176e14 179r23
+170r7 instance_name{19|79R9}
+171e7 index_type{58E9}
+172r7 sys_type{19|79R9}
+173r7 index_enum_type_ref{19|79R9}
+174e7 collection_type{59E9}
+175i7 maximum_size{natural}
+178K12*Parameter_System_Reference_Rec_Package[8|43] 182r51
+182R12*Parameter_System_Reference_Rec_List{8|53R9[178]} 193r37
+184R9*Parameter_System_Rec<83R9> 88p13 90p13 92p13 194e14 198p13 212p14 213p14
+185r7 name{19|79R9} 27|182r85 183r19
+186r7 id{19|79R9}
+187e7 logical_type{40E9}
+188r7 instance_name{19|79R9} 27|17r25 19r55 44r32 157r19
+189b7 enabled{boolean}
+190r7 parameter_systems{167R12} 27|15r60 19r18 20r36 33r62 43r35 55r39 163r44
+. 164r31 187r41 188r28
+191r7 parameters{114R12} 27|129r47 132r23
+192r7 enumerated_types{157R12} 27|88r48 93r23 105r48 109r28 111m21 115m15
+193r7 parameter_system_references{182R12}
+196E9*Search_Type 196e44 201r16 27|143r71
+196n26*by_path{196E9} 201r31 27|143r86 201r20
+196n35*by_name{196E9}
+198V13*Get{184R9} 199>7 200>7 201>7 27|143b13 215l8 215t11
+199r7 this{184R9} 27|143b18 198r38
+200s7 path{string} 27|143b47 203r55 208r48 212r59
+201e7 search{196E9} 27|143b62 201r11
+203K12*Parameter_Search 205l8 205e24 27|120b17 141l8 141t24
+204V16 Get_Parameter{97R9} 204>31 204>60 27|122b16 139l11 139t24
+204r31 this{184R9} 27|123b10 129r42 132r18
+204s60 instance_name{string} 27|124b10 128r70 138r56
+207K12*Enum_Search 210l8 210e19 27|83b17 118l8 118t19
+208U17 Replace_Or_Insert_Enum 208=41 208>77 27|102b17 116l12 116t34
+208r41 this{184R9} 27|102b41 105r43 109r23 111m16 111r16 115m10 115r10
+208r77 e{135R9} 27|102b77 110r17 111r58 115r40
+209V16 Get_Enum{135R9} 209>26 209>55 27|85b16 100l12 100t20
+209r26 this{184R9} 27|85b26 88r43 93r18
+209s55 id{string} 27|85b55 90r68 99r60
+212U14*Make_Path_To_Left 212>33 212=61 27|11b14 20s13 24l8 24t25 55s16
+212r33 sys{184R9} 27|11b33 15r56 17r21 19r14 20r32
+212r61 path{48|84R12} 27|11b61 17m15 20m74
+213U14*Complete_Path_To_Left 213>37 213=65 213=113 27|26b14 45s19 60l9 60t30
+213r37 sys{184R9} 27|27b7 33r58 43r31 55r35
+213r65 path{48|84R12} 27|28b7 34r59 41r34 47m22 56m16 56r16
+213i113 depth{natural} 27|29b7 39m10 39r19 40r29 41r48 48m22
+214V13*Path_To_URL{19|79R9} 214>26 214>53 27|62b13 75l8 75t19
+214r26 prefix{19|79R9} 27|62b26 66r33
+214r53 path{48|84R12} 27|62b53 65r33 69r23
+219e4 delimiter{character} 27|79m7 203r61
+220a4 delimiter_str{string} 27|80m7
+X 27 parameter_system.adb
+15i10 num_subsystems{natural} 18r23
+18i11 sno{integer} 19r45 20r63
+33i9 num_subsystems{natural} 38r11 42r31
+34i9 path_length{natural} 40r14 40r43
+35r9 this_element_name{19|79R9} 41m13 44r48
+36r9 current_sys{26|184R9} 43m16 44r20 46r22
+42i17 sysno{integer} 43r62
+53r16 path_to_left{48|84R12} 55m75 55r75 56r29
+65i7 n{natural} 68r21
+66r7 url{19|79R9} 69m10 69r17 71m10 71r17 74r25
+68i11 i{integer} 69r37
+88i10 n{natural} 92r24
+89r10 e{26|135R9} 93m13 94r17 95r23
+90r10 ub_id{19|79R9} 94r24
+92i14 i{integer} 93r49
+105i10 n{natural} 108r24
+106r10 this_e{26|135R9} 109m13 110r24
+108i14 i{integer} 109r54 111r55
+127r10 p{26|97R9} 132m13 133r17 134r23
+128r10 ub_name{19|79R9} 133r35
+129i10 n{natural} 131r26
+131i14 pno{integer} 132r43
+148U17 Get_By_Path 148b17 148=30 148=66 148=114 165s19 173l11 173t22 205s13
+148r30 this{26|184R9} 157r14 163r39 164r26 167m22
+148r66 path{48|84R12} 152r52 157r35 162m16 162r16 165m37
+148b114 found{boolean} 154r14 159m16 165m43 166r23
+151r10 sys{26|184R9} 164m19 165m32 165r32 167r30
+152i10 path_size{positive} 154r27 158r17
+163i20 i{integer} 164r58
+175U18 Get_By_Name 175b18 175=31 175>67 175=93 189s16 196l11 196t22 208s10
+175r31 this{26|184R9} 182r80 183r14 187r36 188r23 191m19
+175r67 name{19|79R9} 182r48 183r26 189r34
+175b93 found{boolean} 179r14 184m13 189m40 190r20
+177r11 sys{26|184R9} 188m16 189m29 189r29 191r27
+187i17 i{integer} 188r55
+198r7 sys{26|184R9} 205m26 205r26 208m23 208r23 214r14
+199b7 found{boolean} 205m39 205r39 208m55 208r55 210r15
+203r13 slices{48|84R12} 205m31 205r31
+218r7 uk{19|79R9}
+223V13 Trimmed_String{string} 223b13 223>29 227l8 227t22 236s17 240s20 245s20
+. 251s23
+223r29 s{19|79R9} 226r42
+238e11 d{26|56E9} 239r33 240r55
+243*11 l{26|15E9} 244r42 245r64
+248*11 l{26|15E9} 250r41 251r63
+249e14 d{26|56E9} 250r36 251r58
+265i7 n{natural} 267r21
+267i11 i{integer} 268r32 269r20
+281i7 p{natural} 283r11 284r27
+295i7 p{natural} 304r11 307r36
+296r7 elem{26|118R9} 305r27 307r39
+313i7 n{8|47I12[26|129]} 318r21 323r21
+314i7 current_default_pos{8|47I12[26|129]} 320m13 333r25 334r36 336r36
+315b7 found{boolean} 327m13 333r15
+316r7 elem{26|118R9} 324m10 325r14 326m13 329m13 331r39 334m10 335m10 336r57
+318i11 i{integer} 319r32 320r36
+323i11 i{integer} 324r36 331r36
+X 48 text_utils.ads
+13K9*Text_Utils 26|3w6 79r31 86r23 212r75 213r79 214r63 27|2w6 11r75 12r8
+. 28r21 30r9 62r63 63r8 144r11 148r80 149r14 220r14 226r14 48|107e15
+79V13*Trim{string} 27|226s25
+82K12*Unbounded_String_Vector_Package[8|43] 27|13r8 32r9 64r8 149r25
+84R12*Unbounded_String_List{8|53R9[82]} 26|212r86 213r90 214r74 27|11r86
+. 28r32 53r31 62r74 148r91 203r23
+87V13*Split{84R12} 27|203s48
+103R12*Unbounded_String_Map{7|50R9[95]} 26|79r42 86r34
+104V13*Get{string} 27|220s25
+

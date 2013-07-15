@@ -1,0 +1,15 @@
+generic
+    
+   type Real is digits<>;
+    
+package Random_Normal_Draw is
+   
+   procedure Reset;
+   
+   function Draw(
+      mean               : Real := 0.0;
+      standard_deviation : Real := 0.5 ) return Real;
+
+end Random_Normal_Draw;
+   
+

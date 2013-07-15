@@ -1,0 +1,2683 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnvvnnnnvnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnn
+
+U coicop_definitions%b	coicop_definitions.adb	299e6ca7 NE OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U coicop_definitions%s	coicop_definitions.ads	4475ee80 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_sets%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.red_black_trees.generic_set_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W base_model_types%s	base_model_types.adb	base_model_types.ali
+W format_utils%s	format_utils.adb	format_utils.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W gnat.string_split%s	g-strspl.ads		g-strspl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.arith_64%s	s-arit64.adb		s-arit64.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+W t_utils%s		t_utils.adb		t_utils.ali  AD
+W tax_utils%s		tax_utils.adb		tax_utils.ali
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W utils%s		utils.adb		utils.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-coorse.adb		20110419093131 26de352f
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-rbtgso.ads		20110419093132 8700a961
+D a-rbtgso.adb		20110419093132 f22a83dd
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D coicop_definitions.ads  20110415182049 e26e50c1
+D coicop_definitions.adb  20110415182049 cbf03c66
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-regpat.ads		20110419093135 b85d88ef
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-arit64.ads		20110419093136 a011a169
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valenu.ads		20110419093139 bb1a4295
+D s-valint.ads		20110419093139 48a52a3f
+D s-valrea.ads		20110419093139 fe297711
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D t_utils.adb		20110415182054 e4f1d2e4
+D tax_utils.ads		20110613201228 600316b9
+D tax_utils.adb		20111018144548 51f4d08b
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+X 10 a-coorse.ads
+238R9 Node_Type
+239P9 Node_Access(238R9[97|54[47|1022]])
+X 11 a-coorse.adb
+50V13 Color{12|35E9} 15|45i19[97|54[47|1124]]
+53V13 Left{10|239P9[97|54[47|1022]]} 15|41i19[97|54[47|1022]]
+56V13 Parent{10|239P9[97|54[47|1334]]} 15|39i19[97|54[47|1334]]
+59V13 Right{10|239P9[97|54[47|1022]]} 15|43i19[97|54[47|1022]]
+62U14 Set_Color 15|46i19[97|54[47|977]]
+65U14 Set_Left 15|42i19[97|54[47|1124]]
+68U14 Set_Right 15|44i19[97|54[47|977]]
+71U14 Set_Parent 15|40i19[97|54[47|1334]]
+X 27 a-strbou.ads
+162V16*"="{boolean}<30|163p13> 19|41i18[102|25]
+X 31 a-strunb.ads
+166V13*"="{boolean}<22|62p9> 19|41i18
+X 46 base_model_types.ads
+18K9*Base_Model_Types 134e21 47|3w6 3r28
+25F9*Real<long_float>
+27D9*Counter_Type 47|980r23 1025r23 1127r23 1337r23
+29F12*Rate{25F9} 47|978r23 1023r23 1125r23 1335r23
+30F12*Amount{25F9} 47|979r23 1024r23 1029r93 1126r23 1131r98 1336r23 1341r96
+. 48|3r97 215r96 614r92
+X 47 coicop_definitions.ads
+6K9*Coicop_Definitions 1693l5 1693e23 48|1b14 2963l5 2963t23
+8E9*Coicop_Type 975e5 981r23 1029r69 1131r74 1341r72 1347r37 1352r37 1353r31
+. 1354r45 1355r40 1356r32 1357r30 1358r56 1359r33 1360r31 1361r45 1681r31
+. 1691r54 48|3r73 215r72 614r68 663r31 1992r55
+9n7*missing{8E9} 48|1631r19 2960r16
+10n7*rice{8E9} 1352r55 1370r87 1409r86 1490r75 48|1060r19 1994r47
+11n7*white_bread{8E9} 48|1144r19 1995r50
+12n7*brown_bread{8E9} 48|1455r19 1996r50
+13n7*garlic_bread{8E9} 48|1276r19 1997r50
+14n7*whole_wheat_bread{8E9} 48|1458r19 1998r50
+15n7*other_bread_loaves{8E9} 48|1312r19 1999r50
+16n7*bread_rolls{8E9} 48|1261r19 2000r50
+17n7*rusks{8E9} 48|1285r19 2001r50
+18n7*marie_biscuits{8E9} 48|1015r19 2002r50
+19n7*other_biscuits{8E9} 48|727r19 2003r50
+20n7*crackers{8E9} 48|708r19 2004r50
+21n7*other_baked_products{8E9} 48|1424r19 2005r50
+22n7*spaghetti{8E9} 48|1184r19 2006r50
+23n7*macaroni{8E9} 48|711r19 2007r50
+24n7*other_pasta{8E9} 48|783r19 2008r50
+25n7*cakes{8E9} 48|1465r19 2009r50
+26n7*tarts{8E9} 48|908r19 2010r50
+27n7*other_vetkoek_fat_cakes{8E9} 48|890r19 2011r50
+28n7*sandwiches{8E9} 48|1005r19 2012r50
+29n7*mealie_meal_or_maize_flour{8E9} 48|737r19 2013r50
+30n7*cake_flour{8E9} 48|1049r19 2014r50
+31n7*self_raising_meal{8E9} 48|938r19 2015r50
+32n7*bread_flour{8E9} 48|929r19 2016r50
+33n7*sorghum_meal_or_powder{8E9} 48|884r19 2017r50
+34n7*corn_flour{8E9} 48|1477r19 2018r50
+35n7*other_meal_and_flour{8E9} 48|1379r19 2019r50
+36n7*taystee_wheat{8E9} 48|1287r19 2020r50
+37n7*mabella{8E9} 48|824r19 2021r50
+38n7*corn_flakes{8E9} 48|1299r19 2022r50
+39n7*puffed_rice{8E9} 48|1067r19 2023r50
+40n7*muesli{8E9} 48|955r19 2024r50
+41n7*other_baked_cereals{8E9} 48|1472r19 2025r50
+42n7*mealie_rice{8E9} 48|1362r19 2026r50
+43n7*samp{8E9} 48|951r19 2027r50
+44n7*other_grain_products_pies_except_meat_pies_and_fruit_pies{8E9} 48|780r19
+. 2028r50
+45n7*maize{8E9} 48|749r19 2029r50
+46n7*wheat{8E9} 48|1227r19 2030r50
+47n7*other_grains{8E9} 1490r83 48|852r19 2031r50
+48n7*beef_and_veal_incl_heads_and_feet{8E9} 1586r62 48|691r19 2032r50
+49n7*pork_incl_heads_and_feet{8E9} 48|1211r19 2033r50
+50n7*mutton_incl_heads_and_feet{8E9} 48|1311r19 2034r50
+51n7*lamb_incl_heads_and_feet{8E9} 48|1255r19 2035r50
+52n7*goat_incl_heads_and_feet{8E9} 48|1448r19 2036r50
+53n7*poultry_incl_heads_and_feet{8E9} 48|1551r19 2037r50
+54n7*boerewors{8E9} 48|1288r19 2038r50
+55n7*pork_sausage{8E9} 48|1622r19 2039r50
+56n7*beef_sausage{8E9} 48|685r19 2040r50
+57n7*other_sausages_chicken_game_etc{8E9} 48|1008r19 2041r50
+58n7*viennas{8E9} 48|898r19 2042r50
+59n7*polony{8E9} 48|1041r19 2043r50
+60n7*ham{8E9} 48|1236r19 2044r50
+61n7*bacon{8E9} 48|1599r19 2045r50
+62n7*other_processed_meat_russians{8E9} 48|1580r19 2046r50
+63n7*biltong{8E9} 48|1450r19 2047r50
+64n7*dried_sausages{8E9} 48|807r19 2048r50
+65n7*mopane_worms{8E9} 48|1514r19 2049r50
+66n7*pre_cooked_frozen_meat{8E9} 48|732r19 2050r50
+67n7*meat_spread_marmite{8E9} 48|933r19 2051r50
+68n7*beef_extract_cubes{8E9} 48|1601r19 2052r50
+69n7*chicken_extract_cubes{8E9} 48|1539r19 2053r50
+70n7*other_meat_and_meat_products_including_meat_pies{8E9} 48|971r19 2054r50
+71n7*meat_patties{8E9} 48|1463r19 2055r50
+72n7*other_meat_incl_heads_and_feet{8E9} 48|1248r19 2056r50
+73n7*cattle{8E9} 48|687r19 2057r50
+74n7*sheep{8E9} 48|979r19 2058r50
+75n7*pigs{8E9} 48|1355r19 2059r50
+76n7*goats{8E9} 48|1194r19 2060r50
+77n7*poultry{8E9} 1586r99 48|1382r19 2061r50
+78n7*fresh_or_chilled_fish{8E9} 1517r62 48|1505r19 2062r50
+79n7*frozen_fish{8E9} 48|1459r19 2063r50
+80n7*fresh_or_chilled_seafood{8E9} 48|1329r19 2064r50
+81n7*frozen_shrimps{8E9} 48|923r19 2065r50
+82n7*frozen_lobster{8E9} 48|1183r19 2066r50
+83n7*frozen_mixed_seafood{8E9} 48|816r19 2067r50
+84n7*dried_fish{8E9} 48|1028r19 2068r50
+85n7*smoked_fish{8E9} 48|849r19 2069r50
+86n7*fish_cakes{8E9} 48|678r19 2070r50
+87n7*fish_fingers{8E9} 48|940r19 2071r50
+88n7*fish_portions{8E9} 48|1552r19 2072r50
+89n7*fish_paste{8E9} 48|1145r19 2073r50
+90n7*canned_tuna{8E9} 48|1207r19 2074r50
+91n7*canned_pilchards{8E9} 48|1353r19 2075r50
+92n7*other_canned_fish{8E9} 48|1371r19 2076r50
+93n7*other_preserved_or_processed_fish_and_seafood{8E9} 1517r87 48|1269r19
+. 2077r50
+94n7*fresh_full_cream_milk{8E9} 1588r78 48|1116r19 2078r50
+95n7*longlife_full_cream_milk{8E9} 48|1398r19 2079r50
+96n7*fresh_low_fat_milk{8E9} 48|1396r19 2080r50
+97n7*longlife_low_fat_milk{8E9} 48|1328r19 2081r50
+98n7*condensed_milk{8E9} 48|1289r19 2082r50
+99n7*evaporated_milk{8E9} 48|1117r19 2083r50
+100n7*powdered_milk{8E9} 48|1581r19 2084r50
+101n7*whiteners_cremora_ellis_brown{8E9} 48|1225r19 2085r50
+102n7*plain_yogurt{8E9} 48|950r19 2086r50
+103n7*flavoured_yogurt{8E9} 48|1337r19 2087r50
+104n7*cheddar_cheese{8E9} 48|671r19 2088r50
+105n7*gouda_cheese{8E9} 48|1190r19 2089r50
+106n7*white_cheese{8E9} 48|1449r19 2090r50
+107n7*cottage_cheese{8E9} 48|1146r19 2091r50
+108n7*cheese_spread{8E9} 48|1536r19 2092r50
+109n7*other_cheese_specify{8E9} 48|741r19 2093r50
+110n7*fresh_cream{8E9} 48|1154r19 2094r50
+111n7*butter_milk{8E9} 48|905r19 2095r50
+112n7*sour_milk_or_maas{8E9} 48|1079r19 2096r50
+113n7*soya_milk{8E9} 48|956r19 2097r50
+114n7*prepared_custard_eg_ultramel{8E9} 48|897r19 2098r50
+115n7*amageu{8E9} 48|867r19 2099r50
+116n7*other_milk_products{8E9} 48|1309r19 2100r50
+117n7*jumbo_eggs{8E9} 48|1058r19 2101r50
+118n7*extra_large_eggs{8E9} 48|762r19 2102r50
+119n7*large_eggs{8E9} 48|813r19 2103r50
+120n7*medium_eggs{8E9} 48|942r19 2104r50
+121n7*milk{8E9} 48|853r19 2105r50
+122n7*eggs{8E9} 1588r103 48|977r19 2106r50
+123n7*butter{8E9} 1596r71 48|1120r19 2107r50
+124n7*medium_fat_margarine_spread{8E9} 48|1222r19 2108r50
+125n7*low_fat_margarine_spread{8E9} 48|1219r19 2109r50
+126n7*yellow_brick_margarine{8E9} 48|1260r19 2110r50
+127n7*peanut_butter{8E9} 48|1589r19 2111r50
+128n7*cooking_fat_vegetable_eg_holsum{8E9} 48|1406r19 2112r50
+129n7*olive_oils{8E9} 48|1555r19 2113r50
+130n7*edible_oils_eg_cooking_oils{8E9} 48|1438r19 2114r50
+131n7*other_edible_animal_fats_eg_lard{8E9} 48|1185r19 2115r50
+132n7*fruit{8E9} 1596r81 48|1093r19 2116r50
+133n7*oranges{8E9} 1519r64 48|972r19 2117r50
+134n7*naartjies{8E9} 48|810r19 2118r50
+135n7*grapefruit{8E9} 48|1423r19 2119r50
+136n7*lemons{8E9} 48|742r19 2120r50
+137n7*other_citrus{8E9} 48|1598r19 2121r50
+138n7*bananas{8E9} 48|1573r19 2122r50
+139n7*apples{8E9} 48|952r19 2123r50
+140n7*pears{8E9} 48|1630r19 2124r50
+141n7*apricots{8E9} 48|921r19 2125r50
+142n7*peaches{8E9} 48|1002r19 2126r50
+143n7*plums{8E9} 48|1470r19 2127r50
+144n7*avocados{8E9} 48|735r19 2128r50
+145n7*cherries{8E9} 48|1023r19 2129r50
+146n7*other_stone_fruit{8E9} 48|819r19 2130r50
+147n7*grapes{8E9} 48|1134r19 2131r50
+148n7*strawberries{8E9} 48|697r19 2132r50
+149n7*other_specify_berries{8E9} 48|1216r19 2133r50
+150n7*paw_paw{8E9} 48|864r19 2134r50
+151n7*pineapple{8E9} 48|1137r19 2135r50
+152n7*mango{8E9} 48|753r19 2136r50
+153n7*guava{8E9} 48|1556r19 2137r50
+154n7*watermelon{8E9} 48|1567r19 2138r50
+155n7*melon{8E9} 48|986r19 2139r50
+156n7*other_specify_tropical_fruit{8E9} 48|860r19 2140r50
+157n7*peaches_dried{8E9} 48|1109r19 2141r50
+158n7*prunes_dried{8E9} 48|1166r19 2142r50
+159n7*raisins{8E9} 48|1013r19 2143r50
+160n7*dates{8E9} 48|931r19 2144r50
+161n7*other_dried_fruit{8E9} 48|1237r19 2145r50
+162n7*assorted_dried_fruit{8E9} 48|745r19 2146r50
+163n7*coconut{8E9} 48|802r19 2147r50
+164n7*almonds{8E9} 48|1047r19 2148r50
+165n7*pecan_nuts{8E9} 48|1343r19 2149r50
+166n7*walnuts{8E9} 48|1298r19 2150r50
+167n7*peanuts{8E9} 48|1528r19 2151r50
+168n7*other_nuts_specify{8E9} 48|1068r19 2152r50
+169n7*canned_pears{8E9} 48|1517r19 2153r50
+170n7*canned_peaches{8E9} 48|924r19 2154r50
+171n7*canned_guavas{8E9} 48|781r19 2155r50
+172n7*canned_fruit_cocktail{8E9} 48|750r19 2156r50
+173n7*canned_granadilla_pulp{8E9} 48|1292r19 2157r50
+174n7*other_specify_lemon_juice{8E9} 48|827r19 2158r50
+175n7*vegetables{8E9} 1519r75 48|1360r19 2159r50
+176n7*lettuce{8E9} 1675r68 48|1519r19 2160r50
+177n7*spinach_or_morogo_fresh{8E9} 48|1318r19 2161r50
+178n7*cabbage_fresh{8E9} 48|1540r19 2162r50
+179n7*cauliflower_fresh{8E9} 48|909r19 2163r50
+180n7*broccoli_fresh{8E9} 48|1220r19 2164r50
+181n7*cauliflower_frozen{8E9} 48|1282r19 2165r50
+182n7*green_mealies_fresh{8E9} 48|1233r19 2166r50
+183n7*tomatoes_fresh{8E9} 48|676r19 2167r50
+184n7*green_beans_fresh{8E9} 48|1454r19 2168r50
+185n7*pumpkin_butternut_fresh{8E9} 48|704r19 2169r50
+186n7*marrow_fresh{8E9} 48|969r19 2170r50
+187n7*gem_squashes_fresh{8E9} 48|876r19 2171r50
+188n7*green_or_red_or_yellow_pepper_fresh{8E9} 48|1221r19 2172r50
+189n7*chillies_fresh{8E9} 48|822r19 2173r50
+190n7*cucumber_fresh{8E9} 48|1038r19 2174r50
+191n7*mixed_vegetables_fresh{8E9} 48|1173r19 2175r50
+192n7*other_fresh_vegetables_specify{8E9} 48|1620r19 2176r50
+193n7*corn_kernels_frozen{8E9} 48|855r19 2177r50
+194n7*green_beans_frozen{8E9} 48|973r19 2178r50
+195n7*pumpkin_frozen{8E9} 48|989r19 2179r50
+196n7*peas_frozen{8E9} 48|1063r19 2180r50
+197n7*mixed_vegetables_frozen{8E9} 48|948r19 2181r50
+198n7*other_frozen_vegetables{8E9} 48|766r19 2182r50
+199n7*onions{8E9} 48|965r19 2183r50
+200n7*carrots_fresh{8E9} 48|1230r19 2184r50
+201n7*beetroot{8E9} 48|1040r19 2185r50
+202n7*mushrooms{8E9} 48|1566r19 2186r50
+203n7*carrots_frozen{8E9} 48|916r19 2187r50
+204n7*peas_dried{8E9} 48|1195r19 2188r50
+205n7*beans_dried{8E9} 48|1240r19 2189r50
+206n7*lentils_dried{8E9} 48|930r19 2190r50
+207n7*other_dried_vegetables_specify{8E9} 48|1020r19 2191r50
+208n7*corn_kernels_canned{8E9} 48|731r19 2192r50
+209n7*sweet_corn_cream_style{8E9} 48|962r19 2193r50
+210n7*baked_beans_in_tomato_sauce{8E9} 48|985r19 2194r50
+211n7*peas_tinned{8E9} 48|1452r19 2195r50
+212n7*butter_beans{8E9} 48|811r19 2196r50
+213n7*green_beans_canned{8E9} 48|834r19 2197r50
+214n7*other_canned_vegetables{8E9} 48|740r19 2198r50
+215n7*pickles{8E9} 48|1270r19 2199r50
+216n7*atchaar{8E9} 48|1569r19 2200r50
+217n7*vegetable_spread_bovril_fray_bentos{8E9} 48|1284r19 2201r50
+218n7*prepared_salads{8E9} 48|1131r19 2202r50
+219n7*potatoes{8E9} 48|1256r19 2203r50
+220n7*potato_chips_frozen{8E9} 48|1061r19 2204r50
+221n7*sweet_potatoes{8E9} 48|1345r19 2205r50
+222n7*potato_crisps{8E9} 48|1232r19 2206r50
+223n7*cheese_curls{8E9} 48|1609r19 2207r50
+224n7*corn_chips{8E9} 48|996r19 2208r50
+225n7*pop_corn_kernels{8E9} 48|1140r19 2209r50
+226n7*prepared_pop_corn{8E9} 48|1576r19 2210r50
+227n7*other_vegetable_products_specify{8E9} 1675r79 48|1446r19 2211r50
+228n7*white_sugar{8E9} 1662r101 48|926r19 2212r50
+229n7*brown_sugar{8E9} 48|694r19 2213r50
+230n7*icing_sugar{8E9} 48|1432r19 2214r50
+231n7*castor_sugar{8E9} 48|831r19 2215r50
+232n7*artificial_sweeteners{8E9} 48|1565r19 2216r50
+233n7*other_sugar_specify{8E9} 48|782r19 2217r50
+234n7*honey{8E9} 48|1464r19 2218r50
+235n7*smooth_apricot_jam{8E9} 48|837r19 2219r50
+236n7*smooth_peach_jam{8E9} 48|960r19 2220r50
+237n7*melon_and_ginger_jam{8E9} 48|774r19 2221r50
+238n7*other_jam_including_strawberry{8E9} 48|675r19 2222r50
+239n7*preserves_specify{8E9} 48|1113r19 2223r50
+240n7*marmalade{8E9} 48|717r19 2224r50
+241n7*milk_plain_slabs{8E9} 48|1163r19 2225r50
+242n7*milk_whole_nut_slabs{8E9} 48|1557r19 2226r50
+243n7*bar_with_filling{8E9} 48|1178r19 2227r50
+244n7*other_chocolates_specify{8E9} 48|1604r19 2228r50
+245n7*toffees{8E9} 48|1445r19 2229r50
+246n7*glucose_sweets{8E9} 48|821r19 2230r50
+247n7*health_bars{8E9} 48|1501r19 2231r50
+248n7*other_sweets{8E9} 48|899r19 2232r50
+249n7*full_cream_ice_cream{8E9} 48|1150r19 2233r50
+250n7*sorbet{8E9} 48|1048r19 2234r50
+251n7*frozen_yogurt{8E9} 48|1128r19 2235r50
+252n7*ice_cubes{8E9} 48|1147r19 2236r50
+253n7*other_edible_ices_and_ice_cream_specify{8E9} 48|1086r19 2237r50
+254n7*jelly_powder{8E9} 48|1293r19 2238r50
+255n7*golden_syrup{8E9} 48|964r19 2239r50
+256n7*other_sugar_products{8E9} 1662r116 48|869r19 2240r50
+257n7*vinegar{8E9} 1518r75 48|726r19 2241r50
+258n7*chutney{8E9} 48|799r19 2242r50
+259n7*mustard{8E9} 48|949r19 2243r50
+260n7*tomato_sauce{8E9} 48|1182r19 2244r50
+261n7*mayonnaise{8E9} 48|906r19 2245r50
+262n7*salad_dressing{8E9} 48|1577r19 2246r50
+263n7*other_sauces_and_condiments_specify{8E9} 48|936r19 2247r50
+264n7*salt{8E9} 48|912r19 2248r50
+265n7*fine_white_pepper{8E9} 48|1107r19 2249r50
+266n7*pepper_black_corns_and_fine_black_pepper{8E9} 48|1111r19 2250r50
+267n7*curry_powder{8E9} 48|893r19 2251r50
+268n7*chicken_spice{8E9} 48|1119r19 2252r50
+269n7*steak_and_chops_spice{8E9} 48|1468r19 2253r50
+270n7*chili_powder{8E9} 48|1136r19 2254r50
+271n7*cinnamon{8E9} 48|1213r19 2255r50
+272n7*cloves{8E9} 48|1414r19 2256r50
+273n7*other_salt_and_spices_specify_aromat{8E9} 48|1629r19 2257r50
+274n7*baby_food_predominantly_grain{8E9} 48|862r19 2258r50
+275n7*baby_food_predominantly_meat{8E9} 48|681r19 2259r50
+276n7*baby_food_predominantly_vegetables{8E9} 48|1348r19 2260r50
+277n7*baby_food_predominantly_fruit{8E9} 48|1466r19 2261r50
+278n7*baby_food_predominantly_milk{8E9} 48|1560r19 2262r50
+279n7*canned_soup{8E9} 48|1627r19 2263r50
+280n7*powder_soup{8E9} 48|721r19 2264r50
+281n7*custard_powder{8E9} 48|1056r19 2265r50
+282n7*instant_yeast{8E9} 48|734r19 2266r50
+283n7*baking_powder{8E9} 48|757r19 2267r50
+284n7*bicarbonate_of_soda{8E9} 48|967r19 2268r50
+285n7*other_food_products_specify{8E9} 48|1612r19 2269r50
+286n7*instant_pudding_powder{8E9} 48|1066r19 2270r50
+287n7*soya_product_excluding_soy_milk{8E9} 48|1143r19 2271r50
+288n7*food_hampers{8E9} 48|668r19 2272r50
+289n7*other_produce_specify{8E9} 48|1097r19 2273r50
+290n7*other_livestock_from_own_production{8E9} 1409r94 1518r86 48|1118r19
+. 2274r50
+291n7*instant_coffee{8E9} 1438r105 1494r97 48|1175r19 2275r50
+292n7*ground_coffee{8E9} 48|1361r19 2276r50
+293n7*coffee_beans{8E9} 48|1076r19 2277r50
+294n7*tee_leaves{8E9} 48|987r19 2278r50
+295n7*tagged_tea_bags{8E9} 48|1019r19 2279r50
+296n7*tag_less_tea_bags{8E9} 48|1072r19 2280r50
+297n7*rooibos_tea_leaves{8E9} 48|1594r19 2281r50
+298n7*rooibos_tea_bags{8E9} 48|959r19 2282r50
+299n7*herbal_tea_not_from_food_service_place{8E9} 48|983r19 2283r50
+300n7*other_tea_specify{8E9} 48|722r19 2284r50
+301n7*cocoa_powder{8E9} 48|1188r19 2285r50
+302n7*powdered_chocolate{8E9} 48|1290r19 2286r50
+303n7*other_hot_drinks{8E9} 1494r115 48|768r19 2287r50
+304n7*mineral_water_or_spring_water_aerated_and_still{8E9} 1589r130 48|1080r19
+. 2288r50
+305n7*aerated_cold_drinks{8E9} 48|684r19 2289r50
+306n7*other_eg_energade_lucozade_ice_tea_etc{8E9} 48|1074r19 2290r50
+307n7*fruit_juices_not_from_food_service_places{8E9} 48|812r19 2291r50
+308n7*concentrates_and_drink_powders{8E9} 48|1591r19 2292r50
+309n7*vegetable_juices_not_from_food_service_places{8E9} 48|1561r19 2293r50
+310n7*fruit_and_vegetable_juices_combined_not_from_food_service_places{8E9}
+. 1438r123 1589r181 48|846r19 2294r50
+311n7*unclassified_expenditures_on_food{8E9} 1370r95 1478r105 1478r142 1674r100
+. 1674r137 48|791r19 2295r50
+312n7*spirits_such_as_brandy_whisky_gin_liqueurs{8E9} 1365r96 1392r110 1659r80
+. 1659r126 48|1490r19 2296r50
+313n7*table_wines_including_sparkling_wine_not_from_food_service_places{8E9}
+. 1679r77 48|1007r19 2297r50
+314n7*cooking_wines_not_from_food_service_places{8E9} 48|1125r19 2298r50
+315n7*fortified_wines_sherry_port_etc_not_from_food_service_places{8E9} 48|1277r19
+. 2299r50
+316n7*spirit_coolers_cider_hooch_etc_not_from_a_food_service_place{8E9} 48|1579r19
+. 2300r50
+317n7*other_eg_mampoer_home_brewed_not_from_food_service_place{8E9} 1679r146
+. 48|752r19 2301r50
+318n7*clear_beer_not_purchased_from_a_food_service_place{8E9} 1486r77 48|1473r19
+. 2302r50
+319n7*sorghum_beer_pre_packed_not_from_a_food_service_place{8E9} 48|1533r19
+. 2303r50
+320n7*sorghum_beer_traditional_not_from_a_food_service_place{8E9} 1392r156
+. 1486r131 48|1340r19 2304r50
+321n7*cigarettes{8E9} 1474r98 1672r68 48|1313r19 2305r50
+322n7*cigars_and_cigarillos{8E9} 48|1435r19 2306r50
+323n7*pipe_and_cigarette_tobacco{8E9} 48|723r19 2307r50
+324n7*chewing_tobacco_and_snuff{8E9} 48|1124r19 2308r50
+325n7*other_items_smoked{8E9} 1365r142 1474r112 1672r82 48|917r19 2309r50
+326n7*material_for_clothing{8E9} 1366r76 1395r79 1493r80 1493r105 48|815r19
+. 2310r50
+327n7*mens_clothing{8E9} 1525r70 48|1342r19 2311r50
+328n7*sports_clothing{8E9} 48|861r19 2312r50
+329n7*womens_clothing{8E9} 48|1394r19 2313r50
+330n7*specially_made_up_clothes_eg_clothes_made_by_dressmakers_and_tailors{8E9}
+. 48|1104r19 2314r50
+331n7*infants_clothing{8E9} 48|990r19 2315r50
+332n7*girls_school_uniform{8E9} 48|1238r19 2316r50
+333n7*boys_school_uniform{8E9} 48|784r19 2317r50
+334n7*girls_clothing{8E9} 48|747r19 2318r50
+335n7*boys_clothing{8E9} 48|710r19 2319r50
+336n7*other_specify{8E9} 1525r87 48|1395r19 2320r50
+337n7*clothing_accessories_such_as_scarves_ties_belts_gloves_etc{8E9} 1598r113
+. 48|686r19 2321r50
+338n7*knitting_wool_and_yarns{8E9} 48|1264r19 2322r50
+339n7*patterns_trimming_lace_sewing_cotton_etc{8E9} 1598r175 48|1429r19 2323r50
+340n7*cleaning_of_clothing{8E9} 1492r98 48|1094r19 2324r50
+341n7*labour_cost_for_making_or_knitting_ofclothing_and_repairs_or_alterations_to_clothing{8E9}
+. 48|744r19 2325r50
+342n7*cost_of_the_hire_of_clothing{8E9} 1395r104 1492r122 48|992r19 2326r50
+343n7*mens_footwear{8E9} 1410r79 1653r86 48|1320r19 2327r50
+344n7*sports_footwear{8E9} 48|838r19 2328r50
+345n7*other_footwear{8E9} 48|863r19 2329r50
+346n7*womens_footwear{8E9} 48|887r19 2330r50
+347n7*girls_school_footwear{8E9} 48|1001r19 2331r50
+348n7*boys_school_footwear{8E9} 48|1410r19 2332r50
+349n7*girls_footwear{8E9} 48|832r19 2333r50
+350n7*boys_footwear{8E9} 48|1234r19 2334r50
+351n7*infants_footwear{8E9} 1653r103 48|1087r19 2335r50
+352n7*repair_of_footwear{8E9} 1624r88 48|997r19 2336r50
+353n7*cost_of_hire_of_shoes{8E9} 1366r101 1410r96 1624r110 48|945r19 2337r50
+354n7*rent_dwelling{8E9} 1373r100 1391r121 1391r138 1484r110 1484r127 48|716r19
+. 2338r50
+355n7*imputed_rent_on_owned_dwellingi_7pct_peryear_of_dwelling{8E9} 1419r122
+. 1419r182 48|1168r19 2339r50
+356n7*maintenance_and_repair_of_dwelling_existing_buildings_swimming_pools_etc_including_paints_wallpaper_etc{8E9}
+. 1435r133 1584r144 1584r251 48|1057r19 2340r50
+357n7*services_for_maintenance_and_repair_of_dwelling_plumbers_electricians_carpenters{8E9}
+. 1651r145 48|790r19 2341r50
+358n7*labour_and_material_for_maintenance_and_repair_of_dwelling{8E9} 48|1499r19
+. 2342r50
+359n7*security_systems_including_alarms_panic_buttons{8E9} 48|1321r19 2343r50
+360n7*swimming_pool_maintenance_excluding_wages_of_persons_who_maintain_pools_but_including_chemicals{8E9}
+. 1435r240 1651r229 48|1307r19 2344r50
+361n7*water_and_electricity{8E9} 1479r159 1677r139 1677r164 48|1385r19 2345r50
+362n7*water{8E9} 1678r130 1678r139 48|1616r19 2346r50
+363n7*refuse_removel{8E9} 1623r135 1623r153 48|1471r19 2347r50
+364n7*sanitation{8E9} 1652r137 1652r151 48|1628r19 2348r50
+365n7*rate_and_taxes{8E9} 1607r157 48|1179r19 2349r50
+366n7*security_services_including_reaction_services_and_neighbourhood_watch{8E9}
+. 48|1507r19 2350r50
+367n7*purchase_of_watch_dogs{8E9} 48|1439r19 2351r50
+368n7*vat_on_utilities{8E9} 1479r184 1607r175 48|814r19 2352r50
+369n7*electricity{8E9} 1407r126 1513r96 48|866r19 2353r50
+370n7*prepaid_electricity{8E9} 1513r111 48|1089r19 2354r50
+371n7*gas{8E9} 1526r88 48|1363r19 2355r50
+372n7*gas_in_cylinders_including_gas_for_heating_purposes{8E9} 1526r95 48|958r19
+. 2356r50
+373n7*paraffin{8E9} 1577r97 48|756r19 2357r50
+374n7*petrol_for_household_use_not_transport{8E9} 48|1142r19 2358r50
+375n7*diesel_for_household_use_not_transport{8E9} 1577r109 48|850r19 2359r50
+376n7*firewood_bought{8E9} 1657r96 48|1121r19 2360r50
+377n7*firewood_fetched_value{8E9} 48|1613r19 2361r50
+378n7*charcoal{8E9} 48|1016r19 2362r50
+379n7*candles{8E9} 48|966r19 2363r50
+380n7*coal_including_anthracite{8E9} 48|1096r19 2364r50
+381n7*dung_bought{8E9} 48|729r19 2365r50
+382n7*dung_fetched_value{8E9} 48|1624r19 2366r50
+383n7*crop_waste{8E9} 48|1498r19 2367r50
+384n7*other_household_fuel{8E9} 1373r117 1407r141 1657r115 48|1310r19 2368r50
+385n7*other_bedroom_furniture{8E9} 1371r124 1411r177 1521r137 48|1513r19
+. 2369r50
+386n7*dining_room_furniture{8E9} 48|733r19 2370r50
+387n7*lounge_furniture{8E9} 48|888r19 2371r50
+388n7*kitchen_furniture_and_units_excluding_appliances_eg_refrigerators{8E9}
+. 48|1126r19 2372r50
+389n7*study_desks_bookshelves_and_other_study_furniture{8E9} 48|1523r19 2373r50
+390n7*garden_and_patio_furniture{8E9} 48|800r19 2374r50
+391n7*other_eg_ornaments_paintings_and_other_works_of_art_specify{8E9} 48|1564r19
+. 2375r50
+392n7*other_loose_items_of_furniture_specify_eg_beanbags_mirrors{8E9} 48|1483r19
+. 2376r50
+393n7*other_furniture{8E9} 1521r164 48|1006r19 2377r50
+394n7*fitted_carpets{8E9} 1491r144 48|1071r19 2378r50
+395n7*loose_carpets_and_rugs{8E9} 48|1132r19 2379r50
+396n7*tiles{8E9} 48|1070r19 2380r50
+397n7*other_floor_coverings_excluding_bathroom_and_door_mats_specify{8E9}
+. 1491r162 48|882r19 2381r50
+398n7*upholstering{8E9} 1625r162 48|1280r19 2382r50
+399n7*repairs_to_furniture{8E9} 48|1469r19 2383r50
+400n7*repairs_to_furnishings{8E9} 48|1431r19 2384r50
+401n7*repairs_to_floor_coverings{8E9} 1411r204 1625r178 48|842r19 2385r50
+402n7*bed_bases_and_mattresses{8E9} 1416r137 1530r89 48|1506r19 2386r50
+403n7*blankets_and_travelling_rugs{8E9} 48|1614r19 2387r50
+404n7*sheets_and_pillow_cases{8E9} 48|1571r19 2388r50
+405n7*duvets_and_duvet_covers{8E9} 48|1332r19 2389r50
+406n7*table_and_bathroom_linen_eg_table_cloths_and_napkins_towels_and_face_cloths{8E9}
+. 48|974r19 2390r50
+407n7*curtains_including_making_and_hanging_charges_and_material_for_curtains{8E9}
+. 48|1339r19 2391r50
+408n7*pillows_and_cushions{8E9} 48|1303r19 2392r50
+409n7*other_household_textiles{8E9} 48|1365r19 2393r50
+410n7*duvet_packs_eg_package_including_pillow_cases_and_sheets{8E9} 48|1583r19
+. 2394r50
+411n7*value_of_repairs_to_household_textiles{8E9} 1416r165 1530r117 48|1428r19
+. 2395r50
+412n7*refrigerators_deep_freezers_and_refrigerator_or_deep_freeze_combinations{8E9}
+. 1415r139 1582r126 48|1103r19 2396r50
+413n7*refrigerators{8E9} 48|935r19 2397r50
+414n7*washing_machines_dishwashers_and_tumble_dryers{8E9} 48|1123r19 2398r50
+415n7*stoves_and_ovens_including_microwave_ovens{8E9} 48|1402r19 2399r50
+416n7*coal_wood_and_anthracite_stoves{8E9} 48|1192r19 2400r50
+417n7*gas_stoves_and_heaters{8E9} 48|830r19 2401r50
+418n7*heaters_and_air_conditioners{8E9} 48|937r19 2402r50
+419n7*paraffin_stoves_and_heaters{8E9} 48|701r19 2403r50
+420n7*vacuum_cleaners_polishers_and_carpet_cleaning_machines{8E9} 48|1383r19
+. 2404r50
+421n7*sewing_machines_over_lockers_and_knitting_machines{8E9} 48|743r19 2405r50
+422n7*sewing_and_knitting_machines{8E9} 1582r202 48|1302r19 2406r50
+423n7*hotplates{8E9} 1654r110 48|1619r19 2407r50
+424n7*irons{8E9} 48|1172r19 2408r50
+425n7*kettles_and_percolators_coffee_makers{8E9} 48|779r19 2409r50
+426n7*food_mixers_processors_and_similar_accessories{8E9} 48|736r19 2410r50
+427n7*frying_pans_and_woks{8E9} 48|1054r19 2411r50
+428n7*toaster_waffle_pans_and_sandwich_toasters{8E9} 48|695r19 2412r50
+429n7*other_electrical_appliances_eg_electric_blankets_water_pumps_and_fans_specify{8E9}
+. 48|1467r19 2413r50
+430n7*other_eg_dry_cabinets_and_safes_specify{8E9} 1654r123 48|1034r19 2414r50
+431n7*repairs_and_service_charges_for_electrical_appliances{8E9} 1626r103
+. 48|1249r19 2415r50
+432n7*repairs_and_service_charges_for_non_electrical_appliances{8E9} 1415r215
+. 1626r160 48|1266r19 2416r50
+433n7*glass_and_crystal_ware_tableware_including_household_or_toilet_articles_of_porcelain_ceramic_stoneware_china_etc{8E9}
+. 1412r160 1527r137 48|709r19 2417r50
+434n7*cutlery_flatware_and_silverware_kitchen_and_domestic_utensils_non_electrical_utensils_such_as_frying_pans_saucepans_etc{8E9}
+. 48|818r19 2418r50
+435n7*enamel{8E9} 48|1529r19 2419r50
+436n7*aluminum_iron_steel{8E9} 48|1494r19 2420r50
+437n7*plastic{8E9} 48|870r19 2421r50
+438n7*other_such_as_towel_rails_bottle_racks_etc_specify{8E9} 48|1393r19
+. 2422r50
+439n7*value_of_repairs_on_glassware_tableware_and_household_utensils{8E9}
+. 1412r276 1527r253 48|669r19 2423r50
+440n7*power_driven_garden_tools{8E9} 1475r159 1583r119 48|670r19 2424r50
+441n7*power_drills{8E9} 1583r148 48|1512r19 2425r50
+442n7*light_bulbs{8E9} 1655r135 48|760r19 2426r50
+443n7*dry_cells{8E9} 48|1417r19 2427r50
+444n7*recharging_of_rechargeable_cells_not_car_batteies{8E9} 48|1203r19 2428r50
+445n7*hand_tools_such_as_screwdrivers{8E9} 48|1516r19 2429r50
+446n7*garden_hand_tools_such_as_spades{8E9} 48|915r19 2430r50
+447n7*garden_water_sprinkler{8E9} 48|1042r19 2431r50
+448n7*other_garden_equipment{8E9} 1475r188 1655r150 48|682r19 2432r50
+449n7*soap_bars_and_cakes_not_toilet_soap_washing_powders_liquid_detergents_and_bleaches_dishwasher_tablets{8E9}
+. 1413r171 1595r133 48|1389r19 2433r50
+450n7*scouring_powders_pot_scourers_etc{8E9} 48|1062r19 2434r50
+451n7*floor_shoe_and_furniture_polish{8E9} 48|1167r19 2435r50
+452n7*insecticides_indoor_pesticides_drain_and_toilet_cleansers_air_freshener_etc{8E9}
+. 48|1500r19 2436r50
+453n7*scissors_needles_pins{8E9} 48|1198r19 2437r50
+454n7*packaging_materials_plastic_bags_and_sachets_foil_wax_paper_etc{8E9}
+. 48|1304r19 2438r50
+455n7*paper_serviettes_or_napkins_disposable_dinner_ware_plates_tumblers_etc{8E9}
+. 48|1401r19 2439r50
+456n7*brooms_brushes_feather_dusters_etc{8E9} 48|1407r19 2440r50
+457n7*dish_cloths_wash_and_dry{8E9} 48|1088r19 2441r50
+458n7*matches{8E9} 48|1596r19 2442r50
+459n7*fire_lighters{8E9} 48|680r19 2443r50
+460n7*other_clothes_pegs_hangers_etc_specify{8E9} 48|978r19 2444r50
+461n7*methylated_spirits_fuel_for_lawnmowers_and_generators_and_for_heating_excluding_fuel_for_your_motor_vehicles{8E9}
+. 1595r238 48|755r19 2445r50
+462n7*cash_wage_incl_transport_received_by_general_domestic_worker{8E9} 1510r148
+. 48|1201r19 2446r50
+463n7*cash_wage_incl_transport_received_by_child_minder_or_nanny{8E9} 48|1156r19
+. 2447r50
+464n7*cash_wage_incl_transport_received_by_cook{8E9} 48|763r19 2448r50
+465n7*cash_wage_incl_transport_received_by_chaffeur{8E9} 48|1480r19 2449r50
+466n7*cash_wage_incl_transport_received_by_clothes_washers_or_ironers{8E9}
+. 48|1021r19 2450r50
+467n7*cash_wage_incl_transport_received_by_garden_worker{8E9} 48|1161r19
+. 2451r50
+468n7*cash_wage_incl_transport_received_by_baby_sitter{8E9} 48|773r19 2452r50
+469n7*cash_wage_incl_transport_received_by_other_domestic_worker{8E9} 48|1110r19
+. 2453r50
+470n7*dry_cleaning_of_household_linen_textiles_and_carpets{8E9} 48|1511r19
+. 2454r50
+471n7*laundry_service_for_household_textile_and_carpets_and_nappy_services_including_launderettes{8E9}
+. 48|1141r19 2455r50
+472n7*hiring_of_furniture_furnishings_carpets{8E9} 48|1586r19 2456r50
+473n7*fumigation_and_cleaning_services_including_those_of_upholstery_swimming_pool_window_cleaning_etc{8E9}
+. 48|1352r19 2457r50
+474n7*grinding_or_gristing_of_maize_or_wheat{8E9} 1371r151 1413r276 1510r212
+. 48|826r19 2458r50
+475n7*medicine_purchased_with_prescription_in_private_institutions{8E9} 1372r61
+. 1436r97 1617r118 48|865r19 2459r50
+476n7*medicine_purchased_with_prescription_in_public_institutions{8E9} 48|1164r19
+. 2460r50
+477n7*medicine_purchased_without_prescription_in_private_institutions{8E9}
+. 48|1053r19 2461r50
+478n7*medicine_purchased_without_prescription_in_public_institutions{8E9}
+. 48|1487r19 2462r50
+479n7*pharmacy_dispensing_fees_in_private_institutions{8E9} 48|1155r19 2463r50
+480n7*pharmacy_dispensing_fees_in_public_institutions{8E9} 48|1575r19 2464r50
+481n7*pharmacy_service_fees_in_private_institutions{8E9} 48|1078r19 2465r50
+482n7*pharmacy_service_fees_in_public_institutions{8E9} 1617r182 48|770r19
+. 2466r50
+483n7*other_medical_products_bandages_syringes_knee_supports_etc_in_private_institutions{8E9}
+. 1602r117 48|1437r19 2467r50
+484n7*other_medical_products_bandages_syringes_knee_supports_etc_in_public_institutions{8E9}
+. 48|914r19 2468r50
+485n7*condoms_strings_and_other_contraceptives_excluding_tablets_and_injections{8E9}
+. 1602r203 48|1597r19 2469r50
+486n7*therapeutic_appliances_and_equipment_like_spectacles_and_hearing_aids_in_private_institutions{8E9}
+. 1671r131 48|1324r19 2470r50
+487n7*therapeutic_appliances_and_equipment_like_spectacles_and_hearing_aids_in_public_institutions{8E9}
+. 1436r161 1671r228 48|739r19 2471r50
+488n7*medical_services_in_private_institutions{8E9} 1448r76 1587r90 48|1291r19
+. 2472r50
+489n7*medical_services_in_public_institutions{8E9} 48|1250r19 2473r50
+490n7*flat_rate_in_respect_of_services_and_medicine_obtained_at_hospital_or_clinic_in_private_institutions{8E9}
+. 48|845r19 2474r50
+491n7*flat_rate_in_respect_of_services_and_medicine_obtained_at_hospital_or_clinic_in_public_institutions{8E9}
+. 48|1481r19 2475r50
+492n7*other_medical_services_in_private_institutions{8E9} 48|1272r19 2476r50
+493n7*other_medical_services_in_public_institutions{8E9} 48|1390r19 2477r50
+494n7*consultations_of_traditional_healers_in_private_institutions_or_work_places{8E9}
+. 48|1550r19 2478r50
+495n7*consultations_of_traditional_healers_in_public_institutions{8E9} 1587r134
+. 48|833r19 2479r50
+496n7*dental_service_service_of_dentists_include_oral_hygienists_in_private_institutions{8E9}
+. 1509r89 48|718r19 2480r50
+497n7*dental_service_service_of_dentists_include_oral_hygienists_in_public_institutions{8E9}
+. 1509r175 48|1180r19 2481r50
+498n7*medical_analysis_laboratories_and_x_ray_service_in_private_institutions{8E9}
+. 1611r92 48|1520r19 2482r50
+499n7*medical_analysis_laboratories_and_x_ray_service_in_public_institutions{8E9}
+. 48|1115r19 2483r50
+500n7*service_of_medical_auxiliaries_freelance_nurse_midwives_freelance_optometrist_physiotherapist_speech_therapist_etc_in_private_instituti{8E9}
+. 48|1283r19 2484r50
+501n7*service_of_medical_auxiliaries_freelance_nurse_midwives_freelance_optometrist_physiotherapist_speech_therapist_etc_in_public_institutio{8E9}
+. 48|1558r19 2485r50
+502n7*non_hospital_service_ambulance_service_other_than_hospital_in_public_institutions{8E9}
+. 48|1590r19 2486r50
+503n7*non_hospital_service_ambulance_service_other_than_hospital_in_private_institutions{8E9}
+. 1448r120 1611r167 48|1378r19 2487r50
+504n7*hospital_service_fees_eg_wards_beds_and_theatre_fees_in_private_institutions{8E9}
+. 1414r73 1529r88 48|858r19 2488r50
+505n7*hospital_service_fees_eg_wards_beds_and_theatre_fees_in_public_institutions{8E9}
+. 1372r125 1414r153 1529r168 48|1033r19 2489r50
+506n7*new_motor_cars_station_wagons_and_mini_buses_excluding_vehicles_for_business_purposes{8E9}
+. 1386r64 1456r79 1591r84 48|1615r19 2490r50
+507n7*new_bakkies{8E9} 48|1537r19 2491r50
+508n7*four_wheel_drive_vehicles{8E9} 48|1069r19 2492r50
+509n7*used_motor_cars_station_wagons_and_mini_buses_excluding_vehicles_for_business_purposes{8E9}
+. 48|1262r19 2493r50
+510n7*used_bakkies{8E9} 48|1384r19 2494r50
+511n7*four_wheel_drive_vehicles_2{8E9} 1591r173 48|907r19 2495r50
+512n7*new_motor_cycles_and_scooters{8E9} 1592r86 48|1485r19 2496r50
+513n7*used_motor_cycles_and_scooters{8E9} 1592r119 48|1075r19 2497r50
+514n7*new_bicycles{8E9} 1488r82 48|872r19 2498r50
+515n7*used_bicycles{8E9} 1488r98 48|883r19 2499r50
+516n7*new_animal_drawn_vehicles{8E9} 1485r94 48|1409r19 2500r50
+517n7*used_animal_drawn_vehicles{8E9} 48|808r19 2501r50
+518n7*horse{8E9} 48|1444r19 2502r50
+519n7*donkey{8E9} 48|1050r19 2503r50
+520n7*other_private_modes_of_transport_animals{8E9} 1456r168 1485r123 48|1319r19
+. 2504r50
+521n7*new_tyres_and_tubes{8E9} 1439r100 1658r122 48|1108r19 2505r50
+522n7*re_treaded_or_patched_tyres_and_tubes{8E9} 48|892r19 2506r50
+523n7*spare_parts_maintenance_and_cleaning_materials_accessories_purchased_for_private_repair_and_installation{8E9}
+. 48|786r19 2507r50
+524n7*batteries_new_and_used{8E9} 48|1243r19 2508r50
+525n7*air_conditioner_for_cars_including_installations{8E9} 48|868r19 2509r50
+526n7*security_systems_for_cars_including_installation{8E9} 1658r145 48|1177r19
+. 2510r50
+527n7*motor_car_fuel{8E9} 1520r115 48|1314r19 2511r50
+528n7*oil_and_grease{8E9} 1520r133 48|1000r19 2512r50
+529n7*maintenance_and_lubrication_services{8E9} 1580r150 48|982r19 2513r50
+530n7*panel_beating_repairs_paid_for_by_you{8E9} 48|805r19 2514r50
+531n7*other_repair_work_paid_for_by_you{8E9} 48|1174r19 2515r50
+532n7*car_wash{8E9} 48|1404r19 2516r50
+533n7*valet_services{8E9} 1580r190 48|1169r19 2517r50
+534n7*parking_fees{8E9} 1606r152 48|1502r19 2518r50
+535n7*traffic_fines{8E9} 48|1059r19 2519r50
+536n7*toll_fees{8E9} 48|854r19 2520r50
+537n7*licenses_and_registration_fees_including_that_of_motor_cycles{8E9}
+. 48|1351r19 2521r50
+538n7*driving_lessons_driving_tests_and_driving_licenses{8E9} 48|1443r19
+. 2522r50
+539n7*rented_vehicles_educational_trips{8E9} 48|688r19 2523r50
+540n7*rented_vehicles_other_than_educational{8E9} 48|957r19 2524r50
+541n7*rented_on_holiday{8E9} 48|1308r19 2525r50
+542n7*other_transport_specify{8E9} 1439r123 1606r168 48|715r19 2526r50
+543n7*train_for_attending_educational_institutions{8E9} 1477r77 1613r102
+. 48|699r19 2527r50
+544n7*train_for_non_educational_institutions{8E9} 48|1208r19 2528r50
+545n7*train_for_when_away_from_home{8E9} 1613r150 48|1518r19 2529r50
+546n7*bus_including_school_bus_for_educational_purposes{8E9} 1614r99 48|1625r19
+. 2530r50
+547n7*bus_including_school_bus_for_non_educational_purposes{8E9} 48|1322r19
+. 2531r50
+548n7*bus{8E9} 48|885r19 2532r50
+549n7*metered_cab_attending_educaional_trips{8E9} 48|1434r19 2533r50
+550n7*metered_cab_other_than_educaional{8E9} 48|1430r19 2534r50
+551n7*minibus_taxi_or_combi_including_30_seaters_eg_iveco_for_non_educational_purposes{8E9}
+. 48|1204r19 2535r50
+552n7*minibus_taxi_or_combi_including_30_seaters_eg_iveco_for_educational_purposes{8E9}
+. 48|993r19 2536r50
+553n7*other_including_bakkies_used_as_taxis_for_education_purposes{8E9} 48|703r19
+. 2537r50
+554n7*other_including_bakkies_used_as_taxis_for_non_education_purposes{8E9}
+. 48|793r19 2538r50
+555n7*metered_cab_while_on_holiday{8E9} 48|879r19 2539r50
+556n7*minibus_taxi_including_30_seaters_eg_iveco{8E9} 48|1503r19 2540r50
+557n7*other_including_bakkies_used_as_taxis{8E9} 48|918r19 2541r50
+558n7*lift_clubs_educational_trips{8E9} 48|1239r19 2542r50
+559n7*lift_clubs_other{8E9} 1614r152 48|1029r19 2543r50
+560n7*aircraft_educaional_trips{8E9} 1612r98 48|1247r19 2544r50
+561n7*aircraft_other_than_educaional{8E9} 48|1105r19 2545r50
+562n7*aircraft{8E9} 1612r127 48|1300r19 2546r50
+563n7*boat_or_ship_educational_trips{8E9} 1615r118 48|1101r19 2547r50
+564n7*boat_or_ship_other_than_educaional{8E9} 48|1215r19 2548r50
+565n7*boat_or_ship_while_on_holiday{8E9} 1615r152 48|1618r19 2549r50
+566n7*furniture_removals_and_transport_of_goods_not_for_business_purposes_for_educational_purposes{8E9}
+. 1605r105 48|1254r19 2550r50
+567n7*furniture_removals_and_transport_of_goods_not_for_business_purposes_for_non_educational_purposes{8E9}
+. 48|994r19 2551r50
+568n7*supporting_services_eg_parking_services_port_operators{8E9} 48|932r19
+. 2552r50
+569n7*other_eg_cable_car_horse{8E9} 48|1441r19 2553r50
+570n7*other_eg_horse_for_educational_puporses{8E9} 48|1584r19 2554r50
+571n7*other_eg_horse_for_non_educational_puporses{8E9} 1477r125 1605r201
+. 48|1271r19 2555r50
+572n7*saddles{8E9} 1440r105 1497r133 48|738r19 2556r50
+573n7*horse_shoes{8E9} 48|874r19 2557r50
+574n7*veterinary_costs{8E9} 48|1241r19 2558r50
+575n7*foods_or_feeds{8E9} 48|944r19 2559r50
+576n7*other_cost_for_other_modes_of_transport{8E9} 1386r153 1440r116 1497r144
+. 48|1197r19 2560r50
+577n7*stamps{8E9} 1367r68 1454r78 1619r84 48|1542r19 2561r50
+578n7*packages{8E9} 48|1218r19 2562r50
+579n7*courier_services{8E9} 48|748r19 2563r50
+580n7*other_postage{8E9} 48|1159r19 2564r50
+581n7*renting_of_post_boxes{8E9} 48|857r19 2565r50
+582n7*other_eg_telegrams{8E9} 1454r88 1619r94 48|1386r19 2566r50
+583n7*cellular_phones{8E9} 1471r94 1668r116 48|1196r19 2567r50
+584n7*telephones_cordless_telephones_motor_telephones{8E9} 48|1368r19 2568r50
+585n7*fax_machines_and_telephone_answering_machines_for_household_purposes{8E9}
+. 48|1065r19 2569r50
+586n7*pagers{8E9} 48|1263r19 2570r50
+587n7*repairs_of_computers_and_communication_equipment{8E9} 1471r113 1668r135
+. 48|1356r19 2571r50
+588n7*installation{8E9} 1472r93 1669r114 48|913r19 2572r50
+589n7*private_calls{8E9} 48|1419r19 2573r50
+590n7*calls_from_public_phones{8E9} 48|1200r19 2574r50
+591n7*calls_including_phone_cards{8E9} 48|1415r19 2575r50
+592n7*rental_landline{8E9} 48|1607r19 2576r50
+593n7*rental_cellphone{8E9} 48|1524r19 2577r50
+594n7*value_added_tax_vat_only_if_telephone_account_is_available{8E9} 48|1268r19
+. 2578r50
+595n7*value_added_tax_vat_on_calls_only_if_telephone_account_is_available{8E9}
+. 48|1585r19 2579r50
+596n7*connection_to_the_network_for_a_landline{8E9} 48|1231r19 2580r50
+597n7*connection_to_the_network_for_a_cellphone{8E9} 48|1474r19 2581r50
+598n7*internet_subscription_and_other_costs{8E9} 1367r78 1472r109 1669r130
+. 48|1532r19 2582r50
+599n7*radios_including_motor_car_radios_tape_recorders_compact_disk_players_and_similar_equipment{8E9}
+. 1381r77 1393r134 1515r192 48|1265r19 2583r50
+600n7*two_way_radios{8E9} 48|928r19 2584r50
+601n7*television_sets_decoders_video_recorders_or_dvds{8E9} 48|1436r19 2585r50
+602n7*aerials_and_satellite_dishes{8E9} 1515r287 48|1376r19 2586r50
+603n7*cameras_video_cameras_projectors_and_flashes{8E9} 1618r182 48|767r19
+. 2587r50
+604n7*other_recreational_services{8E9} 1618r230 48|794r19 2588r50
+605n7*personal_desktop_computers_excluding_laptops{8E9} 1571r148 48|859r19
+. 2589r50
+606n7*laptops_and_palm_tops{8E9} 48|672r19 2590r50
+607n7*software_excluding_games_play_stations_etc{8E9} 48|1367r19 2591r50
+608n7*calculators{8E9} 48|891r19 2592r50
+609n7*printers_or_scanners_or_copiers{8E9} 48|1187r19 2593r50
+610n7*modems{8E9} 48|754r19 2594r50
+611n7*parts_and_upgrading_of_computers{8E9} 1571r196 48|976r19 2595r50
+612n7*diskettes_cds_flah_disks_and_other_consumable_goods{8E9} 1621r132 48|1574r19
+. 2596r50
+613n7*magnetic_tapes_excl_software_and_video_games_including_pre_recorded_and_unrecorded_music_tapes{8E9}
+. 48|1492r19 2597r50
+614n7*disks_for_photographic_and_cinematographic_use{8E9} 48|1158r19 2598r50
+615n7*compact_disks_cds_excluding_software_and_video_games_including_pre_recorded_and_unrecorded_disks{8E9}
+. 48|1388r19 2599r50
+616n7*dvds_excluding_software_and_video_games_including_pre_recorded_and_unrecorded_dvds{8E9}
+. 48|1592r19 2600r50
+617n7*vcds_excluding_software_and_video_games_including_pre_recorded_and_unrecorded_vcds{8E9}
+. 48|1369r19 2601r50
+618n7*other_musical_instruments_sound_equipment_and_accessories{8E9} 1393r229
+. 1621r187 48|1426r19 2602r50
+619n7*boats_including_outboard_motors_aircrafts_go_carts{8E9} 1442r119 1581r138
+. 48|696r19 2603r50
+620n7*new_caravans_and_trailers_including_motorised_caravans{8E9} 48|772r19
+. 2604r50
+621n7*used_caravans_and_trailers_including_motorised_caravans{8E9} 1581r192
+. 48|1095r19 2605r50
+622n7*musical_instruments_pianos_organs_and_other_musical_instruments{8E9}
+. 1593r161 1593r228 48|1100r19 2606r50
+623n7*repairs_and_service_charges_for_musical_instruments_sound_equipment_and_accessories{8E9}
+. 1579r174 48|1349r19 2607r50
+624n7*repairs_and_maintenance_services_to_recreation_entertainment_and_sports_equipment{8E9}
+. 1442r173 1579r261 48|873r19 2608r50
+625n7*hobbies{8E9} 1444r126 1523r130 48|1600r19 2609r50
+626n7*toys_and_games_video_games_including_software_games{8E9} 48|769r19
+. 2610r50
+627n7*fire_works{8E9} 1523r141 48|785r19 2611r50
+628n7*firearms_and_ammunition{8E9} 1514r159 48|720r19 2612r50
+629n7*firearms_and_ammunition_for_security_services{8E9} 48|714r19 2613r50
+630n7*tennis_rackets_and_balls_fishing_rods_etc{8E9} 48|1617r19 2614r50
+631n7*special_sports_clothes_and_shoes{8E9} 48|1162r19 2615r50
+632n7*camping_equipment_tents_sleeping_bags_etc{8E9} 48|1486r19 2616r50
+633n7*swimming_pool_equipment_and_repairs_of_equipment{8E9} 1514r186 48|712r19
+. 2617r50
+634n7*seed_plants_shrubs_and_trees_fertilizer_plant_and_pest_spray_remedies{8E9}
+. 1524r134 48|922r19 2618r50
+635n7*bouquets_and_cut_flowers_for_household_use{8E9} 48|820r19 2619r50
+636n7*garden_ornaments{8E9} 1524r207 48|1114r19 2620r50
+637n7*purchase_of_pets{8E9} 1616r133 48|995r19 2621r50
+638n7*pet_food_or_feeds_and_other_requisites{8E9} 1616r153 48|1541r19 2622r50
+639n7*licenses{8E9} 1676r137 48|981r19 2623r50
+640n7*care_eg_doggy_parlour_kennels_and_veterinary_costs{8E9} 1444r137 1676r149
+. 48|1525r19 2624r50
+641n7*amusement_parks{8E9} 1457r106 1622r122 48|919r19 2625r50
+642n7*membership_fees_for_gymnasiums_health_sport_and_social_clubs{8E9} 48|1559r19
+. 2626r50
+643n7*sports{8E9} 48|1572r19 2627r50
+644n7*fees_for_lessons_connecting_with_recreation_ebtertainment_and_sport{8E9}
+. 48|1205r19 2628r50
+645n7*schools_and_other_educational_institutions_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_public{8E9}
+. 48|1267r19 2629r50
+646n7*schools_and_other_educational_institutions_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_privat{8E9}
+. 1622r141 48|1482r19 2630r50
+647n7*cinema_theatres_concerts_festivals{8E9} 1498r105 48|1554r19 2631r50
+648n7*museums_and_zoos_etc{8E9} 48|1214r19 2632r50
+649n7*library_fees_and_fines_for_non_academic_purposes{8E9} 48|925r19 2633r50
+650n7*library_fees_fines_for_academic_purpose{8E9} 48|1397r19 2634r50
+651n7*library_services_for_academic_purposes{8E9} 48|1333r19 2635r50
+652n7*television_licenses{8E9} 48|1031r19 2636r50
+653n7*television_rental{8E9} 48|871r19 2637r50
+654n7*subscription_to_pay_tv_channels{8E9} 48|1608r19 2638r50
+655n7*rent_for_decoder_video_equipment_and_tapes{8E9} 48|1199r19 2639r50
+656n7*film_development_and_photo_prints{8E9} 48|903r19 2640r50
+657n7*admission_charges_other{8E9} 1498r143 48|848r19 2641r50
+658n7*lotto{8E9} 1522r104 48|761r19 2642r50
+659n7*casinos{8E9} 48|1526r19 2643r50
+660n7*other_gambling{8E9} 1457r125 1522r113 48|1039r19 2644r50
+661n7*textbooks_for_public_institutions{8E9} 1437r103 1489r90 48|1003r19
+. 2645r50
+662n7*textbooks_for_private_institutions{8E9} 48|1621r19 2646r50
+663n7*books_excluding_those_in_1614{8E9} 1489r127 48|751r19 2647r50
+664n7*newspapers_daily_weekly{8E9} 1594r110 48|1258r19 2648r50
+665n7*magazines_and_periodicals{8E9} 1594r137 48|1357r19 2649r50
+666n7*miscellaneous_printed_mattereg_road_maps_greeting_cards_posters_etc{8E9}
+. 1590r113 1590r184 48|1317r19 2650r50
+667n7*stationery_excluding_those_for_academic_purposes{8E9} 1660r117 48|1425r19
+. 2651r50
+668n7*stationery_for_academic_purposes_excluding_calculators_for_public_institutions{8E9}
+. 48|1489r19 2652r50
+669n7*stationery_for_academic_purposes_excluding_calculators_for_private_institutions{8E9}
+. 48|1081r19 2653r50
+670n7*other_specify_eg_junior_laptops_training_and_adult_education_for_public_institutions{8E9}
+. 48|1275r19 2654r50
+671n7*other_specify_eg_junior_laptops_training_and_adult_education_for_private_institutions{8E9}
+. 1437r140 1660r169 48|1315r19 2655r50
+672n7*holiday_tour_package{8E9} 1381r172 1449r88 1449r112 1609r86 1609r110
+. 48|1135r19 2656r50
+673n7*pre_primary_education_in_public_institutions{8E9} 1369r64 1455r92 1620r120
+. 48|1129r19 2657r50
+674n7*pre_primary_education_in_private_institutions{8E9} 48|1149r19 2658r50
+675n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_public_institutions{8E9}
+. 48|1413r19 2659r50
+676n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_private_institutions{8E9}
+. 1455r140 1620r168 48|878r19 2660r50
+677n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_public_institution{8E9}
+. 1465r78 1650r91 48|881r19 2661r50
+678n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_private_institution{8E9}
+. 1465r194 1650r207 48|1522r19 2662r50
+679n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_public_institutions{8E9}
+. 1473r77 1670r90 48|1338r19 2663r50
+680n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_private_institutions{8E9}
+. 1473r201 1670r214 48|1037r19 2664r50
+681n7*vocational_training_in_public_institutions{8E9} 1406r91 1511r118 48|775r19
+. 2665r50
+682n7*computer_certification_public_schools{8E9} 48|1012r19 2666r50
+683n7*other_including_language_classes_in_public_institutions{8E9} 48|1504r19
+. 2667r50
+684n7*excursions_field_trips_in_public_institutions{8E9} 48|1043r19 2668r50
+685n7*other_tuition_fees_for_private_institutions{8E9} 48|1035r19 2669r50
+686n7*vocational_training_in_private_institutions{8E9} 48|1133r19 2670r50
+687n7*computer_certification_private_schools{8E9} 48|1253r19 2671r50
+688n7*other_including_language_classes_in_private_institutions{8E9} 48|788r19
+. 2672r50
+689n7*excursions_field_trips_in_private_institutions{8E9} 48|1305r19 2673r50
+690n7*other_tuition_fees_for_public_institutions{8E9} 1369r112 1406r137 1511r164
+. 48|1570r19 2674r50
+691n7*coffee{8E9} 1382r77 1394r89 1487r124 48|954r19 2675r50
+692n7*ordinary_tea{8E9} 48|1478r19 2676r50
+693n7*rooibos_tea{8E9} 48|1286r19 2677r50
+694n7*herbal_tea_from_food_service_place{8E9} 48|901r19 2678r50
+695n7*other_eg_flavored_tea_specify{8E9} 48|1327r19 2679r50
+696n7*cocoa_and_powdered_chocolate{8E9} 48|1055r19 2680r50
+697n7*mineral_water_or_spring_water{8E9} 48|1011r19 2681r50
+698n7*soft_drinks{8E9} 48|1259r19 2682r50
+699n7*fruit_juices_from_food_service_places{8E9} 48|1246r19 2683r50
+700n7*fruit_and_vegetable_juices_combined_from_food_service_places{8E9} 48|1281r19
+. 2684r50
+701n7*vegetable_juices_from_food_service_places{8E9} 48|1370r19 2685r50
+702n7*spirits{8E9} 48|1588r19 2686r50
+703n7*table_wines_including_sparkling_wine_from_food_service_places{8E9}
+. 48|1217r19 2687r50
+704n7*cooking_wines_from_food_service_places{8E9} 48|896r19 2688r50
+705n7*fortified_wines_sherry_port_etc_from_food_service_places{8E9} 48|1024r19
+. 2689r50
+706n7*spirit_coolers_cider_hooch_etc_from_a_food_service_place{8E9} 48|1447r19
+. 2690r50
+707n7*other_eg_mampoer_home_brewed_from_food_service_place{8E9} 48|1563r19
+. 2691r50
+708n7*clear_beer_purchased_from_a_food_service_place{8E9} 48|1202r19 2692r50
+709n7*sorghum_beer_pre_packed_from_food_service_places{8E9} 48|1330r19 2693r50
+710n7*sorghum_beer_traditional_from_a_food_service_place{8E9} 1487r134 48|998r19
+. 2694r50
+711n7*burger{8E9} 1585r120 48|1403r19 2695r50
+712n7*burger_and_chips{8E9} 48|1442r19 2696r50
+713n7*curry_and_rice{8E9} 48|1046r19 2697r50
+714n7*pap_and_meat{8E9} 48|1091r19 2698r50
+715n7*other_prepared_meals_11121150{8E9} 48|728r19 2699r50
+716n7*other_prepared_meals_11121160{8E9} 48|765r19 2700r50
+717n7*other_prepared_meals_11121170{8E9} 48|806r19 2701r50
+718n7*other_prepared_meals_11121180{8E9} 48|851r19 2702r50
+719n7*other_prepared_meals_11121190{8E9} 1394r99 1585r130 48|900r19 2703r50
+720n7*hotel_motel_and_or_or_boarding_fees_paying_for_yourself{8E9} 1390r94
+. 1483r98 48|1294r19 2704r50
+721n7*rent_holiday_flat_or_house_caravan_etc_including_site_fees_paying_for_yourself{8E9}
+. 48|1210r19 2705r50
+722n7*schools_boarding_fees_in_public_institutions{8E9} 48|1274r19 2706r50
+723n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions{8E9}
+. 48|1391r19 2707r50
+724n7*universities_boarding_fees_in_public_institution{8E9} 48|847r19 2708r50
+725n7*schools_boarding_fees_in_private_institutions{8E9} 48|1587r19 2709r50
+726n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions{8E9}
+. 48|1521r19 2710r50
+727n7*universities_boarding_fees_in_private_institution{8E9} 48|1509r19 2711r50
+728n7*expenses_occurred_as_owner_of_a_holiday_home_ie_after_deduction_of_income_received_from_letting{8E9}
+. 48|1405r19 2712r50
+729n7*boarding_and_lodging{8E9} 1382r87 1390r153 1483r157 48|1440r19 2713r50
+730n7*mens_and_boys{8E9} 1378r87 1452r95 1528r122 48|801r19 2714r50
+731n7*womens_and_girls{8E9} 1528r139 48|1372r19 2715r50
+732n7*hairdryers{8E9} 1512r106 48|789r19 2716r50
+733n7*shavers{8E9} 48|1462r19 2717r50
+734n7*other_eg_hot_brush_vibrator_etc{8E9} 1512r120 48|841r19 2718r50
+735n7*hair_pieces{8E9} 1597r123 48|1538r19 2719r50
+736n7*hair_care_preparations_mousse_relaxers_gels_etc{8E9} 48|1544r19 2720r50
+737n7*shampoo_and_conditioners{8E9} 48|1032r19 2721r50
+738n7*sprays{8E9} 48|758r19 2722r50
+739n7*other{8E9} 48|1098r19 2723r50
+740n7*body_soap_including_sunlight_liquid_soap{8E9} 48|1335r19 2724r50
+741n7*bubble_bath_bath_oils_and_bath_salts{8E9} 48|1235r19 2725r50
+742n7*toothpaste_toothbrushes_electrical_toothbrushes{8E9} 48|1354r19 2726r50
+743n7*mouth_wash_and_dental_floss{8E9} 48|1427r19 2727r50
+744n7*shaving_soap_and_cream_and_after_shave_lotions{8E9} 48|1568r19 2728r50
+745n7*razors_and_razor_blades{8E9} 48|1064r19 2729r50
+746n7*skin_creams_and_lotions_including_baby_lotions_facial_cleansers_and_toners_perfumes_and_colognes{8E9}
+. 48|1092r19 2730r50
+747n7*powder_including_baby_powder_and_deodorants{8E9} 48|693r19 2731r50
+748n7*make_up_preparations_not_shown_elsewhere_eg_lipstick_eye_shadow_etc{8E9}
+. 48|689r19 2732r50
+749n7*toilet_paper{8E9} 48|1297r19 2733r50
+750n7*disposable_nappies{8E9} 48|804r19 2734r50
+751n7*tissues{8E9} 48|1457r19 2735r50
+752n7*sanitary_towels_and_tampons{8E9} 48|1451r19 2736r50
+753n7*other_personal_care_products{8E9} 1452r112 1597r138 48|1148r19 2737r50
+754n7*watches_and_personal_jewellery{8E9} 1453r98 1576r98 1576r132 48|1157r19
+. 2738r50
+755n7*handbags_travelling_bags_schoolbags_etc{8E9} 1603r92 48|1461r19 2739r50
+756n7*value_of_repairs_to_miscellaneous_items{8E9} 48|1595r19 2740r50
+757n7*smokers_reqisites{8E9} 48|1547r19 2741r50
+758n7*prams_and_push_carts{8E9} 48|984r19 2742r50
+759n7*car_seats_for_babies{8E9} 48|771r19 2743r50
+760n7*carry_cot_toys_etc{8E9} 48|1495r19 2744r50
+761n7*other_umbrellas_pocket_knives_sunglasses_etc_including_repairs{8E9}
+. 1453r132 1603r135 48|1606r19 2745r50
+762n7*day_care_mothers_creches_and_playgrounds_in_public_institutions{8E9}
+. 1466r99 1656r97 48|1165r19 2746r50
+763n7*day_care_mothers_creches_and_playgrounds_in_private_institutions{8E9}
+. 1466r166 1656r164 48|1377r19 2747r50
+764n7*insurance_on_buildings{8E9} 1433r91 1572r100 48|702r19 2748r50
+765n7*insurance_on_contents_of_dwellings{8E9} 48|690r19 2749r50
+766n7*package_insurance{8E9} 1572r126 48|1527r19 2750r50
+767n7*medical_insurance{8E9} 1573r98 48|1366r19 2751r50
+768n7*medical_aid_contribution_paid_by_household_member_in_private_institution{8E9}
+. 48|968r19 2752r50
+769n7*medical_aid_contribution_paid_by_household_member_in_public_institution{8E9}
+. 48|776r19 2753r50
+770n7*insurance_paid_for_holiday_purposes_life_luggage_medical{8E9} 1573r119
+. 48|713r19 2754r50
+771n7*insurance_for_private_transport{8E9} 1574r101 1574r136 48|1543r19 2755r50
+772n7*funeral_policies{8E9} 1433r117 1601r78 1601r98 48|961r19 2756r50
+773n7*bank_charges{8E9} 1408r104 1516r98 48|1433r19 2757r50
+774n7*interest_or_finance_charges{8E9} 1408r120 1516r114 48|1418r19 2758r50
+775n7*levy_for_sectional_title{8E9} 1445r100 1608r86 48|1548r19 2759r50
+776n7*contribution_towards_communal_provision_of_sevices{8E9} 48|803r19 2760r50
+777n7*payment_for_right_to_access_land{8E9} 48|1127r19 2761r50
+778n7*membership_fees{8E9} 48|1085r19 2762r50
+779n7*donations_to_institutions{8E9} 48|1036r19 2763r50
+780n7*donations_to_charity{8E9} 48|1073r19 2764r50
+781n7*levy_and_other_payments{8E9} 48|1151r19 2765r50
+782n7*professional_fees{8E9} 48|1004r19 2766r50
+783n7*lobola_or_dowry_paid{8E9} 48|674r19 2767r50
+784n7*funeral_expenses{8E9} 48|1508r19 2768r50
+785n7*gravestones_and_maintenance_of_graves_excluding_unveiling{8E9} 48|1399r19
+. 2769r50
+786n7*religious_and_traditional_ceremonies_unveiling_barmitzwah_diwali_weddings{8E9}
+. 48|939r19 2770r50
+787n7*fines_fines_for_straying_livestock_excluding_traffic_fines_and_library_fines{8E9}
+. 48|999r19 2771r50
+788n7*other_expenditure{8E9} 1378r104 1445r128 1608r114 48|673r19 2772r50
+789n7*unclassified_diary_items_except_food{8E9} 1380r81 1446r88 1446r128
+. 1496r102 1496r142 48|1497r19 2773r50
+790n7*others_expenditures_except_food{8E9} 1352r63 1380r121 1447r87 1447r122
+. 1495r96 1495r131 48|1014r19 2774r50
+791n7*free_water{8E9} 1354r63 1374r82 1421r88 1533r92 48|875r19 2775r50
+792n7*free_sanitation{8E9} 48|1562r19 2776r50
+793n7*free_electricity{8E9} 48|1411r19 2777r50
+794n7*estimated_value_of_private_use_of_company_or_similar_vehicle{8E9} 48|1077r19
+. 2778r50
+795n7*value_of_discounted_fares_for_educational_purposes{8E9} 48|877r19 2779r50
+796n7*value_of_discounted_fares_for_non_educational_purposes{8E9} 48|1400r19
+. 2780r50
+797n7*schools_and_other_edu_inst_grant_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_public{8E9}
+. 48|1139r19 2781r50
+798n7*schools_and_other_edu_inst_grant_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_privat{8E9}
+. 48|1090r19 2782r50
+799n7*library_fees_fines_grant_for_academic_purpose{8E9} 48|1010r19 2783r50
+800n7*library_services_grant_for_academic_purposes{8E9} 48|1359r19 2784r50
+801n7*textbooks_for_public_institutions_grant{8E9} 48|895r19 2785r50
+802n7*textbooks_for_private_institutions_grant{8E9} 48|947r19 2786r50
+803n7*stationery_grant_for_academic_purposes_excluding_calculators_for_public_institutions{8E9}
+. 48|1546r19 2787r50
+804n7*stationery_grant_for_academic_purposes_excluding_calculators_for_private_institutions{8E9}
+. 48|707r19 2788r50
+805n7*other_specify_granteg_junior_laptops_training_and_adult_education_for_public_institutions{8E9}
+. 48|829r19 2789r50
+806n7*other_specify_grant_eg_junior_laptops_training_and_adult_education_for_private_institutions{8E9}
+. 48|1326r19 2790r50
+807n7*pre_primary_education_in_public_institutions_grant{8E9} 48|1416r19
+. 2791r50
+808n7*pre_primary_education_in_private_institutions_grant{8E9} 48|1545r19
+. 2792r50
+809n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_public_institutions_grant{8E9}
+. 48|1301r19 2793r50
+810n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_private_institutions_grant{8E9}
+. 48|1176r19 2794r50
+811n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_public_institution_grant{8E9}
+. 48|941r19 2795r50
+812n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_private_institution_grant{8E9}
+. 48|840r19 2796r50
+813n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_public_institutions_grant{8E9}
+. 48|946r19 2797r50
+814n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_private_institutions_grant{8E9}
+. 48|698r19 2798r50
+815n7*vocational_training_in_public_institutions_grant{8E9} 48|667r19 2799r50
+816n7*computer_certification_public_schools_grant{8E9} 48|1347r19 2800r50
+817n7*other_including_language_classes_in_public_institutions_grant{8E9}
+. 48|1084r19 2801r50
+818n7*excursions_field_trips_in_public_institutions_grant{8E9} 48|839r19
+. 2802r50
+819n7*other_tuition_fees_for_private_institutions_grant{8E9} 48|1582r19 2803r50
+820n7*vocational_training_in_private_institutions_grant{8E9} 48|764r19 2804r50
+821n7*computer_certification_private_schools_grant{8E9} 48|1325r19 2805r50
+822n7*other_including_language_classes_in_private_institutions_grant{8E9}
+. 48|1456r19 2806r50
+823n7*excursions_field_trips_in_private_institutions_grant{8E9} 48|1346r19
+. 2807r50
+824n7*other_tuition_fees_for_public_institutions_grant{8E9} 48|1209r19 2808r50
+825n7*schools_boarding_fees_in_public_institutions_grant{8E9} 48|1027r19
+. 2809r50
+826n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions_grant{8E9}
+. 48|1421r19 2810r50
+827n7*universities_boarding_fees_in_public_institution_grant{8E9} 48|1460r19
+. 2811r50
+828n7*schools_boarding_fees_in_private_institutions_grant{8E9} 48|683r19
+. 2812r50
+829n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions_grant{8E9}
+. 48|1496r19 2813r50
+830n7*universities_boarding_fees_in_private_institution_grant{8E9} 48|1605r19
+. 2814r50
+831n7*day_care_mothers_creches_and_playgrounds_in_public_institutions_grant{8E9}
+. 48|1331r19 2815r50
+832n7*day_care_mothers_creches_and_playgrounds_in_private_institutions_grant{8E9}
+. 48|1453r19 2816r50
+833n7*medical_aid_contribution_contribution_by_employer_in_private_institutions{8E9}
+. 48|1279r19 2817r50
+834n7*medical_aid_contribution_contribution_by_employer_in_public_institutions{8E9}
+. 1354r77 1374r96 1421r102 1533r106 48|1252r19 2818r50
+835n7*household_salaries_and_wages{8E9} 1347r55 1356r50 1376r56 1432r72 1567r100
+. 1567r132 48|1549r19 2819r50
+836n7*household_self_employment_and_business{8E9} 1432r104 1568r110 1568r152
+. 48|1153r19 2820r50
+837n7*income_from_letting_of_fixed_property{8E9} 1430r75 1565r93 1565r134
+. 48|1364r19 2821r50
+838n7*royalties{8E9} 1566r94 1566r107 48|746r19 2822r50
+839n7*interest_received{8E9} 1570r97 1570r118 48|1171r19 2823r50
+840n7*dividends_of_listed_companies{8E9} 1561r94 48|836r19 2824r50
+841n7*dividends_of_unlisted_companies{8E9} 1561r127 48|1603r19 2825r50
+842n7*other_dividends{8E9} 1430r116 1563r100 1563r119 48|1130r19 2826r50
+843n7*pension_from_previous_employment{8E9} 1451r100 1564r142 1564r178 48|787r19
+. 2827r50
+844n7*annuities_from_own_investment{8E9} 1560r139 1560r172 48|1026r19 2828r50
+845n7*old_age_pensions{8E9} 1569r125 48|666r19 2829r50
+846n7*disability_grants{8E9} 48|1138r19 2830r50
+847n7*family_and_other_allowances{8E9} 48|1245r19 2831r50
+848n7*workmens_compensation_funds{8E9} 1451r136 1569r145 48|1341r19 2832r50
+849n7*alimony_palimony_and_other_allowances{8E9} 1431r79 1559r126 1559r167
+. 48|991r19 2833r50
+850n7*other_income_from_individuals{8E9} 1347r88 1431r120 1599r106 1599r139
+. 48|894r19 2834r50
+851n7*hobbis{8E9} 1441r68 1600r78 48|1387r19 2835r50
+852n7*side_lines_and_part_time_activities{8E9} 48|1181r19 2836r50
+853n7*sale_of_vehicles_property_etc{8E9} 48|1112r19 2837r50
+854n7*payments_received_from_boarders_and_other_non_members{8E9} 48|886r19
+. 2838r50
+855n7*claims{8E9} 48|1189r19 2839r50
+856n7*stokvel{8E9} 48|725r19 2840r50
+857n7*benefits_donations_and_giftes{8E9} 48|1344r19 2841r50
+858n7*cash{8E9} 48|798r19 2842r50
+859n7*value_of_food_received{8E9} 48|1018r19 2843r50
+860n7*value_of_clothing{8E9} 48|1553r19 2844r50
+861n7*value_of_other_benefints_donations_gifts_etc{8E9} 48|953r19 2845r50
+862n7*lobola_or_dowry_received{8E9} 48|1045r19 2846r50
+863n7*income_from_gambling{8E9} 48|809r19 2847r50
+864n7*tax_refunds_received{8E9} 48|1257r19 2848r50
+865n7*income_not_elsewhere_specified{8E9} 48|856r19 2849r50
+866n7*gratuities_and_other_lump_sum_payments{8E9} 1441r78 1600r88 48|1479r19
+. 2850r50
+867n7*imputed_rent_income_on_owned_dwellingi_7pct_peryear_of_dwelling{8E9}
+. 1356r82 1376r88 1418r113 1418r180 1562r180 1562r247 48|1484r19 2851r50
+868n7*free_water_income{8E9} 1355r58 1375r72 1426r94 1426r115 1538r114 1538r135
+. 48|1420r19 2852r50
+869n7*free_sanitation_income{8E9} 1425r99 1425r125 1537r124 1537r150 48|719r19
+. 2853r50
+870n7*free_electricity_income{8E9} 1424r100 1424r127 1536r126 1536r153 48|1510r19
+. 2854r50
+871n7*estimated_value_of_private_use_of_company_or_similar_vehicle_income{8E9}
+. 1427r179 1535r238 1535r309 48|1251r19 2855r50
+872n7*value_of_discounted_fares_for_educational_purposes_income{8E9} 1557r239
+. 1557r300 48|778r19 2856r50
+873n7*value_of_discounted_fares_for_non_educational_purposes_income{8E9}
+. 1427r250 1558r243 1558r308 48|1493r19 2857r50
+874n7*schools_and_other_edu_inst_grant_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_public_income{8E9}
+. 1428r116 1545r166 1545r305 48|1224r19 2858r50
+875n7*schools_and_other_edu_inst_grant_expenses_incurred_not_normally_regarded_as_tuition_eg_contributions_to_sports_grounds_in_privat_income{8E9}
+. 1428r255 1544r165 1544r304 48|1358r19 2859r50
+876n7*library_fees_fines_grant_for_academic_purpose_income{8E9} 1429r139
+. 1539r173 1539r229 48|1152r19 2860r50
+877n7*library_services_grant_for_academic_purposes_income{8E9} 1540r171 1540r226
+. 48|1488r19 2861r50
+878n7*textbooks_for_public_institutions_grant_income{8E9} 1553r188 1553r238
+. 48|797r19 2862r50
+879n7*textbooks_for_private_institutions_grant_income{8E9} 1552r189 1552r240
+. 48|920r19 2863r50
+880n7*stationery_grant_for_academic_purposes_excluding_calculators_for_public_institutions_income{8E9}
+. 1549r172 1549r267 48|777r19 2864r50
+881n7*stationery_grant_for_academic_purposes_excluding_calculators_for_private_institutions_income{8E9}
+. 1548r173 1548r269 48|975r19 2865r50
+882n7*other_specify_granteg_junior_laptops_training_and_adult_education_for_public_institutions_income{8E9}
+. 1542r175 1542r275 48|706r19 2866r50
+883n7*other_specify_grant_eg_junior_laptops_training_and_adult_education_for_private_institutions_income{8E9}
+. 1429r195 1541r176 1541r278 48|880r19 2867r50
+884n7*pre_primary_education_in_public_institutions_grant_income{8E9} 1422r220
+. 1543r318 48|705r19 2868r50
+885n7*pre_primary_education_in_private_institutions_grant_income{8E9} 48|692r19
+. 2869r50
+886n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_public_institutions_grant_income{8E9}
+. 48|1244r19 2870r50
+887n7*primary_education_includes_literacy_programmes_for_students_too_old_for_primary_school_in_private_institutions_grant_income{8E9}
+. 48|1106r19 2871r50
+888n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_public_institution_grant_income{8E9}
+. 48|1623r19 2872r50
+889n7*secondary_education_includes_out_of_school_secondary_education_for_adults_and_young_people_in_private_institution_grant_income{8E9}
+. 48|1375r19 2873r50
+890n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_public_institutions_grant_income{8E9}
+. 48|1626r19 2874r50
+891n7*tertiary_education_education_not_definable_by_level_excluding_driving_and_music_lessons_sport_etc_in_private_institutions_grant_income{8E9}
+. 48|1611r19 2875r50
+892n7*vocational_training_in_public_institutions_grant_income{8E9} 1543r379
+. 48|679r19 2876r50
+893n7*computer_certification_public_schools_grant_income{8E9} 1534r299 48|724r19
+. 2877r50
+894n7*other_including_language_classes_in_public_institutions_grant_income{8E9}
+. 48|1229r19 2878r50
+895n7*excursions_field_trips_in_public_institutions_grant_income{8E9} 48|1099r19
+. 2879r50
+896n7*vocational_training_in_private_institutions_grant_income{8E9} 48|1052r19
+. 2880r50
+897n7*computer_certification_private_schools_grant_income{8E9} 48|1191r19
+. 2881r50
+898n7*other_including_language_classes_in_private_institutions_grant_income{8E9}
+. 48|1122r19 2882r50
+899n7*excursions_field_trips_in_private_institutions_grant_income{8E9} 48|1374r19
+. 2883r50
+900n7*other_tuition_fees_for_public_institutions_grant_income{8E9} 48|1535r19
+. 2884r50
+901n7*other_tuition_fees_for_private_institutions_grant_income{8E9} 1422r281
+. 1534r353 48|1381r19 2885r50
+902n7*schools_boarding_fees_in_public_institutions_grant_income{8E9} 1423r164
+. 1547r231 1547r292 48|1610r19 2886r50
+903n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions_grant_income{8E9}
+. 1551r268 1551r373 48|1602r19 2887r50
+904n7*universities_boarding_fees_in_public_institution_grant_income{8E9}
+. 1556r228 1556r293 48|911r19 2888r50
+905n7*schools_boarding_fees_in_private_institutions_grant_income{8E9} 1546r225
+. 1546r287 48|844r19 2889r50
+906n7*teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions_grant_income{8E9}
+. 1550r269 1550r375 48|1170r19 2890r50
+907n7*universities_boarding_fees_in_private_institution_grant_income{8E9}
+. 1555r229 1555r295 48|817r19 2891r50
+908n7*day_care_mothers_creches_and_playgrounds_in_public_institutions_grant_income{8E9}
+. 1554r256 48|1278r19 2892r50
+909n7*day_care_mothers_creches_and_playgrounds_in_private_institutions_grant_income{8E9}
+. 48|1083r19 2893r50
+910n7*medical_aid_contribution_contribution_by_employer_in_private_institutions_income{8E9}
+. 48|1030r19 2894r50
+911n7*medical_aid_contribution_contribution_by_employer_in_public_institutions_income{8E9}
+. 1355r79 1375r93 1423r225 1554r336 48|1206r19 2895r50
+912n7*improvements_additions_and_alterations_including_build_in_furniture_solar_energy_systems_swimming_pools_and_garden_layouts{8E9}
+. 1359r51 1383r58 1458r187 1633r235 1633r361 48|835r19 2896r50
+913n7*services_for_improvements_additions_and_alterationscarpenters_electricians_etc{8E9}
+. 1646r248 1646r330 48|825r19 2897r50
+914n7*security_structures_including_fences_electronic_gates{8E9} 1645r216
+. 1645r273 48|1228r19 2898r50
+915n7*building_materials_not_included_in_q813_a_or_c_eg_for_building_purposes{8E9}
+. 1627r236 1627r311 48|677r19 2899r50
+916n7*labour_and_material_for_improvements_additions_and_alterations{8E9}
+. 1458r313 1635r259 1635r325 48|1212r19 2900r50
+917n7*cost_of_other_dewlling{8E9} 1464r188 1631r220 1631r246 48|1223r19 2901r50
+918n7*capital_payments_including_deposit{8E9} 1628r214 1628r252 48|988r19
+. 2902r50
+919n7*monthly_capital_payments{8E9} 1639r222 1639r250 48|1296r19 2903r50
+920n7*other_payments_such_as_transfer_duty_and_transfer_costs_and_registration_of_mortgage_bond{8E9}
+. 1642r212 1642r305 48|1226r19 2904r50
+921n7*purchase_of_timeshare{8E9} 1643r228 48|1412r19 2905r50
+922n7*levy_on_timeshare{8E9} 1464r214 1643r253 48|1373r19 2906r50
+923n7*life_and_endownment_policies{8E9} 1462r140 1636r178 1636r210 48|1009r19
+. 2907r50
+924n7*life_insurance_covering_mortgage_debt{8E9} 1462r172 1637r187 1637r228
+. 48|1193r19 2908r50
+925n7*repayment_on_loans_and_overdrafts{8E9} 1459r149 1644r192 1644r229 48|904r19
+. 2909r50
+926n7*contribution_to_pension_provident_and_annuity_funds{8E9} 1629r236 48|1017r19
+. 2910r50
+927n7*employer_contribution_to_pension_provident_and_annuity_funds{8E9} 1459r186
+. 1629r291 48|934r19 2911r50
+928n7*contributions_to_a_stokvel{8E9} 1460r96 1460r126 1630r132 1630r162
+. 48|1242r19 2912r50
+929n7*listed_company_shares{8E9} 1463r164 1638r195 1638r220 48|1336r19 2913r50
+930n7*unlisted_company_shares{8E9} 1648r197 1648r224 48|1186r19 2914r50
+931n7*unit_trusts{8E9} 1647r185 1647r200 48|1316r19 2915r50
+932n7*investment_plans{8E9} 1634r190 1634r210 48|730r19 2916r50
+933n7*offshore{8E9} 1640r182 1640r194 48|1044r19 2917r50
+934n7*other_investments{8E9} 1463r189 1641r191 1641r212 48|1295r19 2918r50
+935n7*deposits_into_savings{8E9} 1461r93 1632r124 1632r149 48|980r19 2919r50
+936n7*wthdrawals_from_savings{8E9} 1359r177 1383r184 1461r118 1649r126 1649r153
+. 48|843r19 2920r50
+937n7*site_income_tax{8E9} 1360r49 1384r54 1469r85 1666r105 1666r124 48|1022r19
+. 2921r50
+938n7*paye_income_tax{8E9} 1665r105 1665r124 48|1273r19 2922r50
+939n7*according_to_assessment_income_tax{8E9} 1469r104 1663r124 1663r162
+. 48|1392r19 2923r50
+940n7*amnesty_tax{8E9} 1468r72 1468r87 1664r88 1664r103 48|1306r19 2924r50
+941n7*unemployment_insurance_fund_uif{8E9} 1360r68 1384r73 1470r64 1470r99
+. 1667r100 1667r135 48|796r19 2925r50
+942n7*in_kind_maintenance_of_or_remittance_to_family_members_and_dependants_living_elsewhere_including_alimony_or_palimony_paid_to_ex_wife_or_ex_husband_children{8E9}
+. 1361r63 1385r82 1476r88 1673r90 48|1593r19 2926r50
+943n7*in_cash_maintenance_of_or_remittance_to_family_members_and_dependants_living_elsewhere_including_alimony_or_palimony_paid_to_ex_wife_or_ex_husband_children{8E9}
+. 48|1102r19 2927r50
+944n7*gifts_to_persons_who_are_not_members_of_this_household_excluding_cash_gifts_in_kind{8E9}
+. 48|1534r19 2928r50
+945n7*gifts_to_persons_who_are_not_members_of_this_household_excluding_cash_gifts{8E9}
+. 48|1515r19 2929r50
+946n7*tribal_levies_not_for_housing_in_kind{8E9} 48|1491r19 2930r50
+947n7*tribal_levies_not_for_housing{8E9} 1361r222 1385r241 1476r247 1673r249
+. 48|792r19 2931r50
+948n7*bond_loan_from_the_bank{8E9} 1353r49 1368r54 1398r100 1501r128 1501r155
+. 48|1082r19 2932r50
+949n7*other_loans{8E9} 1398r127 1507r116 1507r131 48|963r19 2933r50
+950n7*motor_vehicle_loan_from_the_bank{8E9} 1403r93 1403r129 1505r130 1505r166
+. 48|910r19 2934r50
+951n7*bank_overdraft{8E9} 1397r75 1397r93 1500r94 1500r112 48|1323r19 2935r50
+952n7*other_bank_loans{8E9} 1404r77 1404r97 1506r98 1506r118 48|1408r19 2936r50
+953n7*furniture_and_appliances_amount_oustanding{8E9} 1400r103 1400r149 1502r150
+. 1502r196 48|1380r19 2937r50
+954n7*retail_stores_clothers_on_account_or_lay_bye_amount_outstanding{8E9}
+. 1405r74 1405r141 1508r92 1508r159 48|943r19 2938r50
+955n7*loans_from_friends_and_family{8E9} 1401r90 1401r123 1503r124 1503r157
+. 48|1476r19 2939r50
+956n7*loans_from_money_lenders{8E9} 1402r85 1402r113 1504r114 1504r142 48|1160r19
+. 2940r50
+957n7*arreas_on_municipal_bills{8E9} 1353r76 1368r81 1396r86 1396r115 1499r116
+. 1499r145 48|700r19 2941r50
+958n7*expenditure_incurred_in_obtaining_income{8E9} 1357r48 1357r92 1377r52
+. 1377r96 1399r100 1399r144 1578r145 1578r189 48|1051r19 2942r50
+959n7*imputed_rent_on_owned_dwelling{8E9} 1358r74 1379r93 1420r103 1420r137
+. 1532r122 1532r156 48|795r19 2943r50
+960n7*panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party{8E9}
+. 1450r140 1610r196 48|1531r19 2944r50
+961n7*other_repair_work_paid_for_by_your_insurance_company_or_other_party{8E9}
+. 1450r215 1610r271 48|759r19 2945r50
+962n7*interest_on_mortgage_bonds{8E9} 1434r95 1434r125 1575r106 1575r136
+. 48|902r19 2946r50
+963n7*subsidy_on_payment_of_mortgage{8E9} 1467r99 1467r133 1661r114 1661r148
+. 48|823r19 2947r50
+964n7*seed{8E9} 1417r101 1531r118 48|1025r19 2948r50
+965n7*fertilizer{8E9} 48|927r19 2949r50
+966n7*feed{8E9} 48|1334r19 2950r50
+967n7*livestock{8E9} 48|828r19 2951r50
+968n7*services_eg_ploughing_veterinary_not_for_pets{8E9} 48|1530r19 2952r50
+969n7*processingeg_grinding_milling_and_slaughtering{8E9} 48|1350r19 2953r50
+970n7*other_items_from_own_production{8E9} 1417r109 1531r126 48|1422r19 2954r50
+971n7*good_and_services_received_by_virtue_of_occupation{8E9} 1443r99 1604r114
+. 48|1475r19 2955r50
+972n7*non_refundable_bursaries{8E9} 48|889r19 2956r50
+973n7*value_of_housing{8E9} 48|970r19 2957r50
+974n7*value_of_transport{8E9} 1358r108 1379r127 1443r153 1604r168 48|1578r19
+. 2958r50
+977K12*Coicop_Type_Package[97|47] 982r33
+982A12*Coicop_Type_Array{97|64A12[977]}<8E9> 1343r22 1344r22 1345r22 48|188r22
+. 197r22 206r22
+984E9*Coicop 995e32 1683r31 48|1637r33
+985n7*missing{984E9} 48|1650r19
+986n7*Consumption_coi{984E9} 48|1646r19
+987n7*Debts_coi{984E9} 48|1649r19
+988n7*In_kind_consumption_coi{984E9} 48|1643r19
+989n7*In_kind_income_coi{984E9} 48|1647r19
+990n7*Income_coi{984E9} 48|1640r19
+991n7*Loss_coi{984E9} 48|1641r19
+992n7*Other_products_not_consumption_coi{984E9} 48|1644r19
+993n7*Savings_coi{984E9} 48|1645r19
+994n7*Taxes_coi{984E9} 48|1642r19
+995n7*Transfers_to_others_coi{984E9} 48|1648r19
+997E9*Main_Group 1020e33 1026r23 1685r31 48|1656r33
+998n7*missing{997E9} 48|1681r19
+999n7*food_and_non_alcoholic_beverages_main{997E9} 48|627r13 627r59 1666r19
+1000n7*alcoholic_beverages_tobacco_and_narcotics_main{997E9} 48|617r13 617r68
+. 1673r19
+1001n7*clothing_and_footwear_main{997E9} 48|619r13 619r48 1669r19
+1002n7*housing_water_electricity_gas_and_other_fuels_main{997E9} 48|633r13
+. 633r72 1676r19
+1003n7*furnishings_househould_equipment_and_routine_maintenance_of_the_house_main{997E9}
+. 48|629r13 629r96 1675r19
+1004n7*health_main{997E9} 48|631r13 631r33 1680r19
+1005n7*transport_main{997E9} 48|659r13 659r36 1671r19
+1006n7*communication_main{997E9} 48|621r13 621r40 1670r19
+1007n7*recreation_and_culture_main{997E9} 48|649r13 649r49 1660r19
+1008n7*education_main{997E9} 48|625r13 625r36 1674r19
+1009n7*restaurants_and_hotels_main{997E9} 48|651r13 651r49 1679r19
+1010n7*miscellaneous_goods_and_services_main{997E9} 48|643r13 643r59 1672r19
+1011n7*other_unclasified_expenses_main{997E9} 48|647r13 647r53 1678r19
+1012n7*in_kind_consumption_main{997E9} 48|635r13 635r46 1668r19
+1013n7*income_main{997E9} 48|639r13 639r33 1677r19
+1014n7*income_in_kind_main{997E9} 48|637r13 637r41 1665r19
+1015n7*savings_main{997E9} 48|653r13 653r34 1664r19
+1016n7*taxes_main{997E9} 48|655r13 655r32 1659r19
+1017n7*transfers_to_others_main{997E9} 48|657r13 657r46 1662r19
+1018n7*debts_main{997E9} 48|623r13 623r32 1663r19
+1019n7*loss_main{997E9} 48|641r13 641r31 1661r19
+1020n7*not_cpi_consumption_main{997E9} 48|645r13 645r46 1667r19
+1022K12*Main_Group_Package[97|47] 1027r33
+1027A13*Main_Group_Array{97|64A12[1022]}<997E9> 1029r40 1343r49 48|188r49
+. 189r11 614r39
+1029U15*Aggregate_To 1029=29 1029>58 1029>82 48|192s10 614b14 661l8 661t20
+1029a29 a{1027A13} 48|614b28 617m10 617r65 619m10 619r45 621m10 621r37 623m10
+. 623r29 625m10 625r33 627m10 627r56 629m10 629r93 631m10 631r30 633m10 633r69
+. 635m10 635r43 637m10 637r38 639m10 639r30 641m10 641r28 643m10 643r56 645m10
+. 645r43 647m10 647r50 649m10 649r46 651m10 651r46 653m10 653r31 655m10 655r29
+. 657m10 657r43 659m10 659r33
+1029e58 which{8E9} 48|614b57 616r10 618r13 620r13 622r13 624r13 626r13 628r13
+. 630r13 632r13 634r13 636r13 638r13 640r13 642r13 644r13 646r13 648r13 650r13
+. 652r13 654r13 656r13 658r13
+1029f82 value{46|30F12} 48|614b81 617r119 619r79 621r63 623r47 625r55 627r101
+. 629r175 631r49 633r127 635r75 637r65 639r49 641r45 643r101 645r75 647r89
+. 649r81 651r81 653r51 655r47 657r75 659r55
+1031E9*Secondary_Group 1122e49 1128r23 1687r31 48|1687r33
+1032n7*missing{1031E9} 48|1780r19
+1033n7*food_secondary{1031E9} 48|44r16 44r39 1698r19
+1034n7*non_alcoholic_beverages_secondary{1031E9} 48|102r16 102r58 1755r19
+1035n7*unclassified_food_items_secondary{1031E9} 48|182r16 182r58 1743r19
+1036n7*alcoholic_beverages_secondary{1031E9} 48|10r16 10r54 1725r19
+1037n7*tobacco_secondary{1031E9} 48|174r16 174r42 1717r19
+1038n7*clothing_secondary{1031E9} 48|16r16 16r43 1760r19
+1039n7*footwear_secondary{1031E9} 48|46r16 46r43 1764r19
+1040n7*actual_rentals_for_housing_secondary{1031E9} 48|8r16 8r61 1737r19
+1041n7*imputed_rentals_for_housing_secondary{1031E9} 48|64r16 64r62 1704r19
+1042n7*maintenance_and_repair_of_the_dwelling_secondary{1031E9} 48|96r16
+. 96r73 1754r19
+1043n7*water_supply_and_miscellaneous_services_relating_to_the_dwelling_secondary{1031E9}
+. 48|184r16 184r99 1726r19
+1044n7*electricity_gas_and_other_fuels_secondary{1031E9} 48|40r16 40r66 1690r19
+1045n7*furniture_and_furnishings_carpets_and_other_floor_covering_secondary{1031E9}
+. 48|48r16 48r93 1746r19
+1046n7*household_textiles_secondary{1031E9} 48|58r16 58r53 1703r19
+1047n7*household_appliances_secondary{1031E9} 48|56r16 56r55 1701r19
+1048n7*glassware_tableware_andhousehold_utensils_secondary{1031E9} 48|50r16
+. 50r76 1735r19
+1049n7*tools_and_equipment_for_house_and_garden_secondary{1031E9} 48|176r16
+. 176r75 1765r19
+1050n7*goods_and_services_for_routine_household_maintenance_secondary{1031E9}
+. 48|52r16 52r87 1707r19
+1051n7*medical_products_appliances_and_equipment_secondary{1031E9} 48|98r16
+. 98r76 1749r19
+1052n7*out_patient_services_secondary{1031E9} 48|122r16 122r55 1776r19
+1053n7*hospital_services_secondary{1031E9} 48|54r16 54r52 1751r19
+1054n7*purchase_of_vehicles_secondary{1031E9} 48|138r16 138r55 1733r19
+1055n7*operation_of_personal_transport_equipment_secondary{1031E9} 48|104r16
+. 104r76 1742r19
+1056n7*transport_services_secondary{1031E9} 48|180r16 180r53 1767r19
+1057n7*operational_values_of_other_modes_of_transport_secondary{1031E9} 48|106r16
+. 106r81 1728r19
+1058n7*postal_services_secondary{1031E9} 48|134r16 134r50 1712r19
+1059n7*telephone_and_telefax_equipment_secondary{1031E9} 48|168r16 168r66
+. 1723r19
+1060n7*telephone_and_telefax_services_secondary{1031E9} 48|170r16 170r65
+. 1738r19
+1061n7*audio_visual_photographic_and_information_processing_equipment_secondary{1031E9}
+. 48|12r16 12r97 1773r19
+1062n7*other_major_durables_for_recreation_and_culture_secondary{1031E9}
+. 48|110r16 110r82 1695r19
+1063n7*other_recreational_items_and_equipment_garden_and_pets_secondary{1031E9}
+. 48|114r16 114r89 1721r19
+1064n7*recreational_and_cultural_services_secondary{1031E9} 48|140r16 140r69
+. 1772r19
+1065n7*newspapers_books_and_stationary_secondary{1031E9} 48|100r16 100r66
+. 1716r19
+1066n7*package_holidays_secondary{1031E9} 48|124r16 124r51 1693r19
+1067n7*pre_primary_and_primary_education_secondary{1031E9} 48|136r16 136r68
+. 1724r19
+1068n7*secondary_education_secondary{1031E9} 48|156r16 156r54 1699r19
+1069n7*tertiary_education_secondary{1031E9} 48|172r16 172r53 1702r19
+1070n7*education_not_definable_by_level_secondary{1031E9} 48|38r16 38r67
+. 1744r19
+1071n7*catering_services_secondary{1031E9} 48|14r16 14r52 1758r19
+1072n7*accommodation_services_secondary{1031E9} 48|6r16 6r57 1777r19
+1073n7*personal_care_secondary{1031E9} 48|130r16 130r48 1713r19
+1074n7*personal_effects_secondary{1031E9} 48|132r16 132r51 1756r19
+1075n7*social_protection_secondary{1031E9} 48|158r16 158r52 1766r19
+1076n7*insurance_secondary{1031E9} 48|92r16 92r44 1750r19
+1077n7*financial_services_nec_secondary{1031E9} 48|42r16 42r57 1705r19
+1078n7*other_services_nec_secondary{1031E9} 48|116r16 116r53 1734r19
+1079n7*others_diary_secondary{1031E9} 48|118r16 118r47 1762r19
+1080n7*others_main_secondary{1031E9} 48|120r16 120r46 1694r19
+1081n7*in_kind_consumption_secondary{1031E9} 48|68r16 68r54 1700r19
+1082n7*income_from_work_secondary{1031E9} 48|90r16 90r51 1771r19
+1083n7*income_from_capital_secondary{1031E9} 48|86r16 86r54 1731r19
+1084n7*pensions_social_insuerance_family_allowances_secondary{1031E9} 48|128r16
+. 128r79 1727r19
+1085n7*income_from_individuals_secondary{1031E9} 48|88r16 88r58 1708r19
+1086n7*other_income_secondary{1031E9} 48|108r16 108r47 1692r19
+1087n7*imputed_rent_on_owned_dwellingi_7pct_per_year_of_dwelling_secondary{1031E9}
+. 48|62r16 62r92 1732r19
+1088n7*in_kind_income_from_free_water_secondary{1031E9} 48|78r16 78r65 1718r19
+1089n7*in_kind_income_from_free_sanitation_secondary{1031E9} 48|76r16 76r70
+. 1779r19
+1090n7*in_kind_income_from_free_electricity_secondary{1031E9} 48|74r16 74r71
+. 1763r19
+1091n7*in_kind_income_from_private_use_of_company_vehicle_or_discounted_fares_for_educational_and_non_educational_purposes_secondary{1031E9}
+. 48|80r16 80r150 1709r19
+1092n7*in_kind_income_from_schools_and_other_edu_inst_grant_secondary{1031E9}
+. 48|82r16 82r87 1759r19
+1093n7*in_kind_income_from_textbooks_others_library_services_and_stationery_grants_secondary{1031E9}
+. 48|84r16 84r110 1722r19
+1094n7*in_kind_income_from_computer_certification_excursions_other_including_language_classes_pre_primary_primary_tertiary_education_and_vocational_training_grants_secondary{1031E9}
+. 48|70r16 70r191 1691r19
+1095n7*in_kind_income_from_day_care_mothers_medical_aid_contribution_schools_and_universities_boarding_fees_secondary{1031E9}
+. 48|72r16 72r135 1761r19
+1096n7*savings_for_improvements_services_for_improvements_security_structures_building_materials_and_labour_and_material_for_improvements_secondary{1031E9}
+. 48|142r16 142r165 1715r19
+1097n7*savings_from_monthly_capital_and_other_payments_levy_on_timeshare_capital_payments_cost_of_other_dewlling_and_purchase_of_timeshare_secondary{1031E9}
+. 48|154r16 154r166 1739r19
+1098n7*savings_from_life_and_endownment_policies_and_life_insurance_covering_mortgage_debt_secondary{1031E9}
+. 48|150r16 150r118 1774r19
+1099n7*savings_from_contribution_to_pension_repayment_on_loans_and_employer_contribution_to_pension_secondary{1031E9}
+. 48|144r16 144r127 1748r19
+1100n7*savings_from_contributions_to_a_stokvel_secondary{1031E9} 48|146r16
+. 146r74 1753r19
+1101n7*savings_from_listed_and_unlisted_company_shares_unit_trusts_investment_plans_offshore_and_other_investments_secondary{1031E9}
+. 48|152r16 152r142 1752r19
+1102n7*savings_from_deposits_and_wthdrawals_secondary{1031E9} 48|148r16 148r71
+. 1770r19
+1103n7*taxes_site_paye_and_income_tax_secondary{1031E9} 48|164r16 164r65
+. 1741r19
+1104n7*taxes_amnesty_tax_secondary{1031E9} 48|162r16 162r52 1697r19
+1105n7*taxes_uif_secondary{1031E9} 48|166r16 166r44 1720r19
+1106n7*transfers_to_others_secondary{1031E9} 48|178r16 178r54 1730r19
+1107n7*debts_bond_loan_from_the_bank_and_other_loans_secondary{1031E9} 48|22r16
+. 22r80 1714r19
+1108n7*debts_motor_vehicle_loan_from_the_bank_secondary{1031E9} 48|32r16
+. 32r73 1711r19
+1109n7*debts_bank_overdraft_secondary{1031E9} 48|20r16 20r55 1706r19
+1110n7*debts_other_bank_loans_secondary{1031E9} 48|34r16 34r57 1740r19
+1111n7*debts_furniture_and_appliances_amount_oustanding_secondary{1031E9}
+. 48|26r16 26r83 1757r19
+1112n7*debts_retail_stores_secondary{1031E9} 48|36r16 36r54 1745r19
+1113n7*debts_loans_from_friends_and_family_secondary{1031E9} 48|28r16 28r70
+. 1747r19
+1114n7*debts_loans_from_money_lenders_secondary{1031E9} 48|30r16 30r65 1710r19
+1115n7*debts_arreas_on_municipal_bills_secondary{1031E9} 48|18r16 18r66 1736r19
+1116n7*debts_expenditure_incurred_in_obtaining_income_secondary{1031E9} 48|24r16
+. 24r81 1719r19
+1117n7*imputed_rentals_of_owner_occupiers_secondary{1031E9} 48|66r16 66r69
+. 1775r19
+1118n7*panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party_secondary{1031E9}
+. 48|126r16 126r106 1729r19
+1119n7*interest_on_mortgage_bonds_secondary{1031E9} 48|94r16 94r61 1769r19
+1120n7*subsidy_on_payment_of_mortgage_secondary{1031E9} 48|160r16 160r65
+. 1768r19
+1121n7*imputed_cost_for_home_production_secondary{1031E9} 48|60r16 60r67
+. 1778r19
+1122n7*other_products_not_consumption_secondary{1031E9} 48|112r16 112r65
+. 1696r19
+1124K12*Secondary_Group_Package[97|47] 1129r38
+1129A13*Secondary_Group_Array{97|64A12[1124]}<1031E9> 1131r40 1344r49 48|3r39
+. 197r49 198r11
+1131U15*Aggregate_To 1131=29 1131>63 1131>87 48|3b14 186l8 186t20 201s10
+1131a29 a{1129A13} 48|3b28 6m13 6r54 8m13 8r58 10m13 10r51 12m13 12r94 14m13
+. 14r49 16m13 16r40 18m13 18r63 20m13 20r52 22m13 22r77 24m13 24r78 26m13
+. 26r80 28m13 28r67 30m13 30r62 32m13 32r70 34m13 34r54 36m13 36r51 38m13
+. 38r64 40m13 40r63 42m13 42r54 44m13 44r36 46m13 46r40 48m13 48r90 50m13
+. 50r73 52m13 52r84 54m13 54r49 56m13 56r52 58m13 58r50 60m13 60r64 62m13
+. 62r89 64m13 64r59 66m13 66r66 68m13 68r51 70m13 70r188 72m13 72r132 74m13
+. 74r68 76m13 76r67 78m13 78r62 80m13 80r147 82m13 82r84 84m13 84r107 86m13
+. 86r51 88m13 88r55 90m13 90r48 92m13 92r41 94m13 94r58 96m13 96r70 98m13
+. 98r73 100m13 100r63 102m13 102r55 104m13 104r73 106m13 106r78 108m13 108r44
+. 110m13 110r79 112m13 112r62 114m13 114r86 116m13 116r50 118m13 118r44 120m13
+. 120r43 122m13 122r52 124m13 124r48 126m13 126r103 128m13 128r76 130m13
+. 130r45 132m13 132r48 134m13 134r47 136m13 136r65 138m13 138r52 140m13 140r66
+. 142m13 142r162 144m13 144r124 146m13 146r71 148m13 148r68 150m13 150r115
+. 152m13 152r139 154m13 154r163 156m13 156r51 158m13 158r49 160m13 160r62
+. 162m13 162r49 164m13 164r62 166m13 166r41 168m13 168r63 170m13 170r62 172m13
+. 172r50 174m13 174r39 176m13 176r72 178m13 178r51 180m13 180r50 182m13 182r55
+. 184m13 184r96
+1131e63 which{8E9} 48|3b62 5r10 7r13 9r13 11r13 13r13 15r13 17r13 19r13 21r13
+. 23r13 25r13 27r13 29r13 31r13 33r13 35r13 37r13 39r13 41r13 43r13 45r13
+. 47r13 49r13 51r13 53r13 55r13 57r13 59r13 61r13 63r13 65r13 67r13 69r13
+. 71r13 73r13 75r13 77r13 79r13 81r13 83r13 85r13 87r13 89r13 91r13 93r13
+. 95r13 97r13 99r13 101r13 103r13 105r13 107r13 109r13 111r13 113r13 115r13
+. 117r13 119r13 121r13 123r13 125r13 127r13 129r13 131r13 133r13 135r13 137r13
+. 139r13 141r13 143r13 145r13 147r13 149r13 151r13 153r13 155r13 157r13 159r13
+. 161r13 163r13 165r13 167r13 169r13 171r13 173r13 175r13 177r13 179r13 181r13
+. 183r13
+1131f87 value{46|30F12} 48|3b86 6r94 8r102 10r88 12r174 14r84 16r66 18r112
+. 20r90 22r140 24r142 26r146 28r120 30r110 32r126 34r94 36r88 38r114 40r112
+. 42r94 44r58 46r66 48r166 50r132 52r154 54r84 56r90 58r86 60r114 62r164
+. 64r104 66r118 68r88 70r362 72r250 74r122 76r120 78r110 80r280 82r154 84r200
+. 86r88 88r96 90r82 92r68 94r102 96r126 98r132 100r112 102r96 104r132 106r142
+. 108r74 110r144 112r110 114r158 116r86 118r74 120r72 122r90 124r82 126r192
+. 128r138 130r76 132r82 134r80 136r116 138r90 140r118 142r310 144r234 146r128
+. 148r122 150r216 152r264 154r312 156r88 158r84 160r110 162r84 164r110 166r68
+. 168r112 170r110 172r86 174r64 176r130 178r88 180r86 182r96 184r178
+1133E10*Tertiary_Group 1332e48 1338r23 1689r31 48|1786r33
+1134n7*missing{1133E10} 48|1986r19
+1135n7*bread_and_cereals_tertiary{1133E10} 48|232r13 232r48 1842r19
+1136n7*meat_tertiary{1133E10} 48|424r13 424r35 1833r19
+1137n7*fish_tertiary{1133E10} 48|286r13 286r35 1982r19
+1138n7*milk_cheese_and_eggs_tertiary{1133E10} 48|428r13 428r51 1814r19
+1139n7*oils_and_fats_tertiary{1133E10} 48|444r13 444r44 1856r19
+1140n7*fruits_tertiary{1133E10} 48|290r13 290r37 1925r19
+1141n7*vegetables_tertiary{1133E10} 48|602r13 602r41 1841r19
+1142n7*sugar_jam_honey_chocolate_and_confectionery_tertiary{1133E10} 48|576r13
+. 576r74 1956r19
+1143n7*food_products_nec_tertiary{1133E10} 48|288r13 288r48 1813r19
+1144n7*coffee_tea_and_cocoa_tertiary{1133E10} 48|240r13 240r51 1926r19
+1145n7*mineral_waters_soft_drinks_fruit_and_vegetable_juices_tertiary{1133E10}
+. 48|430r13 430r84 1914r19
+1146n7*unclassified_food_items_tertiary{1133E10} 48|600r13 600r54 1891r19
+1147n7*spirits_tertiary{1133E10} 48|570r13 570r38 1855r19
+1148n7*wine_tertiary{1133E10} 48|610r13 610r35 1975r19
+1149n7*beer_tertiary{1133E10} 48|224r13 224r35 1805r19
+1150n7*tobacco_tertiary{1133E10} 48|596r13 596r38 1932r19
+1151n7*clothing_materials_tertiary{1133E10} 48|238r13 238r49 1933r19
+1152n7*garments_tertiary{1133E10} 48|302r13 302r39 1904r19
+1153n7*other_articles_of_clothing_and_clothing_accessories_tertiary{1133E10}
+. 48|448r13 448r82 1946r19
+1154n7*cleaning_repair_and_hire_of_clothing_tertiary{1133E10} 48|236r13 236r67
+. 1947r19
+1155n7*shoes_and_other_footwear_tertiary{1133E10} 48|558r13 558r55 1938r19
+1156n7*repair_and_hire_of_foowear_tertiary{1133E10} 48|500r13 500r57 1847r19
+1157n7*actual_rentals_paid_by_tenants_tertiary{1133E10} 48|220r13 220r61
+. 1875r19
+1158n7*imputed_rentals_of_owner_occupiers_tertiary{1133E10} 48|316r13 316r65
+. 1945r19
+1159n7*materials_for_maintenance_and_repair_of_the_dwelling_tertiary{1133E10}
+. 48|420r13 420r83 1882r19
+1160n7*service_of_the_maintenance_and_repair_of_the_dwelling_tertiary{1133E10}
+. 48|554r13 554r84 1974r19
+1161n7*water_and_electricity_tertiary{1133E10} 48|606r13 606r52 1885r19
+1162n7*water_supply_tertiary{1133E10} 48|608r13 608r43 1803r19
+1163n7*refuse_collection_tertiary{1133E10} 48|498r13 498r48 1965r19
+1164n7*sewarage_collection_tertiary{1133E10} 48|556r13 556r50 1880r19
+1165n7*other_services_relating_to_the_dwelling_tertiary{1133E10} 48|466r13
+. 466r70 1966r19
+1166n7*electricity_tertiary{1133E10} 48|278r13 278r42 1854r19
+1167n7*gas_tertiary{1133E10} 48|304r13 304r34 1895r19
+1168n7*liquid_fuels_tertiary{1133E10} 48|406r13 406r43 1948r19
+1169n7*solid_fuels_tertiary{1133E10} 48|566r13 566r42 1929r19
+1170n7*furniture_and_furnishings_tertiary{1133E10} 48|294r13 294r56 1878r19
+1171n7*carpets_and_other_floor_covering_tertiary{1133E10} 48|234r13 234r63
+. 1887r19
+1172n7*repair_of_furniture_furnishings_and_floor_covering_tertiary{1133E10}
+. 48|502r13 502r81 1985r19
+1173n7*household_textile_tertiary{1133E10} 48|312r13 312r48 1919r19
+1174n7*major_household_appliances_wheter_or_no_aelectriccal_tertiary{1133E10}
+. 48|416r13 416r83 1840r19
+1175n7*small_electrical_household_appliance_tertiary{1133E10} 48|560r13 560r67
+. 1897r19
+1176n7*repair_of_household_appliance_tertiary{1133E10} 48|504r13 504r60 1846r19
+1177n7*glassware_tableware_and_household_utensils_tertiary{1133E10} 48|306r13
+. 306r73 1896r19
+1178n7*major_tools_and_equipment_tertiary{1133E10} 48|418r13 418r56 1950r19
+1179n7*small_tools_and_miscellaneous_accessories_tertiary{1133E10} 48|562r13
+. 562r72 1860r19
+1180n7*non_durable_household_goods_tertiary{1133E10} 48|442r13 442r58 1893r19
+1181n7*domestics_services_and_household_arcticles_tertiary{1133E10} 48|272r13
+. 272r73 1810r19
+1182n7*pharmaceutical_products_tertiary{1133E10} 48|486r13 486r54 1862r19
+1183n7*other_medical_products_tertiary{1133E10} 48|456r13 456r53 1804r19
+1184n7*therapeutic_appliances_and_equipment_tertiary{1133E10} 48|594r13 594r67
+. 1853r19
+1185n7*medical_services_tertiary{1133E10} 48|426r13 426r47 1809r19
+1186n7*dental_services_tertiary{1133E10} 48|270r13 270r46 1939r19
+1187n7*paramedic_services_tertiary{1133E10} 48|474r13 474r49 1834r19
+1188n7*hospital_services_tertiary{1133E10} 48|310r13 310r48 1872r19
+1189n7*motor_cars_tertiary{1133E10} 48|434r13 434r41 1936r19
+1190n7*motor_cycles_tertiary{1133E10} 48|436r13 436r43 1877r19
+1191n7*bicycles_tertiary{1133E10} 48|228r13 228r39 1910r19
+1192n7*animal_drawn_vehicle_tertiary{1133E10} 48|222r13 222r51 1928r19
+1193n7*spare_parts_and_accessories_tertiary{1133E10} 48|568r13 568r58 1861r19
+1194n7*fuels_and_lubricants_tertiary{1133E10} 48|292r13 292r51 1912r19
+1195n7*maintenance_and_repairs_of_personal_transport_equipment_tertiary{1133E10}
+. 48|412r13 412r86 1871r19
+1196n7*other_services_in_respect_of_personal_transport_equipment_tertiary{1133E10}
+. 48|464r13 464r88 1883r19
+1197n7*passenger_transport_by_railway_tertiary{1133E10} 48|478r13 478r61
+. 1954r19
+1198n7*passenger_transport_by_road_tertiary{1133E10} 48|480r13 480r58 1973r19
+1199n7*passenger_transport_by_air_tertiary{1133E10} 48|476r13 476r57 1867r19
+1200n7*passenger_transport_by_sea_and_inland_waterway_tertiary{1133E10} 48|482r13
+. 482r77 1874r19
+1201n7*other_puchased_transport_services_tertiary{1133E10} 48|462r13 462r64
+. 1886r19
+1202n7*cost_for_other_modes_of_transport_tertiary{1133E10} 48|246r13 246r64
+. 1927r19
+1203n7*postal_services_tertiary{1133E10} 48|490r13 490r46 1829r19
+1204n7*telephone_and_telefax_equipment_tertiary{1133E10} 48|588r13 588r62
+. 1921r19
+1205n7*telephone_and_telefax_services_tertiary{1133E10} 48|590r13 590r61
+. 1845r19
+1206n7*equipment_for_the_reception_recording_and_reproduction_of_sound_and_pictures_tertiary{1133E10}
+. 48|282r13 282r107 1879r19
+1207n7*photographic_and_cinematographic_equipment_and_optical_instruments_tertiary{1133E10}
+. 48|488r13 488r97 1888r19
+1208n7*information_processing_equipment_tertiary{1133E10} 48|394r13 394r63
+. 1820r19
+1209n7*recording_meedia_tertiary{1133E10} 48|494r13 494r47 1960r19
+1210n7*major_durables_for_outdoor_recreation_tertiary{1133E10} 48|414r13
+. 414r68 1909r19
+1211n7*musical_instrument_and_major_durables_for_outdoor_recreation_tertiary{1133E10}
+. 48|438r13 438r91 1984r19
+1212n7*maintenance_and_repair_of_other_major_durables_for_recreation_and_culture_tertiary{1133E10}
+. 48|410r13 410r104 1961r19
+1213n7*games_toys_and_hobbies_tertiary{1133E10} 48|298r13 298r53 1930r19
+1214n7*equipment_for_sport_camping_and_open_air_recreation_tertiary{1133E10}
+. 48|280r13 280r82 1892r19
+1215n7*gardens_plants_and_flowers_tertiary{1133E10} 48|300r13 300r57 1889r19
+1216n7*pets_and_related_products_tertiary{1133E10} 48|484r13 484r56 1940r19
+1217n7*veterinary_and_other_services_tertiary{1133E10} 48|604r13 604r60 1838r19
+1218n7*recreational_and_sporting_services_tertiary{1133E10} 48|496r13 496r65
+. 1823r19
+1219n7*cultural_services_tertiary{1133E10} 48|248r13 248r48 1913r19
+1220n7*games_of_chances_tertiary{1133E10} 48|296r13 296r47 1955r19
+1221n7*books_tertiary{1133E10} 48|230r13 230r36 1983r19
+1222n7*newspaper_and_periodicals_tertiary{1133E10} 48|440r13 440r56 1903r19
+1223n7*miscellaneous_printed_matter_tertiary{1133E10} 48|432r13 432r59 1949r19
+1224n7*stationery_and_drawing_materials_tertiary{1133E10} 48|572r13 572r63
+. 1792r19
+1225n7*package_holidays_tertiary{1133E10} 48|470r13 470r47 1981r19
+1226n7*pre_primary_and_primary_education_tertiary{1133E10} 48|492r13 492r64
+. 1931r19
+1227n7*scondary_education_tertiary{1133E10} 48|552r13 552r49 1824r19
+1228n7*tertiary_education_tertiary{1133E10} 48|592r13 592r49 1881r19
+1229n7*education_not_definable_by_level_tertiary{1133E10} 48|274r13 274r63
+. 1967r19
+1230n7*beverages_in_restaurants_cafes_canteens_and_the_likes_tertiary{1133E10}
+. 48|226r13 226r84 1801r19
+1231n7*meals_in_restaurants_cafes_canteens_and_the_likes_tertiary{1133E10}
+. 48|422r13 422r80 1821r19
+1232n7*accommodation_services_tertiary{1133E10} 48|218r13 218r53 1822r19
+1233n7*hairdressing_salons_and_personal_grooming_astablishment_tertiary{1133E10}
+. 48|308r13 308r86 1815r19
+1234n7*elecrtical_appliances_for_personal_care_tertiary{1133E10} 48|276r13
+. 276r70 1937r19
+1235n7*other_appliances_articles_and_products_for_personal_care_tertiary{1133E10}
+. 48|446r13 446r87 1920r19
+1236n7*jewellery_clocks_and_watches_tertiary{1133E10} 48|404r13 404r59 1830r19
+1237n7*other_personal_effects_tertiary{1133E10} 48|458r13 458r53 1873r19
+1238n7*social_protection_services_tertiary{1133E10} 48|564r13 564r57 1922r19
+1239n7*insurance_connected_with_the_dwelling_tertiary{1133E10} 48|396r13
+. 396r68 1968r19
+1240n7*insurance_connected_with_the_health_tertiary{1133E10} 48|398r13 398r66
+. 1884r19
+1241n7*insurance_connected_with_the_transport_tertiary{1133E10} 48|400r13
+. 400r69 1828r19
+1242n7*other_insurance_tertiary{1133E10} 48|454r13 454r46 1791r19
+1243n7*financial_services_nec_tertiary{1133E10} 48|284r13 284r53 1816r19
+1244n7*other_services_tertiary{1133E10} 48|468r13 468r45 1964r19
+1245n7*consumption_unclassified_diary_items_tertiary{1133E10} 48|244r13 244r67
+. 1915r19
+1246n7*consumption_others_expenditures_tertiary{1133E10} 48|242r13 242r62
+. 1898r19
+1247n7*in_kind_consumption_tertiary{1133E10} 48|318r13 318r50 1902r19
+1248n7*income_from_salaries_and_wages_tertiary{1133E10} 48|386r13 386r61
+. 1811r19
+1249n7*income_from_self_employment_and_business_tertiary{1133E10} 48|388r13
+. 388r71 1924r19
+1250n7*income_from_property_tertiary{1133E10} 48|382r13 382r51 1908r19
+1251n7*income_from_royalties_tertiary{1133E10} 48|384r13 384r52 1918r19
+1252n7*income_interest_received_tertiary{1133E10} 48|392r13 392r55 1800r19
+1253n7*income_from_dividends_tertiary{1133E10} 48|374r13 374r52 1953r19
+1254n7*income_from_other_dividends_tertiary{1133E10} 48|378r13 378r58 1812r19
+1255n7*income_from_pension_from_previous_employment_tertiary{1133E10} 48|380r13
+. 380r75 1837r19
+1256n7*income_from_annuities_from_own_investment_tertiary{1133E10} 48|372r13
+. 372r72 1866r19
+1257n7*income_from_social_pensions_tertiary{1133E10} 48|390r13 390r58 1944r19
+1258n7*income_from_alimony_palimony_and_other_allowances_tertiary{1133E10}
+. 48|370r13 370r80 1943r19
+1259n7*other_income_from_individuals_tertiary{1133E10} 48|450r13 450r60 1980r19
+1260n7*other_income_tertiary{1133E10} 48|452r13 452r43 1901r19
+1261n7*income_from_imputed_rent_on_owned_dwellingi_7pct_per_year_of_dwelling_tertiary{1133E10}
+. 48|376r13 376r100 1972r19
+1262n7*in_kind_income_from_free_water_tertiary{1133E10} 48|328r13 328r61
+. 1952r19
+1263n7*in_kind_income_from_free_sanitation_tertiary{1133E10} 48|326r13 326r66
+. 1917r19
+1264n7*in_kind_income_from_free_electricity_tertiary{1133E10} 48|324r13 324r67
+. 1959r19
+1265n7*in_kind_income_from_estimated_value_of_private_use_of_company_vehicle_tertiary{1133E10}
+. 48|322r13 322r100 1799r19
+1266n7*in_kind_income_from_value_of_discounted_fares_for_educational_purposes_tertiary{1133E10}
+. 48|366r13 366r101 1852r19
+1267n7*in_kind_income_from_value_of_discounted_fares_for_non_educational_purposes_tertiary{1133E10}
+. 48|368r13 368r105 1907r19
+1268n7*in_kind_income_from_schools_and_other_edu_inst_publice_grant_tertiary{1133E10}
+. 48|342r13 342r91 1819r19
+1269n7*in_kind_income_from_schools_and_other_edu_inst_privat_grant_tertiary{1133E10}
+. 48|340r13 340r90 1900r19
+1270n7*in_kind_income_from_library_fees_fines_grant_tertiary{1133E10} 48|330r13
+. 330r75 1808r19
+1271n7*in_kind_income_from_library_services_grant_tertiary{1133E10} 48|332r13
+. 332r73 1865r19
+1272n7*in_kind_income_from_textbooks_for_public_institutions_grant_tertiary{1133E10}
+. 48|358r13 358r90 1851r19
+1273n7*in_kind_income_from_textbooks_for_private_institutions_grant_tertiary{1133E10}
+. 48|356r13 356r91 1797r19
+1274n7*in_kind_income_from_stationery_public_grant_tertiary{1133E10} 48|350r13
+. 350r74 1864r19
+1275n7*in_kind_income_from_stationery_private_grant_tertiary{1133E10} 48|348r13
+. 348r75 1790r19
+1276n7*in_kind_income_from_other_specify_public_grant_tertiary{1133E10} 48|336r13
+. 336r77 1826r19
+1277n7*in_kind_income_from_other_specify_private_grant_tertiary{1133E10}
+. 48|334r13 334r78 1827r19
+1278n7*in_kind_income_from_pre_primary_primary_tertiary_education_and_vocational_training_grants_public_and_private_tertiary{1133E10}
+. 48|338r13 338r139 1977r19
+1279n7*in_kind_income_from_computer_certification_excursions_and_other_grants_public_and_private_tertiary{1133E10}
+. 48|320r13 320r120 1870r19
+1280n7*in_kind_income_from_schools_boarding_fees_in_public_institutions_grant_public_tertiary{1133E10}
+. 48|346r13 346r108 1850r19
+1281n7*in_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions_grant_tertiary{1133E10}
+. 48|354r13 354r145 1844r19
+1282n7*in_kind_income_from_universities_boarding_fees_in_public_institution_grant_tertiary{1133E10}
+. 48|364r13 364r105 1942r19
+1283n7*in_kind_income_from_schools_boarding_fees_in_private_institutions_grant_tertiary{1133E10}
+. 48|344r13 344r102 1979r19
+1284n7*in_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions_grant_tertiary{1133E10}
+. 48|352r13 352r146 1978r19
+1285n7*in_kind_income_from_universities_boarding_fees_in_private_institution_grant_tertiary{1133E10}
+. 48|362r13 362r106 1859r19
+1286n7*in_kind_income_from_universities_boarding_fees_in_private_institution_and_medical_aidby_employer_grant_tertiary{1133E10}
+. 48|360r13 360r133 1876r19
+1287n7*savings_from_improvements_additions_and_alterations_tertiary{1133E10}
+. 48|518r13 518r82 1807r19
+1288n7*savings_from_services_for_improvements_additions_and_alterations_tertiary{1133E10}
+. 48|544r13 544r95 1890r19
+1289n7*savings_from_security_structures_tertiary{1133E10} 48|542r13 542r63
+. 1843r19
+1290n7*savings_from_building_materials_not_included_in_q813_tertiary{1133E10}
+. 48|506r13 506r83 1796r19
+1291n7*savings_from_labour_and_material_for_improvements_additions_and_alterations_tertiary{1133E10}
+. 48|522r13 522r106 1869r19
+1292n7*savings_from_cost_of_other_dewlling_tertiary{1133E10} 48|514r13 514r66
+. 1923r19
+1293n7*savings_from_capital_payments_tertiary{1133E10} 48|508r13 508r60 1806r19
+1294n7*savings_from_monthly_capital_payments_tertiary{1133E10} 48|530r13
+. 530r68 1935r19
+1295n7*savings_from_other_payments_tertiary{1133E10} 48|536r13 536r58 1818r19
+1296n7*savings_from_purchase_and_levy_of_timeshare_tertiary{1133E10} 48|538r13
+. 538r74 1868r19
+1297n7*savings_from_life_and_endownment_policies_tertiary{1133E10} 48|524r13
+. 524r72 1839r19
+1298n7*savings_from_life_insurance_covering_mortgage_debt_tertiary{1133E10}
+. 48|526r13 526r81 1836r19
+1299n7*savings_from_repayment_on_loans_and_overdrafts_tertiary{1133E10} 48|540r13
+. 540r77 1858r19
+1300n7*savings_from_contribution_to_pension_provident_and_annuity_funds_and_employer_contribution_tertiary{1133E10}
+. 48|510r13 510r121 1849r19
+1301n7*savings_from_contributions_to_a_stokvel_tertiary{1133E10} 48|512r13
+. 512r70 1857r19
+1302n7*savings_from_listed_company_shares_tertiary{1133E10} 48|528r13 528r65
+. 1958r19
+1303n7*savings_from_unlisted_company_shares_tertiary{1133E10} 48|548r13 548r67
+. 1906r19
+1304n7*savings_from_unit_trusts_tertiary{1133E10} 48|546r13 546r55 1832r19
+1305n7*savings_from_investment_plans_tertiary{1133E10} 48|520r13 520r60 1941r19
+1306n7*savings_from_offshore_tertiary{1133E10} 48|532r13 532r52 1835r19
+1307n7*savings_from_other_investments_tertiary{1133E10} 48|534r13 534r61
+. 1951r19
+1308n7*savings_from_deposits_into_savings_tertiary{1133E10} 48|516r13 516r65
+. 1817r19
+1309n7*savings_from_wthdrawals_from_savings_tertiary{1133E10} 48|550r13 550r67
+. 1848r19
+1310n7*taxes_site_income_tax_tertiary{1133E10} 48|584r13 584r52 1802r19
+1311n7*taxes_paye_income_tax_tertiary{1133E10} 48|582r13 582r52 1795r19
+1312n7*taxes_according_to_assessment_income_tax_tertiary{1133E10} 48|578r13
+. 578r71 1899r19
+1313n7*taxes_amnesty_tax_tertiary{1133E10} 48|580r13 580r48 1916r19
+1314n7*taxes_unemployment_insurance_fund_uif_tertiary{1133E10} 48|586r13
+. 586r68 1911r19
+1315n7*transfer_toothers_tertiary{1133E10} 48|598r13 598r48 1971r19
+1316n7*debts_bond_loan_from_the_bank_tertiary{1133E10} 48|254r13 254r60 1794r19
+1317n7*debts_other_loans_tertiary{1133E10} 48|266r13 266r48 1905r19
+1318n7*debts_motor_vehicle_loan_from_the_bank_tertiary{1133E10} 48|262r13
+. 262r69 1825r19
+1319n7*debts_bank_overdraft_tertiary{1133E10} 48|252r13 252r51 1934r19
+1320n7*debts_other_bank_loans_tertiary{1133E10} 48|264r13 264r53 1957r19
+1321n7*debts_furniture_and_appliances_amount_oustanding_tertiary{1133E10}
+. 48|256r13 256r79 1894r19
+1322n7*debts_retail_stores_tertiary{1133E10} 48|268r13 268r50 1863r19
+1323n7*debts_loans_from_friends_and_family_tertiary{1133E10} 48|258r13 258r66
+. 1976r19
+1324n7*debts_loans_from_money_lenders_tertiary{1133E10} 48|260r13 260r61
+. 1963r19
+1325n7*debts_arreas_on_municipal_bills_tertiary{1133E10} 48|250r13 250r62
+. 1798r19
+1326n7*loss_expenditure_incurred_in_obtaining_income_tertiary{1133E10} 48|408r13
+. 408r76 1970r19
+1328n7*panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party_tertiary{1133E10}
+. 48|472r13 472r102 1969r19
+1329n7*interest_on_mortgage_bonds_tertiary{1133E10} 48|402r13 402r57 1831r19
+1330n7*subsidy_on_payment_of_mortgage_tertiary{1133E10} 48|574r13 574r61
+. 1793r19
+1331n7*imputed_cost_for_home_production_tertiary{1133E10} 48|314r13 314r63
+. 1789r19
+1332n7*other_products_not_consumption_tertiary{1133E10} 48|460r13 460r61
+. 1962r19
+1334K12*Tertiary_Group_Package[97|47] 1339r36
+1339A12*Tertiary_Group_Array{97|64A12[1334]}<1133E10> 1341r39 1345r49 48|206r49
+. 207r11 215r39
+1341U14*Aggregate_To 1341=28 1341>61 1341>85 48|210s10 215b14 612l8 612t20
+1341a28 a{1339A12} 48|215b28 218m10 218r50 220m10 220r58 222m10 222r48 224m10
+. 224r32 226m10 226r81 228m10 228r36 230m10 230r33 232m10 232r45 234m10 234r60
+. 236m10 236r64 238m10 238r46 240m10 240r48 242m10 242r59 244m10 244r64 246m10
+. 246r61 248m10 248r45 250m10 250r59 252m10 252r48 254m10 254r57 256m10 256r76
+. 258m10 258r63 260m10 260r58 262m10 262r66 264m10 264r50 266m10 266r45 268m10
+. 268r47 270m10 270r43 272m10 272r70 274m10 274r60 276m10 276r67 278m10 278r39
+. 280m10 280r79 282m10 282r104 284m10 284r50 286m10 286r32 288m10 288r45
+. 290m10 290r34 292m10 292r48 294m10 294r53 296m10 296r44 298m10 298r50 300m10
+. 300r54 302m10 302r36 304m10 304r31 306m10 306r70 308m10 308r83 310m10 310r45
+. 312m10 312r45 314m10 314r60 316m10 316r62 318m10 318r47 320m10 320r117
+. 322m10 322r97 324m10 324r64 326m10 326r63 328m10 328r58 330m10 330r72 332m10
+. 332r70 334m10 334r75 336m10 336r74 338m10 338r136 340m10 340r87 342m10
+. 342r88 344m10 344r99 346m10 346r105 348m10 348r72 350m10 350r71 352m10
+. 352r143 354m10 354r142 356m10 356r88 358m10 358r87 360m10 360r130 362m10
+. 362r103 364m10 364r102 366m10 366r98 368m10 368r102 370m10 370r77 372m10
+. 372r69 374m10 374r49 376m10 376r97 378m10 378r55 380m10 380r72 382m10 382r48
+. 384m10 384r49 386m10 386r58 388m10 388r68 390m10 390r55 392m10 392r52 394m10
+. 394r60 396m10 396r65 398m10 398r63 400m10 400r66 402m10 402r54 404m10 404r56
+. 406m10 406r40 408m10 408r73 410m10 410r101 412m10 412r83 414m10 414r65
+. 416m10 416r80 418m10 418r53 420m10 420r80 422m10 422r77 424m10 424r32 426m10
+. 426r44 428m10 428r48 430m10 430r81 432m10 432r56 434m10 434r38 436m10 436r40
+. 438m10 438r88 440m10 440r53 442m10 442r55 444m10 444r41 446m10 446r84 448m10
+. 448r79 450m10 450r57 452m10 452r40 454m10 454r43 456m10 456r50 458m10 458r50
+. 460m10 460r58 462m10 462r61 464m10 464r85 466m10 466r67 468m10 468r42 470m10
+. 470r44 472m10 472r99 474m10 474r46 476m10 476r54 478m10 478r58 480m10 480r55
+. 482m10 482r74 484m10 484r53 486m10 486r51 488m10 488r94 490m10 490r43 492m10
+. 492r61 494m10 494r44 496m10 496r62 498m10 498r45 500m10 500r54 502m10 502r78
+. 504m10 504r57 506m10 506r80 508m10 508r57 510m10 510r118 512m10 512r67
+. 514m10 514r63 516m10 516r62 518m10 518r79 520m10 520r57 522m10 522r103
+. 524m10 524r69 526m10 526r78 528m10 528r62 530m10 530r65 532m10 532r49 534m10
+. 534r58 536m10 536r55 538m10 538r71 540m10 540r74 542m10 542r60 544m10 544r92
+. 546m10 546r52 548m10 548r64 550m10 550r64 552m10 552r46 554m10 554r81 556m10
+. 556r47 558m10 558r52 560m10 560r64 562m10 562r69 564m10 564r54 566m10 566r39
+. 568m10 568r55 570m10 570r35 572m10 572r60 574m10 574r58 576m10 576r71 578m10
+. 578r68 580m10 580r45 582m10 582r49 584m10 584r49 586m10 586r65 588m10 588r59
+. 590m10 590r58 592m10 592r46 594m10 594r64 596m10 596r35 598m10 598r45 600m10
+. 600r51 602m10 602r38 604m10 604r57 606m10 606r49 608m10 608r40 610m10 610r32
+1341e61 which{8E9} 48|215b61 217r10 219r13 221r13 223r13 225r13 227r13 229r13
+. 231r13 233r13 235r13 237r13 239r13 241r13 243r13 245r13 247r13 249r13 251r13
+. 253r13 255r13 257r13 259r13 261r13 263r13 265r13 267r13 269r13 271r13 273r13
+. 275r13 277r13 279r13 281r13 283r13 285r13 287r13 289r13 291r13 293r13 295r13
+. 297r13 299r13 301r13 303r13 305r13 307r13 309r13 311r13 313r13 315r13 317r13
+. 319r13 321r13 323r13 325r13 327r13 329r13 331r13 333r13 335r13 337r13 339r13
+. 341r13 343r13 345r13 347r13 349r13 351r13 353r13 355r13 357r13 359r13 361r13
+. 363r13 365r13 367r13 369r13 371r13 373r13 375r13 377r13 379r13 381r13 383r13
+. 385r13 387r13 389r13 391r13 393r13 395r13 397r13 399r13 401r13 403r13 405r13
+. 407r13 409r13 411r13 413r13 415r13 417r13 419r13 421r13 423r13 425r13 427r13
+. 429r13 431r13 433r13 435r13 437r13 439r13 441r13 443r13 445r13 447r13 449r13
+. 451r13 453r13 455r13 457r13 459r13 461r13 463r13 465r13 467r13 469r13 471r13
+. 473r13 475r13 477r13 479r13 481r13 483r13 485r13 487r13 489r13 491r13 493r13
+. 495r13 497r13 499r13 501r13 503r13 505r13 507r13 509r13 511r13 513r13 515r13
+. 517r13 519r13 521r13 523r13 525r13 527r13 529r13 531r13 533r13 535r13 537r13
+. 539r13 541r13 543r13 545r13 547r13 549r13 551r13 553r13 555r13 557r13 559r13
+. 561r13 563r13 565r13 567r13 569r13 571r13 573r13 575r13 577r13 579r13 581r13
+. 583r13 585r13 587r13 589r13 591r13 593r13 595r13 597r13 599r13 601r13 603r13
+. 605r13 607r13 609r13
+1341f85 value{46|30F12} 48|215b85 218r89 220r105 222r85 224r53 226r151 228r61
+. 230r55 232r79 234r109 236r117 238r81 240r85 242r107 244r117 246r111 248r79
+. 250r107 252r85 254r103 256r141 258r115 260r105 262r121 264r89 266r79 268r83
+. 270r75 272r129 274r109 276r123 278r67 280r147 282r197 284r89 286r53 288r79
+. 290r57 292r85 294r95 296r77 298r89 300r97 302r61 304r51 306r129 308r155
+. 310r79 312r79 314r109 316r113 318r83 320r223 322r183 324r117 326r115 328r105
+. 330r133 332r129 334r139 336r137 338r261 340r163 342r165 344r187 346r199
+. 348r133 350r131 352r275 354r273 356r165 358r163 360r249 362r195 364r193
+. 366r185 368r193 370r143 372r127 374r87 376r183 378r99 380r133 382r85 384r87
+. 386r105 388r125 390r99 392r93 394r109 396r119 398r115 400r121 402r97 404r101
+. 406r69 408r135 410r191 412r155 414r119 416r149 418r95 420r149 422r143 424r53
+. 426r77 428r85 430r151 432r101 434r65 436r69 438r165 440r95 442r99 444r71
+. 446r157 448r147 450r103 452r69 454r75 456r89 458r89 460r105 462r111 464r159
+. 466r123 468r73 470r77 472r187 474r81 476r97 478r105 480r99 482r137 484r95
+. 486r91 488r177 490r75 492r111 494r77 496r113 498r79 500r97 502r145 504r103
+. 506r149 508r103 510r225 512r123 514r115 516r113 518r147 520r103 522r195
+. 524r127 526r145 528r113 530r119 532r87 534r105 536r99 538r131 540r137 542r109
+. 544r173 546r93 548r117 550r117 552r81 554r151 556r83 558r93 560r117 562r127
+. 564r97 566r67 568r99 570r59 572r109 574r105 576r131 578r125 580r79 582r87
+. 584r87 586r119 588r107 590r105 592r81 594r117 596r59 598r79 600r91 602r65
+. 604r103 606r87 608r69 610r53
+1343V13*Map{1027A13} 1343>18 48|188b13 195l8 195t11
+1343a18 a{982A12} 48|188b18 191r16 192r30
+1344V13*Map{1129A13} 1344>18 48|197b13 204l8 204t11
+1344a18 a{982A12} 48|197b18 200r16 201r30
+1345V13*Map{1339A12} 1345>18 48|206b13 213l8 213t11
+1345a18 a{982A12} 48|206b18 209r16 210r30
+1347E12*Personal_Income_Range{8E9}
+1352E12*Consumption_coi_Range{8E9} 1365r68 1366r48 1367r40 1369r36 1370r59
+. 1371r96 1372r33 1373r72 1378r59 1380r53 1381r49 1382r49 1386r36
+1353E12*Debts_coi_Range{8E9} 1368r32
+1354E12*In_kind_consumption_coi_Range{8E9} 1374r46
+1355E12*In_kind_income_coi_Range{8E9} 1375r41
+1356E12*Income_coi_Range{8E9} 1376r33
+1357E12*Loss_coi_Range{8E9} 1377r31
+1358E12*Other_products_not_consumption_coi_Range{8E9} 1379r46
+1359E12*Savings_coi_Range{8E9} 1383r34
+1360E12*Taxes_coi_Range{8E9} 1384r32
+1361E12*Transfers_to_others_coi_Range{8E9} 1385r46
+1365E12*Alcoholic_beverages_tobacco_and_narcotics_main_Range{1352E12} 1392r51
+. 1474r39 48|616r19
+1366E12*Clothing_and_footwear_main_Range{1352E12} 1395r40 1410r40 48|618r22
+1367E12*Communication_main_Range{1352E12} 1454r47 1471r63 1472r62 48|620r22
+1368E12*Debts_main_Range{1353E12} 1396r63 1397r52 1398r77 1400r80 1401r67
+. 1402r62 1403r70 1404r54 1405r51 48|622r22
+1369E12*Education_main_Range{1352E12} 1406r64 1455r65 1465r51 1473r50 48|624r22
+1370E12*Food_and_non_alcoholic_beverages_main_Range{1352E12} 1409r36 1438r55
+. 1478r55 48|626r22
+1371E12*Furnishings_househould_equipment_and_routine_maintenance_of_the_house_main_Range{1352E12}
+. 1411r90 1412r73 1413r84 1415r52 1416r50 1475r72 48|628r22
+1372E12*Health_main_Range{1352E12} 1414r49 1436r73 1448r52 48|630r22
+1373E12*Housing_water_electricity_gas_and_other_fuels_main_Range{1352E12}
+. 1391r58 1407r63 1419r59 1435r70 1479r96 48|632r22
+1374E12*In_kind_consumption_main_Range{1354E12} 1421r51 48|634r22
+1375E12*Income_in_kind_main_Range{1355E12} 1422r188 1423r132 1424r68 1425r67
+. 1426r62 1427r147 1428r84 1429r107 48|636r22
+1376E12*Income_main_Range{1356E12} 1418r89 1430r51 1431r55 1432r48 1441r44
+. 1451r76 48|638r22
+1377E12*Loss_main_Range{1357E12} 1399r78 48|640r22
+1378E12*Miscellaneous_goods_and_services_main_Range{1352E12} 1408r54 1433r41
+. 1445r50 1452r45 1453r48 1466r49 48|642r22
+1379E12*Not_cpi_consumption_main_Range{1358E12} 1417r64 1420r66 1434r58 1443r62
+. 1450r103 1467r62 48|644r22
+1380E12*Other_unclasified_expenses_main_Range{1352E12} 1446r44 1447r43 48|646r22
+1381E12*Recreation_and_culture_main_Range{1352E12} 1393r94 1437r63 1442r79
+. 1444r86 1449r48 1457r66 48|648r22
+1382E12*Restaurants_and_hotels_main_Range{1352E12} 1390r54 1394r49 48|650r22
+1383E12*Savings_main_Range{1359E12} 1458r162 1459r124 1460r71 1461r68 1462r115
+. 1463r139 1464r163 48|652r22
+1384E12*Taxes_main_Range{1360E12} 1468r49 1469r62 1470r41 48|654r22
+1385E12*Transfers_to_others_main_Range{1361E12} 1476r51 48|656r22
+1386E12*Transport_main_Range{1352E12} 1439r73 1440r78 1456r52 1477r50 48|658r22
+1390E12*Accommodation_services_secondary_Range{1382E12} 1483r53 48|5r19
+1391E12*Actual_rentals_for_housing_secondary_Range{1373E12} 1484r61 48|7r22
+1392E12*Alcoholic_beverages_secondary_Range{1365E12} 1486r35 1659r38 1679r35
+. 48|9r22
+1393E12*Audio_visual_photographic_and_information_processing_equipment_secondary_Range{1381E12}
+. 1515r107 1571r63 1618r97 1621r47 48|11r22
+1394E12*Catering_services_secondary_Range{1382E12} 1487r84 1585r80 48|13r22
+1395E12*Clothing_secondary_Range{1366E12} 1492r67 1493r49 1525r39 1598r82
+. 48|15r22
+1396E12*Debts_arreas_on_municipal_bills_secondary_Range{1368E12} 1499r62
+. 48|17r22
+1397E12*Debts_bank_overdraft_secondary_Range{1368E12} 1500r51 48|19r22
+1398E12*Debts_bond_loan_from_the_bank_and_other_loans_secondary_Range{1368E12}
+. 1501r60 1507r48 48|21r22
+1399E12*Debts_expenditure_incurred_in_obtaining_income_secondary_Range{1377E12}
+. 1578r76 48|23r22
+1400E12*Debts_furniture_and_appliances_amount_oustanding_secondary_Range{1368E12}
+. 1502r79 48|25r22
+1401E12*Debts_loans_from_friends_and_family_secondary_Range{1368E12} 1503r66
+. 48|27r22
+1402E12*Debts_loans_from_money_lenders_secondary_Range{1368E12} 1504r61 48|29r22
+1403E12*Debts_motor_vehicle_loan_from_the_bank_secondary_Range{1368E12} 1505r69
+. 48|31r22
+1404E12*Debts_other_bank_loans_secondary_Range{1368E12} 1506r53 48|33r22
+1405E12*Debts_retail_stores_secondary_Range{1368E12} 1508r50 48|35r22
+1406E12*Education_not_definable_by_level_secondary_Range{1369E12} 1511r63
+. 48|37r22
+1407E12*Electricity_gas_and_other_fuels_secondary_Range{1373E12} 1513r42
+. 1526r34 1577r43 1657r42 48|39r22
+1408E12*Financial_services_nec_secondary_Range{1378E12} 1516r53 48|41r22
+1409E12*Food_secondary_Range{1370E12} 1490r48 1517r35 1518r48 1519r37 1586r35
+. 1588r51 1596r44 1662r74 1675r41 48|43r22
+1410E12*Footwear_secondary_Range{1366E12} 1624r57 1653r55 48|45r22
+1411E12*Furniture_and_furnishings_carpets_and_other_floor_covering_secondary_Range{1371E12}
+. 1491r63 1521r56 1625r81 48|47r22
+1412E12*Glassware_tableware_andhousehold_utensils_secondary_Range{1371E12}
+. 1527r73 48|49r22
+1413E12*Goods_and_services_for_routine_household_maintenance_secondary_Range{1371E12}
+. 1510r73 1595r58 48|51r22
+1414E12*Hospital_services_secondary_Range{1372E12} 1529r48 48|53r22
+1415E12*Household_appliances_secondary_Range{1371E12} 1582r83 1626r60 1654r67
+. 48|55r22
+1416E12*Household_textiles_secondary_Range{1371E12} 1530r48 48|57r22
+1417E12*Imputed_cost_for_home_production_secondary_Range{1379E12} 1531r63
+. 48|59r22
+1418E12*Imputed_rent_on_owned_dwellingi_7pct_per_year_of_dwelling_secondary_Range{1376E12}
+. 1562r100 48|61r22
+1419E12*Imputed_rentals_for_housing_secondary_Range{1373E12} 48|63r22
+1420E12*Imputed_rentals_of_owner_occupiers_secondary_Range{1379E12} 1532r65
+. 48|65r22
+1421E12*In_kind_consumption_secondary_Range{1374E12} 1533r50 48|67r22
+1422E12*In_kind_income_from_computer_certification_excursions_other_including_language_classes_pre_primary_primary_tertiary_education_and_vocational_training_grants_secondary_Range{1375E12}
+. 1534r120 1543r139 48|69r22
+1423E12*In_kind_income_from_day_care_mothers_medical_aid_contribution_schools_and_universities_boarding_fees_secondary_Range{1375E12}
+. 1546r102 1547r108 1550r146 1551r145 1554r133 1555r106 1556r105 48|71r22
+1424E12*In_kind_income_from_free_electricity_secondary_Range{1375E12} 1536r67
+. 48|73r22
+1425E12*In_kind_income_from_free_sanitation_secondary_Range{1375E12} 1537r66
+. 48|75r22
+1426E12*In_kind_income_from_free_water_secondary_Range{1375E12} 1538r61 48|77r22
+1427E12*In_kind_income_from_private_use_of_company_vehicle_or_discounted_fares_for_educational_and_non_educational_purposes_secondary_Range{1375E12}
+. 1535r100 1557r101 1558r105 48|79r22
+1428E12*In_kind_income_from_schools_and_other_edu_inst_grant_secondary_Range{1375E12}
+. 1544r90 1545r91 48|81r22
+1429E12*In_kind_income_from_textbooks_others_library_services_and_stationery_grants_secondary_Range{1375E12}
+. 1539r75 1540r73 1541r78 1542r77 1548r75 1549r74 1552r91 1553r90 48|83r22
+1430E12*Income_from_capital_secondary_Range{1376E12} 1561r52 1563r58 1565r51
+. 1566r52 1570r55 48|85r22
+1431E12*Income_from_individuals_secondary_Range{1376E12} 1559r80 1599r60
+. 48|87r22
+1432E12*Income_from_work_secondary_Range{1376E12} 1567r61 1568r71 48|89r22
+1433E12*Insurance_secondary_Range{1378E12} 1572r68 1573r66 1574r69 1601r46
+. 48|91r22
+1434E12*Interest_on_mortgage_bonds_secondary_Range{1379E12} 1575r57 48|93r22
+1435E12*Maintenance_and_repair_of_the_dwelling_secondary_Range{1373E12} 1584r83
+. 1651r84 48|95r22
+1436E12*Medical_products_appliances_and_equipment_secondary_Range{1372E12}
+. 1602r53 1617r54 1671r67 48|97r22
+1437E12*Newspapers_books_and_stationary_secondary_Range{1381E12} 1489r36
+. 1590r59 1594r56 1660r63 48|99r22
+1438E12*Non_alcoholic_beverages_secondary_Range{1370E12} 1494r51 1589r84
+. 48|101r22
+1439E12*Operation_of_personal_transport_equipment_secondary_Range{1386E12}
+. 1520r51 1580r86 1606r88 1658r58 48|103r22
+1440E12*Operational_values_of_other_modes_of_transport_secondary_Range{1386E12}
+. 1497r64 48|105r22
+1441E12*Other_income_secondary_Range{1376E12} 1600r43 48|107r22
+1442E12*Other_major_durables_for_recreation_and_culture_secondary_Range{1381E12}
+. 1579r104 1581r68 1593r91 48|109r22
+1443E12*Other_products_not_consumption_secondary_Range{1379E12} 1604r61 48|111r22
+1444E12*Other_recreational_items_and_equipment_garden_and_pets_secondary_Range{1381E12}
+. 1514r82 1523r53 1524r57 1616r56 1676r60 48|113r22
+1445E12*Other_services_nec_secondary_Range{1378E12} 1608r45 48|115r22
+1446E12*Others_diary_secondary_Range{1380E12} 1496r67 48|117r22
+1447E12*Others_main_secondary_Range{1380E12} 1495r62 48|119r22
+1448E12*Out_patient_services_secondary_Range{1372E12} 1509r46 1587r47 1611r49
+. 48|121r22
+1449E12*Package_holidays_secondary_Range{1381E12} 1609r47 48|123r22
+1450E12*Panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party_secondary_Range{1379E12}
+. 1610r102 48|125r22
+1451E12*Pensions_social_insuerance_family_allowances_secondary_Range{1376E12}
+. 1560r72 1564r75 1569r58 48|127r22
+1452E12*Personal_care_secondary_Range{1378E12} 1512r70 1528r86 1597r87 48|129r22
+1453E12*Personal_effects_secondary_Range{1378E12} 1576r59 1603r53 48|131r22
+1454E12*Postal_services_secondary_Range{1367E12} 1619r46 48|133r22
+1455E12*Pre_primary_and_primary_education_secondary_Range{1369E12} 1620r64
+. 48|135r22
+1456E12*Purchase_of_vehicles_secondary_Range{1386E12} 1485r51 1488r39 1591r41
+. 1592r43 48|137r22
+1457E12*Recreational_and_cultural_services_secondary_Range{1381E12} 1498r48
+. 1522r47 1622r65 48|139r22
+1458E12*Savings_for_improvements_services_for_improvements_security_structures_building_materials_and_labour_and_material_for_improvements_secondary_Range{1383E12}
+. 1627r83 1633r82 1635r106 1645r63 1646r95 48|141r22
+1459E12*Savings_from_contribution_to_pension_repayment_on_loans_and_employer_contribution_to_pension_secondary_Range{1383E12}
+. 1629r121 1644r77 48|143r22
+1460E12*Savings_from_contributions_to_a_stokvel_secondary_Range{1383E12}
+. 1630r70 48|145r22
+1461E12*Savings_from_deposits_and_wthdrawals_secondary_Range{1383E12} 1632r65
+. 1649r67 48|147r22
+1462E12*Savings_from_life_and_endownment_policies_and_life_insurance_covering_mortgage_debt_secondary_Range{1383E12}
+. 1636r72 1637r81 48|149r22
+1463E12*Savings_from_listed_and_unlisted_company_shares_unit_trusts_investment_plans_offshore_and_other_investments_secondary_Range{1383E12}
+. 1634r60 1638r65 1640r52 1641r61 1647r55 1648r67 48|151r22
+1464E12*Savings_from_monthly_capital_and_other_payments_levy_on_timeshare_capital_payments_cost_of_other_dewlling_and_purchase_of_timeshare_secondary_Range{1383E12}
+. 1628r60 1631r66 1639r68 1642r58 1643r74 48|153r22
+1465E12*Secondary_education_secondary_Range{1369E12} 1650r49 48|155r22
+1466E12*Social_protection_secondary_Range{1378E12} 1656r57 48|157r22
+1467E12*Subsidy_on_payment_of_mortgage_secondary_Range{1379E12} 1661r61 48|159r22
+1468E12*Taxes_amnesty_tax_secondary_Range{1384E12} 1664r48 48|161r22
+1469E12*Taxes_site_paye_and_income_tax_secondary_Range{1384E12} 1663r71 1665r52
+. 1666r52 48|163r22
+1470E12*Taxes_uif_secondary_Range{1384E12} 1667r68 48|165r22
+1471E12*Telephone_and_telefax_equipment_secondary_Range{1367E12} 1668r62
+. 48|167r22
+1472E12*Telephone_and_telefax_services_secondary_Range{1367E12} 1669r61 48|169r22
+1473E12*Tertiary_education_secondary_Range{1369E12} 1670r49 48|171r22
+1474E12*Tobacco_secondary_Range{1365E12} 1672r38 48|173r22
+1475E12*Tools_and_equipment_for_house_and_garden_secondary_Range{1371E12}
+. 1583r56 1655r72 48|175r22
+1476E12*Transfers_to_others_secondary_Range{1385E12} 1673r48 48|177r22
+1477E12*Transport_services_secondary_Range{1386E12} 1605r64 1612r57 1613r61
+. 1614r58 1615r77 48|179r22
+1478E12*Unclassified_food_items_secondary_Range{1370E12} 1674r54 48|181r22
+1479E12*Water_supply_and_miscellaneous_services_relating_to_the_dwelling_secondary_Range{1373E12}
+. 1607r70 1623r48 1652r50 1677r52 1678r43 48|183r22
+1483E12*Accommodation_services_tertiary_Range{1390E12} 48|217r19
+1484E12*Actual_rentals_paid_by_tenants_tertiary_Range{1391E12} 48|219r22
+1485E12*Animal_drawn_vehicle_tertiary_Range{1456E12} 48|221r22
+1486E12*Beer_tertiary_Range{1392E12} 48|223r22
+1487E12*Beverages_in_restaurants_cafes_canteens_and_the_likes_tertiary_Range{1394E12}
+. 48|225r22
+1488E12*Bicycles_tertiary_Range{1456E12} 48|227r22
+1489E12*Books_tertiary_Range{1437E12} 48|229r22
+1490E12*Bread_and_cereals_tertiary_Range{1409E12} 48|231r22
+1491E12*Carpets_and_other_floor_covering_tertiary_Range{1411E12} 48|233r22
+1492E12*Cleaning_repair_and_hire_of_clothing_tertiary_Range{1395E12} 48|235r22
+1493E12*Clothing_materials_tertiary_Range{1395E12} 48|237r22
+1494E12*Coffee_tea_and_cocoa_tertiary_Range{1438E12} 48|239r22
+1495E12*Consumption_others_expenditures_tertiary_Range{1447E12} 48|241r22
+1496E12*Consumption_unclassified_diary_items_tertiary_Range{1446E12} 48|243r22
+1497E12*Cost_for_other_modes_of_transport_tertiary_Range{1440E12} 48|245r22
+1498E12*Cultural_services_tertiary_Range{1457E12} 48|247r22
+1499E12*Debts_arreas_on_municipal_bills_tertiary_Range{1396E12} 48|249r22
+1500E12*Debts_bank_overdraft_tertiary_Range{1397E12} 48|251r22
+1501E12*Debts_bond_loan_from_the_bank_tertiary_Range{1398E12} 48|253r22
+1502E12*Debts_furniture_and_appliances_amount_oustanding_tertiary_Range{1400E12}
+. 48|255r22
+1503E12*Debts_loans_from_friends_and_family_tertiary_Range{1401E12} 48|257r22
+1504E12*Debts_loans_from_money_lenders_tertiary_Range{1402E12} 48|259r22
+1505E12*Debts_motor_vehicle_loan_from_the_bank_tertiary_Range{1403E12} 48|261r22
+1506E12*Debts_other_bank_loans_tertiary_Range{1404E12} 48|263r22
+1507E12*Debts_other_loans_tertiary_Range{1398E12} 48|265r22
+1508E12*Debts_retail_stores_tertiary_Range{1405E12} 48|267r22
+1509E12*Dental_services_tertiary_Range{1448E12} 48|269r22
+1510E12*Domestics_services_and_household_arcticles_tertiary_Range{1413E12}
+. 48|271r22
+1511E12*Education_not_definable_by_level_tertiary_Range{1406E12} 48|273r22
+1512E12*Elecrtical_appliances_for_personal_care_tertiary_Range{1452E12} 48|275r22
+1513E12*Electricity_tertiary_Range{1407E12} 48|277r22
+1514E12*Equipment_for_sport_camping_and_open_air_recreation_tertiary_Range{1444E12}
+. 48|279r22
+1515E12*Equipment_for_the_reception_recording_and_reproduction_of_sound_and_pictures_tertiary_Range{1393E12}
+. 48|281r22
+1516E12*Financial_services_nec_tertiary_Range{1408E12} 48|283r22
+1517E12*Fish_tertiary_Range{1409E12} 48|285r22
+1518E12*Food_products_nec_tertiary_Range{1409E12} 48|287r22
+1519E12*Fruits_tertiary_Range{1409E12} 48|289r22
+1520E12*Fuels_and_lubricants_tertiary_Range{1439E12} 48|291r22
+1521E12*Furniture_and_furnishings_tertiary_Range{1411E12} 48|293r22
+1522E12*Games_of_chances_tertiary_Range{1457E12} 48|295r22
+1523E12*Games_toys_and_hobbies_tertiary_Range{1444E12} 48|297r22
+1524E12*Gardens_plants_and_flowers_tertiary_Range{1444E12} 48|299r22
+1525E12*Garments_tertiary_Range{1395E12} 48|301r22
+1526E12*Gas_tertiary_Range{1407E12} 48|303r22
+1527E12*Glassware_tableware_and_household_utensils_tertiary_Range{1412E12}
+. 48|305r22
+1528E12*Hairdressing_salons_and_personal_grooming_astablishment_tertiary_Range{1452E12}
+. 48|307r22
+1529E12*Hospital_services_tertiary_Range{1414E12} 48|309r22
+1530E12*Household_textile_tertiary_Range{1416E12} 48|311r22
+1531E12*Imputed_cost_for_home_production_tertiary_Range{1417E12} 48|313r22
+1532E12*Imputed_rentals_of_owner_occupiers_tertiary_Range{1420E12} 48|315r22
+1533E12*In_kind_consumption_tertiary_Range{1421E12} 48|317r22
+1534E12*In_kind_income_from_computer_certification_excursions_and_other_grants_public_and_private_tertiary_Range{1422E12}
+. 48|319r22
+1535E12*In_kind_income_from_estimated_value_of_private_use_of_company_vehicle_tertiary_Range{1427E12}
+. 48|321r22
+1536E12*In_kind_income_from_free_electricity_tertiary_Range{1424E12} 48|323r22
+1537E12*In_kind_income_from_free_sanitation_tertiary_Range{1425E12} 48|325r22
+1538E12*In_kind_income_from_free_water_tertiary_Range{1426E12} 48|327r22
+1539E12*In_kind_income_from_library_fees_fines_grant_tertiary_Range{1429E12}
+. 48|329r22
+1540E12*In_kind_income_from_library_services_grant_tertiary_Range{1429E12}
+. 48|331r22
+1541E12*In_kind_income_from_other_specify_private_grant_tertiary_Range{1429E12}
+. 48|333r22
+1542E12*In_kind_income_from_other_specify_public_grant_tertiary_Range{1429E12}
+. 48|335r22
+1543E12*In_kind_income_from_pre_primary_primary_tertiary_education_and_vocational_training_grants_public_and_private_tertiary_Range{1422E12}
+. 48|337r22
+1544E12*In_kind_income_from_schools_and_other_edu_inst_privat_grant_tertiary_Range{1428E12}
+. 48|339r22
+1545E12*In_kind_income_from_schools_and_other_edu_inst_publice_grant_tertiary_Range{1428E12}
+. 48|341r22
+1546E12*In_kind_income_from_schools_boarding_fees_in_private_institutions_grant_tertiary_Range{1423E12}
+. 48|343r22
+1547E12*In_kind_income_from_schools_boarding_fees_in_public_institutions_grant_public_tertiary_Range{1423E12}
+. 48|345r22
+1548E12*In_kind_income_from_stationery_private_grant_tertiary_Range{1429E12}
+. 48|347r22
+1549E12*In_kind_income_from_stationery_public_grant_tertiary_Range{1429E12}
+. 48|349r22
+1550E12*In_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_private_institutions_grant_tertiary_Range{1423E12}
+. 48|351r22
+1551E12*In_kind_income_from_teachers_training_and_technical_colleges_technikons_boarding_fees_in_public_institutions_grant_tertiary_Range{1423E12}
+. 48|353r22
+1552E12*In_kind_income_from_textbooks_for_private_institutions_grant_tertiary_Range{1429E12}
+. 48|355r22
+1553E12*In_kind_income_from_textbooks_for_public_institutions_grant_tertiary_Range{1429E12}
+. 48|357r22
+1554E12*In_kind_income_from_universities_boarding_fees_in_private_institution_and_medical_aidby_employer_grant_tertiary_Range{1423E12}
+. 48|359r22
+1555E12*In_kind_income_from_universities_boarding_fees_in_private_institution_grant_tertiary_Range{1423E12}
+. 48|361r22
+1556E12*In_kind_income_from_universities_boarding_fees_in_public_institution_grant_tertiary_Range{1423E12}
+. 48|363r22
+1557E12*In_kind_income_from_value_of_discounted_fares_for_educational_purposes_tertiary_Range{1427E12}
+. 48|365r22
+1558E12*In_kind_income_from_value_of_discounted_fares_for_non_educational_purposes_tertiary_Range{1427E12}
+. 48|367r22
+1559E12*Income_from_alimony_palimony_and_other_allowances_tertiary_Range{1431E12}
+. 48|369r22
+1560E12*Income_from_annuities_from_own_investment_tertiary_Range{1451E12}
+. 48|371r22
+1561E12*Income_from_dividends_tertiary_Range{1430E12} 48|373r22
+1562E12*Income_from_imputed_rent_on_owned_dwellingi_7pct_per_year_of_dwelling_tertiary_Range{1418E12}
+. 48|375r22
+1563E12*Income_from_other_dividends_tertiary_Range{1430E12} 48|377r22
+1564E12*Income_from_pension_from_previous_employment_tertiary_Range{1451E12}
+. 48|379r22
+1565E12*Income_from_property_tertiary_Range{1430E12} 48|381r22
+1566E12*Income_from_royalties_tertiary_Range{1430E12} 48|383r22
+1567E12*Income_from_salaries_and_wages_tertiary_Range{1432E12} 48|385r22
+1568E12*Income_from_self_employment_and_business_tertiary_Range{1432E12}
+. 48|387r22
+1569E12*Income_from_social_pensions_tertiary_Range{1451E12} 48|389r22
+1570E12*Income_interest_received_tertiary_Range{1430E12} 48|391r22
+1571E12*Information_processing_equipment_tertiary_Range{1393E12} 48|393r22
+1572E12*Insurance_connected_with_the_dwelling_tertiary_Range{1433E12} 48|395r22
+1573E12*Insurance_connected_with_the_health_tertiary_Range{1433E12} 48|397r22
+1574E12*Insurance_connected_with_the_transport_tertiary_Range{1433E12} 48|399r22
+1575E12*Interest_on_mortgage_bonds_tertiary_Range{1434E12} 48|401r22
+1576E12*Jewellery_clocks_and_watches_tertiary_Range{1453E12} 48|403r22
+1577E12*Liquid_fuels_tertiary_Range{1407E12} 48|405r22
+1578E12*Loss_expenditure_incurred_in_obtaining_income_tertiary_Range{1399E12}
+. 48|407r22
+1579E12*Maintenance_and_repair_of_other_major_durables_for_recreation_and_culture_tertiary_Range{1442E12}
+. 48|409r22
+1580E12*Maintenance_and_repairs_of_personal_transport_equipment_tertiary_Range{1439E12}
+. 48|411r22
+1581E12*Major_durables_for_outdoor_recreation_tertiary_Range{1442E12} 48|413r22
+1582E12*Major_household_appliances_wheter_or_no_aelectriccal_tertiary_Range{1415E12}
+. 48|415r22
+1583E12*Major_tools_and_equipment_tertiary_Range{1475E12} 48|417r22
+1584E12*Materials_for_maintenance_and_repair_of_the_dwelling_tertiary_Range{1435E12}
+. 48|419r22
+1585E12*Meals_in_restaurants_cafes_canteens_and_the_likes_tertiary_Range{1394E12}
+. 48|421r22
+1586E12*Meat_tertiary_Range{1409E12} 48|423r22
+1587E12*Medical_services_tertiary_Range{1448E12} 48|425r22
+1588E12*Milk_cheese_and_eggs_tertiary_Range{1409E12} 48|427r22
+1589E12*Mineral_waters_soft_drinks_fruit_and_vegetable_juices_tertiary_Range{1438E12}
+. 48|429r22
+1590E12*Miscellaneous_printed_matter_tertiary_Range{1437E12} 48|431r22
+1591E12*Motor_cars_tertiary_Range{1456E12} 48|433r22
+1592E12*Motor_cycles_tertiary_Range{1456E12} 48|435r22
+1593E12*Musical_instrument_and_major_durables_for_outdoor_recreation_tertiary_Range{1442E12}
+. 48|437r22
+1594E12*Newspaper_and_periodicals_tertiary_Range{1437E12} 48|439r22
+1595E12*Non_durable_household_goods_tertiary_Range{1413E12} 48|441r22
+1596E12*Oils_and_fats_tertiary_Range{1409E12} 48|443r22
+1597E12*Other_appliances_articles_and_products_for_personal_care_tertiary_Range{1452E12}
+. 48|445r22
+1598E12*Other_articles_of_clothing_and_clothing_accessories_tertiary_Range{1395E12}
+. 48|447r22
+1599E12*Other_income_from_individuals_tertiary_Range{1431E12} 48|449r22
+1600E12*Other_income_tertiary_Range{1441E12} 48|451r22
+1601E12*Other_insurance_tertiary_Range{1433E12} 48|453r22
+1602E12*Other_medical_products_tertiary_Range{1436E12} 48|455r22
+1603E12*Other_personal_effects_tertiary_Range{1453E12} 48|457r22
+1604E12*Other_products_not_consumption_tertiary_Range{1443E12} 48|459r22
+1605E12*Other_puchased_transport_services_tertiary_Range{1477E12} 48|461r22
+1606E12*Other_services_in_respect_of_personal_transport_equipment_tertiary_Range{1439E12}
+. 48|463r22
+1607E12*Other_services_relating_to_the_dwelling_tertiary_Range{1479E12} 48|465r22
+1608E12*Other_services_tertiary_Range{1445E12} 48|467r22
+1609E12*Package_holidays_tertiary_Range{1449E12} 48|469r22
+1610E12*Panel_beating_repairs_paid_for_by_your_insurance_company_or_other_party_tertiary_Range{1450E12}
+. 48|471r22
+1611E12*Paramedic_services_tertiary_Range{1448E12} 48|473r22
+1612E12*Passenger_transport_by_air_tertiary_Range{1477E12} 48|475r22
+1613E12*Passenger_transport_by_railway_tertiary_Range{1477E12} 48|477r22
+1614E12*Passenger_transport_by_road_tertiary_Range{1477E12} 48|479r22
+1615E12*Passenger_transport_by_sea_and_inland_waterway_tertiary_Range{1477E12}
+. 48|481r22
+1616E12*Pets_and_related_products_tertiary_Range{1444E12} 48|483r22
+1617E12*Pharmaceutical_products_tertiary_Range{1436E12} 48|485r22
+1618E12*Photographic_and_cinematographic_equipment_and_optical_instruments_tertiary_Range{1393E12}
+. 48|487r22
+1619E12*Postal_services_tertiary_Range{1454E12} 48|489r22
+1620E12*Pre_primary_and_primary_education_tertiary_Range{1455E12} 48|491r22
+1621E12*Recording_meedia_tertiary_Range{1393E12} 48|493r22
+1622E12*Recreational_and_sporting_services_tertiary_Range{1457E12} 48|495r22
+1623E12*Refuse_collection_tertiary_Range{1479E12} 48|497r22
+1624E12*Repair_and_hire_of_foowear_tertiary_Range{1410E12} 48|499r22
+1625E12*Repair_of_furniture_furnishings_and_floor_covering_tertiary_Range{1411E12}
+. 48|501r22
+1626E12*Repair_of_household_appliance_tertiary_Range{1415E12} 48|503r22
+1627E12*Savings_from_building_materials_not_included_in_q813_tertiary_Range{1458E12}
+. 48|505r22
+1628E12*Savings_from_capital_payments_tertiary_Range{1464E12} 48|507r22
+1629E12*Savings_from_contribution_to_pension_provident_and_annuity_funds_and_employer_contribution_tertiary_Range{1459E12}
+. 48|509r22
+1630E12*Savings_from_contributions_to_a_stokvel_tertiary_Range{1460E12} 48|511r22
+1631E12*Savings_from_cost_of_other_dewlling_tertiary_Range{1464E12} 48|513r22
+1632E12*Savings_from_deposits_into_savings_tertiary_Range{1461E12} 48|515r22
+1633E12*Savings_from_improvements_additions_and_alterations_tertiary_Range{1458E12}
+. 48|517r22
+1634E12*Savings_from_investment_plans_tertiary_Range{1463E12} 48|519r22
+1635E12*Savings_from_labour_and_material_for_improvements_additions_and_alterations_tertiary_Range{1458E12}
+. 48|521r22
+1636E12*Savings_from_life_and_endownment_policies_tertiary_Range{1462E12}
+. 48|523r22
+1637E12*Savings_from_life_insurance_covering_mortgage_debt_tertiary_Range{1462E12}
+. 48|525r22
+1638E12*Savings_from_listed_company_shares_tertiary_Range{1463E12} 48|527r22
+1639E12*Savings_from_monthly_capital_payments_tertiary_Range{1464E12} 48|529r22
+1640E12*Savings_from_offshore_tertiary_Range{1463E12} 48|531r22
+1641E12*Savings_from_other_investments_tertiary_Range{1463E12} 48|533r22
+1642E12*Savings_from_other_payments_tertiary_Range{1464E12} 48|535r22
+1643E12*Savings_from_purchase_and_levy_of_timeshare_tertiary_Range{1464E12}
+. 48|537r22
+1644E12*Savings_from_repayment_on_loans_and_overdrafts_tertiary_Range{1459E12}
+. 48|539r22
+1645E12*Savings_from_security_structures_tertiary_Range{1458E12} 48|541r22
+1646E12*Savings_from_services_for_improvements_additions_and_alterations_tertiary_Range{1458E12}
+. 48|543r22
+1647E12*Savings_from_unit_trusts_tertiary_Range{1463E12} 48|545r22
+1648E12*Savings_from_unlisted_company_shares_tertiary_Range{1463E12} 48|547r22
+1649E12*Savings_from_wthdrawals_from_savings_tertiary_Range{1461E12} 48|549r22
+1650E12*Scondary_education_tertiary_Range{1465E12} 48|551r22
+1651E12*Service_of_the_maintenance_and_repair_of_the_dwelling_tertiary_Range{1435E12}
+. 48|553r22
+1652E12*Sewarage_collection_tertiary_Range{1479E12} 48|555r22
+1653E12*Shoes_and_other_footwear_tertiary_Range{1410E12} 48|557r22
+1654E12*Small_electrical_household_appliance_tertiary_Range{1415E12} 48|559r22
+1655E12*Small_tools_and_miscellaneous_accessories_tertiary_Range{1475E12}
+. 48|561r22
+1656E12*Social_protection_services_tertiary_Range{1466E12} 48|563r22
+1657E12*Solid_fuels_tertiary_Range{1407E12} 48|565r22
+1658E12*Spare_parts_and_accessories_tertiary_Range{1439E12} 48|567r22
+1659E12*Spirits_tertiary_Range{1392E12} 48|569r22
+1660E12*Stationery_and_drawing_materials_tertiary_Range{1437E12} 48|571r22
+1661E12*Subsidy_on_payment_of_mortgage_tertiary_Range{1467E12} 48|573r22
+1662E12*Sugar_jam_honey_chocolate_and_confectionery_tertiary_Range{1409E12}
+. 48|575r22
+1663E12*Taxes_according_to_assessment_income_tax_tertiary_Range{1469E12}
+. 48|577r22
+1664E12*Taxes_amnesty_tax_tertiary_Range{1468E12} 48|579r22
+1665E12*Taxes_paye_income_tax_tertiary_Range{1469E12} 48|581r22
+1666E12*Taxes_site_income_tax_tertiary_Range{1469E12} 48|583r22
+1667E12*Taxes_unemployment_insurance_fund_uif_tertiary_Range{1470E12} 48|585r22
+1668E12*Telephone_and_telefax_equipment_tertiary_Range{1471E12} 48|587r22
+1669E12*Telephone_and_telefax_services_tertiary_Range{1472E12} 48|589r22
+1670E12*Tertiary_education_tertiary_Range{1473E12} 48|591r22
+1671E12*Therapeutic_appliances_and_equipment_tertiary_Range{1436E12} 48|593r22
+1672E12*Tobacco_tertiary_Range{1474E12} 48|595r22
+1673E12*Transfer_toothers_tertiary_Range{1476E12} 48|597r22
+1674E12*Unclassified_food_items_tertiary_Range{1478E12} 48|599r22
+1675E12*Vegetables_tertiary_Range{1409E12} 48|601r22
+1676E12*Veterinary_and_other_services_tertiary_Range{1444E12} 48|603r22
+1677E12*Water_and_electricity_tertiary_Range{1479E12} 48|605r22
+1678E12*Water_supply_tertiary_Range{1479E12} 48|607r22
+1679E12*Wine_tertiary_Range{1392E12} 48|609r22
+1681V13*Pretty_Print{string} 1681>27 48|663b13 1634l9 1634t21
+1681e27 i{8E9} 48|663b27 665r15
+1683V13*Pretty_Print{string} 1683>27 48|1637b15 1653l9 1653t21
+1683e27 i{984E9} 48|1637b29 1639r15
+1685V13*Pretty_Print{string} 1685>27 48|1656b15 1684l9 1684t21
+1685e27 i{997E9} 48|1656b29 1658r15
+1687V13*Pretty_Print{string} 1687>27 48|1687b15 1783l9 1783t21
+1687e27 i{1031E9} 48|1687b29 1689r15
+1689V13*Pretty_Print{string} 1689>27 48|1786b15 1989l9 1989t21
+1689e27 i{1133E10} 48|1786b29 1788r15
+1691V13*Convert_Coicop_Type{8E9} 1691>34 48|1992b14 2961l9 2961t28
+1691s34 i{string} 48|1992b35 1994r17 1995r20 1996r20 1997r20 1998r20 1999r20
+. 2000r20 2001r20 2002r20 2003r20 2004r20 2005r20 2006r20 2007r20 2008r20
+. 2009r20 2010r20 2011r20 2012r20 2013r20 2014r20 2015r20 2016r20 2017r20
+. 2018r20 2019r20 2020r20 2021r20 2022r20 2023r20 2024r20 2025r20 2026r20
+. 2027r20 2028r20 2029r20 2030r20 2031r20 2032r20 2033r20 2034r20 2035r20
+. 2036r20 2037r20 2038r20 2039r20 2040r20 2041r20 2042r20 2043r20 2044r20
+. 2045r20 2046r20 2047r20 2048r20 2049r20 2050r20 2051r20 2052r20 2053r20
+. 2054r20 2055r20 2056r20 2057r20 2058r20 2059r20 2060r20 2061r20 2062r20
+. 2063r20 2064r20 2065r20 2066r20 2067r20 2068r20 2069r20 2070r20 2071r20
+. 2072r20 2073r20 2074r20 2075r20 2076r20 2077r20 2078r20 2079r20 2080r20
+. 2081r20 2082r20 2083r20 2084r20 2085r20 2086r20 2087r20 2088r20 2089r20
+. 2090r20 2091r20 2092r20 2093r20 2094r20 2095r20 2096r20 2097r20 2098r20
+. 2099r20 2100r20 2101r20 2102r20 2103r20 2104r20 2105r20 2106r20 2107r20
+. 2108r20 2109r20 2110r20 2111r20 2112r20 2113r20 2114r20 2115r20 2116r20
+. 2117r20 2118r20 2119r20 2120r20 2121r20 2122r20 2123r20 2124r20 2125r20
+. 2126r20 2127r20 2128r20 2129r20 2130r20 2131r20 2132r20 2133r20 2134r20
+. 2135r20 2136r20 2137r20 2138r20 2139r20 2140r20 2141r20 2142r20 2143r20
+. 2144r20 2145r20 2146r20 2147r20 2148r20 2149r20 2150r20 2151r20 2152r20
+. 2153r20 2154r20 2155r20 2156r20 2157r20 2158r20 2159r20 2160r20 2161r20
+. 2162r20 2163r20 2164r20 2165r20 2166r20 2167r20 2168r20 2169r20 2170r20
+. 2171r20 2172r20 2173r20 2174r20 2175r20 2176r20 2177r20 2178r20 2179r20
+. 2180r20 2181r20 2182r20 2183r20 2184r20 2185r20 2186r20 2187r20 2188r20
+. 2189r20 2190r20 2191r20 2192r20 2193r20 2194r20 2195r20 2196r20 2197r20
+. 2198r20 2199r20 2200r20 2201r20 2202r20 2203r20 2204r20 2205r20 2206r20
+. 2207r20 2208r20 2209r20 2210r20 2211r20 2212r20 2213r20 2214r20 2215r20
+. 2216r20 2217r20 2218r20 2219r20 2220r20 2221r20 2222r20 2223r20 2224r20
+. 2225r20 2226r20 2227r20 2228r20 2229r20 2230r20 2231r20 2232r20 2233r20
+. 2234r20 2235r20 2236r20 2237r20 2238r20 2239r20 2240r20 2241r20 2242r20
+. 2243r20 2244r20 2245r20 2246r20 2247r20 2248r20 2249r20 2250r20 2251r20
+. 2252r20 2253r20 2254r20 2255r20 2256r20 2257r20 2258r20 2259r20 2260r20
+. 2261r20 2262r20 2263r20 2264r20 2265r20 2266r20 2267r20 2268r20 2269r20
+. 2270r20 2271r20 2272r20 2273r20 2274r20 2275r20 2276r20 2277r20 2278r20
+. 2279r20 2280r20 2281r20 2282r20 2283r20 2284r20 2285r20 2286r20 2287r20
+. 2288r20 2289r20 2290r20 2291r20 2292r20 2293r20 2294r20 2295r20 2296r20
+. 2297r20 2298r20 2299r20 2300r20 2301r20 2302r20 2303r20 2304r20 2305r20
+. 2306r20 2307r20 2308r20 2309r20 2310r20 2311r20 2312r20 2313r20 2314r20
+. 2315r20 2316r20 2317r20 2318r20 2319r20 2320r20 2321r20 2322r20 2323r20
+. 2324r20 2325r20 2326r20 2327r20 2328r20 2329r20 2330r20 2331r20 2332r20
+. 2333r20 2334r20 2335r20 2336r20 2337r20 2338r20 2339r20 2340r20 2341r20
+. 2342r20 2343r20 2344r20 2345r20 2346r20 2347r20 2348r20 2349r20 2350r20
+. 2351r20 2352r20 2353r20 2354r20 2355r20 2356r20 2357r20 2358r20 2359r20
+. 2360r20 2361r20 2362r20 2363r20 2364r20 2365r20 2366r20 2367r20 2368r20
+. 2369r20 2370r20 2371r20 2372r20 2373r20 2374r20 2375r20 2376r20 2377r20
+. 2378r20 2379r20 2380r20 2381r20 2382r20 2383r20 2384r20 2385r20 2386r20
+. 2387r20 2388r20 2389r20 2390r20 2391r20 2392r20 2393r20 2394r20 2395r20
+. 2396r20 2397r20 2398r20 2399r20 2400r20 2401r20 2402r20 2403r20 2404r20
+. 2405r20 2406r20 2407r20 2408r20 2409r20 2410r20 2411r20 2412r20 2413r20
+. 2414r20 2415r20 2416r20 2417r20 2418r20 2419r20 2420r20 2421r20 2422r20
+. 2423r20 2424r20 2425r20 2426r20 2427r20 2428r20 2429r20 2430r20 2431r20
+. 2432r20 2433r20 2434r20 2435r20 2436r20 2437r20 2438r20 2439r20 2440r20
+. 2441r20 2442r20 2443r20 2444r20 2445r20 2446r20 2447r20 2448r20 2449r20
+. 2450r20 2451r20 2452r20 2453r20 2454r20 2455r20 2456r20 2457r20 2458r20
+. 2459r20 2460r20 2461r20 2462r20 2463r20 2464r20 2465r20 2466r20 2467r20
+. 2468r20 2469r20 2470r20 2471r20 2472r20 2473r20 2474r20 2475r20 2476r20
+. 2477r20 2478r20 2479r20 2480r20 2481r20 2482r20 2483r20 2484r20 2485r20
+. 2486r20 2487r20 2488r20 2489r20 2490r20 2491r20 2492r20 2493r20 2494r20
+. 2495r20 2496r20 2497r20 2498r20 2499r20 2500r20 2501r20 2502r20 2503r20
+. 2504r20 2505r20 2506r20 2507r20 2508r20 2509r20 2510r20 2511r20 2512r20
+. 2513r20 2514r20 2515r20 2516r20 2517r20 2518r20 2519r20 2520r20 2521r20
+. 2522r20 2523r20 2524r20 2525r20 2526r20 2527r20 2528r20 2529r20 2530r20
+. 2531r20 2532r20 2533r20 2534r20 2535r20 2536r20 2537r20 2538r20 2539r20
+. 2540r20 2541r20 2542r20 2543r20 2544r20 2545r20 2546r20 2547r20 2548r20
+. 2549r20 2550r20 2551r20 2552r20 2553r20 2554r20 2555r20 2556r20 2557r20
+. 2558r20 2559r20 2560r20 2561r20 2562r20 2563r20 2564r20 2565r20 2566r20
+. 2567r20 2568r20 2569r20 2570r20 2571r20 2572r20 2573r20 2574r20 2575r20
+. 2576r20 2577r20 2578r20 2579r20 2580r20 2581r20 2582r20 2583r20 2584r20
+. 2585r20 2586r20 2587r20 2588r20 2589r20 2590r20 2591r20 2592r20 2593r20
+. 2594r20 2595r20 2596r20 2597r20 2598r20 2599r20 2600r20 2601r20 2602r20
+. 2603r20 2604r20 2605r20 2606r20 2607r20 2608r20 2609r20 2610r20 2611r20
+. 2612r20 2613r20 2614r20 2615r20 2616r20 2617r20 2618r20 2619r20 2620r20
+. 2621r20 2622r20 2623r20 2624r20 2625r20 2626r20 2627r20 2628r20 2629r20
+. 2630r20 2631r20 2632r20 2633r20 2634r20 2635r20 2636r20 2637r20 2638r20
+. 2639r20 2640r20 2641r20 2642r20 2643r20 2644r20 2645r20 2646r20 2647r20
+. 2648r20 2649r20 2650r20 2651r20 2652r20 2653r20 2654r20 2655r20 2656r20
+. 2657r20 2658r20 2659r20 2660r20 2661r20 2662r20 2663r20 2664r20 2665r20
+. 2666r20 2667r20 2668r20 2669r20 2670r20 2671r20 2672r20 2673r20 2674r20
+. 2675r20 2676r20 2677r20 2678r20 2679r20 2680r20 2681r20 2682r20 2683r20
+. 2684r20 2685r20 2686r20 2687r20 2688r20 2689r20 2690r20 2691r20 2692r20
+. 2693r20 2694r20 2695r20 2696r20 2697r20 2698r20 2699r20 2700r20 2701r20
+. 2702r20 2703r20 2704r20 2705r20 2706r20 2707r20 2708r20 2709r20 2710r20
+. 2711r20 2712r20 2713r20 2714r20 2715r20 2716r20 2717r20 2718r20 2719r20
+. 2720r20 2721r20 2722r20 2723r20 2724r20 2725r20 2726r20 2727r20 2728r20
+. 2729r20 2730r20 2731r20 2732r20 2733r20 2734r20 2735r20 2736r20 2737r20
+. 2738r20 2739r20 2740r20 2741r20 2742r20 2743r20 2744r20 2745r20 2746r20
+. 2747r20 2748r20 2749r20 2750r20 2751r20 2752r20 2753r20 2754r20 2755r20
+. 2756r20 2757r20 2758r20 2759r20 2760r20 2761r20 2762r20 2763r20 2764r20
+. 2765r20 2766r20 2767r20 2768r20 2769r20 2770r20 2771r20 2772r20 2773r20
+. 2774r20 2775r20 2776r20 2777r20 2778r20 2779r20 2780r20 2781r20 2782r20
+. 2783r20 2784r20 2785r20 2786r20 2787r20 2788r20 2789r20 2790r20 2791r20
+. 2792r20 2793r20 2794r20 2795r20 2796r20 2797r20 2798r20 2799r20 2800r20
+. 2801r20 2802r20 2803r20 2804r20 2805r20 2806r20 2807r20 2808r20 2809r20
+. 2810r20 2811r20 2812r20 2813r20 2814r20 2815r20 2816r20 2817r20 2818r20
+. 2819r20 2820r20 2821r20 2822r20 2823r20 2824r20 2825r20 2826r20 2827r20
+. 2828r20 2829r20 2830r20 2831r20 2832r20 2833r20 2834r20 2835r20 2836r20
+. 2837r20 2838r20 2839r20 2840r20 2841r20 2842r20 2843r20 2844r20 2845r20
+. 2846r20 2847r20 2848r20 2849r20 2850r20 2851r20 2852r20 2853r20 2854r20
+. 2855r20 2856r20 2857r20 2858r20 2859r20 2860r20 2861r20 2862r20 2863r20
+. 2864r20 2865r20 2866r20 2867r20 2868r20 2869r20 2870r20 2871r20 2872r20
+. 2873r20 2874r20 2875r20 2876r20 2877r20 2878r20 2879r20 2880r20 2881r20
+. 2882r20 2883r20 2884r20 2885r20 2886r20 2887r20 2888r20 2889r20 2890r20
+. 2891r20 2892r20 2893r20 2894r20 2895r20 2896r20 2897r20 2898r20 2899r20
+. 2900r20 2901r20 2902r20 2903r20 2904r20 2905r20 2906r20 2907r20 2908r20
+. 2909r20 2910r20 2911r20 2912r20 2913r20 2914r20 2915r20 2916r20 2917r20
+. 2918r20 2919r20 2920r20 2921r20 2922r20 2923r20 2924r20 2925r20 2926r20
+. 2927r20 2928r20 2929r20 2930r20 2931r20 2932r20 2933r20 2934r20 2935r20
+. 2936r20 2937r20 2938r20 2939r20 2940r20 2941r20 2942r20 2943r20 2944r20
+. 2945r20 2946r20 2947r20 2948r20 2949r20 2950r20 2951r20 2952r20 2953r20
+. 2954r20 2955r20 2956r20 2957r20 2958r20
+X 48 coicop_definitions.adb
+189a7 b{47|1027A13} 192m24 192r24 194r14
+191e11 i{47|8E9} 192r27 192r33
+198a7 b{47|1129A13} 201m24 201r24 203r14
+200e11 i{47|8E9} 201r27 201r33
+207a7 b{47|1339A12} 210m24 210r24 212r14
+209e11 i{47|8E9} 210r27 210r33
+X 97 t_utils.ads
+31E9 T 47|981r7 1026r7 1128r7 1338r7
+36F9 Rate_Type 47|978r7 1023r7 1125r7 1335r7
+41F9 Amount_Type 47|979r7 1024r7 1126r7 1336r7
+45D9 Counter_Type 47|980r7 1025r7 1127r7 1337r7
+47k9*T_Utils 47|4w6 977r39 1022r38 1124r43 1334r42 97|159e12
+63A9*Abs_Amount_Array(46|25F9)<47|8E9>
+64A12*Amount_Array{63A9[47|977]}<47|8E9> 47|982r53[977] 1027r52[1022] 1129r62[1124]
+. 1339r59[1334]
+

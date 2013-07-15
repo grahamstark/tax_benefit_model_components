@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystem type="IncTaxSys" name="Income Tax"
+    instanceName="inctax">
+    <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <Description>
+            <p>abolish income tax</p>
+        </Description>
+        <Journalese>abolish income tax</Journalese>
+        <Tooltip>abolish income tax</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="taxSysType" units="timeless" type="enum"
+        instanceName="taxSysType" enumName="TaxSysType">
+        <Description>
+            <p>independent or joint</p>
+        </Description>
+        <Journalese>independent or joint</Journalese>
+        <Tooltip>independent or joint</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SA" units="year" type="real" instanceName="sa">
+        <Description>
+            <p>single persons allowance</p>
+        </Description>
+        <Journalese>single persons allowance</Journalese>
+        <Tooltip>single persons allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="MMA" units="year" type="real" instanceName="mma">
+        <Description>
+            <p>married persons allowance</p>
+        </Description>
+        <Journalese>married persons allowance</Journalese>
+        <Tooltip>married persons allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="warn"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="CTC" units="year" type="real" instanceName="ctc">
+        <Description>
+            <p>childrens tax credit</p>
+        </Description>
+        <Journalese>childrens tax credit</Journalese>
+        <Tooltip>childrens tax credit</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="warn"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="MCAAgeLimit" units="timeless" type="int" instanceName="mcaageLimit">
+        <Description>
+            <p>minimum age at which mca can be received</p>
+        </Description>
+        <Journalese>minimum age at which mca can be received</Journalese>
+        <Tooltip>minimum age at which mca can be received</Tooltip>
+        <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="highAgeChange" units="timeless" type="int" instanceName="highAgeChange">
+        <Description>
+            <p>age at which age allowance goes to higher rate</p>
+        </Description>
+        <Journalese>age at which age allowance goes to higher rate</Journalese>
+        <Tooltip>age at which age allowance goes to higher rate</Tooltip>
+        <EditInfo uprate="dont_uprate" check="warn" min="9999.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SAgeLow" units="year" type="real" instanceName="sageLow">
+        <Description>
+            <p>lower single age allowance</p>
+        </Description>
+        <Journalese>lower single age allowance</Journalese>
+        <Tooltip>lower single age allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="MAgeLow" units="year" type="real" instanceName="mageLow">
+        <Description>
+            <p>lower married age allowance</p>
+        </Description>
+        <Journalese>lower married age allowance</Journalese>
+        <Tooltip>lower married age allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SAgeHigh" units="year" type="real" instanceName="sageHigh">
+        <Description>
+            <p>higher single age allowance</p>
+        </Description>
+        <Journalese>higher single age allowance</Journalese>
+        <Tooltip>higher single age allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="MAgeHigh" units="year" type="real" instanceName="mageHigh">
+        <Description>
+            <p>high married age allowance</p>
+        </Description>
+        <Journalese>high married age allowance</Journalese>
+        <Tooltip>high married age allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="10.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="mortCeil" units="level" type="real" instanceName="mortCeil">
+        <Description>
+            <p>ceiling on mortgage interest relief</p>
+        </Description>
+        <Journalese>ceiling on mortgage interest relief</Journalese>
+        <Tooltip>ceiling on mortgage interest relief</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="100000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ageTaper" units="percent" type="real" instanceName="ageTaper">
+        <Description>
+            <p>age allowance taper</p>
+        </Description>
+        <Journalese>age allowance taper</Journalese>
+        <Tooltip>age allowance taper</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ageTaperThresh" units="year" type="real" instanceName="ageTaperThresh">
+        <Description>
+            <p>age allowance taper income threshold</p>
+        </Description>
+        <Journalese>age allowance taper income threshold</Journalese>
+        <Tooltip>age allowance taper income threshold</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compositeRate" units="percent" type="real" instanceName="compositeRate">
+        <Description>
+            <p>optional composite tax rate on investments</p>
+        </Description>
+        <Journalese>optional composite tax rate on investments</Journalese>
+        <Tooltip>optional composite tax rate on investments</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="class4Rebate" units="percent" type="real" instanceName="class4Rebate">
+        <Description>
+            <p>prop&apos;n of class4 ni allowable against tax</p>
+        </Description>
+        <Journalese>prop&apos;n of class4 ni allowable against tax</Journalese>
+        <Tooltip>prop&apos;n of class4 ni allowable against tax</Tooltip>
+        <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="compCarThresh" units="year" type="real" instanceName="compCarThresh">
+        <Description>
+            <p>earnings threshold for comp car taxation</p>
+        </Description>
+        <Journalese>earnings threshold for comp car taxation</Journalese>
+        <Tooltip>earnings threshold for comp car taxation</Tooltip>
+        <EditInfo uprate="rooker_wise" next="100.0" check="halt"
+            min="0.0" max="10000.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumRateBands" units="timeless" type="int" instanceName="numRateBands">
+        <Description>
+            <p>NumRateBands</p>
+        </Description>
+        <Journalese>NumRateBands</Journalese>
+        <Tooltip>NumRateBands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="PAYE" units="timeless" type="real_list"
+        instanceName="paye" indexName="IncomesSource">
+        <Description>
+            <p>incomes taxed under paye</p>
+        </Description>
+        <Journalese>incomes taxed under paye</Journalese>
+        <Tooltip>incomes taxed under paye</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="nonSourceList" units="timeless" type="real_list"
+        instanceName="nonSourceList" indexName="IncomesSource">
+        <Description>
+            <p>all income not taxed at source</p>
+        </Description>
+        <Journalese>all income not taxed at source</Journalese>
+        <Tooltip>all income not taxed at source</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="source" units="timeless" type="real_list"
+        instanceName="source" indexName="IncomesSource">
+        <Description>
+            <p>investment income taxed at composite rate</p>
+        </Description>
+        <Journalese>investment income taxed at composite rate</Journalese>
+        <Tooltip>investment income taxed at composite rate</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="deduct" units="timeless" type="real_list"
+        instanceName="deduct" indexName="IncomesSource">
+        <Description>
+            <p>deductable items</p>
+        </Description>
+        <Journalese>deductable items</Journalese>
+        <Tooltip>deductable items</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="wifeEarn" units="timeless" type="real_list"
+        instanceName="wifeEarn" indexName="IncomesSource">
+        <Description>
+            <p>income offset against wife&apos;s earned income allow</p>
+        </Description>
+        <Journalese>income offset against wife&apos;s earned income allow</Journalese>
+        <Tooltip>income offset against wife&apos;s earned income allow</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.0" check="dont_check"
+            min="0.0" max="0.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="numSpecialSource" units="timeless" type="int" instanceName="numSpecialSource">
+        <Description>
+            <p>number of special rates for income to be taxed</p>
+        </Description>
+        <Journalese>number of special rates for income to be taxed</Journalese>
+        <Tooltip>number of special rates for income to be taxed</Tooltip>
+        <EditInfo uprate="dont_uprate" check="warn" min="50.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumChildAllow" units="timeless" type="int" instanceName="numChildAllow">
+        <Description>
+            <p>NumChildAllow</p>
+        </Description>
+        <Journalese>NumChildAllow</Journalese>
+        <Tooltip>NumChildAllow</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    
+    <ParameterSystemPointer name="SpecialSource" type="SpecialSource"
+        instanceName="specialSource" indexName="int">
+        <Journalese>Specialy Treated Source of Income</Journalese>
+        <Description>
+            <p>Specialy Treated Source of Income</p>
+        </Description>
+        <Tooltip>Specialy Treated Source of Income</Tooltip>
+    </ParameterSystemPointer>
+    
+    <ParameterSystem type="SpecialSource" name="Special Income Source" instanceName="specialSource">
+        <Parameter name="lowBand" units="timeless" type="int" instanceName="lowBand">
+            <Description>
+                <p>not used</p>
+            </Description>
+            <Journalese>not used</Journalese>
+            <Tooltip>not used</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="50.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="highBand" units="timeless" type="int" instanceName="highBand">
+            <Description>
+                <p>band for which special rate on savings applies</p>
+            </Description>
+            <Journalese>band for which special rate on savings applies</Journalese>
+            <Tooltip>band for which special rate on savings applies</Tooltip>
+            <EditInfo uprate="dont_uprate" check="warn" min="50.0"
+                format="#######" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="actualRate" units="percent" type="real" instanceName="actualRate">
+            <Description>
+                <p>rate at which savings are actually taxed</p>
+            </Description>
+            <Journalese>rate at which savings are actually taxed</Journalese>
+            <Tooltip>rate at which savings are actually taxed</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="specIncList" units="timeless" type="real_list"
+            instanceName="specIncList" indexName="IncomesSource">
+            <Description>
+                <p>income which receives special savings rate treatment</p>
+            </Description>
+            <Journalese>income which receives special savings rate treatment</Journalese>
+            <Tooltip>income which receives special savings rate treatment</Tooltip>
+            <EditInfo uprate="rooker_wise" next="0.0"
+                check="dont_check" min="0.0" max="0.0"
+                format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>Special tax treatment Parameters for savings</p>
+        </Description>
+    </ParameterSystem>
+    <ParameterSystem type="IncomeTaxOptions" name="Income Tax Options" instanceName="options">
+        <Parameter name="RestrictCTA" type="enum"
+            instanceName="restrictCTA" enumName="Restriction">
+            <Description>
+                <p>is child tax allowances to be restricted</p>
+            </Description>
+            <Journalese>is child tax allowances to be restricted</Journalese>
+            <Tooltip>is child tax allowances to be restricted</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictPersAllow" units="timeless" type="enum"
+            instanceName="restrictPersAllow" enumName="RestrictPersAllow">
+            <Description>
+                <p>restrict personal allowance (only) to
+                    specified rate</p>
+            </Description>
+            <Journalese>restrict personal allowance (only) to
+                specified rate</Journalese>
+            <Tooltip>restrict personal allowance (only) to specified rate</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictMCA" units="timeless" type="enum"
+            instanceName="restrictMCA" enumName="RestrictMCA">
+            <Description>
+                <p>restrict married couples allowance to
+                    specified rate</p>
+            </Description>
+            <Journalese>restrict married couples allowance to
+                specified rate</Journalese>
+            <Tooltip>restrict married couples allowance to specified rate</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictPensions" units="timeless" type="enum"
+            instanceName="restrictPensions" enumName="RestrictPensions">
+            <Description>
+                <p>restrict pension contrib relief to
+                    specified rate</p>
+            </Description>
+            <Journalese>restrict pension contrib relief to specified rate</Journalese>
+            <Tooltip>restrict pension contrib relief to specified rate</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictMort" units="timeless" type="enum"
+            instanceName="restrictMort" enumName="RestrictMort">
+            <Description>
+                <p>restrict mortgage interest relief to
+                    specified rate</p>
+            </Description>
+            <Journalese>restrict mortgage interest relief to
+                specified rate</Journalese>
+            <Tooltip>restrict mortgage interest relief to specified rate</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="restrictCTC" units="timeless" type="enum"
+            instanceName="restrictCTC" enumName="RestrictCTC">
+            <Description>
+                <p>restrict childrens tax credit to specified rate</p>
+            </Description>
+            <Journalese>restrict childrens tax credit to specified rate</Journalese>
+            <Tooltip>restrict childrens tax credit to specified rate</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="CTARestrictedTo" units="percent" type="real" instanceName="ctarestrictedTo">
+            <Description>
+                <p>which tax band are child tax allowances
+                    restricted to?</p>
+            </Description>
+            <Journalese>which tax band are child tax allowances
+                restricted to?</Journalese>
+            <Tooltip>which tax band are child tax allowances
+                restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="persAllowRestrictedTo" units="percent"
+            type="real" instanceName="persAllowRestrictedTo">
+            <Description>
+                <p>which tax band is personal allowance
+                    restricted to?</p>
+            </Description>
+            <Journalese>which tax band is personal allowance
+                restricted to?</Journalese>
+            <Tooltip>which tax band is personal allowance restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="MCARestrictedTo" units="percent" type="real" instanceName="mcarestrictedTo">
+            <Description>
+                <p>which tax band is mca restricted to?</p>
+            </Description>
+            <Journalese>which tax band is mca restricted to?</Journalese>
+            <Tooltip>which tax band is mca restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="pensionsRestrictedTo" units="percent"
+            type="real" instanceName="pensionsRestrictedTo">
+            <Description>
+                <p>which tax band is pension contrib relief
+                    restricted to?</p>
+            </Description>
+            <Journalese>which tax band is pension contrib relief
+                restricted to?</Journalese>
+            <Tooltip>which tax band is pension contrib relief
+                restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="mortRestrictedTo" units="percent" type="real" instanceName="mortRestrictedTo">
+            <Description>
+                <p>which tax band is mortgage interest relief
+                    restricted to?</p>
+            </Description>
+            <Journalese>which tax band is mortgage interest relief
+                restricted to?</Journalese>
+            <Tooltip>which tax band is mortgage interest relief
+                restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="CTCRestrictedTo" units="percent" type="real" instanceName="ctcrestrictedTo">
+            <Description>
+                <p>which tax band is childrens tax credit
+                    restricted to?</p>
+            </Description>
+            <Journalese>which tax band is childrens tax credit
+                restricted to?</Journalese>
+            <Tooltip>which tax band is childrens tax credit
+                restricted to?</Tooltip>
+            <EditInfo uprate="dont_uprate" check="halt" min="0.0"
+                max="100.0" format="#######.##" topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="doRRB" units="timeless" type="boolean" instanceName="doRRB">
+            <Description>
+                <p>do reduced rate band</p>
+            </Description>
+            <Journalese>do reduced rate band</Journalese>
+            <Tooltip>do reduced rate band</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="doIIS" units="timeless" type="boolean" instanceName="doIIS">
+            <Description>
+                <p>do investment income surcharge</p>
+            </Description>
+            <Journalese>do investment income surcharge</Journalese>
+            <Tooltip>do investment income surcharge</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="persAllowType" units="timeless" type="enum"
+            instanceName="persAllowType" enumName="PersAllowType">
+            <Description>
+                <p>specify the type of the personal allowance</p>
+            </Description>
+            <Journalese>specify the type of the personal allowance</Journalese>
+            <Tooltip>specify the type of the personal allowance</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Parameter name="splitting" units="timeless" type="boolean" instanceName="splitting">
+            <Description>
+                <p>split family incomes</p>
+            </Description>
+            <Journalese>split family incomes</Journalese>
+            <Tooltip>split family incomes</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>Optional bits and pieces you can use modelling
+                the income tax system</p>
+        </Description>
+        <Tooltip>Optional bits and pieces you can use modelling the
+            income tax system</Tooltip>
+    </ParameterSystem>
+    <ArrayGroup name="rateBands" instanceName="rateBands" counterId="numRateBands">
+        <Parameter name="Rates" units="percent" type="real" instanceName="rates">
+            <Description>
+                <p>Rates</p>
+            </Description>
+            <Journalese>Rates</Journalese>
+            <Tooltip>Rates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="Bands" units="year" type="real" instanceName="bands">
+            <Description>
+                <p>Bands</p>
+            </Description>
+            <Journalese>Bands</Journalese>
+            <Tooltip>Bands</Tooltip>
+            <EditInfo uprate="rooker_wise" next="100.0" check="warn"
+                topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>income tax rates and bands</p>
+        </Description>
+        <Tooltip>income tax rates and bands</Tooltip>
+        <Journalese>income tax rates and bands</Journalese>
+    </ArrayGroup>
+    <ArrayGroup name="childTaxAllowances"
+        instanceName="childTaxAllowances" counterId="numChildAllow">
+        <Parameter name="AllowAgeBand" units="timeless" type="int" instanceName="allowAgeBand">
+            <Description>
+                <p>AllowAgeBand</p>
+            </Description>
+            <Journalese>AllowAgeBand</Journalese>
+            <Tooltip>AllowAgeBand</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="ChildAgeAllow" units="percent" type="real" instanceName="childAgeAllow">
+            <Description>
+                <p>ChildAgeAllow</p>
+            </Description>
+            <Journalese>ChildAgeAllow</Journalese>
+            <Tooltip>ChildAgeAllow</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="true" order="none"/>
+        </Parameter>
+        <Description>
+            <p>number of (hypothetical) child tax allowances,
+                by age (added gks 16/2/2000)</p>
+        </Description>
+        <Tooltip>number of (hypothetical) child tax allowances, by
+            age (added gks 16/2/2000)</Tooltip>
+        <Journalese>number of (hypothetical) child tax allowances,
+            by age (added gks 16/2/2000)</Journalese>
+    </ArrayGroup>
+    <Journalese>The Personal Income Tax System</Journalese>
+    <Description>
+        <p>The Personal Income Tax System</p>
+    </Description>
+    <Tooltip>The Personal Income Tax System</Tooltip>
+</ParameterSystem>

@@ -1,0 +1,18 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U mckae%s		mckae.ads		cc2fc41c NE OO PU PK
+
+D mckae.ads		20110415182051 cc2fc41c
+D system.ads		20110419093140 23e1f70b
+X 1 mckae.ads
+30K9*McKae 34l5 34e10
+

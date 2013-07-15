@@ -1,0 +1,586 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnvvnnnnnnvvvnnvnnvvnvnvvvvnnvnvnnvnnnnnnvnnvnvnnnnnnvnnnnvnvvnvnnvnnnnnnnnnnnnnn
+
+U za.model.calculator.wider_output%b  za-model-calculator-wider_output.adb  d769784f OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.generic_constrained_array_sort%s
+W ada.containers.ordered_sets%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W costs_tabulator%s	costs_tabulator.adb	costs_tabulator.ali
+W costs_tabulator.wider_io%s  costs_tabulator-wider_io.adb  costs_tabulator-wider_io.ali  AD
+W format_utils%s	format_utils.adb	format_utils.ali  AD
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W inequality_generator%s  inequality_generator.adb  inequality_generator.ali  AD
+W interfaces%s		interfac.ads		interfac.ali
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W poverty_tabulator%s	poverty_tabulator.adb	poverty_tabulator.ali
+W poverty_tabulator.wider_io%s  poverty_tabulator-wider_io.adb  poverty_tabulator-wider_io.ali  AD
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W tabulator%s		tabulator.adb		tabulator.ali
+W tabulator.wider_io%s	tabulator-wider_io.adb	tabulator-wider_io.ali  AD
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W utils%s		utils.adb		utils.ali
+W wider_io_commons%s	wider_io_commons.adb	wider_io_commons.ali
+W za%s			za.ads			za.ali
+W za.model.calculator%s	za-model-calculator.adb	za-model-calculator.ali
+W za.model_types%s	za-model_types.adb	za-model_types.ali
+
+U za.model.calculator.wider_output%s  za-model-calculator-wider_output.ads  bf62ba09 EE OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.unchecked_deallocation%s
+W costs_tabulator%s	costs_tabulator.adb	costs_tabulator.ali  AD
+W inequality_generator%s  inequality_generator.adb  inequality_generator.ali
+W interfaces%s		interfac.ads		interfac.ali
+W poverty_tabulator%s	poverty_tabulator.adb	poverty_tabulator.ali  AD
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W t_utils%s		t_utils.adb		t_utils.ali
+W tabulator%s		tabulator.adb		tabulator.ali  AD
+W tabulator_commons%s	tabulator_commons.ads	tabulator_commons.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W wider_io_commons%s	wider_io_commons.adb	wider_io_commons.ali
+W za.model.calculator%s	za-model-calculator.adb	za-model-calculator.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cgarso.adb		20110419093131 59f5315a
+D a-cgcaso.ads		20110419093131 9f1e835c
+D a-cgcaso.adb		20110419093131 326e4f26
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-numeri.ads		20110419093132 bb51c45a
+D a-numaux.ads		20110419093132 243fe0b7
+D a-ngelfu.ads		20110419093132 47731de9
+D a-ngelfu.adb		20110419093132 d18bc0c2
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D costs_tabulator.ads	20110825125844 6687abd8
+D costs_tabulator.adb	20110415182054 a491a3c4
+D costs_tabulator-wider_io.ads  20110415182049 bed1d97b
+D costs_tabulator-wider_io.adb  20110415182049 013d34d5
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-regpat.ads		20110419093135 b85d88ef
+D inequality_generator.ads  20111120195657 8a0b3e74
+D inequality_generator.adb  20111120170846 a1bf5773
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20110415182054 69a11afd
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D poverty_tabulator.ads	20110415182054 7d817588
+D poverty_tabulator.adb	20110415182054 06c23778
+D poverty_tabulator-wider_io.ads  20110415182049 a85c3703
+D poverty_tabulator-wider_io.adb  20110415182049 22b455fd
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-conca6.ads		20110419093137 c7caf514
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-imgrea.ads		20110419093137 c7a851e2
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valint.ads		20110419093139 48a52a3f
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D tabulator.ads		20110415182054 45ad63e2
+D tabulator.adb		20110415182054 edc3dd66
+D tabulator-wider_io.ads  20110415182049 5220fa84
+D tabulator-wider_io.adb  20110415182049 3dcf6581
+D tabulator_commons.ads	20110415182054 c4bdc325
+D tax_utils.ads		20110613201228 600316b9
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+D wider_io_commons.ads	20110415182049 ca40c364
+D za.ads		20110415182049 e958296a
+D za-model.ads		20110415182049 b4a526d2
+D za-model-calculator.ads  20110415182049 90825b16
+D za-model-calculator-wider_output.ads  20110622195026 da1c191b
+D za-model-calculator-wider_output.adb  20110415182049 c2779517
+D za-model-data.ads	20110415182049 1d87f5c8
+D za-model-params.ads	20110415182049 fc82da7b
+D za-model-results.ads	20110622103003 b15b45be
+D za-model-settings.ads	20110415182049 d47ebd48
+D za-model-takeup.ads	20110415182049 86577bd1
+D za-model_types.ads	20110415182049 a55e8de4
+X 1 ada.ads
+16K9*Ada 19e8 119|24r6 97r38 120|24r6 33r8 99r11
+X 6 a-contai.ads
+16K13*Containers 24e19 119|24r10 97r42 120|99r15
+20I9*Count_Type<integer>
+X 7 a-cgarso.ads
+24u26*Generic_Array_Sort 6|16k13
+X 8 a-cgarso.adb
+41U14 Sort[9|24] 10|34b26[17|912[57|115[120|63]]]
+X 9 a-cgcaso.ads
+24u26*Generic_Constrained_Array_Sort 6|16k13
+X 16 a-convec.ads
+38I9 Index_Type 119|99r7
+39+9 Element_Type 119|98r7
+43k24*Vectors 378e27 119|24w21 97r53
+53R9*Vector 119|100r50[97]
+56R9*Cursor 120|80r62[119|97]
+85V13*Length{6|20I9} 120|105s42[56|101[120|63]] 124s49[56|101[120|63]]
+101V13*Element{56|57R9[120|63]} 120|133s20[56|101[120|63]] 136s19[56|101[120|63]]
+105V13*Element{119|90R9} 120|81s55[119|97]
+197U14*Append 120|94s47[56|101[120|63]] 492s26[119|97] 493s26[119|97]
+283U14*Iterate 120|104s26[119|97]
+X 17 a-convec.adb
+912U20 Sort[7|24] 8|32b26[57|116[120|63]]
+X 28 a-strbou.ads
+162V16*"="{boolean}<31|163p13> 16|41i18[113|25]
+X 32 a-strunb.ads
+166V13*"="{boolean}<19|62p9> 16|41i18
+X 34 a-textio.ads
+49K13*Text_IO 471e16 120|24w10 33r12
+52P9*File_Type(369R9) 120|115r21 145r25 223r11
+53n32*Out_File{53E9} 120|226r18
+86U14*Create 120|226s7
+98U14*Close 120|457s7
+241U14*Put 120|126s7 127s7 128s7 129s7 130s7 131s7
+259U14*Put_Line 120|132s7 134s7 137s10
+263U14*Put_Line 120|225s7
+X 47 base_model_types.ads
+25F9*Real<long_float>
+29F12*Rate{25F9} 120|63r77 67r14 129r15 139r13 140r13
+30F12*Amount{25F9} 119|56r64 59r46 87r27 93r22 94r22 103r38 117r38 131r38
+. 145r38 159r20 165r20 171r20 177r20 183r20 190r20 197r20 204r20 120|40r27
+. 63r63 481r34 481r61
+X 48 costs_tabulator.ads
+31F9 Data_Type 119|183r7 190r7 197r7 204r7
+35E9 Breakdown_Range 119|184r7 191r7 198r7 205r7
+39E9 Values_Range 119|185r7 192r7 199r7 206r7
+44A9 Values_Array(31F9)<39E9> 119|186r7 193r7 200r7 207r7
+46k9*Costs_Tabulator 92e20 119|26w6 182r47 189r43 196r45 203r49 120|26r6
+58R9*Table_Type 119|215r61[182] 216r61[182] 217r57[189] 218r57[189] 219r59[196]
+. 220r59[196] 221r63[203] 222r63[203]
+64U14*Add_Observation 120|511s35[119|182] 516s31[119|189] 521s33[119|196]
+. 526s37[119|203] 532s35[119|182] 537s31[119|189] 542s33[119|196] 547s37[119|203]
+X 50 costs_tabulator-wider_io.ads
+29k25 Wider_IO 45e29 120|26w22
+34U14*Print 120|228s43[211] 238s41[215] 248s41[215] 258s39[213] 271s43[211]
+. 281s39[213] 291s41[215] 301s45[217] 311s45[217]
+X 56 inequality_generator.ads
+47F9 Rate 120|63r71
+51F9 Amount 120|63r55
+53k9*Inequality_Generator 137e25 119|27w6 120|23w6 63r33
+57R9*Quantile 120|83r32[63] 122r15[63] 123r19[63]
+59f7*income{47|25F9} 120|92m22[63] 140r31[63] 140r48[63]
+60f7*population{47|25F9} 120|93m22[63] 139r31[63] 139r52[63]
+70E9*Measures
+83n7*Gini{70E9[120|63]} 120|108r56[63]
+98A9*Inequality_Array(47|25F9)<70E9[120|63]> 120|101r43[63]
+101K12*Quantile_Package[16|43] 120|94r30[63] 105r25[63] 121r11[63]
+102R12*Quantile_List{16|53R9[101[120|63]]} 120|68r30[63] 78r41[63] 102r37[63]
+109V13*Generate{98A9[120|63]} 120|107s47[63]
+120U14*Sort_By_Income 120|106s24[63]
+129V13*Binify{102R12[120|63]} 120|109s37[63]
+X 65 poverty_tabulator.ads
+5F9 Data_Type 119|159r7 165r7 171r7 177r7
+7I9 People_Count 119|161r7 167r7 173r7 179r7
+11E9 Breakdown_Range 119|160r7 166r7 172r7 178r7
+13k9*Poverty_Tabulator 33e22 119|32w6 158r47 164r43 170r45 176r49 120|27r6
+17R9*Table_Type 119|224r61[158] 225r61[158] 226r57[164] 227r57[164] 228r59[170]
+. 229r59[170] 230r63[176] 231r63[176]
+24U14*Add_Observation 120|598s35[119|158] 604s33[119|170] 610s31[119|164]
+. 616s37[119|176] 625s35[119|158] 631s33[119|170] 637s31[119|164] 643s37[119|176]
+31U13*Complete_Table 120|324s31[119|164] 325s31[119|164] 326s35[119|158]
+. 327s35[119|158] 328s33[119|170] 329s33[119|170] 330s37[119|176] 331s37[119|176]
+X 67 poverty_tabulator-wider_io.ads
+29k27 Wider_IO 44e31 120|27w24
+34U14*Print 120|336s31[204] 345s35[202] 354s33[206] 363s37[208] 376s31[204]
+. 385s35[202] 394s33[206] 403s37[208]
+X 105 t_utils.ads
+47k9*T_Utils 159e12 119|30w6
+63A9*Abs_Amount_Array(47|25F9)<126|169E9>
+64A12*Amount_Array{63A9[126|143]}<126|135E9>
+X 106 tabulator.ads
+39F9 Data_Type 119|103r10 117r10 131r10 145r10
+43+9 Example_Type 119|104r10 118r10 132r10 146r10
+47E9 Row_Range 119|105r10 119r10 133r10 147r10
+51E9 Col_Range 119|106r10 120r10 134r10 148r10
+55A9 Scale_Array(39F9)<51E9> 119|110r10 124r10 138r10 152r10
+60E9 Cell_Values_Range 119|107r10 121r10 135r10 149r10
+64A9 Values_Array(39F9)<60E9> 119|108r10 122r10 136r10 150r10
+69+9 Cell_Breakdown 119|111r10 125r10 139r10 153r10
+74+9 Aggregate_Cell_Breakdown 119|112r10 126r10 140r10 154r10
+76i4 MAX_EXAMPLES{natural} 119|109r10 123r10 137r10 151r10
+81U19 Increment_Cell_Breakdown 119|113r10 127r10 141r10 155r10
+86k9*Tabulator 202e14 119|28w6 102r49 116r45 130r47 144r51 120|25r6
+90R9*Table_Type 119|234r65[144] 235r63[102] 236r61[130] 237r59[116]
+101V13*Get_Col_Range{integer} 120|553s47[119|102]
+154U14*Add_Observation 120|559s37[119|102] 568s35[119|130] 577s33[119|116]
+. 586s39[119|144]
+X 108 tabulator-wider_io.ads
+29k19 Wider_IO 44e23 120|25w16
+34U14*Print 120|416s33[199] 426s37[197] 436s35[195] 446s39[193]
+X 110 tabulator_commons.ads
+32K9*Tabulator_Commons 51e22 119|29w6 52r8
+38n64*pct_change{38E9} 120|557r13
+X 113 text_utils.ads
+13K9*Text_Utils 107e15 120|29w6 35r8
+30V13*Censor_String{string} 120|172s13 186s13
+X 115 wider_io_commons.ads
+28K9*Wider_IO_Commons 57e21 119|31w6 120|28w6 34r8
+39N4*NO_CHANGE_COL 120|420r10 430r10 440r10 450r10
+X 116 za.ads
+48K9*ZA 74e7 119|34r9 241r6 120|31r14 651r5
+X 117 za-model.ads
+30K12*Model 116|48k9 117|41e13 119|34r12 241r9 120|31r17 651r8
+X 118 za-model-calculator.ads
+29K18*Calculator 117|30k12 118|50e24 119|34r18 241r15 120|31r23 651r14
+X 119 za-model-calculator-wider_output.ads
+34K29*Wider_Output 118|29k18 119|241l26 241e38 120|31b34 651l25 651t37
+37R9*Outputs_Rec 39r65 41r51 48r25 210c9 239e14 120|222r25 460r51 470r24
+39U14*Print_Outputs 39>29 39=48 120|220b14 458l8 458t21
+39s29 filename{string} 120|221b7 225r41 226r28
+39r48 outputs{37R9} 120|222b7 231r10 241r10 251r10 261r10 274r10 284r10 294r10
+. 304r10 314r10 324m47 324r47 325m47 325r47 326m51 326r51 327m51 327r51 328m49
+. 328r49 329m49 329r49 330m53 330r53 331m53 331r53 339r10 348r10 357r10 366r10
+. 379r10 388r10 397r10 406r10 419r10 429r10 439r10 449r10 455r30 456r30
+41U14*Initialise_Outputs 41=34 120|460b14 463l8 463t26
+41r34 outputs{37R9} 120|460b34
+43U14*Add_To_Outputs 44>7 45>7 46>7 47>7 48=7 120|465b14 649l8 649t22
+44i7 hh_ref{positive} 120|466b7 507r23
+45r7 hh{121|91R9} 120|467b7 481r44 481r69 483r28 484r24 485r44 487r28 488r24
+. 489r44 495r29 496r25 497r27 498r31 513r14 514r14 518r14 519r14 523r14 524r14
+. 528r14 529r14 534r14 535r14 539r14 540r14 544r14 545r14 549r14 550r14 561r13
+. 563r13 570r13 572r13 579r13 581r13 588r13 590r13 601r14 602r14 603r14 607r14
+. 608r14 609r14 613r14 614r14 615r14 619r14 620r14 621r14 628r14 629r14 630r14
+. 634r14 635r14 636r14 640r14 641r14 642r14 646r14 647r14 648r14
+46r7 result_1{123|80R9} 120|468b7 485r22 500r25 502r25 554r13 600r14 606r14
+. 612r14 618r14
+47r7 result_2{123|80R9} 120|469b7 489r22 501r25 503r25 555r13 627r14 633r14
+. 639r14 645r14
+48r7 outputs{37R9} 120|470b7 492m34 492r34 493m34 493r34 512m14 512r14 517m14
+. 517r14 522m14 522r14 527m14 527r14 533m14 533r14 538m14 538r14 543m14 543r14
+. 548m14 548r14 560m13 560r13 569m13 569r13 578m13 578r13 587m13 587r13 599m14
+. 599r14 605m14 605r14 611m14 611r14 617m14 617r14 626m14 626r14 632m14 632r14
+. 638m14 638r14 644m14 644r14
+54I12 Wider_Scale_Range{positive} 56r41 106r38 120r38 134r38 148r38 120|475r19
+56A9 Wider_Gain_Lose_Scale(47|30F12)<integer> 58r31 110r38 124r38 138r38
+. 152r38
+58a4 Wider_Gain_Lose{56A9} 120|556r13
+64R9 Example 68e14 104r38 118r38 132r38 146r38 120|476r19
+65i7*hh_ref{positive} 120|507m13
+66i7*family{126|505I9}
+67i7*person{126|503I9}
+70R9 Aggregate_Cell_Breakdown 75e14 85r34 112r38 126r38 140r38 154r38 120|38r34
+71a7*province{126|167A12} 120|42m25 43r28
+72a7*settlement{126|178A12} 120|48m25 49r28
+73a7*race{126|148A12} 120|46m25 47r28
+74a7*tenure{126|219A12} 120|44m25 45r28
+77R9 Cell_Breakdown 82e14 86r27 111r38 125r38 139r38 153r38 120|39r27 474r19
+78e7*province{126|150E9} 120|42r49 43r52 495m17
+79e7*settlement{126|169E9} 120|48r51 49r54 498m17
+80e7*race{126|135E9} 120|46r45 47r48 496m17
+81e7*tenure{126|204E9} 120|44r47 45r50 497m17
+84U14 Increment_Cell_Breakdowns 85=7 86>7 87>7 113r38 127r38 141r38 155r38
+. 120|37b14 50l8 50t33
+85r7 current_breakdown{70R9} 120|38b7 42m7 43r10 44m7 45r10 46m7 47r10 48m7
+. 49r10
+86r7 new_breakdown{77R9} 120|39b7 42r35 43r38 44r33 45r36 46r31 47r34 48r37
+. 49r40
+87f7 weight{47|30F12} 120|40b7 43r65 45r61 47r57 49r69
+90R9 Inequality_Record 95e14 98r23 120|81r15 472r19 473r19
+91e7*province{126|150E9} 120|89r61 484m12 488m12
+92e7*race_of_head{126|135E9} 120|88r57 483m12 487m12
+93f7*income{47|30F12} 120|85r17 92r35 485m12 489m12
+94f7*population{47|30F12} 120|93r39 486m12 490m12
+97K12 Inequality_Package[16|43] 100r31 120|80r43 81r36 104r7 492r7 493r7
+100R12*Inequality_List{16|53R9[97]} 212r33 213r33 120|72r20 147r25
+102K12 Gain_Lose_By_Province_Package[106|86] 235r33 120|198r7 553r17 559r7
+116K12 Gain_Lose_By_Race_Package[106|86] 237r33 120|200r7 577r7
+130K12 Gain_Lose_By_Tenure_Package[106|86] 236r33 120|196r7 568r7
+144K12 Gain_Lose_By_Settlement_Package[106|86] 234r33 120|194r7 586r7
+158K12 Poverty_By_Province_Package[65|13] 224r33 225r33 120|203r7 326r7 327r7
+. 598r7 625r7
+164K12 Poverty_By_Race_Package[65|13] 226r33 227r33 120|205r7 324r7 325r7
+. 610r7 637r7
+170K12 Poverty_By_Tenure_Package[65|13] 228r33 229r33 120|207r7 328r7 329r7
+. 604r7 631r7
+176K12 Poverty_By_Settlement_Package[65|13] 230r33 231r33 120|209r7 330r7
+. 331r7 616r7 643r7
+182K12 Household_Costs_By_Province[48|46] 215r33 216r33 120|212r7 511r7 532r7
+189K12 Household_Costs_By_Race[48|46] 217r33 218r33 120|214r7 516r7 537r7
+196K12 Household_Costs_By_Tenure[48|46] 219r33 220r33 120|216r7 521r7 542r7
+203K12 Household_Costs_By_Settlement[48|46] 221r33 222r33 120|218r7 526r7
+. 547r7
+212r7*all_net_incomes_1{100R12} 120|455r38 492m42
+213r7*all_net_incomes_2{100R12} 120|456r38 493m42
+215r7*costs_by_province_1{48|58R9[182]} 120|231r18 512m22
+216r7*costs_by_province_2{48|58R9[182]} 120|274r18 533m22
+217r7*costs_by_race_1{48|58R9[189]} 120|261r18 517m22
+218r7*costs_by_race_2{48|58R9[189]} 120|284r18 538m22
+219r7*costs_by_tenure_1{48|58R9[196]} 120|241r18 251r18 522m22
+220r7*costs_by_tenure_2{48|58R9[196]} 120|294r18 543m22
+221r7*costs_by_settlement_1{48|58R9[203]} 120|304r18 527m22
+222r7*costs_by_settlement_2{48|58R9[203]} 120|314r18 548m22
+224r7*poverty_by_province_1{65|17R9[158]} 120|326m59 348r18 599m22
+225r7*poverty_by_province_2{65|17R9[158]} 120|327m59 388r18 626m22
+226r7*poverty_by_race_1{65|17R9[164]} 120|324m55 339r18 611m22
+227r7*poverty_by_race_2{65|17R9[164]} 120|325m55 379r18 638m22
+228r7*poverty_by_tenure_1{65|17R9[170]} 120|328m57 357r18 605m22
+229r7*poverty_by_tenure_2{65|17R9[170]} 120|329m57 397r18 632m22
+230r7*poverty_by_settlement_1{65|17R9[176]} 120|330m61 366r18 617m22
+231r7*poverty_by_settlement_2{65|17R9[176]} 120|331m61 406r18 644m22
+234r7*gain_lose_by_settlement{106|90R9[144]} 120|449r18 587m21
+235r7*gain_lose_by_province{106|90R9[102]} 120|429r18 560m21
+236r7*gain_lose_by_tenure{106|90R9[130]} 120|439r18 569m21
+237r7*gain_lose_by_race{106|90R9[116]} 120|419r18 578m21
+X 120 za-model-calculator-wider_output.adb
+52E9 Gini_Target 52e58 54r31 73r21 116r21
+52n26 complete{52E9} 57r15 87r21 152r10 158r10
+52n36 by_race{52E9} 58r15 88r21 179r13 185r13
+52n45 by_province{52E9} 59r15 89r21 165r13 171r13
+54V13 Pretty_Print{string} 54b13 54>27 61l8 61t20 127s22
+54e27 t{52E9} 56r12
+63K12 za_inequality[56|53] 68r16 78r27 83r18 94r16 101r29 102r23 105r11 106r10
+. 107r33 108r42 109r23 120r11
+66R9 Lorenz_And_Gini 69e14 76r41 100r12 119r21 148r12
+67f7*gini{47|29F12} 108m13 129r30
+68r7*lorenz{56|102R12[63]} 109m13 124r60 133r32 136r31
+71V13 Create_Lorenz_And_Gini{66R9} 71b13 72>7 73>7 74>7 75>7 76>7 112l8 112t30
+. 150s13 163s16 177s16
+72r7 all_points{119|100R12} 104r35
+73e7 target_type{52E9} 86r18
+74e7 which_race{126|135E9} 88r72
+75e7 which_province{126|150E9} 89r72
+76i7 num_bins{natural} 109r64
+78r7 points_for_output{56|102R12[63]} 94m55 94r55 105r50 106m40 106r40 107r57
+. 109r45
+80U17 Add_To_Disaggregated 80b17 80>39 97l11 97t31 104r47
+80r39 c{16|56R9[119|97]} 81r64
+81r10 iq{119|90R9} 85r14 88r54 89r58 92r32 93r36
+82b10 include_this_point{boolean} 87m33 88m32 89m36 91r17
+83r10 quant{56|57R9[63]} 92m16 93m16 94r74
+100r7 lg{66R9} 108m10 109m10 111r14
+101a7 inequality_measures{56|98A9[63]} 107m10 108r21
+102r7 lorenz{56|102R12[63]}
+114U14 Print_Gini 114b14 115>7 116>7 117>7 118>7 119>7 142l8 142t18 156s7
+. 169s10 183s10
+115p7 f{34|52P9} 126r12 127r12 128r12 129r12 130r12 131r12 132r17 134r17
+. 138r13
+116e7 target_type{52E9} 127r36
+117s7 breakdown{string} 128r22
+118i7 sys_no{126|39I9} 131r36
+119r7 lg{66R9} 124r57 129r27 133r29 136r28
+122r7 quant{56|57R9[63]} 136m10 139r25 140r25
+123r7 top_quant{56|57R9[63]} 133m7 139r42 140r38
+124i7 num_bins{natural} 132r35 133r40 135r21
+135i11 i{integer} 136r39
+144U14 Print_All_Ginis 144b14 145>7 146>7 147>7 191l8 191t23 455s7 456s7
+145p7 f{34|52P9} 157r10 170r13 184r13
+146i7 sys_no{126|39I9} 160r10 173r13 187r13
+147r7 all_net_incomes{119|100R12} 151r10 164r13 178r13
+148r7 lg{66R9} 150m7 161r10 163m10 174r13 177m10 188r13
+162e11 province{126|150E9} 167r13 172r49
+176e11 race{126|135E9} 180r13 186r52
+193K12 Gain_Lose_By_Settlement_Printer[108|29] 446r7
+195K12 Gain_Lose_By_Tenure_Printer[108|29] 436r7
+197K12 Gain_Lose_By_Province_Printer[108|29] 426r7
+199K12 Gain_Lose_By_Race_Printer[108|29] 416r7
+202K12 Poverty_By_Province_Printer[67|29] 345r7 385r7
+204K12 Poverty_By_Race_Printer[67|29] 336r7 376r7
+206K12 Poverty_By_Tenure_Printer[67|29] 354r7 394r7
+208K12 Poverty_By_Settlement_Printer[67|29] 363r7 403r7
+211K12 Household_Costs_By_Province_Printer[50|29] 228r7 271r7
+213K12 Household_Costs_By_Race_Printer[50|29] 258r7 281r7
+215K12 Household_Costs_By_Tenure_Printer[50|29] 238r7 248r7 291r7
+217K12 Household_Costs_By_Settlement_Printer[50|29] 301r7 311r7
+223p7 f{34|52P9} 226m15 226r15 229r10 239r10 249r10 259r10 272r10 282r10
+. 292r10 302r10 312r10 337r10 346r10 355r10 364r10 377r10 386r10 395r10 404r10
+. 417r10 427r10 437r10 447r10 455r24 456r24 457m14 457r14
+472r7 ir_1{119|90R9} 483m7 484m7 485m7 486m7 492r61
+473r7 ir_2{119|90R9} 487m7 488m7 489m7 490m7 493r61
+474r7 breakdown{119|77R9} 495m7 496m7 497m7 498m7 566r13 575r13 584r13 593r13
+475i7 column{119|54I12} 553m7 562r13 571r13 580r13 589r13
+476r7 exmpl{119|64R9} 507m7 567r13 576r13 585r13 594r13
+477a7 all_tbs_1{123|143A12} 500m7 515r14 520r14 525r14 530r14
+478a7 all_tbs_2{123|143A12} 501m7 536r14 541r14 546r14 551r14
+479a7 summary_1{123|159A12} 502m7 564r13 573r13 582r13 591r13
+480a7 summary_2{123|159A12} 503m7 565r13 574r13 583r13 592r13
+481f7 weighted_people{47|30F12} 486r26 490r26
+X 121 za-model-data.ads
+40e7*race{126|135E9} 120|483r55 487r55 496r52 518r41 539r41 579r40 614r41
+. 641r41
+47A9*Person_Array(32R9)<126|503I9>
+57e7*province{126|150E9} 120|484r32 488r32 495r37 513r22 534r22 561r21 602r22
+. 629r22
+58e7*tenure{126|204E9} 120|497r35 523r22 544r22 570r21 608r22 635r22
+62e7*urban_or_rural{126|169E9} 120|498r39 528r22 549r22 588r21 620r22 647r22
+70f7*weight{47|30F12} 120|481r52 485r52 489r52 514r22 519r22 524r22 529r22
+. 535r22 540r22 545r22 550r22 563r21 572r21 581r21 590r21 603r22 609r22 615r22
+. 621r22 630r22 636r22 642r22 648r22
+71i7*num_people{126|503I9} 120|481r77 601r22 607r22 613r22 619r22 628r22
+. 634r22 640r22 646r22
+83a7*person{47A9} 120|483r43 487r43 496r40 518r29 539r29 579r28 614r29 641r29
+89A9*Family_Unit_Array(79R9)<126|505I9>
+91R9*Household 119|45r18 120|467r17 121|94e14
+92r7*info{54R9} 120|481r47 481r72 484r27 485r47 488r27 489r47 495r32 497r30
+. 498r34 513r17 514r17 519r17 523r17 524r17 528r17 529r17 534r17 535r17 540r17
+. 544r17 545r17 549r17 550r17 561r16 563r16 570r16 572r16 581r16 588r16 590r16
+. 601r17 602r17 603r17 607r17 608r17 609r17 613r17 615r17 619r17 620r17 621r17
+. 628r17 629r17 630r17 634r17 635r17 636r17 640r17 642r17 646r17 647r17 648r17
+93a7*family{89A9} 120|483r31 487r31 496r28 518r17 539r17 579r16 614r17 641r17
+X 123 za-model-results.ads
+80R9*Household_Result 119|46r18 47r18 120|468r21 469r21 123|100e14
+83f7*net_income{47|30F12} 120|485r31 489r31 554r22 555r22
+94f7*poverty_gap{47|30F12} 120|600r23 606r23 612r23 618r23 627r23 633r23
+. 639r23 645r23
+122E9*All_Taxes_And_Benefits_Type 119|185r23 192r23 199r23 206r23 123|135e15
+143A12*All_Taxes_And_Benefits_Array{105|64A12[137]}<122E9> 119|186r23 193r23
+. 200r23 207r23 120|477r24 478r24
+144V13*Map{143A12} 120|500s20 501s20
+146E9*Summary_Items_Type 119|107r38 121r38 135r38 149r38 123|151e19
+159A12*Summary_Items_Array{105|64A12[153]}<146E9> 119|108r38 122r38 136r38
+. 150r38 120|479r24 480r24
+160V13*Map{159A12} 120|502s20 503s20
+X 126 za-model_types.ads
+39I9*System_Number<integer> 120|118r21 131r15 146r25
+135E9*Population_Group 119|80r20 92r22 119r38 166r26 191r26 120|74r20 74r40
+. 153r10 166r13 176r19 186r28 126|140e31
+148A12*Population_Array{105|64A12[143]}<135E9> 119|73r20
+150E9*Province_Type 119|78r20 91r22 105r38 160r26 184r26 120|75r24 75r41
+. 154r10 162r23 172r28 181r13 126|159e16
+167A12*Province_Array{105|64A12[162]}<150E9> 119|71r20
+169E9*Settlement_Type 119|79r20 147r38 178r26 205r26 126|171e14
+178A12*Settlement_Array{105|64A12[173]}<169E9> 119|72r20
+204E9*Tenure_Type 119|81r20 133r38 172r26 198r26 126|213e20
+219A12*Tenure_Array{105|64A12[214]}<204E9> 119|74r20
+503I9*Person_Count<integer> 119|67r17 161r23 167r23 173r23 179r23
+505I9*Family_Unit_Count<integer> 119|66r17
+

@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystemValues type="IndirectTax" >
+    <ParameterSystemValues type="OneExciseDuty"
+        instanceName="exciseDuty" index="Beer">
+        <ParameterValue instanceName="specif">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="7.46"/>
+                </Event>
+                <Event date="1980-04-01" enclosingEvent="budget1980">
+                    <Description>
+                        <p>1980 budget</p>
+                    </Description>
+                    <Journalese>changed in 1980 budget</Journalese>
+                    <OneVal val="9.14"/>
+                </Event>
+                <Event date="1981-04-01" enclosingEvent="budget1981">
+                    <Description>
+                        <p>1981 budget</p>
+                    </Description>
+                    <Journalese>changed in 1981 budget</Journalese>
+                    <OneVal val="12.60"/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="14.28"/>
+                </Event>
+                <Event date="1983-04-01" enclosingEvent="budget1983">
+                    <Description>
+                        <p>1983 budget</p>
+                    </Description>
+                    <Journalese>changed in 1983 budget</Journalese>
+                    <OneVal val="15.12"/>
+                </Event>
+                <Event date="1984-04-01" enclosingEvent="budget1984">
+                    <Description>
+                        <p>1984 budget</p>
+                    </Description>
+                    <Journalese>changed in 1984 budget</Journalese>
+                    <OneVal val="16.80"/>
+                </Event>
+                <Event date="1985-04-01" enclosingEvent="budget1985">
+                    <Description>
+                        <p>1985 budget</p>
+                    </Description>
+                    <Journalese>changed in 1985 budget</Journalese>
+                    <OneVal val="18.10"/>
+                </Event>
+                <Event date="1988-04-01" enclosingEvent="budget1988">
+                    <Description>
+                        <p>1988 budget</p>
+                    </Description>
+                    <Journalese>changed in 1988 budget</Journalese>
+                    <OneVal val="18.90"/>
+                </Event>
+                <Event date="1990-04-01" enclosingEvent="budget1990">
+                    <Description>
+                        <p>1990 budget</p>
+                    </Description>
+                    <Journalese>changed in 1990 budget</Journalese>
+                    <OneVal val="20.40"/>
+                </Event>
+                <Event date="1991-04-01" enclosingEvent="budget1991">
+                    <Description>
+                        <p>1991 budget</p>
+                    </Description>
+                    <Journalese>changed in 1991 budget</Journalese>
+                    <OneVal val="22.30"/>
+                </Event>
+                <Event date="1992-04-01" enclosingEvent="budget1992">
+                    <Description>
+                        <p>1992 budget</p>
+                    </Description>
+                    <Journalese>changed in 1992 budget</Journalese>
+                    <OneVal val="23.40"/>
+                </Event>
+                <Event date="1993-04-01" enclosingEvent="budget1993">
+                    <Description>
+                        <p>1993 budget</p>
+                    </Description>
+                    <Journalese>changed in 1993 budget</Journalese>
+                    <OneVal val="23.20"/>
+                </Event>
+                <Event date="1995-04-01" enclosingEvent="budget1995">
+                    <Description>
+                        <p>1995 budget</p>
+                    </Description>
+                    <Journalese>changed in 1995 budget</Journalese>
+                    <OneVal val="24.00"/>
+                </Event>
+                <Event date="1998-01-01">
+                    <OneVal val="24.68"/>
+                </Event>
+                <Event date="1999-01-01">
+                    <OneVal val="25.53"/>
+                </Event>
+                <Event date="2000-03-21">
+                    <OneVal val="26.40"/>
+                </Event>
+            </History>
+        </ParameterValue>
+        <ParameterValue instanceName="adVal">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="0.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+    </ParameterSystemValues>
+    <ParameterSystemValues type="OneExciseDuty"
+        instanceName="exciseDuty" index="Wine">
+        <ParameterValue instanceName="specif">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="53.72"/>
+                </Event>
+                <Event date="1980-04-01" enclosingEvent="budget1980">
+                    <Description>
+                        <p>1980 budget</p>
+                    </Description>
+                    <Journalese>changed in 1980 budget</Journalese>
+                    <OneVal val="61.18"/>
+                </Event>
+                <Event date="1981-04-01" enclosingEvent="budget1981">
+                    <Description>
+                        <p>1981 budget</p>
+                    </Description>
+                    <Journalese>changed in 1981 budget</Journalese>
+                    <OneVal val="71.53"/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="80.25"/>
+                </Event>
+                <Event date="1983-04-01" enclosingEvent="budget1983">
+                    <Description>
+                        <p>1983 budget</p>
+                    </Description>
+                    <Journalese>changed in 1983 budget</Journalese>
+                    <OneVal val="84.91"/>
+                </Event>
+                <Event date="1984-04-01" enclosingEvent="budget1984">
+                    <Description>
+                        <p>1984 budget</p>
+                    </Description>
+                    <Journalese>changed in 1984 budget</Journalese>
+                    <OneVal val="68.00"/>
+                </Event>
+                <Event date="1985-04-01" enclosingEvent="budget1985">
+                    <Description>
+                        <p>1985 budget</p>
+                    </Description>
+                    <Journalese>changed in 1985 budget</Journalese>
+                    <OneVal val="74.00"/>
+                </Event>
+                <Event date="1988-04-01" enclosingEvent="budget1988">
+                    <Description>
+                        <p>1988 budget</p>
+                    </Description>
+                    <Journalese>changed in 1988 budget</Journalese>
+                    <OneVal val="77.00"/>
+                </Event>
+                <Event date="1990-04-01" enclosingEvent="budget1990">
+                    <Description>
+                        <p>1990 budget</p>
+                    </Description>
+                    <Journalese>changed in 1990 budget</Journalese>
+                    <OneVal val="83.00"/>
+                </Event>
+                <Event date="1991-04-01" enclosingEvent="budget1991">
+                    <Description>
+                        <p>1991 budget</p>
+                    </Description>
+                    <Journalese>changed in 1991 budget</Journalese>
+                    <OneVal val="90.00"/>
+                </Event>
+                <Event date="1992-04-01" enclosingEvent="budget1992">
+                    <Description>
+                        <p>1992 budget</p>
+                    </Description>
+                    <Journalese>changed in 1992 budget</Journalese>
+                    <OneVal val="94.00"/>
+                </Event>
+                <Event date="1993-04-01" enclosingEvent="budget1993">
+                    <Description>
+                        <p>1993 budget</p>
+                    </Description>
+                    <Journalese>changed in 1993 budget</Journalese>
+                    <OneVal val="99.00"/>
+                </Event>
+                <Event date="1994-04-01" enclosingEvent="budget1994">
+                    <Description>
+                        <p>1994 budget</p>
+                    </Description>
+                    <Journalese>changed in 1994 budget</Journalese>
+                    <OneVal val="100.88"/>
+                </Event>
+                <Event date="1995-04-01" enclosingEvent="budget1995">
+                    <Description>
+                        <p>1995 budget</p>
+                    </Description>
+                    <Journalese>changed in 1995 budget</Journalese>
+                    <OneVal val="105.12"/>
+                </Event>
+                <Event date="1996-04-01" enclosingEvent="budget1996">
+                    <Description>
+                        <p>1996 budget</p>
+                    </Description>
+                    <Journalese>changed in 1996 budget</Journalese>
+                    <OneVal val="105.30"/>
+                </Event>
+                <Event date="1998-01-01">
+                    <OneVal val="108.48"/>
+                </Event>
+                <Event date="1999-01-01">
+                    <OneVal val="112.00"/>
+                </Event>
+                <Event date="2000-03-21">
+                    <OneVal val="115.80"/>
+                </Event>
+            </History>
+        </ParameterValue>
+        <ParameterValue instanceName="adVal">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="0.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+    </ParameterSystemValues>
+    <ParameterSystemValues type="OneExciseDuty"
+        instanceName="exciseDuty" index="Spirits">
+        <ParameterValue instanceName="specif">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="292.00"/>
+                </Event>
+                <Event date="1979-08-13">
+                    <OneVal val="548.00"/>
+                </Event>
+                <Event date="1980-04-01" enclosingEvent="budget1980">
+                    <Description>
+                        <p>1980 budget</p>
+                    </Description>
+                    <Journalese>changed in 1980 budget</Journalese>
+                    <OneVal val="332.00"/>
+                </Event>
+                <Event date="1981-04-01" enclosingEvent="budget1981">
+                    <Description>
+                        <p>1981 budget</p>
+                    </Description>
+                    <Journalese>changed in 1981 budget</Journalese>
+                    <OneVal val="380.00"/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="405.00"/>
+                </Event>
+                <Event date="1983-04-01" enclosingEvent="budget1983">
+                    <Description>
+                        <p>1983 budget</p>
+                    </Description>
+                    <Journalese>changed in 1983 budget</Journalese>
+                    <OneVal val="424.00"/>
+                </Event>
+                <Event date="1984-04-01" enclosingEvent="budget1984">
+                    <Description>
+                        <p>1984 budget</p>
+                    </Description>
+                    <Journalese>changed in 1984 budget</Journalese>
+                    <OneVal val="433.00"/>
+                </Event>
+                <Event date="1985-04-01" enclosingEvent="budget1985">
+                    <Description>
+                        <p>1985 budget</p>
+                    </Description>
+                    <Journalese>changed in 1985 budget</Journalese>
+                    <OneVal val="442.00"/>
+                </Event>
+                <Event date="1990-04-01" enclosingEvent="budget1990">
+                    <Description>
+                        <p>1990 budget</p>
+                    </Description>
+                    <Journalese>changed in 1990 budget</Journalese>
+                    <OneVal val="486.00"/>
+                </Event>
+                <Event date="1991-04-01" enclosingEvent="budget1991">
+                    <Description>
+                        <p>1991 budget</p>
+                    </Description>
+                    <Journalese>changed in 1991 budget</Journalese>
+                    <OneVal val="531.00"/>
+                </Event>
+                <Event date="1992-04-01" enclosingEvent="budget1992">
+                    <Description>
+                        <p>1992 budget</p>
+                    </Description>
+                    <Journalese>changed in 1992 budget</Journalese>
+                    <OneVal val="555.00"/>
+                </Event>
+                <Event date="1995-04-01" enclosingEvent="budget1995">
+                    <Description>
+                        <p>1995 budget</p>
+                    </Description>
+                    <Journalese>changed in 1995 budget</Journalese>
+                    <OneVal val="577.20"/>
+                </Event>
+                <Event date="1996-04-01" enclosingEvent="budget1996">
+                    <Description>
+                        <p>1996 budget</p>
+                    </Description>
+                    <Journalese>changed in 1996 budget</Journalese>
+                    <OneVal val="554.22"/>
+                </Event>
+                <Event date="1997-01-01">
+                    <OneVal val="532.20"/>
+                </Event>
+                <Event date="1998-01-01">
+                    <OneVal val="548.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+        <ParameterValue instanceName="adVal">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="0.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+    </ParameterSystemValues>
+    <ParameterSystemValues type="OneExciseDuty"
+        instanceName="exciseDuty" index="Petrol">
+        <ParameterValue instanceName="specif">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="6.57"/>
+                </Event>
+                <Event date="1979-04-01" enclosingEvent="budget1979">
+                    <Description>
+                        <p>1979 budget</p>
+                    </Description>
+                    <Journalese>changed in 1979 budget</Journalese>
+                    <OneVal val="8.10"/>
+                </Event>
+                <Event date="1980-04-01" enclosingEvent="budget1980">
+                    <Description>
+                        <p>1980 budget</p>
+                    </Description>
+                    <Journalese>changed in 1980 budget</Journalese>
+                    <OneVal val="10.00"/>
+                </Event>
+                <Event date="1981-04-01" enclosingEvent="budget1981">
+                    <Description>
+                        <p>1981 budget</p>
+                    </Description>
+                    <Journalese>changed in 1981 budget</Journalese>
+                    <OneVal val="13.82"/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="15.54"/>
+                </Event>
+                <Event date="1983-04-01" enclosingEvent="budget1983">
+                    <Description>
+                        <p>1983 budget</p>
+                    </Description>
+                    <Journalese>changed in 1983 budget</Journalese>
+                    <OneVal val="16.30"/>
+                </Event>
+                <Event date="1984-04-01" enclosingEvent="budget1984">
+                    <Description>
+                        <p>1984 budget</p>
+                    </Description>
+                    <Journalese>changed in 1984 budget</Journalese>
+                    <OneVal val="17.20"/>
+                </Event>
+                <Event date="1985-04-01" enclosingEvent="budget1985">
+                    <Description>
+                        <p>1985 budget</p>
+                    </Description>
+                    <Journalese>changed in 1985 budget</Journalese>
+                    <OneVal val="17.90"/>
+                </Event>
+                <Event date="1986-04-01" enclosingEvent="budget1986">
+                    <Description>
+                        <p>1986 budget</p>
+                    </Description>
+                    <Journalese>changed in 1986 budget</Journalese>
+                    <OneVal val="19.40"/>
+                </Event>
+                <Event date="1988-04-01" enclosingEvent="budget1988">
+                    <Description>
+                        <p>1988 budget</p>
+                    </Description>
+                    <Journalese>changed in 1988 budget</Journalese>
+                    <OneVal val="20.40"/>
+                </Event>
+                <Event date="1990-04-01" enclosingEvent="budget1990">
+                    <Description>
+                        <p>1990 budget</p>
+                    </Description>
+                    <Journalese>changed in 1990 budget</Journalese>
+                    <OneVal val="22.50"/>
+                </Event>
+                <Event date="1991-04-01" enclosingEvent="budget1991">
+                    <Description>
+                        <p>1991 budget</p>
+                    </Description>
+                    <Journalese>changed in 1991 budget</Journalese>
+                    <OneVal val="25.90"/>
+                </Event>
+                <Event date="1992-04-01" enclosingEvent="budget1992">
+                    <Description>
+                        <p>1992 budget</p>
+                    </Description>
+                    <Journalese>changed in 1992 budget</Journalese>
+                    <OneVal val="27.80"/>
+                </Event>
+                <Event date="1993-04-01" enclosingEvent="budget1993">
+                    <Description>
+                        <p>1993 budget</p>
+                    </Description>
+                    <Journalese>changed in 1993 budget</Journalese>
+                    <OneVal val="30.60"/>
+                </Event>
+                <Event date="1994-04-01" enclosingEvent="budget1994">
+                    <Description>
+                        <p>1994 budget</p>
+                    </Description>
+                    <Journalese>changed in 1994 budget</Journalese>
+                    <OneVal val="33.10"/>
+                </Event>
+                <Event date="1995-04-01" enclosingEvent="budget1995">
+                    <Description>
+                        <p>1995 budget</p>
+                    </Description>
+                    <Journalese>changed in 1995 budget</Journalese>
+                    <OneVal val="36.10"/>
+                </Event>
+                <Event date="1996-04-01" enclosingEvent="budget1996">
+                    <Description>
+                        <p>1996 budget</p>
+                    </Description>
+                    <Journalese>changed in 1996 budget</Journalese>
+                    <OneVal val="39.10"/>
+                </Event>
+                <Event date="1996-11-01">
+                    <OneVal val="36.86"/>
+                </Event>
+                <Event date="1997-07-01">
+                    <OneVal val="40.30"/>
+                </Event>
+                <Event date="1998-03-01">
+                    <OneVal val="44.00"/>
+                </Event>
+                <Event date="1999-03-09">
+                    <OneVal val="47.21"/>
+                </Event>
+                <Event date="2000-03-21">
+                    <OneVal val="48.82"/>
+                </Event>
+                <Event date="2001-03-07">
+                    <OneVal val="46.82"/>
+                </Event>
+            </History>
+        </ParameterValue>
+        <ParameterValue instanceName="adVal">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="0.00"/>
+                </Event>
+                <Event date="1981-07-02">
+                    <OneVal val=""/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="0.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+    </ParameterSystemValues>
+    <ParameterSystemValues type="OneExciseDuty"
+        instanceName="exciseDuty" index="Tobacco">
+        <ParameterValue instanceName="specif">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="18.00"/>
+                </Event>
+                <Event date="1979-08-13">
+                    <OneVal val="23.54"/>
+                </Event>
+                <Event date="1980-04-01" enclosingEvent="budget1980">
+                    <Description>
+                        <p>1980 budget</p>
+                    </Description>
+                    <Journalese>changed in 1980 budget</Journalese>
+                    <OneVal val="26.84"/>
+                </Event>
+                <Event date="1981-04-01" enclosingEvent="budget1981">
+                    <Description>
+                        <p>1981 budget</p>
+                    </Description>
+                    <Journalese>changed in 1981 budget</Journalese>
+                    <OneVal val="36.08"/>
+                </Event>
+                <Event date="1981-07-02">
+                    <OneVal val="38.06"/>
+                </Event>
+                <Event date="1982-04-01" enclosingEvent="budget1982">
+                    <Description>
+                        <p>1982 budget</p>
+                    </Description>
+                    <Journalese>changed in 1982 budget</Journalese>
+                    <OneVal val="41.35"/>
+                </Event>
+                <Event date="1983-04-01" enclosingEvent="budget1983">
+                    <Description>
+                        <p>1983 budget</p>
+                    </Description>
+                    <Journalese>changed in 1983 budget</Journalese>
+                    <OneVal val="43.35"/>
+                </Event>
+                <Event date="1984-04-01" enclosingEvent="budget1984">
+                    <Description>
+                        <p>1984 budget</p>
+                    </Description>
+                    <Journalese>changed in 1984 budget</Journalese>
+                    <OneVal val="49.95"/>
+                </Event>
+                <Event date="1985-04-01" enclosingEvent="budget1985">
+                    <Description>
+                        <p>1985 budget</p>
+                    </Description>
+                    <Journalese>changed in 1985 budget</Journalese>
+                    <OneVal val="53.90"/>
+                </Event>
+                <Event date="1986-04-01" enclosingEvent="budget1986">
+                    <Description>
+                        <p>1986 budget</p>
+                    </Description>
+                    <Journalese>changed in 1986 budget</Journalese>
+                    <OneVal val="61.20"/>
+                </Event>
+                <Event date="1988-04-01" enclosingEvent="budget1988">
+                    <Description>
+                        <p>1988 budget</p>
+                    </Description>
+                    <Journalese>changed in 1988 budget</Journalese>
+                    <OneVal val="63.50"/>
+                </Event>
+                <Event date="1990-04-01" enclosingEvent="budget1990">
+                    <Description>
+                        <p>1990 budget</p>
+                    </Description>
+                    <Journalese>changed in 1990 budget</Journalese>
+                    <OneVal val="69.80"/>
+                </Event>
+                <Event date="1991-04-01" enclosingEvent="budget1991">
+                    <Description>
+                        <p>1991 budget</p>
+                    </Description>
+                    <Journalese>changed in 1991 budget</Journalese>
+                    <OneVal val="80.30"/>
+                </Event>
+                <Event date="1992-04-01" enclosingEvent="budget1992">
+                    <Description>
+                        <p>1992 budget</p>
+                    </Description>
+                    <Journalese>changed in 1992 budget</Journalese>
+                    <OneVal val="88.60"/>
+                </Event>
+                <Event date="1993-04-01" enclosingEvent="budget1993">
+                    <Description>
+                        <p>1993 budget</p>
+                    </Description>
+                    <Journalese>changed in 1993 budget</Journalese>
+                    <OneVal val="97.50"/>
+                </Event>
+                <Event date="1994-04-01" enclosingEvent="budget1994">
+                    <Description>
+                        <p>1994 budget</p>
+                    </Description>
+                    <Journalese>changed in 1994 budget</Journalese>
+                    <OneVal val="104.70"/>
+                </Event>
+                <Event date="1995-04-01" enclosingEvent="budget1995">
+                    <Description>
+                        <p>1995 budget</p>
+                    </Description>
+                    <Journalese>changed in 1995 budget</Journalese>
+                    <OneVal val="115.28"/>
+                </Event>
+                <Event date="1996-04-01" enclosingEvent="budget1996">
+                    <Description>
+                        <p>1996 budget</p>
+                    </Description>
+                    <Journalese>changed in 1996 budget</Journalese>
+                    <OneVal val="125.04"/>
+                </Event>
+                <Event date="1996-11-01">
+                    <OneVal val="131.90"/>
+                </Event>
+                <Event date="1997-12-01">
+                    <OneVal val="144.12"/>
+                </Event>
+                <Event date="1998-12-01">
+                    <OneVal val="154.21"/>
+                </Event>
+                <Event date="1999-03-09">
+                    <OneVal val="165.18"/>
+                </Event>
+                <Event date="2000-03-21">
+                    <OneVal val="180.90"/>
+                </Event>
+                <Event date="2001-03-07">
+                    <OneVal val="185.40"/>
+                </Event>
+            </History>
+        </ParameterValue>
+        <ParameterValue instanceName="adVal">
+            <History>
+                <Event date="1978-04-01" enclosingEvent="budget1978">
+                    <Description>
+                        <p>1978 budget</p>
+                    </Description>
+                    <Journalese>changed in 1978 budget</Journalese>
+                    <OneVal val="30.00"/>
+                </Event>
+                <Event date="1979-08-13">
+                    <OneVal val="21.00"/>
+                </Event>
+                <Event date="1993-04-01" enclosingEvent="budget1993">
+                    <Description>
+                        <p>1993 budget</p>
+                    </Description>
+                    <Journalese>changed in 1993 budget</Journalese>
+                    <OneVal val="20.00"/>
+                </Event>
+                <Event date="1996-11-01">
+                    <OneVal val="21.00"/>
+                </Event>
+                <Event date="1998-12-01">
+                    <OneVal val="22.00"/>
+                </Event>
+            </History>
+        </ParameterValue>
+    </ParameterSystemValues>
+    <ParameterSystemValues type="VAT">
+     <ParameterValue instanceName="elasticity" />
+     <ParameterValue instanceName="rate">
+     <History>
+        <Event date="1978-04-01" enclosingEvent="budget1978">
+            <Description>
+                <p>1978 budget</p>
+            </Description>
+            <Journalese>changed in 1978 budget</Journalese>
+            <Values>
+                <OneVal index="Confectionery" val="0.08"/>
+                <OneVal index="JuiceAndSoftDrinks" val="0.08"/>
+                <OneVal index="MealsOut_HotOn" val="0.08"/>
+                <OneVal index="MealsOut_ColdOn" val="0.08"/>
+                <OneVal index="Cigarettes" val="0.08"/>
+                <OneVal index="PipeTobacco" val="0.08"/>
+                <OneVal index="CigarsAndSnuff" val="0.08"/>
+                <OneVal index="Beer" val="0.08"/>
+                <OneVal index="Wine" val="0.08"/>
+                <OneVal index="Spirits" val="0.08"/>
+                <OneVal index="Cider" val="0.08"/>
+                <OneVal index="FortifiedWine" val="0.08"/>
+                <OneVal index="Telephone" val="0.08"/>
+                <OneVal index="Insulation" val="0.08"/>
+                <OneVal index="HouseMaintenance" val="0.08"/>
+                <OneVal index="TV" val="0.125"/>
+                <OneVal index="NewCarsEtc" val="0.08"/>
+                <OneVal index="Petrol" val="0.125"/>
+                <OneVal index="Diesel" val="0.125"/>
+                <OneVal index="Oil" val="0.08"/>
+                <OneVal index="OtherTransport" val="0.08"/>
+                <OneVal index="AdultClothing" val="0.08"/>
+                <OneVal index="WhiteGoods" val="0.125"/>
+                <OneVal index="Electricals" val="0.125"/>
+                <OneVal index="FurnitureAndChina" val="0.08"/>
+                <OneVal index="OtherDurables" val="0.08"/>
+                <OneVal index="Toiletries" val="0.08"/>
+                <OneVal index="Stationary" val="0.08"/>
+                <OneVal index="ToysGamesAndSportsGoods" val="0.08"/>
+                <OneVal index="LeatherGoods" val="0.08"/>
+                <OneVal index="Decorations" val="0.08"/>
+                <OneVal index="Jewellery" val="0.08"/>
+                <OneVal index="PetsAndPetFood" val="0.08"/>
+                <OneVal index="Services" val="0.08"/>
+                <OneVal index="LicencesAndSubscriptions" val="0.08"/>
+            </Values>
+        </Event>
+        <Event date="1979-04-01" enclosingEvent="budget1979">
+            <Description>
+                <p>1979 budget</p>
+            </Description>
+            <Journalese>changed in 1979 budget</Journalese>
+            <Values>
+                <OneVal index="Confectionery" val="0.15"/>
+                <OneVal index="JuiceAndSoftDrinks" val="0.15"/>
+                <OneVal index="MealsOut_HotOn" val="0.15"/>
+                <OneVal index="MealsOut_ColdOn" val="0.15"/>
+                <OneVal index="Cigarettes" val="0.15"/>
+                <OneVal index="PipeTobacco" val="0.15"/>
+                <OneVal index="CigarsAndSnuff" val="0.15"/>
+                <OneVal index="Beer" val="0.15"/>
+                <OneVal index="Wine" val="0.15"/>
+                <OneVal index="Spirits" val="0.15"/>
+                <OneVal index="Cider" val="0.15"/>
+                <OneVal index="FortifiedWine" val="0.15"/>
+                <OneVal index="Telephone" val="0.15"/>
+                <OneVal index="Insulation" val="0.15"/>
+                <OneVal index="HouseMaintenance" val="0.15"/>
+                <OneVal index="TV" val="0.15"/>
+                <OneVal index="NewCarsEtc" val="0.15"/>
+                <OneVal index="Petrol" val="0.15"/>
+                <OneVal index="Diesel" val="0.15"/>
+                <OneVal index="Oil" val="0.15"/>
+                <OneVal index="OtherTransport" val="0.15"/>
+                <OneVal index="AdultClothing" val="0.15"/>
+                <OneVal index="WhiteGoods" val="0.15"/>
+                <OneVal index="Electricals" val="0.15"/>
+                <OneVal index="FurnitureAndChina" val="0.15"/>
+                <OneVal index="OtherDurables" val="0.15"/>
+                <OneVal index="Toiletries" val="0.15"/>
+                <OneVal index="Stationary" val="0.15"/>
+                <OneVal index="ToysGamesAndSportsGoods" val="0.15"/>
+                <OneVal index="LeatherGoods" val="0.15"/>
+                <OneVal index="Decorations" val="0.15"/>
+                <OneVal index="Jewellery" val="0.15"/>
+                <OneVal index="PetsAndPetFood" val="0.15"/>
+                <OneVal index="Services" val="0.15"/>
+                <OneVal index="LicencesAndSubscriptions" val="0.15"/>
+            </Values>
+        </Event>
+        <Event date="1984-04-01" enclosingEvent="budget1984">
+            <Description>
+                <p>1984 budget</p>
+            </Description>
+            <Journalese>changed in 1984 budget</Journalese>
+            <Values>
+                <OneVal index="HotTakeAwayFood" val="0.15"/>
+                <OneVal index="MealsOut_HotOff" val="0.15"/>
+            </Values>
+        </Event>
+        <Event date="1991-04-01" enclosingEvent="budget1991">
+            <Description>
+                <p>1991 budget</p>
+            </Description>
+            <Journalese>changed in 1991 budget</Journalese>
+            <Values>
+                <OneVal index="Confectionery" val="0.175"/>
+                <OneVal index="JuiceAndSoftDrinks" val="0.175"/>
+                <OneVal index="HotTakeAwayFood" val="0.175"/>
+                <OneVal index="MealsOut_HotOn" val="0.175"/>
+                <OneVal index="MealsOut_HotOff" val="0.175"/>
+                <OneVal index="MealsOut_ColdOn" val="0.175"/>
+                <OneVal index="Cigarettes" val="0.175"/>
+                <OneVal index="PipeTobacco" val="0.175"/>
+                <OneVal index="CigarsAndSnuff" val="0.175"/>
+                <OneVal index="Beer" val="0.175"/>
+                <OneVal index="Wine" val="0.175"/>
+                <OneVal index="Spirits" val="0.175"/>
+                <OneVal index="Cider" val="0.175"/>
+                <OneVal index="FortifiedWine" val="0.175"/>
+                <OneVal index="Telephone" val="0.175"/>
+                <OneVal index="Insulation" val="0.175"/>
+                <OneVal index="HouseMaintenance" val="0.175"/>
+                <OneVal index="TV" val="0.175"/>
+                <OneVal index="NewCarsEtc" val="0.175"/>
+                <OneVal index="Petrol" val="0.175"/>
+                <OneVal index="Diesel" val="0.175"/>
+                <OneVal index="Oil" val="0.175"/>
+                <OneVal index="OtherTransport" val="0.175"/>
+                <OneVal index="AdultClothing" val="0.175"/>
+                <OneVal index="WhiteGoods" val="0.175"/>
+                <OneVal index="Electricals" val="0.175"/>
+                <OneVal index="FurnitureAndChina" val="0.175"/>
+                <OneVal index="OtherDurables" val="0.175"/>
+                <OneVal index="Toiletries" val="0.175"/>
+                <OneVal index="Stationary" val="0.175"/>
+                <OneVal index="ToysGamesAndSportsGoods" val="0.175"/>
+                <OneVal index="LeatherGoods" val="0.175"/>
+                <OneVal index="Decorations" val="0.175"/>
+                <OneVal index="Jewellery" val="0.175"/>
+                <OneVal index="PetsAndPetFood" val="0.175"/>
+                <OneVal index="Services" val="0.175"/>
+                <OneVal index="LicencesAndSubscriptions" val="0.175"/>
+            </Values>
+        </Event>
+        <Event date="1994-04-01" enclosingEvent="budget1994">
+            <Description>
+                <p>1994 budget</p>
+            </Description>
+            <Journalese>changed in 1994 budget</Journalese>
+            <Values>
+                <OneVal index="DomesticHeating" val="0.08"/>
+                <OneVal index="Electricity" val="0.08"/>
+                <OneVal index="CokeAndCoal" val="0.08"/>
+                <OneVal index="Gas" val="0.08"/>
+            </Values>
+        </Event>
+        <Event date="1994-10-01">
+            <Values>
+                <OneVal index="HHInsurance" val="0.02"/>
+                <OneVal index="VehicleInsurance" val="0.02"/>
+            </Values>
+        </Event>
+        <Event date="1997-04-01" enclosingEvent="budget1997">
+            <Description>
+                <p>1997 budget</p>
+            </Description>
+            <Journalese>changed in 1997 budget</Journalese>
+            <Values>
+                <OneVal index="HHInsurance" val="0.04"/>
+                <OneVal index="VehicleInsurance" val="0.04"/>
+            </Values>
+        </Event>
+        <Event date="1998-04-01" enclosingEvent="budget1998">
+            <Description>
+                <p>1998 budget</p>
+            </Description>
+            <Journalese>changed in 1998 budget</Journalese>
+            <Values>
+                <OneVal index="DomesticHeating" val="0.05"/>
+                <OneVal index="Electricity" val="0.05"/>
+                <OneVal index="CokeAndCoal" val="0.05"/>
+                <OneVal index="Gas" val="0.05"/>
+            </Values>
+        </Event>
+        </History>
+      </ParameterValue>
+    </ParameterSystemValues>
+</ParameterSystemValues>

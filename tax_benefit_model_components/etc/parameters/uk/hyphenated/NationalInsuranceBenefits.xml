@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameter-system type="NationalInsuranceBenefits"
+    name="National Insurance Benefits" instanceName="niben" >
+    <parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <description>
+            <p>abolish all benefits</p>
+        </description>
+        <journalese>abolish all benefits</journalese>
+        <tooltip>abolish all benefits</tooltip>
+        <edit-info uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </parameter>
+    <parameter name="widowsPayment" units="week" type="real" instanceName="widowsPayment">
+        <description>
+            <p>lump sum widows payment(weekly equivalent)</p>
+        </description>
+        <journalese>lump sum widows payment(weekly equivalent)</journalese>
+        <tooltip>lump sum widows payment(weekly equivalent)</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="widPenRate" units="week" type="real" instanceName="widPenRate">
+        <description>
+            <p>weekly ni widows benefit</p>
+        </description>
+        <journalese>weekly ni widows benefit</journalese>
+        <tooltip>weekly ni widows benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="widKidAdd" units="week" type="real" instanceName="widKidAdd">
+        <description>
+            <p>extra to widows with children</p>
+        </description>
+        <journalese>extra to widows with children</journalese>
+        <tooltip>extra to widows with children</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenRate" units="week" type="real" instanceName="sickBenRate">
+        <description>
+            <p>ni sickness benefit</p>
+        </description>
+        <journalese>ni sickness benefit</journalese>
+        <tooltip>ni sickness benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenDepAdd" units="week" type="real" instanceName="sickBenDepAdd">
+        <description>
+            <p>addition to sickness benefit for dependent adult</p>
+        </description>
+        <journalese>addition to sickness benefit for dependent adult</journalese>
+        <tooltip>addition to sickness benefit for dependent adult</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenOAP" units="week" type="real" instanceName="sickBenOAP">
+        <description>
+            <p>ni sickness benefit rate for those over pension age</p>
+        </description>
+        <journalese>ni sickness benefit rate for those over pension age</journalese>
+        <tooltip>ni sickness benefit rate for those over pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenOAPDepAdd" units="week" type="real" instanceName="sickBenOAPDepAdd">
+        <description>
+            <p>ni sickness benefit:dep adult rate for over
+                pension age</p>
+        </description>
+        <journalese>ni sickness benefit:dep adult rate for over
+            pension age</journalese>
+        <tooltip>ni sickness benefit:dep adult rate for over pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenOAPKidAdd" units="week" type="real" instanceName="sickBenOAPKidAdd">
+        <description>
+            <p>ni sickness benefit:dep child add&apos;n for
+                over pension age</p>
+        </description>
+        <journalese>ni sickness benefit:dep child add&apos;n for
+            over pension age</journalese>
+        <tooltip>ni sickness benefit:dep child add&apos;n for  over
+            pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="sickBenKidAdd" units="week" type="real" instanceName="sickBenKidAdd">
+        <description>
+            <p>ni sickness benefit:dependent child addition</p>
+        </description>
+        <journalese>ni sickness benefit:dependent child addition</journalese>
+        <tooltip>ni sickness benefit:dependent child addition</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBRate" units="week" type="real" instanceName="ubrate">
+        <description>
+            <p>ni unemployment benefit</p>
+        </description>
+        <journalese>ni unemployment benefit</journalese>
+        <tooltip>ni unemployment benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBDepAdd" units="week" type="real" instanceName="ubdepAdd">
+        <description>
+            <p>dependants addition to ub</p>
+        </description>
+        <journalese>dependants addition to ub</journalese>
+        <tooltip>dependants addition to ub</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBOAP" units="week" type="real" instanceName="uboap">
+        <description>
+            <p>unemployment benefit for those over pension age</p>
+        </description>
+        <journalese>unemployment benefit for those over pension age</journalese>
+        <tooltip>unemployment benefit for those over pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBOAPDepAdd" units="week" type="real" instanceName="uboapdepAdd">
+        <description>
+            <p>adult dependants addition to ub for those over
+                pension age</p>
+        </description>
+        <journalese>adult dependants addition to ub for those over
+            pension age</journalese>
+        <tooltip>adult dependants addition to ub for those over
+            pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBOAPKidAdd" units="week" type="real" instanceName="uboapkidAdd">
+        <description>
+            <p>child addition to ub for those over pension age</p>
+        </description>
+        <journalese>child addition to ub for those over pension age</journalese>
+        <tooltip>child addition to ub for those over pension age</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBKidAdd" units="week" type="real" instanceName="ubkidAdd">
+        <description>
+            <p>child addition to ub</p>
+        </description>
+        <journalese>child addition to ub</journalese>
+        <tooltip>child addition to ub</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBOccSys" units="timeless" type="int" instanceName="uboccSys">
+        <description>
+            <p>do we reduce ub if they have occ pen? 2=yes</p>
+        </description>
+        <journalese>do we reduce ub if they have occ pen? 2=yes</journalese>
+        <tooltip>do we reduce ub if they have occ pen? 2=yes</tooltip>
+        <edit-info uprate="dont_uprate" check="warn" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBAge" units="timeless" type="int" instanceName="ubage">
+        <description>
+            <p>age from which reduce ub if they have occ pen</p>
+        </description>
+        <journalese>age from which reduce ub if they have occ pen</journalese>
+        <tooltip>age from which reduce ub if they have occ pen</tooltip>
+        <edit-info uprate="dont_uprate" check="warn" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </parameter>
+    <parameter name="UBOccAm" units="week" type="real" instanceName="uboccAm">
+        <description>
+            <p>amount of occ pen before ub reduced</p>
+        </description>
+        <journalese>amount of occ pen before ub reduced</journalese>
+        <tooltip>amount of occ pen before ub reduced</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invPenRate" units="week" type="real" instanceName="invPenRate">
+        <description>
+            <p>basic rate of invalidity pension</p>
+        </description>
+        <journalese>basic rate of invalidity pension</journalese>
+        <tooltip>basic rate of invalidity pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invPenDepAdd" units="week" type="real" instanceName="invPenDepAdd">
+        <description>
+            <p>dependants addition to invalidity pension</p>
+        </description>
+        <journalese>dependants addition to invalidity pension</journalese>
+        <tooltip>dependants addition to invalidity pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invPenKidAdd" units="week" type="real" instanceName="invPenKidAdd">
+        <description>
+            <p>child addition to invalidity pension</p>
+        </description>
+        <journalese>child addition to invalidity pension</journalese>
+        <tooltip>child addition to invalidity pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invAllHigh" units="week" type="real" instanceName="invAllHigh">
+        <description>
+            <p>high allowance for those on invalidity benefit</p>
+        </description>
+        <journalese>high allowance for those on invalidity benefit</journalese>
+        <tooltip>high allowance for those on invalidity benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invAllMid" units="week" type="real" instanceName="invAllMid">
+        <description>
+            <p>middle allowance for those on invalidity benefit</p>
+        </description>
+        <journalese>middle allowance for those on invalidity benefit</journalese>
+        <tooltip>middle allowance for those on invalidity benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invAllLow" units="week" type="real" instanceName="invAllLow">
+        <description>
+            <p>low allowance for those on invalidity benefit</p>
+        </description>
+        <journalese>low allowance for those on invalidity benefit</journalese>
+        <tooltip>low allowance for those on invalidity benefit</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="invOccAm" units="week" type="real" instanceName="invOccAm">
+        <description>
+            <p>amount of occ pen before ivb reduced</p>
+        </description>
+        <journalese>amount of occ pen before ivb reduced</journalese>
+        <tooltip>amount of occ pen before ivb reduced</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenA" units="week" type="real" instanceName="retPenA">
+        <description>
+            <p>basic retirement pension</p>
+        </description>
+        <journalese>basic retirement pension</journalese>
+        <tooltip>basic retirement pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenDepAdd" units="week" type="real" instanceName="retPenDepAdd">
+        <description>
+            <p>dependants addition to basic retirement pension</p>
+        </description>
+        <journalese>dependants addition to basic retirement pension</journalese>
+        <tooltip>dependants addition to basic retirement pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenKidAdd" units="week" type="real" instanceName="retPenKidAdd">
+        <description>
+            <p>child addition to basic retirement pension</p>
+        </description>
+        <journalese>child addition to basic retirement pension</journalese>
+        <tooltip>child addition to basic retirement pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenC" units="week" type="real" instanceName="retPenC">
+        <description>
+            <p>class c retirement pension</p>
+        </description>
+        <journalese>class c retirement pension</journalese>
+        <tooltip>class c retirement pension</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenEarnLim1" units="week" type="real" instanceName="retPenEarnLim1">
+        <description>
+            <p>lower earnings limit for pension recipients</p>
+        </description>
+        <journalese>lower earnings limit for pension recipients</journalese>
+        <tooltip>lower earnings limit for pension recipients</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenEarnLim2" units="week" type="real" instanceName="retPenEarnLim2">
+        <description>
+            <p>higher earnings limit for pension recipients</p>
+        </description>
+        <journalese>higher earnings limit for pension recipients</journalese>
+        <tooltip>higher earnings limit for pension recipients</tooltip>
+        <edit-info uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <parameter name="retPenEarnLimTaper" units="percent" type="real" instanceName="retPenEarnLimTaper">
+        <description>
+            <p>rate at which pension is tapered between limits</p>
+        </description>
+        <journalese>rate at which pension is tapered between limits</journalese>
+        <tooltip>rate at which pension is tapered between limits</tooltip>
+        <edit-info uprate="dont_uprate" check="halt" min="0.0"
+            max="100.0" format="#######.##" topset="true" order="none"/>
+    </parameter>
+    <description>
+        <p>National Insurance Benefits</p>
+    </description>
+    <tooltip>National Insurance Benefits</tooltip>
+</parameter-system>

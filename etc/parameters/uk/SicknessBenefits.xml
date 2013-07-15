@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParameterSystem type="SicknessBenefits" name="Sickness Benefits"
+    instanceName="sick" >
+    <Parameter name="abolished" units="timeless" type="boolean" instanceName="abolished">
+        <Description>
+            <p>abolish sickness benefits</p>
+        </Description>
+        <Journalese>abolish sickness benefits</Journalese>
+        <Tooltip>abolish sickness benefits</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ICA" units="week" type="real" instanceName="ica">
+        <Description>
+            <p>invalid care allowance</p>
+        </Description>
+        <Journalese>invalid care allowance</Journalese>
+        <Tooltip>invalid care allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ICASpouseAdd" units="week" type="real" instanceName="icaspouseAdd">
+        <Description>
+            <p>invalid care allowance spouses addition</p>
+        </Description>
+        <Journalese>invalid care allowance spouses addition</Journalese>
+        <Tooltip>invalid care allowance spouses addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="ICAChildAdd" units="week" type="real" instanceName="icachildAdd">
+        <Description>
+            <p>invalid care allowance child addition</p>
+        </Description>
+        <Journalese>invalid care allowance child addition</Journalese>
+        <Tooltip>invalid care allowance child addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="attHigh" units="week" type="real" instanceName="attHigh">
+        <Description>
+            <p>higher rate of attendance allowance</p>
+        </Description>
+        <Journalese>higher rate of attendance allowance</Journalese>
+        <Tooltip>higher rate of attendance allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="attLow" units="week" type="real" instanceName="attLow">
+        <Description>
+            <p>lower rate of attendance allowance</p>
+        </Description>
+        <Journalese>lower rate of attendance allowance</Journalese>
+        <Tooltip>lower rate of attendance allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="mobil" units="week" type="real" instanceName="mobil">
+        <Description>
+            <p>mobility allowance</p>
+        </Description>
+        <Journalese>mobility allowance</Journalese>
+        <Tooltip>mobility allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDAllow" units="week" type="real" instanceName="sdallow">
+        <Description>
+            <p>severe disablement allowance</p>
+        </Description>
+        <Journalese>severe disablement allowance</Journalese>
+        <Tooltip>severe disablement allowance</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDASpouseAdd" units="week" type="real" instanceName="sdaspouseAdd">
+        <Description>
+            <p>severe disablement allowance spouses addition</p>
+        </Description>
+        <Journalese>severe disablement allowance spouses addition</Journalese>
+        <Tooltip>severe disablement allowance spouses addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDAChildAdd" units="week" type="real" instanceName="sdachildAdd">
+        <Description>
+            <p>severe disablement allowance child addition</p>
+        </Description>
+        <Journalese>severe disablement allowance child addition</Journalese>
+        <Tooltip>severe disablement allowance child addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDAHigh" units="week" type="real" instanceName="sdahigh">
+        <Description>
+            <p>sda highest age-related addition</p>
+        </Description>
+        <Journalese>sda highest age-related addition</Journalese>
+        <Tooltip>sda highest age-related addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDAMid" units="week" type="real" instanceName="sdamid">
+        <Description>
+            <p>sda middle age-related addition</p>
+        </Description>
+        <Journalese>sda middle age-related addition</Journalese>
+        <Tooltip>sda middle age-related addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="SDALow" units="week" type="real" instanceName="sdalow">
+        <Description>
+            <p>sda low age-related addition</p>
+        </Description>
+        <Journalese>sda low age-related addition</Journalese>
+        <Tooltip>sda low age-related addition</Tooltip>
+        <EditInfo uprate="rooker_wise" next="0.05" check="halt"
+            min="0.0" max="100.0" format="#######.##" topset="true" order="none"/>
+    </Parameter>
+    <Parameter name="NumSSPBands" units="timeless" type="int" instanceName="numSSPBands">
+        <Description>
+            <p>NumSSPBands</p>
+        </Description>
+        <Journalese>NumSSPBands</Journalese>
+        <Tooltip>NumSSPBands</Tooltip>
+        <EditInfo uprate="dont_uprate" check="dont_check" min="100.0"
+            format="#######" topset="true" order="none"/>
+    </Parameter>
+    <ArrayGroup name="SSPRateBands" instanceName="ssprateBands" counterId="numSSPBands">
+        <Parameter name="Rates" units="week" type="real" instanceName="rates">
+            <Description>
+                <p>Rates</p>
+            </Description>
+            <Journalese>Rates</Journalese>
+            <Tooltip>Rates</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Parameter name="Bands" units="week" type="real" instanceName="bands">
+            <Description>
+                <p>Bands</p>
+            </Description>
+            <Journalese>Bands</Journalese>
+            <Tooltip>Bands</Tooltip>
+            <EditInfo uprate="dont_uprate" check="dont_check"
+                topset="false" order="none"/>
+        </Parameter>
+        <Description>
+            <p>ssp rates and earnings bands</p>
+        </Description>
+        <Tooltip>ssp rates and earnings bands</Tooltip>
+        <Journalese>ssp rates and earnings bands</Journalese>
+    </ArrayGroup>
+    <Description>
+        <p>Sickness Benefits</p>
+    </Description>
+    <Tooltip>Sickness Benefits</Tooltip>
+</ParameterSystem>

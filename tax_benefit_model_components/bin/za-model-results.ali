@@ -1,0 +1,493 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnnnnnnvnnnnnnnvnnvnvvvnnnvnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnvnnnnnnnnnnnnnn
+
+U za.model.results%b	za-model-results.adb	88e1d38c OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.assertions%s	a-assert.adb		a-assert.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W za.model%s		za-model.ads		za-model.ali
+
+U za.model.results%s	za-model-results.ads	aa61c38b EE OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.generic_array_sort%s
+W ada.containers.ordered_sets%s
+W ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+W ada.containers.red_black_trees.generic_keys%s
+W ada.containers.red_black_trees.generic_operations%s
+W ada.containers.red_black_trees.generic_set_operations%s
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.heap_management%s  a-fihema.adb  a-fihema.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.editing%s	a-teioed.adb		a-teioed.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_deallocation%s
+W format_utils%s	format_utils.adb	format_utils.ali  AD
+W gnat%s		gnat.ads		gnat.ali
+W gnat.regpat%s		g-regpat.ads		g-regpat.ali
+W gnat.string_split%s	g-strspl.ads		g-strspl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W numeric_io%s		numeric_io.adb		numeric_io.ali
+W set_of%s		set_of.adb		set_of.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.arith_64%s	s-arit64.adb		s-arit64.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.exn_llf%s	s-exnllf.adb		s-exnllf.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_lld%s	s-imglld.adb		s-imglld.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+W t_utils%s		t_utils.adb		t_utils.ali  AD
+W tax_utils%s		tax_utils.adb		tax_utils.ali
+W text_io%s		text_io.ads		text_io.ali
+W text_utils%s		text_utils.adb		text_utils.ali
+W utils%s		utils.adb		utils.ali
+W za%s			za.ads			za.ali
+W za.model%s		za-model.ads		za-model.ali
+W za.model.data%s	za-model-data.adb	za-model-data.ali
+W za.model.settings%s	za-model-settings.adb	za-model-settings.ali
+
+D ada.ads		20110419093133 3ffc8e18
+D a-assert.ads		20110419093130 0a052b2b
+D a-calend.ads		20110419093130 343c83dd
+D a-charac.ads		20110419093131 2d3ec45b
+D a-chlat1.ads		20110419093131 2825df20
+D a-contai.ads		20110419093131 61e5e089
+D a-cgarso.ads		20110419093131 9129bfa8
+D a-cohata.ads		20110419093131 04abccc5
+D a-cohama.ads		20110419093131 6b402e54
+D a-coorma.ads		20110419093131 6e843799
+D a-coorse.ads		20110419093131 a1d9557e
+D a-coorse.adb		20110419093131 26de352f
+D a-crbltr.ads		20110419093131 a9d2c4df
+D a-crbtgk.ads		20110419093131 18ae3fab
+D a-crbtgk.adb		20110419093131 4933aa9d
+D a-crbtgo.ads		20110419093131 375f6f61
+D a-crbtgo.adb		20110419093131 86232183
+D a-rbtgso.ads		20110419093132 8700a961
+D a-rbtgso.adb		20110419093132 f22a83dd
+D a-convec.ads		20110419093131 49c793e4
+D a-convec.adb		20110419093131 70f4024c
+D a-except.ads		20110419093131 4759ecee
+D a-finali.ads		20110419093131 b333d305
+D a-fihema.ads		20110419093131 1940728a
+D a-ioexce.ads		20110419093131 8b9de6cd
+D a-stream.ads		20110419093132 2ca4ee37
+D a-string.ads		20110419093132 90ac6797
+D a-strbou.ads		20110419093132 9806fe84
+D a-strfix.ads		20110419093132 d07c346e
+D a-strmap.ads		20110419093132 9cb836fb
+D a-strsup.ads		20110419093132 2a485698
+D a-strunb.ads		20110419093132 3f91d4c5
+D a-tags.ads		20110419093132 7b33f560
+D a-textio.ads		20110419093132 386df5d4
+D a-tideio.ads		20110419093132 1e9d1f0b
+D a-teioed.ads		20110419093132 8ca49dac
+D a-teioed.adb		20110419093132 349f3b63
+D a-tienio.ads		20110419093133 fc618ae6
+D a-tiflau.ads		20110419093133 c0393f21
+D a-tiflio.ads		20110419093133 56fbda09
+D a-tiflio.adb		20110419093133 fd9b1cfc
+D a-tiinau.ads		20110419093133 8114c8e4
+D a-tiinio.ads		20110419093133 aa04e5d6
+D a-tiinio.adb		20110419093133 df9cd7af
+D a-unccon.ads		20110419093133 f9eb8f06
+D a-uncdea.ads		20110419093133 f15a5ed1
+D base_model_types.ads	20120210022130 c07d5626
+D format_utils.ads	20110503195008 de80730a
+D format_utils.adb	20111102081221 ecadbf39
+D gnat.ads		20110419093135 fd2ad2f1
+D g-arrspl.ads		20110419093134 c903d743
+D g-regpat.ads		20110419093135 b85d88ef
+D g-strspl.ads		20110419093135 dbf24c7a
+D interfac.ads		20110419093135 f77d8799
+D i-cstrea.ads		20110419093135 1bd72c32
+D key_value_io.ads	20110415182054 69a11afd
+D line_extractor.ads	20110616140359 c6f73843
+D logger.ads		20110415182054 d3b895b5
+D numeric_io.ads	20110415182050 f791a5cb
+D numeric_io.adb	20110415182050 39193db7
+D set_of.ads		20110415182050 7e024410
+D set_of.adb		20110415182050 a15b6268
+D system.ads		20110419093140 23e1f70b
+D s-addima.ads		20110419093136 a1ec9d3a
+D s-arit64.ads		20110419093136 a011a169
+D s-assert.ads		20110419093136 a3a4e6ab
+D s-atocou.ads		20110419093136 f69b66ac
+D s-atocou.adb		20110419093136 d5489dae
+D s-conca2.ads		20110419093137 fbd0f2fc
+D s-conca3.ads		20110419093137 762a026a
+D s-conca4.ads		20110419093137 025fe3be
+D s-crtl.ads		20110419093137 ac77b159
+D s-exctab.ads		20110419093137 66e51330
+D s-exnllf.ads		20110419093137 81841eef
+D s-fatgen.ads		20110419093137 9267ca45
+D s-fatlfl.ads		20110419093137 378cba9f
+D s-ficobl.ads		20110419093137 443b9d66
+D s-finroo.ads		20110419093137 2dd85ce2
+D s-imgboo.ads		20110419093137 f5d971eb
+D s-imenne.ads		20110419093137 8707cbf0
+D s-imgint.ads		20110419093137 02dbe0c2
+D s-imglld.ads		20110419093137 f3220969
+D s-parame.ads		20110419093138 03aa3b01
+D s-pooglo.ads		20110419093138 542f33d0
+D s-regpat.ads		20110419093138 825a9b7f
+D s-secsta.ads		20110419093138 eea35a36
+D s-soflin.ads		20110419093138 607487c5
+D s-stache.ads		20110419093138 596fc1b4
+D s-stalib.ads		20110419093138 f78bcf95
+D s-stoele.ads		20110419093138 facd7d98
+D s-stoele.adb		20110419093138 afc5dc80
+D s-stopoo.ads		20110419093138 5c51faf9
+D s-stratt.ads		20110419093138 aedef97e
+D s-traent.ads		20110419093139 5221ee41
+D s-unstyp.ads		20110419093139 6ae15c76
+D s-valenu.ads		20110419093139 bb1a4295
+D s-valint.ads		20110419093139 48a52a3f
+D s-valrea.ads		20110419093139 fe297711
+D s-wchcon.ads		20110419093139 bfeb2e3d
+D t_utils.ads		20110421131946 6666e867
+D t_utils.adb		20110415182054 e4f1d2e4
+D tax_utils.ads		20110613201228 600316b9
+D tax_utils.adb		20111018144548 51f4d08b
+D text_io.ads		20110419093141 45d626c9
+D text_utils.ads	20120209204134 f389e87b
+D utils.ads		20110415182054 93874c25
+D za.ads		20110415182049 e958296a
+D za-model.ads		20110415182049 b4a526d2
+D za-model-data.ads	20110415182049 1d87f5c8
+D za-model-results.ads	20110622103003 b15b45be
+D za-model-results.adb	20110415182049 ffa781a7
+D za-model-settings.ads	20110415182049 d47ebd48
+D za-model-takeup.ads	20110415182049 86577bd1
+D za-model_types.ads	20110415182049 a55e8de4
+X 1 ada.ads
+16K9*Ada 19e8 111|23r6 25r6 29r8 146r11 166r11 188r11
+X 2 a-assert.ads
+24K13*Assertions 36e19 111|25w10 29r12
+X 11 a-coorse.ads
+238R9 Node_Type
+239P9 Node_Access(238R9)
+X 12 a-coorse.adb
+50V13 Color{13|35E9} 16|45i19
+53V13 Left{11|239P9[100|54[110|153]]} 16|41i19[100|54[110|153]]
+56V13 Parent{11|239P9[100|54[110|137]]} 16|39i19[100|54[110|137]]
+59V13 Right{11|239P9[100|54[110|137]]} 16|43i19[100|54[110|137]]
+62U14 Set_Color 16|46i19
+65U14 Set_Left 16|42i19
+68U14 Set_Right 16|44i19
+71U14 Set_Parent 16|40i19[100|54[110|137]]
+X 27 a-string.ads
+16K13*Strings 35e16 111|23r10 146r15 166r15 188r15
+X 28 a-strbou.ads
+162V16*"="{boolean}<31|163p13> 20|41i18[105|25]
+X 32 a-strunb.ads
+76K21*Unbounded 489e26 111|23w18 146r23 166r23 188r23
+79R9*Unbounded_String 473e14 111|147r11 167r11 189r11
+100V13*To_String{string} 111|159s14 181s14 233s14
+123V13*"&"{79R9} 111|149s14 149s39 149s73 150s14 150s65 153s20 153s40 153s48
+. 153s74 156s14 156s36 156s67 157s14 157s43 157s81 158s14 158s39 158s73 169s14
+. 169s71 169s105 170s14 170s49 173s20 173s40 173s48 173s74 177s17 177s41
+. 177s69 178s17 179s17 191s14 191s74 191s108 192s14 192s66 192s93 193s14
+. 193s85 193s130 194s14 194s77 194s115 195s14 195s52 198s20 198s40 198s48
+. 198s74 201s14 201s47 204s20 204s40 204s48 204s71 207s14 207s50 210s20 210s40
+. 210s48 210s76 213s14 213s54 216s20 216s40 216s48 216s78 220s14 220s31 220s57
+. 221s14 221s34 221s63 222s14 222s40 222s75 223s14 223s36 223s67 224s14 224s34
+. 224s64 225s14 225s33 225s61 226s14 226s34 226s63 227s14 227s39 227s73 229s17
+. 229s37 229s70 230s17 231s17
+166V13*"="{boolean}<23|62p9> 20|41i18
+X 47 base_model_types.ads
+25F9*Real<long_float>
+27D9*Counter_Type 110|140r23 156r23
+29F12*Rate{25F9} 110|59r32 138r23 154r23
+30F12*Amount{25F9} 110|35r41 36r41 37r41 38r41 39r41 40r41 41r41 42r41 43r41
+. 47r26 48r26 49r26 50r26 63r32 64r32 65r32 73r27 81r38 82r38 83r38 84r38
+. 89r38 90r38 91r38 92r38 94r38 95r38 96r38 139r23 155r23 111|73r51 74r65
+X 48 format_utils.ads
+51V13*Format{string} 111|149s41[107|60] 153s50[107|60] 156s38[107|60] 157s45[107|60]
+. 158s41[107|60] 169s73[107|60] 173s50[107|60] 191s76[107|60] 192s68[107|60]
+. 193s87[107|60] 194s79[107|60] 198s50[107|60] 204s50[107|60] 210s50[107|60]
+. 216s50[107|60] 220s33[107|60] 221s36[107|60] 222s42[107|60] 223s38[107|60]
+. 225s35[107|60] 226s36[107|60] 227s41[107|60]
+X 100 t_utils.ads
+31E9 T 110|141r7 157r7
+36F9 Rate_Type 110|138r7 154r7
+41F9 Amount_Type 110|139r7 155r7
+45D9 Counter_Type 110|140r7 156r7
+47k9*T_Utils 159e12 110|26w6 137r50 153r41
+60A9*Abs_Rate_Array(47|25F9)<114|223E9>
+61A12*Rate_Array{60A9[114|469]}<114|433E9>
+63A9*Abs_Amount_Array(47|25F9)<114|433E9>
+64A12*Amount_Array{63A9[114|469]}<114|433E9> 110|143r75[137] 159r57[153]
+95V13*Sum{47|25F9} 111|71s10[114|485]
+101V13*Sum{47|25F9} 111|65s24[114|485] 66s27[114|485] 66s49[114|485]
+130V13*"+"{63A9[114|469]} 111|60s38[114|469] 61s66[114|469]
+X 105 text_utils.ads
+13K9*Text_Utils 107e15 111|24w6 145r11 165r11 187r11
+21a4*LINE_BREAK{string} 111|149r75 150r67 153r76 156r69 157r83 158r75 169r107
+. 170r51 173r76 177r71 179r19 191r110 192r95 193r132 194r117 195r54 198r76
+. 201r49 204r73 207r52 210r78 213r56 216r80 220r59 221r65 222r77 223r69 224r66
+. 225r63 226r65 227r75 229r72 231r19
+X 107 za.ads
+48K9*ZA 74e7 110|24r6 25r6 28r9 30r8 31r8 162r5 111|27r14 283r5
+X 108 za-model.ads
+30K12*Model 107|48k9 108|41e13 110|24r9 25r9 28r12 30r11 31r11 162r8 111|27r17
+. 283r8
+X 109 za-model-data.ads
+28K18*Data 116e18 110|25w15 31r17
+69a7*consumption{114|493A12} 111|71r23
+91R9*Household 94e14 110|116r31 111|38r31
+92r7*info{54R9} 111|71r18
+X 110 za-model-results.ads
+28K18*Results 108|30k12 110|162l14 162e21 111|27b23 283l14 283t21
+34R9*Intermediate_Health_Results 44e14 55r16
+35f7*total_health_spending{47|30F12}
+36f7*capped_amount{47|30F12}
+37f7*employers_cont_in_gross{47|30F12}
+38f7*capped_amount_deduction{47|30F12}
+39f7*additional_capping{47|30F12}
+40f7*amount_subject_to_limitation{47|30F12}
+41f7*income_before_medical_deduction{47|30F12}
+42f7*calculated_limitation{47|30F12}
+43f7*amount_allowable_as_deduction{47|30F12}
+46R9*Intermediate_Tax_Results 51e14 54r16
+47f7*rebate{47|30F12}
+48f7*paye_threshold{47|30F12}
+49f7*taxable_income{47|30F12}
+50f7*threshold_income{47|30F12}
+53R9*Intermediate_Results 56e14
+54r7*tax{46R9}
+55r7*health{34R9}
+58R9*Personal_Result 67e14 69r59 105r13 111|78r38 78r63 79r14 143r13
+59f7*marginal_tax_rate{47|29F12} 111|81m12 82r15 82r40 158r53
+60a7*income{114|474A12} 111|48r51 56r51 59r51 60r72 62r48 89r21 90m15 90r33
+. 90r50 151r20 152r19 153r62
+61a7*income_less_exemptions{114|474A12}
+62a7*deductions{114|526A12}
+63f7*taxable_income{47|30F12} 111|85m12 86r15 86r37 156r50
+64f7*income_tax_deduction{47|30F12} 111|83m12 84r15 84r43 157r57
+65f7*disposable_income{47|30F12} 111|46m45 50r51 53r51 87m12 88r15 88r40
+. 149r53
+69A9*Personal_Result_Array(58R9)<114|503I9> 74r20
+71R9*Family_Result 76e14 78r62 109r13 111|95r38 95r61 96r14 163r13
+72i7*num_people{114|503I9} 111|45r44 98r28 135r45 176r27
+73f7*disposable_income{47|30F12} 111|51m31 52r37 106m12 106r38 106r63 169r85
+74a7*person{69A9} 111|46m31 48r37 50r37 53r37 56r37 59r37 60r58 62r34 99m15
+. 100r21 101r21 178r34
+75a7*income{114|474A12} 111|61m31 61r59 103r21 104m15 104r33 104r50 171r20
+. 172r19 173r62
+78A9*Family_Result_Array(71R9)<114|505I9> 99r38
+80R9*Household_Result 100e14 102r38 102r64 113r13 116r80 144r28 160r28 111|38r80
+. 110r38 110r64 111r14 185r13 236r28 259r28
+81f7*disposable_income{47|30F12} 111|49m17 49r42 70m11 70r36 72r29 74r47
+. 114m12 114r38 114r63 191r88 277r43
+82f7*per_capita_disposable_income{47|30F12} 111|74m11 117m12 118r15 118r51
+. 193r99
+83f7*net_income{47|30F12} 111|72m11 73r40 113m12 113r31 113r49 192r80 278r36
+84f7*per_capita_net_income{47|30F12} 111|73m11 115m12 116r15 116r44 194r91
+85a7*income{114|474A12} 111|60m17 60r31 119r21 120m15 120r33 120r50 196r20
+. 197r19 198r62 239r43 240r42 241r39 242r46 243r36 244r39 245r39 263r18 264r18
+. 265r18 266r18 267r38 268r18 269r18
+86a7*vat{114|496A12} 111|65r33 122r21 123m15 123r30 123r44 202r20 203r19
+. 204r62
+87a7*specific{114|496A12} 111|66r36 124m15 124r35 124r54 208r20 209r19 210r62
+. 248r18 249r30 250r30 252r18 254r18 271r18 272r18 273r18 274r18 275r18
+88a7*ad_valorem{114|496A12} 111|66r58 125m15 125r37 125r58 214r20 215r19
+. 216r62 248r48 249r57 250r57 252r48 255r18 271r48 272r45 273r45 274r48 276r18
+89f7*total_vat{47|30F12} 111|65m11 72r53 127m12 127r30 127r47 220r45 246r29
+. 270r40
+90f7*total_excise{47|30F12} 111|66m11 72r69 128m12 128r33 128r53 221r48
+91f7*total_direct_taxes{47|30F12} 111|57m17 57r43 129m12 129r39 129r65 222r54
+92f7*total_benefits{47|30F12} 111|54m17 54r39 130m12 130r35 130r57 223r50
+93e7*poverty{114|430E9} 111|224r54
+94f7*poverty_gap{47|30F12} 111|131m12 131r32 131r51 225r47
+95f7*poverty_line{47|30F12} 111|132m12 132r33 132r53 226r48
+96f7*equivalence_scale{47|30F12} 111|133m12 133r38 133r63 227r53
+97i7*num_families{114|505I9} 111|43r27 134r28 228r27
+98i7*num_people{114|503I9} 111|73r63 74r77
+99a7*family{78A9} 111|45r30 46m17 48r23 50r23 51m17 52r23 53r23 56r23 59r23
+. 60r44 61m17 61r45 62r20 135r31 136m18 136r52 136r72 230r34
+102V13*Difference{80R9} 102>25 102>31 111|110b13 140l8 140t18
+102r25 res1{80R9} 111|110b25 113r26 114r33 116r10 118r10 119r16 120r28 122r16
+. 123r25 124r30 125r32 127r25 128r28 129r34 130r30 131r27 132r28 133r33 134r23
+. 135r26 136r47
+102r31 res2{80R9} 111|110b31 113r44 114r58 116r39 118r46 120r45 123r39 124r49
+. 125r53 127r42 128r48 129r60 130r52 131r46 132r48 133r58 136r67
+104V13*To_String{string} 105>7 106>7 111|142b13 160l8 160t17 178s19
+105r7 res{58R9} 111|143b7 149r49 151r16 152r15 153r58 156r46 157r53 158r49
+106b7 include_non_zeros{boolean} 111|144b7 152r41
+108V13*To_String{string} 109>7 110>7 111|162b13 182l8 182t17 230s19
+109r7 res{71R9} 111|163b7 169r81 171r16 172r15 173r58 176r23 178r30
+110b7 include_non_zeros{boolean} 111|164b7 172r41
+112V13*To_String{string} 113>7 114>7 111|184b13 234l8 234t17
+113r7 res{80R9} 111|185b7 191r84 192r76 193r95 194r87 196r16 197r15 198r58
+. 202r16 203r15 204r58 208r16 209r15 210r58 214r16 215r15 216r58 220r41 221r44
+. 222r50 223r46 224r50 225r43 226r44 227r49 228r23 230r30
+114b7 include_non_zeros{boolean} 111|186b7 197r41 203r38 209r43 215r45
+116U14*Accumulate 116>26 116>42 116=67 111|38b14 75l8 75t18
+116r26 hh{109|91R9} 111|38b26 71r15
+116r42 settings{112|52R9} 111|38b42 71r36
+116r67 res{80R9} 111|38b67 43r23 45r26 46m13 48r19 49m13 49r38 50r19 51m13
+. 52r19 53r19 54m13 54r35 56r19 57m13 57r39 59r19 60m13 60r27 60r40 61m13
+. 61r41 62r16 65m7 65r29 66m7 66r32 66r54 70m7 70r32 72m7 72r25 72r49 72r65
+. 73m7 73r36 73r59 74m7 74r43 74r73
+122E9*All_Taxes_And_Benefits_Type 135e15 141r23
+123n7*disability_grants{122E9} 111|239r12
+124n7*old_age_pensions{122E9} 111|240r12
+125n7*child_support{122E9} 111|241r12
+126n7*other_state_benefits{122E9} 111|242r12
+127n7*income_tax{122E9} 111|243r12
+128n7*employers_uif{122E9} 111|244r12
+129n7*employees_uif{122E9} 111|245r12
+130n7*vat{122E9} 111|246r12
+131n7*spirits{122E9} 111|247r12
+132n7*wine{122E9} 111|249r12
+133n7*beer{122E9} 111|250r12
+134n7*tobacco{122E9} 111|251r12
+135n7*petrol{122E9} 111|253r12
+137K12*All_Taxes_And_Benefits_Package[100|47] 143r44
+143A12*All_Taxes_And_Benefits_Array{100|64A12[137]}<122E9> 144r54 111|236r54
+. 237r13
+144V13*Map{143A12} 144>18 111|236b13 257l8 257t11
+144r18 results{80R9} 111|236b18 239r35 240r34 241r31 242r38 243r28 244r31
+. 245r31 246r21 248r10 248r40 249r22 249r49 250r22 250r49 252r10 252r40 254r10
+. 255r10
+146E9*Summary_Items_Type 151e19 157r23
+147n7*direct_taxes{146E9} 111|267r12
+148n7*indirect_taxes{146E9} 111|270r12
+149n7*benefits{146E9} 111|262r12
+150n7*disposable_income{146E9} 111|277r12
+151n7*net_income{146E9} 111|278r12
+153K12*Summary_Items_Package[100|47] 159r35
+159A12*Summary_Items_Array{100|64A12[153]}<146E9> 160r54 111|259r54 260r13
+160V13*Map{159A12} 160>18 111|259b13 280l8 280t11
+160r18 results{80R9} 111|259b18 263r10 264r10 265r10 266r10 267r30 268r10
+. 269r10 270r32 271r10 271r40 272r10 272r37 273r10 273r37 274r10 274r40 275r10
+. 276r10 277r35 278r28
+X 111 za-model-results.adb
+31a4 NET_INCOME_LIST{114|475A12} 48r59
+33a4 ALL_TAXES_LIST{114|475A12} 59r59
+35a4 ALL_BENEFITS_LIST{114|475A12} 56r59
+42l7 each_family 64l16 64e27
+43i11 fno<integer> 45r38 46r25 48r31 50r31 51r25 52r31 53r31 56r31 59r31
+. 60r52 61r25 61r53 62r28
+44l10 each_person 63l19 63e30
+45i14 pno<integer> 46r39 48r45 50r45 53r45 56r45 59r45 60r66 62r42
+78V13 Difference{110|58R9} 78b13 78>25 78>31 93l8 93t18 99s32
+78r25 res1{110|58R9} 82r10 84r10 86r10 88r10 89r16 90r28
+78r31 res2{110|58R9} 82r35 84r38 86r32 88r35 90r45
+79r7 diff{110|58R9} 81m7 83m7 85m7 87m7 90m10 92r14
+89e11 i{114|433E9} 90r22 90r40 90r57
+95V13 Difference{110|71R9} 95b13 95>25 95>31 108l8 108t18 136s35
+95r25 res1{110|71R9} 98r23 100r16 103r16 104r28 106r33
+95r31 res2{110|71R9} 101r16 104r45 106r58
+96r7 diff{110|71R9} 99m10 104m10 106m7 107r14
+98i11 pno<integer> 99r23 100r29 101r29
+103e11 i{114|433E9} 104r22 104r40 104r57
+111r7 diff{110|80R9} 113m7 114m7 115m7 117m7 120m10 123m10 124m10 125m10
+. 127m7 128m7 129m7 130m7 131m7 132m7 133m7 136m13 139r14
+119e11 i{114|433E9} 120r22 120r40 120r57
+122e11 i{114|223E9} 123r19 123r34 123r48 124r24 124r44 124r63 125r26 125r48
+. 125r69
+134i11 fno<integer> 135r39 136r26 136r60 136r80
+135i14 pno<integer>
+147r7 s{32|79R9} 149m7 149r12 150m7 150r12 153m13 153r18 156m7 156r12 157m7
+. 157r12 158m7 158r12 159r25
+151e11 i{114|433E9} 152r26 153r36 153r69
+167r7 s{32|79R9} 169m7 169r12 170m7 170r12 173m13 173r18 177m10 177r15 178m10
+. 178r15 179m10 179r15 181r25
+171e11 i{114|433E9} 172r26 173r36 173r69
+176i11 pno<integer> 177r63 178r42
+189r7 s{32|79R9} 191m7 191r12 192m7 192r12 193m7 193r12 194m7 194r12 195m7
+. 195r12 198m13 198r18 201m7 201r12 204m13 204r18 207m7 207r12 210m13 210r18
+. 213m7 213r12 216m13 216r18 220m7 220r12 221m7 221r12 222m7 222r12 223m7
+. 223r12 224m7 224r12 225m7 225r12 226m7 226r12 227m7 227r12 229m10 229r15
+. 230m10 230r15 231m10 231r15 233r25
+196e11 i{114|433E9} 197r26 198r36 198r69
+202e11 i{114|223E9} 203r23 204r36 204r66
+208e11 i{114|223E9} 209r28 210r36 210r71
+214e11 i{114|223E9} 215r30 216r36 216r73
+228i11 fno<integer> 229r64 230r42
+237a7 agg{110|143A12} 239m7 240m7 241m7 242m7 243m7 244m7 245m7 246m7 247m7
+. 249m7 250m7 251m7 253m7 256r14
+260a7 agg{110|159A12} 262m7 267m7 270m7 277m7 278m7 279r14
+X 112 za-model-settings.ads
+27K18*Settings 110|24w15 30r17 112|74e22
+45a7*included_consumption_items{114|494A12} 111|71r53
+52R9*Run_Settings 110|116r53 111|38r53 112|68e15
+56r7*poverty{42R9} 111|71r45
+X 114 za-model_types.ads
+236n7*spirits{223E9} 111|248r28 248r60 271r28 271r60
+237n7*wine{223E9} 111|249r40 249r69 272r28 272r57
+238n7*beer{223E9} 111|250r40 250r69 273r28 273r57
+239n7*tobacco{223E9} 111|252r28 252r60 274r28 274r60
+283n7*fuels_and_lubricants{223E9} 111|254r28 255r30 275r28 276r30
+428V13*Pretty_Print{string} 111|204s22 210s22 216s22
+430E9*Poverty_State 110|93r38 114|430e56
+430n40*not_in_poverty{430E9} 110|93r55
+431V13*Pretty_Print{string} 111|224s36
+449n7*disability_grants{433E9} 111|239r51 263r26
+450n7*old_age_pensions{433E9} 111|240r50 264r26
+451n7*family_allowances{433E9} 111|241r47 265r26
+453n7*other_state_benefits{433E9} 111|242r54 266r26
+455n7*site_income_tax{433E9} 111|243r44 267r46
+456n7*employers_uif{433E9} 111|244r47 268r26
+457n7*employees_uif{433E9} 111|245r47 269r26
+460E12*Personal_Taxes_Range{433E9} 111|32r7 34r7
+462E12*Personal_State_Benefits_Range{433E9} 111|36r7
+469K12*Income_Package[100|47] 111|40r11
+474A12*Income_Array{100|64A12[469]}<433E9> 110|60r32 61r32 75r20 85r38
+475A12*Included_Income_Array{100|61A12[469]}<433E9> 111|31r31 33r30 35r33
+481V13*Calculate_Income{47|30F12} 111|47s16 55s16 58s16
+485K12*Consumption_Package[100|47] 111|39r11
+494A12*Included_Consumption_Array{100|61A12[485]}<223E9>
+496A12*Expenditure_Array{100|63A9[485]}<223E9> 110|86r38 87r38 88r38
+501V13*Pretty_Print{string} 111|153s22 173s22 198s22
+503I9*Person_Count<integer> 110|72r20 98r38 111|177r43
+504I12*Person_Range{503I9} 110|69r41
+505I9*Family_Unit_Count<integer> 110|97r38 111|229r39
+507I12*Family_Unit_Range{505I9} 110|78r39
+526A12*Personal_Expenses_Array{100|64A12[516]}<70E9> 110|62r32
+

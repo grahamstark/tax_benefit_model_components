@@ -1,0 +1,48 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnn
+
+U tabulator_commons%s	tabulator_commons.ads	c4bdc325 NE OO PK
+
+D system.ads		20110419093140 23e1f70b
+D tabulator_commons.ads	20110415182054 c4bdc325
+X 2 tabulator_commons.ads
+32K9*Tabulator_Commons 51l5 51e22
+34E9*Type_Of_Cell 34e79
+34n27*row_total{34E9}
+34n38*col_total{34E9}
+34n49*overall_total{34E9}
+34n64*standard_cell{34E9}
+36E9*Compare_Cell 36e70
+36n27*current_cell{36E9}
+36n41*row_total{36E9}
+36n52*col_total{36E9}
+36n63*total{36E9}
+37E9*Cell_Compare_Type 37e135
+37n32*counter{37E9}
+37n41*sys1_level{37E9}
+37n53*sys2_level{37E9}
+37n65*abs_change{37E9}
+37n77*pct_change{37E9}
+37n89*sys_1_average{37E9}
+37n104*sys_2_average{37E9}
+37n119*average_change{37E9}
+38E9*Scale_Op_Type 38e76
+38n28*sys1_level{38E9}
+38n40*sys2_level{38E9}
+38n52*abs_change{38E9}
+38n64*pct_change{38E9}
+42E9*Poverty_Elements 48e5
+43n7*population{42E9}
+44n7*people_in_poverty{42E9}
+45n7*poverty_rate{42E9}
+46n7*poverty_gap_total{42E9}
+47n7*poverty_gap_per_poor_person{42E9}
+

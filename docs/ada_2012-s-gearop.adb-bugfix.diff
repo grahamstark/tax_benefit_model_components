@@ -1,0 +1,28 @@
+905c905
+<          if Left'Length /= Right'Length (2) then
+---
+>          if Left'Length /= Right'Length (1) then
+910c910
+<          for J in Right'Range (2) loop
+---
+>          for j in Right'Range (2)  loop
+912,913c912
+<                S : Result_Scalar := Zero;
+< 
+---
+>                s : Result_Scalar := Zero;
+915,917c914,919
+<                for K in Right'Range (1) loop
+<                   S := S + Left (J - Right'First (1)
+<                                    + Left'First) * Right (K, J);
+---
+>                for k in Right'Range (1) loop
+>                   declare
+>                      p : constant Integer := k - Right'First (1) + Left'First;
+>                   begin
+>                      s := s + Left (p) * Right (k, j);
+>                   end;
+920c922
+<                R (J) := S;
+---
+>                R (j) := s;

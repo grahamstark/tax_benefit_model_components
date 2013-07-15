@@ -1,0 +1,59 @@
+project UnZipAda is
+
+   type Build_Mode_Type is
+      ("Optimize", "Debug");
+   Build_Mode : Build_Mode_Type := external ("Build_Mode", "Debug");
+
+   for Source_Dirs use (".\/**");
+   for Exec_Dir use ".";
+   for Main use ("UnZipAda.adb", "ZipAda.adb", "Comp_Zip.adb", "ReZip.adb", "Test_UnZ_Streams.adb", "Test_Chunk.adb", "ZipTest.adb");
+
+   case Build_Mode is
+      when "Debug" =>
+         for Object_Dir use "obj_dbg";
+      when "Optimize" =>
+         for Object_Dir use "obj_opt";
+   end case;
+   
+   package Binder is
+
+      case Build_Mode is
+
+         when "Debug" =>
+            for Default_Switches ("ada") use ("-E");
+
+         when "Optimize" =>
+
+      end case;
+   end Binder;
+
+   package Linker is
+
+      case Build_Mode is
+
+         when "Debug" =>
+            for Default_Switches ("ada") use ("-g");
+
+         when "Optimize" =>
+            for Default_Switches ("ada") use ("-s", "-Wl,--gc-sections");
+      end case;
+   end Linker;
+
+   package Compiler is
+
+      case Build_Mode is
+
+         when "Debug" =>
+            for Default_Switches ("ada") use ("-gnatf", "-gnato", "-fstack-check", "-g", "-gnatwm", "-gnatwp", "-gnatwr", "-gnatwu", "-gnatwv", "-gnatVa", "-gnatecdebug.pra");
+
+         when "Optimize" =>
+            for Default_Switches ("ada") use ("-O2", "-gnatn", "-funroll-loops", "-gnatp", "-g", "-fpeel-loops", "-ftracer", "-funswitch-loops");
+      end case;
+   end Compiler;
+   
+   package Builder is
+      for Default_Switches ("ada") use ("-j2", "-g", "-C");
+   end Builder;
+
+end UnZipAda;
+

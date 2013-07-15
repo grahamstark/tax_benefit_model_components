@@ -1,0 +1,41 @@
+V "GNAT Lib v2011"
+A -fstack-check
+A -gnat05
+A -g
+A -gnatQ
+A -gnat05
+A -g
+A -gnato
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnn
+
+U general_chart_constants%s  general_chart_constants.ads  843e9c9c NE OO PK
+
+D general_chart_constants.ads  20120404123915 843e9c9c
+D system.ads		20110419093140 23e1f70b
+X 1 general_chart_constants.ads
+1K9*General_Chart_Constants 9l5 9e28
+4E9*Chart_Type 4e87
+4n25*bar{4E9}
+4n30*radar{4E9}
+4n37*polar{4E9}
+4n44*pie{4E9}
+4n49*time_series{4E9}
+4n62*lorenz{4E9}
+4n70*time_series_fan{4E9}
+5E9*Chart_Size 5e47
+5n25*thumb{5E9}
+5n32*medium{5E9}
+5n40*large{5E9}
+6E9*Chart_Style 6e48
+6n26*orion{6E9}
+6n33*normal{6E9}
+6n41*other{6E9}
+7E9*Pre_Or_Post 7e67
+7n26*pre{7E9}
+7n31*post{7E9}
+7n37*both{7E9}
+7n43*abs_change{7E9}
+7n55*pct_change{7E9}
+

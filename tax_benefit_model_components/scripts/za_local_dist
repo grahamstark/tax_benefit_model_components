@@ -1,0 +1,4 @@
+#!/bin/sh
+cp -afv bin/za_runner       /home/za/micro/bin/
+cp -afv scripts/run_wrapper /home/za/micro/
+cp -afv model_datasets/za/* /home/za/micro/data/
