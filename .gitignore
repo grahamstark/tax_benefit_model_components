@@ -1,0 +1,6 @@
+*.ali
+*.o
+bin/*
+docs/*.pdf
+docs/za
+
