@@ -1,4 +1,0 @@
-#!/bin/sh
-SERVER=adrs-global.com
-scp bin/za_runner $SERVER:/home/za/micro/bin/
-scp model_datasets/za/* $SERVER:/home/za/micro/data/
