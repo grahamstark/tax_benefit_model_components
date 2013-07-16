@@ -14,9 +14,9 @@ INT    = 1
 
 def getConnection()
         if( TEST_MODE )then
-                return DBI.connect('DBI:Mysql:bhps_testbed', 'root', 'iainkath')
+                return DBI.connect('DBI:Mysql:bhps_testbed', '', '')
         else
-                return DBI.connect('DBI:Mysql:bhps', 'root', 'iainkath')
+                return DBI.connect('DBI:Mysql:bhps', '', '')
         end
 end
 

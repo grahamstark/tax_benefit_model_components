@@ -469,5 +469,5 @@ def loadTable( connection, tableName, year = nil )
 end
 
 def getConnection()
-        return DBI.connect('DBI:Mysql:frs_schema', 'root', 'iainkath')
+        return DBI.connect('DBI:Mysql:frs_schema', '', '')
 end
