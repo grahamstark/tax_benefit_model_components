@@ -1,0 +1,14 @@
+unset ADA_HOME
+export ADA_VERSION=$1
+export ADA_HOME=/opt/gnat/$ADA_VERSION/
+export ADA_LIB=/opt/ada_libraries/
+export ADA_INCLUDE_PATH=$ADA_LIB/$ADA_VERSION:$ADA_LIB/$ADA_VERSION/include/xmlada/:$ADA_LIB/$ADA_VERSION/include/gnatcoll/
+export ADA_PROJECT_PATH=$ADA_LIB/$ADA_VERSION:$ADA_LIB/$ADA_VERSION/lib/gnat/:$ADA_LIB/simple_components:$PROJECTS_HOME/tax_benefit_model_components/
+# :$ADA_HOME/lib/gcc/x86_64-pc-linux-gnu/4.5.3/
+#
+# next needed for an apparrent bug in the ada$ADA_VERSION compiler
+#
+# export ADA_INCLUDE_PATH=$ADA_INCLUDE_PATH:/opt/ada_libraries/$ADA_VERSION/include/xmlada/
+export LD_LIBRARY_PATH=$ADA_LIB/lib:$ADA_LIB/lib64:$LD_LIBRARY_PATH
+export PATH=$ADA_HOME/bin:$PATH:$ADA_LIB/bin
+

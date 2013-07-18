@@ -1,0 +1,27 @@
+How to build this code
+======================
+
+Graham Stark 19 July 2013
+
+This code is continually under development []
+
+Basic Build
+
+1) You need install an up-to-date version of [Gnat Ada](http://libre.adacore.com/download/)
+   the document  2012-complete-install.txt, in this directory, contains my notes on how
+   to do this on a Linux system. The 2012 or 2013 editions should both work (notes on
+   2013 edition are identical except AUint and Ada XML are bundled and don't need build seperately.
+   
+2) 
+
+
+Using As a Library
+------------------
+
+Building FRS Datatsets
+----------------------
+
+Build BHPS Datasets
+-------------------
+
+
