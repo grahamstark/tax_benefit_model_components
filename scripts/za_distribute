@@ -1,5 +1,0 @@
-#!/bin/sh
-echo "======= MAKING LOCAL COPY TO /home/za/micro ====="
-scripts/za_local_dist
-echo "======= SYNCRONISING TO REMOTE adrs-global.com:/home/za/micro ====="
-scripts/za_sync
