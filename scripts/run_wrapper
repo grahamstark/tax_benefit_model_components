@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-#
-# 
-/home/za/micro/bin/za_runner $1 web
