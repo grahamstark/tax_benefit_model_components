@@ -70,6 +70,7 @@ with Keyed_Text_Buffer;
 with Legal_Aid_Output_Types;
 with Line_Extractor;
 with Logger;
+with Long_Menu;
 with Model.Calculations.Complete;
 with Model.Calculations.Legal_Aid;
 with Model.Calculations.Means_Tested_Benefits;
@@ -136,7 +137,17 @@ package body component_tests is
    package UK_Format_Utils is new Format_Utils( Float_Type => Amount,  Counter_Type=>Counter_Type );
    package UK_HTML_Utils is new HTML_Utils( Rate => Rate, Counter_Type=>Counter_Type );
    package rs renames Model.Run_Settings;
-   package pars renames Model.Parameters.Complete;
+   
+   type Incomes_Type is ( i1, i2 );
+   type Expenses_Type is ( e1, e2 );
+   
+   package MParams is new Model.Parameters( 
+      Incomes_Type     => Incomes_Type, 
+      Expenses_Type    => Expenses_Type, 
+      MAX_NUM_CHILDREN => 10, 
+      BASIC_ARRAY_SIZE => 10 );
+      
+   package pars is new MParams.Complete;
    
    package Real_Arrays_Package is new Ada.Numerics.Generic_Real_Arrays( Real => Amount );
    
@@ -335,7 +346,7 @@ package body component_tests is
       Create( slices, s, " ," & Text_Utils.TAB, Multiple );
       ns := Slice_Count( slices );
       s3 := To_Unbounded_String(Slice( slices , 3 ));
-      f := Lenient_Convert( Slice( slices , 5 ));
+      f := Lenient_Convert( To_String( Slice( slices , 5 )));
       assert( f = 10002.0, " f sound be 10002.0 was " & f'Img );
       assert( s3 = To_Unbounded_String("C"), "should be C, was |" &  s & "| " );
       for i in 1 .. ns loop

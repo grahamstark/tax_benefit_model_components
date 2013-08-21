@@ -27,9 +27,6 @@
 --
 pragma License( Modified_GPL );
 
-with ZM;
-with ZM.Raw;
-
 with Ada.Text_IO;
 with Ada.Text_Io.Editing;
 

@@ -44,7 +44,7 @@ with ZA.Model.Data.Examples;
 with ZA.Model.Params.Defaults;
 with ZA.Model.Takeup;
 with ZA.Model.Calculator.Wider_Output;
-with Calmar;
+
 
 package body ZA.Model.Calculator.Tests is
 
@@ -60,23 +60,6 @@ package body ZA.Model.Calculator.Tests is
 
    package za_inequality is new Inequality_Generator( Amount=>Amount, Rate=>Rate );
 
-   procedure Test_Calmar( T : in out AUnit.Test_Cases.Test_Case'Class ) is
-      package ZA_Calmar is new Calmar( 
-         Data_Type=>Amount,
-         Num_Controls => 2,
-         Num_Observations => 1000,
-         Max_Breakdown_Size => 50
-      );
-      
-      use ZA_Calmar;
-      use Dataset_Package;
-      rv  : Data_Column;
-      rm  : Dataset;
-   begin
-      null;
-   end Test_Calmar;
-   
-   
    procedure Test_Create_XML( T : in out AUnit.Test_Cases.Test_Case'Class ) is
       package C_IO is new Enumeration_IO( Consumption_Range );
       

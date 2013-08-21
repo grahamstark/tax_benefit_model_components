@@ -11,10 +11,35 @@ Basic Build
    the document  2012-complete-install.txt, in this directory, contains my notes on how
    to do this on a Linux system. The 2012 or 2013 editions should both work (notes on
    2013 edition are identical except AUint and Ada XML are bundled and don't need build seperately.
+   Alternatively, it may be that the GNAT version packaged with Debian Linux (and downstream)
+   will work, though this is not tested.
    
-2) 
+2) Set paths for Ada. The set_ada_paths script can be modified for this; it assumes Ada installed
+   in 
+   
+   /opt/ada/[version] 
+   
+   and libraries in 
+   
+   /opt/ada_libraries/[version]
 
+   where version is '2012', '2013', etc..
 
+3) Other software:
+   various other software is used but may not be needed for an immediate build
+   
+   libssl
+   build-essentials
+   mysql
+   mysql-development
+   unix odbc 
+   postgres
+   postgres-devel
+   ruby
+   python
+   
+      
+   
 Using As a Library
 ------------------
 

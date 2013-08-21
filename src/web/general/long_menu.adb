@@ -1,10 +1,11 @@
 package body Long_Menu is
    
-   function Create( key : String; label : String; is_selected : Boolean ) return Menu_Item is
+   function Create( key : String; label : String; is_selectable : Boolean; is_selected : Boolean ) return Menu_Item is
       m : Menu_Item;
    begin
       m.key := To_Unbounded_String( key );
       m.label := To_Unbounded_String( label );
+      m.is_selectable := is_selected;
       m.is_selected := is_selected;
       return m;
    end Create;
@@ -39,6 +40,11 @@ package body Long_Menu is
    begin
       return item.is_selected;
    end Is_Selected;
+
+   function Is_Selectable( item : Menu_Item ) return Boolean is
+   begin
+      return item.is_selectable;
+   end Is_Selectable;
    
    procedure Set_Selected( item : in out Menu_Item ) is
    begin
@@ -94,9 +100,10 @@ package body Long_Menu is
    end Add;
    
    procedure Add( menu : in out Menu_Type; 
-      key         : String; 
-      label       : String; 
-      is_selected : Boolean := False; 
+      key           : String; 
+      label         : String; 
+      is_selectable : Boolean;
+      is_selected   : Boolean := False;       
       after       : String := "" ) is
       item : Menu_Item := Create( key, label, is_selected );
    begin

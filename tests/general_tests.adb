@@ -60,6 +60,7 @@ with Key_Value_IO;
 with Keyed_Text_Buffer;
 with Legal_Aid_Output_Types;
 with Line_Extractor;
+with Long_Menu;
 with Monitor;
 with Optimiser;
 with Standard_Colours;
@@ -105,7 +106,7 @@ package body General_Tests is
       
       procedure P1( m : in out Test_Monitor.M1.Monitor_Type'Class ) is
       begin
-         m.Observe;
+         m.Assert( true, "" );
       end P1;
       
       m0 : Test_Monitor.M1.Monitor_Type;
