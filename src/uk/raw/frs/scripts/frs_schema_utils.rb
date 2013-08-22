@@ -130,6 +130,13 @@ def makeLoadStatement( dataPath, recordName, table )
         return eval( '"' + ::LOAD_STATEMENT_TEMPLATE + '"' );       
 end
 
+def makePostgresLoadStatement( dataPath, recordName, table )
+        tname = table.tableName.downcase
+        year = table.year
+        variables = table.variableNames.join( "," )
+        tab_file_name = "#{dataPath}#{year}/tab/#{tname}.tab" 
+        return "copy #{tname}( #{variables}) from #{tab_file_name} with header;"
+end
 
 
 def createPrintFunction( record_name, table )
@@ -470,5 +477,13 @@ def loadTable( connection, tableName, year = nil )
 end
 
 def getConnection()
-        return DBI.connect('DBI:Mysql:frs_schema', '', '')
+        #
+        # userpass.txt should have username and password on 1 line
+        #
+        f = File.open( "userpass.txt", "rb")
+        contents = f.read
+        contents.strip!
+        username, password = contents.split( " " )
+        f.close
+        return DBI.connect('DBI:Mysql:frs_schema', username, password )
 end
