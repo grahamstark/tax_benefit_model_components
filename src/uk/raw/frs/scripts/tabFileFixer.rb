@@ -93,13 +93,15 @@ rs.fetch_hash{
         outf = File.open( outfileName, "w")        
         yearv = 2000 + year[ 0, 2 ].to_i()
         puts "opening #{infileName} and writing to #{outfileName}\n"
-        if( tableName != 'adult')
-                remakeLines( inf, outf, yearv )
-        else
-                keyFields = ['SERNUM', 'BENUNIT']
+        if( tableName == 'benefits') or ( tableName == 'job') 
+                keyFields = ['SERNUM', 'BENUNIT', 'PERSON']
                 remakeLinesWithCounter( inf, outf, yearv, keyFields )
+        elsif( tableName == 'care')
+                keyFields = ['SERNUM', 'BENUNIT' ]
+                remakeLinesWithCounter( inf, outf, yearv, keyFields )
+        else
+                remakeLines( inf, outf, yearv )
         end
         inf.close()
         outf.close()
 }
-
