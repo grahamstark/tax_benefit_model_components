@@ -6,11 +6,34 @@ require 'frs_schema_utils'
 
 def makePKCol( name )
         column = REXML::Element.new( "column" )
-        column.add_attribute( 'primaryKey', 'True' );
+        column.add_attribute( 'primaryKey', 'true' );
         column.add_attribute( 'default', 0 );
         column.add_attribute( 'type', "INTEGER" );
         column.add_attribute( 'name', name )
         return column;
+end
+
+def makeFKRef( target )
+        fk = REXML::Element.new( "reference" )
+        fk.add_attribute( "foreign", target )
+        fk.add_attribute( "local", target );
+        return fk
+end
+
+def makeFK( target )
+        fk = REXML::Element.new( "foreign-key" )
+        fk.add_attribute( 'foreignTable', target );        
+        fk << makeFKRef( "year")
+        fk << makeFKRef( "user_id")
+        fk << makeFKRef( "edition")
+        fk << makeFKRef( "sernum")
+        if( target == 'adult' or target == 'benunit' )then
+                fk << makeFKRef( "benunit" )
+        end
+        if( target == 'adult' )then
+                fk << makeFKRef( "person" )
+        end
+        return fk
 end
 
 def createMillTable( tableData )
@@ -19,11 +42,21 @@ def createMillTable( tableData )
         tableElem.add_attribute( 'name', tableName );
         tableElem.add_attribute( 'description', tableName )
         tableElem << makePKCol( 'year' )
-        tableElem << makePKCol( 'user' )
+        tableElem << makePKCol( 'user_id' )
         tableElem << makePKCol( 'edition' )
+        puts "tableName #{tableName}\n"
+        puts "needed is #{TABLES_THAT_NEED_COUNTERS.join( "|")}\n"
+        if( TABLES_THAT_NEED_COUNTERS.include?( tableName ))then
+                puts "needs a counter\n"
+                tableElem << makePKCol( 'counter' )                
+        end
+        hasADFK = false  
+        hasBUFK = false
         tableData.variableNames.each{
                 |vname|
                 var = tableData.variables[vname]
+                column = REXML::Element.new( "column" )
+                column.add_attribute( "description", var.label )
                 if( var.adaType == 'Integer' ) then
                         sqlVar = 'INTEGER'
                         default = '0'
@@ -31,7 +64,8 @@ def createMillTable( tableData )
                         sqlVar = 'REAL'
                         default = '0'
                 elsif( var.adaType == 'Sernum_Value' ) then
-                        sqlVar = 'INTEGER'
+                        sqlVar = 'BIGINT'
+                        column.add_attribute( 'adaTypeName', 'Sernum_Value' );
                         default = '0'
                 elsif( var.adaType == 'Ada.Calendar.Time' ) then
                         sqlVar = 'DATE'
@@ -46,7 +80,8 @@ def createMillTable( tableData )
                        vcu == 'PENSEQ' or
                        vcu == 'PROVSEQ' or
                        vcu == 'BENEFIT' or
-                       (tableData.tableName == 'OWNER' and vcu == 'ISSUE' ) or
+                       # (tableData.tableName == 'OWNER' and vcu == 'ISSUE' ) or
+                       (tableData.tableName == 'ASSETS' and vcu == 'ASSETYPE' ) or                       
                        vcu == 'ODDSEQ' or 
                        vcu == 'MORTSEQ' or 
                        vcu == 'CONTSEQ' or 
@@ -57,20 +92,39 @@ def createMillTable( tableData )
                        vcu == 'ENDOWSEQ' or 
                        vcu == 'SEQ' or
                        vcu == 'INSSEQ' or
-                       vcu == 'ACCOUNT' )
-                column = REXML::Element.new( "column" )
+                       vcu == 'ACCOUNT' or
+                       vcu == 'CHLOOK' ) 
                 if( isPK )
-                        column.add_attribute( 'primaryKey', 'True' );
+                        column.add_attribute( 'primaryKey', 'true' );
                 end
-                column.add_attribute( 'default', default );
+                # column.add_attribute( 'default', default );
                 column.add_attribute( 'type', sqlVar );
                 column.add_attribute( 'name', vname.downcase() )
                 tableElem << column
+                if( vcu == 'BENUNIT' and tableName != 'benunit' ) then
+                        hasBUFK = true
+                end
+                if( vcu == 'PERSON' and 
+                        ( tableName != 'adult' and tableName != 'child' and 
+                          tableName != 'prscrptn' and tableName != 'benefits' ))then
+                        # prscrptn and benefits since 'person' field can point to either adult or child records  
+                        hasADFK = true                
+                end
         }
+        if( tableName != 'househol')then
+                tableElem << makeFK( 'househol' )
+        end
+        if hasBUFK then
+                tableElem << makeFK( 'benunit' )
+        end
+        if hasADFK then
+                tableElem << makeFK( 'adult' )
+        end
         return tableElem
 end
 
 loadStatementsFile = File.open( "postgres_load_statements.sql", "w")
+loadStatementsFile.write( "SET datestyle='MDY';\n")
 connection  = getConnection()
 stmt = "select distinct year,name from tables"
 rs = connection.execute( stmt )
@@ -92,7 +146,7 @@ rs.fetch_hash{
                 tables[ tableName ] = table;
         end
         # readFile.write( createConvertProcedure( recordName, year, table ) )
-        loadStatementsFile.write( makePostgresLoadStatement("/mnt/data/frs/", recordName, table ))
+        loadStatementsFile.write( makePostgresLoadStatement("/mnt/data/frs/", recordName, table )+"\n")
 }
 
 millDoc = REXML::Document.new();
@@ -100,6 +154,9 @@ millDTD = REXML::DocType.new('database PUBLIC "http://virtual-worlds.biz/Mill"  
 millDoc << millDTD
 millDatabase = REXML::Element.new( 'database' )
 millDatabase.add_attribute( "name", "frs" )
+dpackage = REXML::Element.new( 'adaTypePackageName' )
+dpackage.add_attribute( "name", "Data_Constants" )
+millDatabase << dpackage
 millDoc << millDatabase
 tableNames.uniq.each{
         |tableName|

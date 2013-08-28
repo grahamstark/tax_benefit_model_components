@@ -6,14 +6,13 @@ require 'frs_schema_utils'
 
 connection = getConnection()
 
+filename = "/mnt/data/frs/0809/mrdoc/excel/frs_2008_09_hierarchical_documentation.csv"
+yearStr = '0809'
+parseOneYear( connection, filename, yearStr, '/mnt/data/frs/0809/tab/' )
 
-#filename = "/mnt/data/frs/0809/mrdoc/excel/frs_2008_09_hierarchical_documentation.csv"
-#yearStr = '0809'
-#parseOneYear( connection, filename, yearStr, '/mnt/data/frs/0809/tab/' )
-
-#filename = "/mnt/data/frs/1011/mrdoc/excel/frs_2010_11_hierarchical_documentation.csv"
-#yearStr = '1011'
-#parseOneYear( connection, filename, yearStr, '/mnt/data/frs/1011/tab/' )
+# filename = "/mnt/data/frs/1011/mrdoc/excel/frs_2010_11_hierarchical_documentation.csv"
+# yearStr = '1011'
+# parseOneYear( connection, filename, yearStr, '/mnt/data/frs/1011/tab/' )
 
 #filename = "/mnt/data/frs/0910/mrdoc/excel/frs_2009_10_hierarchical_documentation.csv"
 #yearStr = '0910'
@@ -21,10 +20,10 @@ connection = getConnection()
 
 # ['0304','0405','0506','0607',
 # ['0607', '0708','0809','0910',
-['0910'].each{
-        |p|
-        parseHBAI( connection, "/mnt/data/frs/#{p}/mrdoc/excel/hbai_variable_list.csv", p, "/mnt/data/frs/#{p}/tab/" )        
-}
+#['0910'].each{
+#        |p|
+#        parseHBAI( connection, "/mnt/data/frs/#{p}/mrdoc/excel/hbai_variable_list.csv", p, "/mnt/data/frs/#{p}/tab/" )        
+#}
 
 # 
 # 

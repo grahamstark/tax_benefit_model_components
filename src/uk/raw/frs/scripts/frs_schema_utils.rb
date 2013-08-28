@@ -4,7 +4,8 @@ require 'csv'
 
 INDENT = '   '
 
-ADA_KEYWORD_TRANSLATIONS = { 'ACCESS'=>'X_ACCESS', 'OUT'=>'XXOUT', "MONTH_"=>"MONTH" };
+# note the last 2 are actually SQL keywords
+ADA_KEYWORD_TRANSLATIONS = { 'ACCESS'=>'X_ACCESS', 'OUT'=>'XXOUT', "MONTH_"=>"MONTH", "GRANT" => "X_GRANT", "WHERE" => "X_WHERE"};
 
 PRINT_HEADER_TEMPLATE = '
    function To_String( a : #{record_name}_Rec; num_indents : Natural; loop_count : Natural := 0 ) return String is
@@ -23,6 +24,8 @@ PRINT_FOOTER_TEMPLATE = '
    end To_String;
    
 '
+
+TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamnt', 'penprov', 'nimgr', 'owner' ]
 
 READ_HEADER_TEMPLATE = '
    procedure Create_#{record_name}_#{year}( 
@@ -131,11 +134,16 @@ def makeLoadStatement( dataPath, recordName, table )
 end
 
 def makePostgresLoadStatement( dataPath, recordName, table )
-        tname = table.tableName.downcase
+        tableName = table.tableName.downcase
         year = table.year
-        variables = table.variableNames.join( "," )
-        tab_file_name = "#{dataPath}#{year}/tab/#{tname}.tab" 
-        return "copy #{tname}( #{variables}) from #{tab_file_name} with header;"
+        ourVariables = [ 'user_id', 'edition', 'year' ]
+        if TABLES_THAT_NEED_COUNTERS.include?( tableName )then
+                ourVariables << 'counter'                
+        end
+        ourVariables += table.variableNames
+        variables = ourVariables.join( ", " )
+        tab_file_name = "#{dataPath}#{year}/postgres_load_files/#{tableName}.csv" 
+        return "copy #{tableName}( #{variables} ) from '#{tab_file_name}' with CSV header;\n"
 end
 
 
@@ -470,8 +478,10 @@ def loadTable( connection, tableName, year = nil )
                         enum.fmtvalue = eres['fmtvalue']
                         var.enums << enum
                 }
-                tab.variableNames << var.name
-                tab.variables[ var.name ] = var
+                # tab.variableNames << var.name
+                # tab.variables[ var.name ] = var
+                tab.variableNames << var.adaVarname
+                tab.variables[ var.adaVarname ] = var
         }
         return tab
 end
