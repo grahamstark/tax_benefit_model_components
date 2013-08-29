@@ -39,7 +39,7 @@ package Data_Constants is
    function Year_From_Data_String( data_string : String ) return Data_Years;
    
    subtype Sernum_String is String (1 .. 10);
-   type Sernum_Value  is range 1 .. 10_000_000_001;
+   type Sernum_Value  is range 0 .. 10_000_000_001;
    
    MISSING_SERNUM : constant Sernum_Value := Sernum_Value'Last;
 
