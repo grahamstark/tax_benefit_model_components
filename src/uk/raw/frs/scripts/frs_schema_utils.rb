@@ -25,7 +25,7 @@ PRINT_FOOTER_TEMPLATE = '
    
 '
 
-TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamnt', 'penprov', 'nimgr', 'owner' ]
+TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamt', 'penprov', 'nimigr', 'owner' ]
 
 READ_HEADER_TEMPLATE = '
    procedure Create_#{record_name}_#{year}( 

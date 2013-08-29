@@ -8,7 +8,7 @@ def remakeLines( inf, outf, year )
         inf.each{
                 |line|
                 line.gsub!( /\t/, "," )
-                line.gsub!( /, ,/, ',' )
+                line.gsub!( / /, '' )
                 
                 if( p == 0 )then
                         # postgres doesn't allow header lines when reading tab 
@@ -47,7 +47,7 @@ def remakeLinesWithCounter( inf, outf, year, keyFields )
         inf.each{
                 |line|
                 line.gsub!( /\t/, "," )
-                line.gsub!( /, ,/, ',' )
+                line.gsub!( / /, '' )
                 # puts line
                 elements = line.split( "," )
                 if( lineNumber == 0 )then
@@ -106,7 +106,7 @@ rs.fetch_hash{
                 case tableName                     
                 when 'care'
                         keyFields = ['SERNUM', 'BENUNIT' ]
-                when 'nimgr'
+                when 'nimigr', 'owner'
                         keyFields = ['SERNUM' ]
                 else
                         keyFields = ['SERNUM', 'BENUNIT', 'PERSON' ]

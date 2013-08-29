@@ -67,6 +67,7 @@ def createMillTable( tableData )
                         sqlVar = 'BIGINT'
                         column.add_attribute( 'adaTypeName', 'Sernum_Value' );
                         default = '0'
+                        column.add_attribute( 'default', '0' );
                 elsif( var.adaType == 'Ada.Calendar.Time' ) then
                         sqlVar = 'DATE'
                 end
@@ -101,13 +102,15 @@ def createMillTable( tableData )
                 column.add_attribute( 'type', sqlVar );
                 column.add_attribute( 'name', vname.downcase() )
                 tableElem << column
-                if( vcu == 'BENUNIT' and tableName != 'benunit' ) then
+                if( vcu == 'BENUNIT' and ( tableName != 'benunit' and tableName != 'hbai' ) then
                         hasBUFK = true
                 end
                 if( vcu == 'PERSON' and 
                         ( tableName != 'adult' and tableName != 'child' and 
-                          tableName != 'prscrptn' and tableName != 'benefits' ))then
-                        # prscrptn and benefits since 'person' field can point to either adult or child records  
+                                tableName != 'prscrptn' and tableName != 'benefits' and 
+                                tableName != 'chldcare' and tableName != 'hbai' ))then
+                        # prscrptn, chldcare and benefits since 'person' 
+                        # field can point to either adult or child records so a PK isn't really possible  
                         hasADFK = true                
                 end
         }
@@ -154,7 +157,7 @@ millDTD = REXML::DocType.new('database PUBLIC "http://virtual-worlds.biz/Mill"  
 millDoc << millDTD
 millDatabase = REXML::Element.new( 'database' )
 millDatabase.add_attribute( "name", "frs" )
-dpackage = REXML::Element.new( 'adaTypePackageName' )
+dpackage = REXML::Element.new( 'adaTypePackage' )
 dpackage.add_attribute( "name", "Data_Constants" )
 millDatabase << dpackage
 millDoc << millDatabase
