@@ -1,3 +1,5 @@
+with Ada.Text_IO;
+
 package body Maths_Functions.Simple_Statistics is
 
    procedure Add( data : in out Dataset; v : Real ) is
@@ -20,7 +22,7 @@ package body Maths_Functions.Simple_Statistics is
       return Natural( data.Length );
    end Size;
    
-   procedure Sort( data : in out Dataset ) is
+   procedure Sort( data : in out Dataset'Class ) is
    begin
       Dataset_Sorter.Sort( Dataset_Package.Vector( data ));
    end Sort;
@@ -45,30 +47,33 @@ package body Maths_Functions.Simple_Statistics is
    function Generate( data : Dataset ) return Measures_Array is
       use Elementary_Functions;
       use Dataset_Package;
+      use Ada.Text_IO;
       v : Measures_Array := ( others => 0.0 );
       N : constant Natural := data.Size;
       RN : constant Real := Real( n );
       sum : Real := 0.0;
       x : Real;
-      sdata : Dataset := data;
+      sdata : Dataset := data.Copy;
    begin
+      Put_Line( "n= " & n'Img );
       if( n = 0 )then
          return v;
       end if;
+      for i in 1 .. N loop
+         x := sdata.Get( i );
+         sum := sum + x;
+      end loop;
       sdata.Sort;
       v( maximum ) := sdata.Get( N );
       v( minimum ) := sdata.Get( 1 );
-      for i in 1 .. N loop
-         x := sdata.Get( n );
-         sum := sum + x;
-      end loop;
+      Put_Line( "sum " & sum'Img );
       v( mean ) := sum / RN;
       if( n = 1 )then
          v( median ) := v( mean );
          return v;
       end if;
       for i in 1 .. n loop
-         x := sdata.Get( n );
+         x := data.Get( i );
          declare
             a : constant Real := x - v( mean );
          begin
@@ -100,9 +105,10 @@ package body Maths_Functions.Simple_Statistics is
             v( median ) := sdata.Get( P );
          end;
       end if;
-      v( percentile_5 ) := sdata.Nth_Percentile( 5 );
-      v( percentile_95 ) := sdata.Nth_Percentile( 95 );
-      
+      if( n >= 100 )then
+         v( percentile_5 ) := sdata.Nth_Percentile( 5 );
+         v( percentile_95 ) := sdata.Nth_Percentile( 95 );
+      end if;
       return v;
    end Generate;
    

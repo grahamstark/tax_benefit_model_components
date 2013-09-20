@@ -12,7 +12,7 @@ generic package Maths_Functions.Simple_Statistics is
    procedure Remove_All( data : in out Dataset );
    function Get( data : Dataset; n : Positive ) return Real;
    function Size( data : Dataset ) return Natural;
-   procedure Sort( data : in out Dataset );
+   procedure Sort( data : in out Dataset'Class );
    function Generate( data : Dataset ) return Measures_Array;
    function Nth_Percentile( data : Dataset; which : Percentile ) return Real;
    
