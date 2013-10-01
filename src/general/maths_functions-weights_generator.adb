@@ -130,9 +130,9 @@ package body Maths_Functions.Weights_Generator is
       error              : out Eval_Error_Type ) is
        
       procedure Local_Evaluate(
-         lambdas : in  Row_Vector;
-         hessian : out Hessian_Matrix;
-         beta    : out Row_Vector ) is
+         lambdas  : in  Row_Vector;
+         hessian  : out Hessian_Matrix;
+         gradient : out Row_Vector ) is
       begin
          Evaluate_Function_And_Hessian( 
             data               => data,
@@ -142,9 +142,9 @@ package body Maths_Functions.Weights_Generator is
             target_populations => target_populations,
             ru                 => ru,
             rl                 => rl,
-            f_lambdas          => beta,
+            f_lambdas          => gradient,
             hessian            => hessian );
-         Log( "betas " &  To_String( beta ));
+         Log( "gradient " &  To_String( gradient ));
          Log( "hessian " &  To_String( hessian ));
       end Local_Evaluate;
       

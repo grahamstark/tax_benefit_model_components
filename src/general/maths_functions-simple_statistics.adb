@@ -1,4 +1,5 @@
 with Ada.Text_IO;
+with Format_Utils;
 
 package body Maths_Functions.Simple_Statistics is
 
@@ -55,7 +56,6 @@ package body Maths_Functions.Simple_Statistics is
       x : Real;
       sdata : Dataset := data.Copy;
    begin
-      Put_Line( "n= " & n'Img );
       if( n = 0 )then
          return v;
       end if;
@@ -66,7 +66,6 @@ package body Maths_Functions.Simple_Statistics is
       sdata.Sort;
       v( maximum ) := sdata.Get( N );
       v( minimum ) := sdata.Get( 1 );
-      Put_Line( "sum " & sum'Img );
       v( mean ) := sum / RN;
       if( n = 1 )then
          v( median ) := v( mean );

@@ -70,7 +70,7 @@ package Maths_Functions is
     with procedure Evaluate(  
           inputs               : in  Vector;
           hessian              : out Matrix;
-          beta                 : out Vector );
+          gradient             : out Vector );
           
     procedure Solve_Non_Linear_Equation_System( 
       x          : in out Vector;
@@ -79,7 +79,7 @@ package Maths_Functions is
       tolf       : Real;
       iterations : out Natural;
       error      : out Eval_Error_Type );
-
+ 
    procedure Do_Debug( onoff : Boolean );
       
 private      

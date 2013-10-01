@@ -446,7 +446,7 @@ package body Maths_Functions is
       error      : out Eval_Error_Type ) is
    use Matrix_Functions;
       hessian : Matrix( x'Range, x'Range ) := (others=>(others=>0.0 ));
-      beta    : Vector( x'Range ) := ( others => 0.0 );
+      gradient    : Vector( x'Range ) := ( others => 0.0 );
       deltas  : Vector( x'Range ) := ( others => 0.0 );
    begin
       error := normal;
@@ -458,22 +458,22 @@ package body Maths_Functions is
          begin            
             if( DEBUG ) then
                Log( "hessian size " & hessian'Last(1)'Img &  " x " & hessian'Last(2)'Img );
-               Log( "beta size " & beta'Last'Img );
-               Log( "beta" );
-               Log( To_String( beta ));
+               Log( "gradient size " & gradient'Last'Img );
+               Log( "gradient" );
+               Log( To_String( gradient ));
                Log( "hessian" );
                Log( To_String( hessian ));
                Log( "X" );
                Log( To_String( x ));
             end if;
-            Evaluate( x, hessian, beta );
+            Evaluate( x, hessian, gradient );
             for i in x'Range loop
-               errf := errf + abs( beta( i ));   
+               errf := errf + abs( gradient( i ));   
             end loop;
             if( errf <= tolf )then
                exit;
             end if;
-            deltas := Matrix_Functions.Solve( hessian, beta );
+            deltas := Matrix_Functions.Solve( hessian, gradient );
             x := x + deltas;
             for i in x'Range loop
                errx := errx + abs( deltas( i ));
