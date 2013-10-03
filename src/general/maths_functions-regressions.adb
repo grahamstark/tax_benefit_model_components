@@ -339,7 +339,11 @@ package body Maths_Functions.Regressions is
                else
                   cdf / cn );
          begin
-  	    log_likelihood := log_likelihood + Log( 1.0 - cn ) + Log( cn );
+            if( yi = 1.0 )then
+    	       log_likelihood := log_likelihood + Log( cn );
+            else
+    	       log_likelihood := log_likelihood + Log( 1.0 - cn );
+            end if;
             gradients := gradients + lambda * xr;
             hessian := hessian + lambda*( lambda + bx ) * xx;
          end;

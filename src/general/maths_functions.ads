@@ -16,7 +16,10 @@ generic
 package Maths_Functions is
    
    package Random_Normal_Generator is new Random_Normal_Draw( Real );
-   
+
+   subtype Prob is Real range 0.0 .. 1.0;
+   subtype Odds is Real range 0.0 .. 1.0;
+
    function Random_0_To_1 return Real;
    
    package Matrix_Functions is new Ada.Numerics.Generic_Real_Arrays( Real => Real );
