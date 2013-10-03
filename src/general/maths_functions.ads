@@ -3,6 +3,8 @@ pragma License( Modified_GPL );
 with Random_Normal_Draw;
 with Ada.Numerics.Generic_Real_Arrays;
 with Ada.Numerics.Generic_Elementary_Functions;
+with Ada.Direct_IO;
+with Ada.Text_IO;
 --
 -- Some handy maths functions. Although this is generic on the float-type, for the normal and inverse-normal
 -- internally all the calculations are jammed on as double-precision floats.
@@ -59,13 +61,19 @@ package Maths_Functions is
       v                    : Real; 
       threshold            : Real;
       add_random_component : Boolean := False ) return Boolean;
-   
+
+   function Normal_PDF( x : Real; mean : Real; standard_deviation : Real ) return Real;
+   function Standard_Normal_PDF( x : Real ) return Real;
       
    type Eval_Error_Type  is ( normal, underflow, iterations_exceeded );
    --
    -- Adapted from from Press, Flannery et. al pp307 -
    -- tolx - converged if summed absolute variable increments are < this
    -- tolf - converged if summed absolute function values are < this
+
+   package DIO is new Ada.Direct_IO( Real );
+   package FIO is new Ada.Text_IO.Float_IO( Real );
+
   generic 
     with procedure Evaluate(  
           inputs               : in  Vector;

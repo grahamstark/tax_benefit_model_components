@@ -409,6 +409,24 @@ package body Maths_Functions is
       return Real( Ada.Numerics.Float_Random.Random( zero_one_random_generator ));
    end Random_0_To_1;
 
+   PI      : constant Local_Float := Local_Float( Ada.Numerics.PI );
+   SQ_2_PI : constant Local_Float := Sqrt( 2.0 * PI );
+
+   function Normal_PDF( x : Real; mean : Real; standard_deviation : Real ) return Real is
+     lsd : constant Local_Float := Local_Float( standard_deviation );
+     lm  : constant Local_Float := Local_Float( mean );
+     lx  : constant Local_Float := Local_Float( x );
+     p1  : constant Local_Float := 1.0 / (lsd * SQ_2_PI);
+     p2  : constant Local_Float :=  Exp(-1.0 * (( lx - lm ) ** 2.0 ) / (2.0 * ( lsd ** 2.0 )));
+   begin
+     return Real( p1*p2 );
+   end Normal_PDF;
+
+   function Standard_Normal_PDF( x : Real ) return Real is
+   begin
+      return Normal_PDF( X => x, Mean => 0.0, Standard_Deviation => 1.0 );
+   end Standard_Normal_PDF;
+
    function Evaluate_Probit( 
       v                    : Real; 
       threshold            : Real;
