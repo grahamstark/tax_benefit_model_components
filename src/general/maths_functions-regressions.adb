@@ -5,6 +5,34 @@ with Text_Utils;
 with Ada.Unchecked_Deallocation;
 with Ada.Assertions;
 
+--
+-- copyright(c) 2013 Graham Stark/ Virtual Worlds (graham.stark@virtual-worlds.biz)
+--
+-- ////////////////////////////////
+--
+-- This is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 3, or (at your option)
+-- any later version.
+--
+-- It is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this software; see the file docs/gpl_v3.  If not, write to
+-- the Free Software Foundation, Inc., 51 Franklin Street,
+-- Boston, MA 02110-1301, USA.
+--
+-- This is a specialised table for displaying costs of (e.g.) taxes or benefits broken down by something. It's really simple.
+--
+--
+-- Very basic OLS, Probit and Logit functions, mainly so I can keep up
+-- with my students. References in the body text are to
+-- Greene "Econometric Analysis" 2nd Edition; Prentice-Hall 1990.
+--
+
 package body Maths_Functions.Regressions is
 
    package IIO is new Ada.Text_IO.Integer_IO( Integer );
@@ -102,9 +130,6 @@ package body Maths_Functions.Regressions is
       Free( i );
       Free( m );
    end Local_OLS_Big;
-
-   -- function M( x, y )
-   -- function Projection_Matrix( m ) - Green p178
 
    procedure Local_OLS( settings : Regression_Control_Rec; x : Matrix; y : Vector; rr : in out Regression_Result ) is
       use Elementary_Functions;
@@ -254,16 +279,6 @@ package body Maths_Functions.Regressions is
       s := s & LINE_BREAK;
       return To_String( s );
    end To_String;
-
---       b                            : Vector( 1 .. num_regressors );
---       standard_error_of_regression : Real;
---       b_standard_errors            : Vector( 1 .. num_regressors );
---       t_0                          : Vector( 1 .. num_regressors );
---       e                            : Vector( 1 .. num_obs );
---       covariance_matrix            : Matrix( 1 .. num_regressors, 1 .. num_regressors );
---       ess                          : Real;
---       df                           : Positive;
-
 
    function OLS( settings : Regression_Control_Rec; x : Matrix; y : Vector ) return Regression_Result is
        cx           : constant Matrix := ( if settings.add_constant then Add_Vector_Of_Ones_To( x ) else x );
