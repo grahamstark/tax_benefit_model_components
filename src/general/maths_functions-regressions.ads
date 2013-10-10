@@ -20,8 +20,6 @@ with Regression_Commons;
 -- the Free Software Foundation, Inc., 51 Franklin Street,
 -- Boston, MA 02110-1301, USA.
 --
--- This is a specialised table for displaying costs of (e.g.) taxes or benefits broken down by something. It's really simple.
---
 --
 -- Very basic OLS, Probit and Logit functions, mainly so I can keep up
 -- with my students. References in the body text are to
@@ -68,10 +66,22 @@ package Maths_Functions.Regressions is
      end case;
    end record;
 
-   function OLS( settings : Regression_Control_Rec; x : Matrix; y : Vector ) return Regression_Result;
-   function OLS( settings : Regression_Control_Rec; x : Vector; y : Vector ) return Regression_Result;
-   function Logit_Or_Probit( settings : Regression_Control_Rec; x : Vector; y : Vector ) return Regression_Result;
-   function Logit_Or_Probit( settings : Regression_Control_Rec; x : Matrix; y : Vector ) return Regression_Result;
+   function OLS(
+      settings : Regression_Control_Rec;
+      x : Matrix;
+      y : Vector ) return Regression_Result;
+   function OLS(
+      settings : Regression_Control_Rec;
+      x : Vector;
+      y : Vector ) return Regression_Result;
+   function Logit_Or_Probit(
+      settings : Regression_Control_Rec;
+      x : Vector;
+      y : Vector ) return Regression_Result;
+   function Logit_Or_Probit(
+      settings : Regression_Control_Rec;
+      x : Matrix;
+      y : Vector ) return Regression_Result;
 
    function To_String( rr : Regression_Result ) return String;
 

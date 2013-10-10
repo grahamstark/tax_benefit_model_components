@@ -381,9 +381,9 @@ package body Maths_Functions.Regressions is
 
    procedure Local_Logit_Or_Probit(
 	settings : Regression_Control_Rec;
-        x : Matrix;
-        y : Vector;
-        rr : in out Regression_Result ) is
+        x        : Matrix;
+        y        : Vector;
+        rr       : in out Regression_Result ) is
       use Elementary_Functions;
       nr   : constant Positive := x'Last( 1 );
       rnr  : constant Real := Real( nr );
@@ -401,10 +401,10 @@ package body Maths_Functions.Regressions is
          case settings.regtype is
          when logit =>
             Evaluate_First_Deriv_And_Hessian_Logit(
-                                                   settings, betas, x, y, gradient, hessian, rr.log_likelihood );
+               settings, betas, x, y, gradient, hessian, rr.log_likelihood );
          when probit =>
             Evaluate_First_Deriv_And_Hessian_Probit(
-                                                    settings, betas, x, y, gradient, hessian, rr.log_likelihood );
+               settings, betas, x, y, gradient, hessian, rr.log_likelihood );
          when others => null; -- exception ??
          end case;
          saved_hessian := hessian;
@@ -423,7 +423,10 @@ package body Maths_Functions.Regressions is
       end if;
    end Local_Logit_Or_Probit;
 
-   function Logit_Or_Probit( settings : Regression_Control_Rec; x : Vector; y : Vector ) return Regression_Result is
+   function Logit_Or_Probit(
+      settings : Regression_Control_Rec;
+      x : Vector;
+      y : Vector ) return Regression_Result is
      cx    : constant Matrix :=
         ( if( settings.add_constant )then
 	     Add_Vector_Of_Ones_To( x )
@@ -436,7 +439,9 @@ package body Maths_Functions.Regressions is
       return rr;
    end Logit_Or_Probit;
 
-   function Logit_Or_Probit( settings : Regression_Control_Rec; x : Matrix; y : Vector ) return Regression_Result is
+   function Logit_Or_Probit(
+      settings : Regression_Control_Rec;
+      x : Matrix; y : Vector ) return Regression_Result is
      cx    : constant Matrix :=
         ( if( settings.add_constant )then
 	     Add_Vector_Of_Ones_To( x )
