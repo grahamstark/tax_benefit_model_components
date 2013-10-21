@@ -282,9 +282,9 @@ package body Tax_Utils is
       loop
          rb := Element( rb_index );
          total := total + rb.band;
+         remaining := total - upto;
          exit when total >= upto;
          to_delete := to_delete + 1;
-         remaining := remaining - rb.band;
          Next( rb_index );
       end loop;
       if( to_delete > 0 )then
@@ -387,27 +387,18 @@ package body Tax_Utils is
    function FN( r : Rate_Type; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-      FIO.Put(s, r, 6, 0 );
+      FIO.Put(s, r, 2, 0 );
       return s;
    end FN;
 
    function FN( r : Amount_Type; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-      AIO.Put(s, r, 6, 0 );
+      AIO.Put(s, r, 2, 0 );
       return s;
    end FN;
 
 
-   function F10( r : Rate_Type ) return String is
-   begin
-      return FN( r, 10 );
-   end F10;
-
-   function F10( r : Amount_Type ) return String is
-   begin
-      return FN( r, 10 );
-   end F10;
 
    function To_String( ratebands : Rates_And_Bands ) return String is
    use Rates_And_Bands_List;
@@ -419,13 +410,17 @@ package body Tax_Utils is
          la : Rate_And_Band :=  element( pos );
       begin
          -- la.limit := la.limit * Amount_Type(amount);
-         s := s & F10( la.band );
-         s := s & F10( la.rate * 100.0 );
+         if( la.band < 999999999.99 )then
+            s := s & FN( la.band, 13 );
+         else
+            s := s & "  inf        ";
+         end if;
+         s := s & FN( la.rate * 100.0, 10 );
          s := s & LINE_BREAK;
       end To_String;
 
    begin
-      s := s & "   BAND   RATE " & LINE_BREAK;
+      s := s & "        BAND      RATE " & LINE_BREAK;
       Iterate( ratebands.v, To_String'Access );
       return To_String( s );
    end To_String;
