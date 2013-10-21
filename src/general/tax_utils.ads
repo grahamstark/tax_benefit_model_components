@@ -56,6 +56,9 @@ package Tax_Utils is
 
 
    type Rates_And_Bands    is tagged private;
+
+   function To_String( ratebands : Rates_And_Bands ) return String;
+
    procedure Set_Rate_And_Band( ratebands : in out Rates_And_Bands; rb : Rate_And_Band; pos : Positive; replace : Boolean := true );
    function Get_Rate_And_Band( ratebands : Rates_And_Bands; which : Positive ) return Rate_And_Band;
    procedure Delete_Rate_And_Band( ratebands :  in out Rates_And_Bands; which : Positive );
@@ -120,7 +123,6 @@ package Tax_Utils is
    procedure Delete_Limit_And_Amount( lms :  in out Limits_And_Amounts; which : Positive );
    procedure Delete_All_Limits_And_Amounts( lms :  in out Limits_And_Amounts );
    function Get_Num_Limits_And_Amounts( lms : Limits_And_Amounts ) return Natural;
-
 
    --
    --  uprate the Amount value x by uprate by, rounding to next

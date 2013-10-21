@@ -27,7 +27,10 @@
 --
 pragma License( Modified_GPL );
 
-with text_io;use text_io;
+with Ada.Text_io;use Ada.Text_io;
+with Ada.Strings.Unbounded;
+with Text_Utils;
+
 
 package body Tax_Utils is
 
@@ -371,12 +374,62 @@ package body Tax_Utils is
 
    procedure Uprate
      ( lms           : in out Limits_And_Amounts;
-       uprate_by     : Rate_Type; -- enter, say, 0.12 for a 12% increase
-       limit_next    : Amount_Type := 0.0;
-       amount_next   : Amount_Type := 0.0 ) is
+      uprate_by     : Rate_Type; -- enter, say, 0.12 for a 12% increase
+      limit_next    : Amount_Type := 0.0;
+      amount_next   : Amount_Type := 0.0 ) is
    begin
       null;
    end Uprate;
+
+   package FIO is new Ada.Text_IO.Float_IO( Rate_Type );
+   package AIO is new Ada.Text_IO.Float_IO( Amount_Type );
+
+   function FN( r : Rate_Type; n : Positive ) return String is
+      s : String( 1 .. n ) := ( others => ' ' );
+   begin
+      FIO.Put(s, r, 6, 0 );
+      return s;
+   end FN;
+
+   function FN( r : Amount_Type; n : Positive ) return String is
+      s : String( 1 .. n ) := ( others => ' ' );
+   begin
+      AIO.Put(s, r, 6, 0 );
+      return s;
+   end FN;
+
+
+   function F10( r : Rate_Type ) return String is
+   begin
+      return FN( r, 10 );
+   end F10;
+
+   function F10( r : Amount_Type ) return String is
+   begin
+      return FN( r, 10 );
+   end F10;
+
+   function To_String( ratebands : Rates_And_Bands ) return String is
+   use Rates_And_Bands_List;
+   use Ada.Strings.Unbounded;
+   use Text_Utils;
+      s : Unbounded_String;
+
+      procedure To_String( pos : Cursor ) is
+         la : Rate_And_Band :=  element( pos );
+      begin
+         -- la.limit := la.limit * Amount_Type(amount);
+         s := s & F10( la.band );
+         s := s & F10( la.rate * 100.0 );
+         s := s & LINE_BREAK;
+      end To_String;
+
+   begin
+      s := s & "   BAND   RATE " & LINE_BREAK;
+      Iterate( ratebands.v, To_String'Access );
+      return To_String( s );
+   end To_String;
+
 
    procedure Multiply_Limits_And_Amounts( lms : in out Limits_And_Amounts; amount : Rate_Type ) is
    use Limits_And_Amounts_List;
