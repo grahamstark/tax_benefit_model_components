@@ -11,32 +11,23 @@
 
 pragma License( Modified_GPL );
 
-
 with Ada.Numerics.Generic_Elementary_Functions;
 with Base_Model_Types;
 with Financial_Functions;
 with Format_Utils;
 with Key_Value_IO;
-with Logger;
 with Maths_Functions;
 with Tax_Utils;
 with Text_Utils;
 -- 
 pragma Elaborate_All (Text_Utils);
 pragma Elaborate_All (Base_Model_Types);
-pragma Elaborate_All (Logger);
 pragma Elaborate_All (Format_Utils);
--- pragma Elaborate_All (Tax_Utils);
 
 package Model is
    
-   --  pragma Preelaborate;
-   
-   type Loggable_Modules is ( model_household, model_uprate, means_tested, non_means_tested, legal_aid_calcs, income_calcs, charging_model, misc, runner );
-   
    use Base_Model_Types;
-   
-   -- package UK_Logger is new Logger( Target_Type => Loggable_Modules );
+
    package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
    package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );
    package UK_Key_Value_IO is new Key_Value_IO( Real_Type=>Amount,  Counter_Type=>Counter_Type );
@@ -49,7 +40,6 @@ package Model is
    use Financial_Funcs;
 
    use UK_Format_Utils;
-   -- use UK_Logger;
    use UK_Tax_Utils;
    --
    -- Just a Bounded String used for labels

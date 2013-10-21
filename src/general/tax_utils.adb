@@ -7,12 +7,12 @@
 -- it under the terms of the GNU General Public License as published by
 -- the Free Software Foundation; either version 3, or (at your option)
 -- any later version.
--- 
+--
 -- It is distributed in the hope that it will be useful,
 -- but WITHOUT ANY WARRANTY; without even the implied warranty of
 -- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 -- GNU General Public License for more details.
--- 
+--
 -- You should have received a copy of the GNU General Public License
 -- along with this software; see the file docs/gpl_v3.  If not, write to
 -- the Free Software Foundation, Inc., 51 Franklin Street,
@@ -37,35 +37,35 @@ package body Tax_Utils is
       if(( Get_Num_Rates_And_Bands( ratebands ) > pos )  and replace ) then
          Replace_Element( ratebands.v, pos, rb );
       else
-         Insert( Vector(ratebands.v), pos, rb );   
+         Insert( Vector(ratebands.v), pos, rb );
       end if;
    end Set_Rate_And_Band;
-   
+
    procedure Delete_All_Rates_And_Bands( ratebands :  in out Rates_And_Bands ) is
    use Rates_And_Bands_List;
    begin
       Clear( ratebands.v );
    end Delete_All_Rates_And_Bands;
-   
+
    function Get_Rate_And_Band( ratebands : Rates_And_Bands; which : Positive ) return Rate_And_Band is
    use Rates_And_Bands_List;
    begin
       return Element( Vector( ratebands.v ), which );
    end Get_Rate_And_Band;
-   
+
    procedure Delete_Rate_And_Band( ratebands : in out Rates_And_Bands; which : Positive ) is
    use Rates_And_Bands_List;
    begin
-      Delete( Vector( ratebands.v ), which );  
+      Delete( Vector( ratebands.v ), which );
    end Delete_Rate_And_Band;
-   
+
    function Get_Num_Rates_And_Bands( ratebands : Rates_And_Bands ) return Natural is
    use Rates_And_Bands_List;
    begin
-      return Natural(Length( Vector( ratebands.v ) ));  
+      return Natural(Length( Vector( ratebands.v ) ));
    end Get_Num_Rates_And_Bands;
 
-   
+
    function Uprate
      (x         : Amount_Type;
       uprate_by : Rate_Type; -- e.g 0.1 for a 10% increase
@@ -93,7 +93,7 @@ package body Tax_Utils is
          return Amount_Type( rx + add );
       end if;
    end Uprate;
-   
+
    procedure Uprate
      (x         : in out Amount_Type;
       uprate_by : Rate_Type; -- e.g 0.1 for a 10% increase
@@ -101,18 +101,18 @@ package body Tax_Utils is
    begin
       x := Uprate( x, uprate_by, next );
    end Uprate;
-   
-   
+
+
    MAX_SAFE_VALUE : constant := 9999999999999999.9;
-   
-   function New_Gap( b1, b2 : Amount_Type; uprate_by : Rate_Type; next : Amount_Type ) return Amount_Type is  
-      rnext      : Rate_Type := Rate_Type( next );      
+
+   function New_Gap( b1, b2 : Amount_Type; uprate_by : Rate_Type; next : Amount_Type ) return Amount_Type is
+      rnext      : Rate_Type := Rate_Type( next );
       rgap       : Rate_Type;
       rwidth     : Rate_Type;
       width      : Amount_Type := b2 - b1;
    begin
       rwidth := Rate_Type( width );
-      rgap := Rate_Type'Floor( rwidth * ((uprate_by-1.0)/rnext )); 
+      rgap := Rate_Type'Floor( rwidth * ((uprate_by-1.0)/rnext ));
       rgap := rnext + ( rgap * rnext );
       if (MAX_SAFE_VALUE  - rgap <= rwidth ) then
          width := MAX_SAFE_VALUE;
@@ -121,17 +121,17 @@ package body Tax_Utils is
       end if;
       return width;
    end New_Gap;
-   
+
    --
-   -- FIXME: delete 
+   -- FIXME: delete
    --
-   
+
    procedure Uprate( ratebands : in out Rates_and_Bands; uprate_by : Rate_Type; next : Amount_Type := 0.0 ) is
-   
+
       use Rates_And_Bands_List;
-   
+
       package Gaps_List is new Ada.Containers.Vectors( Element_Type => Amount_Type, Index_Type => Positive );
-      
+
       gaps       : Gaps_List.Vector;
       num_bands  : constant Positive := Get_Num_Rates_And_Bands( ratebands );
       rb         : Rate_And_Band;
@@ -145,7 +145,7 @@ package body Tax_Utils is
          for b in 1 .. num_bands loop
             rb := Get_Rate_And_Band( ratebands, b );
             rb.band := Amount_Type( Rate_Type(rb.band) * uprate_by);
-            Set_Rate_And_Band( ratebands, rb, b );            
+            Set_Rate_And_Band( ratebands, rb, b );
          end loop;
       else
          width  := New_Gap( 0.0, Get_Rate_And_Band( ratebands, 1 ).band, uprate_by, next );
@@ -170,35 +170,35 @@ package body Tax_Utils is
          end loop;
       end if;
    end Uprate;
-   
+
    procedure Multiply_Rates( ratebands : in out Rates_and_Bands; amount : Rate_Type ) is
    use Rates_And_Bands_List;
-   
+
       procedure Multiply_One( pos : Cursor ) is
          rb : Rate_And_Band :=  element( pos );
       begin
          rb.rate := rb.rate * amount;
          Replace_Element( ratebands.v, pos, rb );
       end Multiply_One;
-      
-   begin      
+
+   begin
       Iterate( ratebands.v, Multiply_One'Access );
    end Multiply_Rates;
-   
+
    procedure Multiply_Bands( ratebands : in out Rates_and_Bands; amount : Rate_Type ) is
    use Rates_And_Bands_List;
-   
+
       procedure Multiply_One( pos : Cursor ) is
          rb : Rate_And_Band :=  element( pos );
       begin
          rb.band := rb.band * Amount_Type(amount);
          Replace_Element( ratebands.v, pos, rb );
       end Multiply_One;
-      
-   begin      
+
+   begin
       Iterate( ratebands.v, Multiply_One'Access );
    end Multiply_Bands;
-   
+
    --
    --
    procedure To_Levels
@@ -206,7 +206,7 @@ package body Tax_Utils is
    begin
       Multiply_Rates( ratebands, 1.0/100.0 );
    end To_Levels;
-   
+
    --
    --
    procedure To_Percent
@@ -214,7 +214,7 @@ package body Tax_Utils is
    begin
       Multiply_Rates( ratebands, 100.0 );
    end To_Percent;
-   
+
    --
    --
    procedure Weekly_To_Annual
@@ -222,7 +222,7 @@ package body Tax_Utils is
    begin
       Multiply_Bands( ratebands, 52.0 );
    end Weekly_To_Annual;
-   
+
    --
    --
    procedure Annual_To_Weekly
@@ -232,7 +232,7 @@ package body Tax_Utils is
    end Annual_To_Weekly;
    --
    --
- 
+
    --
    --   make a contribution of the p th element of rate
    --   when income is greater than or equal to the p th
@@ -243,16 +243,16 @@ package body Tax_Utils is
       taxable   : Amount_Type )
       return     Tax_Result is
     use Rates_And_Bands_List;
-   
+
       rb_index   : Rates_And_Bands_List.Cursor;
       rb         : Rate_And_Band;
       result : Tax_Result;
       p      : Natural := 0;
       taxable_amount : constant Amount_Type := Amount_Type'Min( taxable, Rates_And_Bands_List.element( Rates_And_Bands_List.Last( ratebands.v ) ).band );
    begin
-       
+
       rb_index := Rates_And_Bands_List.First ( ratebands.v );
-      
+
       loop
          rb := Rates_And_Bands_List.element( rb_index );
          p := p + 1;
@@ -262,11 +262,37 @@ package body Tax_Utils is
             exit;
          end if;
          rb_index := Rates_And_Bands_List.next( rb_index );
-         exit when rb_index = Rates_And_Bands_List.No_Element;   
+         exit when rb_index = Rates_And_Bands_List.No_Element;
       end loop;
       return result;
    end Stepped_Tax_Calculation;
 
+   procedure Remove_Up_To( ratebands : in out Rates_And_Bands; upto : Amount_Type ) is
+      use Rates_And_Bands_List;
+      use Ada.Containers;
+      rb_index   : Cursor := Rates_And_Bands_List.First ( ratebands.v );
+      total : Amount_Type := 0.0;
+      to_delete : Count_Type := 0;
+      remaining : Amount_Type := upto;
+      rb : Rate_And_Band;
+   begin
+      loop
+         rb := Element( rb_index );
+         total := total + rb.band;
+         exit when total >= upto;
+         to_delete := to_delete + 1;
+         remaining := remaining - rb.band;
+         Next( rb_index );
+      end loop;
+      if( to_delete > 0 )then
+         ratebands.v.Delete_First( to_delete );
+      end if;
+      if ratebands.v.Length > 1 then
+         rb := ratebands.v.First_Element;
+         rb.band := remaining;
+         ratebands.v.Replace_Element( 1, rb );
+      end if;
+   end Remove_Up_To;
    --
    --  standard banded income tax - style calculation
    --
@@ -276,7 +302,7 @@ package body Tax_Utils is
       taxable   : Amount_Type
       ) return Tax_Result
    is
-   
+
    use Rates_And_Bands_List;
       rb_index   : Rates_And_Bands_List.Cursor := Rates_And_Bands_List.First ( ratebands.v );
       remaining : Amount_Type := taxable;
@@ -293,7 +319,7 @@ package body Tax_Utils is
       loop
          exit when( (remaining <= 0.0 ) or ( rb_index = Rates_And_Bands_List.No_Element ));
          i := i + 1;
-         rb := Rates_And_Bands_List.element( rb_index );
+         rb := Rates_And_Bands_List.Element( rb_index );
          if( rb_index /= Rates_And_Bands_List.Last( ratebands.v ) ) then
             gap := rb.band - last;
          else
@@ -315,34 +341,34 @@ package body Tax_Utils is
       if(( Get_Num_Limits_And_Amounts( lms ) > pos )  and replace ) then
          Replace_Element( lms.v, pos, rb );
       else
-         Insert( Vector(lms.v), pos, rb );   
+         Insert( Vector(lms.v), pos, rb );
       end if;
    end Set_Limit_And_Amount;
-   
+
    function Get_Limit_And_Amount( lms : Limits_And_Amounts; which : Positive ) return Limit_And_Amount is
    use Limits_And_Amounts_List;
    begin
       return Element( Vector( lms.v ), which );
    end Get_Limit_And_Amount;
-   
+
    procedure Delete_Limit_And_Amount( lms : in out Limits_And_Amounts; which : Positive ) is
    use Limits_And_Amounts_List;
    begin
-      Delete( Vector( lms.v ), which );  
+      Delete( Vector( lms.v ), which );
    end Delete_Limit_And_Amount;
-   
+
    procedure Delete_All_Limits_And_Amounts( lms :  in out Limits_And_Amounts ) is
    use Limits_And_Amounts_List;
    begin
       Clear( lms.v );
    end Delete_All_Limits_And_Amounts;
-   
+
    function Get_Num_Limits_And_Amounts( lms : Limits_And_Amounts ) return Natural is
    use Limits_And_Amounts_List;
    begin
-      return Natural(Length( Vector( lms.v ) ));  
+      return Natural(Length( Vector( lms.v ) ));
    end Get_Num_Limits_And_Amounts;
-   
+
    procedure Uprate
      ( lms           : in out Limits_And_Amounts;
        uprate_by     : Rate_Type; -- enter, say, 0.12 for a 12% increase
@@ -351,10 +377,10 @@ package body Tax_Utils is
    begin
       null;
    end Uprate;
-   
+
    procedure Multiply_Limits_And_Amounts( lms : in out Limits_And_Amounts; amount : Rate_Type ) is
    use Limits_And_Amounts_List;
-   
+
       procedure Multiply_One( pos : Cursor ) is
          la : Limit_And_Amount :=  element( pos );
       begin
@@ -362,8 +388,8 @@ package body Tax_Utils is
          la.amount := la.amount * Amount_Type(amount);
          Replace_Element( lms.v, pos, la );
       end Multiply_One;
-      
-   begin      
+
+   begin
       Iterate( lms.v, Multiply_One'Access );
    end Multiply_Limits_And_Amounts;
 
@@ -372,12 +398,12 @@ package body Tax_Utils is
    begin
       Multiply_Limits_And_Amounts( lms, 1.0/52.0 );
    end Annual_To_Weekly;
-   
+
    procedure Weekly_To_Annual
      ( lms           : in out Limits_And_Amounts ) is
    begin
       Multiply_Limits_And_Amounts( lms, 52.0 );
    end Weekly_To_Annual;
 
-   
+
 end Tax_Utils;
