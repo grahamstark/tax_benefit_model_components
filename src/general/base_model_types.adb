@@ -11,7 +11,7 @@ with Ada.Strings.Bounded; use Ada.Strings.Bounded;
 with Text_Utils;
 
 package body Base_Model_Types is
-   
+
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount ) is
       use Ada.Strings.Unbounded;
       s : Unbounded_String := To_Unbounded_String( key );
@@ -22,8 +22,8 @@ package body Base_Model_Types is
          map.Include( s, value );
       end if;
    end Add_To_Map;
-   
-   
+
+
    function Standard_Ratio_Between( old_period : Periods; new_period : Periods ) return Rate is
       r : Rate;
    begin
@@ -59,7 +59,7 @@ package body Base_Model_Types is
       end case;
       return r;
    end Standard_Ratio_Between;
-   
+
    function Ratio_Between( old_period : Periods; new_period : Periods ) return Rate is
    begin
       return Rate( DAYS_PER_Period( old_period ))/Rate( DAYS_PER_Period( new_period ));
@@ -159,8 +159,8 @@ package body Base_Model_Types is
       end if;
       return Integer(r);
    end Safe_Real_To_Int;
-   
-   
+
+
    function Safe_Int_To_Real( r : Integer ) return Real is
    begin
       if (r = MISS) then
@@ -174,44 +174,44 @@ package body Base_Model_Types is
       return ((r = 0.0) or (r = MISS_R));
    end Zero_Or_Missing;
 
-  
+
    function Annual_To_Weekly( m : Amount ) return Amount is
    begin
       return m / 52.0;
    end Annual_To_Weekly;
-   
+
    function Weekly_To_Annual( m : Amount ) return Amount is
    begin
       return m * 52.0;
    end Weekly_To_Annual;
-   
+
    function Multiply( r : Rate_Array; m : Rate ) return Rate_Array is
       x : Rate_Array( r'Range );
    begin
       for i in r'Range loop
          x(i) := r(i) * m;
-      end loop;      
+      end loop;
       return x;
    end Multiply;
-   
+
    function Multiply( a : Amount_Array; m : Rate ) return Amount_Array is
       x : Amount_Array( a'Range );
    begin
       for i in a'Range loop
          x(i) := a(i) * m;
-      end loop; 
+      end loop;
       return x;
    end Multiply;
-   
+
    function Sum( r : Amount_Array ) return Amount is
       sm : Amount := 0.0;
    begin
       for i in r'Range loop
          sm := sm + r(i);
-      end loop; 
+      end loop;
       return sm;
    end Sum;
-   
+
    function To_Percent( r : Amount_Array ) return Amount_Array is
       sm  :  constant Amount := Sum( r );
       x   : Amount_Array( r'Range ) := ( Others=>0.0);
@@ -223,7 +223,7 @@ package body Base_Model_Types is
       end if;
       return x;
    end To_Percent;
- 
+
    --
    -- From http://en.wikibooks.org/wiki/Ada_Style_Guide/Portability
    -- The following examples test for (1) absolute "equality" in storage, (2) absolute "equality" in computation, (3) relative "equality" in storage, and (4) relative "equality" in computation:
@@ -231,15 +231,40 @@ package body Base_Model_Types is
    -- abs (X - Y) <= Float_Type'Base'Model_Small           -- (2)
    -- abs (X - Y) <= abs X * Float_Type'Model_Epsilon      -- (3)
    -- abs (X - Y) <= abs X * Float_Type'Base'Model_Epsilon -- (4)
-   -- 
+   --
    function Differs_By( a, b : Real; tol : Real := 0.0001 ) return Boolean is
    begin
       return Abs( a - b ) < tol;
    end Differs_By;
-   
+
    function Nearly_Equal( a, b : Real; tol : Real := 0.0001 ) return Boolean is
    begin
       return Abs( a - b ) < tol;
    end Nearly_Equal;
-    
+
+   function FN( r : Real; width : Positive; prec : Positive ) return String is
+      s : String( 1 .. width ) := ( others => ' ' );
+   begin
+	Real_IO.Put( s, r, prec, 0 );
+        return s;
+   end FN;
+
+
+   function To_String( intermediate : Auxiliary_Results; indent : String ) return String is
+   use Ada.Strings.Unbounded;
+   use Auxiliary_Results_Package;
+      s : Unbounded_String;
+
+      procedure Print_One( c : Cursor ) is
+         k   : Unbounded_String := Key( c );
+         a   : Amount := Element( c );
+      begin
+         s := s & indent & k & " = " & FN( a, 12, 3 ) & Text_Utils.LINE_BREAK;
+      end Print_One;
+
+   begin
+       intermediate.Iterate( Print_One'Access );
+       return To_String( s );
+   end To_String;
+
 end Base_Model_Types;
