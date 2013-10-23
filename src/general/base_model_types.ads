@@ -38,9 +38,22 @@ package Base_Model_Types is
    MISS_R : constant Rate  := -12345.0;
    MISS_M : constant Amount := -12345.0;
 
-   subtype Age_Range is Natural range 0 .. 150;
-   subtype Child_Age is Age_Range range 0 .. 21;
+   subtype Age_Range           is Natural range 0 .. 150;
+   subtype Child_Age           is Age_Range range 0 .. 21;
 
+   subtype Child_Count         is Natural range 0 .. 10;
+   subtype Child_Number        is Child_Count range 1 .. Child_Count'Last;
+
+   subtype Adult_Count         is Natural range 0 .. 10;
+   subtype Adult_Number        is Adult_Count range 1 .. Adult_Count'Last;
+
+   subtype Person_Count        is Natural range 0 .. (Child_Count'Last + Adult_Count'Last);
+   subtype Person_Number       is Person_Count range 1 .. Person_Count'Last;
+
+   subtype Benefit_Unit_Count  is Natural range 0 .. 12; -- Person_Count'Last;
+   subtype Benefit_Unit_Number is Benefit_Unit_Count range 1 .. Benefit_Unit_Count'Last;
+
+   subtype Hours_Count         is Natural range 0 .. (7 * 24);
    --
    --  FIXME: It'd be really nice to do a proper version of this using
    --  actual financial assumptions, if ever I could find out about them
@@ -67,9 +80,16 @@ package Base_Model_Types is
    --  some standard io packages typed for the above
    --
    package Count_IO is new Ada.Text_IO.Decimal_IO( Counter_Type );
+
    package Real_IO is new Ada.Text_IO.Float_IO( Real );
+   function To_String( r : Real; width : Positive := 12; prec : Natural := 2 ) return String;
+
    package Int_IO is new Ada.Text_IO.Integer_IO( Integer );
+   function To_String( i : Integer; width : Positive := 10 ) return String;
+
    package Big_Int_IO is new Ada.Text_IO.Integer_IO( Big_Integer );
+   function To_String( i : Big_Integer; width : Positive := 20 ) return String;
+
    package Rate_IO renames Real_IO;
    package Amount_IO renames Real_IO;
    package Boolean_IO is new Ada.Text_IO.Enumeration_IO( Enum => Boolean );

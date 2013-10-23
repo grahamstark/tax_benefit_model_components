@@ -242,12 +242,26 @@ package body Base_Model_Types is
       return Abs( a - b ) < tol;
    end Nearly_Equal;
 
-   function FN( r : Real; width : Positive; prec : Positive ) return String is
+   function To_String( r : Real; width : Positive := 12; prec : Natural := 2 ) return String is
       s : String( 1 .. width ) := ( others => ' ' );
    begin
 	Real_IO.Put( s, r, prec, 0 );
         return s;
-   end FN;
+   end To_String;
+
+   function To_String( i : Integer; width : Positive := 10 ) return String is
+      s : String( 1 .. width ) := ( others => ' ' );
+   begin
+	Int_IO.Put( s, i );
+        return s;
+   end To_String;
+
+   function To_String( i : Big_Integer; width : Positive := 20 ) return String is
+      s : String( 1 .. width ) := ( others => ' ' );
+   begin
+	Big_Int_IO.Put( s, i );
+        return s;
+   end To_String;
 
 
    function To_String( intermediate : Auxiliary_Results; indent : String ) return String is
@@ -259,7 +273,7 @@ package body Base_Model_Types is
          k   : Unbounded_String := Key( c );
          a   : Amount := Element( c );
       begin
-         s := s & indent & k & " = " & FN( a, 12, 3 ) & Text_Utils.LINE_BREAK;
+         s := s & indent & k & " = " & To_String( a, 12, 3 ) & Text_Utils.LINE_BREAK;
       end Print_One;
 
    begin
