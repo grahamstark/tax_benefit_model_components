@@ -260,7 +260,7 @@ package body T_Utils is
       if( last > 1 ) then
          if( str(last) = LF ) then last := last - 1; end if;
          -- put_line( "From_String String is |" & s & "| " );
-         Create( slices, Trim( str( s'First .. last ), Both ), ",", Single );
+         Create( slices, Trim( str( str'First .. last ), Both ), ",", Single );
          Clear( s );
          for n in 1 .. Slice_Count( slices ) loop
             Include( s, T'Value(Trim(slice( slices, n ), both)));
