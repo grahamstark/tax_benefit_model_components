@@ -54,6 +54,7 @@ package Base_Model_Types is
    subtype Benefit_Unit_Number is Benefit_Unit_Count range 1 .. Benefit_Unit_Count'Last;
 
    subtype Hours_Count         is Natural range 0 .. (7 * 24);
+
    --
    --  FIXME: It'd be really nice to do a proper version of this using
    --  actual financial assumptions, if ever I could find out about them
@@ -101,6 +102,7 @@ package Base_Model_Types is
    type Big_Integer_Array is array (Positive range <>) of Big_Integer;
    type Boolean_Array is array (Positive range <>) of Boolean;
    type Counter_Type_Array is array (Positive range <>) of Counter_Type;
+   type Age_Limit_Array is array( Positive range <> ) of Age_Range;
 
    package Amount_Package is new Ada.Containers.Vectors( Element_Type => Amount, Index_Type => Positive );
    subtype Amount_List is Amount_Package.Vector;
