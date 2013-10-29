@@ -24,11 +24,13 @@ package Base_Model_Types is
 
    type Real is new Long_Float;
 
+
    type Counter_Type is delta 0.01 digits 18;
 
    subtype Rate is Real;
    subtype Amount is Real;
    subtype Probability is Real range 0.0 .. 1.0;
+
 
    type Big_Integer is range -9223372036854775808 .. 9223372036854775807;
 
@@ -157,4 +159,15 @@ package Base_Model_Types is
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount );
    function To_String( intermediate : Auxiliary_Results; indent : String ) return String;
 
+   procedure Inc( r : in out Real; by : Real );
+   procedure Inc( r : in out Real; by : Integer );
+   procedure Inc( r : in out Counter_Type; by : Real );
+   procedure Inc( r : in out Counter_Type; by : Integer );
+   procedure Inc( r : in out Counter_Type; by : Counter_Type );
+   procedure Dec( r : in out Real; by : Real );
+   procedure Dec( r : in out Real; by : Integer );
+   procedure Dec( r : in out Counter_Type; by : Real );
+   procedure Dec( r : in out Counter_Type; by : Integer );
+   procedure Dec( r : in out Counter_Type; by : Counter_Type );
+   
 end Base_Model_Types;
