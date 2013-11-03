@@ -43,7 +43,7 @@ generic
 package Financial_Functions is
 
 
-   type Payment_Stream is private;
+   type Payment_Stream is tagged private;
    
    procedure Add_To_Payment_Stream( stream : in out Payment_Stream; period : Positive; payment : Amount );
 
