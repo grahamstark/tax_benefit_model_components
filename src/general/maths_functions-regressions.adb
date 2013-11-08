@@ -124,8 +124,8 @@ package body Maths_Functions.Regressions is
       rr.standard_error_of_regression := sqrt(rr.ess/Real( rr.df ));
       rr.covariance_matrix := (rr.ess/Real( rr.df )) * xpxi;
       for col in 1 .. nc loop
-	rr.b_standard_errors( col ) := sqrt( rr.covariance_matrix( col, col ));
-        rr.t_0( col ) := rr.b( col )/rr.b_standard_errors( col );
+         rr.b_standard_errors( col ) := sqrt( rr.covariance_matrix( col, col ));
+         rr.t_0( col ) := rr.b( col )/rr.b_standard_errors( col );
       end loop;
       Free( i );
       Free( m );
@@ -170,13 +170,13 @@ package body Maths_Functions.Regressions is
                end;
             end loop;
             -- type '0' as in Green's book, uncorrected for num regressors
-	    rr.covariance_matrix := xpxi * s0 * xpxi;
+            rr.covariance_matrix := xpxi * s0 * xpxi;
             -- type '1' correct for degrees of freedom
             if( settings.se_type = hc1 )then
                declare
-	          df_correction : constant Real := ( rnr / ( rnr - rnc ));
+                  df_correction : constant Real := ( rnr / ( rnr - rnc ));
                begin
-	          rr.covariance_matrix :=  df_correction * rr.covariance_matrix;
+                  rr.covariance_matrix :=  df_correction * rr.covariance_matrix;
                end;
             end if;
             -- there's also a type 2 and 3 I don't understand
@@ -193,15 +193,15 @@ package body Maths_Functions.Regressions is
    function FN( r : Real; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-	FIO.Put(s, r, 6, 0 );
-        return s;
+      FIO.Put(s, r, 6, 0 );
+      return s;
    end FN;
 
    function FN( i : Integer; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-	IIO.Put(s, i );
-        return s;
+      IIO.Put(s, i );
+      return s;
    end FN;
 
    function F5( i : Integer ) return String is
@@ -267,7 +267,7 @@ package body Maths_Functions.Regressions is
       s := s & LINE_BREAK;
       s := s & "Covariance Matrix " & LINE_BREAK;
       for i in rr.covariance_matrix'Range( 1 ) loop
-	 for j in rr.covariance_matrix'Range( 2 ) loop
+         for j in rr.covariance_matrix'Range( 2 ) loop
              if( i <= j )then
                 s := s & F20( rr.covariance_matrix( i, j ));
              else
@@ -293,7 +293,7 @@ package body Maths_Functions.Regressions is
    function OLS( settings : Regression_Control_Rec; x : Vector; y : Vector ) return Regression_Result is
      cx    : constant Matrix :=
         ( if( settings.add_constant )then
-	     Add_Vector_Of_Ones_To( x )
+        Add_Vector_Of_Ones_To( x )
           else
              One_D_Matrix( x ));
      n_obs : constant Positive := cx'Last( 1 );
@@ -316,7 +316,7 @@ package body Maths_Functions.Regressions is
         x              : in Matrix;
         y              : in Vector;
         gradients      : out Vector;
-	hessian        : out Matrix;
+        hessian        : out Matrix;
         log_likelihood : out Real ) is
    use Elementary_Functions;
       nr   : constant Positive := x'Last( 1 );
@@ -340,9 +340,9 @@ package body Maths_Functions.Regressions is
                   cdf / cn );
          begin
             if( yi = 1.0 )then
-    	       log_likelihood := log_likelihood + Log( cn );
+               log_likelihood := log_likelihood + Log( cn );
             else
-    	       log_likelihood := log_likelihood + Log( 1.0 - cn );
+               log_likelihood := log_likelihood + Log( 1.0 - cn );
             end if;
             gradients := gradients + lambda * xr;
             hessian := hessian + lambda*( lambda + bx ) * xx;
@@ -356,7 +356,7 @@ package body Maths_Functions.Regressions is
         x            : in Matrix;
         y            : in Vector;
         gradients    : out Vector;
-	hessian      : out Matrix;
+        hessian      : out Matrix;
         log_likelihood : out Real ) is
    use Elementary_Functions;
       nr   : constant Positive := x'Last( 1 );
@@ -370,9 +370,9 @@ package body Maths_Functions.Regressions is
             ld : constant Real := Logit( betas, xr );
             xx : constant Matrix := xr * xr;
          begin
-  	    log_likelihood := log_likelihood +
+            log_likelihood := log_likelihood +
                  y( row )*Log( ld ) +
-		( 1.0 - y( row ))*Log( 1.0 - ld );
+                 ( 1.0 - y( row ))*Log( 1.0 - ld );
             gradients := gradients + ( y( row ) - ld ) * xr;
             hessian := hessian + ( ld * (1.0 - ld) * xx );
          end;
@@ -380,11 +380,11 @@ package body Maths_Functions.Regressions is
    end Evaluate_First_Deriv_And_Hessian_Logit;
 
    procedure Local_Logit_Or_Probit(
-	settings : Regression_Control_Rec;
-        x        : Matrix;
-        y        : Vector;
-        rr       : in out Regression_Result ) is
-      use Elementary_Functions;
+      settings : Regression_Control_Rec;
+      x        : Matrix;
+      y        : Vector;
+      rr       : in out Regression_Result ) is
+   use Elementary_Functions;
       nr   : constant Positive := x'Last( 1 );
       rnr  : constant Real := Real( nr );
       nc   : constant Positive := x'Last( 2 );
@@ -415,7 +415,7 @@ package body Maths_Functions.Regressions is
    begin
       Solve( rr.b, settings.num_trials, settings.tolx, settings.tolf, rr.iterations, rr.iteration_error );
       if( rr.iteration_error = normal )then
-	 rr.covariance_matrix := Inverse( saved_hessian );
+         rr.covariance_matrix := Inverse( saved_hessian );
          for col in 1 .. nc loop
             rr.b_standard_errors( col ) := sqrt( rr.covariance_matrix( col, col ));
             rr.t_0( col ) := rr.b( col )/rr.b_standard_errors( col );
@@ -427,14 +427,14 @@ package body Maths_Functions.Regressions is
       settings : Regression_Control_Rec;
       x : Vector;
       y : Vector ) return Regression_Result is
-     cx    : constant Matrix :=
+      cx    : constant Matrix :=
         ( if( settings.add_constant )then
-	     Add_Vector_Of_Ones_To( x )
+        Add_Vector_Of_Ones_To( x )
           else
              One_D_Matrix( x ));
-     n_obs : constant Positive := cx'Last( 1 );
-     rr    : Regression_Result( n_obs, 2, logit );
-  begin
+      n_obs : constant Positive := cx'Last( 1 );
+      rr    : Regression_Result( n_obs, 2, logit );
+   begin
       Local_Logit_Or_Probit( settings, cx, y, rr );
       return rr;
    end Logit_Or_Probit;
@@ -442,14 +442,14 @@ package body Maths_Functions.Regressions is
    function Logit_Or_Probit(
       settings : Regression_Control_Rec;
       x : Matrix; y : Vector ) return Regression_Result is
-     cx    : constant Matrix :=
+      cx    : constant Matrix :=
         ( if( settings.add_constant )then
-	     Add_Vector_Of_Ones_To( x )
+        Add_Vector_Of_Ones_To( x )
           else
              x );
-     n_obs : constant Positive := cx'Last( 1 );
-     nc    : constant Positive := cx'Last( 2 );
-     rr    : Regression_Result( n_obs, nc, logit );
+      n_obs : constant Positive := cx'Last( 1 );
+      nc    : constant Positive := cx'Last( 2 );
+      rr    : Regression_Result( n_obs, nc, logit );
    begin
       Local_Logit_Or_Probit( settings, cx, y, rr );
       return rr;
