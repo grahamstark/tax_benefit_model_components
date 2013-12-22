@@ -39,7 +39,7 @@ package Monitor is
       health   : Health_Type; 
       counters : Counter_Array );
    
-   procedure Assert( m : in out Monitor_Type; b : Boolean; s : String );
+   procedure Assert( m : in out Monitor_Type; should_be_true : Boolean; error_message : String );
    function Is_Aborting( m : Monitor_Type ) return Boolean;
    procedure Set_Abort( m : in out Monitor_Type );
    

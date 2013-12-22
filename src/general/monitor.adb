@@ -1,10 +1,18 @@
 with Utils;
 with Ada.Text_IO;
+with GNATColl.Traces;
 
 package body Monitor is
    
    use Ada.Strings.Unbounded;
    use Ada.Text_IO;
+
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MONITOR" );
+
+   procedure Log( s : String ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s );
+   end Log;
    
    procedure Set( m : in out Monitor_Type; stage : Stage_Type; health : Health_Type; counters : Counter_Array ) is
    begin
@@ -14,14 +22,19 @@ package body Monitor is
       m.Notify;
    end Set;
    
-   procedure Assert( m : in out Monitor_Type; b : Boolean; s : String ) is
+   procedure Assert( m : in out Monitor_Type; should_be_true : Boolean; error_message : String ) is
    begin
-      m.is_in_error := b;
-      if( not b )then
-         m.message := To_Unbounded_String( s );
-         m.stack_trace := To_Unbounded_String( Utils.Get_Stack_Trace );
-         m.is_aborting := True;
-         m.Notify;
+      m.is_in_error := should_be_true = False;
+      if( m.is_in_error )then
+         declare
+            trace : constant String := Utils.Get_Stack_Trace;
+         begin
+            Log( "failed assertion with message " & error_message & " trace " & trace );
+            m.message := To_Unbounded_String( error_message );
+            m.stack_trace := To_Unbounded_String( trace );
+            m.is_aborting := True;
+            m.Notify;
+         end;
       end if;
    end Assert;
    
@@ -92,6 +105,7 @@ package body Monitor is
 
    function Get_Is_In_Error( m : Monitor_Type ) return Boolean is
    begin
+      Log( "Get_Is_In_Error; " & m.is_in_error'Img );
       return m.is_in_error;
    end Get_Is_In_Error;
    
