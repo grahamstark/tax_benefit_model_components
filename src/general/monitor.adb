@@ -105,7 +105,6 @@ package body Monitor is
 
    function Get_Is_In_Error( m : Monitor_Type ) return Boolean is
    begin
-      Log( "Get_Is_In_Error; " & m.is_in_error'Img );
       return m.is_in_error;
    end Get_Is_In_Error;
    
