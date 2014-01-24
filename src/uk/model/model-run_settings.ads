@@ -133,6 +133,8 @@ package Model.Run_Settings is
       message        => Null_Unbounded_String,
       read_error     => False
    );
+   
+   NULL_STATE_TYPE : State_Type renames BLANK_STATE_TYPE;
 
    BLANK_INCOMES_CONTROL_RECORD : constant Incomes_Control_Record := (  
          aggregate_incomes_to => benefit_unit_level,

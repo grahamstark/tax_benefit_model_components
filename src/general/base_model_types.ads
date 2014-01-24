@@ -155,6 +155,8 @@ package Base_Model_Types is
       "=" => "=",
       "<" => Ada.Strings.Unbounded."<" );
    subtype Auxiliary_Results is Auxiliary_Results_Package.Map;
+   
+   NULL_AUX_RESULTS : constant Auxiliary_Results := Auxiliary_Results_Package.Empty_Map;
 
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount );
    function To_String( intermediate : Auxiliary_Results; indent : String ) return String;
