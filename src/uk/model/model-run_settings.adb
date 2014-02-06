@@ -89,7 +89,7 @@ package body Model.Run_Settings is
    
    function to_string( settings : Settings_Rec ) return String is
    begin
-      return " id " & TS( settings.run_id ) &  
+      return " run_id " & TS( settings.run_id ) &  
            " year " & settings.year'Img &
            " uprate_to_current " & settings.uprate_to_current'Img &
            -- " run type " & settings.run_type'Img &

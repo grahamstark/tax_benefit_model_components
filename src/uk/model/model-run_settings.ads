@@ -43,7 +43,8 @@ package Model.Run_Settings is
    subtype Model_Monitor is Model_Monitor_Package.Monitor_Type;
    subtype Model_Observer is Model_Monitor_Package.Monitor_Observer;
    
-   type State_Type is record
+   type State_Type is tagged record
+      user_id        : Integer := Integer'First;
       username       : Unbounded_String;
       run_id         : Natural := 0;
       session_id     : Unbounded_String; -- for example, if the model is started from a web server
@@ -69,7 +70,7 @@ package Model.Run_Settings is
    -- FIXME replace with calls/overrides to Model_Monitor'Class above
    -- 
    type Run_Observer_Access is access function(
-      username          : Unbounded_String;
+      userid            : Integer;
       run_id            : Natural;
       household         : Natural;
       year              : Year_Number;
@@ -118,8 +119,8 @@ package Model.Run_Settings is
    -- chores.
    --
    BLANK_STATE_TYPE : constant State_Type := ( 
+      user_id        => Integer'First,
       run_id         => 0,
-      username       => Null_Unbounded_String,
       session_id     => Null_Unbounded_String,
       household      => 0,
       other_counter  => 0,
