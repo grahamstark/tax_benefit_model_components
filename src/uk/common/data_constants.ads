@@ -4,13 +4,21 @@
 --  $Revision: 16137 $
 --  things common between raw frs and model datasets, to cut down cross dependencies.
 --
+
+with Base_Model_Types;
+with Ada.Calendar;
+with Ada.Containers.Ordered_Sets;
+
 package Data_Constants is
 
-   FIRST_AVAILABLE_DATA_YEAR : constant := 2003;
+   use Base_Model_Types;
+   use Ada.Calendar;
    
-   LAST_AVAILABLE_DATA_YEAR : constant := 2010;
+   FIRST_AVAILABLE_DATA_YEAR : constant Year_Number := 2003;
    
-   subtype DATA_YEARS is Positive range FIRST_AVAILABLE_DATA_YEAR .. LAST_AVAILABLE_DATA_YEAR;
+   LAST_AVAILABLE_DATA_YEAR : constant Year_Number := 2010;
+   
+   subtype DATA_YEARS is Year_Number  range FIRST_AVAILABLE_DATA_YEAR .. LAST_AVAILABLE_DATA_YEAR;
    
    type DATA_YEAR_STRINGS_ARRAY is array( DATA_YEARS ) of String( 1..4 );
    
@@ -39,10 +47,6 @@ package Data_Constants is
    function Year_From_Data_String( data_string : String ) return Data_Years;
    
    subtype Sernum_String is String (1 .. 10);
-   type Sernum_Value  is range 0 .. 10_000_000_001;
-   
-   MISSING_SERNUM : constant Sernum_Value := Sernum_Value'Last;
-
    function Format( v : Sernum_Value ) return String; 
    
 end Data_Constants;

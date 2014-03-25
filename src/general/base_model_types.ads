@@ -12,6 +12,7 @@ with Ada.Text_IO;
 with Ada.Strings.Unbounded;
 with Ada.Containers.Vectors;
 with Ada.Containers.Ordered_Maps;
+with Ada.Containers.Ordered_Sets;
 
 pragma Elaborate_All (Ada.Text_IO);
 
@@ -24,6 +25,8 @@ package Base_Model_Types is
 
    type Real is new Long_Float;
 
+   type Identifier_Type is new Integer;
+   MISSING_IDENTIFIER : constant Identifier_Type := -999; 
 
    type Counter_Type is delta 0.01 digits 18;
 
@@ -31,8 +34,14 @@ package Base_Model_Types is
    subtype Amount is Real;
    subtype Probability is Real range 0.0 .. 1.0;
 
-
-   type Big_Integer is range -9223372036854775808 .. 9223372036854775807;
+   subtype Big_Integer is Long_Long_Integer;
+   
+   subtype Sernum_Value is Big_Integer range -9 .. 1_000_000_000;
+   MISSING_SERNUM : constant Sernum_Value := Sernum_Value'First;
+   package Sernum_Set_Package is new Ada.Containers.Ordered_Sets( Element_Type => Sernum_Value );
+   subtype Sernum_Set is Sernum_Set_Package.Set;   
+   NULL_SERNUM_SET : constant Sernum_Set := Sernum_Set_Package.Empty_Set;   
+   type Abs_Sernum_Array is array( Positive range <> ) of Sernum_Value;
 
    C100 : constant Counter_Type  := 100.0;
 

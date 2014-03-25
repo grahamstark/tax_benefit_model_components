@@ -17,6 +17,7 @@ package body Data_Constants is
             return y;
          end if;
       end loop;
+      return Data_Years'First;
    end Year_From_Data_String;
    
    

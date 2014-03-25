@@ -31,7 +31,6 @@ package ZA.IES is
    subtype Room_Count is Natural range 0 .. 9; 
    -- nb in data 0 .. 4 or 0..9 depending on room but we'll standardise
    
-   subtype Person_Count is Natural range 0 .. 24;
    subtype Person_Range is Person_Count range 1 .. Person_Count'Last;
 
    subtype Supported_Persons_Range is Positive range 1 .. 10; -- See: DATA FILE: SUPPORTED_PERSONS

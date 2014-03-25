@@ -22,14 +22,15 @@
 pragma License( Modified_GPL );
 
 with Ada.Text_IO;
-with ZA.Model_Types;
+with Ada.Calendar;
 
 generic 
 
 package Tabulator.Text_IO is
    
    use Ada.Text_IO;
-   use ZA.Model_Types;
+   use Ada.Calendar;
+   
 
    procedure Print( 
          f                : File_Type;
@@ -38,7 +39,7 @@ package Tabulator.Text_IO is
          table_number     : Positive;
          row_var_name     : String;
          col_var_name     : String;
-         year             : Simulation_Year_Range;
+         year             : Year_Number;
          no_change_column : Integer := -1 );
 
 end Tabulator.Text_IO;

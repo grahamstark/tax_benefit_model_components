@@ -500,7 +500,6 @@ package ZA.Model_Types is
    
    function Pretty_Print( i : Personal_Incomes_Type ) return String;
    
-   type Person_Count is new Natural range 0 .. 24;
    subtype Person_Range is Person_Count range 1 .. Person_Count'Last;
    type Family_Unit_Count is 
       new Natural range 0 .. 24;

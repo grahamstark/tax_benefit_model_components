@@ -34,7 +34,7 @@ package body Tabulator.Text_IO is
          table_number     : Positive;
          row_var_name     : String;
          col_var_name     : String;
-         year             : Simulation_Year_Range; -- FIXME make a year range somewhere
+         year             : Year_Number;
          no_change_column : Integer := -1 
       ) is
       ts : constant Table_Expression := Express_Table( 

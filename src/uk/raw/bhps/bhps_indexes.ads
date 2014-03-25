@@ -54,8 +54,6 @@ package BHPS_Indexes is
    --
    -- noe that hhid will be the main index 
    --
-   type Sernum_Value is range -9 .. 1_000_000_000; -- the variable 'gechphid' has -8s sometimes for missing values
-   MISSING_SERNUM : constant Sernum_Value := Sernum_Value'First;
 
    package X_BHPS_Index_Package is new Data_Index( Record_Components => X_Record_Components, Unique_ID_Type=>Sernum_Value );
    package BHPS_Index_Package is new Data_Index( Record_Components => Record_Components, Unique_ID_Type=>Sernum_Value );

@@ -51,7 +51,7 @@ package body ZA.Model_Dataset_Maker is
    package model_types renames ZA.Model_Types;
    
    type Person_Allocation is record 
-      tuno               : raw.Person_Count;
+      tuno               : Person_Count;
       is_adult           : Boolean := False;
       is_head_of_family  : Boolean := False;
       is_married         : Boolean := False;
@@ -97,8 +97,8 @@ package body ZA.Model_Dataset_Maker is
       return age;
    end Map_Age_Range;
    
-   type Child_Count_Array is array( raw.Person_Range ) of raw.Person_Count;
-   type Adult_Count_Array is array( 1 .. 2 ) of raw.Person_Count;
+   type Child_Count_Array is array( raw.Person_Range ) of Person_Count;
+   type Adult_Count_Array is array( 1 .. 2 ) of Person_Count;
       
    type Pers_Skel is record
       age : Age_Range;
@@ -108,9 +108,9 @@ package body ZA.Model_Dataset_Maker is
    
    type TU_Skel is record
       adults : Adult_Count_Array := (Others=>0);
-      num_adults : raw.Person_Count := 0;
+      num_adults : Person_Count := 0;
       child : Child_Count_Array := (Others=>0);
-      num_children : raw.Person_Count := 0;
+      num_children : Person_Count := 0;
       having_kids_weight : Rate := 1.0;
       age_of_carer :  Age_Range := Age_Range'Last;
       has_female_carer   : Boolean := False;
@@ -119,9 +119,9 @@ package body ZA.Model_Dataset_Maker is
    type TU_Skel_Array is array( raw.Person_Range ) of TU_Skel;
    
    type HH_Skel is record
-      num_tus            : raw.Person_Count := 0;
+      num_tus            : Person_Count := 0;
       tus                : TU_Skel_Array;
-      num_people         : raw.Person_Count := 0;
+      num_people         : Person_Count := 0;
    end record;
    
    function To_String( skel : TU_Skel ) return String is
@@ -161,8 +161,8 @@ package body ZA.Model_Dataset_Maker is
       return To_String( s );
    end To_String;
    
-   function People_Count( skel : HH_Skel ) return raw.Person_Count is
-      pc : raw.Person_Count := 0;
+   function People_Count( skel : HH_Skel ) return Person_Count is
+      pc : Person_Count := 0;
    begin
       for tuno in 1 .. skel.num_tus loop
          pc := pc + skel.tus( tuno ).num_adults;
@@ -171,7 +171,7 @@ package body ZA.Model_Dataset_Maker is
       return pc;
    end People_Count;
    
-   -- type Person_Allocation_Array is array( raw.Person_Count ) of Person_Allocation;
+   -- type Person_Allocation_Array is array( Person_Count ) of Person_Allocation;
     
    function Allocate_People_To_Families( hh : in raw.Household ) return HH_Skel is
       use raw;
@@ -464,9 +464,9 @@ package body ZA.Model_Dataset_Maker is
       return sum;
    end Make_Total_Personal_Income;
    
-   function Count_Members( mhh : in model.Household ) return model_types.Person_Count is
+   function Count_Members( mhh : in model.Household ) return Person_Count is
       use ZA.Model_Types;
-      n : model_types.Person_Count := 0;
+      n : Person_Count := 0;
    begin
       for fno in 1 .. mhh.info.num_families loop
          n := n + mhh.family( fno ).num_people;
@@ -479,7 +479,7 @@ package body ZA.Model_Dataset_Maker is
       mpeople : model.Person_Array; 
       skel    : HH_Skel ) is
       use ZA.Model_Types;
-      pno : model_types.Person_Count;
+      pno : Person_Count;
    begin
       mhh.info.num_families := Family_Unit_Count( skel.num_tus );
       families:
