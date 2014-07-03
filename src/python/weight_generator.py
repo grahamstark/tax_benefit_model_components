@@ -63,6 +63,8 @@ def solve_non_linear_equation_system( func, x, num_trials, tolx, tolf, iteration
                 if( errx <= tolx ):
                         return x;
                 iterations += 1;
+        if iterations == num_trials + 1:
+                error = ITERATIONS_EXCEEDED
         return x;
         
 def evaluate_function_and_hessian( data, lambdas, which_function, initial_weights, target_populations, ru, rl ):

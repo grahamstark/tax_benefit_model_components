@@ -509,8 +509,20 @@ package body Maths_Functions is
          error := iterations_exceeded;
       end if;
    end Solve_Non_Linear_Equation_System;
+   
+   function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String is
+      s : String( 1 .. width ) := ( others => ' ' );
+   begin
+      begin
+         FIO.Put( s, r, prec, 0 );
+      exception
+         when others => -- Layout_Error all that's possible?
+            -- fall back on one with an exponent; should (??) always work
+            return Real'Image( r );
+      end;     
+      return s;
+   end To_String;
 
 begin
    Ada.Numerics.Float_Random.Reset( zero_one_random_generator );
-   
 end Maths_Functions;

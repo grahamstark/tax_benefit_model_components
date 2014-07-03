@@ -193,14 +193,14 @@ package body Maths_Functions.Regressions is
    function FN( r : Real; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-      FIO.Put(s, r, 6, 0 );
+      FIO.Put( s, r, 6, 0 );
       return s;
    end FN;
 
    function FN( i : Integer; n : Positive ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-      IIO.Put(s, i );
+      IIO.Put( s, i );
       return s;
    end FN;
 

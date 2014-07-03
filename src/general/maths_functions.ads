@@ -76,6 +76,8 @@ package Maths_Functions is
 
    package DIO is new Ada.Direct_IO( Real );
    package FIO is new Ada.Text_IO.Float_IO( Real );
+   
+   function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String;
 
   generic 
     with procedure Evaluate(  

@@ -9,13 +9,14 @@ with Ada.Strings.Unbounded;
 
 package body BHPS_Indexes is
 
+   DEBUG : constant Boolean := True;
 
-   function Read_Sernum ( file : ada.text_io.FILE_TYPE ) return Sernum_String is
-          serstr : Sernum_String := ( others => ' ');
-          ch     : character;
+   function Read_Sernum ( file : Ada.Text_IO.File_Type ) return Sernum_String is
+      serstr : Sernum_String := ( others => ' ');
+      ch     : character;
    begin
       for p in Sernum_String'Range loop
-         Ada.Text_IO.Get ( file, ch );
+         Ada.Text_IO.Get( file, ch );
          if ( ch = ' ') then
             exit;
          end if;
@@ -27,8 +28,16 @@ package body BHPS_Indexes is
    procedure Restore_All_Indexes( directory : String; indexes : out BHPS_Index_Array ) is
    begin
       for wave in Waves_With_Data loop
-         BHPS_Index_Package.Restore_Complete_Index( 
-            directory & wave & "/index.bin", indexes( wave )); 
+         declare
+            index_name : constant String := directory & wave & "/index.bin";
+         begin
+            BHPS_Index_Package.Restore_Complete_Index( 
+               index_name, indexes( wave )); 
+            if( debug )then
+               BHPS_Index_Package.Dump_Index( 
+                  index_name, "/tmp/index_dump_wave_" & wave & ".txt" );
+            end if;
+         end;
       end loop;
    end Restore_All_Indexes;
 
