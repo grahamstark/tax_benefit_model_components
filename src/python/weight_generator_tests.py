@@ -159,8 +159,8 @@ def test_calmar():
                        r_u,
                        r_l );   
                 # print "new weights "; print out[2]
-                # print "error %d " % out[0]
-                # print "iterations %d " % out[1]
+                print "error %d " % out[0]
+                print "iterations %d " % out[1]
                 out_array.append( out[2] )
         print "TABLE 3"                
         print "N,BASE WEIGHT,D&S TYPE A,D&S TYPE B,CHI (3.0/0.2),CHI (1.3/0.8),CHI (1.25/0.8),CHI,D&S CONSTRAINED (4/0.2),D&S CONSTRAINED (3/0.2),D&S CONSTRAINED (2/0.2)" 

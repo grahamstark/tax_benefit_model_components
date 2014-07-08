@@ -14,8 +14,8 @@ package body Text_Utils is
    use Ada.Characters.Handling;
    package st    renames Ada.Strings;
   
-   NASTY_REPLACE : constant Character_Mapping := To_Mapping( " ,&+()[]!:#.", 
-                                                    "____________" );
+   NASTY_REPLACE : constant Character_Mapping := To_Mapping( " ,&+()[]!:#.-", 
+                                                    "_____________" );
                                                     
    INVALID_ID_REPLACE : constant Character_Mapping := To_Mapping( "[]", "XY" );
    INVALID_ID_INSERT  : constant Character_Mapping := To_Mapping( "XY", "[]" );

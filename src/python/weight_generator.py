@@ -24,7 +24,7 @@ INTERATIONS_EXCEEDED   = 2
 
 DEBUG                  = False
 
-def solve_non_linear_equation_system( func, x, num_trials, tolx, tolf, iterations, error ):
+def solve_non_linear_equation_system( func, x, num_trials, tolx, tolf ):
         """              
               func       :
               x          : in out Vector;
@@ -33,6 +33,7 @@ def solve_non_linear_equation_system( func, x, num_trials, tolx, tolf, iteration
               tolf       : Real;
               iterations : out Natural;
               error      : out Eval_Error_Type 
+              @return [x vector, num_iterations, error_condition ]
         """
         if DEBUG:
                 print "solve_non_linear_equation_system; num_trials %d" % num_trials
@@ -55,17 +56,17 @@ def solve_non_linear_equation_system( func, x, num_trials, tolx, tolf, iteration
                 for i in x_range:
                         errf = errf + math.fabs( beta[ i ])   
                 if( errf <= tolf ):
-                        return x
+                        break;
                 deltas = linalg.solve( hessian, beta )
                 x += deltas;
                 for i in x_range :
                         errx = errx + math.fabs( deltas[ i ])
                 if( errx <= tolx ):
-                        return x;
+                        break
                 iterations += 1;
         if iterations == num_trials + 1:
                 error = ITERATIONS_EXCEEDED
-        return x;
+        return [ x, error, iterations ];
         
 def evaluate_function_and_hessian( data, lambdas, which_function, initial_weights, target_populations, ru, rl ):
         """
@@ -182,7 +183,10 @@ def do_reweighting( data, which_function, initial_weights, target_populations, t
                 print "target populations "; print target_populations;
                 print "intial_weights ";print initial_weights;
                 print "data "; print data;
-        lambdas = solve_non_linear_equation_system( local_evaluate, lambdas, max_iterations, tolx, tolf, iterations, error )
+        returns = solve_non_linear_equation_system( local_evaluate, lambdas, max_iterations, tolx, tolf )
+        lambdas = returns[0]
+        error = returns[1]
+        iterations = returns[2]
         if DEBUG:
                 print "lambdas "; print lambdas
         new_weights = np.zeros( n_rows )
