@@ -107,8 +107,10 @@ package body Utils is
       use Ada.Text_IO;
       use Ada.Exceptions;
    begin
-      begin   
-         Ada.Directories.Create_Path( path );
+      begin 
+         if not Ada.Directories.Exists( path ) then
+            Ada.Directories.Create_Path( path );
+         end if;
       exception 
             when Error: Use_Error => Put_Line( "Make_Directory_Path: making " & path & " Exception Thrown " & Exception_Information(Error) );
             when Error: Others => Raise_Exception( Dir_Exception'Identity, "Make_Directory_Path for " & path & " caused " & Exception_Information(Error) ); 
@@ -204,6 +206,16 @@ package body Utils is
       Set_Directory( LAST_DIR );
       
    end Zip_Directory;
+   
+   procedure Delete_File_If_Exists( name : String ) is
+      use Ada.Directories;
+   begin
+      if Exists( name )then
+         Delete_File( name );
+      end if;
+   end Delete_File_If_Exists;
+   
+
 
 begin
    Random_Positive.Reset( Generator );

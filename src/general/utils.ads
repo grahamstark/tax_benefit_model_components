@@ -49,6 +49,8 @@ package Utils is
    --
    procedure Make_Directory_Path( path : String );
    
+   procedure Delete_File_If_Exists( name : String );
+   
    --
    -- Zip the entire contents of a directory. Uses code from
    -- 
