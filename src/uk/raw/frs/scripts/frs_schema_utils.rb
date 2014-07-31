@@ -2,6 +2,7 @@
 require 'dbi'
 require 'csv'
 require 'convert_libs'
+
 INDENT = '   '
 
 # note the last 2 are actually SQL keywords
@@ -149,15 +150,23 @@ end
 #
 #
 def makeGretlDummies( var )
-        // var = table.variables[ varName ];
         enumsmts = []
         var.enums.each{
                 |enum|
-                dummyName = "#{var.name}_#{enum.name}"
+                enumName = censor( enum.fmtvalue )
+                dummyName = "#{var.name}_#{enumName}"
                 enumstmts << "genr #{dummyName} = #{var.name} == #{enum.frsvalue};"
-                enumstmts << "setinfo #{dummyName} --description=\"#{enum.fmtvalue} \";"
-                
+                enumstmts << "setinfo #{dummyName} --description=\"#{enum.fmtvalue}\";"
         }
+        return enumstmts
+end
+
+def makeGretlDummyList( table, varnames )
+        enumsmts = []
+        varnames.each{
+                |varname|
+                enumstmts << makeGretlDummies( tables.variables[varname] )        
+        }            
         return enumstmts
 end
 
