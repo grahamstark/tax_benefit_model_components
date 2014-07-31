@@ -1,7 +1,5 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---  Simple Map thing for basic language lookups                             --
---                                                                          --
 -- This is free software;  you can  redistribute it  and/or modify it under --
 -- terms of the  GNU General Public License as published  by the Free Soft- --
 -- ware  Foundation;  either version 2,  or (at your option) any later ver- --
@@ -12,8 +10,6 @@
 -- Public License  distributed with this;  see file COPYING.  If not, write --
 -- to  the  Free Software Foundation,  51  Franklin  Street,  Fifth  Floor, --
 -- Boston, MA 02110-1301, USA.                                              --
---
--- Not Used?? Ada one is good enough
 --
 pragma License( Modified_GPL );
 

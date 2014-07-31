@@ -1,14 +1,18 @@
 #!/usr/bin/ruby
 require 'dbi'
 require 'csv'
-require 'frs_schema_utils'
+require_relative 'frs_schema_utils'
 
 
 connection = getConnection()
 
-filename = "/mnt/data/frs/0809/mrdoc/excel/frs_2008_09_hierarchical_documentation.csv"
-yearStr = '0809'
-parseOneYear( connection, filename, yearStr, '/mnt/data/frs/0809/tab/' )
+filename = "/mnt/data/frs/1112/mrdoc/excel/frs_2011_12_hierarchical_documentation.csv"
+yearStr = '1112'
+parseOneYear( connection, filename, yearStr, '/mnt/data/frs/1112/tab/' )
+
+# filename = "/mnt/data/frs/0809/mrdoc/excel/frs_2008_09_hierarchical_documentation.csv"
+# yearStr = '0809'
+# parseOneYear( connection, filename, yearStr, '/mnt/data/frs/0809/tab/' )
 
 # filename = "/mnt/data/frs/1011/mrdoc/excel/frs_2010_11_hierarchical_documentation.csv"
 # yearStr = '1011'

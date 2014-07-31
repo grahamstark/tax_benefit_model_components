@@ -2,7 +2,7 @@ require 'rexml/document'
 require 'rexml/element'
 require 'dbi'
 require 'csv'
-require 'frs_schema_utils'
+require_relative 'frs_schema_utils'
 
 def makePKCol( name )
         column = REXML::Element.new( "column" )
@@ -102,7 +102,7 @@ def createMillTable( tableData )
                 column.add_attribute( 'type', sqlVar );
                 column.add_attribute( 'name', vname.downcase() )
                 tableElem << column
-                if( vcu == 'BENUNIT' and ( tableName != 'benunit' and tableName != 'hbai' ) then
+                if( vcu == 'BENUNIT' ) and ( tableName != 'benunit' ) and ( tableName != 'hbai' ) then
                         hasBUFK = true
                 end
                 if( vcu == 'PERSON' and 

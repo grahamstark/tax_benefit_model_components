@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 require 'dbi'
 require 'csv'
-
+require 'convert_libs'
 INDENT = '   '
 
 # note the last 2 are actually SQL keywords
@@ -85,8 +85,6 @@ READ_FOOTER_TEMPLATE =
 
 '
 
-
-
 #
 # Make an Ada record to represent all fields for all years merged, with sernum and hhseq at the start. ,
 # recname - string: Adult,Child, etc.
@@ -146,6 +144,23 @@ def makePostgresLoadStatement( dataPath, recordName, table )
         return "copy #{tableName}( #{variables} ) from '#{tab_file_name}' with CSV header;\n"
 end
 
+#
+# 
+#
+#
+def makeGretlDummies( var )
+        // var = table.variables[ varName ];
+        enumsmts = []
+        var.enums.each{
+                |enum|
+                dummyName = "#{var.name}_#{enum.name}"
+                enumstmts << "genr #{dummyName} = #{var.name} == #{enum.frsvalue};"
+                enumstmts << "setinfo #{dummyName} --description=\"#{enum.fmtvalue} \";"
+                
+        }
+        return enumstmts
+end
+
 
 def createPrintFunction( record_name, table )
         procedure = ''
@@ -186,12 +201,16 @@ def parseDataTopLine( datapath, tableName )
         filename = datapath+tableName.downcase()+".tab"
         print "opening  #{filename}\n"
         begin
-                file = File.open( filename, 'rb' )
-                
-                CSV::Reader.parse( file, "\t" ){ 
-                               |elements|
-                               return elements;
+                # file = File.open( filename, 'rb' )
+                CSV.foreach( filename, { :col_sep=>"\t" } ){
+                        |elements|
+                        
+                        return elements
                 }
+                # CSV::Reader.parse( file, "\t" ){ 
+                               # |elements|
+                               # return elements;
+                # }
         rescue
                 print "failed to open #{filename}"
         end
@@ -278,7 +297,7 @@ def parseHBAI( connection, filename, yearStr, datapath )
 end
 
 def parseOneYear( connection, filename , yearStr, datapath )
-        file = File.open( filename, 'rb' )
+        # file = File.open( filename, 'rb' )
         p = 0
         table = ''
         variable = ''
@@ -310,12 +329,20 @@ def parseOneYear( connection, filename , yearStr, datapath )
         query = connection.prepare("delete FROM enum where year='#{yearStr}'")
         query.execute()
         tableKeys = Array.new()
+        puts "cleared db of #{yearStr}"
+        puts "opening #{filename}"
         
-        
-        CSV::Reader.parse( file, "," ){ ##"\t" ){
-              |elements|
-               p += 1
-               if( p > 1 ) then
+        CSV.foreach( filename, {:col_sep=>","} ){ #, "w"," ){ ##"\t" ){
+                |elements|
+                # extra column FRS value in spreadsheets from 11/12 - just delete it
+                if( yearStr.to_i() >= 1112 )then # FIXME 
+                        elements.delete_at( 4 )
+                end
+                puts "elements |"
+                p elements
+                puts "|\n";
+                p += 1
+                if( p > 1 ) then
                        if( not elements[0].nil? )then
                                 table = elements[0]
                                 variable = elements[1]
@@ -323,9 +350,11 @@ def parseOneYear( connection, filename , yearStr, datapath )
                                 begin
                                         insert_tables_stmt.execute( yearStr, table );
                                         tableKeys = parseDataTopLine( datapath, table )
-                                        print( "table keys " ); p tableKeys;print "\n"                                
+                                        print( "table keys " ); 
+                                        p tableKeys;
+                                        print "\n"                                
                                 rescue
-                                        print "table: that was a duplicate"
+                                        print "table: that was a duplicate\n"
                                 end
                                 posInTable = getPosInTable( tableKeys, variable )
                                 puts "elements[13] |#{elements[13]}|\n"

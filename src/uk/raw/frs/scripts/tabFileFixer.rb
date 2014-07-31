@@ -1,6 +1,6 @@
 require 'dbi'
-require 'csv'
-require 'frs_schema_utils'
+# require 'csv'
+require_relative 'frs_schema_utils'
 
 def remakeLines( inf, outf, year )
         p = 0
