@@ -1,13 +1,20 @@
 #!/usr/bin/ruby
 require 'dbi'
 require 'csv'
-require 'frs_schema_utils'
+require_relative 'frs_schema_utils'
 
 
 connection  = getConnection()
-tableName = ARGV[1]
-year = ARGV[2]
-variableNames = ARGV[3:]
+tableName = ARGV[0]
+year = ARGV[1]
+variableNames = ARGV[ 2 .. ARGV.length ]
 table = loadTable( connection, tableName, year )
+enums = makeGretlDummyList( table, variableNames )
 
-connection.close
+enums.each{
+        |enum|
+        puts "#{enum}\n";
+
+}
+
+# connection.close

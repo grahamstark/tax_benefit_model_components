@@ -150,24 +150,31 @@ end
 #
 #
 def makeGretlDummies( var )
-        enumsmts = []
+        enumStmts = []
         var.enums.each{
                 |enum|
+                p enum
                 enumName = censor( enum.fmtvalue )
-                dummyName = "#{var.name}_#{enumName}"
-                enumstmts << "genr #{dummyName} = #{var.name} == #{enum.frsvalue};"
-                enumstmts << "setinfo #{dummyName} --description=\"#{enum.fmtvalue}\";"
+                vname = var.name.downcase
+                dummyName = "#{vname}_#{enumName}"
+                if( dummyName.length > 32 )then
+                        dummyName = "#{vname}_#{enum.frsvalue}"                
+                end
+                enumStmts << "genr #{dummyName} = #{vname} == #{enum.frsvalue}"
+                enumStmts << "setinfo #{dummyName} --description=\"Dummy Variable: #{var.label} : #{enum.fmtvalue}\""
         }
-        return enumstmts
+        return enumStmts
 end
 
 def makeGretlDummyList( table, varnames )
-        enumsmts = []
+        enumStmts = []
+        p table
         varnames.each{
                 |varname|
-                enumstmts << makeGretlDummies( tables.variables[varname] )        
+                puts "on varname #{varname}\n"
+                enumStmts.concat( makeGretlDummies( table.variables[varname] ))        
         }            
-        return enumstmts
+        return enumStmts
 end
 
 
@@ -343,9 +350,9 @@ def parseOneYear( connection, filename , yearStr, datapath )
         
         CSV.foreach( filename, {:col_sep=>","} ){ #, "w"," ){ ##"\t" ){
                 |elements|
-                # extra column FRS value in spreadsheets from 11/12 - just delete it
+                # extra column EU-SLIC at pos 10 (from 0) in spreadsheets from 11/12 - just delete it
                 if( yearStr.to_i() >= 1112 )then # FIXME 
-                        elements.delete_at( 4 )
+                        elements.delete_at( 10 )
                 end
                 puts "elements |"
                 p elements
@@ -512,7 +519,7 @@ def loadTable( connection, tableName, year = nil )
                 ers.fetch_hash{
                         |eres|
                         enum = Enum.new
-                        enum.frsvalue = eres['fssvalue']
+                        enum.frsvalue = eres['frsvalue']
                         enum.fmtvalue = eres['fmtvalue']
                         var.enums << enum
                 }
