@@ -75,7 +75,7 @@ package body Maths_Functions is
    begin
       for i in m'Range( 1 ) loop
          for j in m'Range( 2 ) loop
-            s := s & Real'Image( m( i, j )) & " ";
+            s := s & To_String( m( i, j )) & " ";
          end loop;
          s := s & LINE_BREAK;
       end loop;
@@ -88,7 +88,7 @@ package body Maths_Functions is
       s : Unbounded_String;
    begin
       for i in v'Range loop
-         s := s & Real'Image( v( i )) & " ";
+         s := s & To_String( v( i )) & " ";
          s := s & LINE_BREAK;
       end loop;
       return TS( s );

@@ -24,9 +24,8 @@ package Base_Model_Types is
    --
 
    type Real is new Long_Float;
-
    type Identifier_Type is new Integer;
-   MISSING_IDENTIFIER : constant Identifier_Type := -999; 
+   MISSING_IDENTIFIER : constant Identifier_Type := -999;
 
    type Counter_Type is delta 0.01 digits 18;
 
@@ -35,12 +34,12 @@ package Base_Model_Types is
    subtype Probability is Real range 0.0 .. 1.0;
 
    subtype Big_Integer is Long_Long_Integer;
-   
+
    subtype Sernum_Value is Big_Integer range -9 .. 1_000_000_000;
    MISSING_SERNUM : constant Sernum_Value := Sernum_Value'First;
    package Sernum_Set_Package is new Ada.Containers.Ordered_Sets( Element_Type => Sernum_Value );
-   subtype Sernum_Set is Sernum_Set_Package.Set;   
-   NULL_SERNUM_SET : constant Sernum_Set := Sernum_Set_Package.Empty_Set;   
+   subtype Sernum_Set is Sernum_Set_Package.Set;
+   NULL_SERNUM_SET : constant Sernum_Set := Sernum_Set_Package.Empty_Set;
    type Abs_Sernum_Array is array( Positive range <> ) of Sernum_Value;
 
    C100 : constant Counter_Type  := 100.0;
@@ -164,7 +163,7 @@ package Base_Model_Types is
       "=" => "=",
       "<" => Ada.Strings.Unbounded."<" );
    subtype Auxiliary_Results is Auxiliary_Results_Package.Map;
-   
+
    NULL_AUX_RESULTS : constant Auxiliary_Results := Auxiliary_Results_Package.Empty_Map;
 
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount );
@@ -180,5 +179,5 @@ package Base_Model_Types is
    procedure Dec( r : in out Counter_Type; by : Real );
    procedure Dec( r : in out Counter_Type; by : Integer );
    procedure Dec( r : in out Counter_Type; by : Counter_Type );
-   
+
 end Base_Model_Types;
