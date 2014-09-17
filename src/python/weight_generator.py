@@ -89,13 +89,15 @@ def evaluate_function_and_hessian( data, lambdas, which_function, initial_weight
         hessian = np.zeros(( n_cols, n_cols ))
         for k in range( 0, n_rows ):
                 r = data[ k ]
+                u = np.dot( r, lambdas )
                 if DEBUG:
                         print "r = "; print r
-                u = np.dot( r, lambdas )
                 if which_function == CHI_SQUARE:
+                        # print "#1"
                         d_g_m1 = 1.0
-                        g_m1 = 1.0 + u
+                        g_m1   = 1.0 + u
                 elif which_function == CONSTRAINED_CHI_SQUARE:
+                        # print "#2"
                         if( u < ( rl - 1.0 )):
                                 g_m1 = rl;
                                 d_g_m1 = 0.0;
@@ -115,6 +117,8 @@ def evaluate_function_and_hessian( data, lambdas, which_function, initial_weight
                         alpha = ( ru - rl ) / (( 1.0 - rl )*( ru - 1.0 ));  
                         g_m1 = rl*(ru-1.0)+ru*(1.0-rl)*math.exp( alpha*u )/((ru-1.0)+(1.0-rl)*(math.exp( alpha*u )));
                         d_g_m1 = g_m1 * ( ru - g_m1 ) * ((( 1.0 - rl )*alpha*math.exp( alpha*u )) / (( ru - 1.0 ) + (( 1.0 - rl ) * math.exp( alpha*u ))));
+                else:
+                        print "which function %d not recognised" % which_function
                 if DEBUG:
                         print " u %.2f d_g_m1 %.2f g_m1 %.2f " % ( u, d_g_m1, g_m1 )                         
                 for i in range( 0, n_cols ):

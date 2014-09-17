@@ -1,14 +1,14 @@
 with "aunit";
 with "aws";
 with "gnatcoll";
-with "strings_edit";
+-- with "strings_edit";
 
 project tb_2012 is
    type Op_Type is ( "std", "asis", "optimised", "none" );
    op : Op_Type := external( "OP", "std" );
    for Languages use( "Ada" );
    for Source_Dirs use( "src/**" );
-   for Ignore_Source_Sub_Dirs use (".svn", "tests" );
+   for Ignore_Source_Sub_Dirs use (".svn", "tests", "src/uk/raw/frs/scripts/database" );
    for Object_Dir use "bin/";
    for Main use(
         "convert_raw_frss.adb", 

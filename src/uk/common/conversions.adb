@@ -9,23 +9,23 @@ with Ada.Strings.Unbounded;
 with GNAT.Regpat;
 
 package body Conversions is
-   
+
    Missing_R : Rate    := MISS_R;
    Missing_I : Integer := MISS;
    FLATTEN_MISSING_INTS : Boolean := False;
-   
+
    procedure Set_Assigned_Missing_Values( missr : Rate; missi : Integer ) is
    begin
       Missing_R := Missr;
       Missing_I := Missi;
-   end  Set_Assigned_Missing_Values; 
-      
+   end  Set_Assigned_Missing_Values;
+
    function Get( slices : Slice_Set; which : Natural ) return String is
       wn : Slice_Number := Slice_Number( which );
    begin
       return Slice( slices, wn );
    end Get;
-    
+
    function Convert_Index( slices : Slice_Set; which : Natural ) return Serial_Num is
       use Ada.Strings.Fixed;
       use Ada.Strings;
@@ -44,8 +44,8 @@ package body Conversions is
       wn : Slice_Number := Slice_Number( which );
       r  : Real;
    begin
-      if( Slice( slices, wn)'Length = 0 ) or ( Slice( slices, wn) = " " )then 
-         return MISS_R; 
+      if( Slice( slices, wn)'Length = 0 ) or ( Slice( slices, wn) = " " )then
+         return MISS_R;
       end if;
       declare
          s  : String := Trim( Slice( slices , wn ), Both );
@@ -54,7 +54,7 @@ package body Conversions is
       begin
          if( s( sl ) = '-' )then -- in SPSS files, negatives are written "1012-", leaving -9, etc for missing value indicatore
             r := -1.0 * Lenient_Convert( s( sf .. sl-1 ));
-         else  
+         else
             r := Lenient_Convert( s );
          end if;
       end;
@@ -63,7 +63,7 @@ package body Conversions is
       end loop;
       return r;
    end Convert;
-   
+
    function Convert( slices : Slice_Set; which : Natural; missing : Null_Or_Missing_Indicators  ) return Rate is
       rms : R_Null_Or_Missing_Indicators( missing'First .. missing'Last );
    begin
@@ -72,17 +72,17 @@ package body Conversions is
       end loop;
       return Convert( slices, which, rms );
    end Convert;
-   
+
    function Convert( slices : Slice_Set; which : Natural ) return Rate is
       mvs : constant R_Null_Or_Missing_Indicators := ( 1 .. 0 => -1.0 );
    begin
       return Convert( slices, which, mvs );
    end Convert;
-   
+
    function Convert( slices : Slice_Set; which : Natural ) return Sernum_Value is
       use Ada.Strings.Fixed;
       use Ada.Strings;
-      wn : Slice_Number := Slice_Number( which ); 
+      wn : Slice_Number := Slice_Number( which );
    begin
       return Sernum_Value'Value( Trim(Slice( slices , wn ), Both ));
    end Convert;
@@ -92,14 +92,14 @@ package body Conversions is
       use Ada.Strings.Fixed;
       use Ada.Strings;
       i  : Integer;
-      wn : Slice_Number := Slice_Number( which ); 
+      wn : Slice_Number := Slice_Number( which );
    begin
-      if( Slice( slices, wn )'Length = 0 ) or ( Slice( slices, wn) = " " )then 
-         return MISS; 
+      if( Slice( slices, wn )'Length = 0 ) or ( Slice( slices, wn) = " " )then
+         return MISS;
       end if;
-      declare 
+      declare
          NEG_VAL_RE : constant Pattern_Matcher := Compile( "([\d]+)\-+" ); -- negs written xx- in bhps tab files
-         JUNK_VAL_RE : constant Pattern_Matcher := Compile( "^(-+)$" ); -- some like '---' which I treat as missing 
+         JUNK_VAL_RE : constant Pattern_Matcher := Compile( "^(-+)$" ); -- some like '---' which I treat as missing
          s  : String := Trim( Slice( slices , wn ), Both );
          sf : constant Integer := s'First;
          sl : constant Integer := s'Last;
@@ -117,7 +117,7 @@ package body Conversions is
             return Missing_I;
          end if;
          i := Integer'Value( s );
-         -- NOTE: I've decided to leave missing/non response values in for int cases 
+         -- NOTE: I've decided to leave missing/non response values in for int cases
          if( FLATTEN_MISSING_INTS )then
             for j in missing'Range loop
                if( i = missing( j )) then return Missing_I; end if;
@@ -126,12 +126,12 @@ package body Conversions is
       end;
       return i;
    end Convert;
-   
+
    function Convert( slices : Slice_Set; which : Natural ) return Integer is
    begin
       return Convert( slices=>slices, which=>which, missing=>( 0 .. -1 => -1 ));
    end Convert;
-   
+
    function Convert( s : String ) return Ada.Calendar.Time is
       use Ada.Calendar;
       use Ada.Text_IO;
@@ -143,41 +143,53 @@ package body Conversions is
    begin
       Create( subset, s, "/", Single );
       month := Convert( subset, 1 );
-      day := Convert( subset, 2 );      
+      day := Convert( subset, 2 );
       year := Convert( subset, 3 );
       put_line( "year " & year'Img );
-      return Time_Of( 
+      return Time_Of(
                Year_Number( year ),
                Month_Number( month ),
                Day_Number( day ),
                secs );
 
    end Convert;
-   
-   
+
+
    function Convert( slices : Slice_Set; which : Natural ) return Ada.Calendar.Time is
    begin
       return Convert( Slice( slices , Slice_Number(which) ) );
    end Convert;
 
-   
+   use Ada.Characters.Latin_1;
+
+   TDA_DELIMS : constant String := HT & LF & CR;
+
    function TDA_Tokenize( s : String ) return Slice_Set is
-      use Ada.Characters.Latin_1;
+   begin
+      return Tokenize( s, TDA_Delims );
+   end TDA_Tokenize;
+
+   function TDA_Tokenize( s : Unbounded_String ) return Slice_Set is
+   begin
+      return Tokenize( s, TDA_DELIMS );
+   end TDA_Tokenize;
+
+   function Tokenize( s : String; delims : String ) return Slice_Set is
       use Ada.Strings.Fixed;
       use Ada.Strings;
-      
-      DELIMS : constant String := HT & LF & CR;
+
       slices : Slice_Set;
       last   : Natural := s'Last;
    begin
       if( s(last) = LF ) then last := last - 1; end if;
-      Create( slices, Trim( s( s'First .. last ), Both ), DELIMS, Single );
+      Create( slices, Trim( s( s'First .. last ), Both ), delims, Single );
       return slices;
-   end TDA_Tokenize;
-   
-   function TDA_Tokenize( s : Unbounded_String ) return Slice_Set is
+   end Tokenize;
+
+   function Tokenize( s : Unbounded_String; delims : String ) return Slice_Set is
    begin
-      return TDA_Tokenize( To_String( s ));
-   end TDA_Tokenize;
+      return Tokenize( To_String( s ), delims );
+   end Tokenize;
+
 
 end Conversions;

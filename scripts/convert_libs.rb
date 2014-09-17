@@ -1,6 +1,9 @@
 #
 #
 #
+
+require 'utils'
+
 INDENT = '   '
 
 ADA_KEYWORD_TRANSLATIONS = { 'ACCESS'=>'X_ACCESS', 'OUT'=>'XXOUT', "MONTH_"=>"MONTH", 
@@ -95,50 +98,6 @@ class EnumeratedType
                 bodyfile.write( "    end Convert_#{@type};\n" );
         end
         
-end
-
-def censor( s )
-        s = s.
-              strip.
-              downcase.        
-              gsub( /[=\:\)\('"’;:\.\?]/,'' ).
-              gsub( /[ \-,]/, '_' ).
-              gsub( /\&/,'_and_').
-              gsub( /\+/,'_plus_').
-              gsub( /\//,'_or_' ).
-              gsub( /__/,'_').
-              gsub( /__/,'_').
-              gsub( /__/,'_').
-              gsub( /\%/,'pct').
-              gsub( /_$/, '' ).
-              gsub( />=/, '_ge_' ).
-              gsub( /1st/, 'first' ).
-              gsub( /2nd/, 'second' ).
-              gsub( /3rd/, 'third' ).
-              gsub( /4th/, 'fourth' ).
-              gsub( /5th/, 'fifth' ).
-              gsub( /6th/, 'sixth' ).
-              gsub( /7th/, 'seventh' ).
-              gsub( /8th/, 'eigth' ).
-              gsub( /9th/, 'nineth' ).
-              gsub( /10th/, 'tenth' ).
-              gsub( /11th/, 'eleventh' ).
-              gsub( /12th/, 'twelfth' ).
-              gsub( /=</, '_le_' ).
-              gsub( />/, 'gt_' ).
-              gsub( /</, 'gt_' ).
-              gsub( /£/, 'GBP' ).
-              gsub( /Å�/, 'GBP' ).
-              gsub( /Ã´/, 'o' ).
-              gsub( /Ã©/, 'e' ).
-              gsub( /^_/, '' ).
-              gsub( /^_/, '' ).
-              gsub( /_$/, '' ).
-              gsub( /_$/, '' );
-      if( s =~ /^[\d].*/ )then
-              s = "v_#{s}" # leading digit
-      end
-      return s
 end
 
 

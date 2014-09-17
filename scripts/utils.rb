@@ -48,6 +48,54 @@ def nameToJavaVar( name )
     name;
 end
 
+def censor( s )
+        s = s.
+              strip.
+              downcase.        
+              gsub( /[ \-,\t]/, '_' ).
+              gsub( /[=\:\)\(']/, '').
+              gsub( /[";:\.\?]/, '' ).
+              gsub( /\&/,'_and_').
+              gsub( /\+/,'_plus_').
+              gsub( /\//,'_or_' ).
+              gsub( /__/,'_').
+              gsub( /__/,'_').
+              gsub( /__/,'_').
+              gsub( /\%/,'pct').
+              gsub( /_$/, '' ).
+              gsub( />=/, '_ge_' ).
+              gsub( /1st/, 'first' ).
+              gsub( /2nd/, 'second' ).
+              gsub( /3rd/, 'third' ).
+              gsub( /4th/, 'fourth' ).
+              gsub( /5th/, 'fifth' ).
+              gsub( /6th/, 'sixth' ).
+              gsub( /7th/, 'seventh' ).
+              gsub( /8th/, 'eigth' ).
+              gsub( /9th/, 'nineth' ).
+              gsub( /10th/, 'tenth' ).
+              gsub( /11th/, 'eleventh' ).
+              gsub( /12th/, 'twelfth' ).
+              gsub( /=</, '_le_' ).
+              gsub( />/, 'gt_' ).
+              gsub( /</, 'gt_' ).
+              # gsub( /`/, '' ).              
+              # gsub( /£/, 'GBP' ). ## FIXME some problem with encodings in ruby 1.9 here..
+              # gsub( /Å�/, 'GBP' ).
+              # gsub( /Ã´/, 'o' ).
+              # gsub( /Ã©/, 'e' ).
+              gsub( /^_/, '' ).
+              gsub( /^_/, '' ).
+              gsub( /_$/, '' ).
+              gsub( /_$/, '' );
+      if( s =~ /^[\d].*/ )then
+              s = "v_#{s}" # leading digit
+      end
+      return s
+end
+
+
+
 #
 #
 # @param includeThis - array of items from hash to include - all if nil
@@ -548,3 +596,24 @@ def structToS( struct, width=20, cols=4 )
         }     
         return s
 end
+
+#
+# Convert reals into the only format that ada likes (x.xx) with the point and a leading
+# number required. Replace nils, mv chanacters or blanks with missing value indicators. Replace dates
+# in the format dd/mm/yy with ddmmyy.
+# 
+def cleanupRealNumberToAda( item )
+      if(( (not item.nil? ) and ( item.length > 0 )))then ## not just blanks or missing value indicator
+              if( item[0,1] == "." ) then
+                      item = '0' + item; ## ada needs a leading 0 in decimal numbers
+              elsif( item =~ /\-\.(.*)/ ) then ## a negative like "-.03" ; make it -0.03
+                      item = "-0."+$1;
+              elsif( not item =~ /[0-9]+\.[0-9]+/ ) then
+                      item += '.0'       ### .. and a trailing .0 if not othewise there.
+              end;
+      else
+              item = 0.0
+      end
+      return item.gsub( /,/, '_' );
+end;
+
