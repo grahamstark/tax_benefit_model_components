@@ -61,6 +61,7 @@ package Maths_Functions.Regressions is
       mean_of_dependent            : Real := 0.0;
       df                           : Positive := Positive'First;
       log_likelihood               : Real := 0.0;
+      fitted_values                : Vector( 1 .. num_obs )  := ( others => 0.0 );
       case regtype is
          when OLS    => null;
          when Probit | Logit =>
@@ -90,5 +91,6 @@ package Maths_Functions.Regressions is
       y : Vector ) return Regression_Result;
 
    function To_String( rr : Regression_Result ) return String;
-
+   function Print_Actual_Vs_Fitted( y : Vector; rr : Regression_Result ) return String;
+   
 end Maths_Functions.Regressions;

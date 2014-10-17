@@ -20,7 +20,7 @@ def makeFKRef( target )
         return fk
 end
 
-def makeFK( target )
+def makeFKFRS( target )
         fk = REXML::Element.new( "foreign-key" )
         fk.add_attribute( 'foreignTable', target );        
         fk << makeFKRef( "year")
@@ -115,13 +115,13 @@ def createMillTable( tableData )
                 end
         }
         if( tableName != 'househol')then
-                tableElem << makeFK( 'househol' )
+                tableElem << makeFKFRS( 'househol' )
         end
         if hasBUFK then
-                tableElem << makeFK( 'benunit' )
+                tableElem << makeFKFRS( 'benunit' )
         end
         if hasADFK then
-                tableElem << makeFK( 'adult' )
+                tableElem << makeFKFRS( 'adult' )
         end
         return tableElem
 end

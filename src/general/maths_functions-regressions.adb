@@ -137,15 +137,26 @@ package body Maths_Functions.Regressions is
       rnr  : constant Real := Real( nr );
       nc   : constant Positive := x'Last( 2 );
       rnc  : constant Real := Real( nc );
-      i    : constant Matrix := Unit_Matrix( nr, nr );
-      xpx  : constant Matrix := Transpose( x ) * x;
+      -- subtype MX is Matrix( 1..nr, 1..nr );
+      -- type MXA is access MX;
+      -- procedure Free is new Ada.Unchecked_Deallocation(
+               -- Object => MX, Name => MXA );
+      -- i    : MXA;
+      -- m    : MXA;
+      i : constant Matrix := Unit_Matrix( nr, nr );
+      xpx  : constant Matrix := Transpose( x ) * x; -- FIXME check dimensopms here and make suitable allocators and decallocators
       xpxi : constant Matrix := Inverse( xpx );
-      m    : constant Matrix := i - x * xpxi * Transpose( x );
+      m : constant Matrix := i - x * xpxi * Transpose( x );
       unit_vector : constant Vector( 1 .. nr ) := ( others => 1.0 );
    begin
+      -- i := new MX;
+      -- m := new MX;
+      -- Make_Unit_Matrix( i.all );
+      -- m.all := i.all - x * xpxi * Transpose( x );
       rr.mean_of_dependent := y * unit_vector / rnr;
       rr.b   := Inverse( xpx ) * Transpose( x ) * y;
       rr.e   := m * y;
+      rr.fitted_values := y - rr.e;
       rr.df  := nr - nc;
       rr.rss := rr.b * Transpose( x ) * y - ( rnr*rr.mean_of_dependent**2 );
       rr.ess := rr.e * rr.e;
@@ -188,6 +199,8 @@ package body Maths_Functions.Regressions is
         rr.b_standard_errors( col ) := sqrt( rr.covariance_matrix( col, col ));
         rr.t_0( col ) := rr.b( col )/rr.b_standard_errors( col );
       end loop;
+      -- Free( i );
+      -- Free( m );
    end Local_OLS;
 
    function FN( r : Real; n : Positive ) return String is
@@ -279,6 +292,27 @@ package body Maths_Functions.Regressions is
       s := s & LINE_BREAK;
       return To_String( s );
    end To_String;
+
+   function Print_Actual_Vs_Fitted( y : Vector; rr : Regression_Result ) return String is
+   use Ada.Strings.Unbounded;
+   use Text_Utils;
+      s : Unbounded_String;      
+   begin   
+      s := s & "Actual Vs Fitted " & LINE_BREAK;
+      s := s & "   obs              Actual              Fitted";   
+      if( rr.regtype = OLS )then
+         s := s & "            residual";
+      end if;
+      s := s & Line_BREAK;
+      for r in rr.fitted_values'Range loop
+         s := s & FN( r, 6 ) & F20( y( r )) & F20( rr.fitted_values( r ));
+         if( rr.regtype = OLS )then
+            s := s & F20( rr.e( r ));
+         end if;
+         s := s & LINE_BREAK;
+      end loop;
+      return To_String( s );
+   end Print_Actual_Vs_Fitted;
 
    function OLS( settings : Regression_Control_Rec; x : Matrix; y : Vector ) return Regression_Result is
        cx           : constant Matrix := ( if settings.add_constant then Add_Vector_Of_Ones_To( x ) else x );
@@ -413,8 +447,26 @@ package body Maths_Functions.Regressions is
       procedure Solve is new Solve_Non_Linear_Equation_System( Evaluate=>Local_Evaluate );
 
    begin
-      Solve( rr.b, settings.num_trials, settings.tolx, settings.tolf, rr.iterations, rr.iteration_error );
+      Solve( rr.b, 
+             settings.num_trials, 
+             settings.tolx, 
+             settings.tolf, 
+             rr.iterations, 
+             rr.iteration_error );
       if( rr.iteration_error = normal )then
+         rr.fitted_values := x * rr.b;
+         case settings.regtype is
+            when probit =>
+               for i in rr.fitted_values'Range loop
+                  rr.fitted_values( i ) := Cumulative_Normal( rr.fitted_values( i ));
+               end loop;
+            when logit =>
+               for i in rr.fitted_values'Range loop
+                  rr.fitted_values( i ) := 1.0 / 
+                     ( 1.0 + Elementary_Functions.Exp( -rr.fitted_values( i )));
+               end loop;
+            when ols => null; -- FIXME make regtype as subrange
+         end case;
          rr.covariance_matrix := Inverse( saved_hessian );
          for col in 1 .. nc loop
             rr.b_standard_errors( col ) := sqrt( rr.covariance_matrix( col, col ));
