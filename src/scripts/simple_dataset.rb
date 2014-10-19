@@ -74,6 +74,7 @@ class SimpleDataset
                                 else
                                         @data[ row-1 ] = elements
                                 end
+                                print "read #{row} rows " if( row % 1000 ) == 0
                                 row += 1
                         }                
         end
