@@ -1,5 +1,5 @@
 --
--- Created by ada_generator.py on 2014-09-16 15:28:39.976529
+-- Created by ada_generator.py on 2014-10-23 18:51:12.932706
 -- 
 with Ada.Calendar;
 with Ada.Containers.Vectors;
@@ -32,11 +32,19 @@ package body DB_Commons is
 
    default_schema : Unbounded_String := Null_Unbounded_String;
    
+   function Add_Trailing( s : String; to_add : Character := '.' ) return String is
+   begin
+      if s( s'Last ) = to_add then
+         return s;
+      end if;
+      return s & to_add;
+   end Add_Trailing;
+   
    function Get_Default_Schema return String is
       s : constant String := To_String( default_schema );
    begin
       if s'Length > 0 then
-         return ( if( s( s'Length ) = '.' )then s else s & "." );
+         return Add_Trailing( s ); -- ( if( s( s'Length ) = '.' )then s else s & "." );
       end if;
       return "";
    end Get_Default_Schema;
@@ -50,8 +58,9 @@ package body DB_Commons is
       end if;
    end  Set_Default_Schema;
    
-   function Add_Schema_To_Query( query : String ) return String is
-      val : aliased String := Get_Default_Schema;
+   function Add_Schema_To_Query( query : String; default : String := "" ) return String is
+      val : aliased String := 
+         ( if default /= "" then Add_Trailing( default ) else Get_Default_Schema );
       key : aliased String := "SCHEMA";
       subs : constant GNATColl.Templates.Substitution_Array( 1 .. 1 ) := 
          ( 1 => ( Name  => key'Unchecked_Access, 
@@ -348,6 +357,7 @@ package body DB_Commons is
    begin
       return Make_Criterion_Element( varname, op, false, join, value'Img );         
    end Make_Decimal_Criterion_Element;
+  
    
    -- === CUSTOM PROCS START ===
    -- === CUSTOM PROCS END ===
