@@ -2,6 +2,7 @@
 #
 require 'tempfile'
 require 'date'
+require 'csv'
 
 FOP_PATH = '/opt/fop/fop.sh'; 
 
@@ -14,6 +15,10 @@ def makeEnumArray( enum )
         }
         return out;
 end;
+
+def mkdirSafe( name )
+        Dir.mkdir( name ) if not Dir.exists?( name )   
+end
 
 def safeAdd( hash, key, amount )
        if( hash.has_key?( key ))then
@@ -616,4 +621,106 @@ def cleanupRealNumberToAda( item )
       end
       return item.gsub( /,/, '_' );
 end;
+
+#
+# if line = '1,2,3' and positionsToKeep = [0,2] then output '1,3'
+# @param line - delimited line 
+# @param positionsToKeep - array of integers
+# @return string
+#
+def editDelimitedLine( line, positionsToKeep, delim = ',')
+        a = CSV.parse_line( line )
+        ac = []
+        n = a.length()
+        n.times{
+                |i|
+                if positionsToKeep.include?( i ) then
+                        ac << a[i]
+                end
+        }
+        return ac.join( delim )
+end
+
+#
+# a little class which matches strings against a set of regular expressions
+# each regexp is iterpreted as matching an entire string (^ and $ are added automatically
+# and matches case-insensitively
+#
+class CRM114
+                
+        def reset( )
+                @regeps = []
+        end
+        
+        def switchMode()
+                @excludeMode = ( not @excludeMode )
+        end
+        
+        def length()
+                return @regeps.length()       
+        end
+        
+        #
+        # load an array of strings, clearing any existing ones
+        #
+        def loadAll( lines )
+                self.reset()
+                lines.each{
+                        |line|
+                        if line =~ / *mode *= *([a-zA-Z]+) */ then
+                                token = $1
+                                @excludeMode = ( not token =~ /^include$/i )
+                        else
+                                @regexps << Regexp.new( '^'+line.strip()+'$', Regexp::IGNORECASE )
+                        end
+                }
+        end
+        
+        #
+        # load from a file, clearing any existing regexps
+        # file should have 1 regexp per line
+        #
+        def fromFile( filename )        
+                lines =  IO.readlines( filename )
+                loadAll( lines )
+        end
+
+        #
+        # @param tokens - array of strings
+        # @return a list of positions of tokens which match any of out regeps
+        #
+        def getPositions( tokens )
+                a = []
+                n = tokens.length()
+                n.times{
+                        |i|
+                        a << i if self.matches( tokens[i] )
+
+                }
+                return a
+        end
+        
+        #
+        # @param keys an array of new regexps to the existing ones
+        #
+        def add( keys )
+                keys.each{
+                        |key|
+                        @regexps << Regexp.new( '^'+key.strip()+'$', Regexp::IGNORECASE )
+                }        
+        end
+        
+        def initialize( excludeMode = false )
+                @regexps = []
+                @excludeMode = excludeMode
+        end
+       
+        def matches( target )
+                return true if @regexps.length() == 0
+                # see: https://www.ruby-forum.com/topic/171339
+                inc =  @regexps.any?{ |regexp| target =~ regexp }
+                return @excludeMode ^ inc # xor
+        end
+        
+end
 
