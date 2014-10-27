@@ -92,11 +92,32 @@ def censor( s )
               gsub( /^_/, '' ).
               gsub( /^_/, '' ).
               gsub( /_$/, '' ).
-              gsub( /_$/, '' );
+              gsub( /_$/, '' ).
+              gsub( /_\$+$/, '' );
       if( s =~ /^[\d].*/ )then
               s = "v_#{s}" # leading digit
       end
       return s
+end
+
+def basicCensor( s )
+        s = s.
+        strip.
+        downcase.        
+        gsub( /[ \-,\t]/, '_' ).
+        gsub( /[=\:\)\(']/, '').
+        gsub( /[";:\.\?]/, '' ).
+        gsub( /__/,'_').
+        gsub( /__/,'_').
+        gsub( /__/,'_').
+        gsub( /_$/, '' ).
+        gsub( /^_/, '' ).
+        gsub( /^_/, '' ).
+        gsub( /_\$+$/, '' );
+        if( s =~ /^[\d].*/ )then
+                s = "v_#{s}" # leading digit
+        end
+        return s
 end
 
 
@@ -671,7 +692,9 @@ class CRM114
                                 token = $1
                                 @excludeMode = ( not token =~ /^include$/i )
                         else
-                                @regexps << Regexp.new( '^'+line.strip()+'$', Regexp::IGNORECASE )
+                                line.strip!
+                                puts "CRM114.loadAll; adding |#{line}| as regexp\n"
+                                @regexps << Regexp.new( '^'+line+'$', Regexp::IGNORECASE )
                         end
                 }
         end
@@ -724,3 +747,31 @@ class CRM114
         
 end
 
+#
+#@param infileName - rectangular file delimited by delim
+#@parm outfileName - write to this with rows and cols reversed
+#@param delim tab, comma, etc.. 
+def transposeDelimitedFile( infileName, outfileName, delim )
+        inf = File.new( infileName, "r" );
+        outf = File.new( outfileName, "w" )
+        row = 0
+        data = []
+        CSV.foreach( inf, { col_sep:delim } ){
+                |elements|
+                data[row] = elements;
+                row += 1
+        }
+        nRows = row
+        nCols = data[0].length()
+        nCols.times{
+                |col|
+                nRows.times{
+                        |row|
+                        outf.write( data[row][col] );
+                        outf.write( delim ) if row < (nRows - 1) 
+                }
+                outf.write( "\n" )
+        }
+        outf.close()
+        inf.close()                
+end
