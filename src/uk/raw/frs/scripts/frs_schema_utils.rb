@@ -453,6 +453,7 @@ class Table
         attr_reader :year, :tableName, :variables, :variableNames;
         attr_writer :year, :tableName, :variables, :variableNames;
         
+     
         def initialize( tableName, year )
                 @variables = Hash.new   
                 @variableNames = Array.new
