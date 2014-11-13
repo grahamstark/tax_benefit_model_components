@@ -35,7 +35,7 @@ package Base_Model_Types is
 
    subtype Big_Integer is Long_Long_Integer;
 
-   subtype Sernum_Value is Big_Integer range -9 .. 1_000_000_000;
+   subtype Sernum_Value is Big_Integer range -9 .. Big_Integer'Last;
    MISSING_SERNUM : constant Sernum_Value := Sernum_Value'First;
    package Sernum_Set_Package is new Ada.Containers.Ordered_Sets( Element_Type => Sernum_Value );
    subtype Sernum_Set is Sernum_Set_Package.Set;

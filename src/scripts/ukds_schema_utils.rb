@@ -14,8 +14,8 @@ end
 
 FRS_TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamt', 'penprov', 'nimigr', 'owner' ]
 # note the last 2 are actually SQL keywords
-KEYWORD_TRANSLATIONS = { 'access'=>'x_access', 'out'=>'xxout', "month_"=>"month", "grant" => "x_grant", "where" => "x_where", "case" => "x_case", 'both' => 'x_both', 'amount' => 'x_amount' };
-
+KEYWORD_TRANSLATIONS = { 'access'=>'x_access', 'out'=>'xxout', "month_"=>"month", "grant" => "x_grant", "where" => "x_where", "case" => "x_case", 'both' => 'x_both', 'amount' => 'x_amount', 'type' => 'x_type' };
+KEYWORD_TRANSLATIONS_REVERSE = KEYWORD_TRANSLATIONS.invert() 
 
 CONNECTION = getConnection()
 
@@ -32,21 +32,30 @@ DEFAULT_DATE = '01/01/1900'
 # see: http://stackoverflow.com/questions/12117024/decimal-number-regular-expression
 DECIMAL_FORMAT = Regexp.new( "^ *[+-]?((\d+(\.\d*)?)|(\.\d+)) *$", Regexp::IGNORECASE )
 
-INSERT_TABLES_STMT = CONNECTION.prepare( "insert into dictionaries.tables(
-        dataset,
+INSERT_TABLES_STMT = CONNECTION.prepare( "insert into dictionaries.tables( \
+        dataset, \
         year, \
-         name ) values( ?, ?, ? )" )
+        name ) select ?, ?, ?  \
+        where not exists \ 
+         ( \
+            select dataset from dictionaries.tables where dataset = ? and year = ? and name = ? \
+         )" )
 INSERT_ENUM_STMT = CONNECTION.prepare( "insert into dictionaries.enums( \
-        dataset,
+        dataset,\
         year, \ 
         tables, \ 
         variable_name, \ 
         value, \ 
         label,
-        enum_value ) values( ?, ?, ?, ?, ?, ?, ? )" )
+        enum_value ) select ?, ?, ?, ?, ?, ?, ?  \
+        where not exists \ 
+         ( \
+            select dataset from dictionaries.enums where dataset =? and year = ? and tables = ? and 
+            variable_name = ? and value = ? \
+         )"  )
 INSERT_VARIABLE_STMT = CONNECTION.prepare( "insert into dictionaries.variables( \
-         dataset,
-         year,
+         dataset,\
+         year,\
          tables,\ 
          name, \
          pos,
@@ -54,10 +63,16 @@ INSERT_VARIABLE_STMT = CONNECTION.prepare( "insert into dictionaries.variables( 
          measurement_level,
          label,\
          data_type )\
-         values( ?, ?, ?, ?, ?, ?, ?, ?, ? ) " )
+         select ?, ?, ?, ?, ?, ?, ?, ?, ?  \
+         where not exists \ 
+         ( \
+            select dataset from dictionaries.variables where dataset =? and year = ? and tables = ? \
+            and name = ? \
+         )" )
 
 def fixupField( var, field )
-        field = field.strip();
+        return '' if field.nil?
+        field.strip!
         case var.data_type
         when DATE then
                 if not field =~ DEFAULT_DATE_FORMAT then
@@ -159,7 +174,7 @@ end
 # reading the 1st 500 lines and matching it against '12/1/2014', '0.001', 'fred' 
 # and so on. Very imperfect.
 #
-def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec )
+def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec, nameEditor )
         file = File.new( filename, 'r' );
         line = 0
         maxvals = []
@@ -175,13 +190,13 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec )
                                 |i|
                                 maxvals[i] = INT
                         }
-                elsif line >= 500 then
-                        break;
+                # elsif line >= 500 then
+                #        break;
                 else
                         i = 0
                         elements.each{
                                 |cell|
-                                colname = topline[i]
+                                colname = nameEditor.edit( topline[i].downcase() )
                                 if colname =~ /.*sernum.*/i then
                                         maxvals[i] = SERNUM 
                                 elsif cell =~ /.*\/.*/ then
@@ -192,16 +207,16 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec )
                                 elsif cell =~ /[0-9]+\.[0-9]$/ and single_point_as_dec then 
                                         # FIXME exactly one point as decimal XX,1; 
                                         # this is in HSE for industry codes and so on but probably not general
-                                        puts "infering DECIMAL for #{topline[i]}; cell is |#{cell}|\n"
+                                        puts "infering DECIMAL for #{colname}; cell is |#{cell}|\n"
                                         maxvals[i] = [ maxvals[i], DECIMAL ].max()     
                                 elsif cell =~ /[0-9]+\.[0-9]+/ or cell =~/^\.[0-9]+/ or cell =~ /^[0-9]\.$/ then
-                                        puts "infering AMOUNT for #{topline[i]}; cell is |#{cell}|\n"
+                                        puts "infering AMOUNT for #{colname}; cell is |#{cell}|\n"
                                         maxvals[i] = [ maxvals[i], AMOUNT ].max() 
                                         # FIXME should we blow up if remainder not obviously an integer?
                                 else # int of some kind - check for extreme values
                                         x = cell.to_f()
                                         if( x > 2147483647.0 ) or ( x < -2147483648.0 )then # out of postgres integer range
-                                                puts "inferring SERNUM for #{topline[i]}; cell=|#{cell}|\n"
+                                                puts "inferring SERNUM for #{colname}; cell=|#{cell}|\n"
                                                 maxvals[i] = [ maxvals[i], SERNUM ].max() 
                                         end
                                 end # ignore enums for now
@@ -211,26 +226,54 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec )
         }
         file.close()
         connection = getConnection()
-        statement = connection.prepare( "update dictionaries.variables set data_type=? where dataset=? and tables=? and year=? and name=?" )
         n.times{
                 |i|
                 if maxvals[i] != INT then # since we default to INT anyway
-                        colname = topline[i].downcase()
+                        colname = nameEditor.edit( topline[i].downcase() )
                         puts "changing #{} to #{maxvals[i]}\n"
                         puts "#{maxvals[i]} #{dataset}, #{tablename}, #{year}, #{colname}\n"
-                        statement.execute( maxvals[i], dataset, tablename, year, colname )                 
+                        updateVarType( maxvals[i], dataset, tablename, year, colname, connection )                 
+                        # statement.execute( maxvals[i], dataset, tablename, year, colname )                 
                 end
         }
         connection.disconnect()
 end
 
+def updateVarType( dataType, dataset, tableName, year, colname, connection = nil )
+        if connection.nil? then
+                connection = getConnection() 
+                local = true
+        else
+                local = false
+        end
+        statement = connection.prepare( "update dictionaries.variables set data_type=? where dataset=? and tables=? and year=? and name=? and data_type < ?" )
+        statement.execute( dataType, dataset, tableName, year, colname, dataType ) 
+        connection.disconnect() if local
+end
+
+#
+# @param colpatt e.g. sic%
+#
+def updateVarGroup( dataType, dataset, tableName, colpatt, connection = nil )
+        if connection.nil? then
+                connection = getConnection() 
+                local = true
+        else
+                local = false
+        end
+        statement = connection.prepare( "update dictionaries.variables set data_type=? where dataset=? and tables=? and name like ? and data_type < ?" )
+        statement.execute( dataType, dataset, tableName, colpatt, dataType ) 
+        if local then
+                connection.disconnect()
+        end
+end 
 
 # @nameEdit - a class with 1 method - edit( the varname )
 #
 def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
         f = File.new( filename, 'r' );
         # tablename = File.basename( filename, ".txt" )
-        INSERT_TABLES_STMT.execute( dataset, year, tablename )
+        INSERT_TABLES_STMT.execute( dataset, year, tablename, dataset, year, tablename )
         data_type = INT
         inserted = []
         varname = ''
@@ -247,7 +290,9 @@ def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
                         varname = basicCensor( $2 ) #.downcase
                         label = $3.strip
                         if not nameEdit.nil? then
-                                varname = nameEdit.edit( varname )        
+                                puts "before name edit |#{varname}|"
+                                varname = nameEdit.edit( varname ) 
+                                puts "after name edit |#{varname}|\n"
                         end
                         if( varname == 'pid' )then
                                 data_type = SERNUM # flag for index data_type
@@ -260,22 +305,25 @@ def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
                         measurement_level = $2
                         puts "var_fmt |#{var_fmt}| measurement_level |#{measurement_level}|\n"
                         if not inserted.include?( varname )then                                
-                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type )
+                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type,
+                                                              dataset, year, tablename, varname )
                                 inserted << varname
                         end
                 elsif line =~ /.*This variable is *'other'.*/i or line =~ /.*Value label information for.*/i then # this turns up in WAS e.g. DisType8W1 and elsa_data_v3
                         var_fmt = 'numeric'
                         measurement_level = 'scale'
                         if not inserted.include?( varname )then
-                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type )
+                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type,
+                                        dataset, year, tablename, varname )
                                 inserted << varname
                         end
-                elsif line =~ /Value\s*=\s*([0-9\-]+)+\s*Label\s*=(.*)/i then
+                elsif line =~ /Value\s*=\s*([0-9\-]+)\.?[0-9]*+\s*Label\s*=(.*)/i then
                         value = $1.to_i
                         label = $2.strip
                         enum_value  = basicCensor( label )
                         puts "value = |#{$1}| label=|#{label}| enum_value=|#{enum_value}|\n"
-                        INSERT_ENUM_STMT.execute( dataset, year, tablename, varname, value, label, enum_value );
+                        INSERT_ENUM_STMT.execute( dataset, year, tablename, varname, value, label, enum_value, 
+                                                  dataset, year, tablename, varname, value );
                 end
         }
         f.close
@@ -392,7 +440,7 @@ end
 def makePostgresLoadStatement( dataPath, dataset, table, crm114 )
         tableName = table.tableName.downcase
         year = table.year
-        ourVariables = getExtraFieldsForTable( dataset, table, true )
+        ourVariables = getExtraFieldsForTable( dataset, tableName, true )
         ourVariables += table.getVariableNames( crm114 )
         variables = ourVariables.join( ",\n         " )
         tab_file_name = "#{dataPath}#{year}/postgres_load_files/#{tableName}.csv" 
@@ -482,7 +530,7 @@ def loadTable( dataset, year, tableName )
                 |res|
                 var = Variable.new( 
                         res['name'], 
-                        res['pos'], 
+                        res['pos'].to_i(), 
                         res['var_fmt'], 
                         res['measurement_level'], 
                         res['label'], 
