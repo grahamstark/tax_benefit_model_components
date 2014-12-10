@@ -109,6 +109,8 @@ package Base_Model_Types is
    type Rate_Array is array (Positive range <>) of Rate;
    type Amount_Array is array (Positive range <>) of Amount;
    type Integer_Array is array (Positive range <>) of Integer;
+   type Natural_Array is array (Positive range <>) of Natural;
+   type Positive_Array is array (Positive range <>) of Positive;
    type Big_Integer_Array is array (Positive range <>) of Big_Integer;
    type Boolean_Array is array (Positive range <>) of Boolean;
    type Counter_Type_Array is array (Positive range <>) of Counter_Type;

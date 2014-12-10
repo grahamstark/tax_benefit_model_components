@@ -215,6 +215,16 @@ package body Utils is
       end if;
    end Delete_File_If_Exists;
    
+   function Random_Integer( 
+      min : Integer := Integer'First; 
+      max : Integer := Integer'Last ) return Integer is
+      subtype IT is Integer range min .. max;
+      package Random_Package is new Ada.Numerics.Discrete_Random( IT );
+      gen : Random_Package.Generator;
+   begin
+     Random_Package.Reset( gen );
+     return Random_Package.Random( gen );
+   end  Random_Integer;
 
 
 begin

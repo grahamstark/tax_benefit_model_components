@@ -31,6 +31,10 @@ package Utils is
    --
    function Random_String return String;
    
+   function Random_Integer( 
+      min : Integer := Integer'First; 
+      max : Integer := Integer'Last ) return Integer;
+   
    function Now_As_String return String;
    
    function Get_Stack_Trace( message : String := "" ) return String;
