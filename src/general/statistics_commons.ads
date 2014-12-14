@@ -16,5 +16,7 @@ package Statistics_Commons is
       maximum,
       percentile_5,
       percentile_95 );     
-
+   
+   type Interpolation_Method is ( exponential, linear );
+      
 end Statistics_Commons;

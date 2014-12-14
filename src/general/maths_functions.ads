@@ -78,7 +78,7 @@ package Maths_Functions is
    package FIO is new Ada.Text_IO.Float_IO( Real );
    
    function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String;
-
+   
   generic 
     with procedure Evaluate(  
           inputs               : in  Vector;

@@ -111,4 +111,48 @@ package body Maths_Functions.Simple_Statistics is
       return v;
    end Generate;
    
+   function Interpolate( 
+      v1             : Real; 
+      v2_v1_distance : Positive;
+      v2             : Real;
+      periods        : Positive; 
+      method         : Interpolation_Method ) return Vector is
+      v : Vector( 1 .. periods );
+    use Elementary_Functions;
+    begin
+       case method is
+       when exponential =>
+          declare
+             smoothing_count : constant Positive := 10_000;
+             -- fixme fix the 10_000 to be something..
+             len : constant Positive := periods * smoothing_count;
+             vperiods : constant Positive := v2_v1_distance * smoothing_count;
+             
+             flen : constant Real := Real( len );
+             fvperiods : constant Real := Real( vperiods );
+             --
+             -- FIXME way out for very small nos of periods
+             -- this: make it actually 100 periods, pick
+             growth : constant Real := log( v2 / v1 ) / ( fvperiods - 1.0 );
+          begin
+             for t in 1 .. v2_v1_distance-1 loop
+                v( t ) := v1 * ( 1.0 + growth ) ** ( t*smoothing_count - 1 );
+             end loop;
+             for t in v2_v1_distance .. periods loop
+                v( t ) := v2 * ( 1.0 + growth ) ** (( t - v2_v1_distance )*smoothing_count );
+             end loop;
+          end;
+       when linear =>
+          declare
+             fp : constant Real := Real( v2_v1_distance );
+             diff : constant Real := ( v2 - v1 ) / ( fp - 1.0 );
+          begin
+             for t in 1 .. periods loop
+                v( t ) := v1 + ( diff * Real( t - 1 ));
+             end loop;
+          end;
+       end case;       
+       return v;
+    end Interpolate;
+   
 end Maths_Functions.Simple_Statistics;

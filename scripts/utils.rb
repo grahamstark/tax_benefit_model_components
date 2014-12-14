@@ -6,6 +6,64 @@ require 'csv'
 
 FOP_PATH = '/opt/fop/fop.sh'; 
 
+LINEAR = 1
+EXPONENTIAL = 2
+
+def notNullOrBlank( s )
+        return ( not ( s.nil? or s == '' )) 
+end
+
+def moveInLineWith( v1, series )
+   out = []     
+   l = series.length()
+   l.times{
+        |p|
+        out[p] = v1 * series[p]/series[0]
+   }
+   return out
+end
+
+#
+# make an array periods long interpolating between two values
+# @v1 - 1st value
+# @v2 - final value
+# @periods - including 1st and last
+# @method - LINEAR/EXPONENTIAL (exp is very rough for small nos of periods)
+# @return array with [0]-v1 - [periods-1] = v2 and periods in between filled in 
+#
+def interpolate( v1, v2, periods, method )
+        out = []
+        fv1 = v1.to_f()
+        fv2 = v2.to_f()
+        fp = periods.to_f() # force us to use floating point everywhere
+        case method
+        when EXPONENTIAL then
+                growth = Math.log( fv2 / fv1 ) / ( fp - 1 )
+                periods.times{
+                      |p|
+                      out[p] = fv1*(( 1.0 + growth ) ** p )
+                }                
+                out[periods-1] = v2;
+                # fixme exacty growth interpolation
+        when LINEAR then
+                diff = ( fv2 - fv1 ) / ( fp - 1 )
+                periods.times{
+                        |p|
+                        out[p] = v1 + (diff*p)
+                }
+        end
+        return out
+end
+
+def extrapolate( a, growth, newPeriods )
+        l = a.length()
+        last = a[ l-1 ]
+        newPeriods.times{
+                |p|                        
+                a[p+l-1] = last*(( 1.0 + growth ) ** p )
+        }
+        return a
+end
 #
 def makeEnumArray( enum )
         out = Hash.new();
@@ -671,11 +729,12 @@ class CRM114
                 
         def reset( )
                 @regeps = []
+                @modes = []
         end
         
-        def switchMode()
-                @excludeMode = ( not @excludeMode )
-        end
+        # def switchMode()
+                # @excludeMode = ( not @excludeMode )
+        # end
         
         def length()
                 return @regeps.length()       
@@ -686,15 +745,19 @@ class CRM114
         #
         def loadAll( lines )
                 self.reset()
+                mode = true
                 lines.each{
                         |line|
                         if line =~ / *mode *= *([a-zA-Z]+) */ then
-                                token = $1
-                                @excludeMode = ( not token =~ /^include$/i )
+                                if $1 != 'include' and $1 != 'exclude' then
+                                        raise "CRM114 mode non 'exclude' or 'include' was |#{$1}"
+                                end
+                                mode = $1 == 'include'
                         else
                                 line.strip!
                                 puts "CRM114.loadAll; adding |#{line}| as regexp\n"
                                 @regexps << Regexp.new( '^'+line+'$', Regexp::IGNORECASE )
+                                @modes << mode
                         end
                 }
         end
@@ -710,7 +773,7 @@ class CRM114
 
         #
         # @param tokens - array of strings
-        # @return a list of positions of tokens which match any of out regeps
+        # @return a list of positions of tokens which match any of our regeps
         #
         def getPositions( tokens )
                 a = []
@@ -726,23 +789,46 @@ class CRM114
         #
         # @param keys an array of new regexps to the existing ones
         #
-        def add( keys )
+        def add( keys, mode = 'include' )
+                bmode = mode == 'include'
                 keys.each{
                         |key|
                         @regexps << Regexp.new( '^'+key.strip()+'$', Regexp::IGNORECASE )
+                        @modes << bmode
                 }        
         end
         
         def initialize( excludeMode = false )
                 @regexps = []
-                @excludeMode = excludeMode
         end
        
         def matches( target )
                 return true if @regexps.length() == 0
                 # see: https://www.ruby-forum.com/topic/171339
-                inc =  @regexps.any?{ |regexp| target =~ regexp }
-                return @excludeMode ^ inc # xor
+                n = @regexps.length
+                if( @modes.length != n )then
+                        raise "CRM114 num modes (#{@modes.length}) doesn't match num regexps |#{n}|"                
+                end
+                default_match = ! @modes[0] # i.e default to not match if mode=include, match if mode=exclude
+                match = default_match
+                n.times{
+                        |p|
+                        mode = @modes[p]
+                        if mode != default_match 
+                                default_match = match # default is what we've found so far
+                        end
+                        re = @regexps[p]
+                        if target =~ re then
+                                match = mode
+                                found = true
+                        end
+                }
+                #if not found then
+                #        match = default_match
+                #end
+                #inc =  @regexps.any?{ |regexp| target =~ regexp }
+                #return @excludeMode ^ inc # xor
+                return match
         end
         
 end
