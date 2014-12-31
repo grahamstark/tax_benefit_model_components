@@ -8,10 +8,11 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
 with Ada.Strings.Bounded; use Ada.Strings.Bounded;
+
 with Text_Utils;
 
 package body Base_Model_Types is
-
+   
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount ) is
       use Ada.Strings.Unbounded;
       s : Unbounded_String := To_Unbounded_String( key );
@@ -328,5 +329,125 @@ package body Base_Model_Types is
    begin
       r := r - Counter_Type( by );
    end Dec;
+
+   --
+   -- FIXME Make some generic thingy here ...
+   --
+   function To_String( r : Rate_Array; width : Positive := 12; prec : Natural := 2 ) return String is
+   use Ada.Strings.Unbounded;   
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " => " & To_String( r( i ), width, prec );
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Amount_Array; width : Positive := 12; prec : Natural := 2 ) return String is
+   use Ada.Strings.Unbounded;   
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " => " & To_String( r( i ), width, prec );
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Integer_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Natural_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Positive_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Big_Integer_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Boolean_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Counter_Type_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( r : Age_Limit_Array ) return String is  
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in r'Range loop
+         s := s & i'Img & " =>" & r( i )'Img;
+         if( i < r'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+   end To_String;
 
 end Base_Model_Types;

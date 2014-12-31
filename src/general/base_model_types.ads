@@ -115,6 +115,16 @@ package Base_Model_Types is
    type Boolean_Array is array (Positive range <>) of Boolean;
    type Counter_Type_Array is array (Positive range <>) of Counter_Type;
    type Age_Limit_Array is array( Positive range <> ) of Age_Range;
+   
+   function To_String( r : Rate_Array; width : Positive := 12; prec : Natural := 2 ) return String;
+   function To_String( r : Amount_Array; width : Positive := 12; prec : Natural := 2 ) return String;
+   function To_String( r : Integer_Array ) return String;
+   function To_String( r : Natural_Array ) return String;
+   function To_String( r : Positive_Array ) return String;
+   function To_String( r : Big_Integer_Array ) return String;
+   function To_String( r : Boolean_Array ) return String;
+   function To_String( r : Counter_Type_Array ) return String;
+   function To_String( r : Age_Limit_Array ) return String;
 
    package Amount_Package is new Ada.Containers.Vectors( Element_Type => Amount, Index_Type => Positive );
    subtype Amount_List is Amount_Package.Vector;
