@@ -116,6 +116,16 @@ package Base_Model_Types is
    type Counter_Type_Array is array (Positive range <>) of Counter_Type;
    type Age_Limit_Array is array( Positive range <> ) of Age_Range;
    
+   function Nearly_Equal( 
+      a   : Rate_Array; 
+      b   : Rate_Array; 
+      tol : Rate := 0.0001 ) return Boolean;
+      
+   function Nearly_Equal( 
+      a   : Amount_Array; 
+      b   : Amount_Array; 
+      tol : Amount := 0.0001 ) return Boolean;
+   
    function To_String( r : Rate_Array; width : Positive := 12; prec : Natural := 2 ) return String;
    function To_String( r : Amount_Array; width : Positive := 12; prec : Natural := 2 ) return String;
    function To_String( r : Integer_Array ) return String;

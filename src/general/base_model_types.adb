@@ -449,5 +449,37 @@ package body Base_Model_Types is
       end loop;
       return To_String( s );
    end To_String;
+   
+   function Nearly_Equal( 
+      a   : Rate_Array; 
+      b   : Rate_Array; 
+      tol : Rate := 0.0001 ) return Boolean is
+   begin
+      if a'First /= b'First or a'Last /= b'Last then
+         return False;
+      end if;
+      for i in a'Range loop
+         if not Nearly_Equal( a( i ), b( i ), tol ) then
+            return False;
+         end if;
+      end loop;
+      return True;
+   end Nearly_Equal;
+   
+   function Nearly_Equal( 
+      a   : Amount_Array; 
+      b   : Amount_Array; 
+      tol : Amount := 0.0001 ) return Boolean  is
+   begin
+      if a'First /= b'First or a'Last /= b'Last then
+         return False;
+      end if;
+      for i in a'Range loop
+         if not Nearly_Equal( a( i ), b( i ), tol ) then
+            return False;
+         end if;
+      end loop;
+      return True;
+   end Nearly_Equal;
 
 end Base_Model_Types;
