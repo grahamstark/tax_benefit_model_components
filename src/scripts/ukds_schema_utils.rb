@@ -391,7 +391,11 @@ class Variable
                 @missingValues = Array.new
                 @name = makeCensoredVarname( name )
          end
-
+         
+         def enumsInSortOrder()
+                return @enums.sort{ | a, b | a.value <=> b.value  }
+         end
+         
          def addEnum( value, label )
                 e =  EnumEntry.new( value, label ) 
                 i = @enums.index( e )
@@ -660,5 +664,61 @@ def makeGretlDummyList( table )
                 enumStmts << "\n"
         }            
         return enumStmts
+end
+
+
+def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
+        if enumName.nil? then
+                enumName = capitalise( basicCensor( var.name )) + "_Type"  
+        else
+                deffile.write( "   --\n   -- #{enumName} uses variable #{var.name}\n   --\n" )
+        end
+        deffile.write( "   type #{enumName} is (\n      " );
+        entries = []
+        var.enumsInSortOrder().each{
+                |enum|
+                p enum
+                enumItem = basicCensor( enum.label )
+                entries << enumItem
+        }
+        deffile.write( entries.join( ",\n      " ) )
+        deffile.write( " );\n\n" );
+        deffile.write( "   function To_String( i : #{enumName} ) return String;\n" );
+        deffile.write( "   function Convert_#{enumName}( i : Integer ) return #{enumName};\n" );
+        deffile.write( "   function Value_Of( i : #{enumName} ) return Integer;\n\n" );
+        bodyfile.write( "    function To_String( i : #{enumName} ) return String is\n" );
+        bodyfile.write( "    begin\n" );
+        bodyfile.write( "         case i is\n" );        
+        var.enumsInSortOrder().each{
+                |enum|
+                # p enum
+                enumItem = basicCensor( enum.label )
+                bodyfile.write( "             when #{enumItem} => return \"#{enum.label}\";\n" );
+        }
+        bodyfile.write( "         end case;\n" );        
+        bodyfile.write( "         return \"?\";\n" );
+        bodyfile.write( "    end To_String;\n\n" );
+        bodyfile.write( "    function Convert_#{enumName}( i : Integer ) return #{enumName} is\n" );
+        bodyfile.write( "    begin\n" );
+        bodyfile.write( "        case i is \n" );
+        var.enumsInSortOrder().each{
+                |enum|
+                enumItem = basicCensor( enum.label )
+                bodyfile.write "            when #{enum.value} => return #{enumItem};\n"
+        }
+        bodyfile.write  "            when others => return missing;\n"
+        bodyfile.write( "        end case;\n" );
+        bodyfile.write( "    end Convert_#{enumName};\n\n" );
+        bodyfile.write( "    function Value_Of( i : #{enumName} ) return Integer is\n" );
+        bodyfile.write( "    begin\n" );
+        bodyfile.write( "        case i is \n" );
+        var.enumsInSortOrder().each{
+                |enum|
+                enumItem = basicCensor( enum.label )
+                bodyfile.write "            when #{enumItem} => return #{enum.value};\n"
+        }
+        bodyfile.write( "        end case;\n" );
+        bodyfile.write( "    end Value_Of;\n" );
+        
 end
 
