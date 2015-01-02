@@ -861,3 +861,16 @@ def transposeDelimitedFile( infileName, outfileName, delim )
         outf.close()
         inf.close()                
 end
+
+# a_var_this = A_Var_This
+def capitalise( s )
+        n = s.length
+        s[0] = s[0].upcase
+        n.times{
+                |i|
+                if ( s[i] == '_' or s == ' ' ) and i < n then
+                        s[i+1] = s[i+1].upcase
+                end
+        }
+        return s
+end
