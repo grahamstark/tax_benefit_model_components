@@ -666,19 +666,21 @@ def makeGretlDummyList( table )
         return enumStmts
 end
 
+def writeAdaEnumHeader( deffile, table )
+        deffile.write( "   --\n   -- derived from dataset: #{table.dataset} table: #{table.tableName}\n" ); 
+end
 
 def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         if enumName.nil? then
                 enumName = capitalise( basicCensor( var.name )) + "_Type"  
         else
-                deffile.write( "   --\n   -- #{enumName} uses variable #{var.name}\n   --\n" )
+                deffile.write( "   -- #{enumName} uses variable #{var.name}\n   --\n" )
         end
         deffile.write( "   type #{enumName} is (\n      " );
         entries = []
         var.enumsInSortOrder().each{
                 |enum|
-                p enum
-                enumItem = basicCensor( enum.label )
+                enumItem = censor( enum.label )
                 entries << enumItem
         }
         deffile.write( entries.join( ",\n      " ) )
@@ -691,8 +693,7 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         bodyfile.write( "         case i is\n" );        
         var.enumsInSortOrder().each{
                 |enum|
-                # p enum
-                enumItem = basicCensor( enum.label )
+                enumItem = censor( enum.label )
                 bodyfile.write( "             when #{enumItem} => return \"#{enum.label}\";\n" );
         }
         bodyfile.write( "         end case;\n" );        
@@ -703,7 +704,7 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         bodyfile.write( "        case i is \n" );
         var.enumsInSortOrder().each{
                 |enum|
-                enumItem = basicCensor( enum.label )
+                enumItem = censor( enum.label )
                 bodyfile.write "            when #{enum.value} => return #{enumItem};\n"
         }
         bodyfile.write  "            when others => return missing;\n"
@@ -714,11 +715,10 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         bodyfile.write( "        case i is \n" );
         var.enumsInSortOrder().each{
                 |enum|
-                enumItem = basicCensor( enum.label )
+                enumItem = censor( enum.label )
                 bodyfile.write "            when #{enumItem} => return #{enum.value};\n"
         }
         bodyfile.write( "        end case;\n" );
-        bodyfile.write( "    end Value_Of;\n" );
-        
+        bodyfile.write( "    end Value_Of;\n" );        
 end
 
