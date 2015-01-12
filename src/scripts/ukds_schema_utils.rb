@@ -684,45 +684,53 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
                 entries << enumItem
         }
         deffile.write( entries.join( ",\n      " ) )
-        deffile.write( " );\n\n" );
-        deffile.write( "   function To_String( i : #{enumName} ) return String;\n" );
-        deffile.write( "   function Convert_#{enumName}( i : Integer ) return #{enumName};\n" );
-        deffile.write( "   function Value_Of( i : #{enumName} ) return Integer;\n" );
-        deffile.write( "   Package #{enumName}_Package is new T_Utils( Rate_Type=>Rate, Amount_Type=>Amount, Counter_Type=>Counter_Type );\n\n" );
-        deffile.write( "   subtype #{enumName}_Set is #{enumName}_Package.Set;\n" );
-        deffile.write( "   subtype #{enumName}_List is #{enumName}_Package.List;\n" );
+        deffile.write( " );\n" );
+        deffile.write( "   
+   function To_String( i : #{enumName} ) return String;
+   function Convert_#{enumName}( i : Integer ) return #{enumName};
+   function Value_Of( i : #{enumName} ) return Integer;
+   package #{enumName}_Package is new T_Utils(
+      Rate_Type=>Rate, 
+      Amount_Type=>Amount, 
+      Counter_Type=>Counter_Type );
+   subtype #{enumName}_Set is #{enumName}_Package.Set;
+   subtype #{enumName}_List is #{enumName}_Package.List;\n\n" );
         
-        bodyfile.write( "    function To_String( i : #{enumName} ) return String is\" );
-        bodyfile.write( "    begin\n" );
-        bodyfile.write( "         case i is\n" );        
+        bodyfile.write( "
+   function To_String( i : #{enumName} ) return String is
+   begin
+      case i is\n" );        
         var.enumsInSortOrder().each{
                 |enum|
                 enumItem = censor( enum.label )
-                bodyfile.write( "             when #{enumItem} => return \"#{enum.label}\";\n" );
+                bodyfile.write( "          when #{enumItem} => return \"#{enum.label}\";\n" );
         }
-        bodyfile.write( "         end case;\n" );        
-        bodyfile.write( "         return \"?\";\n" );
-        bodyfile.write( "    end To_String;\n\n" );
-        bodyfile.write( "    function Convert_#{enumName}( i : Integer ) return #{enumName} is\n" );
-        bodyfile.write( "    begin\n" );
-        bodyfile.write( "        case i is \n" );
+      bodyfile.write( "      end case;        
+      return \"?\";
+   end To_String;
+                
+   function Convert_#{enumName}( i : Integer ) return #{enumName} is
+   begin
+      case i is\n" );
         var.enumsInSortOrder().each{
                 |enum|
                 enumItem = censor( enum.label )
-                bodyfile.write "            when #{enum.value} => return #{enumItem};\n"
+                bodyfile.write "         when #{enum.value} => return #{enumItem};\n"
         }
-        bodyfile.write  "            when others => return missing;\n"
-        bodyfile.write( "        end case;\n" );
-        bodyfile.write( "    end Convert_#{enumName};\n\n" );
-        bodyfile.write( "    function Value_Of( i : #{enumName} ) return Integer is\n" );
-        bodyfile.write( "    begin\n" );
-        bodyfile.write( "        case i is \n" );
+        bodyfile.write(  
+"         when others => null;
+      end case;
+   end Convert_#{enumName};
+   
+   function Value_Of( i : #{enumName} ) return Integer is\
+   begin
+      case i is \n" );
         var.enumsInSortOrder().each{
                 |enum|
                 enumItem = censor( enum.label )
-                bodyfile.write "            when #{enumItem} => return #{enum.value};\n"
+                bodyfile.write "         when #{enumItem} => return #{enum.value};\n"
         }
-        bodyfile.write( "        end case;\n" );
-        bodyfile.write( "    end Value_Of;\n" );        
+        bodyfile.write( "      end case;\n" );
+        bodyfile.write( "   end Value_Of;\n" );        
 end
 
