@@ -687,8 +687,12 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         deffile.write( " );\n\n" );
         deffile.write( "   function To_String( i : #{enumName} ) return String;\n" );
         deffile.write( "   function Convert_#{enumName}( i : Integer ) return #{enumName};\n" );
-        deffile.write( "   function Value_Of( i : #{enumName} ) return Integer;\n\n" );
-        bodyfile.write( "    function To_String( i : #{enumName} ) return String is\n" );
+        deffile.write( "   function Value_Of( i : #{enumName} ) return Integer;\n" );
+        deffile.write( "   Package #{enumName}_Package is new T_Utils( Rate_Type=>Rate, Amount_Type=>Amount, Counter_Type=>Counter_Type );\n\n" );
+        deffile.write( "   subtype #{enumName}_Set is #{enumName}_Package.Set;\n" );
+        deffile.write( "   subtype #{enumName}_List is #{enumName}_Package.List;\n" );
+        
+        bodyfile.write( "    function To_String( i : #{enumName} ) return String is\" );
         bodyfile.write( "    begin\n" );
         bodyfile.write( "         case i is\n" );        
         var.enumsInSortOrder().each{
