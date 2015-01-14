@@ -670,7 +670,10 @@ def writeAdaEnumHeader( deffile, table )
         deffile.write( "   --\n   -- derived from dataset: #{table.dataset} table: #{table.tableName}\n" ); 
 end
 
-def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
+#
+# typedecs - set of 'amount' 'boolean' 'list' 'set'
+#
+def makeOneAdaEnum( deffile, bodyfile, var, typedecs, enumName = nil )
         if enumName.nil? then
                 enumName = capitalise( basicCensor( var.name )) + "_Type"  
         else
@@ -688,14 +691,26 @@ def makeOneAdaEnum( deffile, bodyfile, var, enumName = nil )
         deffile.write( "   
    function To_String( i : #{enumName} ) return String;
    function Convert_#{enumName}( i : Integer ) return #{enumName};
-   function Value_Of( i : #{enumName} ) return Integer;
-   package #{enumName}_Package is new T_Utils(
+   function Value_Of( i : #{enumName} ) return Integer;\n" )
+        if( typedecs.length() > 0 )then
+                deffile.write( "
+   package #{enumName}_Package is new T_Utils( 
       Rate_Type=>Rate, 
       Amount_Type=>Amount, 
-      Counter_Type=>Counter_Type );
-   subtype #{enumName}_Set is #{enumName}_Package.Set;
-   subtype #{enumName}_List is #{enumName}_Package.List;\n\n" );
-        
+      Counter_Type=>Counter_Type );\n" );
+   
+                deffile.write( "   subtype #{enumName}_Set is #{enumName}_Package.Set;\n" ) if typedecs.include?( 'set' )
+                deffile.write( "   subtype #{enumName}_List is #{enumName}_Package.List; " ) if typedecs.include?( 'list' )
+                if typedecs.include?( 'amount' )then
+                   deffile.write( "   subtype Abs_#{enumName}_Amount_Array is #{enumName}_Package.Abs_Amount_Array;\n" )
+                   deffile.write( "   subtype #{enumName}_Amount_Array is  #{enumName}_Package.Amount_Array;\n" );
+                end
+                if typedecs.include?( 'boolean' )then
+                   deffile.write( "   subtype Abs_#{enumName}_Boolean_Array is #{enumName}_Package.Abs_Boolean_Array;\n" )
+                   deffile.write( "   subtype #{enumName}_Boolean_Array is  #{enumName}_Package.Boolean_Array;\n" );
+                end
+        end
+        deffile.write( "\n" );
         bodyfile.write( "
    function To_String( i : #{enumName} ) return String is
    begin
