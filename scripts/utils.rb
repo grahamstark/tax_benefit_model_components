@@ -13,6 +13,29 @@ def notNullOrBlank( s )
         return ( not ( s.nil? or s == '' )) 
 end
 
+def readLinesBetween( filename, startDelim, endDelim )
+        lines = File.open( filename ).read().split( "\n" )
+        s = []
+        startRE = Regexp.new( startDelim )
+        endRE  = Regexp.new( endDelim )
+        adding = false
+        lines.each{
+                |line|
+                header = false
+                if startRE =~ line then
+                        adding = true
+                        header = true
+                elsif endRE =~ line then
+                        adding = false
+                        header = true
+                end
+                if adding and not header then
+                        s << line
+                end
+        }
+        return s    
+end 
+
 def moveInLineWith( v1, series )
    out = []     
    l = series.length()

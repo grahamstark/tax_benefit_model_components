@@ -695,9 +695,10 @@ def makeOneAdaEnum( deffile, bodyfile, var, typedecs, enumName = nil )
         if( typedecs.length() > 0 )then
                 deffile.write( "
    package #{enumName}_Package is new T_Utils( 
-      Rate_Type=>Rate, 
-      Amount_Type=>Amount, 
-      Counter_Type=>Counter_Type );\n" );
+      T            => #{enumName},
+      Rate_Type    => Rate, 
+      Amount_Type  => Amount, 
+      Counter_Type =>Counter_Type );\n" );
    
                 deffile.write( "   subtype #{enumName}_Set is #{enumName}_Package.Set;\n" ) if typedecs.include?( 'set' )
                 deffile.write( "   subtype #{enumName}_List is #{enumName}_Package.List; " ) if typedecs.include?( 'list' )
