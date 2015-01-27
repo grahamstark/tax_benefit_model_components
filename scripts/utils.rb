@@ -13,6 +13,31 @@ def notNullOrBlank( s )
         return ( not ( s.nil? or s == '' )) 
 end
 
+def insertBetween( filename, startDelim, endDelim, newlines )
+        inlines = File.open( filename ).read().split( "\n" )
+        outlines = []
+        startRE = Regexp.new( startDelim )
+        endRE  = Regexp.new( endDelim )
+        adding = true
+        inlines.each{
+                |line|
+                header = false
+                if adding then
+                        outlines << line
+                end
+                if startRE =~ line then
+                        adding = false
+                        outlines << newlines
+                elsif endRE =~ line then
+                        adding = true
+                        outlines << line
+                end        
+        }
+        f = File.new( filename, "w" );
+        f.write( outlines.join( "\n" ));
+        f.close()
+end
+
 def readLinesBetween( filename, startDelim, endDelim )
         lines = File.open( filename ).read().split( "\n" )
         s = []

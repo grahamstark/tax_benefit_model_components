@@ -7,7 +7,7 @@ require 'utils'
 require 'csv'
 
 def getConnection()
-        return DBI.connect('DBI:Pg:socpuppet', 'postgres', '' )
+        return DBI.connect('DBI:Pg:msc', 'postgres', '' )
 end
 
 
