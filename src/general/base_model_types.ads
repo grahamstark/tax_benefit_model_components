@@ -191,15 +191,15 @@ package Base_Model_Types is
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount );
    function To_String( intermediate : Auxiliary_Results; indent : String ) return String;
 
-   procedure Inc( r : in out Real; by : Real );
+   procedure Inc( r : in out Real; by : Real := 1.0 );
    procedure Inc( r : in out Real; by : Integer );
    procedure Inc( r : in out Counter_Type; by : Real );
    procedure Inc( r : in out Counter_Type; by : Integer );
-   procedure Inc( r : in out Counter_Type; by : Counter_Type );
-   procedure Dec( r : in out Real; by : Real );
+   procedure Inc( r : in out Counter_Type; by : Counter_Type := 1.00 );
+   procedure Dec( r : in out Real; by : Real := 1.0 );
    procedure Dec( r : in out Real; by : Integer );
    procedure Dec( r : in out Counter_Type; by : Real );
    procedure Dec( r : in out Counter_Type; by : Integer );
-   procedure Dec( r : in out Counter_Type; by : Counter_Type );
+   procedure Dec( r : in out Counter_Type; by : Counter_Type := 1.00 );
 
 end Base_Model_Types;

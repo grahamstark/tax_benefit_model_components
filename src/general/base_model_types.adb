@@ -282,7 +282,7 @@ package body Base_Model_Types is
        return To_String( s );
    end To_String;
 
-   procedure Inc( r : in out Real; by : Real ) is
+   procedure Inc( r : in out Real; by : Real := 1.0 ) is
    begin
       r := r + by;
    end Inc;
@@ -301,12 +301,12 @@ package body Base_Model_Types is
    begin
       r := r + Counter_Type( by );
    end Inc;
-   procedure Inc( r : in out Counter_Type; by : Counter_Type )is
+   procedure Inc( r : in out Counter_Type; by : Counter_Type := 1.00 )is
    begin
       r := r + Counter_Type( by );
    end Inc;
 
-   procedure Dec( r : in out Real; by : Real ) is
+   procedure Dec( r : in out Real; by : Real := 1.0 ) is
    begin
       r := r - by;
    end Dec;
@@ -320,12 +320,13 @@ package body Base_Model_Types is
    begin
       r := r - Counter_Type( by );
    end Dec;
-   procedure Dec( r : in out Counter_Type; by : Integer )is
+   
+   procedure Dec( r : in out Counter_Type; by : Integer ) is
    begin
       r := r - Counter_Type( by );
    end Dec;
 
-   procedure Dec( r : in out Counter_Type; by : Counter_Type )is
+   procedure Dec( r : in out Counter_Type; by : Counter_Type := 1.00 )is
    begin
       r := r - Counter_Type( by );
    end Dec;
