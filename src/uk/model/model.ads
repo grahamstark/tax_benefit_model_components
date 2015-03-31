@@ -34,8 +34,10 @@ package Model is
 
    package Amount_Math is new Ada.Numerics.Generic_Elementary_Functions( Amount );
    use Amount_Math;
+   
    package Maths_Funcs is new Maths_Functions( Amount );
    use Maths_Funcs;
+   
    package Financial_Funcs is new Financial_Functions( Rate=>Rate, Amount=>Amount );
    use Financial_Funcs;
 

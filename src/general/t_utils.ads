@@ -97,6 +97,9 @@ package T_Utils is
    --
    function Sum( a : Abs_Amount_Array; weights : Abs_Rate_Array ) return Amount_Type;
    function Vector_Product( a : Abs_Amount_Array; weights : Abs_Rate_Array ) return Amount_Type renames Sum;
+   
+   function Vector_Product( a1 : Abs_Rate_Array; a2 : Abs_Rate_Array ) return Rate_Type;
+   function Vector_Product( a1 : Abs_Amount_Array; a2 : Abs_Amount_Array ) return Amount_Type;
 
    --
    -- Sum a over just those elements

@@ -88,8 +88,11 @@ package body Maths_Functions is
       s : Unbounded_String;
    begin
       for i in v'Range loop
-         s := s & To_String( v( i )) & " ";
-         s := s & LINE_BREAK;
+         s := s & i'Img & " => " & To_String( v( i )) & " ";
+         if i < v'Last then
+            s := s & ", ";
+         end if;
+         -- s := s & LINE_BREAK;
       end loop;
       return TS( s );
    end To_String;

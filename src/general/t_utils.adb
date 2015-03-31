@@ -296,7 +296,24 @@ package body T_Utils is
       end loop;
       return sum;
    end Sum;
-
+   
+   function Vector_Product( a1 : Abs_Amount_Array; a2 : Abs_Amount_Array ) return Amount_Type is
+      sum : Amount_Type := 0.0;
+   begin
+      for i in a1'Range loop
+         sum := sum + (a1(i) * a2(i));
+      end loop;
+      return sum;
+   end Vector_Product;
+      
+   function Vector_Product( a1 : Abs_Rate_Array; a2 : Abs_Rate_Array ) return Rate_Type is
+      sum : Rate_Type := 0.0;
+   begin
+      for i in a1'Range loop
+         sum := sum + (a1(i) * a2(i));
+      end loop;
+      return sum;
+   end Vector_Product;
 
    function Sum( a : Abs_Amount_Array; just_these_elements : Set := EMPTY_SET ) return Amount_Type is
    use type Set;
