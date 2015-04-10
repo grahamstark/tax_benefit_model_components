@@ -311,6 +311,11 @@ package body Base_Model_Types is
       r := r + Counter_Type( by );
    end Inc;
 
+   procedure Dec( p : in out Integer; by : Integer := 1 ) is
+   begin
+      p := p - by;
+   end Dec;
+   
    procedure Dec( r : in out Real; by : Real := 1.0 ) is
    begin
       r := r - by;

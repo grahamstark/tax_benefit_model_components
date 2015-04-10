@@ -197,6 +197,8 @@ package Base_Model_Types is
    procedure Inc( r : in out Counter_Type; by : Real );
    procedure Inc( r : in out Counter_Type; by : Integer );
    procedure Inc( r : in out Counter_Type; by : Counter_Type := 1.00 );
+   
+   procedure Dec( p : in out Integer; by : Integer := 1 );
    procedure Dec( r : in out Real; by : Real := 1.0 );
    procedure Dec( r : in out Real; by : Integer );
    procedure Dec( r : in out Counter_Type; by : Real );
