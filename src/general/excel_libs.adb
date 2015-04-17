@@ -4,11 +4,11 @@ package body Excel_Libs is
       r     : Long_Float;
       nper  : Integer;
       pv    : Long_Float;
-      fv    : Long_Float := 1.0;
-      itype : Integer := 1 ) return Long_Float is
+      ffv   : Long_Float := 0.0;
+      itype : Integer := 0 ) return Long_Float is
       ft : Long_Float := Long_Float( itype );
    begin
-      return -r * ( pv * ( 1.0 + r ) ** nper + fv ) / 
+      return -r * ( pv * ( 1.0 + r ) ** nper + ffv ) / 
              (( 1.0 + r*ft ) * ("**"( 1.0 + r, nper ) - 1.0 ));
    end PMT;
    
@@ -17,7 +17,7 @@ package body Excel_Libs is
       nper   : Integer;
       pmt    : Long_Float;
       pv     : Long_Float;
-      itype  : Integer := 1 ) return Long_Float is
+      itype  : Integer := 0 ) return Long_Float is
       ftype : Long_Float := Long_Float( itype );
    begin
        return -(pv * "**"(1.0 + r, nper) + pmt * (1.0+r*ftype) * ("**"(1.0 + r, nper) - 1.0) / r );

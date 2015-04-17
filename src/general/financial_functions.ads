@@ -63,6 +63,12 @@ package Financial_Functions is
    
    function Monthly_Equivalent_Of_Annual_Interest( rate_as_annual_percentage : Rate ) return Rate;
    
+   procedure Pay_Down_Loan(
+      loan            : in out Amount;
+      interest_rate   : Rate;
+      num_periods     : in out Natural;
+      total_payment   : out Amount;
+      capital_payment : out Amount );
    --
    -- PV of the stream
    --

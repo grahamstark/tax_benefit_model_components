@@ -32,8 +32,37 @@ pragma License( Modified_GPL );
 with Optimiser;
 with Ada.Exceptions;
 with Text_IO;
+with Excel_Libs;
 
 package body Financial_Functions is
+   
+   function "*"( a : Amount; r : Rate ) return Amount is
+   begin
+      return Amount( r ) * a;
+   end "*";
+   
+   function "/"( a : Amount; r : Rate ) return Amount is
+   begin
+      return a / Amount( r );
+   end "/";
+
+   function "*"( a : Rate; r : Amount ) return Amount is
+   begin
+      return Amount( r ) * a;
+   end "*";
+   
+   function "/"( a : Rate; r : Amount ) return Amount is
+   begin
+      return a / Amount( r );
+   end "/";
+   
+   procedure Pay_Down_Loan( capital : in out Amount; interest_rate : Rate; payment : Amount; other_charges : Amount := 0.0 ) is
+      interest : constant Amount := capital * interest_rate;
+      
+   begin
+      capital := capital - ( payment - interest - other_charges ); 
+   end Pay_Down_Loan;
+   
    
    function Net_Present_Value( payment : Amount; num_times : Positive; r : Rate ) return Amount is
       u : Rate := 1.0 / ( 1.0 + r );
@@ -125,5 +154,25 @@ package body Financial_Functions is
              " total_interest " &  l.total_interest'Img &
              " total_payments " &  l.total_payments'Img;
    end To_String;
+   
+   procedure Pay_Down_Loan(
+      loan            : in out Amount;
+      interest_rate   : Rate;
+      num_periods     : in out Natural;
+      total_payment   : out Amount;
+      capital_payment : out Amount ) is
+   begin
+      total_payment := -Amount( Excel_Libs.PMT(
+         Long_Float( interest_rate ),
+         num_periods,
+         Long_Float( loan )));
+      capital_payment := - Amount( Excel_Libs.PPMT(
+         Long_Float( interest_rate ),
+         1,
+         num_periods,
+         Long_Float( loan )));            
+      loan := Amount'Max( 0.0, loan-capital_payment );
+      num_periods := num_periods - 1;
+   end Pay_Down_Loan;
    
 end Financial_Functions;

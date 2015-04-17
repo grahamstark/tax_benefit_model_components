@@ -15,7 +15,7 @@ package Excel_Libs is
    --             - number of total payments  periods.
    --  @param pv
    --             - present value -- borrowed or invested principal.
-   --  @param fv
+   --  @param ffv
    --             - future value of loan or annuity.
    --  @param type
    --             - when payment is made: beginning of period is 1; end, 0.
@@ -26,8 +26,8 @@ package Excel_Libs is
       r     : Long_Float;
       nper  : Integer;
       pv    : Long_Float;
-      fv    : Long_Float := 1.0;
-      itype : Integer := 1 ) return Long_Float;
+      ffv   : Long_Float := 0.0;
+      itype : Integer := 0 ) return Long_Float;
    
    --
    -- Emulates Excel/Calc's FV(interest_rate, number_payments, payment, PV,
@@ -51,7 +51,7 @@ package Excel_Libs is
       nper   : Integer;
       pmt    : Long_Float;
       pv     : Long_Float;
-      itype  : Integer := 1 ) return Long_Float;
+      itype  : Integer := 0 ) return Long_Float;
    
    --
    -- Emulates Excel/Calc's IPMT(interest_rate, period, number_payments, PV,
