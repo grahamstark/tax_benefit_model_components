@@ -35,26 +35,37 @@ package body List_Of_Randoms is
       r.Reset_Pos;
       -- MF.Random_Number_Generator.Reset;
       -- Ada.Numerics.Float_Random.Reset( Random_Gen );
-      for i in R_Range loop
-         r.n_vals( i ) := MF.Random_Normal_Generator.Draw;
-         r.r_vals( i ) := Real( Ada.Numerics.Float_Random.Random( Random_Gen ));
-      end loop;
-      
+      if capacity > 1 then
+         for i in R_Range loop
+            r.n_vals( i ) := MF.Random_Normal_Generator.Draw;
+            r.r_vals( i ) := Real( Ada.Numerics.Float_Random.Random( Random_Gen ));
+         end loop;
+      else
+         r.n_vals( 1 ) := 0.0;
+         r.r_vals( 1 ) := 0.0;
+      end if;
    end Reset;
    
    procedure Next( r : in out Random_List; v : out Real; wrap : Boolean := True ) is
    begin
-      if( r.r_pos = capacity ) and wrap then
-         r.r_pos := 0;
+      if capacity = 1 then 
+         v := 0.0;
+      else
+         if( r.r_pos = capacity ) and wrap then
+            r.r_pos := 0;
+         end if;
+         r.r_pos := r.r_pos + 1;
+         v := r.r_vals( r.r_pos );
       end if;
-      r.r_pos := r.r_pos + 1;
-      v := r.r_vals( r.r_pos );
    end Next;
    
       -- needs ada 2012 since r is changed 
    function Next( r : in out Random_List; wrap : Boolean := True ) return Real is
       v : Real;
    begin
+      if capacity = 1 then 
+         return 0.0; 
+      end if;
       r.Next( v, wrap );
       return v;
    end Next;
@@ -62,18 +73,24 @@ package body List_Of_Randoms is
    function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real is
       v : Real;
    begin
+      if capacity = 1 then 
+         return 0.0; 
+      end if;
       r.Next_Normal( v, wrap );
       return v;
    end Next_Normal;
 
    procedure Next_Normal( r : in out Random_List; v : out Real; wrap : Boolean := True ) is
    begin
-      
-      if( r.n_pos = capacity ) and wrap then
-         r.n_pos := 0;
+      if capacity = 1 then 
+         v := 0.0;
+      else      
+         if( r.n_pos = capacity ) and wrap then
+            r.n_pos := 0;
+         end if;
+         r.n_pos := r.n_pos + 1;
+         v := r.n_vals( r.n_pos );
       end if;
-      r.n_pos := r.n_pos + 1;
-      v := r.n_vals( r.n_pos );
    end Next_Normal;
 
    package RIO is new Ada.Text_IO.Float_IO( Real );

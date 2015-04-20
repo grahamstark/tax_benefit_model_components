@@ -3,6 +3,7 @@ with Maths_Functions;
 generic
    
    type Real is digits<>;
+   -- if capacity is 1 this always returns 0; useful for having a 'no random' list
    capacity : Positive;   
 
 package List_Of_Randoms is
