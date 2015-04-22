@@ -3,11 +3,26 @@ with Ada.Numerics.Float_Random;
 with Ada.Text_IO;
 with GNATColl.Traces;
 
+--
+-- fixme this is a complete mess now
+--
 package body List_Of_Randoms is
    
    Random_Gen : Ada.Numerics.Float_Random.Generator;
 
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "LIST_OF_RANDOMS" );
+   
+   procedure Set_Capacity( r : in out Random_List; capacity : Positive ) is
+   begin
+      r.capacity := capacity;
+      r.Reset;
+   end Set_Capacity;
+   
+   function Get_Capacity( r : Random_List ) return Positive is
+   begin
+      return r.capacity;
+   end Get_Capacity;
+
    
    procedure Log( s : String ) is
    begin
@@ -17,6 +32,7 @@ package body List_Of_Randoms is
    function Make_Copy( from : Random_List ) return Random_List is
       to : Random_List;
    begin
+      to.capacity := from.capacity;
       to.r_pos := from.r_pos;
       to.r_vals := from.r_vals;
       to.n_pos := from.n_pos;
@@ -35,8 +51,8 @@ package body List_Of_Randoms is
       r.Reset_Pos;
       -- MF.Random_Number_Generator.Reset;
       -- Ada.Numerics.Float_Random.Reset( Random_Gen );
-      if capacity > 1 then
-         for i in R_Range loop
+      if r.capacity > 1 then
+         for i in 1 .. r.capacity loop
             r.n_vals( i ) := MF.Random_Normal_Generator.Draw;
             r.r_vals( i ) := Real( Ada.Numerics.Float_Random.Random( Random_Gen ));
          end loop;
@@ -48,10 +64,10 @@ package body List_Of_Randoms is
    
    procedure Next( r : in out Random_List; v : out Real; wrap : Boolean := True ) is
    begin
-      if capacity = 1 then 
+      if r.capacity = 1 then 
          v := 0.0;
       else
-         if( r.r_pos = capacity ) and wrap then
+         if( r.r_pos = r.capacity ) and wrap then
             r.r_pos := 0;
          end if;
          r.r_pos := r.r_pos + 1;
@@ -63,7 +79,7 @@ package body List_Of_Randoms is
    function Next( r : in out Random_List; wrap : Boolean := True ) return Real is
       v : Real;
    begin
-      if capacity = 1 then 
+      if r.capacity = 1 then 
          return 0.0; 
       end if;
       r.Next( v, wrap );
@@ -73,7 +89,7 @@ package body List_Of_Randoms is
    function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real is
       v : Real;
    begin
-      if capacity = 1 then 
+      if r.capacity = 1 then 
          return 0.0; 
       end if;
       r.Next_Normal( v, wrap );
@@ -82,10 +98,10 @@ package body List_Of_Randoms is
 
    procedure Next_Normal( r : in out Random_List; v : out Real; wrap : Boolean := True ) is
    begin
-      if capacity = 1 then 
+      if r.capacity = 1 then 
          v := 0.0;
       else      
-         if( r.n_pos = capacity ) and wrap then
+         if( r.n_pos = r.capacity ) and wrap then
             r.n_pos := 0;
          end if;
          r.n_pos := r.n_pos + 1;
@@ -100,7 +116,7 @@ package body List_Of_Randoms is
       f : File_Type;
    begin
       Create( f, Out_File, filename );
-      for i in R_Range loop
+      for i in 1 .. r.capacity loop
          RIO.Put( f, r.r_vals( i ));
          Put( f, " " );
          RIO.Put( f, r.n_vals( i ));
@@ -117,7 +133,7 @@ package body List_Of_Randoms is
       -- shared = no allows a 2nd process to open the file
       Open( f, In_File, filename, "shared=no" );
       Log( "List of Randoms; Load; file opened" );
-      for i in R_Range loop
+      for i in 1 .. r.capacity loop
          RIO.Get( f, r.r_vals( i ));
          if( i mod 100 = 0 )then
             Log( "List of Randoms; Read: " & i'Img );

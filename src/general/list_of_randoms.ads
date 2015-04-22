@@ -4,12 +4,14 @@ generic
    
    type Real is digits<>;
    -- if capacity is 1 this always returns 0; useful for having a 'no random' list
-   capacity : Positive;   
-
+   max_capacity : Positive;
+   
 package List_Of_Randoms is
    
    type Random_List is tagged private;
    
+   procedure Set_Capacity( r : in out Random_List; capacity : Positive );   
+   function Get_Capacity( r : Random_List ) return Positive;
    procedure Reset_Pos( r : in out Random_List );
    procedure Reset( r : in out Random_List );
    procedure Next( r : in out Random_List; v : out Real; wrap : Boolean := True );
@@ -27,12 +29,13 @@ private
    
    package MF is new Maths_Functions( Real );
    use MF;
-   subtype R_Counter is Natural range 0 .. capacity;
-   subtype R_Range is R_Counter range 1 .. capacity;
+   subtype R_Counter is Natural range 0 .. max_capacity;
+   subtype R_Range is R_Counter range 1 .. max_capacity;
    
    subtype R_Vector is MF.Vector( R_Range );
    
    type Random_List is tagged record
+      capacity : Positive := max_capacity;
       r_pos    : R_Counter := 0;
       r_vals   : R_Vector;
       n_pos    : R_Counter := 0;
