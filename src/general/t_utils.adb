@@ -239,7 +239,7 @@ package body T_Utils is
    begin
       for i in b'Range loop
          if( b(i) ) then
-            outs := outs & T'Image( i ) & SEPARATOR & Boolean'Image(b(i));
+            outs := outs & T'Image( i );
             if( break_lines ) then
                outs := outs & LINE_BREAK;
             else
@@ -247,7 +247,7 @@ package body T_Utils is
             end if;
          end if;
       end loop;
-      if( not break_lines ) then
+      if( not break_lines ) and ( Length( outs ) > 0 ) then
          Delete_Last_Character( outs );
       end if;
       return To_String(outs);
