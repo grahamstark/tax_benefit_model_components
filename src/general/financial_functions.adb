@@ -56,14 +56,6 @@ package body Financial_Functions is
       return a / Amount( r );
    end "/";
    
-   procedure Pay_Down_Loan( capital : in out Amount; interest_rate : Rate; payment : Amount; other_charges : Amount := 0.0 ) is
-      interest : constant Amount := capital * interest_rate;
-      
-   begin
-      capital := capital - ( payment - interest - other_charges ); 
-   end Pay_Down_Loan;
-   
-   
    function Net_Present_Value( payment : Amount; num_times : Positive; r : Rate ) return Amount is
       u : Rate := 1.0 / ( 1.0 + r );
    begin
