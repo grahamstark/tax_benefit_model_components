@@ -44,7 +44,7 @@ package body T_Utils is
 
    procedure Delete_Last_Character( outs : in out Unbounded_String ) is
    begin
-      if outs.Length > 0 then
+      if Length( outs ) > 0 then
          Delete( outs, Length( outs ), Length( outs ));
       end if;
    end Delete_Last_Character;
