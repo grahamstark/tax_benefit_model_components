@@ -15,7 +15,7 @@ package Model_Types is
       savings_income,
       dividend_income );
    
-   type Qualification_Type is ( 
+   type Broad_Qualification_Type is ( 
       no_qualification,
       gcse, 
       btec_etc,
@@ -24,7 +24,7 @@ package Model_Types is
       degree,
       other_qualification );
    
-   type Tenure_Type is ( 
+   type Broad_Tenure_Type is ( 
       social_rented, 
       private_rented, 
       shared_ownership, 
@@ -32,9 +32,9 @@ package Model_Types is
       owned_outright,
       other );
 
-   subtype Rented is Tenure_Type range  social_rented .. shared_ownership;  
+   subtype Rented is Broad_Tenure_Type range  social_rented .. shared_ownership;  
       
-   type Incomes_Type is (
+   type Broad_Incomes_Type is (
       wages,
       self_employment,
       private_pensions,
@@ -86,7 +86,7 @@ package Model_Types is
    type Housing_Array is array( Housing_Cost_Type ) of Amount;
 
    package T_Incomes is new T_Utils(
-      T             => Incomes_Type,
+      T             => Broad_Incomes_Type,
       Rate_Type     => Base_Model_Types.Rate,
       Amount_Type   => Base_Model_Types.Amount,
       Counter_Type  => Base_Model_Types.Counter_Type );
@@ -95,10 +95,10 @@ package Model_Types is
    subtype Incomes_Set is T_Incomes.Set;
 
    type Primary_Or_Secondary  is ( primary, secondary );
-   subtype Calculated_Incomes_Range is Incomes_Type range income_tax .. tax_credits;
-   subtype Non_Calculated_Incomes_Range is Incomes_Type range wages .. other_investment_income;
-   subtype Direct_Taxes_Range is Incomes_Type range income_tax .. national_insurance;
-   subtype Benefits_Range is Incomes_Type range disabled_living_allowance .. tax_credits;
+   subtype Calculated_Incomes_Range is Broad_Incomes_Type range income_tax .. tax_credits;
+   subtype Non_Calculated_Incomes_Range is Broad_Incomes_Type range wages .. other_investment_income;
+   subtype Direct_Taxes_Range is  Broad_Incomes_Type range income_tax .. national_insurance;
+   subtype Benefits_Range is  Broad_Incomes_Type range disabled_living_allowance .. tax_credits;
    subtype Work_Hours_Range is Natural range 0 .. 150;
 
    type Education_Type is ( 
@@ -144,6 +144,8 @@ package Model_Types is
       scotland,
       wales,
       northern_ireland );
+      
+  subtype English_Region is Region_Type range north_east .. south_west;
 
   --
    -- derived from dataset: frs table: adult

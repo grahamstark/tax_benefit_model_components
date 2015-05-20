@@ -11,8 +11,8 @@ with Ada.Text_IO;
 
 with Data_Constants;
 
-with Model.Household;
-with Model.Income_Measure_Types;
+-- with Model.Household;
+-- with Model.Income_Measure_Types;
 with Monitor;
 
 with Text_Utils;
@@ -22,10 +22,10 @@ package Model.Run_Settings is
    use Ada.Calendar;
    use Ada.Strings.Unbounded;
    use Base_Model_Types;
-   use Model.Household;
+   -- use Model.Household;
    use Text_Utils;
    
-   package mimt renames Model.Income_Measure_Types;
+   -- package mimt renames Model.Income_Measure_Types;
    
    type Target_Type is ( off_diagonal_index, costs_index, targetting_index );
    type Target_Array is array( Target_Type ) of Rate;
@@ -84,18 +84,18 @@ package Model.Run_Settings is
    --
    -- sub record of things just for OSCR project
    --
-   type Incomes_Control_Record is tagged record
-         aggregate_incomes_to : Aggregation_Level :=  benefit_unit_level;
-         produce_results_for  : Aggregation_Level :=  benefit_unit_level;
-         exclude_is_cases     : Boolean := True;
-         exclude_net_incomes_below_poverty_line : Boolean := True;
-         poverty_multiplier   : Rate := 1.0;
-         include_only_non_zero_costs : Boolean := true;
-         include_housing : Boolean := True;
-         include_child_care_costs_in_allowances : Boolean := True;
-         -- outfile : Ada.Text_IO.File_Type;
-         summary_slot : mimt.Slot_Range := mimt.DEFAULT_SUMMARY_SLOT;
-      end record;
+   -- type Incomes_Control_Record is tagged record
+         -- aggregate_incomes_to : Aggregation_Level :=  benefit_unit_level;
+         -- produce_results_for  : Aggregation_Level :=  benefit_unit_level;
+         -- exclude_is_cases     : Boolean := True;
+         -- exclude_net_incomes_below_poverty_line : Boolean := True;
+         -- poverty_multiplier   : Rate := 1.0;
+         -- include_only_non_zero_costs : Boolean := true;
+         -- include_housing : Boolean := True;
+         -- include_child_care_costs_in_allowances : Boolean := True;
+         -- -- outfile : Ada.Text_IO.File_Type;
+         -- summary_slot : mimt.Slot_Range := mimt.DEFAULT_SUMMARY_SLOT;
+      -- end record;
    
    type Settings_Rec is tagged record
       run_id              : Unbounded_String          := To_Unbounded_String("");
@@ -107,8 +107,8 @@ package Model.Run_Settings is
       save_file_name      : Unbounded_String          := To_Unbounded_String("default_save_file");
       start_year          : Data_Constants.Data_Years := Data_Constants.Data_Years'First; -- 0304
       end_year            : Data_Constants.Data_Years := Data_Constants.Data_Years'Last; -- 0405
-      inc_ctl             : Incomes_Control_Record;
-      scotland_only       : Boolean                   := True;
+      -- inc_ctl             : Incomes_Control_Record;
+      -- scotland_only       : Boolean                   := True;
    end record;
    function Binary_Read_Settings( filename : String ) return Settings_Rec;
    procedure Binary_Write_Settings( filename : String; settings : Settings_Rec );
@@ -138,18 +138,20 @@ package Model.Run_Settings is
    
    NULL_STATE_TYPE : State_Type renames BLANK_STATE_TYPE;
 
-   BLANK_INCOMES_CONTROL_RECORD : constant Incomes_Control_Record := (  
-         aggregate_incomes_to => benefit_unit_level,
-         produce_results_for  => benefit_unit_level,
-         exclude_is_cases     => True,
-         exclude_net_incomes_below_poverty_line => True,
-         poverty_multiplier => 1.0,
-         include_only_non_zero_costs => true,
-         include_housing => True,
-         include_child_care_costs_in_allowances => True,
-         summary_slot => mimt.DEFAULT_SUMMARY_SLOT
-   );
-   
+   -- TODO Revive this incomes stuff somewhere
+   -- 
+   -- BLANK_INCOMES_CONTROL_RECORD : constant Incomes_Control_Record := (  
+         -- aggregate_incomes_to => benefit_unit_level,
+         -- produce_results_for  => benefit_unit_level,
+         -- exclude_is_cases     => True,
+         -- exclude_net_incomes_below_poverty_line => True,
+         -- poverty_multiplier => 1.0,
+         -- include_only_non_zero_costs => true,
+         -- include_housing => True,
+         -- include_child_care_costs_in_allowances => True,
+         -- summary_slot => mimt.DEFAULT_SUMMARY_SLOT
+   -- );
+   -- 
    BLANK_SETTINGS_REC : constant Settings_Rec := (
          run_id              => To_Unbounded_String(""),
          year                => Data_Constants.Data_Years'First,
@@ -158,9 +160,9 @@ package Model.Run_Settings is
          split_benefit_units => False,
          save_file_name      => To_Unbounded_String(""),
          start_year          => Data_Constants.Data_Years'First, -- 0304
-         end_year            => Data_Constants.Data_Years'Last, -- 0405
-         inc_ctl             => BLANK_INCOMES_CONTROL_RECORD,
-         scotland_only       => True
+         end_year            => Data_Constants.Data_Years'Last -- 0405
+         -- inc_ctl             => BLANK_INCOMES_CONTROL_RECORD,
+         -- scotland_only       => True
    );
 
    

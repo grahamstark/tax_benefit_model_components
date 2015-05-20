@@ -82,7 +82,7 @@ package Model.Abstract_Household is
       start_person : Person_Count := 1 ) return Person_Count is abstract;
 
    function Get_Housing_Cost( hh : Household; htype : Housing_Cost_Type ) return Amount is abstract;
-   function Get_Tenure_Type( hh : Household ) return Tenure_Type is abstract;
+   function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
 
    function Get_Person( hh : Household; bu_no : Positive; pers_no : Positive ) return Person'Class is abstract;
    function Get_Benefit_Unit( hh : Household; which : Positive ) return Benefit_Unit'Class is abstract;

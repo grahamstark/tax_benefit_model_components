@@ -19,6 +19,7 @@ with Key_Value_IO;
 with Maths_Functions;
 with Tax_Utils;
 with Text_Utils;
+with Model_Types;
 -- 
 pragma Elaborate_All (Text_Utils);
 pragma Elaborate_All (Base_Model_Types);
@@ -27,6 +28,7 @@ pragma Elaborate_All (Format_Utils);
 package Model is
    
    use Base_Model_Types;
+   use Model_Types;
 
    package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
    package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );
