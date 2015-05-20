@@ -1,9 +1,9 @@
 with Ada.Containers.Indefinite_Vectors;
-with Model_Types;
+with Standard_UK_Enums;
 
 package Model.Abstract_Household is
 
-   use Model_Types;
+   use Standard_UK_Enums;
 
    type Incomes is interface;
    function Get_Income( i : Incomes; w : Non_Calculated_Incomes_Range ) return Amount is abstract;
