@@ -2,7 +2,7 @@ with T_Utils;
 with Base_Model_Types;
 with Ada.Calendar;
 
-package Model_Types is
+package Standard_UK_Enums is
 
    use Base_Model_Types;
    use Ada.Calendar;
@@ -206,4 +206,4 @@ package Model_Types is
       black_or_african_or_caribbean_or_black_british,
       other_ethnic_group );
 
-end Model_Types;
+end Standard_UK_Enums;
