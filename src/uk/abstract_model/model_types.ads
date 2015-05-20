@@ -6,6 +6,9 @@ package Model_Types is
 
    use Base_Model_Types;
    use Ada.Calendar;
+   
+   type Head_Or_Spouse is ( neither, head, spouse );
+   subtype Head_Or_Spouse_Id is Head_Or_Spouse range head .. spouse;
 
    type Income_Tax_Income_Types is (
       non_savings_income,
@@ -124,42 +127,81 @@ package Model_Types is
       child, 
       foster_child, 
       other_relationship );
+   --
+   -- derived from dataset: frs table: househol
+   -- Region_Type uses variable gvtregn
+   --
+   type Region_Type is (
+      north_east,
+      north_west,
+      yorks_and_the_humber,
+      east_midlands,
+      west_midlands,
+      east_of_england,
+      london,
+      south_east,
+      south_west,
+      scotland,
+      wales,
+      northern_ireland );
 
-   type Budget_Type is ( 
-      -- household_budget, 
-      -- individual, 
-      childrens_services, 
-      local_authority, 
-      welsh_government, 
-      uk_government );
-   type Budget_Array is array( Budget_Type ) of Amount;
-   type Budget_By_Year is array( Year_Number range <> ) of Budget_Array;
+  --
+   -- derived from dataset: frs table: adult
+   -- Marital_Status_Type uses variable marital
+   --
+   type Marital_Status_Type is (
+      married_or_civil_partnership,
+      cohabiting,
+      single,
+      widowed,
+      separated,
+      divorced_or_civil_partnership_dissolved );
       
-   type Admin_Activity_Type is ( 
-      initial_review, 
-      maintenance, 
-      placement_ceases, 
-      bi_annual_review );
+  type Age_Band_Type is (
+      age_0_15, 
+      age_16_18, 
+      age_19_21, 
+      age_22_39, 
+      age_40_44,
+      age_45_49, 
+      age_50_54, 
+      age_55_59, 
+      age_60_64,     
+      age_65_69,
+      age_70_74, 
+      age_75_79, 
+      age_80_84, 
+      age_85_89, 
+      age_90_and_over );
 
-   type Practitioner_Type is ( 
-      personal_advisor, 
-      team_manager, 
-      adminstrator );
+   subtype Adult_Age_Band is Age_Band_Type range age_16_18 .. Age_Band_Type'Last;
+   
+   --
+   -- derived from dataset: frs table: househol
+   -- Council_Tax_Band_Type uses variable ctband
+   --
+   type Council_Tax_Band_Type is (
+      band_a,
+      band_b,
+      band_c,
+      band_d,
+      band_e,
+      band_f,
+      band_g,
+      band_h,
+      band_i,
+      na,
+      household_not_valued_separately );
       
-   type Activity_Times is array( Admin_Activity_Type, Practitioner_Type ) of Amount;
-   type Admin_Activity_Array is array( Admin_Activity_Type ) of Amount;
-
-   type Practioner_Costs is array( Practitioner_Type ) of Amount;
-
-   type Education_Maintenance_Type_Wales is (
-      ema,
-      alg_fe,
-      tuition_fee_grants,
-      assembly_learning_grants,
-      maintenance_loans,
-      tuition_fee_loans,
-      care_leavers_bursary ); -- disabled
-
-   type Maintenance_Array is array( Education_Maintenance_Type_Wales ) of Amount;
+   --
+   -- derived from dataset: frs table: adult
+   -- Ethnic_Group_Type uses variable ethgr3
+   --
+   type Ethnic_Group_Type is (
+      white,
+      mixed_or_multiple_ethnic_groups,
+      asian_or_asian_british,
+      black_or_african_or_caribbean_or_black_british,
+      other_ethnic_group );
 
 end Model_Types;
