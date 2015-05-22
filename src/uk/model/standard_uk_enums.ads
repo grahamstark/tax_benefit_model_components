@@ -47,6 +47,7 @@ package Standard_UK_Enums is
       dividends,
       property,
       royalties,
+      bonds_and_gilts,
       other_income,
       other_investment_income,
 
