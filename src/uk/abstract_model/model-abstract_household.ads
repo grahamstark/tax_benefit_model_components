@@ -11,11 +11,10 @@ package Model.Abstract_Household is
 
    type Demog is interface;
    function Age( d : Demog ) return Age_Range is abstract;
-   function Employment( d : Demog ) return Employment_Status is abstract;
+   function Employment( d : Demog ) return Broad_Employment_Status is abstract;
    function Gender( d : Demog ) return Gender_Type is abstract;
    function Family_Relationship( d : Demog ) return Relationship_Type is abstract;
-   function Education_Status( d : Demog ) return Education_Type is abstract;
-
+  
    type Employment_Record is interface;
    function Is_Contracted_In_To_Serps( e : Employment_Record ) return Boolean is abstract;
    function Hours_Worked( e : Employment_Record ) return Work_Hours_Range is abstract;
@@ -68,8 +67,6 @@ package Model.Abstract_Household is
 
    type Household is interface;
    
-   function Get_Benefit_Units( hh : Household ) return Benefit_Unit_Vector is abstract;
-
    function Get_Num_Benefit_Units(
       hh        : Household ) return Benefit_Unit_Count is abstract;
 

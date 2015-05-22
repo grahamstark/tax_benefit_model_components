@@ -101,14 +101,7 @@ package Standard_UK_Enums is
    subtype Benefits_Range is  Broad_Incomes_Type range disabled_living_allowance .. tax_credits;
    subtype Work_Hours_Range is Natural range 0 .. 150;
 
-   type Education_Type is ( 
-      not_in_education, 
-      school, 
-      apprentice, 
-      further_education, 
-      higher_education );
-      
-   type Employment_Status is ( 
+   type Broad_Employment_Status is ( 
       full_time, 
       part_time, 
       unemployed, 
