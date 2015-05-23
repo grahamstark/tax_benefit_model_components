@@ -2,75 +2,6 @@ with Standard_UK_Enums;
 
 package Model.Parameter_System is
 
-   use Standard_UK_Enums;
-   
-   type Loan_Plan_Type is ( plan_1, plan_2 );
-
-
---  £18,370 £5,161 £2,575 £4,640 £1,412
---  £25,000 £3,347 £3,477 £5,542 £2,314
---  £30,000 £2,099 £4,101 £6,166 £2,938
---  £34,000 £1,142 £4,579 £6,644 £3,416
---  £40,000 £734 £4,783 £6,848 £3,620
---  £45,000 £393 £4,954 £7,019 £3,791
---  £50,020 £50 £5,125 £7,190 £3,962
-   type Student_Support_Type is (
-      assembly_learning_grant, maintenance_loan_london, maintenance_loan_away, maintenance_loan_home );
-
---     type Assembly_Learning_Grant_System is
---        maximum_support : Amount := 5_161.00;
---        income_end_threshold : Amount := 50_020.00;
---        income_start_threshold : Amount := 18_371.00;
---        withdrawal_rate := 0.50;
---  The maximum amount of support available is £5,161 per year.
---  How much you get depends on your household income, and will
---  be calculated by your LA when you make your application for
---  help. The table on page 13 is a guide to how much grant/loan
---  you could get:
---  If your household income is over £50,020 you will not
---  be eligible to receive any living costs grant (Assembly
---  Learning Grant).
---  Household Income (See Note below)
---  £18,370 or less: Full £5,161 grant
---  Between £18,371 and £50,020: Partial grant
---  Over £50,020: No grant
-
-   type Student_Loan_And_Grant_System(
-      plan_type             : Loan_Plan_Type;
-      num_maintenance_bands : Positive;
-      num_algfe_bands       : Positive ) is record
-      -- use pre-calculated income-tax income
-      grant_income_limits      : Vector( 1 .. num_maintenance_bands );
-      assembly_learning_grant  : Vector( 1 .. num_maintenance_bands );
-      maintenance_loan_london  : Vector( 1 .. num_maintenance_bands );
-      maintenance_loan_away    : Vector( 1 .. num_maintenance_bands );
-      maintenance_loan_home    : Vector( 1 .. num_maintenance_bands );
-      tuition_fee_loan         : Amount;
-      tuition_fee_grant        : Amount;
-      ema                      : Amount;
-      ema_income_limit         : Amount;
-      ema_income_limit_w_kids  : Amount;
-      algfe                    : Vector( 1 .. num_algfe_bands );
-      algfe_income_limit       : Vector( 1 .. num_algfe_bands );
-      higher_education_bursary : Amount := 0.0; 
-      average_accommodation_costs_out_of_term_time : Amount := 0.0;
-      -- plus some stuff about higher interest above 41k
-      case plan_type is
-      when plan_1 =>
-         minimum_income_threshold : Amount := 16_365.00;
-      when plan_2 =>
-         income_limit : Amount := 21_000.00;
-         payment_rate : Rate := 0.09;
-      end case;
-   end record;
-
-
-   type Foster_Payment_System is record
-      age_limits : Age_Limit_Array( 1 .. 4 ); -- NOTE 4 in England
-      minimum_amounts      : Amount_Array( 1 .. 4 );
-      childs_contributions : Amount_Array( 1 .. 4 );
-   end record;
-
    type Income_Tax_System is record
      non_savings_income_rates : Rates_And_Bands;
      savings_income_rates     : Rates_And_Bands;
@@ -184,11 +115,6 @@ package Model.Parameter_System is
    -- mortgage interest. there is a qualifying period of three months before you can be paid this element. you will not be paid a housing element if you are in paid work.
    end record;
 
-   type Social_Care_Costs is record
-      current_system  : Admin_Activity_Array;
-      when_i_am_ready : Admin_Activity_Array;
-   end record;
-   
    type Child_Benefit_System is record
       first_child : Amount;
       additional_children : Amount;
@@ -199,17 +125,11 @@ package Model.Parameter_System is
       vat : Rate;
    end record;
 
-   type Complete_System(
-      plan_type             : Loan_Plan_Type;
-      num_maintenance_bands : Positive;
-      num_algfe_bands       : Positive ) is record
+   type Complete_System is record
       cb : Child_Benefit_System;
       it : Income_Tax_System;
       ni : National_Insurance_System;
       uc : Universal_Credit_System;
-      sl : Student_Loan_And_Grant_System( plan_type, num_maintenance_bands, num_algfe_bands );
-      fp : Foster_Payment_System;
-      sc : Social_Care_Costs;
       indir : Indirect_Taxes;
     end record;
 

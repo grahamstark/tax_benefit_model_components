@@ -34,6 +34,25 @@ package Standard_UK_Enums is
 
    subtype Rented is Broad_Tenure_Type range  social_rented .. shared_ownership;  
       
+   type Expenses_Type is ( 
+      health_insurance,
+      alimony_and_child_support_paid,
+      care_insurance,
+      trade_unions_etc,
+      friendly_societies, 
+      work_expenses,
+      repayments,
+      pension_contributions
+      );
+   
+   type Broad_Calculated_Type is (
+      taxable_income,
+      gross_income,
+      net_income,
+      equivalence_scale, 
+      income_for_tax_credits,
+      marginal_rate );
+   
    type Broad_Incomes_Type is (
       wages,
       self_employment,
@@ -199,5 +218,5 @@ package Standard_UK_Enums is
       asian_or_asian_british,
       black_or_african_or_caribbean_or_black_british,
       other_ethnic_group );
-
+      
 end Standard_UK_Enums;

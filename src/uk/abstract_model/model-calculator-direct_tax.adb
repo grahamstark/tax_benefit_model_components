@@ -1,13 +1,14 @@
-with Model_Types;
 with Ada.Assertions;
 
 package body Model.Calculator.Direct_Tax is
-   use Model_Types;
+   
+   use type mar.Operation_Type;
+   
    use Ada.Assertions;
    
    function Get_Net_Income(
       pers  : Model.Abstract_Household.Person'Class;
-      res   : Model.Abstract_Result.Personal_Result ) return Amount is
+      res   : mar.Personal_Result'Class ) return Amount is
       pinc : constant Incomes_List := pers.Get_Incomes;
       net : Amount := 0.0;
    begin
@@ -25,30 +26,28 @@ package body Model.Calculator.Direct_Tax is
       return net;
    end Get_Net_Income;
 
-   procedure Make_Household_Taxable_Income(
-      hh  : Model.Abstract_Household.Household'Class;
-      res : in out Model.Abstract_Result.Household_Result ) is
-      i : Amount := 0.0;
+   procedure Accumulate_To_HHld_Level(
+      hh    : Model.Abstract_Household.Household'Class;
+      res   : in out mar.Household_Result'Class;
+      which : Broad_Calculated_Type ) is
+      inc : Amount := 0.0;
    begin
-      res.total_taxable_income := 0.0;
-      res.num_benefit_units := hh.Get_Num_Benefit_Units; 
-      for buno in 1 .. res.num_benefit_units loop
-         res.bus( buno ).total_taxable_income := 0.0;
+      for buno in 1 .. hh.Get_Num_Benefit_Units loop
          declare
             bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
          begin
-            res.bus( buno ).num_people := bu.Get_Num_People;
-            for pno in 1 .. res.bus( buno ).num_people loop
-               res.total_taxable_income := res.total_taxable_income + res.bus( buno ).pers( pno ).total_taxable_income;
-               res.bus( buno ).total_taxable_income := res.bus( buno ).total_taxable_income + res.bus( buno ).pers( pno ).total_taxable_income;
+            for pno in 1 .. bu.Get_Num_People loop
+               inc := res.Get( buno ).Get( pno ).Get( which );
+               res.Set( which, inc, mar.add );
+               res.Get( buno ).Set( which, inc, mar.add );
             end loop;
          end;
       end loop;
-   end Make_Household_Taxable_Income;
+   end Accumulate_To_HHld_Level;
 
    procedure Make_Household_Net_Income(
       hh  : Model.Abstract_Household.Household'Class;
-      res : in out Model.Abstract_Result.Household_Result ) is
+      res : in out mar.Household_Result'Class ) is
       i : Amount := 0.0;
    begin
       res.net_income := 0.0;
@@ -103,7 +102,7 @@ package body Model.Calculator.Direct_Tax is
    procedure Calculate_Income_Tax(
       sys : Income_Tax_System;
       ad  : Model.Abstract_Household.Person'Class;
-      res : in out Model.Abstract_Result.Personal_Result ) is
+      res : in out mar.Personal_Result'Class ) is
    use type Incomes_Set;
       incomes                : constant Incomes_List :=
          Combine_Incomes( ad.Get_Incomes, res.incomes );
@@ -129,7 +128,7 @@ package body Model.Calculator.Direct_Tax is
       Add_To_Map( res.intermed, "dividends_income ", dividends_income );
       Add_To_Map( res.intermed, "dividend_credit_rate ", dividend_credit_rate );
       Add_To_Map( res.intermed, "dividend credit ", dividend_credit );
-      res.total_taxable_income := total_income;
+      res.taxable_income := total_income;
       Apply_Allowance( non_savings_income, allowance );
       Apply_Allowance( savings_income, allowance );
       Apply_Allowance( dividends_income, allowance );
@@ -162,7 +161,7 @@ package body Model.Calculator.Direct_Tax is
    procedure Calculate_National_Insurance(
       sys : National_Insurance_System;
       ad  : Model.Abstract_Household.Person'Class;
-      res : in out Personal_Result ) is
+      res : in out mar.Personal_Result'Class ) is
       earnings : constant Amount := ad.Get_Income( wages );
    begin
       if( ad.Is_Contracted_In_To_Serps )then
