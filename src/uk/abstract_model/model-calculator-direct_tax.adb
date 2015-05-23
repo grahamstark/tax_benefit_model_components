@@ -7,28 +7,27 @@ package body Model.Calculator.Direct_Tax is
    
    function Get_Net_Income(
       pers  : Model.Abstract_Household.Person'Class;
-      res   : Model.Results.Personal_Result ) return Amount is
+      res   : Model.Abstract_Result.Personal_Result ) return Amount is
       pinc : constant Incomes_List := pers.Get_Incomes;
-      cinc : constant Incomes_List := res.incomes;
       net : Amount := 0.0;
    begin
       for i in Non_Calculated_Incomes_Range loop
          Inc( net, pinc( i ));
       end loop;
       for i in income_tax .. repayments loop
-         Dec( net, cinc( i ));
+         Dec( net, res.Get( i ));
       end loop;
       for i in education_allowances .. tax_credits  loop
-         Inc( net, cinc( i ));
+         Inc( net, res.Get( i ));
       end loop;
-      Dec( net, res.childs_contributions );
-      Inc( net, res.student_accommodation_costs );
+      -- Dec( net, res.childs_contributions );
+      -- Inc( net, res.student_accommodation_costs );
       return net;
    end Get_Net_Income;
 
    procedure Make_Household_Taxable_Income(
       hh  : Model.Abstract_Household.Household'Class;
-      res : in out Model.Results.Household_Result ) is
+      res : in out Model.Abstract_Result.Household_Result ) is
       i : Amount := 0.0;
    begin
       res.total_taxable_income := 0.0;
@@ -49,7 +48,7 @@ package body Model.Calculator.Direct_Tax is
 
    procedure Make_Household_Net_Income(
       hh  : Model.Abstract_Household.Household'Class;
-      res : in out Model.Results.Household_Result ) is
+      res : in out Model.Abstract_Result.Household_Result ) is
       i : Amount := 0.0;
    begin
       res.net_income := 0.0;
@@ -104,7 +103,7 @@ package body Model.Calculator.Direct_Tax is
    procedure Calculate_Income_Tax(
       sys : Income_Tax_System;
       ad  : Model.Abstract_Household.Person'Class;
-      res : in out Model.Results.Personal_Result ) is
+      res : in out Model.Abstract_Result.Personal_Result ) is
    use type Incomes_Set;
       incomes                : constant Incomes_List :=
          Combine_Incomes( ad.Get_Incomes, res.incomes );
