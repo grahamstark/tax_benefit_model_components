@@ -27,6 +27,7 @@ package Model.Abstract_Result is
       op     : Operation_Type := Replace ) return Amount  is abstract;
       
    procedure Zero( result : in out Personal_Result ) is abstract;
+   procedure Add_Note( result : in out Personal_Result; key : String; value : String ) is abstract;
    
    type Benefit_Unit_Result is interface;
    
@@ -52,6 +53,8 @@ package Model.Abstract_Result is
       
    procedure Zero( 
       result : in out Benefit_Unit_Result ) is abstract;
+
+   procedure Add_Note( result : in out Benefit_Unit_Result; key : String; value : String ) is abstract;
    
    type Household_Result is interface;
    

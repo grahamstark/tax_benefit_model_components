@@ -45,30 +45,6 @@ package body Model.Calculator.Direct_Tax is
       end loop;
    end Accumulate_To_HHld_Level;
 
-   procedure Make_Household_Net_Income(
-      hh  : Model.Abstract_Household.Household'Class;
-      res : in out mar.Household_Result'Class ) is
-      i : Amount := 0.0;
-   begin
-      res.net_income := 0.0;
-      res.num_benefit_units := hh.Get_Num_Benefit_Units; 
-      for buno in 1 .. res.num_benefit_units loop
-         res.bus( buno ).net_income := 0.0;
-         declare
-            bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
-         begin
-            res.bus( buno ).num_people := bu.Get_Num_People;
-            for pno in 1 .. res.bus( buno ).num_people loop
-               res.bus( buno ).pers( pno ).net_income := Get_Net_Income(
-                  bu.Get_Person( pno ),
-                  res.bus( buno ).pers( pno ));
-               res.net_income := res.net_income + res.bus( buno ).pers( pno ).net_income;
-               res.bus( buno ).net_income := res.bus( buno ).net_income + res.bus( buno ).pers( pno ).net_income;
-            end loop;
-         end;
-      end loop;
-   end Make_Household_Net_Income;
-
    procedure Apply_Allowance(
       income : in out Amount; allowance : in out Amount ) is
       original_income : constant Amount := income;
