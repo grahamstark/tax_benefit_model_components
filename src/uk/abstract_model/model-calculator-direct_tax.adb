@@ -1,10 +1,23 @@
 with Ada.Assertions;
+with GNATColl.Traces;
 
 package body Model.Calculator.Direct_Tax is
    
    use type mar.Operation_Type;
    
    use Ada.Assertions;
+   
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.Msc.BHPS_DATA_CREATION_LIBS" );
+   
+   procedure Log( s : String ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s );
+   end Log;
+
+   procedure Log( s : String; m : Amount ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
+   end Log;
    
    function Get_Net_Income(
       pers  : Model.Abstract_Household.Person'Class;
@@ -35,12 +48,14 @@ package body Model.Calculator.Direct_Tax is
       for buno in 1 .. hh.Get_Num_Benefit_Units loop
          declare
             bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
+            bures : mar.Benefit_Unit_Result'Class := res.Get( buno );
          begin
             for pno in 1 .. bu.Get_Num_People loop
                inc := res.Get( buno ).Get( pno ).Get( which );
                res.Set( which, inc, mar.add );
-               res.Get( buno ).Set( which, inc, mar.add );
+               bures.Set( which, inc, mar.add );
             end loop;
+            res.Set( buno, bures );
          end;
       end loop;
    end Accumulate_To_HHld_Level;
@@ -57,12 +72,12 @@ package body Model.Calculator.Direct_Tax is
 
    function Combine_Incomes(
       non_calculated : Incomes_List;
-      calculated : Incomes_List ) return Incomes_List is
+      res            : mar.Personal_Result'Class ) return Incomes_List is
       il : Incomes_List;
    begin
      for i in Incomes_List'Range loop
         if( i in Calculated_Incomes_Range )then
-           il( i ) := calculated( i );
+           il( i ) := res.Get( i );
         else
            il( i ) := non_calculated( i );
         end if;
@@ -81,30 +96,31 @@ package body Model.Calculator.Direct_Tax is
       res : in out mar.Personal_Result'Class ) is
    use type Incomes_Set;
       incomes                : constant Incomes_List :=
-         Combine_Incomes( ad.Get_Incomes, res.incomes );
+         Combine_Incomes( ad.Get_Incomes, res );
       all_incomes            : constant Incomes_Set :=
          sys.non_savings_income or
          sys.savings_income or
          sys.dividends_income;
-      total_income        : constant Amount := T_Incomes.Sum( incomes, all_incomes );
-      reliefs             : constant Amount := 0.0;
-      net_income          : constant Amount := total_income - reliefs;
-      non_savings_income  : Amount := T_Incomes.Sum( incomes, sys.non_savings_income );
-      savings_income      : Amount := T_Incomes.Sum( incomes, sys.savings_income );
-      dividends_income    : Amount := T_Incomes.Sum( incomes, sys.dividends_income );
-      non_savings_tax     : Tax_Result;
-      savings_tax         : Tax_Result;
-      dividends_tax       : Tax_Result;
+      total_income         : constant Amount := T_Incomes.Sum( incomes, all_incomes );
+      reliefs              : constant Amount := 0.0;
+      net_income           : constant Amount := total_income - reliefs;
+      non_savings_income   : Amount := T_Incomes.Sum( incomes, sys.non_savings_income );
+      savings_income       : Amount := T_Incomes.Sum( incomes, sys.savings_income );
+      dividends_income     : Amount := T_Incomes.Sum( incomes, sys.dividends_income );
+      non_savings_tax      : Tax_Result;
+      savings_tax          : Tax_Result;
+      dividends_tax        : Tax_Result;
       dividend_credit_rate : constant Rate := Get_Dividend_Credit_Rate( sys.dividend_income_rates );
       dividend_credit      : constant Amount := dividend_credit_rate * incomes( dividends );
       allowance            : Amount := sys.personal_allowance;
+      income_tax_amount    : Amount;
    begin
-      Add_To_Map( res.intermed, "non_savings_income ", non_savings_income );
-      Add_To_Map( res.intermed, "savings_income ", savings_income );
-      Add_To_Map( res.intermed, "dividends_income ", dividends_income );
-      Add_To_Map( res.intermed, "dividend_credit_rate ", dividend_credit_rate );
-      Add_To_Map( res.intermed, "dividend credit ", dividend_credit );
-      res.taxable_income := total_income;
+      Log( "non_savings_income ", non_savings_income );
+      Log( "savings_income ", savings_income );
+      Log( "dividends_income ", dividends_income );
+      Log( "dividend_credit_rate ", dividend_credit_rate );
+      Log( "dividend credit ", dividend_credit );
+      res.Set( taxable_income, total_income );
       Apply_Allowance( non_savings_income, allowance );
       Apply_Allowance( savings_income, allowance );
       Apply_Allowance( dividends_income, allowance );
@@ -124,14 +140,14 @@ package body Model.Calculator.Direct_Tax is
          dividends_tax := UK_Tax_Utils.Calc_Tax_Due(
             dividend_rates, dividends_income );
       end;
-      Add_To_Map( res.intermed, "non_savings_tax ", non_savings_tax.due );
-      Add_To_Map( res.intermed, "savings_tax ", savings_tax.due );
-      Add_To_Map( res.intermed, "dividends_tax ", dividends_tax.due );
+      Log("non_savings_tax ", non_savings_tax.due );
+      Log("savings_tax ", savings_tax.due );
+      Log("dividends_tax ", dividends_tax.due );
       -- step 6 various reliefs we're ignoring here (married couple ... )
       -- step 7 To the Step 6 figure, add certain other amounts of tax,
       -- such as the pensions annual allowance charge (Chapter 3).
-      res.incomes( income_tax ) := non_savings_tax.due + savings_tax.due + dividends_tax.due;
-      res.incomes( income_tax ) := Amount'Max( 0.0, res.incomes( income_tax ) - dividend_credit );
+      income_tax_amount := non_savings_tax.due + savings_tax.due + dividends_tax.due;
+      res.Set( income_tax, Amount'Max( 0.0, income_tax_amount - dividend_credit ));
    end Calculate_Income_Tax;
 
    procedure Calculate_National_Insurance(
@@ -141,17 +157,20 @@ package body Model.Calculator.Direct_Tax is
       earnings : constant Amount := ad.Get_Income( wages );
    begin
       if( ad.Is_Contracted_In_To_Serps )then
-            res.incomes( national_insurance ) := UK_Tax_Utils.Calc_Tax_Due(
-                sys.employee_in_rates, earnings ).due;
-            res.employers_ni := UK_Tax_Utils.Calc_Tax_Due(
-                sys.employer_in_rates, earnings ).due;
+            res.Set( national_insurance, 
+               UK_Tax_Utils.Calc_Tax_Due(
+                  sys.employee_in_rates, earnings ).due );
+            res.Set( employers_ni, 
+               UK_Tax_Utils.Calc_Tax_Due(
+                  sys.employer_in_rates, earnings ).due );
       else
-            res.incomes( national_insurance ) := UK_Tax_Utils.Calc_Tax_Due(
-                sys.employee_out_rates, earnings ).due;
-            res.employers_ni := UK_Tax_Utils.Calc_Tax_Due(
-                sys.employer_out_rates, earnings ).due;
+            res.Set( national_insurance, 
+               UK_Tax_Utils.Calc_Tax_Due(
+                  sys.employee_out_rates, earnings ).due );
+            res.Set( employers_ni, 
+               UK_Tax_Utils.Calc_Tax_Due(
+                  sys.employer_out_rates, earnings ).due );
       end if;
    end Calculate_National_Insurance;
-   
-
+ 
 end Model.Calculator.Direct_Tax;

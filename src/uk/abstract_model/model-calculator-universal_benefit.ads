@@ -1,24 +1,22 @@
 with Model.Abstract_Household;
 with Model.Results;
 with Model.Parameter_System;
-with Model_Types;
 
 package Model.Calculator.Universal_Benefit is
 
-  use Model.Results;
   use Model.Parameter_System;
-  use Model_Types;
+  package mar renames Model.Abstract_Result;
 
   procedure Calculate_Child_Benefit(
-     sys           : Child_Benefit_System;
-     bu            : Model.Abstract_Household.Benefit_Unit'Class;
-     res           : in out Benefit_Unit_Result );
+     sys : Child_Benefit_System;
+     bu  : Model.Abstract_Household.Benefit_Unit'Class;
+     res : in out mar.Personal_Result'Class );
   
   procedure Calculate_Universal_Benefit(
      sys           : Universal_Credit_System;
      tenure        : Tenure_Type;
      housing_costs : Housing_Array;
      bu            : Model.Abstract_Household.Benefit_Unit'Class;
-     res           : in out Benefit_Unit_Result );
+     res           : in out mar.Personal_Result'Class );
 
 end Model.Calculator.Universal_Benefit;
