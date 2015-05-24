@@ -1,21 +1,35 @@
-with Model_Types;
 with Ada.Assertions;
 with Ada.Exceptions;
 with Model.Calculator.Direct_Tax;
 with Ada.Text_IO;
+with GNATColl.Traces;
 
 package body Model.Calculator.Universal_Benefit is
    use Model_Types;
    use Ada.Assertions;
    use Ada.Text_IO;
 
-  ex : Exception;
-  
+   ex : Exception;
+
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.UNIVERSAL_BENEFIT" );
+   
+   procedure Log( s : String ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s );
+   end Log;
+
+   procedure Log( s : String; m : Amount ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
+   end Log;
+
    procedure Calculate_Child_Benefit(
      sys           : Child_Benefit_System;
      bu            : Model.Abstract_Household.Benefit_Unit'Class;
-     res           : in out Benefit_Unit_Result ) is
+     res           : in out Benefit_Unit_Result'Class ) is
      num_children : Person_Count := 0;
+     bpno : constant Person_Number := 1; 
+     persres : Personal_Result'Class := res.Get( bpno );
    begin
       for i in 2 .. bu.Get_Num_People loop
          declare
@@ -120,16 +134,16 @@ package body Model.Calculator.Universal_Benefit is
       end if;
       -- end if;
       -- TODO NDDs, bedroom limits ...
-      Add_To_Map( res.intermed, "Universal Credit::child_element ", child_element );
-      Add_To_Map( res.intermed, "Universal Credit::housing_allowance ", res.housing_allowance );
-      Add_To_Map( res.intermed, "Universal Credit::standard_allowance ", standard_allowance );
+      Log( "Universal Credit::child_element ", child_element );
+      Log( "Universal Credit::housing_allowance ", res.housing_allowance );
+      Log( "Universal Credit::standard_allowance ", standard_allowance );
       total_allowance :=
           standard_allowance +
           child_element +
           additional_child_element +
           res.housing_allowance +
           capability_for_work_element;
-      Add_To_Map( res.intermed, "Universal Credit::total_allowance ", total_allowance );
+      Log( "Universal Credit::total_allowance ", total_allowance );
 
       -- you are single and claim housing costs and you:
       --
@@ -169,7 +183,7 @@ package body Model.Calculator.Universal_Benefit is
 	    -- TODO couple_no_housing_limited_work_capacity : Amount := 647.0*12.0;
          end if;
       end if;
-      Add_To_Map( res.intermed, "Universal Credit::disregard ", disregard );
+      Log("Universal Credit::disregard ", disregard );
       -- FIXME this has to be wrong
       for pno in 1 .. bu.Get_Num_People loop
          declare
@@ -182,18 +196,18 @@ package body Model.Calculator.Universal_Benefit is
                      incomes, sys.earned_income ) - incomes( income_tax ) - incomes( national_insurance ));
            unearn : constant Amount := T_Incomes.Sum( incomes, sys.unearned_income );
          begin
-           Add_To_Map( res.intermed, "Universal Credit::wages " & pno'Img, incomes( wages ));
-           Add_To_Map( res.intermed, "Universal Credit::earnings person " & pno'Img, earn );
-           Add_To_Map( res.intermed, "Universal Credit::unearned  person " & pno'Img, unearn );
+           Log( "Universal Credit::wages " & pno'Img, incomes( wages ));
+           Log( "Universal Credit::earnings person " & pno'Img, earn );
+           Log( "Universal Credit::unearned  person " & pno'Img, unearn );
            earned_income := earned_income + earn;
            unearned_income := unearned_income + unearn;
          end;
       end loop;
       earned_income := Amount'Max( 0.0, earned_income - disregard );
-      Add_To_Map( res.intermed, "Universal Credit::total earnings after disgregard", earned_income );
-      Add_To_Map( res.intermed, "Universal Credit::total unearned", unearned_income );
+      Log( "Universal Credit::total earnings after disgregard", earned_income );
+      Log( "Universal Credit::total unearned", unearned_income );
       payment := Amount'Max( 0.0, total_allowance - unearned_income - sys.withdrawal_rate * earned_income );
-      Add_To_Map( res.intermed, "Universal Credit::total_payment", payment );
+      Log( "Universal Credit::total_payment", payment );
       payment := Amount'Min( payment, maximum_benefit );
       res.pers( 1 ).incomes( housing_benefit ) := Amount'Min( payment, res.housing_allowance );
       res.pers( 1 ).incomes( tax_credits ) := payment - res.pers( 1 ).incomes( housing_benefit );

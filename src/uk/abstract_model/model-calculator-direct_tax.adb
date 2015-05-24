@@ -7,7 +7,7 @@ package body Model.Calculator.Direct_Tax is
    
    use Ada.Assertions;
    
-   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.Msc.BHPS_DATA_CREATION_LIBS" );
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.DIRECT_TAX" );
    
    procedure Log( s : String ) is
    begin
