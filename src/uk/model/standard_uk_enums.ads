@@ -52,6 +52,7 @@ package Standard_UK_Enums is
       equivalence_scale, 
       income_for_tax_credits,
       marginal_rate,
+      housing_allowance,
       employers_ni );
    
    type Broad_Incomes_Type is (

@@ -48,14 +48,11 @@ package body Model.Calculator.Direct_Tax is
       for buno in 1 .. hh.Get_Num_Benefit_Units loop
          declare
             bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
-            bures : mar.Benefit_Unit_Result'Class := res.Get( buno );
          begin
             for pno in 1 .. bu.Get_Num_People loop
                inc := res.Get( buno ).Get( pno ).Get( which );
                res.Set( which, inc, mar.add );
-               bures.Set( which, inc, mar.add );
             end loop;
-            res.Set( buno, bures );
          end;
       end loop;
    end Accumulate_To_HHld_Level;

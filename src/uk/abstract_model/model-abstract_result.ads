@@ -2,10 +2,10 @@ package Model.Abstract_Result is
 
    use Standard_UK_Enums;
 
-   type Personal_Result is interface;
-
    type Operation_Type is ( replace, add, substract, multiply, divide );
    
+   type Personal_Result is interface;
+
    procedure Set( 
       result : in out Personal_Result;
       which  : Calculated_Incomes_Range; 
@@ -24,8 +24,7 @@ package Model.Abstract_Result is
       
    function Get( 
       result : Personal_Result; 
-      which  : Broad_Calculated_Type;
-      op     : Operation_Type := Replace ) return Amount  is abstract;
+      which  : Broad_Calculated_Type ) return Amount  is abstract;
       
    procedure Zero( result : in out Personal_Result ) is abstract;
    type Benefit_Unit_Result is interface;
@@ -42,6 +41,14 @@ package Model.Abstract_Result is
       
    procedure Set( 
       result : in out Benefit_Unit_Result;
+      person : Person_Number; 
+      which  : Calculated_Incomes_Range; 
+      value  : Amount;
+      op     : Operation_Type := Replace ) is abstract;
+      
+   procedure Set( 
+      result : in out Benefit_Unit_Result;
+      person : Person_Number; 
       which  : Broad_Calculated_Type; 
       value  : Amount;
       op     : Operation_Type := Replace ) is abstract;

@@ -1,5 +1,5 @@
 with Model.Abstract_Household;
-with Model.Results;
+with Model.Abstract_Result;
 with Model.Parameter_System;
 
 package Model.Calculator.Universal_Benefit is
@@ -10,13 +10,13 @@ package Model.Calculator.Universal_Benefit is
   procedure Calculate_Child_Benefit(
      sys : Child_Benefit_System;
      bu  : Model.Abstract_Household.Benefit_Unit'Class;
-     res : in out mar.Personal_Result'Class );
+     res : in out mar.Benefit_Unit_Result'Class );
   
   procedure Calculate_Universal_Benefit(
      sys           : Universal_Credit_System;
-     tenure        : Tenure_Type;
+     tenure        : Broad_Tenure_Type;
      housing_costs : Housing_Array;
      bu            : Model.Abstract_Household.Benefit_Unit'Class;
-     res           : in out mar.Personal_Result'Class );
+     res           : in out mar.Benefit_Unit_Result'Class );
 
 end Model.Calculator.Universal_Benefit;
