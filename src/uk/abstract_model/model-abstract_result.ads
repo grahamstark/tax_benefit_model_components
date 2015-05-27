@@ -2,7 +2,7 @@ package Model.Abstract_Result is
 
    use Standard_UK_Enums;
 
-   type Operation_Type is ( replace, add, substract, multiply, divide );
+   type Operation_Type is ( replace, add, subtract, multiply, divide );
    
    type Personal_Result is interface;
 
