@@ -24,12 +24,12 @@ package Model.Calculator.Direct_Tax is
    function Combine_Incomes(
       non_calculated : Incomes_List;
       res            : mar.Personal_Result'Class ) return Incomes_List;
-
-   procedure Accumulate_To_HHld_Level(
-      hh    : Model.Abstract_Household.Household'Class;
-      res   : in out mar.Household_Result'Class;
-      which : Broad_Calculated_Type );
-
+-- 
+   -- procedure Accumulate_To_HHld_Level(
+      -- hh    : Model.Abstract_Household.Household'Class;
+      -- res   : in out mar.Household_Result'Class;
+      -- which : Broad_Calculated_Type );
+-- 
 private
 
    procedure Apply_Allowance(

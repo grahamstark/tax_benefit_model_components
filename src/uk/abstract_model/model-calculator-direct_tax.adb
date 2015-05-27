@@ -36,25 +36,25 @@ package body Model.Calculator.Direct_Tax is
       -- Inc( net, res.student_accommodation_costs );
       return net;
    end Get_Net_Income;
-
-   procedure Accumulate_To_HHld_Level(
-      hh    : Model.Abstract_Household.Household'Class;
-      res   : in out mar.Household_Result'Class;
-      which : Broad_Calculated_Type ) is
-      inc : Amount := 0.0;
-   begin
-      for buno in 1 .. hh.Get_Num_Benefit_Units loop
-         declare
-            bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
-         begin
-            for pno in 1 .. bu.Get_Num_People loop
-               inc := res.Get( buno ).Get( pno ).Get( which );
-               res.Set( which, inc, add );
-            end loop;
-         end;
-      end loop;
-   end Accumulate_To_HHld_Level;
-
+-- 
+   -- procedure Accumulate_To_HHld_Level(
+      -- hh    : Model.Abstract_Household.Household'Class;
+      -- res   : in out mar.Household_Result'Class;
+      -- which : Broad_Calculated_Type ) is
+      -- inc : Amount := 0.0;
+   -- begin
+      -- for buno in 1 .. hh.Get_Num_Benefit_Units loop
+         -- declare
+            -- bu : Model.Abstract_Household.Benefit_Unit'Class renames hh.Get_Benefit_Unit( buno );
+         -- begin
+            -- for pno in 1 .. bu.Get_Num_People loop
+               -- inc := res.Get( buno ).Get( pno ).Get( which );
+               -- res.Set( which, inc, add );
+            -- end loop;
+         -- end;
+      -- end loop;
+   -- end Accumulate_To_HHld_Level;
+-- 
    procedure Apply_Allowance(
       income : in out Amount; allowance : in out Amount ) is
       original_income : constant Amount := income;

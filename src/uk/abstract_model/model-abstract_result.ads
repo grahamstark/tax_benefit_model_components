@@ -33,13 +33,12 @@ package Model.Abstract_Result is
    
    procedure Set( 
       result : in out Benefit_Unit_Result;
-      which  : Person_Number; 
-      value  : Personal_Result'Class;
-      op     : Operation_Type := Replace ) is abstract;
+      person : Person_Number; 
+      value  : Personal_Result'Class ) is abstract;
  
    function Get( 
       result : Benefit_Unit_Result; 
-      which  : Person_Number ) return Personal_Result'Class  is abstract;
+      person : Person_Number ) return Personal_Result'Class  is abstract;
       
    procedure Set( 
       result : in out Benefit_Unit_Result;
@@ -67,27 +66,19 @@ package Model.Abstract_Result is
    procedure Set( 
       result : in out Household_Result;
       which : Benefit_Unit_Number; 
-      value : Benefit_Unit_Result'Class;
-      op    : Operation_Type := Replace ) is abstract;
+      value : Benefit_Unit_Result'Class ) is abstract;
       
    procedure Set( 
       result : in out Household_Result;
       buno   : Benefit_Unit_Number;
-      pers   : Person_Number; 
-      value  : Benefit_Unit_Result'Class;
+      person : Person_Number; 
+      value  : Personal_Result'Class;
       op     : Operation_Type := Replace ) is abstract;
-      
       
    function Get( 
       result : Household_Result; 
       which  : Benefit_Unit_Number ) return Benefit_Unit_Result'Class  is abstract;
    
-   procedure Set( 
-      result : in out Household_Result;
-      which  : Broad_Calculated_Type; 
-      value  : Amount; 
-      op     : Operation_Type := Replace ) is abstract;
-      
    function Get( 
       result : Household_Result; 
       which  : Broad_Calculated_Type ) return Amount is abstract;
