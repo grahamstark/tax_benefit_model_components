@@ -85,12 +85,12 @@ package body Model.Calculator.Universal_Benefit is
      payment                     : Amount := 0.0;
      recipient_person            : Person_Number := 1; -- FIXME
   begin
-     Put_Line( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
+     Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
      if( bu.Get_Num_People > 1 )then
-        Put_Line( "p2 " & bu.Get_Person( 2 ).Age'Img & " relationship " & bu.Get_Person( 2 ).Family_Relationship'Img );
+        Log( "p2 " & bu.Get_Person( 2 ).Age'Img & " relationship " & bu.Get_Person( 2 ).Family_Relationship'Img );
      end if;
      if head.Age >= 65 or head.employment = in_education then
-        Put_Line( "Calculate_Universal_Benefit; returning" );
+        Log( "Calculate_Universal_Benefit; returning" );
         return;
         -- "should be on pension credit" ); -- FIXME that's not right        
      end if;
