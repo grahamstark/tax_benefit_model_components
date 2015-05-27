@@ -1,3 +1,8 @@
+--
+-- This is where the calculations from the basic calculation models
+-- are stored. It's in the form of interfaces which have to me implemented in an actual
+-- model somewhere.
+--
 package Model.Abstract_Result is
 
    type Personal_Result is interface;
