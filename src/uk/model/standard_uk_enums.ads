@@ -54,6 +54,16 @@ package Standard_UK_Enums is
       marginal_rate,
       housing_allowance,
       employers_ni );
+      
+   package T_Broad_Calculated is new T_Utils(
+      T             => Broad_Calculated_Type,
+      Rate_Type     => Base_Model_Types.Rate,
+      Amount_Type   => Base_Model_Types.Amount,
+      Counter_Type  => Base_Model_Types.Counter_Type );
+
+   subtype Broad_Calculated_List is T_Broad_Calculated.Amount_Array;
+   subtype Broad_Calculated_Set is T_Broad_Calculated.Set;
+       
    
    type Broad_Incomes_Type is (
       wages,

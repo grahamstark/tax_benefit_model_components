@@ -3,8 +3,6 @@ with GNATColl.Traces;
 
 package body Model.Calculator.Direct_Tax is
    
-   use type mar.Operation_Type;
-   
    use Ada.Assertions;
    
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.DIRECT_TAX" );
@@ -51,7 +49,7 @@ package body Model.Calculator.Direct_Tax is
          begin
             for pno in 1 .. bu.Get_Num_People loop
                inc := res.Get( buno ).Get( pno ).Get( which );
-               res.Set( which, inc, mar.add );
+               res.Set( which, inc, add );
             end loop;
          end;
       end loop;

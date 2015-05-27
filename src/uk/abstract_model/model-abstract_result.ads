@@ -1,9 +1,5 @@
 package Model.Abstract_Result is
 
-   use Standard_UK_Enums;
-
-   type Operation_Type is ( replace, add, subtract, multiply, divide );
-   
    type Personal_Result is interface;
 
    procedure Set( 
@@ -27,6 +23,7 @@ package Model.Abstract_Result is
       which  : Broad_Calculated_Type ) return Amount  is abstract;
       
    procedure Zero( result : in out Personal_Result ) is abstract;
+
    type Benefit_Unit_Result is interface;
    
    procedure Set( 

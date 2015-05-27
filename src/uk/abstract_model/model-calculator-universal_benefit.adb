@@ -47,7 +47,7 @@ package body Model.Calculator.Universal_Benefit is
          if( num_children > 1 )then
            res.Set( bpno, 
                     child_benefit, 
-                    sys.additional_children * Amount( num_children - 1 ), mar.add );
+                    sys.additional_children * Amount( num_children - 1 ), add );
          end if;
       end if;
    end Calculate_Child_Benefit;
