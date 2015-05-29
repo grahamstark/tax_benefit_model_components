@@ -74,8 +74,8 @@ package Model.Parameter_System is
    end record;
 
    type Universal_Credit_System is record
-      earned_income       : Incomes_Set;
-      unearned_income           : Incomes_Set;
+      earned_income    : Incomes_Set;
+      unearned_income  : Incomes_Set;
 
       allowances : Universal_Credit_Allowances;
       disregards : Universal_Credit_Disregards;
@@ -124,13 +124,83 @@ package Model.Parameter_System is
    type Indirect_Taxes is record
       vat : Rate;
    end record;
-
-   type Complete_System is record
+   
+   type Attendance_Allowance_System is record
+      low_age         : Age_Range;
+      high_age        : Age_Range;
+      benefit_rate    : High_Low_Array;
+      test_generosity : Rate;
+      preserve_for_existing_claimants : Boolean;
+   end record;
+   
+   type DLA_Mobility_System is record
+      low_age         : Age_Range;
+      high_age        : Age_Range;
+      benefit_rate    :  High_Low_Array := ( others => 0.0 );
+      test_generosity : Rate;
+      preserve_for_existing_claimants : Boolean;
+   end record;
+   
+   type DLA_Care_System is record
+      low_age                         : Age_Range;
+      high_age                        : Age_Range;
+      benefit_rate                    : High_Middle_Low_Array := ( others => 0.0 );
+      test_generosity                 : Rate;
+      preserve_for_existing_claimants : Boolean;
+   end record;
+   
+   type Disability_Living_Allowance_System is record
+      dont_pay_for_residential_claimants : Boolean := False;
+      mobility                           : DLA_Mobility_System;
+      care                               : DLA_Care_System;      
+      preserve_for_existing_claimants    : Boolean;
+   end record;
+   
+   type Pension_System is record
+      age_men   : Age_Range;
+      age_women : Age_Range;
+      citizens_pension  : Boolean := False;
+      class_a : Amount;
+      preserve_for_existing_claimants : Boolean;
+   end record;
+   
+   type Guaranteed_Credit_System is record
+      single : Amount;
+      couple : Amount;
+      carer_single : Amount;
+      severe_disability_single : Amount;
+      severe_disability_couple : Amount;
+      incomes : Included_Incomes_Array;
+      earnings_disregard : Amount;
+      benefit_disregard  : Amount; -- need a list of benefits this applies to
+      preserve_for_existing_claimants : Boolean;
+   end record;
+   
+  type Savings_Credit_System is record
+      threshold_single : Amount;
+      threshold_couple : Amount;
+      maximum_single : Amount;
+      maximum_couple : Amount;
+      withdrawal_rate : Rate;
+      incomes : Included_Incomes_Array  := Get_Default_Incomes( savings_credit );
+      qualifying_incomes : Included_Incomes_Array  := Get_Default_Incomes( savings_credit_qualifying_income );
+      earnings_disregard : Amount;
+      benefit_disregard  : Amount;
+      preserve_for_existing_claimants : Boolean;
+   end record;
+  
+   type Pension_Credit_System is record
+      guaranteed_credit : Guaranteed_Credit_System;
+      savings_credit : Savings_Credit_System;
+   end record;
+   
+   type Complete_System is tagged record
       cb : Child_Benefit_System;
       it : Income_Tax_System;
       ni : National_Insurance_System;
       uc : Universal_Credit_System;
       indir : Indirect_Taxes;
+      
     end record;
 
 end  Model.Parameter_System;
