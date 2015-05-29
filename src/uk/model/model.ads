@@ -32,7 +32,7 @@ package Model is
    use Base_Model_Types;
    use Standard_UK_Enums;
    use Standard_Result_Enums;
-   use Standard_Parameter_Enums'
+   use Standard_Parameter_Enums;
 
    package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
    package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );
