@@ -10,23 +10,23 @@ package Model.Calculator.Pensioner_Benefits is
    procedure Calculate_Guaranteed_Pension_Credit(
       gpcsys   : Guaranteed_Credit_System;
       pensys   : Pension_System; 
-      bu       : Model.Benefit_Unit'Class;  
+      bu       : Model.Abstract_Household.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class );
   
    procedure Calculate_Savings_Credit(
       sys      : Savings_Credit_System; 
-      bu       : Model.Abstract_Household.Benefit_Unit;  
-      res      : in out mar.Benefit_Unit_Result );
+      bu       : Model.Abstract_Household.Benefit_Unit'Class;  
+      res      : in out mar.Benefit_Unit_Result'Class );
       
    procedure Calculate_State_Pension( 
       sys      : Pension_System; 
       bu       : Model.Abstract_Household.Benefit_Unit'Class;  
-      res      : in out mar.Benefit_Unit_Result );
+      res      : in out mar.Benefit_Unit_Result'Class );
       
 private      
 
    function Test_Ages( 
-      bu : Model.Abstract_Household.Benefit_Unit;
+      bu : Model.Abstract_Household.Benefit_Unit'Class;
       age_men : Age_Range;
       age_women : Age_Range ) return Boolean;
    
