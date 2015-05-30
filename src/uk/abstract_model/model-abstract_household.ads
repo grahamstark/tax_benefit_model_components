@@ -60,6 +60,7 @@ package Model.Abstract_Household is
       start_person : Person_Count := 1 ) return Person_Count is abstract;
    function Get_Person( bu : Benefit_Unit; which : Positive ) return Person'Class is abstract;
    function Get_Benefit_Unit_Type( bu : Benefit_Unit ) return Primary_Or_Secondary is abstract;
+   function Is_Couple( bu : Benefit_Unit ) return Boolean is abstract;
    
    package Benefit_Unit_List_Package is new Ada.Containers.Indefinite_Vectors( Benefit_Unit_Number, Benefit_Unit'Class );
    subtype Benefit_Unit_Vector is Benefit_Unit_List_Package.Vector;
