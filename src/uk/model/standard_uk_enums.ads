@@ -53,6 +53,7 @@ package Standard_UK_Enums is
       income_for_tax_credits,
       marginal_rate,
       housing_allowance,
+      minimum_income_guarantee,
       employers_ni );
       
    package T_Broad_Calculated is new T_Utils(
