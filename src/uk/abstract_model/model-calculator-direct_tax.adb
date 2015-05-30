@@ -1,5 +1,6 @@
 with Ada.Assertions;
 with GNATColl.Traces;
+with Model.Calculator.Utils;
 
 package body Model.Calculator.Direct_Tax is
    
@@ -65,21 +66,6 @@ package body Model.Calculator.Direct_Tax is
       allowance := Amount'Max( 0.0, allowance - original_income );
    end Apply_Allowance;
 
-   function Combine_Incomes(
-      non_calculated : Incomes_List;
-      res            : mar.Personal_Result'Class ) return Incomes_List is
-      il : Incomes_List;
-   begin
-     for i in Incomes_List'Range loop
-        if( i in Calculated_Incomes_Range )then
-           il( i ) := res.Get( i );
-        else
-           il( i ) := non_calculated( i );
-        end if;
-     end loop;
-     return il;
-   end Combine_Incomes;
-
    function Get_Dividend_Credit_Rate( dividends_income_rates : Rates_And_Bands ) return Rate is
    begin
       return dividends_income_rates.Get_Rate_And_Band( 1 ).rate;
@@ -91,7 +77,7 @@ package body Model.Calculator.Direct_Tax is
       res : in out mar.Personal_Result'Class ) is
    use type Incomes_Set;
       incomes                : constant Incomes_List :=
-         Combine_Incomes( ad.Get_Incomes, res );
+         Utils.Combine_Incomes( ad.Get_Incomes, res );
       all_incomes            : constant Incomes_Set :=
          sys.non_savings_income or
          sys.savings_income or
