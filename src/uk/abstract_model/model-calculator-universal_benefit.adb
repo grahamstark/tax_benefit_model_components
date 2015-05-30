@@ -3,6 +3,7 @@ with Ada.Exceptions;
 with Model.Calculator.Direct_Tax;
 with Ada.Text_IO;
 with GNATColl.Traces;
+with Model.Calculator.Utils;
 
 package body Model.Calculator.Universal_Benefit is
    use Ada.Assertions;
@@ -189,7 +190,7 @@ package body Model.Calculator.Universal_Benefit is
       for pno in 1 .. bu.Get_Num_People loop
          declare
            incomes : constant Incomes_List :=
-         	Model.Calculator.Direct_Tax.Combine_Incomes( 
+         	Utils.Combine_Incomes( 
          	   bu.Get_Person( pno ).Get_Incomes, res.Get( pno ));
            -- not right, should just be paye and NI
            earn : constant Amount :=

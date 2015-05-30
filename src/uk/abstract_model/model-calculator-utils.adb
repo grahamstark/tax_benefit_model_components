@@ -18,8 +18,7 @@ package body Model.Calculator.Utils is
    function Combine_Incomes(
       non_calculated : Incomes_List;
       res            : mar.Personal_Result'Class ) return Incomes_List is
-   begin
-          il : Incomes_List;
+      il : Incomes_List;
    begin
      for i in Incomes_List'Range loop
         if( i in Calculated_Incomes_Range )then
@@ -35,10 +34,26 @@ package body Model.Calculator.Utils is
       non_calculated   : Incomes_List;
       res              : mar.Personal_Result'Class;
       which_to_include : Incomes_List ) return Amount is
-      inc : Incomes_List := Combine_Incomes( non_calculated, res );
+      inct : Incomes_List := Combine_Incomes( non_calculated, res );
+      inc  : Amount := 0.0;
    begin
-      for i in inc'Range loop
-         inc( i ) := inc( i ) * which_to_include( i );
+      for i in inct'Range loop
+         inc := inc + ( inct( i ) * which_to_include( i ));
+      end loop;
+      return inc;
+   end Calculate_Incomes;
+   
+  function Calculate_Incomes(
+      bu               : mah.Benefit_Unit'Class;
+      res              : mar.Benefit_Unit_Result'Class;
+      which_to_include : Incomes_List ) return Amount is
+      inc  : Amount := 0.0;
+   begin
+      for pno in 1 .. bu.Get_Num_People loop
+         inc := inc + Calculate_Incomes( 
+            bu.Get_Person( pno ).Get_Incomes,
+            res.Get( pno ),
+            which_to_include );
       end loop;
       return inc;
    end Calculate_Incomes;

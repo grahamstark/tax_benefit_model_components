@@ -20,16 +20,6 @@ package Model.Calculator.Direct_Tax is
       sys : National_Insurance_System;
       ad  : Model.Abstract_Household.Person'Class;
       res : in out mar.Personal_Result'Class );
-
-   function Combine_Incomes(
-      non_calculated : Incomes_List;
-      res            : mar.Personal_Result'Class ) return Incomes_List;
-      
-   function Calculate_Incomes(
-      non_calculated   : Abs_Incomes_Type_Amount_Array;
-      res              : mar.Personal_Result'Class;
-      which_to_include : Included_Incomes_Array ) return Amount;
-   
       
 -- 
    -- procedure Accumulate_To_HHld_Level(
