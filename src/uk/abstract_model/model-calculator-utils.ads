@@ -19,5 +19,9 @@ package Model.Calculator.Utils is
       bu               : mah.Benefit_Unit'Class;
       res              : mar.Benefit_Unit_Result'Class;
       which_to_include : Incomes_List ) return Amount;
+      
+   function Which_Incomes_Received( 
+      non_calculated : Incomes_List;
+      res            : mar.Personal_Result'Class ) return Incomes_Set; 
    
 end  Model.Calculator.Utils;

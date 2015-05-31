@@ -62,7 +62,7 @@ package body Model.Calculator.Pensioner_Benefits is
       else
          standard_guarantee := gpcsys.single;
       end if;
-      for adno in 1 .. bu.num_adults loop
+      for adno in 1 .. bu.Get_Num_People loop
          null;   
          
       end loop;
@@ -71,7 +71,7 @@ package body Model.Calculator.Pensioner_Benefits is
       Log( "GPC: Additional Amounts", additional_amounts );
       Log( "GPC: Standard Guarantee", standard_guarantee );
       Log( "GPC: Income", income );
-      Log( "GPC: amount = ", res.Get( 1, pension_credit ));
+      -- Log( "GPC: amount = ", res.Get( pension_credit ));
    end Calculate_Guaranteed_Pension_Credit;
   
    procedure Calculate_Savings_Credit(

@@ -58,4 +58,18 @@ package body Model.Calculator.Utils is
       return inc;
    end Calculate_Incomes;
    
+   function Which_Incomes_Received( 
+      non_calculated : Incomes_List;
+      res            : mar.Personal_Result'Class ) return Incomes_Set is
+      inct : Incomes_List := Combine_Incomes( non_calculated, res );
+      s    : Incomes_Set;
+   begin
+      for i in inct'Range loop
+         if inct( i ) /= 0.0 then
+            s.Include( i );
+         end if;
+      end loop;
+      return s;
+   end Which_Incomes_Received; 
+   
 end Model.Calculator.Utils;

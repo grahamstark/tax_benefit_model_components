@@ -21,6 +21,7 @@ package Model.Abstract_Household is
    function Average_Wage_Per_Hour( e : Employment_Record ) return Amount is abstract;
 
    type Person is interface and Demog and Incomes and Employment_Record;
+   function Pid( pers : Person ) return Sernum_Value; 
    package Person_List_Package is new Ada.Containers.Indefinite_Vectors( Positive, Person'Class );
    subtype Person_Vector is Person_List_Package.Vector;
    subtype Person_Ptr is Person_List_Package.Cursor;
@@ -51,14 +52,15 @@ package Model.Abstract_Household is
 
    type Benefit_Unit is interface;
 
-   function Get_Num_People(
+   function Get_Pids(
       bu        : Benefit_Unit;
       start_age : Age_Range := 0;
       end_age   : Age_Range := Age_Range'Last;
       relationship_from : Relationship_Type := Relationship_Type'First;
       relationship_to   : Relationship_Type := Relationship_Type'Last;
-      start_person : Person_Count := 1 ) return Person_Count is abstract;
-   function Get_Person( bu : Benefit_Unit; which : Positive ) return Person'Class is abstract;
+      start_person : Person_Count := 1 )  return Sernum_Set is abstract;
+      
+   function Get_Person( bu : Benefit_Unit; pid : Sernum_Value ) return Person'Class is abstract;
    function Get_Benefit_Unit_Type( bu : Benefit_Unit ) return Primary_Or_Secondary is abstract;
    function Is_Couple( bu : Benefit_Unit ) return Boolean is abstract;
    
@@ -71,19 +73,19 @@ package Model.Abstract_Household is
    function Get_Num_Benefit_Units(
       hh        : Household ) return Benefit_Unit_Count is abstract;
 
-   function Get_Num_People(
+   function Get_Pids(
       hh        : Household;
       start_age : Age_Range := 0;
       end_age   : Age_Range := Age_Range'Last;
       relationship_from : Relationship_Type := Relationship_Type'First;
       relationship_to   : Relationship_Type := Relationship_Type'Last;
-      start_person : Person_Count := 1 ) return Person_Count is abstract;
+      start_person : Person_Count := 1 ) return Sernum_Set is abstract;
 
    function Get_Housing_Cost( hh : Household; htype : Housing_Cost_Type ) return Amount is abstract;
    function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
 
-   function Get_Person( hh : Household; bu_no : Positive; pers_no : Positive ) return Person'Class is abstract;
-   function Get_Benefit_Unit( hh : Household; which : Positive ) return Benefit_Unit'Class is abstract;
+   function Get_Person( hh : Household; pid : Sernum_Value ) return Person'Class is abstract;
+   function Get_Benefit_Unit( hh : Household; buno : Benefit_Unit_Number ) return Benefit_Unit'Class is abstract;
    
    
 
