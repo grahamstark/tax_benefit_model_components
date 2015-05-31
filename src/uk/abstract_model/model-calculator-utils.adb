@@ -1,8 +1,11 @@
 with Ada.Assertions;
 with GNATColl.Traces;
+with Ada.Containers;
 
 package body Model.Calculator.Utils is
-  
+
+   use type Ada.Collections.Count_Type;
+   
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.UTILS" );
    
    procedure Log( s : String ) is
@@ -49,10 +52,10 @@ package body Model.Calculator.Utils is
       which_to_include : Incomes_List ) return Amount is
       inc  : Amount := 0.0;
    begin
-      for pno in 1 .. bu.Get_Num_People loop
+      for pid of bu.Get_Pids loop
          inc := inc + Calculate_Incomes( 
-            bu.Get_Person( pno ).Get_Incomes,
-            res.Get( pno ),
+            bu.Get_Person( pid ).Get_Incomes,
+            res.Get( pid ),
             which_to_include );
       end loop;
       return inc;
@@ -71,5 +74,33 @@ package body Model.Calculator.Utils is
       end loop;
       return s;
    end Which_Incomes_Received; 
+   
+   function Get_Head_Of_Benefit_Unit( bu : mah.Benefit_Unit'Class ) return Sernum_Value is
+      hids : Sernum_Set := bu.Get_Pids(
+      start_age => 16,
+      end_age   => Age_Range'Last,
+      relationship_from => head, 
+      relationship_to   => head );
+      hpid : Sernum_Value := Sernum_Value'Last;
+   begin
+      Assert( hids.Length < 2, "no more than 1 head in BU; was " & hids.Length'Img );
+      if hids.Length = 1 then
+         hpid := hids.First_Element.pid;
+      else
+         declare
+            oldest : Age_Range := Age_Range'First;
+         begin
+            for pers of bu.people loop
+               if pers.age > oldest then
+                  oldest := pers.age;
+                  hpid := pers.pid;
+               end if;
+            end loop;
+         end;
+      end if;
+      Assert( hpid < Sernum_Value'Last, "didn't find a head for bu " );
+      return hpid;
+   end Get_Head_Of_Benefit_Unit;
+
    
 end Model.Calculator.Utils;

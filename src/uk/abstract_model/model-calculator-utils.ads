@@ -23,5 +23,7 @@ package Model.Calculator.Utils is
    function Which_Incomes_Received( 
       non_calculated : Incomes_List;
       res            : mar.Personal_Result'Class ) return Incomes_Set; 
+      
+   function Get_Head_Of_Benefit_Unit( bu : mah.Benefit_Unit'Class ) return Sernum_Value;
    
 end  Model.Calculator.Utils;
