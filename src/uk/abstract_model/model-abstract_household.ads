@@ -4,7 +4,7 @@ with Standard_UK_Enums;
 package Model.Abstract_Household is
 
    use Standard_UK_Enums;
-
+   
    type Incomes is interface;
    function Get_Income( i : Incomes; w : Non_Calculated_Incomes_Range ) return Amount is abstract;
    function Get_Incomes( i : Incomes ) return Incomes_List is abstract;
@@ -21,7 +21,8 @@ package Model.Abstract_Household is
    function Average_Wage_Per_Hour( e : Employment_Record ) return Amount is abstract;
 
    type Person is interface and Demog and Incomes and Employment_Record;
-   function Pid( pers : Person ) return Sernum_Value; 
+   function Pid( pers : Person ) return Sernum_Value is Abstract;
+   
    package Person_List_Package is new Ada.Containers.Indefinite_Vectors( Positive, Person'Class );
    subtype Person_Vector is Person_List_Package.Vector;
    subtype Person_Ptr is Person_List_Package.Cursor;
