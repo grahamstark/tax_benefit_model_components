@@ -62,6 +62,10 @@ package body Model.Calculator.Pensioner_Benefits is
       else
          standard_guarantee := gpcsys.single;
       end if;
+      for adno in 1 .. bu.num_adults loop
+         null;   
+         
+      end loop;
       -- TODO
       Log( "GPC: MIG", mig );
       Log( "GPC: Additional Amounts", additional_amounts );
