@@ -24,17 +24,18 @@ package body Model.Calculator.Pensioner_Benefits is
       sys      : Pension_System; 
       bu       : Model.Abstract_Household.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class ) is
+      pids : Sernum_Set := bu.Get_Pids( start_age => 60, end_age=>Age_Range'Last );
    begin
       -- FIXME add a contribution ratio like taxben used to have
       -- FIXME Child additions, spouse additions
       -- contributions ???
-      for pno in 1 .. bu.Get_Num_People loop
+      for pid of pids loop
          declare
-            pers : Model.Abstract_Household.Person'Class renames bu.Get_Person( pno );
+            pers : Model.Abstract_Household.Person'Class renames bu.Get_Person( pid );
          begin
             if( pers.gender = male and pers.age >= sys.age_men ) or 
               ( pers.gender = female and pers.age >= sys.age_women )then
-                  res.Set( pno, retirement_pension, sys.class_a );
+                  res.Set( pid, retirement_pension, sys.class_a );
             end if;
          end;
       end loop;
@@ -53,6 +54,7 @@ package body Model.Calculator.Pensioner_Benefits is
       mig                : Amount := 0.0;
       standard_guarantee : Amount;
       has_non_dependent_adult : Boolean := False; -- FIXME we have to look at all other BUs for this, too.
+     pids : Sernum_Set := bu.Get_Pids( start_age => 60, end_age=>Age_Range'Last );
    begin
       if( not Test_Ages( bu, pensys.age_men, pensys.age_women ))then
          return;
@@ -62,7 +64,7 @@ package body Model.Calculator.Pensioner_Benefits is
       else
          standard_guarantee := gpcsys.single;
       end if;
-      for adno in 1 .. bu.Get_Num_People loop
+      for pid of pids loop
          null;   
          
       end loop;
@@ -87,6 +89,7 @@ package body Model.Calculator.Pensioner_Benefits is
       credit            : Amount := 0.0;
       income_over_mig   : Amount := 0.0;
       is_couple         : constant Boolean := bu.Is_Couple;
+      pids : Sernum_Set := bu.Get_Pids;
    begin
       if( not Test_Ages( bu, 60, 60 ))then
          return;
@@ -133,10 +136,11 @@ package body Model.Calculator.Pensioner_Benefits is
       bu        : Model.Abstract_Household.Benefit_Unit'Class;
       age_men   : Age_Range;
       age_women : Age_Range ) return Boolean is 
+      pids : Sernum_Set := bu.Get_Pids;
    begin
-      for pno in 1 .. bu.Get_Num_People loop
+      for pid of pids loop
          declare 
-            pers : Model.Abstract_Household.Person'Class := bu.Get_Person( pno );
+            pers : Model.Abstract_Household.Person'Class := bu.Get_Person( pid );
          begin
             if( pers.gender = male and pers.age > age_men ) or 
               ( pers.gender = female and pers.age > age_women ) then

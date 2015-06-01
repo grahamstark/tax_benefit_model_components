@@ -18,9 +18,6 @@ package body Model.Calculator.Universal_Benefit is
       GNATColl.Traces.Trace( log_trace, s );
    end Log;
    
-   function Get_Head( bu : Model.Abstract_Household.Benefit_Unit'Class ) return Model.Abstract_Household.Person.Class is
-      pid : Sernum_Value :=       
-   
    procedure Log( s : String; m : Amount ) is
    begin
       GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
@@ -32,9 +29,8 @@ package body Model.Calculator.Universal_Benefit is
      res           : in out mar.Benefit_Unit_Result'Class ) is
      num_children : Person_Count := 0;
      pids    : constant Sernum_Set := bu.Get_Pids;
-     bpno    : constant Sernum_Value := pids.First_Element; -- FIXME find carer
    begin
-      for pid of pid loop
+      for pid of pids loop
          declare
            pers : Model.Abstract_Household.Person'Class renames bu.Get_Person( pid );
            age  : Age_Range := pers.Age;
@@ -47,12 +43,16 @@ package body Model.Calculator.Universal_Benefit is
          end;
       end loop;
       if num_children > 0 then
-         res.Set( bpno, child_benefit, sys.first_child ); 
-         if( num_children > 1 )then
-           res.Set( bpno, 
-                    child_benefit, 
-                    sys.additional_children * Amount( num_children - 1 ), add );
-         end if;
+         declare
+            bpno : constant Sernum_Value := Utils.Get_Benefit_Unit_Carer( bu );
+         begin
+            res.Set( bpno, child_benefit, sys.first_child ); 
+            if( num_children > 1 )then
+              res.Set( bpno, 
+                       child_benefit, 
+                       sys.additional_children * Amount( num_children - 1 ), add );
+            end if;
+         end;
       end if;
    end Calculate_Child_Benefit;
 
@@ -69,10 +69,12 @@ package body Model.Calculator.Universal_Benefit is
         
      pids          : constant Sernum_Set := bu.Get_Pids;
      child_pids    : constant Sernum_Set := 
-        bu.Get_Pids( 0, 18, child, other_relationship );
+        bu.Get_Pids( 0, 18, child, other_relationship ); -- FIXME this is wrong for children >16 not in education
      adult_pids    : constant Sernum_Set := pids.Difference( child_pids );
      
-     num_people                  : constant Person_Count := bu.Get_Num_People;
+     num_people                  : constant Person_Count := Person_Count( pids.Length );
+     num_adults                  : constant Person_Count := Person_Count( adult_pids.Length );
+     num_children                : constant Person_Count := Person_Count( child_pids.Length );
      maximum_benefit             : constant Amount :=
         ( if num_people = 1 then sys.maximum_payment_singles
           else sys.maximum_payment_families );
@@ -85,13 +87,11 @@ package body Model.Calculator.Universal_Benefit is
      additional_child_element    : Amount := 0.0; -- TODO
      -- housing_allowance           : Amount  := 0.0;
      capability_for_work_element : Amount := 0.0; -- TODO
-     pids        : constant Sernum_Set := bu.Get_Pids;
-     head_pno    : constant Sernum_Value := pids.First_Element; -- FIXME find carer
-     
+     head_pid                    : constant Sernum_Value := 
+        Utils.Get_Head_Of_Benefit_Unit( bu );
      head                        : Model.Abstract_Household.Person'Class :=
-        bu.Get_Person( head_pno );
+        bu.Get_Person( head_pid );
      payment                     : Amount := 0.0;
-     num_people                  : Person_Count := Person_Count( pids'Length );
   begin
      Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
      if( num_people > 1 )then
@@ -115,7 +115,8 @@ package body Model.Calculator.Universal_Benefit is
            end if;
      when 2 =>
         declare
-           spouse : Model.Abstract_Household.Person'Class := bu.Get_Person( 2 );
+           sppid : Sernum_Value := Utils.Get_Spouse_Of_Head( bu, head_pid );
+           spouse : Model.Abstract_Household.Person'Class := bu.Get_Person( sppid );
         begin
            -- assert is adult somehow
            if( head.Age < 25 and spouse.Age < 25 )then
@@ -136,9 +137,9 @@ package body Model.Calculator.Universal_Benefit is
      -- Housing : todo Mortgages     
       if( tenure in Rented ) then
          if( bu.Get_Benefit_Unit_Type = secondary ) or ( num_adults = 1 and head.Age in 22 .. 35 and num_children = 0 ) then -- FIXME: this is WRONG 22 and under and *formerly Fostered* which 
-            res.Set( head_pno, housing_allowance, sys.one_bedroom_in_shared_accommodation_rate );
+            res.Set( head_pid, housing_allowance, sys.one_bedroom_in_shared_accommodation_rate );
          else
-            res.Set( head_pno, housing_allowance, housing_costs( rent ));
+            res.Set( head_pid, housing_allowance, housing_costs( rent ));
          end if;
       end if;
       -- end if;
@@ -194,11 +195,11 @@ package body Model.Calculator.Universal_Benefit is
       end if;
       Log("Universal Credit::disregard ", disregard );
       -- FIXME this has to be wrong
-      for pno in 1 .. bu.Get_Num_People loop
+      for pid of pids loop
          declare
            incomes : constant Incomes_List :=
          	Utils.Combine_Incomes( 
-         	   bu.Get_Person( pno ).Get_Incomes, res.Get( pno ));
+         	   bu.Get_Person( pid ).Get_Incomes, res.Get( pid ));
            -- not right, should just be paye and NI
            earn : constant Amount :=
                Amount'Max( 0.0,
@@ -206,9 +207,9 @@ package body Model.Calculator.Universal_Benefit is
                      incomes, sys.earned_income ) - incomes( income_tax ) - incomes( national_insurance ));
            unearn : constant Amount := T_Incomes.Sum( incomes, sys.unearned_income );
          begin
-           Log( "Universal Credit::wages " & pno'Img, incomes( wages ));
-           Log( "Universal Credit::earnings person " & pno'Img, earn );
-           Log( "Universal Credit::unearned  person " & pno'Img, unearn );
+           Log( "Universal Credit::wages " & pid'Img, incomes( wages ));
+           Log( "Universal Credit::earnings person " & pid'Img, earn );
+           Log( "Universal Credit::unearned  person " & pid'Img, unearn );
            earned_income := earned_income + earn;
            unearned_income := unearned_income + unearn;
          end;
@@ -219,9 +220,9 @@ package body Model.Calculator.Universal_Benefit is
       payment := Amount'Max( 0.0, total_allowance - unearned_income - sys.withdrawal_rate * earned_income );
       Log( "Universal Credit::total_payment", payment );
       payment := Amount'Min( payment, maximum_benefit );
-      res.Set( head_pno, housing_benefit, 
+      res.Set( head_pid, housing_benefit, 
          Amount'Min( payment, res.Get( housing_allowance )));
-      res.Set( head_pno, tax_credits, 
+      res.Set( head_pid, tax_credits, 
          payment - res.Get( 1 ).Get( housing_benefit ));
   end Calculate_Universal_Benefit;
 

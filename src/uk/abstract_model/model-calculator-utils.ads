@@ -25,5 +25,9 @@ package Model.Calculator.Utils is
       res            : mar.Personal_Result'Class ) return Incomes_Set; 
       
    function Get_Head_Of_Benefit_Unit( bu : mah.Benefit_Unit'Class ) return Sernum_Value;
-   
+   function Get_Benefit_Unit_Carer( bu : mah.Benefit_Unit'Class ) return Sernum_Value;
+   function Get_Spouse_Of_Head( 
+      bu : mah.Benefit_Unit'Class; 
+      head_pid : Sernum_Value ) return Sernum_Value;
+ 
 end  Model.Calculator.Utils;
