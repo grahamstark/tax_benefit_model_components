@@ -1,10 +1,14 @@
 with Model.Abstract_Result;
 with Model.Abstract_Household;
+with Standard_UK_Enums.Utils;
 
 package Model.Calculator.Utils is
 
    package mar renames Model.Abstract_Result;
    package mah renames Model.Abstract_Household;
+   
+   DISAB_SET : constant Incomes_Set := Standard_UK_Enums.Utils.Get_Disabled_Benefits;
+   CARE_SET : constant Incomes_Set := Standard_UK_Enums.Utils.Get_Care_Benefits;
    
    function Combine_Incomes(
       non_calculated : Incomes_List;

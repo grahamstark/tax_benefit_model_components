@@ -22,7 +22,7 @@ package body Model.Calculator.Pensioner_Benefits is
 
    procedure Calculate_State_Pension( 
       sys      : Pension_System; 
-      bu       : Model.Abstract_Household.Benefit_Unit'Class;  
+      bu       : mah.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class ) is
       pids : Sernum_Set := bu.Get_Pids( start_age => 60, end_age=>Age_Range'Last );
    begin
@@ -31,7 +31,7 @@ package body Model.Calculator.Pensioner_Benefits is
       -- contributions ???
       for pid of pids loop
          declare
-            pers : Model.Abstract_Household.Person'Class renames bu.Get_Person( pid );
+            pers : mah.Person'Class renames bu.Get_Person( pid );
          begin
             if( pers.gender = male and pers.age >= sys.age_men ) or 
               ( pers.gender = female and pers.age >= sys.age_women )then
@@ -44,7 +44,7 @@ package body Model.Calculator.Pensioner_Benefits is
   procedure Calculate_Guaranteed_Pension_Credit(
       gpcsys   : Guaranteed_Credit_System;
       pensys   : Pension_System; 
-      bu       : Model.Abstract_Household.Benefit_Unit'Class;  
+      bu       : mah.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class ) is
       is_couple    : Boolean := bu.Is_Couple;
       income       : Amount := 0.0;
@@ -54,7 +54,7 @@ package body Model.Calculator.Pensioner_Benefits is
       mig                : Amount := 0.0;
       standard_guarantee : Amount;
       has_non_dependent_adult : Boolean := False; -- FIXME we have to look at all other BUs for this, too.
-     pids : Sernum_Set := bu.Get_Pids( start_age => 60, end_age=>Age_Range'Last );
+     pids : Sernum_Set := bu.Get_Pids( start_age => 18, end_age=>Age_Range'Last );
    begin
       if( not Test_Ages( bu, pensys.age_men, pensys.age_women ))then
          return;
@@ -66,15 +66,14 @@ package body Model.Calculator.Pensioner_Benefits is
       end if;
       for pid of pids loop
          declare
-            ad : Person renames bu.adults( pid );
-            incset : Income_Package.Set := ad.Which_Incomes_Received( True );
-            benset : Income_Package.Set := Which_Incomes_Received( res.people( adno ).income );
+            pers   : mah.Person'Class renames bu.Get_Person( pid );
+            incset : Incomes_Set := 
+               Utils.Which_Incomes_Received( pers.Get_Incomes, res.Get( pid ));
          begin
-            incset.Union( benset );
-            if not incset.Intersection( DISAB_SET ).Is_Empty then
+            if not incset.Intersection( Utils.DISAB_SET ).Is_Empty then
                num_disabled := num_disabled + 1;
             end if;
-            if not incset.Intersection( CARE_SET ).Is_Empty then
+            if not incset.Intersection( Utils.CARE_SET ).Is_Empty then
                num_carers := num_carers + 1;
             end if;
          end;
@@ -99,7 +98,7 @@ package body Model.Calculator.Pensioner_Benefits is
   
    procedure Calculate_Savings_Credit(
       sys      : Savings_Credit_System; 
-      bu       : Model.Abstract_Household.Benefit_Unit'Class;  
+      bu       : mah.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class ) is
 
       qualifying_income : Amount := 0.0;
@@ -155,14 +154,14 @@ package body Model.Calculator.Pensioner_Benefits is
    end Calculate_Savings_Credit; 
       
    function Test_Ages( 
-      bu        : Model.Abstract_Household.Benefit_Unit'Class;
+      bu        : mah.Benefit_Unit'Class;
       age_men   : Age_Range;
       age_women : Age_Range ) return Boolean is 
       pids : Sernum_Set := bu.Get_Pids;
    begin
       for pid of pids loop
          declare 
-            pers : Model.Abstract_Household.Person'Class := bu.Get_Person( pid );
+            pers : mah.Person'Class := bu.Get_Person( pid );
          begin
             if( pers.gender = male and pers.age > age_men ) or 
               ( pers.gender = female and pers.age > age_women ) then
