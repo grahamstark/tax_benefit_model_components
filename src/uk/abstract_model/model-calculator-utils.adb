@@ -4,7 +4,8 @@ with Ada.Containers;
 
 package body Model.Calculator.Utils is
 
-   use type Ada.Collections.Count_Type;
+   use type Ada.Containers.Count_Type;
+   use Ada.Assertions;
    
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.UTILS" );
    
@@ -85,16 +86,20 @@ package body Model.Calculator.Utils is
    begin
       Assert( hids.Length < 2, "no more than 1 head in BU; was " & hids.Length'Img );
       if hids.Length = 1 then
-         hpid := hids.First_Element.pid;
+         hpid := hids.First_Element;
       else
          declare
             oldest : Age_Range := Age_Range'First;
          begin
-            for pers of bu.people loop
-               if pers.age > oldest then
-                  oldest := pers.age;
-                  hpid := pers.pid;
-               end if;
+            for pid of bu.Get_Pids loop
+               declare
+                  pers : mah.Person'Class := bu.Get_Person( pid );
+               begin
+                  if pers.age > oldest then
+                     oldest := pers.age;
+                     hpid := pers.pid;
+                  end if;
+               end;
             end loop;
          end;
       end if;
