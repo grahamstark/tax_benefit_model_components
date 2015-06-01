@@ -65,10 +65,31 @@ package body Model.Calculator.Pensioner_Benefits is
          standard_guarantee := gpcsys.single;
       end if;
       for pid of pids loop
-         null;   
-         
+         declare
+            ad : Person renames bu.adults( pid );
+            incset : Income_Package.Set := ad.Which_Incomes_Received( True );
+            benset : Income_Package.Set := Which_Incomes_Received( res.people( adno ).income );
+         begin
+            incset.Union( benset );
+            if not incset.Intersection( DISAB_SET ).Is_Empty then
+               num_disabled := num_disabled + 1;
+            end if;
+            if not incset.Intersection( CARE_SET ).Is_Empty then
+               num_carers := num_carers + 1;
+            end if;
+         end;
       end loop;
-      -- TODO
+      if( num_disabled >= 2 ) then
+         additional_amounts := gpcsys.severe_disability_couple;
+      elsif( num_disabled = 1 )then
+         additional_amounts := gpcsys.severe_disability_single;
+      end if;
+      if( num_carers >= 1 )then
+         additional_amounts := additional_amounts + gpcsys.carer_single;
+      end if;
+      mig := standard_guarantee + additional_amounts;
+      Assert( mig > 0.0, "MIG Must be positive; was " & Format( mig ));
+      
       Log( "GPC: MIG", mig );
       Log( "GPC: Additional Amounts", additional_amounts );
       Log( "GPC: Standard Guarantee", standard_guarantee );
@@ -90,6 +111,7 @@ package body Model.Calculator.Pensioner_Benefits is
       income_over_mig   : Amount := 0.0;
       is_couple         : constant Boolean := bu.Is_Couple;
       pids : Sernum_Set := bu.Get_Pids;
+      heads_pid : Sernum_Value := Utils.Get_Head_Of_Benefit_Unit( bu );
    begin
       if( not Test_Ages( bu, 60, 60 ))then
          return;
@@ -98,7 +120,7 @@ package body Model.Calculator.Pensioner_Benefits is
          bu, 
          res, 
          sys.qualifying_incomes );
-      if( is_couple )then
+      if is_couple then
          maximum := sys.maximum_couple;
          threshold := sys.threshold_couple;
       else
@@ -120,7 +142,7 @@ package body Model.Calculator.Pensioner_Benefits is
          credit := Amount'Max( 0.0, credit );
       end if;
         
-      res.Set( 1, pension_credit, credit, add );
+      res.Set( heads_pid, pension_credit, credit, add );
       
       Log( "CS: Excess Income", excess_income );
       Log( "CS: Maximum", maximum );
