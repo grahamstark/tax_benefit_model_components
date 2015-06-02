@@ -195,11 +195,12 @@ package Model.Parameter_System is
    end record;
    
    type Complete_System is tagged record
-      cb : Child_Benefit_System;
-      it : Income_Tax_System;
-      ni : National_Insurance_System;
-      uc : Universal_Credit_System;
-      indir : Indirect_Taxes;
+      cb      : Child_Benefit_System;
+      it      : Income_Tax_System;
+      ni      : National_Insurance_System;
+      uc      : Universal_Credit_System;
+      indir   : Indirect_Taxes;
+      pension : Pension_System;
    end record;
 
 end  Model.Parameter_System;

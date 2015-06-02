@@ -1,6 +1,3 @@
-with Model.WSC.Uprate;
-with Ada.Text_IO;
-
 package body Model.Parameter_System.Operations is
 
    procedure Uprate( p : in out Pension_System; v : Rate ) is
@@ -27,9 +24,14 @@ package body Model.Parameter_System.Operations is
   
    procedure Uprate( p : in out Pension_Credit_System; v : Rate ) is
    begin
-      Uprate( p.pension, v )
       Uprate( p.guaranteed_credit, v );
       Uprate( p.savings_credit, v );
+   end Uprate;
+   
+   procedure Uprate( p : in out Complete_System; v : Rate ) is
+   begin
+      null; -- Uprate( p.pension, v );
+      
    end Uprate;
    
 end Model.Parameter_System.Operations;
