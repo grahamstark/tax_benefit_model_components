@@ -14,7 +14,7 @@ package body Model.Parameter_System.Operations is
       Uprate( p.severe_disability_couple, v, UPRATE_ROUND_UP );
    end Uprate;
    
-  procedure Uprate( p : in out Savings_Credit_System; v : Rate ) is
+   procedure Uprate( p : in out Savings_Credit_System; v : Rate ) is
    begin
       Uprate( p.threshold_single, v, UPRATE_ROUND_UP );
       Uprate( p.threshold_couple, v, UPRATE_ROUND_UP );
