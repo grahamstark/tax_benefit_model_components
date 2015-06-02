@@ -194,13 +194,20 @@ package Model.Parameter_System is
       savings_credit : Savings_Credit_System;
    end record;
    
+   type Benefits_System is record
+      attendance_allowance : Attendance_Allowance_System;
+      dla                  : Disability_Living_Allowance_System;
+      child_benefit        : Child_Benefit_System;
+      attendance_allowance : Attendance_Allowance_System;
+      pension_credit       : Pension_Credit_System;
+      universal_credit     : Universal_Credit_System;
+   end record;
+   
    type Complete_System is tagged record
-      cb      : Child_Benefit_System;
-      it      : Income_Tax_System;
-      ni      : National_Insurance_System;
-      uc      : Universal_Credit_System;
-      indir   : Indirect_Taxes;
-      pension : Pension_System;
+      it       : Income_Tax_System;
+      ni       : National_Insurance_System;
+      indir    : Indirect_Taxes;
+      benefits : Benefits_System;
    end record;
 
 end  Model.Parameter_System;
