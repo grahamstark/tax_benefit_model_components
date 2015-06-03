@@ -290,7 +290,7 @@ package body Model.Parameter_System.Defaults is
             uc.maximum_childcare_award_lone_parents :=  350.0;
             uc.maximum_payment_families :=   500.0;
             uc.maximum_payment_singles  :=   350.0;
-         when 2015 =>
+         when 2015 => -- from Hoc Briefing note SN07054
             uc.allowances.single_claimant_aged_under_25 :=  251.77;
             uc.allowances.single_claimant_aged_25_or_over :=  317.82;
             uc.allowances.joint_claimants_both_aged_under_25 :=  395.20;
@@ -398,51 +398,51 @@ package body Model.Parameter_System.Defaults is
       return dla;
    end Get_DLA;
    
-    type Pension_System is record
-      age_men   : Age_Range;
-      age_women : Age_Range;
-      citizens_pension  : Boolean := False;
-      class_a : Amount;
-      preserve_for_existing_claimants : Boolean;
-   end record;
+   function Get_Pension_Credit( year : Year_Number ) return Pension_Credit_System is
+      pension_credit : Pension_Credit_System;
+   begin
+      case year is
+      when 2015 =>
+         pension_credit.guaranteed_credit.carer_single := 34.20;
+         pension_credit.guaranteed_credit.couple := 226.50;
+         pension_credit.guaranteed_credit.preserve_for_existing_claimants := False;
+         pension_credit.guaranteed_credit.severe_disability_couple := 61.10*2.0;
+         pension_credit.guaranteed_credit.severe_disability_single := 61.10;
+         pension_credit.guaranteed_credit.single := 148.35;
+         pension_credit.savings_credit.maximum_couple := 20.70;
+         pension_credit.savings_credit.maximum_single := 16.80;
+         pension_credit.savings_credit.preserve_for_existing_claimants := False;
+         pension_credit.savings_credit.threshold_couple := 192.00;
+         pension_credit.savings_credit.threshold_single := 120.35;
+         pension_credit.savings_credit.withdrawal_rate := 40.0;
+      when others => null;
+      end case;
+      return pension_credit;
+   end Get_Pension_Credit;
    
-   type Guaranteed_Credit_System is record
-      single : Amount;
-      couple : Amount;
-      carer_single : Amount;
-      severe_disability_single : Amount;
-      severe_disability_couple : Amount;
-      incomes : Included_Incomes_Array := Get_Default_Incomes( guaranteed_pension_credit );
-      earnings_disregard : Amount;
-      benefit_disregard  : Amount; -- need a list of benefits this applies to
-      preserve_for_existing_claimants : Boolean;
-   end record;
-   
-   type Savings_Credit_System is record
-      threshold_single : Amount;
-      threshold_couple : Amount;
-      maximum_single : Amount;
-      maximum_couple : Amount;
-      withdrawal_rate : Rate;
-      incomes : Included_Incomes_Array  := Get_Default_Incomes( savings_credit );
-      qualifying_incomes : Included_Incomes_Array  := Get_Default_Incomes( savings_credit_qualifying_income );
-      earnings_disregard : Amount;
-      benefit_disregard  : Amount;
-      preserve_for_existing_claimants : Boolean;
-   end record;
-  
-   type Pension_Credit_System is record
-      guaranteed_credit : Guaranteed_Credit_System;
-      savings_credit : Savings_Credit_System;
-   end record;
-   
-   
+   function Get_Pension( year : Year_Number ) return Pension_System is
+      state_pension : Pension_System;
+   begin
+      case year is
+      when 2015 =>
+         state_pension.age_men      := 65;
+         state_pension.age_women    := 61;
+         state_pension.citizens_pension := False;
+         state_pension.class_a      := 113.10;
+         state_pension.preserve_for_existing_claimants := False
+      when others => null;
+      end case;
+      return state_pension;
+   end Get_Pension;
    function Get_Complete_System( year : Year_Number ) return Complete_System is
       sys : Complete_System;
    begin
       sys.benefits.child_benefit := Get_Child_Benefit_System( year );
       sys.benefits.universal_credit := Get_Universal_Credit_System( year );
-      
+      sys.benefits.state_pension := Get_State_Pension( year );
+      sys.benefits.attendance_allowance := Get_AA( year );
+      sys.benefits.pension_credit := Get_Pension_Credit( year );
+      sys.benefits.dla := Get_DLA( year );
       sys.it := Get_Income_Tax_System( year );
       sys.ni := Get_National_Insurance_System( year );
       sys.indir := Get_Indirect_Taxes( year );
