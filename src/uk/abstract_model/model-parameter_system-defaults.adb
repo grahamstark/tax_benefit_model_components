@@ -282,9 +282,9 @@ package body Model.Parameter_System.Defaults is
             -- straight unweighted average over all wales councils; 
             -- see http://wales.gov.uk/topics/housingandcommunity/housing/private/renting/rentofficers/publications/lha13/?lang=en
             uc.withdrawal_rate :=  65.0/100.0;
-            uc.limited_capability_for_work :=  123.62
-            uc.limited_capability_for_work_and_work_related_activity :=  303.66
-            uc.caring_for_a_severely_disabled_person_for_at_least_35_hours_a_week :=  144.70
+            uc.limited_capability_for_work :=  123.62;
+            uc.limited_capability_for_work_and_work_related_activity :=  303.66;
+            uc.caring_for_a_severely_disabled_person_for_at_least_35_hours_a_week :=  144.70;
             uc.childcare_costs_percent :=  70.0/100.0;
             uc.maximum_childcare_award_families :=  500.0;
             uc.maximum_childcare_award_lone_parents :=  350.0;
@@ -369,8 +369,8 @@ package body Model.Parameter_System.Defaults is
          when 2015 =>
             aa.low_age         := 65;
             aa.high_age        := Age_Range'Last;
-            aa.benefit_rate    := ( high => 81.3, low=> 54.45 );
-            aa.test_generosity : Rate := 1.0;
+            aa.benefit_rate    := ( high => 81.3, low=> 54.45, nil=> 0.0 );
+            aa.test_generosity := 1.0;
             aa.preserve_for_existing_claimants := True;
          when others => null;
       end case;
@@ -385,12 +385,12 @@ package body Model.Parameter_System.Defaults is
       when 2015 =>
          dla.mobility.low_age         := 0;
          dla.mobility.high_age        := 64;
-         dla.mobility.benefit_rate    := ( low => 21.55, high=>56.75 );
+         dla.mobility.benefit_rate    := ( low => 21.55, high=>56.75, nil=> 0.0 );
          dla.mobility.test_generosity := 1.0;
          dla.mobility.preserve_for_existing_claimants := True;
          dla.care.low_age             := 0;
          dla.care.high_age            := 64;
-         dla.care.benefit_rate        := ( high=>81.30, middle=>54.45, low=>21.55 );
+         dla.care.benefit_rate        := ( high=>81.30, middle=>54.45, low=>21.55, nil=> 0.0 );
          dla.care.test_generosity     := 1.0;
          dla.care.preserve_for_existing_claimants := True;
       when others => null;
@@ -420,7 +420,7 @@ package body Model.Parameter_System.Defaults is
       return pension_credit;
    end Get_Pension_Credit;
    
-   function Get_Pension( year : Year_Number ) return Pension_System is
+   function Get_State_Pension( year : Year_Number ) return Pension_System is
       state_pension : Pension_System;
    begin
       case year is
@@ -429,11 +429,12 @@ package body Model.Parameter_System.Defaults is
          state_pension.age_women    := 61;
          state_pension.citizens_pension := False;
          state_pension.class_a      := 113.10;
-         state_pension.preserve_for_existing_claimants := False
+         state_pension.preserve_for_existing_claimants := False;
       when others => null;
       end case;
       return state_pension;
-   end Get_Pension;
+   end Get_State_Pension;
+   
    function Get_Complete_System( year : Year_Number ) return Complete_System is
       sys : Complete_System;
    begin
@@ -446,7 +447,6 @@ package body Model.Parameter_System.Defaults is
       sys.it := Get_Income_Tax_System( year );
       sys.ni := Get_National_Insurance_System( year );
       sys.indir := Get_Indirect_Taxes( year );
-      sys.benefits.d         
       return sys;
     end Get_Complete_System;
 
