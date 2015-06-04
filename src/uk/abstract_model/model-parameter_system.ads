@@ -196,7 +196,6 @@ package Model.Parameter_System is
    
    type Benefits_System is record
       dla                  : Disability_Living_Allowance_System;
-      child_benefit        : Child_Benefit_System;
       attendance_allowance : Attendance_Allowance_System;
       pension_credit       : Pension_Credit_System;
       universal_credit     : Universal_Credit_System;
