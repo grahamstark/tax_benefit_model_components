@@ -203,6 +203,7 @@ package Model.Parameter_System is
       pension_credit       : Pension_Credit_System;
       universal_credit     : Universal_Credit_System;
       state_pension        : Pension_System;
+      child_benefit        : Child_Benefit_System;
    end record;
    
    type Complete_System is tagged record

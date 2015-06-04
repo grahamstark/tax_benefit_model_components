@@ -7,6 +7,9 @@ package Standard_UK_Enums is
    use Base_Model_Types;
    use Ada.Calendar;
    
+   subtype Decile_Number is Positive range 1 .. 10;
+   type Deciles_Array is array( Decile_Number ) of Amount;
+   
    type Head_Or_Spouse is ( neither, head, spouse );
    subtype Head_Or_Spouse_Id is Head_Or_Spouse range head .. spouse;
 
@@ -146,6 +149,8 @@ package Standard_UK_Enums is
       male, 
       female );
       
+   type Gender_Type_Array is array( Gender_Type ) of Amount;    
+      
    type Relationship_Type is ( 
       head, 
       spouse, 
@@ -184,6 +189,8 @@ package Standard_UK_Enums is
       widowed,
       separated,
       divorced_or_civil_partnership_dissolved );
+ 
+  type Marital_Status_Type_Array is array( Marital_Status_Type ) of Amount;    
       
   type Age_Band_Type is (
       age_0_15, 
