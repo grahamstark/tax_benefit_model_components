@@ -11,7 +11,7 @@ package Model.Parameter_System is
      savings_income           : Incomes_Set;
      dividends_income         : Incomes_Set;
      --
-     -- stuff
+     -- FIXME Age allowances and others
    end record;
 
    type NI_Class is ( class_1, class_1a, class_1b, class_2, class_4 );
@@ -21,6 +21,9 @@ package Model.Parameter_System is
      employee_out_rates : Rates_And_Bands;
      employer_in_rates  : Rates_And_Bands;
      employer_out_rates : Rates_And_Bands;
+     --
+     -- FIXME todo self employed stuff
+     --
    end record;
 
 
