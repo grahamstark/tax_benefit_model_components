@@ -99,6 +99,11 @@ package body Parameter_System.Input_Buffer is
                      else
                         val_str := Basic_Text_Representation_Of_Value( v_and_e );
                      end if;
+                     
+                     Log( "Add_One; pno = " & pno'Img & 
+                          " cpv.current_size " & cpv.current_size'Img & 
+                          " length of cpv.index_string " & cpv.index_strings.Length'Img & 
+                          " postfix = " & TS( postfix ));
                      k := cpv.index_strings.Element( pno );
                      complete_key := Line_Extractor.Make_Key( prefix, k, postfix );
                      Log( "Add_Indexed_Subsysem; Made Key as |" & 
@@ -1115,6 +1120,9 @@ package body Parameter_System.Input_Buffer is
                                  default_value );
                              
                               vel.Insert( i, value );
+                              if( pno = 1 )then
+                                 complete_value.index_strings.Append( TuS( i'Img( 2 .. i'Img'Length )));
+                              end if;
                            end loop each_index;
                            complete_value.valmap.Include( parameter.instance_name, vel );
                         end loop each_param;
