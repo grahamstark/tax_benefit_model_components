@@ -437,7 +437,7 @@ package body Parameter_System.Input_Buffer.HTML_Renderer is
                s := s & " selected = 'selected' ";
             end if;
             s := s &
-              " value='" & ev.name & "'>";
+              " value='" & ev.value'Img( 2 .. ev.value'Img'Length ) & "'>";
             if( ev.text( lang ) /= Null_Unbounded_String )then
                s := s & ev.text( lang );
             else

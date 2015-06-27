@@ -784,6 +784,7 @@ package body Parameter_System.Input_Buffer is
       pv : Complete_Param_And_Value_Rec;
       sz : Natural := 0;
    begin
+      Log( "Maximum_Collection_Size; looking for key |" & TS( key ) & "|" );
       if( buff.params.Contains( key ))then
          pv := buff.params.Element( key );
          case pv.etype is
@@ -795,6 +796,9 @@ package body Parameter_System.Input_Buffer is
             when others =>
                sz := 0;
          end case;
+         Log( "Key Found; size is " & sz'Img );
+      else
+         Log( "Key not found ");
       end if;
       return sz;
    end  Maximum_Collection_Size;
