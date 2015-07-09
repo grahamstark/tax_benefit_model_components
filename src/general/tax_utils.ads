@@ -42,6 +42,11 @@ generic
 
 package Tax_Utils is
 
+   
+   DAYS_PER_YEAR   : constant Rate_Type := 365.25;
+   WEEKS_PER_YEAR  : constant Rate_Type := DAYS_PER_YEAR / 7.0;
+   WEEKS_PER_MONTH : constant Rate_Type := WEEKS_PER_YEAR / 12.0;
+   
    type Tax_Result is record
          due      : Amount_Type  := 0.0;
          end_band : Natural := 0;
@@ -105,7 +110,11 @@ package Tax_Utils is
        uprate_by : Rate_Type; -- enter, say, 0.12 for a 12% increase
        next      : Amount_Type := 0.0 );
    procedure Multiply_Rates( ratebands : in out Rates_and_Bands; amount : Rate_Type );
-   procedure Multiply_Bands( ratebands : in out Rates_and_Bands; amount : Rate_Type );
+   
+   procedure Multiply_Bands( 
+      ratebands : in out Rates_and_Bands; 
+      amount : Rate_Type;
+      exclude_top : Boolean := False  );
 
    --
    --

@@ -10,6 +10,12 @@ package body Model.Parameter_System.Operations is
       a := a / WEEKS_PER_YEAR;
    end Annual_To_Weekly;
    
+   procedure To_Weekly( sys : in out Parameter_System ) is
+   begin
+      -- IT/NI annual
+      
+   end To_Weekly;
+   
    procedure Uprate( p : in out Pension_System; v : Rate ) is
    begin
       Uprate( p.class_a, v, UPRATE_ROUND_UP );

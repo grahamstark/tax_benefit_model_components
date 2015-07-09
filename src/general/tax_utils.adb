@@ -188,12 +188,16 @@ package body Tax_Utils is
       Iterate( ratebands.v, Multiply_One'Access );
    end Multiply_Rates;
 
-   procedure Multiply_Bands( ratebands : in out Rates_and_Bands; amount : Rate_Type ) is
+   procedure Multiply_Bands( 
+      ratebands   : in out Rates_and_Bands; 
+      amount      : Rate_Type;
+      exclude_top : Boolean := False ) is
    use Rates_And_Bands_List;
 
       procedure Multiply_One( pos : Cursor ) is
          rb : Rate_And_Band :=  element( pos );
       begin
+         if ( pos = Last and exclude_top )then return; end if; 
          rb.band := rb.band * Amount_Type(amount);
          Replace_Element( ratebands.v, pos, rb );
       end Multiply_One;
@@ -223,7 +227,7 @@ package body Tax_Utils is
    procedure Weekly_To_Annual
      ( ratebands : in out Rates_and_Bands )is
    begin
-      Multiply_Bands( ratebands, 52.0 );
+      Multiply_Bands( ratebands, WEEKS_PER_YEAR, False );
    end Weekly_To_Annual;
 
    --
@@ -231,7 +235,7 @@ package body Tax_Utils is
    procedure Annual_To_Weekly
      ( ratebands : in out Rates_and_Bands ) is
    begin
-      Multiply_Bands( ratebands, 1.0/52.0 );
+      Multiply_Bands( ratebands, 1.0/WEEKS_PER_YEAR, False );
    end Annual_To_Weekly;
    --
    --
