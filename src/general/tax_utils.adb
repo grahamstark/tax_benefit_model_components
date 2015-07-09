@@ -197,7 +197,9 @@ package body Tax_Utils is
       procedure Multiply_One( pos : Cursor ) is
          rb : Rate_And_Band :=  element( pos );
       begin
-         if ( pos = Last and exclude_top )then return; end if; 
+         if pos = Last( ratebands.v ) and exclude_top then 
+            return; 
+         end if; 
          rb.band := rb.band * Amount_Type(amount);
          Replace_Element( ratebands.v, pos, rb );
       end Multiply_One;
