@@ -1,5 +1,15 @@
 package body Model.Parameter_System.Operations is
 
+   procedure Monthly_To_Weekly( a : in out Amount ) is
+   begin
+      a := a / WEEKS_PER_MONTH;
+   end Monthly_To_Weekly;
+   
+   procedure Annual_To_Weekly( a : in out Amount ) is
+   begin
+      a := a / WEEKS_PER_YEAR;
+   end Annual_To_Weekly;
+   
    procedure Uprate( p : in out Pension_System; v : Rate ) is
    begin
       Uprate( p.class_a, v, UPRATE_ROUND_UP );
