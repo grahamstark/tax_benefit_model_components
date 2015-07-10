@@ -7,6 +7,9 @@ package Model.Calculator.Universal_Benefit is
   use Model.Parameter_System;
   package mar renames Model.Abstract_Result;
 
+  --
+  -- fixme move to some non-means tested package
+  --
   procedure Calculate_Child_Benefit(
      sys : Child_Benefit_System;
      bu  : Model.Abstract_Household.Benefit_Unit'Class;
