@@ -47,6 +47,15 @@ package Standard_UK_Enums is
       repayments,
       pension_contributions
       );
+
+   package T_Expenses is new T_Utils(
+      T             => Expenses_Type,
+      Rate_Type     => Base_Model_Types.Rate,
+      Amount_Type   => Base_Model_Types.Amount,
+      Counter_Type  => Base_Model_Types.Counter_Type );
+
+   subtype Expenses_List is T_Expenses.Rate_Array;
+   subtype Expenses_Set is T_Expenses.Set;
    
    type Broad_Calculated_Type is (
       taxable_income,
@@ -102,6 +111,7 @@ package Standard_UK_Enums is
       retirement_pension,
       other_pensions,
       severe_disablement_allowance,
+      sickness_benefits,
       attendance_allowance,
       invalid_care_allowance,
       jobseekers_allowance,
@@ -127,7 +137,7 @@ package Standard_UK_Enums is
       Amount_Type   => Base_Model_Types.Amount,
       Counter_Type  => Base_Model_Types.Counter_Type );
 
-   subtype Incomes_List is T_Incomes.Amount_Array;
+   subtype Incomes_List is T_Incomes.Rate_Array;
    subtype Incomes_Set is T_Incomes.Set;
 
    type Primary_Or_Secondary  is ( primary, secondary );

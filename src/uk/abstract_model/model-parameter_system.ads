@@ -7,9 +7,14 @@ package Model.Parameter_System is
      savings_income_rates     : Rates_And_Bands;
      dividend_income_rates    : Rates_And_Bands;
      personal_allowance       : Amount;
-     non_savings_income       : Incomes_Set;
-     savings_income           : Incomes_Set;
-     dividends_income         : Incomes_Set;
+
+     non_savings_income       : Incomes_List;
+     non_savings_expenses     : Expenses_List;
+     
+     savings_income           : Incomes_List;
+
+     dividends_income         : Incomes_List;
+     
      --
      -- FIXME Age allowances and others
    end record;

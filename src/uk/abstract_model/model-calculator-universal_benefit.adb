@@ -94,9 +94,6 @@ package body Model.Calculator.Universal_Benefit is
      payment                     : Amount := 0.0;
   begin
      Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
-     if( num_people > 1 )then
-        Log( "p2 " & bu.Get_Person( 2 ).Age'Img & " relationship " & bu.Get_Person( 2 ).Family_Relationship'Img );
-     end if;
      if head.Age >= 65 or head.employment = in_education then
         Log( "Calculate_Universal_Benefit; returning" );
         return;
@@ -118,6 +115,7 @@ package body Model.Calculator.Universal_Benefit is
            sppid : Sernum_Value := Utils.Get_Spouse_Of_Head( bu, head_pid );
            spouse : Model.Abstract_Household.Person'Class := bu.Get_Person( sppid );
         begin
+           Log( "p2 " & bu.Get_Person( sppid ).Age'Img & " relationship " & bu.Get_Person( sppid ).Family_Relationship'Img );
            -- assert is adult somehow
            if( head.Age < 25 and spouse.Age < 25 )then
               standard_allowance := sys.allowances.joint_claimants_both_aged_under_25;
@@ -223,7 +221,7 @@ package body Model.Calculator.Universal_Benefit is
       res.Set( head_pid, housing_benefit, 
          Amount'Min( payment, res.Get( housing_allowance )));
       res.Set( head_pid, tax_credits, 
-         payment - res.Get( 1 ).Get( housing_benefit ));
+         payment - res.Get( head_pid ).Get( housing_benefit ));
   end Calculate_Universal_Benefit;
 
 end Model.Calculator.Universal_Benefit;

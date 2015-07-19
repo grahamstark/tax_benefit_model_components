@@ -127,6 +127,8 @@ package body Model.Calculator.Pensioner_Benefits is
          threshold := sys.threshold_single;
       end if;
       excess_income := Amount'Max( 0.0, qualifying_income - threshold );
+      Log( "qualifying income " & qualifying_income'Img );
+      Log( "threshold " & threshold'Img );
       if( excess_income <= 0.0 )then
          credit := 0.0;
       else

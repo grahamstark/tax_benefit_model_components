@@ -42,6 +42,8 @@ package body Model.Calculator.Utils is
       inc  : Amount := 0.0;
    begin
       for i in inct'Range loop
+         Log( "inct("&i'Img&") = " & inct( i )'Img &
+              "which_to_include( " & i'Img & ") " & which_to_include( i )'Img );
          inc := inc + ( inct( i ) * which_to_include( i ));
       end loop;
       return inc;

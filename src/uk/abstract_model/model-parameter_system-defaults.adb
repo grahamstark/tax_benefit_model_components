@@ -5,7 +5,80 @@ package body Model.Parameter_System.Defaults is
 
    use Ada.Assertions;
    use Ada.Text_IO;
+   
+   function Get_Expenses return Expenses_Array is
+      ex : Expenses_Array is
+   begin
+      ex( health_insurance ) := 1.0;
+      ex( alimony_and_child_support_paid ) := 0.0;
+      ex( care_insurance ) := 0.0;
+      ex( trade_unions_etc ) := 1.0;
+      ex( friendly_societies ) := 1.0; 
+      ex( work_expenses ) := 1.0; -- FIXME se only??
+      ex( repayments ) := 1.0;
+      ex( pension_contributions ) := 1.0;
+      return ex;
+   end Get_Expenses;
+   
+   type Income_List_Type is
+      
+      
+      );
+   --
+   -- FIXME this ignores disregards !!!!!!!!
+   --
+   function Get_Default_Incomes( which : Income_List_Type ) return Included_Incomes_Array is
+      inc : Included_Incomes_Array := ( others => 0.0 );
+   begin
+      case which is
+         when guaranteed_pension_credit | savings_credit =>    
+            inc( pension_credit ) := 0.0;
+            inc( incapacity_benefit ) := 1.0;
+            inc( tax_credits ) := 1.0;
+            inc( jobseekers_allowance ) := 1.0;
+            inc( severe_disablement_allowance ) := 1.0;
+            inc( maternity_allowance ) := 1.0;
+            inc( other_income ) := 1.0;
+         when savings_credit_qualifying_income =>
+            inc( pension_credit ) := 0.0;
+            inc( incapacity_benefit ) := 0.0;
+            inc( tax_credits ) := 0.0;
+            inc( jobseekers_allowance ) := 0.0;
+            inc( severe_disablement_allowance ) := 0.0;
+            inc( maternity_allowance ) := 0.0;
+            inc( other_income ) := 0.0;
+      end case;
+      inc( wages ) := 1.0;
+      inc( self_employment ) := 1.0;
+      inc( income_tax ) := -1.0;
+      inc( national_insurance ) := -1.0;
+      inc( retirement_pension ) := 1.0;
+      inc( attendance_allowance ) := 0.0;
+      inc( private_pensions ) := 1.0;
+      inc( mobility_allowance ) := 1.0;
+      inc( invalid_care_allowance ) := 1.0;
+      inc( other_pensions ) := 1.0;
+      inc( disabled_living_allowance ) := 0.0;
+      inc( income_support ) := 1.0;
+      inc( sickness_benefits ) := 1.0;
+      inc( child_benefit ) := 0.0;
+      inc( housing_benefit ) := 1.0;
+      inc( council_tax_benefit ) := 1.0;
+      inc( other_benefits ) := 1.0;
+            
+      inc( student_grants ) := 1.0;
+      inc( foster_care_payments ) := 1.0;
+      inc( student_grants ) := 1.0;
+      inc( student_loans ) := 1.0;
 
+      inc( property ) := 1.0;
+      inc( private_pensions ) := 1.0;
+      inc( national_savings ) := 1.0;
+      inc( bank_interest ) := 1.0;
+      inc( building_society ) := 1.0;
+      return inc;
+   end Get_Default_Incomes;
+   
    procedure Set_Rates_And_Bands(
    sys   : in out Income_Tax_System;
         bands       : Vector;
