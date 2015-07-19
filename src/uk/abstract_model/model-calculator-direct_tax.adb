@@ -78,12 +78,12 @@ package body Model.Calculator.Direct_Tax is
    use type Incomes_Set;
       incomes                : constant Incomes_List :=
          Utils.Combine_Incomes( ad.Get_Incomes, res );
-      all_incomes            : constant Incomes_Set :=
+      all_incomes            : constant Incomes_List :=
          sys.non_savings_income or
          sys.savings_income or
          sys.dividends_income;
       total_income         : constant Amount := T_Incomes.Sum( incomes, all_incomes );
-      reliefs              : constant Amount := 0.0;
+      reliefs              : constant Amount := 0.0; -- FIXME
       net_income           : constant Amount := total_income - reliefs;
       non_savings_income   : Amount := T_Incomes.Sum( incomes, sys.non_savings_income );
       savings_income       : Amount := T_Incomes.Sum( incomes, sys.savings_income );

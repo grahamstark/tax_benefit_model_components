@@ -94,7 +94,8 @@ package Standard_UK_Enums is
       bonds_and_gilts,
       other_income,
       other_investment_income,
-
+      sickness_benefits,
+      
       income_tax,
       national_insurance,
       local_taxes,
@@ -111,7 +112,6 @@ package Standard_UK_Enums is
       retirement_pension,
       other_pensions,
       severe_disablement_allowance,
-      sickness_benefits,
       attendance_allowance,
       invalid_care_allowance,
       jobseekers_allowance,
