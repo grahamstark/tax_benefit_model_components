@@ -349,6 +349,16 @@ package body T_Utils is
       return d;
    end "+";
 
+   function "+" ( a ,b : Abs_Rate_Array ) return Abs_Rate_Array is
+      subtype dt is Abs_Rate_Array( a'Range );
+      d : dt;
+   begin
+      for i in a'Range loop
+         d(i) := a(i) + b(i);
+      end loop;
+      return d;
+   end "+";
+
    function Difference( a,b : Abs_Rate_Array ) return Abs_Rate_Array is
       subtype tr is Abs_Rate_Array( a'Range );
       d : tr;
@@ -392,6 +402,20 @@ package body T_Utils is
       end loop;
       return d;
    end Mult;
+
+   -- 2 for doubling
+   function Mult( a, b : Abs_Rate_Array ) return Abs_Rate_Array is
+      subtype dt is Abs_Rate_Array( a'Range );
+      d : dt;
+   begin
+      for i in a'Range loop
+         d(i) := a(i) * b(i);
+      end loop;
+      return d;
+   end Mult;
+
+   -- 2 for doubling
+
 
    -- next : 0.1 for 10% increase
    function Uprate( a : Abs_Amount_Array; m : Rate_Type; next : Amount_Type := 0.0 ) return Abs_Amount_Array is

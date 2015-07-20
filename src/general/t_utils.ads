@@ -93,14 +93,14 @@ package T_Utils is
    procedure From_String( s : String; a : in out Abs_Integer_Array );
    procedure From_String( str : String; s : in out Set );
    --
-   -- Vector product
+   -- Vector product FIXME could we replace all these just with vectors from Maths??
    --
    function Sum( a : Abs_Amount_Array; weights : Abs_Rate_Array ) return Amount_Type;
    function Vector_Product( a : Abs_Amount_Array; weights : Abs_Rate_Array ) return Amount_Type renames Sum;
    
    function Vector_Product( a1 : Abs_Rate_Array; a2 : Abs_Rate_Array ) return Rate_Type;
    function Vector_Product( a1 : Abs_Amount_Array; a2 : Abs_Amount_Array ) return Amount_Type;
-
+   
    --
    -- Sum a over just those elements
    --
@@ -123,6 +123,7 @@ package T_Utils is
    function Mult( a, b : Abs_Amount_Array ) return Abs_Amount_Array;
    function Mult( a : Abs_Amount_Array; b : Abs_Rate_Array ) return Abs_Amount_Array;
 
+   function Mult( a, b : Abs_Rate_Array ) return Abs_Rate_Array;
    --
    --
    --
@@ -135,11 +136,19 @@ package T_Utils is
 
    function "+" ( a, b : Abs_Amount_Array ) return Abs_Amount_Array;
 
+   function "+" ( a, b : Abs_Rate_Array ) return Abs_Rate_Array;
+   
    function "*" ( a, b : Abs_Amount_Array ) return Abs_Amount_Array renames Mult;
-   function "*" ( a : Abs_Amount_Array; b : Abs_Rate_Array ) return Abs_Amount_Array renames Mult;
 
    function "-" ( a, b : Abs_Amount_Array ) return Abs_Amount_Array renames Difference;
+   
+   function "-" ( a, b : Abs_Rate_Array ) return Abs_Rate_Array renames Difference;
 
+   function "*" ( a : Abs_Amount_Array; b : Abs_Rate_Array ) return Abs_Amount_Array renames Mult;
+   
+   function "*" ( a : Abs_Rate_Array; b : Abs_Rate_Array ) return Abs_Rate_Array renames Mult;
+
+   
    function Construct_Set( first : T; last : T  ) return Set;
 
    procedure Increment(

@@ -6,8 +6,8 @@ package body Model.Parameter_System.Defaults is
    use Ada.Assertions;
    use Ada.Text_IO;
    
-   function Get_Expenses return Expenses_Array is
-      ex : Expenses_Array is
+   function Get_Expenses return Expenses_Included is
+      ex : Expenses_Included;
    begin
       ex( health_insurance ) := 1.0;
       ex( alimony_and_child_support_paid ) := 0.0;
@@ -20,18 +20,18 @@ package body Model.Parameter_System.Defaults is
       return ex;
    end Get_Expenses;
    
-   type Income_List_Type is
-      
-      
-      );
+   type Income_List_Type is( 
+      housing_benefit, council_tax_benefit,
+      guaranteed_pension_credit, savings_credit, 
+      universal_credit, savings_credit_qualifying_income );
    --
    -- FIXME this ignores disregards !!!!!!!!
    --
-   function Get_Default_Incomes( which : Income_List_Type ) return Included_Incomes_Array is
-      inc : Included_Incomes_Array := ( others => 0.0 );
+   function Get_Default_Incomes( which : Income_List_Type ) return Incomes_Included is
+      inc : Incomes_Included := ( others => 0.0 );
    begin
       case which is
-         when guaranteed_pension_credit | savings_credit =>    
+         when guaranteed_pension_credit | savings_credit | universal_credit | housing_benefit | council_tax_benefit =>    
             inc( pension_credit ) := 0.0;
             inc( incapacity_benefit ) := 1.0;
             inc( tax_credits ) := 1.0;
@@ -55,11 +55,9 @@ package body Model.Parameter_System.Defaults is
       inc( retirement_pension ) := 1.0;
       inc( attendance_allowance ) := 0.0;
       inc( private_pensions ) := 1.0;
-      inc( mobility_allowance ) := 1.0;
       inc( invalid_care_allowance ) := 1.0;
       inc( other_pensions ) := 1.0;
       inc( disabled_living_allowance ) := 0.0;
-      inc( income_support ) := 1.0;
       inc( sickness_benefits ) := 1.0;
       inc( child_benefit ) := 0.0;
       inc( housing_benefit ) := 1.0;
@@ -217,22 +215,24 @@ package body Model.Parameter_System.Defaults is
       subtype V3 is Vector( 1 .. 3 );
       subtype V4 is Vector( 1 .. 4 );
    begin
-      sys.non_savings_income.Insert( wages );
-      sys.non_savings_income.Insert( self_employment );
-      sys.non_savings_income.Insert( private_pensions );
-      sys.non_savings_income.Insert( retirement_pension );
-      sys.non_savings_income.Insert( other_pensions );
-      sys.non_savings_income.Insert( property );
-      sys.non_savings_income.Insert( royalties );
+      
+      sys.non_savings_income( wages ) := 1.0;
+      sys.non_savings_income( self_employment ) := 1.0;
+      sys.non_savings_income( private_pensions ) := 1.0;
+      sys.non_savings_income( retirement_pension ) := 1.0;
+      sys.non_savings_income( other_pensions ) := 1.0;
+      sys.non_savings_income( property ) := 1.0;
+      sys.non_savings_income( royalties ) := 1.0;
       -- FIXME taxable benefits
       -- national_savings,
-      sys.savings_income.Insert( bank_interest );
-      sys.savings_income.Insert( building_society );
-      sys.savings_income.Insert( stocks_shares );
-      sys.savings_income.Insert( peps );
-      sys.savings_income.Insert( other_investment_income );
+      sys.savings_income( bank_interest ) := 1.0;
+      sys.savings_income( building_society ) := 1.0;
+      sys.savings_income( stocks_shares ) := 1.0;
+      sys.savings_income( peps ) := 1.0;
+      sys.savings_income( other_investment_income ) := 1.0;
       -- isa,
-      sys.dividends_income.Insert( dividends );
+      sys.dividends_income( dividends ) := 1.0;
+
       -- other_income,
 
 --        income_tax,

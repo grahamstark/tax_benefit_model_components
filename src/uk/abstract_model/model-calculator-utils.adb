@@ -37,7 +37,7 @@ package body Model.Calculator.Utils is
    function Calculate_Incomes(
       non_calculated   : Incomes_List;
       res              : mar.Personal_Result'Class;
-      which_to_include : Incomes_List ) return Amount is
+      which_to_include : Incomes_Included ) return Amount is
       inct : Incomes_List := Combine_Incomes( non_calculated, res );
       inc  : Amount := 0.0;
    begin
@@ -52,7 +52,7 @@ package body Model.Calculator.Utils is
   function Calculate_Incomes(
       bu               : mah.Benefit_Unit'Class;
       res              : mar.Benefit_Unit_Result'Class;
-      which_to_include : Incomes_List ) return Amount is
+      which_to_include : Incomes_Included ) return Amount is
       inc  : Amount := 0.0;
    begin
       for pid of bu.Get_Pids loop

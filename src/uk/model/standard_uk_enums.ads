@@ -54,7 +54,8 @@ package Standard_UK_Enums is
       Amount_Type   => Base_Model_Types.Amount,
       Counter_Type  => Base_Model_Types.Counter_Type );
 
-   subtype Expenses_List is T_Expenses.Rate_Array;
+   subtype Expenses_List is T_Expenses.Amount_Array;
+   subtype Expenses_Included is T_Expenses.Rate_Array;
    subtype Expenses_Set is T_Expenses.Set;
    
    type Broad_Calculated_Type is (
@@ -137,7 +138,8 @@ package Standard_UK_Enums is
       Amount_Type   => Base_Model_Types.Amount,
       Counter_Type  => Base_Model_Types.Counter_Type );
 
-   subtype Incomes_List is T_Incomes.Rate_Array;
+   subtype Incomes_List is T_Incomes.Amount_Array;
+   subtype Incomes_Included is T_Incomes.Rate_Array;
    subtype Incomes_Set is T_Incomes.Set;
 
    type Primary_Or_Secondary  is ( primary, secondary );

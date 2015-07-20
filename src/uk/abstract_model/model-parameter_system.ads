@@ -8,12 +8,12 @@ package Model.Parameter_System is
      dividend_income_rates    : Rates_And_Bands;
      personal_allowance       : Amount;
 
-     non_savings_income       : Incomes_List;
-     non_savings_expenses     : Expenses_List;
+     non_savings_income       : Incomes_Included;
+     non_savings_expenses     : Expenses_Included;
      
-     savings_income           : Incomes_List;
+     savings_income           : Incomes_Included;
 
-     dividends_income         : Incomes_List;
+     dividends_income         : Incomes_Included;
      
      --
      -- FIXME Age allowances and others
@@ -178,7 +178,7 @@ package Model.Parameter_System is
       carer_single : Amount;
       severe_disability_single : Amount;
       severe_disability_couple : Amount;
-      incomes : Incomes_List;
+      incomes : Incomes_Included;
       earnings_disregard : Amount;
       benefit_disregard  : Amount; -- need a list of benefits this applies to
       preserve_for_existing_claimants : Boolean;
@@ -190,8 +190,8 @@ package Model.Parameter_System is
       maximum_single : Amount;
       maximum_couple : Amount;
       withdrawal_rate : Rate;
-      incomes : Incomes_List;
-      qualifying_incomes : Incomes_List;
+      incomes : Incomes_Included;
+      qualifying_incomes : Incomes_Included;
       earnings_disregard : Amount;
       benefit_disregard  : Amount;
       preserve_for_existing_claimants : Boolean;
