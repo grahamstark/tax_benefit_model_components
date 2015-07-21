@@ -20,14 +20,12 @@ package body Model.Parameter_System.Defaults is
       return ex;
    end Get_Expenses;
    
-   type Income_List_Type is( 
-      housing_benefit, council_tax_benefit,
-      guaranteed_pension_credit, savings_credit, 
-      universal_credit, savings_credit_qualifying_income );
    --
    -- FIXME this ignores disregards !!!!!!!!
    --
-   function Get_Default_Incomes( which : Income_List_Type ) return Incomes_Included is
+   function Get_Default_Incomes( 
+      which : Income_List_Type;
+      itype : Benefit_Incomes_Type := both ) return Incomes_Included is
       inc : Incomes_Included := ( others => 0.0 );
    begin
       case which is
@@ -50,8 +48,10 @@ package body Model.Parameter_System.Defaults is
       end case;
       inc( wages ) := 1.0;
       inc( self_employment ) := 1.0;
-      inc( income_tax ) := -1.0;
-      inc( national_insurance ) := -1.0;
+      -- if which = care_means_test then
+      inc( income_tax ) := 0.0;
+      inc( national_insurance ) := 0.0;
+      -- end if;
       inc( retirement_pension ) := 1.0;
       inc( attendance_allowance ) := 0.0;
       inc( private_pensions ) := 1.0;
@@ -306,24 +306,25 @@ package body Model.Parameter_System.Defaults is
    function Get_Universal_Credit_System( year : Year_Number ) return Universal_Credit_System is
       uc : Universal_Credit_System;
    begin
-      uc.earned_income.Insert( wages );
-      uc.earned_income.Insert( self_employment );
+      -- uc.earned_income.Insert( wages );
+      -- uc.earned_income.Insert( self_employment );
       -- FIXME: these need to be 1,-1 vectors really and we need to break down income tax
       -- into PAYE, rest (etc) parts.
       -- FIXME taxable benefits
       -- national_savings,
-      uc.unearned_income.Insert( bank_interest );
-      uc.unearned_income.Insert( building_society );
-      uc.unearned_income.Insert( stocks_shares );
-      uc.unearned_income.Insert( peps );
-      uc.unearned_income.Insert( other_investment_income );
-      uc.unearned_income.Insert( private_pensions );
-      uc.unearned_income.Insert( retirement_pension );
-      uc.unearned_income.Insert( other_pensions );
-      uc.unearned_income.Insert( property );
-      uc.unearned_income.Insert( royalties );
-      -- isa,
-      uc.unearned_income.Insert( dividends );
+      uc.earned_income := Get_Default_Incomes( universal_credit, earned );
+      uc.unearned_income := Get_Default_Incomes( universal_credit, unearned );
+      -- uc.unearned_income.Insert( building_society );
+      -- uc.unearned_income.Insert( stocks_shares );
+      -- uc.unearned_income.Insert( peps );
+      -- uc.unearned_income.Insert( other_investment_income );
+      -- uc.unearned_income.Insert( private_pensions );
+      -- uc.unearned_income.Insert( retirement_pension );
+      -- uc.unearned_income.Insert( other_pensions );
+      -- uc.unearned_income.Insert( property );
+      -- uc.unearned_income.Insert( royalties );
+      -- -- isa,
+      -- uc.unearned_income.Insert( dividends );
       -- basic state retirement pension
       -- FIXME  CAPITAL/all taxable benefits/Income Tax Split/
       case year is

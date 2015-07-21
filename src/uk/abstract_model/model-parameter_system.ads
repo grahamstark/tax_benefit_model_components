@@ -82,8 +82,8 @@ package Model.Parameter_System is
    end record;
 
    type Universal_Credit_System is record
-      earned_income    : Incomes_Set;
-      unearned_income  : Incomes_Set;
+      earned_income    : Incomes_Included;
+      unearned_income  : Incomes_Included;
 
       allowances : Universal_Credit_Allowances;
       disregards : Universal_Credit_Disregards;
