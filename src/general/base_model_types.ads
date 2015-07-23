@@ -26,6 +26,10 @@ package Base_Model_Types is
    type Real is new Long_Float;
    type Identifier_Type is new Integer;
    MISSING_IDENTIFIER : constant Identifier_Type := -999;
+   
+   DAYS_PER_YEAR   : constant Real := 365.25;
+   WEEKS_PER_YEAR  : constant Real := DAYS_PER_YEAR / 7.0;
+   WEEKS_PER_MONTH : constant Real := WEEKS_PER_YEAR / 12.0;
 
    type Counter_Type is delta 0.01 digits 18;
 
