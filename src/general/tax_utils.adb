@@ -34,6 +34,10 @@ with Text_Utils;
 
 package body Tax_Utils is
 
+   DAYS_PER_YEAR   : constant Rate_Type := 365.25;
+   WEEKS_PER_YEAR  : constant Rate_Type := DAYS_PER_YEAR / 7.0;
+   WEEKS_PER_MONTH : constant Rate_Type := WEEKS_PER_YEAR / 12.0;
+   
    procedure Set_Rate_And_Band( ratebands : in out Rates_And_Bands; rb : Rate_And_Band; pos : Positive; replace : Boolean := true ) is
    use Rates_And_Bands_List;
    begin
