@@ -24,13 +24,21 @@ package Model.Run_Settings is
    use Base_Model_Types;
    -- use Model.Household;
    use Text_Utils;
-   
+                                  
    -- package mimt renames Model.Income_Measure_Types;
    
    type Target_Type is ( off_diagonal_index, costs_index, targetting_index );
    type Target_Array is array( Target_Type ) of Rate;
-   --                       0           1           2               3             4             5            6
-   type Phase_Type is ( not_started, queued, run_starting, pre_calculations, running, generating_output, complete );
+   --                       0           1           2               3             4             5            6                 7
+   type Phase_Type is ( 
+      not_started, 
+      queued, 
+      run_starting, 
+      pre_calculations, 
+      running, 
+      post_calculations, 
+      generating_output, 
+      complete );
    subtype Running_Phase is Phase_Type range run_starting .. generating_output;
 
    type Health_Type is ( normal, aborted, in_error, queued );
