@@ -18,6 +18,8 @@
 pragma License( Modified_GPL );
 
 with Ada.Strings.Unbounded;
+with Ada.Numerics.Discrete_Random;
+
 with Text_Utils;
 with Format_Utils;
 with Tax_Utils;
@@ -488,6 +490,17 @@ package body T_Utils is
        end if;
        return x;
     end To_Percent;
+   --  pragma Preelaborate;
 
-
+   package Random_Package is Ada.Numerics.Discrete_Random( Result_Subtype => T );
+   
+   gen : Random_Package.Generator;
+   
+   function Pick_Randomly return is
+   begin
+      return Random_Package.Random( gen );
+   end Pick_Randomly;
+   
+begin
+   Rand_Generator.Reset( gen );
 end T_Utils;

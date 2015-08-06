@@ -492,5 +492,5 @@ package body Base_Model_Types is
       end loop;
       return True;
    end Nearly_Equal;
-
+   
 end Base_Model_Types;

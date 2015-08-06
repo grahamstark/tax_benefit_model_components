@@ -27,6 +27,7 @@ with Ada.Containers.Ordered_Sets;
 with Ada.Containers.Vectors;
 with Ada.Strings.Unbounded;
 
+
 generic
 
    type T is (<>); -- Any discrete type: integer, modular, or enumeration.
@@ -49,9 +50,8 @@ package T_Utils is
 
    use Ada.Strings.Unbounded;
 
-   --  pragma Preelaborate;
-
-
+   function Pick_Randomly return T;
+   
    package Set_Ops is new Ada.Containers.Ordered_Sets( Element_Type => T );
    subtype Set is Set_Ops.Set;
 
