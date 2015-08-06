@@ -50,8 +50,6 @@ package T_Utils is
 
    use Ada.Strings.Unbounded;
 
-   function Pick_Randomly return T;
-   
    package Set_Ops is new Ada.Containers.Ordered_Sets( Element_Type => T );
    subtype Set is Set_Ops.Set;
 
@@ -170,5 +168,14 @@ package T_Utils is
       sum   : in out Abs_Amount_Array;
       which : in T;
       grossing_factor : Amount_Type := 1.0 );
+      
+      
+   function Pick_Randomly return T;
+   
+   --
+   -- so if there are 10 elements in T then Pick_Modular( 22 ) is 2nd element in T 
+   --
+   function Pick_Modular( i : Integer ) return T;
+   
 
 end T_Utils;

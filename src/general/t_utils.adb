@@ -492,15 +492,22 @@ package body T_Utils is
     end To_Percent;
    --  pragma Preelaborate;
 
-   package Random_Package is Ada.Numerics.Discrete_Random( Result_Subtype => T );
+   package Random_Package is new Ada.Numerics.Discrete_Random( Result_Subtype => T );
    
    gen : Random_Package.Generator;
    
-   function Pick_Randomly return is
+   function Pick_Randomly return T is
    begin
       return Random_Package.Random( gen );
    end Pick_Randomly;
    
+   function Pick_Modular( i : Integer ) return T is
+      l : constant Integer := t'Pos( T'Last );
+      m : Integer := i mod l;
+   begin
+      return T'Val( m );
+   end Pick_Modular;
+      
 begin
-   Rand_Generator.Reset( gen );
+   Random_Package.Reset( gen );
 end T_Utils;
