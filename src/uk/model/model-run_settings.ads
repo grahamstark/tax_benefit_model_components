@@ -39,6 +39,7 @@ package Model.Run_Settings is
       post_calculations, 
       generating_output, 
       complete );
+      
    subtype Running_Phase is Phase_Type range run_starting .. generating_output;
 
    type Health_Type is ( normal, aborted, in_error, queued );
