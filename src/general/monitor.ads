@@ -53,7 +53,7 @@ package Monitor is
    
    procedure Set_Counter( m : in out Monitor_Type; which : Counter_Range; c : Integer );
    function Get_Counter( m : Monitor_Type; which : Counter_Range ) return Integer;
-   function Get_Counters( m : Monitor_Type; which : Counter_Range ) return Counter_Array;
+   function Get_Counters( m : Monitor_Type ) return Counter_Array;
 
    procedure Set_Owner( m : in out Monitor_Type; owner : String );
    function Get_Owner( m : Monitor_Type ) return String;

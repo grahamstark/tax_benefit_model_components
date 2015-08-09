@@ -83,11 +83,10 @@ package body Monitor is
       return m.counters( which );
    end Get_Counter;
    
-   function Get_Counters( m : Monitor_Type; which : Counter_Range ) return Counter_Array is
+   function Get_Counters( m : Monitor_Type ) return Counter_Array is
    begin
       return m.counters;
    end Get_Counters;
-
    
    procedure Set_Owner( m : in out Monitor_Type; owner : String ) is
    begin
