@@ -1,3 +1,7 @@
+--
+-- Types for the general run settings thing, moved out to cut down dependencies
+-- in full models.
+--
 package Model_Run_Settings_Types is
 
    type Target_Type is ( off_diagonal_index, costs_index, targetting_index );
