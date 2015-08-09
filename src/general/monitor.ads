@@ -26,8 +26,10 @@ package Monitor is
    
    use Subjects_And_Observers;
    
+   type Abs_Counter_Array is array( Positive range <> ) of Integer;
+   
    subtype Counter_Range is Positive range 1 .. Num_Counters;
-   type Counter_Array is array( Counter_Range ) of Integer;
+   subtype Counter_Array is Abs_Counter_Array( Counter_Range );
    
    type Monitor_Type is new Root_Subject_Type with private;
    type Monitor_Observer( m : access Monitor_Type'Class ) is new Root_Observer_Type with private;
@@ -51,6 +53,7 @@ package Monitor is
    
    procedure Set_Counter( m : in out Monitor_Type; which : Counter_Range; c : Integer );
    function Get_Counter( m : Monitor_Type; which : Counter_Range ) return Integer;
+   function Get_Counters( m : Monitor_Type; which : Counter_Range ) return Counter_Array;
 
    procedure Set_Owner( m : in out Monitor_Type; owner : String );
    function Get_Owner( m : Monitor_Type ) return String;
