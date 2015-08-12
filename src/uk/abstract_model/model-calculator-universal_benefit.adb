@@ -124,7 +124,8 @@ package body Model.Calculator.Universal_Benefit is
            end if;
         end;
       when others =>
-        Ada.Exceptions.Raise_Exception( ex'Identity, "> 2 adults in BU " & num_adults'Img );
+         Log( "Universal Credit BUG !!! > 2 adults in BU " & num_adults'Img );
+         -- Ada.Exceptions.Raise_Exception( ex'Identity, "> 2 adults in BU " & num_adults'Img );
       end case;
       if( num_children > 0 )then
         child_element := sys.allowances.first_child_or_qualifying_young_person +

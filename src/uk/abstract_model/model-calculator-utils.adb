@@ -125,8 +125,7 @@ package body Model.Calculator.Utils is
        -- any other non-head adult
        hids := bu.Get_Pids(
          start_age         => 16,
-         end_age           => Age_Range'Last,
-         relationship_from => spouse );
+         end_age           => Age_Range'Last );
        if hids.Length > 0 then
           return hids.First_Element;
        end if;
@@ -143,6 +142,11 @@ package body Model.Calculator.Utils is
       hpid : Sernum_Value := Sernum_Value'Last;
       oldest : Age_Range := Age_Range'First;
    begin
+      if hids.Length = 0 then
+         hids := bu.Get_Pids;
+         Log( "BUG!! BU with only children!! " );
+      end if;
+      -- Assert( , "all child benefit unit " );
       --
       -- oldest woman
       --
@@ -158,7 +162,8 @@ package body Model.Calculator.Utils is
       end loop;
       -- if none, oldest male
       if hpid = Sernum_Value'Last then
-         for pid of hids loop
+        oldest := Age_Range'First;
+        for pid of hids loop
             declare
                pers : mah.Person'Class := bu.Get_Person( pid );
             begin
@@ -169,6 +174,7 @@ package body Model.Calculator.Utils is
             end;
          end loop;
       end if;
+      
       Assert( hpid < Sernum_Value'Last, "didn't find a head for bu " );
       return hpid;
    end Get_Benefit_Unit_Carer;
