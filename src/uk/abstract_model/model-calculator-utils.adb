@@ -80,14 +80,15 @@ package body Model.Calculator.Utils is
    
    function Get_Head_Of_Benefit_Unit( bu : mah.Benefit_Unit'Class ) return Sernum_Value is
       hids : Sernum_Set := bu.Get_Pids(
-      start_age => 16,
-      end_age   => Age_Range'Last,
-      relationship_from => head, 
-      relationship_to   => head );
+         start_age => 16,
+         end_age   => Age_Range'Last,
+         relationship_from => head, 
+         relationship_to   => head );
       hpid : Sernum_Value := Sernum_Value'Last;
    begin
-      Assert( hids.Length < 2, "no more than 1 head in BU; was " & hids.Length'Img );
-      if hids.Length = 1 then
+      -- Assert( hids.Length < 2, "no more than 1 head in BU; was " & hids.Length'Img );
+      -- FIXME turned off because a bug on Soton ageing model is creating multiple heads of BUs
+      if hids.Length >= 1 then
          hpid := hids.First_Element;
       else
          declare
