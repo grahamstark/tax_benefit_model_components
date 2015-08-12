@@ -283,7 +283,7 @@ package body Tax_Utils is
    procedure Remove_Up_To( ratebands : in out Rates_And_Bands; upto : Amount_Type ) is
       use Rates_And_Bands_List;
       use Ada.Containers;
-      rb_index   : Cursor := Rates_And_Bands_List.First ( ratebands.v );
+      rb_index   : Cursor := ratebands.v.First;
       total : Amount_Type := 0.0;
       to_delete : Count_Type := 0;
       remaining : Amount_Type := upto;

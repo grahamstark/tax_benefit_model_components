@@ -113,6 +113,7 @@ package body Model.Calculator.Direct_Tax is
       declare
          savings_rates : Rates_And_Bands := sys.savings_income_rates;
       begin
+         -- Log( "sys.savings_rates.Length=" & savings_rates.Length'Img );
          Remove_Up_To( savings_rates, non_savings_income );
          savings_tax := UK_Tax_Utils.Calc_Tax_Due(
             savings_rates, savings_income );
