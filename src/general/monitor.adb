@@ -98,6 +98,17 @@ package body Monitor is
       return To_String( m.owner );
    end Get_Owner;
    
+   
+   procedure Set_User_Id( m : in out Monitor_Type; id : Integer ) is
+   begin
+      m.user_id := user_id;
+   end Set_User_Id;
+   
+   function Get_User_Id( m : Monitor_Type ) return Integer is
+   begin
+      return m.user_id;
+   end Get_User_Id;
+   
    procedure Set_Id( m : in out Monitor_Type; id : Integer ) is
    begin
       m.id := id;

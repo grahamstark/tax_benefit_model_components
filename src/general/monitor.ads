@@ -65,7 +65,10 @@ package Monitor is
     
    procedure Set_Id( m : in out Monitor_Type; id : Integer );
    function Get_Id( m : Monitor_Type ) return Integer;
-   
+
+   procedure Set_User_Id( m : in out Monitor_Type; id : Integer );
+   function Get_User_Id( m : Monitor_Type ) return Integer;
+  
    function Get_Is_In_Error( m : Monitor_Type ) return Boolean;
    
    procedure Reset( m : in out Monitor_Type );
@@ -85,6 +88,7 @@ private
       counters    : Counter_Array := ( others => 0 );
       owner       : Unbounded_String := Null_Unbounded_String;
       id          : Integer := 0;
+      user_id     : Integer := 0;
       message     : Unbounded_String := Null_Unbounded_String;
       stack_trace : Unbounded_String := Null_Unbounded_String;
    end record;
