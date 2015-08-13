@@ -66,7 +66,7 @@ package Monitor is
    procedure Set_Id( m : in out Monitor_Type; id : Integer );
    function Get_Id( m : Monitor_Type ) return Integer;
 
-   procedure Set_User_Id( m : in out Monitor_Type; id : Integer );
+   procedure Set_User_Id( m : in out Monitor_Type; user_id : Integer );
    function Get_User_Id( m : Monitor_Type ) return Integer;
   
    function Get_Is_In_Error( m : Monitor_Type ) return Boolean;

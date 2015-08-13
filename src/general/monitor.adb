@@ -99,7 +99,7 @@ package body Monitor is
    end Get_Owner;
    
    
-   procedure Set_User_Id( m : in out Monitor_Type; id : Integer ) is
+   procedure Set_User_Id( m : in out Monitor_Type; user_id : Integer ) is
    begin
       m.user_id := user_id;
    end Set_User_Id;
