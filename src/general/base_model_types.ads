@@ -45,7 +45,9 @@ package Base_Model_Types is
    subtype Sernum_Set is Sernum_Set_Package.Set;
    NULL_SERNUM_SET : constant Sernum_Set := Sernum_Set_Package.Empty_Set;
    type Abs_Sernum_Array is array( Positive range <> ) of Sernum_Value;
-
+   function To_String( sernums : Sernum_Set ) return String;
+   function To_String( sernums : Abs_Sernum_Array ) return String;
+   
    C100 : constant Counter_Type  := 100.0;
 
    MISS   : constant       := -12345;

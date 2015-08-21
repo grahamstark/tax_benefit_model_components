@@ -435,6 +435,35 @@ package body Base_Model_Types is
       return To_String( s );
    end To_String;
    
+   function To_String( sernums : Sernum_Set ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+      n : Natural := Natural( sernums.Length );
+      i : Positive := 1;
+   begin
+      for sn of sernums loop
+         s := s & i'Img & " =>" & sn'Img;
+         if( i < n )then
+            s := s & ", ";
+         end if;
+         i := i + 1;
+      end loop;
+      return To_String( s );
+   end To_String;
+   
+   function To_String( sernums : Abs_Sernum_Array ) return String is
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
+   begin
+      for i in sernums'Range loop
+         s := s & i'Img & " =>" & sernums( i )'Img;
+         if( i < sernums'Last )then
+            s := s & ", ";
+         end if;
+      end loop;
+      return To_String( s );
+  end To_String;
+   
    function To_String( r : Counter_Type_Array ) return String is
    use Ada.Strings.Unbounded;
       s : Unbounded_String;
