@@ -32,7 +32,7 @@ package body Monitor is
             Log( "failed assertion with message " & error_message & " trace " & trace );
             m.message := To_Unbounded_String( error_message );
             m.stack_trace := To_Unbounded_String( trace );
-            m.is_aborting := True;
+            -- m.is_in_error := True;
             m.Notify;
          end;
       end if;
