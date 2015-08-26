@@ -99,6 +99,7 @@ package body Model.Calculator.Direct_Tax is
       allowance            : Amount := sys.personal_allowance;
       income_tax_amount    : Amount;
    begin
+      Log( "incomes components " & To_String( incomes ));
       Log( "non_savings_income ", non_savings_income );
       Log( "savings_income ", savings_income );
       Log( "dividends_income ", dividends_income );

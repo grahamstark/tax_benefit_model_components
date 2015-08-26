@@ -215,6 +215,9 @@ package body Model.Parameter_System.Defaults is
       subtype V3 is Vector( 1 .. 3 );
       subtype V4 is Vector( 1 .. 4 );
    begin
+      sys.non_savings_income := ( others => 0.0 );
+      sys.savings_income := ( others => 0.0 );
+      sys.dividends_income := ( others => 0.0 );
       
       sys.non_savings_income( wages ) := 1.0;
       sys.non_savings_income( self_employment ) := 1.0;
