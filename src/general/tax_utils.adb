@@ -454,13 +454,13 @@ package body Tax_Utils is
   procedure Annual_To_Weekly
      ( lms           : in out Limits_And_Amounts ) is
    begin
-      Multiply_Limits_And_Amounts( lms, 1.0/52.0 );
+      Multiply_Limits_And_Amounts( lms, 1.0/WEEKS_PER_YEAR );
    end Annual_To_Weekly;
 
    procedure Weekly_To_Annual
      ( lms           : in out Limits_And_Amounts ) is
    begin
-      Multiply_Limits_And_Amounts( lms, 52.0 );
+      Multiply_Limits_And_Amounts( lms, WEEKS_PER_YEAR );
    end Weekly_To_Annual;
 
 

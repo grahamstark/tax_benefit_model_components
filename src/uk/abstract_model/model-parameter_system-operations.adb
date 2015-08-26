@@ -13,10 +13,10 @@ package body Model.Parameter_System.Operations is
    procedure To_Weekly( sys : in out Complete_System ) is
    begin
       -- IT/NI annual
-      sys.ni.employee_in_rates.Annual_To_Weekly;
-      sys.ni.employee_out_rates.Annual_To_Weekly;
-      sys.ni.employer_in_rates.Annual_To_Weekly;
-      sys.ni.employer_out_rates.Annual_To_Weekly;
+      -- sys.ni.employee_in_rates.Annual_To_Weekly;
+      -- sys.ni.employee_out_rates.Annual_To_Weekly;
+      -- sys.ni.employer_in_rates.Annual_To_Weekly;
+      -- sys.ni.employer_out_rates.Annual_To_Weekly;
       sys.it.non_savings_income_rates.Annual_To_Weekly;
       sys.it.savings_income_rates.Annual_To_Weekly; 
       sys.it.dividend_income_rates.Annual_To_Weekly;

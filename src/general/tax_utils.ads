@@ -29,6 +29,7 @@
 pragma License( Modified_GPL );
 
 with Ada.Containers.Vectors;
+with Tax_Utils_Commons;
 
 generic
    --
@@ -42,6 +43,8 @@ generic
 
 package Tax_Utils is
 
+   use Tax_Utils_Commons;
+   
    type Tax_Result is record
       due      : Amount_Type  := 0.0;
       end_band : Natural := 0;
@@ -113,8 +116,7 @@ package Tax_Utils is
 
    --
    --
-   procedure Annual_To_Weekly
-     ( ratebands : in out Rates_and_Bands );
+   procedure Annual_To_Weekly( ratebands : in out Rates_and_Bands );
 
    type Limit_And_Amount is record
       limit  : Integer;
