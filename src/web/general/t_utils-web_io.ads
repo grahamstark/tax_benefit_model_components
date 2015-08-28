@@ -37,8 +37,18 @@ package T_Utils.Web_IO is
       ) return Unbounded_String; 
       
    function To_Table( 
-      caption : String := ""; 
-      a : Abs_Amount_Array; 
-      print_zeros : Boolean := False ) return String;   
-
+      caption     : String := ""; 
+      a           : Abs_Amount_Array; 
+      print_zeros : Boolean := False ) return String;
+      
+   function To_Table( 
+      caption     : String := ""; 
+      a           : Abs_Boolean_Array; 
+      print_zeros : Boolean := False ) return String;
+      
+   function To_Table( 
+      caption     : String := ""; 
+      a           : Abs_Integer_Array; 
+      print_zeros : Boolean := False ) return String;
+      
 end T_Utils.Web_IO;

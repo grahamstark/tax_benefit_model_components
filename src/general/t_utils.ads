@@ -26,6 +26,7 @@ pragma License( Modified_GPL );
 with Ada.Containers.Ordered_Sets;
 with Ada.Containers.Vectors;
 with Ada.Strings.Unbounded;
+with Format_Utils;
 
 
 generic
@@ -52,6 +53,9 @@ package T_Utils is
 
    package Set_Ops is new Ada.Containers.Ordered_Sets( Element_Type => T );
    subtype Set is Set_Ops.Set;
+   
+   package RFormat is new Format_Utils( Rate_Type, Counter_Type );
+   package AFormat is new Format_Utils( Amount_Type, Counter_Type );
 
    package List_Ops is new Ada.Containers.Vectors( Index_Type=>Positive, Element_Type => T );
    subtype List is List_Ops.Vector;
