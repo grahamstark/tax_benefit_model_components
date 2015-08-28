@@ -40,12 +40,14 @@ package Web_Utils is
       level        : Natural := 0 ) return Unbounded_String;  
    
    function Parse_Template(
-      page : Unbounded_String;
-      translations : Templates_Parser.Translate_Set ) return Unbounded_String;
+      page         : Unbounded_String;
+      translations : Templates_Parser.Translate_Set;
+      for_web      : Boolean := True ) return Unbounded_String;
       
    function Parse_Template(
-      page : String;
-      translations : Templates_Parser.Translate_Set ) return String;
+      page         : String;
+      translations : Templates_Parser.Translate_Set;
+      for_web      : Boolean := True ) return String;
      
    function Build_Input_Page( 
       page : String; 
@@ -66,7 +68,6 @@ package Web_Utils is
    
    procedure Print_Assoc( item : Templates_Parser.Association; quit : in out Boolean);
    procedure Dump_Translations is new Templates_Parser.For_Every_Association( Action => Print_Assoc );  
-    
   
 end Web_Utils;
 

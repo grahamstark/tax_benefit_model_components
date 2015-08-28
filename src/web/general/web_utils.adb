@@ -96,9 +96,11 @@ package body Web_Utils is
    
    function Parse_Template(
       page : Unbounded_String;
-      translations : Templates_Parser.Translate_Set ) return Unbounded_String is
+      translations : Templates_Parser.Translate_Set;
+      for_web : Boolean := True ) return Unbounded_String is
+      extension : constant String := ( if for_web then ".thtml" else ".txt" );
    begin
-      return Templates_Parser.Parse( TS(page & ".thtml"), translations );
+      return Templates_Parser.Parse( TS(page & extension ), translations );
    end Parse_Template;
    
    procedure Print_Assoc( item : Templates_Parser.Association; quit : in out Boolean) is
@@ -117,9 +119,11 @@ package body Web_Utils is
    
    function Parse_Template(
       page : String;
-      translations : Templates_Parser.Translate_Set ) return String is
+      translations : Templates_Parser.Translate_Set;
+      for_web : Boolean := True ) return String is
+      extension : constant String := ( if for_web then ".thtml" else ".txt" );
    begin
-      return Templates_Parser.Parse( page & ".thtml", translations );
+      return Templates_Parser.Parse( page & extension, translations );
    end Parse_Template;
    
    function Get_Param( 
