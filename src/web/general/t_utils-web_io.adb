@@ -121,5 +121,25 @@ package body T_Utils.Web_IO is
       s := s & Indent( 1 ) & "</div>" & LINE_BREAK;
       return s;
    end Make_Discrete_Select_Boxes;
+   
+   function To_Table( caption : String := ""; a : Abs_Amount_Array; print_zeros : Boolean := False ) return String;
+      use Text_Utils;
+      s : Unbounded_String;
+   begin
+      if not print_zeros then
+         if( for all i of a => i = 0.0 ) then
+            return "";
+         end if;
+      end if;
+      s := s & "<table>" & LINE_BREAK;
+      s := s & "<caption>" & caption & "</caption>" & Line_Break;
+      for i in T loop
+         if( a( i ) /= 0.0 ) or print_zeros then
+            s := s & "<tr><th>" & Pretty_Print( i'Img ) & "</th><td>" & Format( a( i )) & "</td></tr>"&LINE_BREAK;
+         end if;
+      end loop;
+      s := s & "</table>";
+      return TS( s );
+   end To_Table;
 
 end T_Utils.Web_IO;

@@ -34,6 +34,11 @@ package T_Utils.Web_IO is
       selected_element    : T; 
       printer             : Pretty_Print_Item_Access_T; -- a function to display a nice string for each value of T
       displayed_elements  : Set := EMPTY_SET            -- empty = print everything; otherwise print just what's in the set  
-      ) return Unbounded_String;              
+      ) return Unbounded_String; 
+      
+   function To_Table( 
+      caption : String := ""; 
+      a : Abs_Amount_Array; 
+      print_zeros : Boolean := False ) return String;   
 
 end T_Utils.Web_IO;
