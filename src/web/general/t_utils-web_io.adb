@@ -204,7 +204,7 @@ package body T_Utils.Web_IO is
       s : Unbounded_String;
    begin
       if not print_zeros then
-         if( for all i of a => i = 0 ) then
+         if( for all i in T => a( i ) = 0.0 and b( i ) = 0.0 ) then
             return "";
          end if;
       end if;
@@ -213,12 +213,12 @@ package body T_Utils.Web_IO is
       s := s & "<caption>" & caption & "</caption>" & Line_Break;
       s := s & "<tr><th>"&a_label&"</th><th>"&b_label&"</th>";
       if print_differences then
-         s := s & "<th>Difference</th>"
+         s := s & "<th>Difference</th>";
       end if;
       s := s & "</tr>" & LINE_BREAK;
       
       for i in T loop
-         if( a( i ) /= 0.0 ) or b( i ) /= 0.0 print_zeros then
+         if( a( i ) /= 0.0 ) or b( i ) /= 0.0 or print_zeros then
             s := s & "<tr><th>" & Prettify_Image( i'Img ) & "</th>";
             s := s & "<td>" & AFormat.Format( a( i )) & "</td>";
             s := s & "<td>" & AFormat.Format( b( i )) & "</td>";
