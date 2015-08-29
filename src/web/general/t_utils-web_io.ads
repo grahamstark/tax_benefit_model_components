@@ -42,6 +42,15 @@ package T_Utils.Web_IO is
       print_zeros : Boolean := False ) return String;
       
    function To_Table( 
+      caption     : String := "";      
+      a           : Abs_Amount_Array;
+      a_label     : String;
+      b           : Abs_Amount_Array;
+      b_label     : String;
+      print_differences : Boolean := True;
+      print_zeros : Boolean := False ) return String;
+      
+   function To_Table( 
       caption     : String := ""; 
       a           : Abs_Boolean_Array; 
       print_zeros : Boolean := False ) return String;
@@ -50,5 +59,7 @@ package T_Utils.Web_IO is
       caption     : String := ""; 
       a           : Abs_Integer_Array; 
       print_zeros : Boolean := False ) return String;
+      
+      
       
 end T_Utils.Web_IO;

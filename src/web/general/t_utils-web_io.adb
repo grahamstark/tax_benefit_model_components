@@ -190,5 +190,46 @@ package body T_Utils.Web_IO is
       s := s & "</table>";
       return TS( s );
    end To_Table;
+   
+   function To_Table( 
+      caption     : String := "";      
+      a           : Abs_Amount_Array;
+      a_label     : String;
+      b           : Abs_Amount_Array;
+      b_label     : String;
+      print_differences : Boolean := True;
+      print_zeros : Boolean := False ) return String is
+      
+      use Text_Utils;
+      s : Unbounded_String;
+   begin
+      if not print_zeros then
+         if( for all i of a => i = 0 ) then
+            return "";
+         end if;
+      end if;
 
+      s := s & "<table>" & LINE_BREAK;
+      s := s & "<caption>" & caption & "</caption>" & Line_Break;
+      s := s & "<tr><th>"&a_label&"</th><th>"&b_label&"</th>";
+      if print_differences then
+         s := s & "<th>Difference</th>"
+      end if;
+      s := s & "</tr>" & LINE_BREAK;
+      
+      for i in T loop
+         if( a( i ) /= 0.0 ) or b( i ) /= 0.0 print_zeros then
+            s := s & "<tr><th>" & Prettify_Image( i'Img ) & "</th>";
+            s := s & "<td>" & AFormat.Format( a( i )) & "</td>";
+            s := s & "<td>" & AFormat.Format( b( i )) & "</td>";
+            if print_differences then
+               s := s & "<td>" & AFormat.Format( b( i )-a( i )) & "</td>";
+            end if;
+            s := s & "</tr>" & LINE_BREAK;
+         end if;
+      end loop;
+      s := s & "</table>";
+      return TS( s );
+   end To_Table;
+   
 end T_Utils.Web_IO;
