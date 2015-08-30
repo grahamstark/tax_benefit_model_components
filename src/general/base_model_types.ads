@@ -49,6 +49,9 @@ package Base_Model_Types is
    function To_String( sernums : Abs_Sernum_Array ) return String;
    
    C100 : constant Counter_Type  := 100.0;
+   
+   subtype Percentile_Range is Positive range 1 .. 100;
+   subtype Decile_Range is Positive range 1 .. 10;
 
    MISS   : constant       := -12345;
    MISS_R : constant Rate  := -12345.0;
