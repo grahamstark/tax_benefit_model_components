@@ -100,7 +100,8 @@ package body Model.Calculator.Direct_Tax is
       income_tax_amount    : Amount;
    begin
       Log( "incomes components " & To_String( incomes ));
-      Log( "non_savings_income ", non_savings_income );
+      Log( "Total Income ",  total_income );
+      Log( "allowance ", allowance );
       Log( "savings_income ", savings_income );
       Log( "dividends_income ", dividends_income );
       Log( "dividend_credit_rate ", dividend_credit_rate );

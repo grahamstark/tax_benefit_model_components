@@ -28,52 +28,56 @@ package body Model.Parameter_System.Defaults is
       itype : Benefit_Incomes_Type := both ) return Incomes_Included is
       inc : Incomes_Included := ( others => 0.0 );
    begin
-      case which is
-         when guaranteed_pension_credit | savings_credit | universal_credit | housing_benefit | council_tax_benefit =>    
-            inc( pension_credit ) := 0.0;
-            inc( incapacity_benefit ) := 1.0;
-            inc( tax_credits ) := 1.0;
-            inc( jobseekers_allowance ) := 1.0;
-            inc( severe_disablement_allowance ) := 1.0;
-            inc( maternity_allowance ) := 1.0;
-            inc( other_income ) := 1.0;
-         when savings_credit_qualifying_income =>
-            inc( pension_credit ) := 0.0;
-            inc( incapacity_benefit ) := 0.0;
-            inc( tax_credits ) := 0.0;
-            inc( jobseekers_allowance ) := 0.0;
-            inc( severe_disablement_allowance ) := 0.0;
-            inc( maternity_allowance ) := 0.0;
-            inc( other_income ) := 0.0;
-      end case;
-      inc( wages ) := 1.0;
-      inc( self_employment ) := 1.0;
+      if itype = both or itype = unearned then
+         case which is
+            when guaranteed_pension_credit | savings_credit | universal_credit | housing_benefit | council_tax_benefit =>    
+               inc( pension_credit ) := 0.0;
+               inc( incapacity_benefit ) := 1.0;
+               inc( tax_credits ) := 1.0;
+               inc( jobseekers_allowance ) := 1.0;
+               inc( severe_disablement_allowance ) := 1.0;
+               inc( maternity_allowance ) := 1.0;
+               inc( other_income ) := 1.0;
+            when savings_credit_qualifying_income =>
+               inc( pension_credit ) := 0.0;
+               inc( incapacity_benefit ) := 0.0;
+               inc( tax_credits ) := 0.0;
+               inc( jobseekers_allowance ) := 0.0;
+               inc( severe_disablement_allowance ) := 0.0;
+               inc( maternity_allowance ) := 0.0;
+               inc( other_income ) := 0.0;
+         end case;
+         inc( retirement_pension ) := 1.0;
+         inc( attendance_allowance ) := 0.0;
+         inc( private_pensions ) := 1.0;
+         inc( invalid_care_allowance ) := 1.0;
+         inc( other_pensions ) := 1.0;
+         inc( disabled_living_allowance ) := 0.0;
+         inc( sickness_benefits ) := 1.0;
+         inc( child_benefit ) := 0.0;
+         inc( housing_benefit ) := 1.0;
+         inc( council_tax_benefit ) := 1.0;
+         inc( other_benefits ) := 1.0;
+               
+         inc( student_grants ) := 1.0;
+         inc( foster_care_payments ) := 1.0;
+         inc( student_grants ) := 1.0;
+         inc( student_loans ) := 1.0;
+   
+         inc( property ) := 1.0;
+         inc( private_pensions ) := 1.0;
+         inc( national_savings ) := 1.0;
+         inc( bank_interest ) := 1.0;
+         inc( building_society ) := 1.0;
+      end if;
+      if itype = both or itype = earned then      
+         inc( wages ) := 1.0;
+         inc( self_employment ) := 1.0;
+      end if;
       -- if which = care_means_test then
       inc( income_tax ) := 0.0;
       inc( national_insurance ) := 0.0;
       -- end if;
-      inc( retirement_pension ) := 1.0;
-      inc( attendance_allowance ) := 0.0;
-      inc( private_pensions ) := 1.0;
-      inc( invalid_care_allowance ) := 1.0;
-      inc( other_pensions ) := 1.0;
-      inc( disabled_living_allowance ) := 0.0;
-      inc( sickness_benefits ) := 1.0;
-      inc( child_benefit ) := 0.0;
-      inc( housing_benefit ) := 1.0;
-      inc( council_tax_benefit ) := 1.0;
-      inc( other_benefits ) := 1.0;
-            
-      inc( student_grants ) := 1.0;
-      inc( foster_care_payments ) := 1.0;
-      inc( student_grants ) := 1.0;
-      inc( student_loans ) := 1.0;
-
-      inc( property ) := 1.0;
-      inc( private_pensions ) := 1.0;
-      inc( national_savings ) := 1.0;
-      inc( bank_interest ) := 1.0;
-      inc( building_society ) := 1.0;
       return inc;
    end Get_Default_Incomes;
    
