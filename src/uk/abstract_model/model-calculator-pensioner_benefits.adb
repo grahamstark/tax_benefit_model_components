@@ -31,7 +31,7 @@ package body Model.Calculator.Pensioner_Benefits is
       -- contributions ???
       for pid of pids loop
          declare
-            pers : mah.Person'Class renames bu.Get_Person( pid );
+            pers : mah.Person'Class renames bu.Find_Person( pid );
          begin
             if( pers.gender = male and pers.age >= sys.age_men ) or 
               ( pers.gender = female and pers.age >= sys.age_women )then
@@ -66,7 +66,7 @@ package body Model.Calculator.Pensioner_Benefits is
       end if;
       for pid of pids loop
          declare
-            pers   : mah.Person'Class renames bu.Get_Person( pid );
+            pers   : mah.Person'Class renames bu.Find_Person( pid );
             incset : Incomes_Set := 
                Utils.Which_Incomes_Received( pers.Get_Incomes, res.Get( pid ));
          begin
@@ -163,7 +163,7 @@ package body Model.Calculator.Pensioner_Benefits is
    begin
       for pid of pids loop
          declare 
-            pers : mah.Person'Class := bu.Get_Person( pid );
+            pers : mah.Person'Class := bu.Find_Person( pid );
          begin
             if( pers.gender = male and pers.age > age_men ) or 
               ( pers.gender = female and pers.age > age_women ) then

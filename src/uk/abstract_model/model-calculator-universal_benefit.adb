@@ -32,7 +32,7 @@ package body Model.Calculator.Universal_Benefit is
    begin
       for pid of pids loop
          declare
-           pers : Model.Abstract_Household.Person'Class renames bu.Get_Person( pid );
+           pers : Model.Abstract_Household.Person'Class renames bu.Find_Person( pid );
            age  : Age_Range := pers.Age;
          begin
             if pers.Family_Relationship in child .. foster_child then
@@ -90,7 +90,7 @@ package body Model.Calculator.Universal_Benefit is
      head_pid                    : constant Sernum_Value := 
         Utils.Get_Head_Of_Benefit_Unit( bu );
      head                        : Model.Abstract_Household.Person'Class :=
-        bu.Get_Person( head_pid );
+        bu.Find_Person( head_pid );
      payment                     : Amount := 0.0;
   begin
      Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
@@ -113,9 +113,9 @@ package body Model.Calculator.Universal_Benefit is
      when 2 =>
         declare
            sppid : Sernum_Value := Utils.Get_Spouse_Of_Head( bu, head_pid );
-           spouse : Model.Abstract_Household.Person'Class := bu.Get_Person( sppid );
+           spouse : Model.Abstract_Household.Person'Class := bu.Find_Person( sppid );
         begin
-           Log( "p2 " & bu.Get_Person( sppid ).Age'Img & " relationship " & bu.Get_Person( sppid ).Family_Relationship'Img );
+           Log( "p2 " & bu.Find_Person( sppid ).Age'Img & " relationship " & bu.Find_Person( sppid ).Family_Relationship'Img );
            -- assert is adult somehow
            if( head.Age < 25 and spouse.Age < 25 )then
               standard_allowance := sys.allowances.joint_claimants_both_aged_under_25;
@@ -198,7 +198,7 @@ package body Model.Calculator.Universal_Benefit is
          declare
            incomes : constant Incomes_List :=
          	Utils.Combine_Incomes( 
-         	   bu.Get_Person( pid ).Get_Incomes, res.Get( pid ));
+         	   bu.Find_Person( pid ).Get_Incomes, res.Get( pid ));
            -- not right, should just be paye and NI
            earn : constant Amount :=
                Amount'Max( 0.0,

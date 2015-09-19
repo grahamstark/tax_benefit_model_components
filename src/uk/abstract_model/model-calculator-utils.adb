@@ -57,7 +57,7 @@ package body Model.Calculator.Utils is
    begin
       for pid of bu.Get_Pids loop
          inc := inc + Calculate_Incomes( 
-            bu.Get_Person( pid ).Get_Incomes,
+            bu.Find_Person( pid ).Get_Incomes,
             res.Get( pid ),
             which_to_include );
       end loop;
@@ -96,7 +96,7 @@ package body Model.Calculator.Utils is
          begin
             for pid of bu.Get_Pids loop
                declare
-                  pers : mah.Person'Class := bu.Get_Person( pid );
+                  pers : mah.Person'Class := bu.Find_Person( pid );
                begin
                   if pers.age > oldest then
                      oldest := pers.age;
@@ -152,7 +152,7 @@ package body Model.Calculator.Utils is
       --
       for pid of hids loop
          declare
-            pers : mah.Person'Class := bu.Get_Person( pid );
+            pers : mah.Person'Class := bu.Find_Person( pid );
          begin
             if pers.gender = female and pers.age > oldest then
                oldest := pers.age;
@@ -165,7 +165,7 @@ package body Model.Calculator.Utils is
         oldest := Age_Range'First;
         for pid of hids loop
             declare
-               pers : mah.Person'Class := bu.Get_Person( pid );
+               pers : mah.Person'Class := bu.Find_Person( pid );
             begin
                if pers.gender = male and pers.age > oldest then
                   oldest := pers.age;

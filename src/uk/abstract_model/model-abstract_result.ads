@@ -81,6 +81,10 @@ package Model.Abstract_Result is
    function Get( 
       result : Household_Result; 
       which  : Broad_Calculated_Type ) return Amount is abstract;
+      
+   function Get_Personal( 
+      result : Household_Result; 
+      pid    : Sernum_Value ) return Personal_Result'Class is abstract;
    
    procedure Zero( result : in out Household_Result ) is abstract;
 

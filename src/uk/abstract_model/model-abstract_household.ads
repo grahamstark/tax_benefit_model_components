@@ -61,7 +61,7 @@ package Model.Abstract_Household is
       relationship_to   : Relationship_Type := Relationship_Type'Last;
       start_person : Person_Count := 1 )  return Sernum_Set is abstract;
       
-   function Get_Person( bu : Benefit_Unit; pid : Sernum_Value ) return Person'Class is abstract;
+   function Find_Person( bu : Benefit_Unit; pid : Sernum_Value ) return Person'Class is abstract;
    function Get_Benefit_Unit_Type( bu : Benefit_Unit ) return Primary_Or_Secondary is abstract;
    function Is_Couple( bu : Benefit_Unit ) return Boolean is abstract;
    
@@ -85,8 +85,8 @@ package Model.Abstract_Household is
    function Get_Housing_Cost( hh : Household; htype : Housing_Cost_Type ) return Amount is abstract;
    function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
 
-   function Get_Person( hh : Household; pid : Sernum_Value ) return Person'Class is abstract;
-   function Get_Benefit_Unit( hh : Household; buno : Benefit_Unit_Number ) return Benefit_Unit'Class is abstract;
+   function Find_Person( hh : Household; pid : Sernum_Value ) return Person'Class is abstract;
+   function Find_Benefit_Unit( hh : Household; buno : Benefit_Unit_Number ) return Benefit_Unit'Class is abstract;
    
    
 
