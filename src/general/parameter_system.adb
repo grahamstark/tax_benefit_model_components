@@ -1,13 +1,25 @@
-with Ada.Strings.Unbounded;
-with Text_Utils;
 with Ada.Containers;
 with Ada.Exceptions; 
-with Ada.Text_IO;
 with Ada.Strings.Maps;
+with Ada.Strings.Unbounded;
+with Ada.Text_IO;
+
+with Text_Utils;
+
+with GNATColl.Traces;
 
 package body Parameter_System is
    use Ada.Text_IO;
  
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "PARAMETER_SYSTEM" );
+   
+   procedure Log( s : String ) is
+   begin
+      GNATColl.Traces.Trace( log_trace, s );
+   end Log;
+
+
+   
    procedure Make_Path_To_Left( sys : Parameter_System_Rec; path : in out Text_Utils.Unbounded_String_List ) is
    use Text_Utils;
    use Unbounded_String_Vector_Package;
@@ -179,7 +191,7 @@ package body Parameter_System is
          if( found )then 
             return; 
          end if;
-         Put_Line( "looking for " & To_String( name ) & " got : " & To_String( this.name ));
+         Log( "looking for " & To_String( name ) & " got : " & To_String( this.name ));
          if( this.name = name )then
             found := True;
             return;
