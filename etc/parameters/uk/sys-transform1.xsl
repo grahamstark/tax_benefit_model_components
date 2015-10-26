@@ -12,7 +12,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output method="html" encoding="iso-8859-1" indent="yes"/>
   <xsl:strip-space elements="*"/>
-  <xsl:include href="arcadeheader.xml" />
+  <xsl:include href="header.html" />
 
   <!-- Top-level rule -->
   <!-- ============== -->
@@ -20,19 +20,20 @@
   <!-- ============== -->
   <xsl:template match="/">
   <html>
-   <xsl:call-template name="vwheader">
-    <xsl:with-param name="title" select="'Labour Supply Simulation'" />
-    <xsl:with-param name="subject" select="'labour supply'" />
-    <xsl:with-param name="Description" select="'an on-line labour supply simulation; part of the virtual learning arcade'" />
-    <xsl:with-param name="author" select="'Graham Stark mailto:graham_s@ifs.org.uk'" />
+   <xsl:call-template name="header">
+    <xsl:with-param name="title" select="''" />
+    <xsl:with-param name="subject" select="''" />
+    <xsl:with-param name="Description" select="''" />
+    <xsl:with-param name="author" select="'XX'" />
   </xsl:call-template>
-  <body bgcolor="white">  
+  
+  <body>  
   
       <xsl:message terminate="no">Main rule <xsl:value-of select="//ParameterSet/@instanceName"/></xsl:message>
-        <table cellspacing="0" cellpadding="6">
+        <table class='XX'>
         <tr><td>
         <xsl:call-template name="main">
-          <xsl:with-param name="sys" select="//ParameterSet/ParameterSystem"/>
+          <xsl:with-param name="sys" select="//ParameterSystem"/>
         </xsl:call-template>
         </td></tr></table>
       </body>
@@ -40,7 +41,7 @@
   </xsl:template>
   
   
-  <xsl:template name="onecol">
+  <xsl:template name="print_parameter">
         <xsl:param name="class"/>
         <xsl:param name="Parameter" />
         <xsl:param name="values" />
@@ -165,71 +166,23 @@
     <table cellspacing="0" cellpadding="6">
     
     <tr>
-       
        <th colspan="2"><xsl:value-of select="$sys/@name"/></th>
     </tr>
+    
     <xsl:for-each select="$sys/Parameter">
         <xsl:variable name="indexName" select="@indexName" /> 
 	<xsl:variable name="instanceName" select="@instanceName" />
-        <xsl:if test="string-length( $indexName )=0" >
-       
-        <xsl:choose>
-                <xsl:when test="( position() mod 2 ) = 0">
-                        <xsl:call-template name="onecol">
-                                <xsl:with-param name="Parameter" select="." />
-                                <xsl:with-param name="values" select="$values/ParameterValue[@instanceName=$instanceName]" />
-                                <xsl:with-param name="class" select="'highlight-med'" />
-                        </xsl:call-template>
-                </xsl:when>
-                <xsl:otherwise>
-                <xsl:call-template name="onecol">
-                                <xsl:with-param name="Parameter" select="." />
-                                <xsl:with-param name="class" select="'highlight'" />
-                                <xsl:with-param name="values" select="$values[@instanceName=$instanceName]" />
-                        </xsl:call-template>
-                </xsl:otherwise>
-        </xsl:choose>
-	</xsl:if>
-	
-	<xsl:if test="string-length( $indexName ) &gt;0">
-		<xsl:message>indexed thing goes here: index=<xsl:value-of select="$indexName"/></xsl:message>
-		<xsl:call-template name="indexedGroup">
-		        <xsl:with-param name="Parameter" select="."/>
-			<xsl:with-param name="values" select="$values/ParameterValue[@instanceName=$instanceName]"/>
-		</xsl:call-template>
-	</xsl:if>
+        <xsl:call-template name="print_parameter">
+                <xsl:with-param name="Parameter" select="." />
+                <xsl:with-param name="values" se0-lect="$values/ParameterValue[@instanceName=$instanceName]" />
+                <xsl:with-param name="class" select="'highlight-med'" />
+        </xsl:call-template>
     </xsl:for-each>
     
-    <xsl:for-each select="$sys/ArrayGroup"> 
-        <xsl:variable name="instanceName" select="@instanceName" />
-       
-                        <xsl:call-template name="onearraycol">
-                                <xsl:with-param name="group" select="." />
-                                <xsl:with-param name="class" select="'highlight'" />
-                                <xsl:with-param name="values" select="$values" />
-                                
-                        </xsl:call-template>
-    
-    
-    </xsl:for-each>
-        
         <xsl:for-each select="$sys/ParameterSystem">
            <xsl:variable name="thistype" select="@type" />
            <xsl:message terminate="no">thistype=<xsl:value-of select="$thistype"/></xsl:message>
  
-           <xsl:choose>
-                <xsl:when test="(position() mod 2) = 0">
-                     <tr class="highlight">
-                         <td width="40">&#160;</td>
-                         <td colspan="2" align="right" border="1">
-                          <xsl:call-template name="main">
-                            <xsl:with-param name="sys" select="."/>
-                            <xsl:with-param name="values" select="//*/ParameterSystemValues[ @type = $thistype ]"/>
-                         </xsl:call-template>
-                      </td>
-                    </tr>
-                </xsl:when>
-                <xsl:otherwise>
                  <tr class="highlight-med">
                          <td width="40">&#160;</td>
                          <td colspan="2" align="right" border="1">
@@ -239,40 +192,9 @@
                          </xsl:call-template>
                       </td>
                     </tr>
-                </xsl:otherwise>
-              </xsl:choose>
         </xsl:for-each>
 	
 	
-        <xsl:for-each select="$sys/ParameterSystem1">
-           <xsl:variable name="thistype" select="@type" />
-           <xsl:message terminate="no">ParameterSystemPointer; thistype=<xsl:value-of select="$thistype"/></xsl:message>
- 
-           <xsl:choose>
-                <xsl:when test="(position() mod 2) = 0">
-                     <tr class="highlight">
-                         <td width="40">&#160;</td>
-                         <td colspan="2" align="right" border="1">
-                          <xsl:call-template name="main">
-                            <xsl:with-param name="sys" select="."/>
-                            <xsl:with-param name="values" select="//*/ParameterSystemValues[ @type = $thistype ]"/>
-                         </xsl:call-template>ls -l
-                      </td>
-                    </tr>
-                </xsl:when>
-                <xsl:otherwise>
-                 <tr class="highlight-med">
-                         <td width="40">&#160;</td>
-                         <td colspan="2" align="right" border="1">
-                          <xsl:call-template name="main">
-                            <xsl:with-param name="sys" select="."/>
-                            <xsl:with-param name="values" select="//*/ParameterSystemValues[ @type = $thistype ]"/>
-                         </xsl:call-template>
-                      </td>
-                    </tr>
-                </xsl:otherwise>
-              </xsl:choose>
-        </xsl:for-each>
      </table>
   </xsl:template>
 </xsl:stylesheet>

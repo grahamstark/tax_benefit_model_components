@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- bbc-ve-output.xsl -->
-<!-- output for bbc election service, modelled on JNP's budget one -->
-<!-- this version GKS 2/5/2001 -->
-<!-- RCS
-   $Log: election-output.xsl,v $
-   Revision 1.1.1.1  2001/08/10 14:27:16  graham_s
-   re-import 10th aug 01
+<!-- 
 
-    made /images -> images
+parse an xml file with DTD 
+
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output method="html" encoding="iso-8859-1" indent="yes"/>
@@ -244,7 +239,7 @@
         </xsl:for-each>
 	
 	
-        <xsl:for-each select="$sys/ParameterSystem1">
+        <xsl:for-each select="$sys/ParameterSystem">
            <xsl:variable name="thistype" select="@type" />
            <xsl:message terminate="no">ParameterSystemPointer; thistype=<xsl:value-of select="$thistype"/></xsl:message>
  
