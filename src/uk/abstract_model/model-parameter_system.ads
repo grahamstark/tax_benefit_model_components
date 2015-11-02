@@ -113,6 +113,7 @@ package Model.Parameter_System is
       -- For Cardiff, 1 bedroom shared rate, from
       -- https://lha-direct.voa.gov.uk/BedRoomCalculator.aspx
       one_bedroom_in_shared_accommodation_rate : Amount ;
+      maximum_number_of_children : Child_Count := Child_Count'Last;
      --can cover:
 
    --- eligible rent payments

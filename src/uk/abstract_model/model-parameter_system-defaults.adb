@@ -371,6 +371,7 @@ package body Model.Parameter_System.Defaults is
             uc.maximum_childcare_award_lone_parents :=  350.0;
             uc.maximum_payment_families :=   500.0;
             uc.maximum_payment_singles  :=   350.0;
+            uc.maximum_number_of_children  :=   Child_Count'Last;
          when 2015 => -- from Hoc Briefing note SN07054
             uc.allowances.single_claimant_aged_under_25 :=  251.77;
             uc.allowances.single_claimant_aged_25_or_over :=  317.82;
@@ -410,6 +411,7 @@ package body Model.Parameter_System.Defaults is
             uc.maximum_childcare_award_lone_parents :=  350.0/12.0;
             uc.maximum_payment_families :=   2_000.0;
             uc.maximum_payment_singles  :=   350.0/12.0;
+            uc.maximum_number_of_children  :=   Child_Count'Last;
          when others => null;
       end case;
       return uc;

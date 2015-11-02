@@ -74,7 +74,8 @@ package body Model.Calculator.Universal_Benefit is
      
      num_people                  : constant Person_Count := Person_Count( pids.Length );
      num_adults                  : constant Person_Count := Person_Count( adult_pids.Length );
-     num_children                : constant Person_Count := Person_Count( child_pids.Length );
+     num_children                : constant Person_Count := 
+        Child_Count'Min( Person_Count( child_pids.Length ), sys.maximum_number_of_children );
      maximum_benefit             : constant Amount :=
         ( if num_people = 1 then sys.maximum_payment_singles
           else sys.maximum_payment_families );
