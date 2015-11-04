@@ -785,6 +785,13 @@ package body Parameter_System.Input_Buffer.HTML_Renderer is
    end Make_Ajax_Call_Indexed;
    
  
+   --
+   -- create a table with each row consisting of one of the records, and editing
+   -- controls at the end which can change the number of rows
+   -- see callbacks-msc.Array_Update_Callback for an example of a suitable Ajax callback for this
+   -- an example use case is rate/band combos for income tax, where each rate/band
+   -- pair is modelled as a mini-system and we use an integer as the index 
+   --
    function Make_Indexed_Block(
       complete_sys      : Parameter_System_Rec;
       key               : Unbounded_String;
@@ -812,13 +819,6 @@ package body Parameter_System.Input_Buffer.HTML_Renderer is
                make_hidden : Boolean;
                print_edit  : Boolean;
             begin
-               --
-               -- create a table with each row consisting of one of the records, and editing
-               -- controls at the end which can change the number of rows
-               -- see [ ] for an example of a suitable Ajax callback for this
-               -- an example use case is rate/band combos for income tax, where each rate/band
-               -- pair is modelled as a mini-system and we use an integer as the index 
-               --
                s := s & "<table class='editable_table' id='table-" & key & "'> " & LINE_BREAK;
                s := s & INDENT & "<tbody>" & LINE_BREAK;
                s := s & INDENT & INDENT & "<tr>" & LINE_BREAK;

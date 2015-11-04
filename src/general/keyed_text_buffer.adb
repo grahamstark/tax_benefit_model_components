@@ -23,6 +23,15 @@ package body Keyed_Text_Buffer is
       to_add.Iterate( Add'Access );
    end Merge;
    
+   procedure Dump( buff : Text_Buffer; filename : String ) is
+   use Ada.Text_IO;
+      f : File_Type;
+   begin
+      Create( f, Out_File, filename );
+      Put_Line( Text_Utils.To_String( buff ));
+      Close( f );
+   end Dump;
+   
    function Parse( data : String; sep : Character ) return Text_Buffer is
    use Text_Utils;
       key, value   : Unbounded_String;

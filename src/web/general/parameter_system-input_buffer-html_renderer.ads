@@ -53,6 +53,13 @@ package Parameter_System.Input_Buffer.HTML_Renderer is
       prefix               : Unbounded_String;      
       lang                 : Languages ) return Unbounded_String;   
       
+   --
+   -- create a table with each row consisting of one of the records, and editing
+   -- controls at the end which can change the number of rows
+   -- see Callbacks.Msc.Array_Update_Callback for an example of a suitable Ajax callback for this
+   -- an example use case is rate/band combos for income tax, where each rate/band
+   -- pair is modelled as a mini-system and we use an integer as the index 
+   --
    function Make_Indexed_Block(
       complete_sys      : Parameter_System_Rec;
       key               : Unbounded_String;

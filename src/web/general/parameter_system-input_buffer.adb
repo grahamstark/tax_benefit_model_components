@@ -298,7 +298,19 @@ package body Parameter_System.Input_Buffer is
                Log( "Get_Value_And_Error: looking for postfix = " & TS( postfix ) & " index = " & index'Img );
                if( param_and_value.valmap.Contains( postfix ))then
                   vel := param_and_value.valmap.Element( postfix );
-                  pa := vel.Element( index );
+                  declare
+                     len : Positive := Positive( vel.Length );
+                  begin
+                     if index <= len then
+                        pa := vel.Element( index );
+                     else
+                        --
+                        -- If we're extending this .. 
+                        --
+                        pa := vel.Element( len );
+                        vel.Append( pa );
+                     end if;
+                  end;
                   Log( "Found it" );
                end if;
             end;
@@ -841,6 +853,7 @@ package body Parameter_System.Input_Buffer is
                      end loop;
                      pv.current_size := pv.current_size + 1;
                      Correct_Array( pv );
+                     Log( "Add; map_of_arrays case; made current_size as " & pv.current_size'Img );
                   end if;
                end;
          end case;
@@ -1254,14 +1267,15 @@ package body Parameter_System.Input_Buffer is
    end Init;
    
    procedure Load( 
-      buff   : in out Buffer;  
-      params : in AWS.Parameters.List;
-      year   : in Year_Number := Year_Number'First ) is
-      n          : Natural := params.count;
-      input_year : Year_Number := Year_Number'First;
-      has_year   : Boolean;
+      buff       : in out Buffer;  
+      params     : in AWS.Parameters.List;
+      year       : in Year_Number := Year_Number'First ) is
+      num_cgi_values : Natural := params.count;
+      input_year     : Year_Number := Year_Number'First;
+      has_year       : Boolean;
    begin
-      for i in 1 .. n loop
+      Loop_Round_CGI_Values:
+      for i in 1 .. num_cgi_values loop
          declare
             key              : Unbounded_String := To_Unbounded_String( UnCensor_Id( params.Get_Name( i )));
             str_value        : String := params.Get_Value( i );
@@ -1392,7 +1406,7 @@ package body Parameter_System.Input_Buffer is
                Log( "not found; " ); -- buffer is " & Print_Keys( buff.params ));
             end if;
          end;         
-      end loop;
+      end loop Loop_Round_CGI_Values;
    end Load;
    
    function Print_Keys( map : Complete_Param_And_Value_Map ) return String is
