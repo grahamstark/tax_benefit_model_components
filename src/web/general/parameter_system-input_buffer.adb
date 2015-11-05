@@ -88,7 +88,9 @@ package body Parameter_System.Input_Buffer is
       b : Text_Buffer;
       matching_as_string : constant String := TS( matching );
 
-      procedure Add_Indexed_Subsysem( cpv : Complete_Param_And_Value_Rec; prefix : Unbounded_String := Null_Unbounded_String ) is
+      procedure Add_Indexed_Subsysem( 
+         cpv    : Complete_Param_And_Value_Rec; 
+         prefix : Unbounded_String := Null_Unbounded_String ) is
          use Value_And_Error_Map_Package;
          
          procedure Add_One( c : Cursor ) is
@@ -122,7 +124,7 @@ package body Parameter_System.Input_Buffer is
                      if( matching = Null_Unbounded_String ) or ( matching_as_string = "" ) then
                         Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
-                     elsif( Index( k, matching_as_string ) > 0 )then
+                     elsif( Index( complete_key, matching_as_string ) > 0 )then
                         Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
                      end if;
