@@ -17,6 +17,8 @@ package body Parameter_System.Input_Buffer is
    
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "PARAMETER_SYSTEM.INPUT_BUFFER" );
    
+   BIG_FLOAT : constant Float_Type := 99_999_999.0; -- instead of F'Last which can blow up validators
+   
    procedure Log( s : String ) is
    begin
       GNATColl.Traces.Trace( log_trace, s );
@@ -220,7 +222,7 @@ package body Parameter_System.Input_Buffer is
             vel := pv.valmap.Element( postfix );
             pa := vel.Element( pv.current_size );
             if( pa.dtype = real_type )then
-               pa.rval := Float_Type'Last;
+               pa.rval := BIG_FLOAT;
             elsif( pa.dtype = decimal_type )then
                pa.dval := Counter_Type'Last;
             elsif( pa.dtype = integer_type )then
