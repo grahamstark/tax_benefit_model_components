@@ -131,6 +131,14 @@ package body Parameter_System.Input_Buffer is
                   end if;
                end;
             end loop;
+            -- always load counter
+            declare
+               counter_key   : constant Unbounded_String := prefix & DELIMITER & "count";
+               size_str      : constant Unbounded_String := 
+                  TuS( cpv.current_size'Img( 2 ..  cpv.current_size'Img'Length ));
+            begin
+                b.Insert( counter_key, size_str );
+            end;
          end Add_One;
             
       begin
