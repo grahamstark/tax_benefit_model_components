@@ -63,7 +63,11 @@ package body Parameter_System.Input_Buffer is
       end case;
    end Basic_Text_Representation_Of_Default;
 
-   function To_Text_Buffer( buff : Buffer;  which : Buffer_Retrieval_Type; start_year : Year_Number; end_year : Year_Number ) return Keyed_Text_Buffer.Text_Buffer is
+   function To_Text_Buffer( 
+      buff       : Buffer;  
+      which      : Buffer_Retrieval_Type; 
+      start_year : Year_Number; 
+      end_year   : Year_Number ) return Keyed_Text_Buffer.Text_Buffer is
       kbuff     :  Keyed_Text_Buffer.Text_Buffer;
       one_kbuff : Keyed_Text_Buffer.Text_Buffer;
       yprefix   : Unbounded_String;
@@ -76,7 +80,10 @@ package body Parameter_System.Input_Buffer is
       return kbuff;
    end To_Text_Buffer;
    
-   function To_Text_Buffer( buff : Buffer;  which : Buffer_Retrieval_Type; matching : Unbounded_String := Null_Unbounded_String ) return Keyed_Text_Buffer.Text_Buffer is
+   function To_Text_Buffer( 
+      buff     : Buffer;  
+      which    : Buffer_Retrieval_Type; 
+      matching : Unbounded_String := Null_Unbounded_String ) return Keyed_Text_Buffer.Text_Buffer is
    use Keyed_Text_Buffer;
       b : Text_Buffer;
       matching_as_string : constant String := TS( matching );
@@ -113,8 +120,10 @@ package body Parameter_System.Input_Buffer is
                         TS( val_str  ) & "| matching_as_String = |" & 
                         matching_as_string & "|" );
                      if( matching = Null_Unbounded_String ) or ( matching_as_string = "" ) then
+                        Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
                      elsif( Index( k, matching_as_string ) > 0 )then
+                        Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
                      end if;
                   end if;
