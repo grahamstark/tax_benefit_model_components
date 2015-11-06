@@ -47,14 +47,14 @@ package Line_Extractor is
    -- fred[smama].joe => is_indexed_key: False (FIX THIS?)
    --
    procedure Parse_Indexed_Key( 
-      key            : in Unbounded_String;
+      key            : in  Unbounded_String;
       is_indexed_key : out Boolean;
       base_key       : out Unbounded_String;
       index          : out Natural;
       postfix        : out Unbounded_String );
    
    procedure Parse_By_Year_Indexed_Key( 
-      key             : in Unbounded_String;
+      key             : in  Unbounded_String;
       year_prefix     : out Unbounded_String;
       has_year        : out Boolean;
       year            : out Year_Number;
@@ -64,7 +64,7 @@ package Line_Extractor is
       postfix         : out Unbounded_String );
    
    procedure Parse_By_Year_Indexed_Key( 
-      key             : in Unbounded_String;
+      key             : in  Unbounded_String;
       year_prefix     : out Unbounded_String;
       has_year        : out Boolean;
       year            : out Year_Number;
