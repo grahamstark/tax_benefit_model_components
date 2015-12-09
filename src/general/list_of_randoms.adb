@@ -86,6 +86,16 @@ package body List_Of_Randoms is
       return v;
    end Next;
    
+   function Normal_At_Pos(  r : in out Random_List; pos : Positive ) return Real  is
+   begin
+      return r.n_vals( pos );
+   end Normal_At_Pos;
+   
+   function Random_At_Pos(  r : in out Random_List; pos : Positive ) return Real is
+   begin
+      return r.r_vals( pos );
+   end Random_At_Pos;
+   
    function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real is
       v : Real;
    begin

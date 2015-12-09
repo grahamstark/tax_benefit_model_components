@@ -60,10 +60,10 @@ package Base_Model_Types is
    subtype Age_Range           is Natural range 0 .. 150;
    subtype Child_Age           is Age_Range range 0 .. 21;
 
-   subtype Child_Count         is Natural range 0 .. 10;
+   subtype Child_Count         is Natural range 0 .. 30;
    subtype Child_Number        is Child_Count range 1 .. Child_Count'Last;
 
-   subtype Adult_Count         is Natural range 0 .. 10;
+   subtype Adult_Count         is Natural range 0 .. 30;
    subtype Adult_Number        is Adult_Count range 1 .. Adult_Count'Last;
 
    subtype Person_Count        is Natural range 0 .. (Child_Count'Last + Adult_Count'Last);

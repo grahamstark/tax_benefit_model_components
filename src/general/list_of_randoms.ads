@@ -10,6 +10,8 @@ package List_Of_Randoms is
    
    type Random_List is tagged private;
    
+   subtype Position_Type is Positive range 1 .. max_capacity;
+   
    procedure Set_Capacity( r : in out Random_List; capacity : Positive );   
    function Get_Capacity( r : Random_List ) return Positive;
    procedure Reset_Pos( r : in out Random_List );
@@ -21,6 +23,9 @@ package List_Of_Randoms is
    function Next( r : in out Random_List; wrap : Boolean := True ) return Real;
    function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real;
    
+   function Normal_At_Pos(  r : in out Random_List; pos : Positive ) return Real;   
+   function Random_At_Pos(  r : in out Random_List; pos : Positive ) return Real;
+
    procedure Store( r : Random_List; filename : String );
    procedure Load( r : in out Random_List; filename : String );
    function Make_Copy( from : Random_List ) return Random_List;

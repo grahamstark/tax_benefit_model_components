@@ -100,7 +100,8 @@ package body Model.Calculator.Universal_Credit is
         return;
         -- "should be on pension credit" ); -- FIXME that's not right        
      end if;
-     Assert( num_people > 0 and ( num_people = ( num_adults + num_children )),
+     Assert( num_people > 0 and 
+        ( num_people = ( num_adults + num_children ) or num_children = sys.maximum_number_of_children ),
         "num people mismatch people " & num_people'Img &
         " adults " & num_adults'Img &
         " children " & num_children'Img );
