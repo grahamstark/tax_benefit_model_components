@@ -6,7 +6,7 @@ with Base_Model_Types;
 with Text_Utils;
 
 with Model_Types;
-with Model.Calculator.Universal_Benefit;
+with Model.Calculator.Universal_Credit;
 with Model.Calculator.Direct_Tax;
 with Model.Calculator.Foster_Care_Sim;
 with Model.Parameter_System.Defaults;
@@ -43,7 +43,7 @@ package body Model.Calculator.Driver is
                housing( rent ) := sys.uc.one_bedroom_in_shared_accommodation_rate;               
             end if;
             Put_Line( "bu " & buno'Img & " got rent as " & Format( housing( rent ))); 
-            Model.Calculator.Universal_Benefit.Calculate_Child_Benefit( sys.cb, bu, bres );
+            Model.Calculator.Universal_Credit.Calculate_Child_Benefit( sys.cb, bu, bres );
             for pno in 1 .. bu.Get_Num_People loop
                declare
                   pres :Model.Results.Personal_Result renames bres.pers( pno );
@@ -55,7 +55,7 @@ package body Model.Calculator.Driver is
                   Model.Calculator.Foster_Care_Sim.Calculate_Student_Loan_Repayments( sys.sl, example_person, pres );
                end;
             end loop;
-            Model.Calculator.Universal_Benefit.Calculate_Universal_Benefit( sys.uc, tenure, housing, bu, bres );
+            Model.Calculator.Universal_Credit.Calculate_Universal_Credit( sys.uc, tenure, housing, bu, bres );
             Put_Line( To_String( bres.intermed, "" ));            
          end;
       end loop;

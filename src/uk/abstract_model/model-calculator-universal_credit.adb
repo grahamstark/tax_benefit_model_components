@@ -5,13 +5,13 @@ with Ada.Text_IO;
 with GNATColl.Traces;
 with Model.Calculator.Utils;
 
-package body Model.Calculator.Universal_Benefit is
+package body Model.Calculator.Universal_Credit is
    use Ada.Assertions;
    use Ada.Text_IO;
 
    ex : Exception;
 
-   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.UNIVERSAL_BENEFIT" );
+   log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.Universal_Credit" );
    
    procedure Log( s : String ) is
    begin
@@ -60,7 +60,7 @@ package body Model.Calculator.Universal_Benefit is
    -- FIXME change this so the household is sent, and benefit units are arranged as needed
    -- internally. 
    -- FIXME add something to optionally count/not count foster children
-   procedure Calculate_Universal_Benefit(
+   procedure Calculate_Universal_Credit(
      sys           : Universal_Credit_System;
      tenure        : Broad_Tenure_Type;
      housing_costs : Housing_Array;
@@ -96,7 +96,7 @@ package body Model.Calculator.Universal_Benefit is
   begin
      Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
      if head.Age >= 65 or head.employment = in_education then
-        Log( "Calculate_Universal_Benefit; returning" );
+        Log( "Calculate_Universal_Credit; returning" );
         return;
         -- "should be on pension credit" ); -- FIXME that's not right        
      end if;
@@ -224,6 +224,6 @@ package body Model.Calculator.Universal_Benefit is
          Amount'Min( payment, res.Get( housing_allowance )));
       res.Set( head_pid, tax_credits, 
          payment - res.Get( head_pid ).Get( housing_benefit ));
-  end Calculate_Universal_Benefit;
+  end Calculate_Universal_Credit;
 
-end Model.Calculator.Universal_Benefit;
+end Model.Calculator.Universal_Credit;
