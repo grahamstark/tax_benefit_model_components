@@ -12,13 +12,13 @@ package body List_Of_Randoms is
 
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "LIST_OF_RANDOMS" );
    
-   procedure Set_Capacity( r : in out Random_List; capacity : Positive ) is
+   procedure Set_Capacity( r : in out Random_List; capacity : R_Counter ) is
    begin
       r.capacity := capacity;
       r.Reset;
    end Set_Capacity;
    
-   function Get_Capacity( r : Random_List ) return Positive is
+   function Get_Capacity( r : Random_List ) return R_Counter is
    begin
       return r.capacity;
    end Get_Capacity;
@@ -86,12 +86,17 @@ package body List_Of_Randoms is
       return v;
    end Next;
    
-   function Normal_At_Pos(  r : in out Random_List; pos : Positive ) return Real  is
+   function Capacity return R_Counter is
+   begin
+      return Position_Type'Last;
+   end Capacity;
+   
+   function Normal_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real  is
    begin
       return r.n_vals( pos );
    end Normal_At_Pos;
    
-   function Random_At_Pos(  r : in out Random_List; pos : Positive ) return Real is
+   function Random_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real is
    begin
       return r.r_vals( pos );
    end Random_At_Pos;
