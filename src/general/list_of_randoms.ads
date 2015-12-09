@@ -26,11 +26,11 @@ package List_Of_Randoms is
    
    -- needs ada 2012 since r is changed 
    function Next( r : in out Random_List; wrap : Boolean := True ) return Zero_To_One;
-   function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real;
+   function Random_At_Pos(  r : in out Random_List; pos : R_Counter ) return Zero_To_One;
    
-   function Normal_At_Pos(  r : in out Random_List; pos : R_Counter ) return Zero_To_One;   
-   function Random_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real;
-
+   function Next_Normal( r : in out Random_List; wrap : Boolean := True ) return Real;   
+   function Normal_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real;   
+   
    procedure Store( r : Random_List; filename : String );
    procedure Load( r : in out Random_List; filename : String );
    function Make_Copy( from : Random_List ) return Random_List;

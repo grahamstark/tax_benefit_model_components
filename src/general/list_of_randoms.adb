@@ -79,7 +79,7 @@ package body List_Of_Randoms is
       return R_Counter'Last;
    end Capacity;
    
-   function Normal_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real  is
+   function Normal_At_Pos(  r : in out Random_List; pos : R_Counter ) return Real is
    begin
       return r.n_vals( pos );
    end Normal_At_Pos;
