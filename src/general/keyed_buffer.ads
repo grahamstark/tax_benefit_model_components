@@ -25,7 +25,9 @@ private
    
    package String_List_Package is new Ada.Containers.Hashed_Maps(
        Key_Type        => Unbounded_String, 
-       Element_Type    => Unbounded_String_List );
+       Element_Type    => Unbounded_String_List,
+       Hash            => Hash_String,
+       Equivalent_Keys => "=" );
 
    
    subtype String_List_Map is String_List_Package.Map; 
