@@ -12,12 +12,12 @@ package Keyed_Buffer is
    
    procedure Insert( buff : in out Buffer; key : String; value : String );
    procedure Append( buff : in out Buffer; key : String; value : String );
-   procedure Print( 
+
+   function To_String( 
       buff     : in out Buffer; 
-      filename : String; 
-      delim    : String := ","; 
-      append   : Boolean := False );
-   
+      enclose  : String := "";
+      delim    : String := "," ) return String;
+      
 private   
 
    use Ada.Strings.Unbounded;
