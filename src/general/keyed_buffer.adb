@@ -47,7 +47,7 @@ package body Keyed_Buffer is
          begin
             for i in 1 .. n loop
                s := s & enclose & ub.Element( i ) & enclose;
-               if i < n-1 then
+               if i < n then
                   s := s & delim;
                else
                   s := s & LINE_BREAK;
