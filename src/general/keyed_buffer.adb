@@ -24,13 +24,13 @@ package body Keyed_Buffer is
       if col > 0 then
          if col > len then
             for i in len .. col loop
-               ub.Append( "" );
+               ub.Append( TuS( "" ));
             end loop;
          end if;
-         ub.Replace_Element( uv );
+         ub.Replace_Element( col, uv );
       else
          ub.append( uv );
-      end;
+      end if;
       buff.data.Replace( uk, ub );
    end Insert;
    
