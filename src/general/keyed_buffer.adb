@@ -15,12 +15,18 @@ package body Keyed_Buffer is
       buff.data.Insert( uk, ub );
    end Insert;
    
-   procedure Append( buff : in out Buffer; key : String; value : String ) is
+   procedure Append( buff : in out Buffer; key : String; col : Positive; value : String ) is
       uk : constant Unbounded_String := TuS( key );
       uv : constant Unbounded_String := TuS( value );
       ub : Unbounded_String_List := buff.data.Element( uk );
+      len : Natural := Natural( ub.Length );
    begin
-      ub.Append( uv );
+      if col > len then
+         for i in len .. col loop
+            ub.Append( "" );
+         end loop;
+      end if;
+      ub.Replace_Element( uv );
       buff.data.Replace( uk, ub );
    end Append;
    
