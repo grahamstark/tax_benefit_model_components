@@ -49,6 +49,8 @@ package body Keyed_Buffer is
                s := s & enclose & ub.Element( i ) & enclose;
                if i < n then
                   s := s & delim;
+               else
+                  s := s & LINE_BREAK;
                end if;
             end loop;
          end;
