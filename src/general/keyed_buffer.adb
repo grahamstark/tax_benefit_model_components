@@ -4,6 +4,8 @@ package body Keyed_Buffer is
 
    use Ada.Strings.Unbounded;
    use Text_Utils;
+
+   BLANK : constant Unbounded_String := TuS( "" );
    
    procedure Initialise_Row( buff : in out Buffer; key : String; value : String ) is
       uk : constant Unbounded_String := TuS( key );
@@ -14,6 +16,39 @@ package body Keyed_Buffer is
       buff.order.Append( uk );
       buff.data.Insert( uk, ub );
    end Initialise_Row;
+   
+   function Has_Non_Blank( buff : Buffer; key : String; start_col : Positive := 2 ) return Boolean is
+     uk : constant Unbounded_String := TuS( key );
+     ub : Unbounded_String_List := buff.data.Element( uk );
+     p  : Positive := 1;
+   begin
+     for s of ub loop
+        if p >= start_col and then s /= BLANK then
+           return True;
+        end if;
+        p := p + 1;
+      end loop;
+      return False;
+   end Has_Non_Blank;
+   
+   function Changes_Value( buff : Buffer; key : String; start_col : Positive := 2 ) return Boolean is
+     uk    : constant Unbounded_String := TuS( key );
+     ub    : Unbounded_String_List := buff.data.Element( uk );
+     p     : Positive := 1;
+     first : Unbounded_String;
+   begin
+     for s of ub loop
+        if p = start_col then
+           first := s;
+        elsif p > start_col then
+              if s /= first then
+                 return True;
+              end if;
+        end if;
+     end loop;
+     return False;
+   end Changes_Value;
+   
    
    procedure Insert( buff : in out Buffer; key : String; col : Natural; value : String ) is
       uk : constant Unbounded_String := TuS( key );

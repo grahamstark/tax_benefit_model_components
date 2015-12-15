@@ -20,6 +20,9 @@ package Keyed_Buffer is
    --
    procedure Insert( buff : in out Buffer; key : String; col : Natural; value : String );
 
+   function Has_Non_Blank( buff : Buffer; key : String; start_col : Positive := 2 ) return Boolean;
+   function Changes_Value( buff : Buffer; key : String; start_col : Positive := 2 ) return Boolean;
+   
    function To_String( 
       buff     : in out Buffer; 
       enclose  : String := "";
