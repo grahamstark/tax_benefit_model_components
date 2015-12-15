@@ -23,7 +23,7 @@ package body Keyed_Buffer is
    begin
       if col > 0 then
          if col > len then
-            for i in len .. col loop
+            for i in len+1 .. col loop
                ub.Append( TuS( "" ));
             end loop;
          end if;
