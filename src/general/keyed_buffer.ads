@@ -10,8 +10,15 @@ package Keyed_Buffer is
 
    type Buffer is tagged private;
    
-   procedure Insert( buff : in out Buffer; key : String; value : String );
-   procedure Append( buff : in out Buffer; key : String; col : Positive; value : String );
+   --
+   -- intitialise a row
+   --
+   procedure Initialise_Row( buff : in out Buffer; key : String; value : String );
+   
+   --
+   -- insert at the given position; if col = 0, append
+   --
+   procedure Insert( buff : in out Buffer; key : String; col : Natural; value : String );
 
    function To_String( 
       buff     : in out Buffer; 

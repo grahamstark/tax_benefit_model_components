@@ -5,7 +5,7 @@ package body Keyed_Buffer is
    use Ada.Strings.Unbounded;
    use Text_Utils;
    
-   procedure Insert( buff : in out Buffer; key : String; value : String ) is
+   procedure Initialise_Row( buff : in out Buffer; key : String; value : String ) is
       uk : constant Unbounded_String := TuS( key );
       uv : constant Unbounded_String := TuS( value );
       ub : Unbounded_String_List;
@@ -13,22 +13,26 @@ package body Keyed_Buffer is
       ub.Append( uv );
       buff.order.Append( uk );
       buff.data.Insert( uk, ub );
-   end Insert;
+   end Initialise_Row;
    
-   procedure Append( buff : in out Buffer; key : String; col : Positive; value : String ) is
+   procedure Insert( buff : in out Buffer; key : String; col : Natural; value : String ) is
       uk : constant Unbounded_String := TuS( key );
       uv : constant Unbounded_String := TuS( value );
       ub : Unbounded_String_List := buff.data.Element( uk );
       len : Natural := Natural( ub.Length );
    begin
-      if col > len then
-         for i in len .. col loop
-            ub.Append( "" );
-         end loop;
-      end if;
-      ub.Replace_Element( uv );
+      if col > 0 then
+         if col > len then
+            for i in len .. col loop
+               ub.Append( "" );
+            end loop;
+         end if;
+         ub.Replace_Element( uv );
+      else
+         ub.append( uv );
+      end;
       buff.data.Replace( uk, ub );
-   end Append;
+   end Insert;
    
    function To_String( 
       buff     : in out Buffer;
