@@ -8,22 +8,13 @@ with Model.Calculator.Utils;
 package body Model.Calculator.Universal_Credit is
    use Ada.Assertions;
    use Ada.Text_IO;
-
+   use GnatColl.Traces;
+   
    ex : Exception;
 
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.Universal_Credit" );
    
-   procedure Log( s : String ) is
-   begin
-      GNATColl.Traces.Trace( log_trace, s );
-   end Log;
-   
-   procedure Log( s : String; m : Amount ) is
-   begin
-      GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
-   end Log;
-
-   procedure Calculate_Child_Benefit(
+    procedure Calculate_Child_Benefit(
      sys           : Child_Benefit_System;
      bu            : Model.Abstract_Household.Benefit_Unit'Class;
      res           : in out mar.Benefit_Unit_Result'Class ) is
@@ -52,6 +43,8 @@ package body Model.Calculator.Universal_Credit is
                        child_benefit, 
                        sys.additional_children * Amount( num_children - 1 ), add );
             end if;
+            Trace( log_trace, "make Child Benefit for " & 
+               num_children'Img );
          end;
       end if;
    end Calculate_Child_Benefit;
@@ -94,9 +87,9 @@ package body Model.Calculator.Universal_Credit is
         bu.Find_Person( head_pid );
      payment                     : Amount := 0.0;
   begin
-     Log( "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
+     Trace( log_trace, "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
      if head.Age >= 65 or head.employment = in_education then
-        Log( "Calculate_Universal_Credit; returning" );
+        Trace( log_trace, "Calculate_Universal_Credit; returning" );
         return;
         -- "should be on pension credit" ); -- FIXME that's not right        
      end if;
@@ -117,7 +110,7 @@ package body Model.Calculator.Universal_Credit is
            sppid : Sernum_Value := Utils.Get_Spouse_Of_Head( bu, head_pid );
            spouse : Model.Abstract_Household.Person'Class := bu.Find_Person( sppid );
         begin
-           Log( "p2 " & bu.Find_Person( sppid ).Age'Img & " relationship " & bu.Find_Person( sppid ).Family_Relationship'Img );
+           Trace( log_trace, "p2 " & bu.Find_Person( sppid ).Age'Img & " relationship " & bu.Find_Person( sppid ).Family_Relationship'Img );
            -- assert is adult somehow
            if( head.Age < 25 and spouse.Age < 25 )then
               standard_allowance := sys.allowances.joint_claimants_both_aged_under_25;
@@ -126,7 +119,7 @@ package body Model.Calculator.Universal_Credit is
            end if;
         end;
       when others =>
-         Log( "Universal Credit BUG !!! > 2 adults in BU " & num_adults'Img );
+         Trace( log_trace, "Universal Credit BUG !!! > 2 adults in BU " & num_adults'Img );
          -- Ada.Exceptions.Raise_Exception( ex'Identity, "> 2 adults in BU " & num_adults'Img );
       end case;
       if( num_children > 0 )then
@@ -145,16 +138,16 @@ package body Model.Calculator.Universal_Credit is
       end if;
       -- end if;
       -- TODO NDDs, bedroom limits ...
-      Log( "Universal Credit::child_element ", child_element );
-      Log( "Universal Credit::housing_allowance ", res.Get( housing_allowance ));
-      Log( "Universal Credit::standard_allowance ", standard_allowance );
+      Trace( log_trace, "Universal Credit::child_element " & Format( child_element ));
+      Trace( log_trace, "Universal Credit::housing_allowance " & Format( res.Get( housing_allowance )));
+      Trace( log_trace, "Universal Credit::standard_allowance " & Format( standard_allowance ));
       total_allowance :=
           standard_allowance +
           child_element +
           additional_child_element +
           res.Get( housing_allowance ) +
           capability_for_work_element;
-      Log( "Universal Credit::total_allowance ", total_allowance );
+      Trace( log_trace, "Universal Credit::total_allowance " & Format( total_allowance ));
 
       -- you are single and claim housing costs and you:
       --
@@ -194,7 +187,7 @@ package body Model.Calculator.Universal_Credit is
 	    -- TODO couple_no_housing_limited_work_capacity : Amount := 647.0*12.0;
          end if;
       end if;
-      Log("Universal Credit::disregard ", disregard );
+      Trace( log_trace, "Universal Credit::disregard " & Format( disregard ));
       -- FIXME this has to be wrong
       for pid of pids loop
          declare
@@ -208,18 +201,18 @@ package body Model.Calculator.Universal_Credit is
                      incomes, sys.earned_income ) - incomes( income_tax ) - incomes( national_insurance ));
            unearn : constant Amount := T_Incomes.Sum( incomes, sys.unearned_income );
          begin
-           Log( "Universal Credit::wages " & pid'Img, incomes( wages ));
-           Log( "Universal Credit::earnings person " & pid'Img, earn );
-           Log( "Universal Credit::unearned  person " & pid'Img, unearn );
+           Trace( log_trace, "Universal Credit::wages " & pid'Img & Format( incomes( wages )));
+           Trace( log_trace, "Universal Credit::earnings person " & pid'Img & Format( earn ));
+           Trace( log_trace, "Universal Credit::unearned  person " & pid'Img& Format( unearn ));
            earned_income := earned_income + earn;
            unearned_income := unearned_income + unearn;
          end;
       end loop;
       earned_income := Amount'Max( 0.0, earned_income - disregard );
-      Log( "Universal Credit::total earnings after disgregard", earned_income );
-      Log( "Universal Credit::total unearned", unearned_income );
+      Trace( log_trace, "Universal Credit::total earnings after disgregard" & Format( earned_income ));
+      Trace( log_trace, "Universal Credit::total unearned" & Format( unearned_income ));
       payment := Amount'Max( 0.0, total_allowance - unearned_income - sys.withdrawal_rate * earned_income );
-      Log( "Universal Credit::total_payment", payment );
+      Trace( log_trace, "Universal Credit::total_payment" & Format( payment ));
       payment := Amount'Min( payment, maximum_benefit );
       res.Set( head_pid, housing_benefit, 
          Amount'Min( payment, res.Get( housing_allowance )));
