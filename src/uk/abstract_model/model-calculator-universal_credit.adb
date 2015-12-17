@@ -29,7 +29,7 @@ package body Model.Calculator.Universal_Credit is
             Trace( log_debug, "make num children age is " & age'Img & 
                " pers.Family_Relationship = " & pers.Family_Relationship'Img );
             if pers.Family_Relationship in child .. foster_child then
-               if( age <= 18 ) or ( age <= 21 and pers.Employment = in_education )then
+               if( age <= 15 ) or ( age <= 18 and pers.Employment = in_education )then
                   num_children := num_children + 1;
                end if;
             end if;
@@ -66,6 +66,7 @@ package body Model.Calculator.Universal_Credit is
      pids          : constant Sernum_Set := bu.Get_Pids;
      child_pids    : constant Sernum_Set := 
         bu.Get_Pids( 0, 18, child, other_relationship ); -- FIXME this is wrong for children >16 not in education
+        -- bu.Get_Pids( 16, 18, child, 
      adult_pids    : constant Sernum_Set := pids.Difference( child_pids );
      
      num_people                  : constant Person_Count := Person_Count( pids.Length );
