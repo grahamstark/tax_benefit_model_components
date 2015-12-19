@@ -14,7 +14,7 @@ package Model.Abstract_Household is
    function Employment( d : Demog ) return Broad_Employment_Status is abstract;
    function Gender( d : Demog ) return Gender_Type is abstract;
    function Family_Relationship( d : Demog ) return Relationship_Type is abstract;
-  
+   
    type Employment_Record is interface;
    function Is_Contracted_In_To_Serps( e : Employment_Record ) return Boolean is abstract;
    function Hours_Worked( e : Employment_Record ) return Work_Hours_Range is abstract;
@@ -71,9 +71,6 @@ package Model.Abstract_Household is
 
    type Household is interface;
    
-   function Get_Num_Benefit_Units(
-      hh        : Household ) return Benefit_Unit_Count is abstract;
-
    function Get_Pids(
       hh        : Household;
       start_age : Age_Range := 0;
@@ -84,9 +81,15 @@ package Model.Abstract_Household is
 
    function Get_Housing_Cost( hh : Household; htype : Housing_Cost_Type ) return Amount is abstract;
    function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
+   
 
    function Find_Person( hh : Household; pid : Sernum_Value ) return Person'Class is abstract;
-   function Find_Benefit_Unit( hh : Household; buno : Benefit_Unit_Number ) return Benefit_Unit'Class is abstract;
+   
+   function Get_Benefit_Unit( 
+      hh : Household; 
+      members : Sernum_Set; 
+      buno    : Benefit_Unit_Number;
+      head : Sernum_Value := Sernum_Value'Last ) return Benefit_Unit'Class is abstract;
    
    
 

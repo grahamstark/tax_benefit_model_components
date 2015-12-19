@@ -43,6 +43,13 @@ package Base_Model_Types is
    MISSING_SERNUM : constant Sernum_Value := Sernum_Value'First;
    package Sernum_Set_Package is new Ada.Containers.Ordered_Sets( Element_Type => Sernum_Value );
    subtype Sernum_Set is Sernum_Set_Package.Set;
+   
+   --
+   -- This is useful for (e.g.) breaking up a household into benefit units
+   --
+   type Sernum_Set_List_Package is new Ada.Containers.Vectors( Element_Type => Sernum_Set );
+   subtype Sernum_Set_List is  Sernum_Set_List_Package.Vector;
+      
    NULL_SERNUM_SET : constant Sernum_Set := Sernum_Set_Package.Empty_Set;
    type Abs_Sernum_Array is array( Positive range <> ) of Sernum_Value;
    function To_String( sernums : Sernum_Set ) return String;
