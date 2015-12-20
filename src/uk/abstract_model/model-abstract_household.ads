@@ -83,6 +83,8 @@ package Model.Abstract_Household is
    function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
    
 
+   function Get_Default_Benefit_Unit_PIDs( hh : Household ) return Sernum_Set_List is abstract; 
+
    function Find_Person( hh : Household; pid : Sernum_Value ) return Person'Class is abstract;
    
    function Get_Benefit_Unit( 
