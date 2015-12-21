@@ -91,7 +91,7 @@ package body Model.Calculator.Universal_Credit is
         bu.Find_Person( head_pid );
      payment                     : Amount := 0.0;
   begin
-     Trace( log_debug, "p1 " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
+     Trace( log_debug, "head.age " & head.Age'Img & " relationship " & head.Family_Relationship'Img );
      if head.Age >= 65 or head.employment = in_education then
         Trace( log_debug, "Calculate_Universal_Credit; returning" );
         return;
@@ -205,9 +205,9 @@ package body Model.Calculator.Universal_Credit is
                      incomes, sys.earned_income ) - incomes( income_tax ) - incomes( national_insurance ));
            unearn : constant Amount := T_Incomes.Sum( incomes, sys.unearned_income );
          begin
-           Trace( log_debug, "Universal Credit::wages " & pid'Img & Format( incomes( wages )));
-           Trace( log_debug, "Universal Credit::earnings person " & pid'Img & Format( earn ));
-           Trace( log_debug, "Universal Credit::unearned  person " & pid'Img& Format( unearn ));
+           Trace( log_debug, "Universal Credit::wages " & pid'Img & " : " & Format( incomes( wages )));
+           Trace( log_debug, "Universal Credit::earnings person " & pid'Img &" : " &  Format( earn ));
+           Trace( log_debug, "Universal Credit::unearned  person " & pid'Img & " : " & Format( unearn ));
            earned_income := earned_income + earn;
            unearned_income := unearned_income + unearn;
          end;
