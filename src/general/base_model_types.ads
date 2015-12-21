@@ -22,6 +22,7 @@ package Base_Model_Types is
    --
    --  standard types we use everywhere
    --
+   use type Ada.Containers.Count_Type;
 
    type Real is new Long_Float;
    type Identifier_Type is new Integer;
