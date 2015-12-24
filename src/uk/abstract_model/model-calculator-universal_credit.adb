@@ -218,6 +218,7 @@ package body Model.Calculator.Universal_Credit is
       payment := Amount'Max( 0.0, total_allowance - unearned_income - sys.withdrawal_rate * earned_income );
       Trace( log_debug, "Universal Credit::total_payment" & Format( payment ));
       payment := Amount'Min( payment, maximum_benefit );
+      Trace( log_debug, "Final Payment " & Format( payment ));
       res.Set( head_pid, housing_benefit, 
          Amount'Min( payment, res.Get( housing_allowance )));
       res.Set( head_pid, tax_credits, 
