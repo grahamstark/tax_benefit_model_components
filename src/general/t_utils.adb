@@ -507,6 +507,19 @@ package body T_Utils is
    begin
       return T'Val( m );
    end Pick_Modular;
+   
+   function Format_Enum_As_List return String is
+      use Ada.Strings.Unbounded;
+      use Text_Utils;
+      s : Unbounded_String;
+   begin
+      for e in T loop
+         s := s & """" & Prettify_Image( e'Img ) & """," & T'Pos( e )'Img & "," & LINE_BREAK;
+         p := p + 1;
+      end loop;
+      return To_String( s );
+   end  Format_Enum_As_List;
+
       
 begin
    Random_Package.Reset( gen );

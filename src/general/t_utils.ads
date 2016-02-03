@@ -181,5 +181,6 @@ package T_Utils is
    --
    function Pick_Modular( i : Integer ) return T;
    
+   function Format_Enum_As_List return String;
 
 end T_Utils;
