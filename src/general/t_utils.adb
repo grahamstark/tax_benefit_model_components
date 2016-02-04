@@ -515,7 +515,6 @@ package body T_Utils is
    begin
       for e in T loop
          s := s & """" & Prettify_Image( e'Img ) & """," & T'Pos( e )'Img & "," & LINE_BREAK;
-         p := p + 1;
       end loop;
       return To_String( s );
    end  Format_Enum_As_List;
