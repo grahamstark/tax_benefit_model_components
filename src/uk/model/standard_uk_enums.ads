@@ -250,5 +250,8 @@ package Standard_UK_Enums is
       asian_or_asian_british,
       black_or_african_or_caribbean_or_black_british,
       other_ethnic_group );
-      
+
+   type Aggregation_Level is ( individual_level, benefit_unit_level, household_level );
+   
+   
 end Standard_UK_Enums;
