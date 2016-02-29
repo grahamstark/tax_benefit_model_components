@@ -6,7 +6,11 @@ package Equivalence_Scales is
 
    use Base_Model_Types;
    
-   type Person_Type = ( head, spouse_of_head, other_adult, dependent_child );
+   type Person_Type is ( 
+      head, 
+      spouse_of_head, 
+      other_adult, 
+      dependent_child );
    
    type Equivalence_Scale_Type is ( 
       oxford, 
@@ -14,10 +18,10 @@ package Equivalence_Scales is
       square_root, 
       mcclements );
 
-   type Person is
+   type Person is record
       age   : Age_Range;
       ptype : Person_Type;
-   end;
+   end record;
    
    type Person_Array is array( Person_Count range <> ) of Person; 
    
@@ -27,6 +31,6 @@ package Equivalence_Scales is
    --
    function Calculate( 
            people      : Person_Array; 
-           which_scale : Equivalence_Scale_Type := modified_oecd ) return Amount is
+           which_scale : Equivalence_Scale_Type := modified_oecd ) return Amount;
    
 end Equivalence_Scales;

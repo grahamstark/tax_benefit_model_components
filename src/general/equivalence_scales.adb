@@ -1,5 +1,10 @@
+with Maths_Functions;
+
 package body Equivalence_Scales is
 
+   package MF is new Maths_Functions( Amount );
+   use MF.Elementary_Functions;
+   
    --  
    -- from: Equivalence scales: rationales, uses and assumptions
    -- Jenny Chanfreau and Tania Burchardt Table 1 p.5
@@ -7,24 +12,26 @@ package body Equivalence_Scales is
    function Calculate( 
            people      : Person_Array; 
            which_scale : Equivalence_Scale_Type := modified_oecd ) return Amount is
-         eq_scale : Amount := 0.0;
-         add      : Amount;
+         eq_scale    : Amount := 0.0;
+         add         : Amount;
          pos_of_head : Person_Number := 1;
-         np       : constant Amount := Amount( pers_list'Length );
+         np          : constant Amount := Amount( people'Length );
    begin
       --
       -- assume 1st person is head if none set .. 
       for pno in people'Range loop
          if people( pno ).ptype = head then
             pos_of_head := pno;
-            exit loop;
+            exit;
+         end if;
       end loop;
       -- idiot check for child as head
       if people( pos_of_head ).age < 16 then
          for pno in people'Range loop
             if people( pno ).age >= 16 then -- just take 1st over 15 if any
                pos_of_head := pno;
-               exit loop;
+               exit;
+            end if;
          end loop;
       end if;          
       
@@ -36,7 +43,7 @@ package body Equivalence_Scales is
             if pno = pos_of_head then
                add := 1.0;
             else
-               if peoples( pno ).age <= 14 then 
+               if people( pno ).age <= 14 then 
                   add := ( if which_scale = oxford then 0.5 else 0.3 );
                else
                   add := ( if which_scale = oxford then 0.7 else 0.5 );
@@ -51,21 +58,21 @@ package body Equivalence_Scales is
             for pers of people loop               
                case pers.ptype is
                when dependent_child =>
-                  case case pers.age is
-                     when 0 .. 1 => 
-                        add := 0.148;
-                     when 2 .. 4 => 
-                        add := 0.295;
-                     when 5 .. 7 => 
-                        add :=  0.344;
-                     when 8 .. 10 => 
-                        add := 0.377;
-                     when 11 .. 12 => 
-                        add := 0.41;
-                     when 13 .. 15 => 
-                        add := 0.443;
-                     when 16 .. Age_Range'Last => 
-                        add := 0.59;
+                  case pers.age is
+                  when 0 .. 1 => 
+                     add := 0.148;
+                  when 2 .. 4 => 
+                     add := 0.295;
+                  when 5 .. 7 => 
+                     add :=  0.344;
+                  when 8 .. 10 => 
+                     add := 0.377;
+                  when 11 .. 12 => 
+                     add := 0.41;
+                  when 13 .. 15 => 
+                     add := 0.443;
+                  when 16 .. Age_Range'Last => 
+                     add := 0.59;
                   end case;
                when head =>
                   add := 1.0;
@@ -81,11 +88,11 @@ package body Equivalence_Scales is
                      add := 0.59;
                   end if;
                end case;
-               Inc( eq, add );
+               Inc( eq_scale, add );
             end loop;
          end;
       end case;         
-      return eq;   
+      return eq_scale;   
    end Calculate;
 
 end Equivalence_Scales;
