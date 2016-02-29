@@ -20,7 +20,6 @@ package body Equivalence_Scales is
 
    package MF is new Maths_Functions( Real );
    use MF.Elementary_Functions;
-
       eq_scale    : Real := 0.0;
       add         : Real;
       pos_of_head : Person_Number := 1;
@@ -43,7 +42,6 @@ package body Equivalence_Scales is
             end if;
          end loop;
       end if;          
-      
       case which_scale is
       when square_root =>
          return Sqrt( np ); 
