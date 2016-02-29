@@ -1,9 +1,9 @@
 with Maths_Functions;
+with Base_Model_Types;
 
 package body Equivalence_Scales is
 
-   package MF is new Maths_Functions( Real );
-   use MF.Elementary_Functions;
+   use Base_Model_Types;
    
    procedure Inc( a : in out Real; m : Real ) is
    begin
@@ -16,7 +16,11 @@ package body Equivalence_Scales is
    --
    function Calculate( 
       people      : Person_Array; 
-      which_scale : Equivalence_Scale_Type := modified_oecd ) return Real is
+      which_scale : Equivalence_Scale_Type ) return Real is
+
+   package MF is new Maths_Functions( Real );
+   use MF.Elementary_Functions;
+
       eq_scale    : Real := 0.0;
       add         : Real;
       pos_of_head : Person_Number := 1;
