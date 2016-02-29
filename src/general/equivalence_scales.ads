@@ -1,23 +1,17 @@
 with Base_Model_Types;
+with Equivalence_Scale_Commons;
 -- 
 -- see (e.g.) www.oecd.org/eco/growth/OECD-Note-EquivalenceScales.pdf
 --
+generic
+   
+   type Real is digits<>;
+
 package Equivalence_Scales is
 
    use Base_Model_Types;
+   use Equivalence_Scale_Commons;
    
-   type Person_Type is ( 
-      head, 
-      spouse_of_head, 
-      other_adult, 
-      dependent_child );
-   
-   type Equivalence_Scale_Type is ( 
-      oxford, 
-      modified_oecd, 
-      square_root, 
-      mcclements );
-
    type Person is record
       age   : Age_Range;
       ptype : Person_Type;
@@ -30,7 +24,7 @@ package Equivalence_Scales is
    -- Jenny Chanfreau and Tania Burchardt Table 1 p.5
    --
    function Calculate( 
-           people      : Person_Array; 
-           which_scale : Equivalence_Scale_Type := modified_oecd ) return Amount;
+      people      : Person_Array; 
+      which_scale : Equivalence_Scale_Type := modified_oecd ) return Real;
    
 end Equivalence_Scales;

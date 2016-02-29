@@ -2,20 +2,25 @@ with Maths_Functions;
 
 package body Equivalence_Scales is
 
-   package MF is new Maths_Functions( Amount );
+   package MF is new Maths_Functions( Real );
    use MF.Elementary_Functions;
+   
+   procedure Inc( a : in out Real; m : Real ) is
+   begin
+      a := a + m;
+   end Inc;
    
    --  
    -- from: Equivalence scales: rationales, uses and assumptions
    -- Jenny Chanfreau and Tania Burchardt Table 1 p.5
    --
    function Calculate( 
-           people      : Person_Array; 
-           which_scale : Equivalence_Scale_Type := modified_oecd ) return Amount is
-         eq_scale    : Amount := 0.0;
-         add         : Amount;
-         pos_of_head : Person_Number := 1;
-         np          : constant Amount := Amount( people'Length );
+      people      : Person_Array; 
+      which_scale : Equivalence_Scale_Type := modified_oecd ) return Real is
+      eq_scale    : Real := 0.0;
+      add         : Real;
+      pos_of_head : Person_Number := 1;
+      np          : constant Real := Real( people'Length );
    begin
       --
       -- assume 1st person is head if none set .. 
@@ -53,7 +58,7 @@ package body Equivalence_Scales is
          end loop;
       when mcclements =>
          declare
-            num_extra_adults : Natural := 0;
+            num_extra_adults : Person_Count := 0;
          begin
             for pers of people loop               
                case pers.ptype is
