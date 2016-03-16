@@ -845,16 +845,7 @@ package body Parameter_System.Input_Buffer is
       s := s & "Text " & ve.text;
       s := s & "Error_Message: " & ve.error_message;
       s := s & "error: " &  ve.error'Img;
-      return TS( s ));
-      case ve.dtype is
-         when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
-         when integer_type    => s := s & " val" & ve.ival'Img & " default " & ve.idefault'Img;
-         when enumerated_type => s := s & " val" & ve.eval & " default " & ve.edefault;
-         when boolean_type    => s := s & " val" & ve.bval'Img & " default " & ve.bdefault'Img;
-         when string_type     => s := s & " val" & ve.sval & " default " & ve.sdefault;
-         when date_type       => s := s & " val" & Image( ve.cval ) & " default " & Image( ve.cdefault );
-         when decimal_type    => s := s & " val" & ve.dval'Img & " default " & ve.ddefault'Img;
-      end case;
+      s := s & "val: " & Basic_Text_Representation_Of_Value( ve );
       return TS( s );
    end To_String;
       
@@ -862,7 +853,7 @@ package body Parameter_System.Input_Buffer is
       s : Unbounded_String;
    begin
       for ve of vev loop
-         s := s & To_String( vev ) & LINE_BREAK;
+         s := s & To_String( ve.all ) & LINE_BREAK;
       end loop;
       return TS( s );
    end To_String;
