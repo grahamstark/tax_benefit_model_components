@@ -248,6 +248,8 @@ private
       end case;
    end record;
    
+   function To_String( ve : Value_And_Error ) return String;
+   
    function Is_Changed( val_and_err : Value_And_Error ) return Boolean;
 
    type Value_And_Error_Access is access Value_And_Error;
@@ -256,6 +258,8 @@ private
       Element_Type => Value_And_Error_Access, 
       Index_Type => Positive );
    subtype Value_And_Error_Vector is Value_And_Error_Vector_Package.Vector;
+   
+   function To_String( vev : Value_And_Error_Vector ) return String;
  
    function Compare_Value_And_Error_Vector( v1, v2 : Value_And_Error_Vector ) return Boolean;
  
@@ -297,6 +301,8 @@ private
          index_strings  : Text_Utils.Unbounded_String_List;         
       end case;
    end record;
+   
+   function To_String( cpvr : Complete_Param_And_Value_Rec ) return String;
       
    function Compare_Params( 
       p1 : Complete_Param_And_Value_Rec; 

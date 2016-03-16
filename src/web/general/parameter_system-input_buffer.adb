@@ -15,15 +15,11 @@ package body Parameter_System.Input_Buffer is
    
    use Ada.Calendar;
    
+   use GNATColl.Traces;
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "PARAMETER_SYSTEM.INPUT_BUFFER" );
    
    BIG_FLOAT : constant Float_Type := 99_999_999.0; -- instead of F'Last which can blow up validators
    
-   procedure Log( s : String ) is
-   begin
-      GNATColl.Traces.Trace( log_trace, s );
-   end Log;
-
    function Is_Changed( val_and_err : Value_And_Error ) return Boolean is
    begin
       case val_and_err.dtype is
@@ -111,21 +107,21 @@ package body Parameter_System.Input_Buffer is
                         val_str := Basic_Text_Representation_Of_Value( v_and_e );
                      end if;
                      
-                     Log( "Add_One; pno = " & pno'Img & 
+                     Trace( log_trace, "Add_One; pno = " & pno'Img & 
                           " cpv.current_size " & cpv.current_size'Img & 
                           " length of cpv.index_string " & cpv.index_strings.Length'Img & 
                           " postfix = " & TS( postfix ));
                      k := cpv.index_strings.Element( pno );
                      complete_key := Line_Extractor.Make_Key( prefix, k, postfix );
-                     Log( "Add_Indexed_Subsysem; Made Key as |" & 
+                     Trace( log_trace, "Add_Indexed_Subsysem; Made Key as |" & 
                         TS( complete_key ) & "| value |" & 
                         TS( val_str  ) & "| matching_as_String = |" & 
                         matching_as_string & "|" );
                      if( matching = Null_Unbounded_String ) or ( matching_as_string = "" ) then
-                        Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
+                        Trace( log_trace, "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
                      elsif( Index( complete_key, matching_as_string ) > 0 )then
-                        Log( "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
+                        Trace( log_trace, "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
                      end if;
                   end if;
@@ -137,7 +133,7 @@ package body Parameter_System.Input_Buffer is
                size_str      : constant Unbounded_String := 
                   TuS( cpv.current_size'Img( 2 ..  cpv.current_size'Img'Length ));
             begin
-               Log( "adding counter key " & TS( counter_key ) & " = " & TS( size_str ));
+               Trace( log_trace, "adding counter key " & TS( counter_key ) & " = " & TS( size_str ));
                if b.Contains( counter_key ) then
                   b.Replace( counter_key, size_str );
                else
@@ -224,7 +220,7 @@ package body Parameter_System.Input_Buffer is
 
    function Year_Prefix_Str( buff : Buffer ) return Unbounded_String is
    begin
-      -- Log( " Year_Prefix_Str " & buff.Has_Years'Img & "first_possible_year " & buff.first_possible_year'Img &
+      -- Trace( log_trace, " Year_Prefix_Str " & buff.Has_Years'Img & "first_possible_year " & buff.first_possible_year'Img &
       --          " last_possible_year " & buff.last_possible_year'Img & " year_prefix " & TS( year_prefix ));
       return buff.Year_Prefix_Str( buff.current_year );
    end Year_Prefix_Str;
@@ -321,7 +317,7 @@ package body Parameter_System.Input_Buffer is
             declare
                vel : Value_And_Error_Vector;
             begin
-               Log( "Get_Value_And_Error: looking for postfix = " & TS( postfix ) & " index = " & index'Img );
+               Trace( log_trace, "Get_Value_And_Error: looking for postfix = " & TS( postfix ) & " index = " & index'Img );
                if( param_and_value.valmap.Contains( postfix ))then
                   vel := param_and_value.valmap.Element( postfix );
                   declare
@@ -337,7 +333,7 @@ package body Parameter_System.Input_Buffer is
                         vel.Append( pa );
                      end if;
                   end;
-                  Log( "Found it" );
+                  Trace( log_trace, "Found it" );
                end if;
             end;
       end case;
@@ -539,7 +535,7 @@ package body Parameter_System.Input_Buffer is
       if( buff.Year_Prefix_Str /= Null_Unbounded_String )then
          lkey := buff.Year_Prefix_Str  & Delimiter & key;
       end if;
-      Log( "searching for key |" & TS( lkey ) & "| buff.Year_Prefix_Str = " & TS( buff.Year_Prefix_Str ));
+      Trace( log_trace, "searching for key |" & TS( lkey ) & "| buff.Year_Prefix_Str = " & TS( buff.Year_Prefix_Str ));
       ve := buff.Get_Value_And_Error( lkey, index, postfix );
       if( ve /= Null )then
          if( ve.dtype = integer_type ) and ( ve.error_message = Null_Unbounded_String )then
@@ -557,9 +553,9 @@ package body Parameter_System.Input_Buffer is
                return Integer( Do_Op( Float_Type(ve.ival), Float_Type(ve.idefault), op ));
             end case;
          end if;
-         Log( "|" & TS( key ) & "| is not an integer" ); 
+         Trace( log_trace, "|" & TS( key ) & "| is not an integer" ); 
       else
-         Log( "nothing found for key " & TS( key ) & " keys are " & Print_Keys( buff.params ));
+         Trace( log_trace, "nothing found for key " & TS( key ) & " keys are " & Print_Keys( buff.params ));
       end if;
       return 0;
    end Get;
@@ -605,7 +601,7 @@ package body Parameter_System.Input_Buffer is
       if( buff.Year_Prefix_Str /= Null_Unbounded_String )then
          lkey := buff.Year_Prefix_Str  & Delimiter & key;
       end if;
-      Log( "Get (UBS) searching for key |" & TS( lkey ) & "| buff.Year_Prefix_Str = " & TS( buff.Year_Prefix_Str ));
+      Trace( log_trace, "Get (UBS) searching for key |" & TS( lkey ) & "| buff.Year_Prefix_Str = " & TS( buff.Year_Prefix_Str ));
       ve := buff.Get_Value_And_Error( lkey, index, postfix );   
       if( ve /= Null )then
          if( ve.dtype = string_type ) and ( ve.error_message = Null_Unbounded_String )then
@@ -624,7 +620,7 @@ package body Parameter_System.Input_Buffer is
             end case;
          end if;
       else
-         Log( "Get string nothing found for key " & TS( key ) & " keys are " & Print_Keys( buff.params ));
+         Trace( log_trace, "Get string nothing found for key " & TS( key ) & " keys are " & Print_Keys( buff.params ));
       end if;
       return Null_Unbounded_String;
    end Get;
@@ -666,12 +662,12 @@ package body Parameter_System.Input_Buffer is
                   index,          
                   postfix );
                skey := base_key;
-               Log( "Do_Op; has_year " & has_year'Img & 
+               Trace( log_trace, "Do_Op; has_year " & has_year'Img & 
                    " year " & year'Img & 
                    " start_year " & start_year'Img &
                    " end_year   " & end_year'Img );
                if has_year and then ( year < start_year or year > end_year ) then
-                  Log( "Do_OP; year out of range; returning " );
+                  Trace( log_trace, "Do_OP; year out of range; returning " );
                   return;
                end if;
             end;
@@ -679,7 +675,7 @@ package body Parameter_System.Input_Buffer is
          --
          -- not this prefix ?
          --
-         Log( "comparing prefix |" & TS( prefix ) & "| with key |" & TS( skey ) & "|" );
+         Trace( log_trace, "comparing prefix |" & TS( prefix ) & "| with key |" & TS( skey ) & "|" );
          if( prefix /= Null_Unbounded_String ) then 
             if( Index( skey, TS(prefix )) /= 1 )then -- prefix exists and key doesn't start with it - get out
                return;  
@@ -688,7 +684,7 @@ package body Parameter_System.Input_Buffer is
          case pv.etype is
          when single        => 
             if( pv.val.dtype = real_type )then
-               Log( "operating on " & pv.val.rval'Img & " with m= " & m'Img );
+               Trace( log_trace, "operating on " & pv.val.rval'Img & " with m= " & m'Img );
                Operate( pv.val.rval, m, pv.param_desc, which_operation );
             end if;
          when single_array  => 
@@ -754,7 +750,7 @@ package body Parameter_System.Input_Buffer is
             when map_of_arrays => return pv.current_size;
          end case;
       else
-         Log( "couldn't find key " & TS( key ));
+         Trace( log_trace, "couldn't find key " & TS( key ));
       end if;
       return 0;
     end Get_Current_Collection_Size;
@@ -822,7 +818,7 @@ package body Parameter_System.Input_Buffer is
       pv : Complete_Param_And_Value_Rec;
       sz : Natural := 0;
    begin
-      Log( "Maximum_Collection_Size; looking for key |" & TS( key ) & "|" );
+      Trace( log_trace, "Maximum_Collection_Size; looking for key |" & TS( key ) & "|" );
       if( buff.params.Contains( key ))then
          pv := buff.params.Element( key );
          case pv.etype is
@@ -834,100 +830,167 @@ package body Parameter_System.Input_Buffer is
             when others =>
                sz := 0;
          end case;
-         Log( "Key Found; size is " & sz'Img );
+         Trace( log_trace, "Key Found; size is " & sz'Img );
       else
-         Log( "Key not found ");
+         Trace( log_trace, "Key not found ");
       end if;
       return sz;
    end  Maximum_Collection_Size;
    
+   function To_String( ve : Value_And_Error ) return String is
+   use Ada.Calendar.Formatting;
+      s : Unbounded_String;
+   begin
+
+      s := s & "Text " & ve.text;
+      s := s & "Error_Message: " & ve.error_message;
+      s := s & "error: " &  ve.error'Img;
+      
+      case ve.dtype is
+         when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
+         when integer_type    => s := s & " val" & ve.ival'Img & " default " & ve.idefault'Img;
+         when enumerated_type => s := s & " val" & ve.eval & " default " & ve.edefault;
+         when boolean_type    => s := s & " val" & ve.bval'Img & " default " & ve.bdefault'Img;
+         when string_type     => s := s & " val" & ve.sval & " default " & ve.sdefault;
+         when date_type       => s := s & " val" & Image( ve.cval ) & " default " & Image( ve.cdefault );
+         when decimal_type    => s := s & " val" & ve.dval'Img & " default " & ve.ddefault'Img;
+      end case;
+      return TS( s );
+   end To_String;
+      
+   function To_String( vev : Value_And_Error_Vector ) return String is
+      s : Unbounded_String;
+   begin
+      for ve of vev loop
+         s := s & To_String( vev ) & LINE_BREAK;
+      end loop;
+      return TS( s );
+   end To_String;
+   
+   function To_String( cpvr : Complete_Param_And_Value_Rec ) return String is
+      use Value_And_Error_Map_Package;
+      s : Unbounded_String;
+   begin
+      case cpvr.etype is
+      when single        =>
+         null;
+      when single_array  =>
+         s := s & To_String( cpvr.vallist );
+      when map_of_arrays => 
+         s := s & "current_size " & cpvr.current_size'Img;
+         
+         s := s & " keys :";
+         for cur in cpvr.valmap.Iterate loop
+            s := s & Key( cur ) & "=" & LINE_BREAK & To_String( Element( cur )) & LINE_BREAK;
+         end loop;
+         -- valmap         : Value_And_Error_Map;
+         -- is_enumerated  : Boolean := False;
+         -- system_desc    : Parameter_System_Rec;
+         -- reference_desc : Parameter_System_Reference_Rec;
+         -- index_strings  : Text_Utils.Unbounded_String_List;         
+      end case;
+         
+      return TS( s );
+   end To_String;
+      
+   
    procedure Add( buff : in out Buffer; key : Unbounded_String; pos : Positive ) is
-      pv : Complete_Param_And_Value_Rec;
+      cpvr : Complete_Param_And_Value_Rec;
       pa : Value_And_Error_Access;
       d  : Unbounded_String := Null_Unbounded_String;
    begin
+      Trace( log_trace, "Add entered target key is " & TS( key ));
       if( buff.params.Contains( key ))then
-         pv := buff.params.Element( key );
-         case pv.etype is
+         cpvr := buff.params.Element( key );
+         Trace( log_trace, "Add entered" );
+         case cpvr.etype is
             when single        => null;
             when single_array  =>
-               pa := Create_Value_And_Error_Access( pv.array_param_desc, buff.lang, d, d );
-               pv.vallist.Insert( pos, pa );
+               pa := Create_Value_And_Error_Access( cpvr.array_param_desc, buff.lang, d, d );
+               cpvr.vallist.Insert( pos, pa );
             when map_of_arrays => 
                declare
                use Value_And_Error_Map_Package;
                use Parameter_Search;
-                  cur       : Cursor  := First( pv.valmap );
+                  cur       : Cursor  := First( cpvr.valmap );
                   vel       : Value_And_Error_Vector;
                   param     : Parameter_Rec;
                   postfix   : Unbounded_String;
-                  n : Positive := Positive( Length( pv.valmap ));
+                  num_parameters_in_record : Positive := Positive( Length( cpvr.valmap ));
                begin
-                  if(( pv.reference_desc.maximum_size <= 0 ) or 
-                     ( pv.current_size < pv.reference_desc.maximum_size )) then
-                     for i in 1 .. n loop
+                  Trace( log_trace, "Add cpvr.reference_desc.maximum_size " & cpvr.reference_desc.maximum_size'Img );
+                  if(( cpvr.reference_desc.maximum_size <= 0 ) or 
+                     ( cpvr.current_size < cpvr.reference_desc.maximum_size )) then
+                     --
+                     -- add a record
+                     --
+                     Add_A_Record:
+                     for i in 1 .. num_parameters_in_record loop
                         postfix := Value_And_Error_Map_Package.Key( cur );
-                        param := Get_Parameter( pv.system_desc, To_String( postfix ));
+                        param := Get_Parameter( cpvr.system_desc, To_String( postfix ));
+                        -- make a copy
                         pa := Create_Value_And_Error_Access( param, buff.lang, d, d );
-                        vel := pv.valmap.Element( postfix );
+                        vel := cpvr.valmap.Element( postfix );
                         vel.Insert( pos, pa );
                         -- need this? reference ??
-                        pv.valmap.Replace( postfix, vel );
-                        if( i < n ) then
+                        cpvr.valmap.Replace( postfix, vel );
+                        if( i < num_parameters_in_record ) then
                            Next( cur );
                         end if;
-                     end loop;
-                     pv.current_size := pv.current_size + 1;
-                     Correct_Array( pv );
-                     Log( "Add; map_of_arrays case; made current_size as " & pv.current_size'Img );
+                     end loop Add_A_Record;
+                     cpvr.current_size := cpvr.current_size + 1;
+                     Correct_Array( cpvr );
+                     Trace( log_trace, "Add; map_of_arrays case; made current_size as " & cpvr.current_size'Img );
                   end if;
                end;
          end case;
-         buff.params.Replace( key, pv );
+         buff.params.Replace( key, cpvr );
       else
-         Log( "Add: Failed to find key " & TS( key ));
+         Trace( log_trace, "Add: Failed to find key " & TS( key ));
       end if;
+      Trace( log_trace, To_String( cpvr ));
    end Add;
    
    procedure Delete( buff : in out Buffer; key : Unbounded_String; delete_pos : Positive ) is
-      pv : Complete_Param_And_Value_Rec;
+      cpvr : Complete_Param_And_Value_Rec;
    begin
+      Put_Line( "delete entered" );
       if( buff.params.Contains( key ))then
-         pv := buff.params.Element( key );
-         case pv.etype is
+         cpvr := buff.params.Element( key );
+         case cpvr.etype is
             when single        => null;
             when single_array  =>
-               pv.vallist.Delete( delete_pos );
+               cpvr.vallist.Delete( delete_pos );
             when map_of_arrays => 
                declare
                use Value_And_Error_Map_Package;
                use Parameter_Search;
-                  cur       : Cursor  := First( pv.valmap );
+                  cur       : Cursor  := First( cpvr.valmap );
                   vel       : Value_And_Error_Vector;
                   param     : Parameter_Rec;
                   postfix   : Unbounded_String;
-                  n : Positive := Positive( Length( pv.valmap ));
+                  n : Positive := Positive( Length( cpvr.valmap ));
                begin
-                  if( pv.current_size > 1 ) and ( delete_pos <= pv.current_size ) then 
+                  if( cpvr.current_size > 1 ) and ( delete_pos <= cpvr.current_size ) then 
                      for i in 1 .. n loop
                         postfix := Value_And_Error_Map_Package.Key( cur );
-                        param := Get_Parameter( pv.system_desc, To_String( postfix ));
-                        vel := pv.valmap.Element( postfix );
+                        param := Get_Parameter( cpvr.system_desc, To_String( postfix ));
+                        vel := cpvr.valmap.Element( postfix );
                         vel.Delete( delete_pos );
                         -- need this? reference ??
-                        pv.valmap.Replace( postfix, vel );
+                        cpvr.valmap.Replace( postfix, vel );
                         if( i < n ) then
                            Next( cur );
                         end if;
                      end loop;
-                     pv.current_size := pv.current_size - 1;
-                     Correct_Array( pv );
+                     cpvr.current_size := cpvr.current_size - 1;
+                     Correct_Array( cpvr );
                   end if;
                end;
          end case;
-         buff.params.Replace( key, pv );
+         buff.params.Replace( key, cpvr );
       else
-         Log( "Delete: Failed to find key " & TS( key ));
+         Trace( log_trace, "Delete: Failed to find key " & TS( key ));
       end if;
    end Delete;
    
@@ -1052,12 +1115,12 @@ package body Parameter_System.Input_Buffer is
                      complete_value : Complete_Param_And_Value_Rec( single );
                   begin
                      key := prefix_copy & DELIMITER & parameter.instance_name;
-                     Log( "Load: looking for key |" & To_String( key ) & "|" );
+                     Trace( log_trace, "Load: looking for key |" & To_String( key ) & "|" );
                      if( parameter.edit_info.display /= label_only )then
                         default := defaults.Element( key );
                         value := values.Element( key );
                      end if;
-                     Log( "found it |" & TS( default ) & "|" );
+                     Trace( log_trace, "found it |" & TS( default ) & "|" );
                      complete_value.param_desc := parameter;
                      complete_value.val := Create_Value_And_Error_Access( 
                         parameter,
@@ -1144,7 +1207,7 @@ package body Parameter_System.Input_Buffer is
                         vel           : Value_And_Error_Vector;
                      begin
                         vel.Clear; -- in case we're reloading
-                        Log( "looking for counter | " & To_String( counter_key ));
+                        Trace( log_trace, "looking for counter | " & To_String( counter_key ));
                         counter := Integer'Value( To_String( defaults.Element( counter_key )));
                         each_param:
                         for pno in 1 .. num_params loop
@@ -1152,10 +1215,10 @@ package body Parameter_System.Input_Buffer is
                            each_index:
                            for i in 1 .. counter loop
                               index_key := Line_Extractor.Make_Key( key, i, parameter.instance_name );
-                              Log( "looking for index_key " & To_String( index_key ));
+                              Trace( log_trace, "looking for index_key " & To_String( index_key ));
                               default_value := defaults.Element( index_key );
                               value_str := values.Element( index_key );
-                              Log( "found value " & To_String( default_value ));
+                              Trace( log_trace, "found value " & To_String( default_value ));
                               value := Create_Value_And_Error_Access( 
                                  parameter,
                                  buff.lang,
@@ -1198,11 +1261,11 @@ package body Parameter_System.Input_Buffer is
                            for i in 1 .. counter loop
                               ev := index_enum.values.Element( i );
                               index_key := Line_Extractor.Make_Key( key, ev.name, parameter.instance_name );
-                              Log( "looking for index_key " & To_String( index_key ));
-                              Log( "looking for index_key " & To_String( index_key ));
+                              Trace( log_trace, "looking for index_key " & To_String( index_key ));
+                              Trace( log_trace, "looking for index_key " & To_String( index_key ));
                               default_value := defaults.Element( index_key );
                               value_str := values.Element( index_key );
-                              Log( "found value " & To_String( default_value ));
+                              Trace( log_trace, "found value " & To_String( default_value ));
                               value := Create_Value_And_Error_Access( 
                                  parameter,
                                  buff.lang,
@@ -1335,7 +1398,7 @@ package body Parameter_System.Input_Buffer is
             else
                base_key := base_key_from_input;
             end if;
-            Log( "looking for base_key |" & TS( base_key ) & 
+            Trace( log_trace, "looking for base_key |" & TS( base_key ) & 
                  "| index |" & Natural'Image( index ) & 
                  " postfix |" & TS( postfix ) & 
                  "| from key |" & TS( key ) & "| " &
@@ -1348,11 +1411,11 @@ package body Parameter_System.Input_Buffer is
                   param_desc      : Parameter_Rec := Get_Parameter_Rec( buff, base_key, postfix );
                begin  
                   if( val_and_err /= null )then
-                     Log( "Got val_and_err" );
+                     Trace( log_trace, "Got val_and_err" );
                      val_and_err.text := To_Unbounded_String( str_value );
                      case val_and_err.dtype is
                         when real_type       => 
-                           Log( "validating " & str_value & " against min " & 
+                           Trace( log_trace, "validating " & str_value & " against min " & 
                            Format( param_desc.edit_info.min, buff.lang ) & 
                            " max " & Format( param_desc.edit_info.max, buff.lang ));
                            Validate( 
@@ -1398,7 +1461,7 @@ package body Parameter_System.Input_Buffer is
                               val_and_err.text := TuS( str_value );
                            end if;
                         when enumerated_type => val_and_err.eval := val_and_err.text; -- store I val & assume no error possible 
-                           log( "enumerated_type;eval = " & TS( val_and_err.eval ));
+                           Trace( log_trace, "enumerated_type;eval = " & TS( val_and_err.eval ));
                            
                         when boolean_type    => 
                             --
@@ -1414,7 +1477,7 @@ package body Parameter_System.Input_Buffer is
                               -- FIXME what a mess - try again with '[xx]'s
                               actual_value_2 : constant String := params.Get( Uncensor_Id( bkey ));
                            begin
-                              Log( "made boolean value key of |" & bkey & "| actual value=|" & actual_value & "| " );
+                              Trace( log_trace, "made boolean value key of |" & bkey & "| actual value=|" & actual_value & "| " );
                               val_and_err.bval := actual_value = "on" or actual_value_2 = "on"; -- FIXME: this assumes a checkbox!
                            end;
                         when string_type     => val_and_err.sval := val_and_err.text;
@@ -1429,7 +1492,7 @@ package body Parameter_System.Input_Buffer is
                   end if;
                end;
             else
-               Log( "not found; " ); -- buffer is " & Print_Keys( buff.params ));
+               Trace( log_trace, "not found; " ); -- buffer is " & Print_Keys( buff.params ));
             end if;
          end;         
       end loop Loop_Round_CGI_Values;
