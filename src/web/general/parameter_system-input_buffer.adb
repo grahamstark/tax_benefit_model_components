@@ -845,7 +845,7 @@ package body Parameter_System.Input_Buffer is
       s := s & "Text " & ve.text;
       s := s & "Error_Message: " & ve.error_message;
       s := s & "error: " &  ve.error'Img;
-      
+      return TS( s ));
       case ve.dtype is
          when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
          when integer_type    => s := s & " val" & ve.ival'Img & " default " & ve.idefault'Img;
@@ -902,7 +902,7 @@ package body Parameter_System.Input_Buffer is
       Trace( log_trace, "Add entered target key is " & TS( key ));
       if( buff.params.Contains( key ))then
          cpvr := buff.params.Element( key );
-         Trace( log_trace, "Add entered" );
+         Trace( log_trace, "complete cpvr at start " & To_String( cpvr ));
          case cpvr.etype is
             when single        => null;
             when single_array  =>
@@ -945,10 +945,10 @@ package body Parameter_System.Input_Buffer is
                end;
          end case;
          buff.params.Replace( key, cpvr );
+         Trace( log_trace, "complete cpvr at end " & To_String( cpvr ));
       else
          Trace( log_trace, "Add: Failed to find key " & TS( key ));
       end if;
-      Trace( log_trace, To_String( cpvr ));
    end Add;
    
    procedure Delete( buff : in out Buffer; key : Unbounded_String; delete_pos : Positive ) is
