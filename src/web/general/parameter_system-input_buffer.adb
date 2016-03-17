@@ -914,6 +914,7 @@ package body Parameter_System.Input_Buffer is
                      ( cpvr.current_size < cpvr.reference_desc.maximum_size )) then
                      --
                      -- add a record
+                     -- has to be this count thing becase of weirdless with the discriminant 
                      --
                      Add_A_Record:
                      for i in 1 .. num_parameters_in_record loop
