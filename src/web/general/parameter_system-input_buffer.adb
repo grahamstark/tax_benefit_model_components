@@ -845,7 +845,7 @@ package body Parameter_System.Input_Buffer is
       s := s & "Text " & ve.text;
       s := s & "Error_Message: " & ve.error_message;
       s := s & "error: " &  ve.error'Img;
-      return TS( s ));
+      return TS( s );
       case ve.dtype is
          when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
          when integer_type    => s := s & " val" & ve.ival'Img & " default " & ve.idefault'Img;
@@ -881,7 +881,7 @@ package body Parameter_System.Input_Buffer is
          
          s := s & " keys :";
          for cur in cpvr.valmap.Iterate loop
-            s := s & Key( cur ) & "=" & LINE_BREAK & To_String( Element( cur )) & LINE_BREAK;
+            s := s & Key( cur ) & "=" & To_String( Element( cur )) & LINE_BREAK;
          end loop;
          -- valmap         : Value_And_Error_Map;
          -- is_enumerated  : Boolean := False;

@@ -243,8 +243,8 @@ private
          when enumerated_type => eval, edefault  : Unbounded_String  := Null_Unbounded_String; 
          when boolean_type    => bval, bdefault  : Boolean           := False;
          when string_type     => sval, sdefault  : Unbounded_String  := Null_Unbounded_String;
-         when date_type       => cval, cdefault  : Time;
-         when decimal_type    => dval, ddefault  : Counter_Type;
+         when date_type       => cval, cdefault  : Time := Clock;
+         when decimal_type    => dval, ddefault  : Counter_Type := 0.0;
       end case;
    end record;
    
