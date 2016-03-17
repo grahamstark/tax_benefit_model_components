@@ -18,7 +18,18 @@ package body Parameter_System is
       GNATColl.Traces.Trace( log_trace, s );
    end Log;
 
-
+   function Default_Value_String( parameter : Parameter_Rec ) return String is
+      -- FIXME NEEDS LOTS OF WORK - enumerated types .. 
+   begin
+      case parameter.data_type is
+         when real_type | decimal_type => return "0.0";
+         when integer_type => return "0";
+         when enumerated_type => return "";
+         when boolean_type => return "False";
+         when string_type => return "";
+         when date_type => return "1901-01-01 00:00:00";
+      end case;      
+   end Default_Value_String;
    
    procedure Make_Path_To_Left( sys : Parameter_System_Rec; path : in out Text_Utils.Unbounded_String_List ) is
    use Text_Utils;

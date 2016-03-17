@@ -147,7 +147,7 @@ package body Parameter_System.Input_Buffer is
          end Add_One;
             
       begin
-            Iterate( cpv.valmap, Add_One'Access );
+         Iterate( cpv.valmap, Add_One'Access );
       end Add_Indexed_Subsysem;
 
       use Complete_Param_And_Value_Maps_Package;
@@ -1210,8 +1210,8 @@ package body Parameter_System.Input_Buffer is
                         vel           : Value_And_Error_Vector;
                      begin
                         Trace( log_trace, "looking for counter | " & To_String( counter_key ));
-                        counter := Integer'Value( To_String( defaults.Element( counter_key )));
-                        
+                        counter := Integer'Value( To_String( values.Element( counter_key )));
+                        Trace( log_trace, "got counter as " & counter'Img );
                         each_param:
                         for pno in 1 .. num_params loop
                            parameter := reffed_system.parameters.Element( pno );
@@ -1220,7 +1220,12 @@ package body Parameter_System.Input_Buffer is
                            for i in 1 .. counter loop
                               index_key := Line_Extractor.Make_Key( key, i, parameter.instance_name );
                               Trace( log_trace, "looking for index_key " & To_String( index_key ));
-                              default_value := defaults.Element( index_key );
+                              -- default might not exist of we've expanded rates and bands, for instance
+                              if defaults.Contains( index_key )then
+                                 default_value := defaults.Element( index_key );
+                              else
+                                 default_value := TuS( parameter.Default_Value_String );
+                              end if;
                               value_str := values.Element( index_key );
                               Trace( log_trace, "found value " & To_String( default_value ));
                               value := Create_Value_And_Error_Access( 
@@ -1240,7 +1245,8 @@ package body Parameter_System.Input_Buffer is
                         complete_value.reference_desc := ref;
                         complete_value.current_size   := counter;
                         Correct_Array( complete_value ); -- make sure top is set on allowances, etc.
-                        buff.params.Include( key, complete_value );   
+                        buff.params.Include( key, complete_value );
+                        Trace( log_trace,  "final value: complete_value.current_size="&complete_value.current_size'Img );
                      end;
                   when enumerated_type =>
                      declare

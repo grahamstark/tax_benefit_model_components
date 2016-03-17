@@ -105,7 +105,9 @@ package Parameter_System is
       index_enum_type_ref : Unbounded_String := Null_Unbounded_String;   
       collection_type     : Collection_Kind := singular;
       maximum_size        : Natural := 0;
-   end record;   
+   end record;  
+   
+   function Default_Value_String( parameter : Parameter_Rec ) return String;
    
    package Parameter_Rec_Package is new Ada.Containers.Vectors( 
       Element_Type => Parameter_Rec, 
