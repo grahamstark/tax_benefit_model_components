@@ -334,7 +334,6 @@ private
       Float_Type=>Float_Type, 
       Counter_Type=>Counter_Type );
    
-   
    function Get_Value_And_Error( 
       param_and_value     : Complete_Param_And_Value_Rec; 
       index               : Natural := 0; 
