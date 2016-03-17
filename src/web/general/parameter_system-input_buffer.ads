@@ -277,8 +277,6 @@ private
    
    type Collection_Type is ( single, single_array, map_of_arrays );
    
-   
-   
    type Complete_Param_And_Value_Rec( etype : Collection_Type := single ) is record
       enum_type          : Enumerated_Type_Rec;
       index_enum_type    : Enumerated_Type_Rec;
