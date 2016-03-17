@@ -57,7 +57,8 @@ package body Model.Calculator.Direct_Tax is
    -- end Accumulate_To_HHld_Level;
 -- 
    procedure Apply_Allowance(
-      income : in out Amount; allowance : in out Amount ) is
+      income    : in out Amount; 
+      allowance : in out Amount ) is
       original_income : constant Amount := income;
    begin
       Assert( allowance >= 0.0,

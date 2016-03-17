@@ -845,6 +845,7 @@ package body Parameter_System.Input_Buffer is
       s := s & "Text " & ve.text;
       s := s & "Error_Message: " & ve.error_message;
       s := s & "error: " &  ve.error'Img;
+<<<<<<< HEAD
       return TS( s );
       case ve.dtype is
          when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
@@ -855,14 +856,19 @@ package body Parameter_System.Input_Buffer is
          when date_type       => s := s & " val" & Image( ve.cval ) & " default " & Image( ve.cdefault );
          when decimal_type    => s := s & " val" & ve.dval'Img & " default " & ve.ddefault'Img;
       end case;
+=======
+      s := s & "val: " & Basic_Text_Representation_Of_Value( ve );
+>>>>>>> 1ea8be9160c203a56e20f94fbae6c3c777a0672f
       return TS( s );
    end To_String;
       
    function To_String( vev : Value_And_Error_Vector ) return String is
       s : Unbounded_String;
+      p : Positive := 1;
    begin
       for ve of vev loop
-         s := s & To_String( vev ) & LINE_BREAK;
+         s := s & "["&p'Img&" ]=" & To_String( ve.all ) & LINE_BREAK;
+         p := p + 1;
       end loop;
       return TS( s );
    end To_String;
@@ -923,6 +929,7 @@ package body Parameter_System.Input_Buffer is
                      ( cpvr.current_size < cpvr.reference_desc.maximum_size )) then
                      --
                      -- add a record
+                     -- has to be this count thing becase of weirdless with the discriminant 
                      --
                      Add_A_Record:
                      for i in 1 .. num_parameters_in_record loop
@@ -1206,12 +1213,13 @@ package body Parameter_System.Input_Buffer is
                         value         : Value_And_Error_Access; 
                         vel           : Value_And_Error_Vector;
                      begin
-                        vel.Clear; -- in case we're reloading
                         Trace( log_trace, "looking for counter | " & To_String( counter_key ));
                         counter := Integer'Value( To_String( defaults.Element( counter_key )));
+                        
                         each_param:
                         for pno in 1 .. num_params loop
                            parameter := reffed_system.parameters.Element( pno );
+                           vel.Clear; -- in case we're reloading
                            each_index:
                            for i in 1 .. counter loop
                               index_key := Line_Extractor.Make_Key( key, i, parameter.instance_name );
@@ -1253,9 +1261,9 @@ package body Parameter_System.Input_Buffer is
                         counter        : Integer := Integer( index_enum.Values.Length );
                         ev             : Enum_Value_Rec;                          
                      begin
-                        vel.Clear; -- in case we're reloading
                         each_param_e:
                         for pno in 1 .. num_params loop
+                           vel.Clear; -- in case we're reloading
                            parameter := reffed_system.parameters.Element( pno );
                            each_index_e:
                            for i in 1 .. counter loop
