@@ -851,9 +851,11 @@ package body Parameter_System.Input_Buffer is
       
    function To_String( vev : Value_And_Error_Vector ) return String is
       s : Unbounded_String;
+      p : Positive := 1;
    begin
       for ve of vev loop
-         s := s & To_String( ve.all ) & LINE_BREAK;
+         s := s & "["&p'Img&" ]=" & To_String( ve.all ) & LINE_BREAK;
+         p := p + 1;
       end loop;
       return TS( s );
    end To_String;
@@ -1198,12 +1200,13 @@ package body Parameter_System.Input_Buffer is
                         value         : Value_And_Error_Access; 
                         vel           : Value_And_Error_Vector;
                      begin
-                        vel.Clear; -- in case we're reloading
                         Trace( log_trace, "looking for counter | " & To_String( counter_key ));
                         counter := Integer'Value( To_String( defaults.Element( counter_key )));
+                        
                         each_param:
                         for pno in 1 .. num_params loop
                            parameter := reffed_system.parameters.Element( pno );
+                           vel.Clear; -- in case we're reloading
                            each_index:
                            for i in 1 .. counter loop
                               index_key := Line_Extractor.Make_Key( key, i, parameter.instance_name );
@@ -1245,9 +1248,9 @@ package body Parameter_System.Input_Buffer is
                         counter        : Integer := Integer( index_enum.Values.Length );
                         ev             : Enum_Value_Rec;                          
                      begin
-                        vel.Clear; -- in case we're reloading
                         each_param_e:
                         for pno in 1 .. num_params loop
+                           vel.Clear; -- in case we're reloading
                            parameter := reffed_system.parameters.Element( pno );
                            each_index_e:
                            for i in 1 .. counter loop
