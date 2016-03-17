@@ -12,7 +12,7 @@ package body Parameter_System.Input_Buffer is
 
    use Ada.Text_IO;
    use Text_Utils;
-   
+   use Ada.Containers;
    use Ada.Calendar;
    
    use GNATColl.Traces;
@@ -111,12 +111,16 @@ package body Parameter_System.Input_Buffer is
                           " cpv.current_size " & cpv.current_size'Img & 
                           " length of cpv.index_string " & cpv.index_strings.Length'Img & 
                           " postfix = " & TS( postfix ));
-                     k := cpv.index_strings.Element( pno );
+                     if cpv.is_enumerated then -- FIXME or IS_STRING 
+                        k := cpv.index_strings.Element( pno );
+                     else
+                        k := TuS( pno'Img( 2 .. pno'Img'Length ));
+                     end if;
                      complete_key := Line_Extractor.Make_Key( prefix, k, postfix );
-                     Trace( log_trace, "Add_Indexed_Subsysem; Made Key as |" & 
-                        TS( complete_key ) & "| value |" & 
-                        TS( val_str  ) & "| matching_as_String = |" & 
-                        matching_as_string & "|" );
+                     Trace( log_trace, " k=|" & TS( k ) &
+                        "Made Key as |" & TS( complete_key ) & 
+                        "| value |" & TS( val_str  ) & 
+                        "| matching_as_String = |" & matching_as_string & "|" );
                      if( matching = Null_Unbounded_String ) or ( matching_as_string = "" ) then
                         Trace( log_trace, "inserting key=|" & TS( complete_key & "| val= |" & val_str ));
                         b.Insert( complete_key, val_str );
@@ -841,24 +845,10 @@ package body Parameter_System.Input_Buffer is
    use Ada.Calendar.Formatting;
       s : Unbounded_String;
    begin
-
       s := s & "Text " & ve.text;
       s := s & "Error_Message: " & ve.error_message;
       s := s & "error: " &  ve.error'Img;
-<<<<<<< HEAD
-      return TS( s );
-      case ve.dtype is
-         when real_type       => s := s & " val" & ve.rval'Img & " default " & ve.rdefault'Img;
-         when integer_type    => s := s & " val" & ve.ival'Img & " default " & ve.idefault'Img;
-         when enumerated_type => s := s & " val" & ve.eval & " default " & ve.edefault;
-         when boolean_type    => s := s & " val" & ve.bval'Img & " default " & ve.bdefault'Img;
-         when string_type     => s := s & " val" & ve.sval & " default " & ve.sdefault;
-         when date_type       => s := s & " val" & Image( ve.cval ) & " default " & Image( ve.cdefault );
-         when decimal_type    => s := s & " val" & ve.dval'Img & " default " & ve.ddefault'Img;
-      end case;
-=======
       s := s & "val: " & Basic_Text_Representation_Of_Value( ve );
->>>>>>> 1ea8be9160c203a56e20f94fbae6c3c777a0672f
       return TS( s );
    end To_String;
       
@@ -967,7 +957,9 @@ package body Parameter_System.Input_Buffer is
          case cpvr.etype is
             when single        => null;
             when single_array  =>
-               cpvr.vallist.Delete( delete_pos );
+               if cpvr.vallist.Length > 1 then
+                  cpvr.vallist.Delete( delete_pos );
+               end if;
             when map_of_arrays => 
                declare
                use Value_And_Error_Map_Package;
@@ -978,6 +970,8 @@ package body Parameter_System.Input_Buffer is
                   postfix   : Unbounded_String;
                   n : Positive := Positive( Length( cpvr.valmap ));
                begin
+                  Trace( log_trace, "deleting item " & delete_pos'Img );
+                  Trace( log_trace, "on entry: record to " & To_String( cpvr ));
                   if( cpvr.current_size > 1 ) and ( delete_pos <= cpvr.current_size ) then 
                      for i in 1 .. n loop
                         postfix := Value_And_Error_Map_Package.Key( cur );
@@ -991,7 +985,9 @@ package body Parameter_System.Input_Buffer is
                         end if;
                      end loop;
                      cpvr.current_size := cpvr.current_size - 1;
+                     Trace( log_trace, "set record to " & To_String( cpvr ));
                      Correct_Array( cpvr );
+                     Trace( log_trace, "after correction; set record to " & To_String( cpvr ));
                   end if;
                end;
          end case;
