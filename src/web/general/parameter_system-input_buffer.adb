@@ -892,8 +892,8 @@ package body Parameter_System.Input_Buffer is
    
    procedure Add( buff : in out Buffer; key : Unbounded_String; pos : Positive ) is
       cpvr : Complete_Param_And_Value_Rec;
-      pa : Value_And_Error_Access;
-      d  : Unbounded_String := Null_Unbounded_String;
+      pa   : Value_And_Error_Access;
+      d    : Unbounded_String := Null_Unbounded_String;
    begin
       Trace( log_trace, "Add entered target key is " & TS( key ));
       if( buff.params.Contains( key ))then
@@ -915,6 +915,7 @@ package body Parameter_System.Input_Buffer is
                   num_parameters_in_record : Positive := Positive( Length( cpvr.valmap ));
                begin
                   Trace( log_trace, "Add cpvr.reference_desc.maximum_size " & cpvr.reference_desc.maximum_size'Img );
+                  Trace( log_trace, "Add num_parameters_in_record " & num_parameters_in_record'Img );
                   if(( cpvr.reference_desc.maximum_size <= 0 ) or 
                      ( cpvr.current_size < cpvr.reference_desc.maximum_size )) then
                      --
@@ -924,6 +925,7 @@ package body Parameter_System.Input_Buffer is
                      Add_A_Record:
                      for i in 1 .. num_parameters_in_record loop
                         postfix := Value_And_Error_Map_Package.Key( cur );
+                        Trace( log_trace, "postfix ", TS( postfix ));
                         param := Get_Parameter( cpvr.system_desc, To_String( postfix ));
                         -- make a copy
                         pa := Create_Value_And_Error_Access( param, buff.lang, d, d );
@@ -931,13 +933,15 @@ package body Parameter_System.Input_Buffer is
                         vel.Insert( pos, pa );
                         -- need this? reference ??
                         cpvr.valmap.Replace( postfix, vel );
-                        if( i < num_parameters_in_record ) then
-                           Next( cur );
-                        end if;
+                        -- if( i < num_parameters_in_record ) then
+                        Next( cur );
+                        -- end if;
                      end loop Add_A_Record;
                      cpvr.current_size := cpvr.current_size + 1;
+                     Trace( log_trace, "full record " & To_String( cpvr ));
                      Correct_Array( cpvr );
                      Trace( log_trace, "Add; map_of_arrays case; made current_size as " & cpvr.current_size'Img );
+                     Trace( log_trace, "full record - afer correct_array" & To_String( cpvr ));
                   end if;
                end;
          end case;
