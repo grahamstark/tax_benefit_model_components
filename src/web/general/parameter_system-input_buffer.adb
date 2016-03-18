@@ -770,7 +770,7 @@ package body Parameter_System.Input_Buffer is
        return False;
     end Convert_Boolean;
     
-   function Create_Value_And_Error_Access( copy_va : Value_And_Error ) is
+   function Create_Value_And_Error_Access( copy_va : Value_And_Error ) return Value_And_Error_Access is
       va : Value_And_Error_Access := new Value_And_Error( dtype => copy_va.dtype );
    begin
       va.all := copy_va;
@@ -901,7 +901,7 @@ package body Parameter_System.Input_Buffer is
       cpvr : Complete_Param_And_Value_Rec;
       pa   : Value_And_Error_Access;
       
-      d    : Unbounded_String := Null_Unbounded_String;
+      -- d    : Unbounded_String := Null_Unbounded_String;
    begin
       Trace( log_trace, "Add entered target key is " & TS( key ));
       if( buff.params.Contains( key ))then
@@ -910,17 +910,17 @@ package body Parameter_System.Input_Buffer is
          case cpvr.etype is
             when single        => null;
             when single_array  =>
-               pa := Create_Value_And_Error_Access( cpvr.array_param_desc, buff.lang, d, d );
+               pa := Create_Value_And_Error_Access( 
+                  cpvr.array_param_desc, 
+                  buff.lang, 
+                  Null_Unbounded_String, 
+                  Null_Unbounded_String );
                cpvr.vallist.Insert( pos, pa );
             when map_of_arrays => 
                declare
                use Value_And_Error_Map_Package;
                use Parameter_Search;
                   cur       : Cursor  := First( cpvr.valmap );
-                  vel       : Value_And_Error_Vector;
-                  param     : Parameter_Rec;
-                  default_v_and_e : Value_And_Error_Access;
-                  postfix   : Unbounded_String;
                   num_parameters_in_record : Positive := Positive( Length( cpvr.valmap ));
                begin
                   Trace( log_trace, "Add cpvr.reference_desc.maximum_size " & cpvr.reference_desc.maximum_size'Img );
@@ -933,22 +933,20 @@ package body Parameter_System.Input_Buffer is
                      --
                      Add_A_Record:
                      for i in 1 .. num_parameters_in_record loop
-                        postfix := Value_And_Error_Map_Package.Key( cur );
-                        Trace( log_trace, "postfix ", TS( postfix ));
-                        param := Get_Parameter( cpvr.system_desc, To_String( postfix ));
-                        -- make a copy
-                        
-                        default_v_and_e := vel.Element( pos ); 
-                        pa := Create_Value_And_Error_Access( 
-                           param, 
-                           buff.lang, d, d );
-                        vel := cpvr.valmap.Element( postfix );
-                        vel.Insert( pos, pa );
-                        -- need this? reference ??
-                        cpvr.valmap.Replace( postfix, vel );
-                        -- if( i < num_parameters_in_record ) then
-                        Next( cur );
-                        -- end if;
+                        declare
+                           postfix         : constant Unbounded_String := Value_And_Error_Map_Package.Key( cur );
+                           vel             : Value_And_Error_Vector := cpvr.valmap.Element( postfix );
+                           array_length    : Positive := Positive( vel.Length );
+                           param           : Parameter_Rec := Get_Parameter( cpvr.system_desc, To_String( postfix ));
+                           copy_pos        : Positive := Positive'Min( array_length, pos );
+                           default_v_and_e : Value_And_Error_Access := vel.Element( copy_pos );
+                        begin
+                           Trace( log_trace, "postfix ", TS( postfix ));
+                           pa := Create_Value_And_Error_Access(default_v_and_e.all );
+                           vel.Insert( pos, pa );
+                           cpvr.valmap.Replace( postfix, vel );
+                           Next( cur );
+                        end;
                      end loop Add_A_Record;
                      cpvr.current_size := cpvr.current_size + 1;
                      Trace( log_trace, "full record " & To_String( cpvr ));
