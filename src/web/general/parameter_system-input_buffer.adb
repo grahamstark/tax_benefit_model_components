@@ -769,6 +769,13 @@ package body Parameter_System.Input_Buffer is
        end if;
        return False;
     end Convert_Boolean;
+    
+   function Create_Value_And_Error_Access( copy_va : Value_And_Error ) is
+      va : Value_And_Error_Access := new Value_And_Error( dtype => copy_va.dtype );
+   begin
+      va.all := copy_va;
+      return va;
+   end Create_Value_And_Error_Access;
    
    function Create_Value_And_Error_Access( 
       param : Parameter_Rec;
@@ -893,6 +900,7 @@ package body Parameter_System.Input_Buffer is
    procedure Add( buff : in out Buffer; key : Unbounded_String; pos : Positive ) is
       cpvr : Complete_Param_And_Value_Rec;
       pa   : Value_And_Error_Access;
+      
       d    : Unbounded_String := Null_Unbounded_String;
    begin
       Trace( log_trace, "Add entered target key is " & TS( key ));
@@ -911,6 +919,7 @@ package body Parameter_System.Input_Buffer is
                   cur       : Cursor  := First( cpvr.valmap );
                   vel       : Value_And_Error_Vector;
                   param     : Parameter_Rec;
+                  default_v_and_e : Value_And_Error_Access;
                   postfix   : Unbounded_String;
                   num_parameters_in_record : Positive := Positive( Length( cpvr.valmap ));
                begin
@@ -928,7 +937,11 @@ package body Parameter_System.Input_Buffer is
                         Trace( log_trace, "postfix ", TS( postfix ));
                         param := Get_Parameter( cpvr.system_desc, To_String( postfix ));
                         -- make a copy
-                        pa := Create_Value_And_Error_Access( param, buff.lang, d, d );
+                        
+                        default_v_and_e := vel.Element( pos ); 
+                        pa := Create_Value_And_Error_Access( 
+                           param, 
+                           buff.lang, d, d );
                         vel := cpvr.valmap.Element( postfix );
                         vel.Insert( pos, pa );
                         -- need this? reference ??
