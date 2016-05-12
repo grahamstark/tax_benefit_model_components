@@ -644,10 +644,10 @@ def makeGretlDummies( var )
                 |enum|
                 p enum
                 enumName = basicCensor( enum.label )
-                vname = var.name #.downcase
+                vname = basicCensor( var.name ) #.downcase
                 dummyName = "#{vname}_#{enumName}".slice( 0 .. 30 )
                 enumStmts << "genr #{dummyName} = #{vname} == #{enum.value}"
-                enumStmts << "setinfo #{dummyName} --description=\"Dummy Variable: #{var.name} : #{enum.label}\" (variable=#{var.name}, value=#{enum.value})"
+                enumStmts << "setinfo #{dummyName} --description=\"Dummy Variable: #{var.name} : #{enum.label} (variable=#{var.name}, value=#{enum.value})\""
         }
         return enumStmts
 end
