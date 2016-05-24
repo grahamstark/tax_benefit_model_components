@@ -253,5 +253,17 @@ package Standard_UK_Enums is
 
    type Aggregation_Level is ( individual_level, benefit_unit_level, household_level );
    
+   type Aggregate_Wealth_Type is ( financial, property, pension, physical );
+
+   package T_Wealth is new T_Utils(
+      T             => Aggregate_Wealth_Type,
+      Rate_Type     => Base_Model_Types.Rate,
+      Amount_Type   => Base_Model_Types.Amount,
+      Counter_Type  => Base_Model_Types.Counter_Type );
+
+   subtype Wealth_List is T_Wealth.Amount_Array;
+   subtype Wealth_Included is T_Wealth.Rate_Array;
+   subtype Wealth_Set is T_Wealth.Set;
+
    
 end Standard_UK_Enums;
