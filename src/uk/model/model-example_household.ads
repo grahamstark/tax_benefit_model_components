@@ -10,7 +10,8 @@ package Model.Example_Household is
       pid : Sernum_Value;
       age                       : Age_Range := Age_Range'First;
       sex                       : Gender_Type := male;
-      relationship              : Relationship_Type := single;
+      relationship              : Relationship_Type := head;
+      marital_status            : Marital_Status_Type := na;
       incomes                   : Incomes_List := ( others => 0.0 );
       wealth                    : Wealth_List := ( others => 0.0 );
       employment                : Broad_Employment_Status := full_time;
@@ -18,7 +19,7 @@ package Model.Example_Household is
       hours_worked              : Work_Hours_Range := Work_Hours_Range'First;
     end record;  
     
-    type Person_Array is array( Person_Number range <>  ) or Person;
+    type Person_Array is array( Person_Number range <>  ) of Person;
     
     type Household( num_people : Person_Number := 1 ) is record
        hid    : Sernum_Value := Sernum_Value'First;

@@ -200,7 +200,8 @@ package Standard_UK_Enums is
       single,
       widowed,
       separated,
-      divorced_or_civil_partnership_dissolved );
+      divorced_or_civil_partnership_dissolved,
+      na );
  
   type Marital_Status_Type_Array is array( Marital_Status_Type ) of Amount;    
       
