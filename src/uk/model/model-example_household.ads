@@ -8,6 +8,7 @@ package Model.Example_Household is
       sex                       : Gender_Type := male;
       relationship              : Relationship_Type := single;
       incomes                   : Incomes_List := ( others => 0.0 );
+      wealth                    : Wealth_List := ( others => 0.0 );
       employment                : Broad_Employment_Status := full_time;
       is_contracted_in_to_serps : Boolean := False; 
       hours_worked              : Work_Hours_Range := Work_Hours_Range'First;
