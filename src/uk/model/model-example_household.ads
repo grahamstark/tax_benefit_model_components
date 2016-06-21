@@ -1,6 +1,10 @@
 with Standard_UK_Enums;
+with Ada.Calendar;
 
 package Model.Example_Household is
+
+   use Standard_UK_Enums;
+   use Ada.Calendar;
    
    type Person is record
       pid : Sernum_Value;
