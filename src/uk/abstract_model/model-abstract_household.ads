@@ -2,7 +2,7 @@ with Ada.Containers.Indefinite_Vectors;
 with Standard_UK_Enums;
 
 package Model.Abstract_Household is
-
+                
    use Standard_UK_Enums;
    
    type Incomes is interface;
