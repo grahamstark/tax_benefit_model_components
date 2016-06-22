@@ -123,111 +123,47 @@ package body Model.Example_Household.Cases;
          start_pid := start_pid + 1;                       
          hh.people( 2 ) := Make_Retired_Adult( hh, 66, female, start_pid, True, excellent, year );
       when cpag_angelina_and_michael =>
-         pers := Make_Retired_Adult( hh, 67, male, start_pid, True, excellent, year );
-         pers.income := ( others => 0.0 );
-         pers.income( retirement_pension ) := 102.15;
-         pers.income( private_pensions ) := 60.0;
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
+         hh.people( 1 ) := Make_Retired_Adult( hh, 67, male, start_pid, True, excellent, year );
+         hh.people( 1 ) := ( others => 0.0 );
+         hh.people( 1 ).income( retirement_pension ) := 102.15;
+         hh.people( 1 ).income( private_pensions ) := 60.0;
          start_pid := start_pid + 1;                       
-         pers := Make_Retired_Adult( hh, 58, female, start_pid, True, excellent, year );         
-         pers.income( private_pensions ) := 60.0;
-         hh.add_Person( 
-            The_Person         => pers, 
-            BUNo               => 1, 
-            Is_Head            => False, 
-            Is_Spouse_of_Head  => True, 
-            Is_Dependent_Child => False );
-         start_pid := start_pid + 1;                       
+         hh.people( 2 ) := Make_Retired_Adult( hh, 58, female, start_pid, True, excellent, year );         
+         hh.people( 2 ).income( private_pensions ) := 60.0;
       when young_single =>
-         pers := Make_Working_Adult( hh, 21, male, start_pid, False, excellent, year );
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
-         start_pid := start_pid + 1;                       
+         hh.people( 1 ) := Make_Working_Adult( hh, 21, male, start_pid, False, excellent, year );
       when young_couple =>
-         pers := Make_Working_Adult( hh, 21, male, start_pid, True, excellent, year );
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
+         hh.people( 1 ) := Make_Working_Adult( hh, 21, male, start_pid, True, excellent, year );
          start_pid := start_pid + 1;                       
-         pers := Make_Working_Adult( hh, 21, female, start_pid, True, excellent, year );
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => False, 
-            Is_Spouse_of_Head => True, 
-            Is_Dependent_Child=> False );         
-         start_pid := start_pid + 1;                       
+         hh.people( 2 ) := Make_Working_Adult( hh, 21, female, start_pid, True, excellent, year );
       when working_single_parent =>
-         pers := Make_Working_Adult( hh, 30, female, start_pid, True, excellent, year );
-         pers.income( wages ) := 250.00;
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
+         hh.people( 1 ) := Make_Working_Adult( hh, 30, female, start_pid, True, excellent, year );
+         hh.people( 1 ).income( wages ) := 250.00;
          start_pid := start_pid + 1;                       
-         pers := Make_Child( hh, 12, female, start_pid, True, excellent, year );
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => False, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> True );
-            
-         start_pid := start_pid + 1;                       
+         hh.people( 2 ) := Make_Child( hh, 12, female, start_pid, True, excellent, year );
        when zero_income =>   
-         pers := Make_Retired_Adult( hh, 69, female, start_pid, False, excellent, year );
-         pers.income := ( others => 0.0 );
-         pers.income( retirement_pension ) := 0.0;
-         pers.income( private_pensions ) := 0.0;  
-         pers.income( alimony_and_child_support_received ) := 0.0;  
-         pers.income( attendance_allowance ) := 0.0;  
-         pers.employment_status := retired;
-         start_pid := start_pid + 1;                       
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
+         hh.person( 1 ) := Make_Retired_Adult( hh, 69, female, start_pid, False, excellent, year );
+         hh.person( 1 ).income := ( others => 0.0 );
+         hh.person( 1 ).income( retirement_pension ) := 0.0;
+         hh.person( 1 ).income( private_pensions ) := 0.0;  
+         hh.person( 1 ).income( alimony_and_child_support_received ) := 0.0;  
+         hh.person( 1 ).income( attendance_allowance ) := 0.0;  
+         hh.person( 1 ).employment_status := retired;
       when care_home_resident =>
-         hh.hdata.is_care_home := True;
          pers := Make_Retired_Adult( hh, 90, female, start_pid, False, poor, year );
-         pers.income := ( others => 0.0 );
-         pers.income( retirement_pension ) := 100.0;
-         pers.income( private_pensions ) := 100.0;
-         pers.years_in_residential_care := 1;
-         pers.employment_status := retired;
-         
-         hh.add_Person( 
-            The_Person        => pers, 
-            BUNo              => 1, 
-            Is_Head           => True, 
-            Is_Spouse_of_Head => False, 
-            Is_Dependent_Child=> False );         
-         start_pid := start_pid + 1;                                
+         hh.person( 1 ).income := ( others => 0.0 );
+         hh.person( 1 ).income( retirement_pension ) := 100.0;
+         hh.person( 1 ).income( private_pensions ) := 100.0;
+         hh.person( 1 ).years_in_residential_care := 1;
+         hh.person( 1 ).employment_status := retired;
       when caring_couple =>
-         hh.hdata.is_care_home := True;
          pers := Make_Retired_Adult( hh, 80, female, start_pid, True, poor, year );
-         pers.income := ( others => 0.0 );
-         pers.income( retirement_pension ) := 100.0;
-         pers.income( private_pensions ) := 100.0;
-         pers.years_in_residential_care := 0;
-         pers.hours_of_care_given := 60.0;
-         pers.hours_of_care_received := 0.0;
+         hh.person( 1 ).income := ( others => 0.0 );
+         hh.person( 1 ).income( retirement_pension ) := 100.0;
+         hh.person( 1 ).income( private_pensions ) := 100.0;
+         hh.person( 1 ).years_in_residential_care := 0;
+         hh.person( 1 ).hours_of_care_given := 60.0;
+         hh.person( 1 ).hours_of_care_received := 0.0;
          hh.add_Person( 
             The_Person        => pers, 
             BUNo              => 1, 
@@ -236,12 +172,12 @@ package body Model.Example_Household.Cases;
             Is_Dependent_Child=> False );         
          start_pid := start_pid + 1;                                
          pers := Make_Retired_Adult( hh, 80, male, start_pid, True, poor, year );
-         pers.income := ( others => 0.0 );
-         pers.income( retirement_pension ) := 100.0;
-         pers.income( private_pensions ) := 100.0;
-         pers.years_in_residential_care := 0;
-         pers.hours_of_care_given := 0.0;
-         pers.hours_of_care_received := 60.0;
+         hh.person( 1 ).income := ( others => 0.0 );
+         hh.person( 1 ).income( retirement_pension ) := 100.0;
+         hh.person( 1 ).income( private_pensions ) := 100.0;
+         hh.person( 1 ).years_in_residential_care := 0;
+         hh.person( 1 ).hours_of_care_given := 0.0;
+         hh.person( 1 ).hours_of_care_received := 60.0;
          hh.add_Person( 
             The_Person        => pers, 
             BUNo              => 1, 
