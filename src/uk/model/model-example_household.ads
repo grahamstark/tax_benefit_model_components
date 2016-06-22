@@ -22,11 +22,12 @@ package Model.Example_Household is
     type Person_Array is array( Person_Number range <>  ) of Person;
     
     type Household( num_people : Person_Number := 1 ) is record
-       hid    : Sernum_Value := Sernum_Value'First;
-       year   : Year_Number := 2016;
-       tenure : Broad_Tenure_Type := social_rented; 
+       hid           : Sernum_Value := Sernum_Value'First;
+       year          : Year_Number := 2016;
+       tenure        : Broad_Tenure_Type := social_rented; 
        housing_costs : Housing_Array := ( others => 0.0 );
-       people : Person_Array( 1 .. num_people );       
+       wealth        : Wealth_List := ( others => 0.0 );
+       people        : Person_Array( 1 .. num_people );       
     end record;
                            
 end Model.Example_Household;
