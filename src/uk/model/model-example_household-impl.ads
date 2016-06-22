@@ -36,4 +36,30 @@ package Model.Example_Household.Impl is
    overriding function Is_Couple( 
       bu : Model_Benefit_Unit ) return Boolean;
 
+   type Model_Household is new Household and Model.Abstract_Household.Household with null record;
+   
+   overriding function Get_Pids(
+      hh                : Model_Household;
+      start_age         : Age_Range := 0;
+      end_age           : Age_Range := Age_Range'Last;
+      relationship_from : Relationship_Type := Relationship_Type'First;
+      relationship_to   : Relationship_Type := Relationship_Type'Last;
+      start_person      : Person_Count := 1 ) return Sernum_Set;
+
+   overriding function Get_Housing_Cost( hh : Model_Household; htype : Housing_Cost_Type ) return Amount ;
+   overriding function Get_Tenure_Type( hh : Model_Household ) return Broad_Tenure_Type;
+
+   overriding function Find_Person( 
+      hh  : Model_Household; 
+      pid : Sernum_Value ) return Model.Abstract_Household.Person'Class ;
+      
+   overriding function Get_Benefit_Unit( 
+      hh   : Model_Household;  
+      members : Sernum_Set; 
+      buno    : Benefit_Unit_Number;
+      head : Sernum_Value := Sernum_Value'Last ) return Model.Abstract_Household.Benefit_Unit'Class;
+   
+   overriding function Get_Default_Benefit_Unit_PIDs( hh : Model_Household )  return Sernum_Set_List;     
+      
+      
 end  Model.Example_Household.Impl;

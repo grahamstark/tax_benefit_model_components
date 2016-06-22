@@ -7,7 +7,7 @@ package Model.Example_Household is
    use Ada.Calendar;
    
    type Person is tagged record
-      pid : Sernum_Value;
+      pid                       : Sernum_Value;
       age                       : Age_Range := Age_Range'First;
       sex                       : Gender_Type := male;
       relationship              : Relationship_Type := head;
