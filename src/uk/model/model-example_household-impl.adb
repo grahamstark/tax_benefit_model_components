@@ -184,5 +184,4 @@ package body Model.Example_Household.Impl is
       return mpers;
    end Find_Person;
    
-   
 end Model.Example_Household.Impl;
