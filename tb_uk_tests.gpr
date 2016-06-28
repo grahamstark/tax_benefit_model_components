@@ -1,0 +1,13 @@
+with "aunit";
+with "gnatcoll";
+with "tb_2012.gpr";
+
+project tb_uk_tests is
+
+   for Languages use( "Ada" );
+   for Source_Dirs use( "tests/uk_model" );
+   for Ignore_Source_Sub_Dirs use (".svn", ".git" );
+        
+   for Exec_Dir use "bin/";
+
+end tb_uk_tests;
