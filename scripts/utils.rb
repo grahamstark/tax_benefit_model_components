@@ -163,9 +163,9 @@ def censor( s )
         s = s.
               strip.
               downcase.        
-              gsub( /[ \-,\t]/, '_' ).
-              gsub( /[=\:\)\(']/, '').
-              gsub( /[";:\.\?]/, '' ).
+              gsub( /[ \-,\t–]/, '_' ).
+              gsub( /[=\:\)\('’‘]/, '').
+              gsub( /[";:\.\?\*”“]/, '' ).
               gsub( /\&/,'_and_').
               gsub( /\+/,'_plus_').
               gsub( /\//,'_or_' ).
@@ -210,15 +210,18 @@ def basicCensor( s )
         s = s.
         strip.
         downcase.        
-        gsub( /[ \-,\t]/, '_' ).
-        gsub( /[=\:\)\(']/, '').
-        gsub( /[";:\.\?]/, '' ).
+        gsub( /[ \-,\t–]/, '_' ).
+        gsub( /[=\:\)\('’‘]/, '').
+        gsub( /[";:\.\?\*”“]/, '' ).
         gsub( /__/,'_').
         gsub( /__/,'_').
         gsub( /__/,'_').
         gsub( /_$/, '' ).
         gsub( /^_/, '' ).
         gsub( /^_/, '' ).
+        gsub( /\//, '_or_' ).
+        gsub( /\&/, '_and_' ).
+        gsub( /\+/, '_plus_' ).
         gsub( /_\$+$/, '' );
         if( s =~ /^[\d].*/ )then
                 s = "v_#{s}" # leading digit
