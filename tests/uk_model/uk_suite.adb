@@ -34,7 +34,7 @@ begin
       when 'h' =>
          Put_Line( HELP_MESSAGE );
       when 'r' =>
-         Add_Test( result, new Model.Msc.Household.Regressions.Tests.Test_Case );
+         Add_Test( result, new  );
       when others =>
          raise Program_Error;         -- cannot occur!
       end case;
