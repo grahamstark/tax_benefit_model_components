@@ -151,7 +151,6 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ).incomes := ( others => 0.0 );
          hh.people( 1 ).incomes( retirement_pension ) := 100.0;
          hh.people( 1 ).incomes( private_pensions ) := 100.0;
-         
          hh.people( 1 ).employment := retired;
       when caring_couple =>
          pers := Make_Retired_Adult( hh, 80, female, start_pid, head );
@@ -159,11 +158,10 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ).incomes( retirement_pension ) := 100.0;
          hh.people( 1 ).incomes( private_pensions ) := 100.0;
          start_pid := start_pid + 1;                                
-         pers := Make_Retired_Adult( hh, 80, male, start_pid, spouse );
+         hh.people( 2 ) := Make_Retired_Adult( hh, 80, male, start_pid, spouse );
          hh.people( 2 ).incomes := ( others => 0.0 );
          hh.people( 2 ).incomes( retirement_pension ) := 100.0;
          hh.people( 2 ).incomes( private_pensions ) := 100.0;
-         start_pid := start_pid + 1;                                
       end case;
       return hh;
    end Make_Household;
