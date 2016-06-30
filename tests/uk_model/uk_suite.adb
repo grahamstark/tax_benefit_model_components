@@ -7,6 +7,7 @@ with Text_Utils;
 with GNAT.Command_Line;
 with Base_Model_Types;
 with Model.Example_Household.Impl.Tests;
+with Model.Example_Results.Impl.Tests;
 
 use AUnit.Test_Suites;
 use GNAT.Command_Line;
@@ -35,6 +36,8 @@ begin
          Put_Line( HELP_MESSAGE );
       when 'i' =>
          Add_Test( result, new Model.Example_Household.Impl.Tests.Test_Case );
+      when 'i' =>
+         Add_Test( result, new Model.Example_Results.Impl.Tests.Test_Case );
       when others =>
          raise Program_Error;         -- cannot occur!
       end case;

@@ -28,7 +28,6 @@
 pragma License( Modified_GPL );
 
 with Ada.Text_IO;
-with Ada.Text_Io.Editing;
 with Model.Example_Household.Cases;
 with Ada.Containers;
 
