@@ -29,14 +29,14 @@ function UK_Suite return Access_Test_Suite is
 
 begin
    loop
-      case Getopt ("h i") is
+      case Getopt ("h i r") is
       when ASCII.NUL => exit;
           -- when 's' =>
       when 'h' =>
          Put_Line( HELP_MESSAGE );
       when 'i' =>
          Add_Test( result, new Model.Example_Household.Impl.Tests.Test_Case );
-      when 'i' =>
+      when 'r' =>
          Add_Test( result, new Model.Example_Results.Impl.Tests.Test_Case );
       when others =>
          raise Program_Error;         -- cannot occur!
