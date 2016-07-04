@@ -33,11 +33,35 @@ package body Model.Example_Results.Impl is
       result : in out Model_Personal_Result;
       which  : Broad_Calculated_Type; 
       value  : Amount; 
-      op     : Operation_Type := replace )  ;
+      op     : Operation_Type := replace ) is
+    begin
+      case op is
+      when add =>
+         Inc( result.intermediate( which ), value );
+      when replace =>
+         result.intermediate( which ) := value;
+      when subtract =>
+         Inc( result.intermediate( which ), -value );
+      when multiply =>
+         result.intermediate( which ) := result.intermediate( which ) * value;
+      when divide =>
+         result.intermediate( which ) := result.intermediate( which ) / value;
+      end case;
+       
+    end Set;
       
     function Get( 
       result : Model_Personal_Result; 
-      which  : Broad_Calculated_Type ) return Amount;
-  
+      which  : Broad_Calculated_Type ) return Amount is
+    begin
+      return result.intermediate( which );
+    end Get;
+    
+    procedure Zero( 
+      result : in out Model_Personal_Result ) is
+    begin
+       result.income := ( others => 0.0 );
+       result.intermediate := ( others => 0.0 );
+    end Zero;
 
 end  Model.Example_Results.Impl;

@@ -4,9 +4,11 @@ package Model.Example_Results is
 
    use Standard_UK_Enums;
    
+   subtype Calculated_Incomes_List is T_Incomes.Abs_Amount_Array( Calculated_Incomes_Range'Range ); 
+   
    type Personal_Result is tagged record
-      incomes : Calculated_Incomes_Array;
-      summary : Broad_Calculated_List;
+      income       : Calculated_Incomes_List;
+      intermediate : Broad_Calculated_List;
    end record;
    
    type Personal_Result_Array is array(Person_Number range <>  ) of Personal_Result; 
