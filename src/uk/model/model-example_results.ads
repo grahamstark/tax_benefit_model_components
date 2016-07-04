@@ -6,6 +6,7 @@ package Model.Example_Results is
    
    type Personal_Result is tagged record
       incomes : Calculated_Incomes_Array;
+      summary : Broad_Calculated_List;
    end record;
    
    type Personal_Result_Array is array(Person_Number range <>  ) of Personal_Result; 

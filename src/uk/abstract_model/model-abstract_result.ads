@@ -13,6 +13,7 @@ package Model.Abstract_Result is
       value  : Amount; 
       op     : Operation_Type := Replace ) is abstract;
       
+      
    function Get( 
       result : Personal_Result; 
       which  : Calculated_Incomes_Range ) return Amount  is abstract;
