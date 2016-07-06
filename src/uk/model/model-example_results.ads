@@ -16,6 +16,10 @@ package Model.Example_Results is
    type Household_Result( num_people : Person_Number ) is tagged record 
       people : Personal_Result_Array( 1 .. num_people );
    end record;
+   
+   subtype Benefit_Unit_Result renames Household_Result;
+   
+   --we're assuming a single benefit uniut for now, so nothing else neeed here e.g. extract benefit unit from hhls 
       
 
 end Model.Example_Results;

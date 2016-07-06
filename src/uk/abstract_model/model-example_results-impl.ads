@@ -28,5 +28,40 @@ package Model.Example_Results.Impl is
   
    overriding procedure Zero( 
       result : in out Model_Personal_Result ); 
+      
+   type Model_Benefit_Unit_Result is new Benefit_Unit_Result and 
+      mar.Benefit_Unit_Result with null record;
+   
+   overriding procedure Set( 
+      result : in out Model_Benefit_Unit_Result;
+      pid    : Sernum_Value; 
+      value  : mar.Personal_Result'Class );
+ 
+   overriding function Get( 
+      result : Model_Benefit_Unit_Result; 
+      pid    : Sernum_Value ) return mar.Personal_Result'Class;
+      
+   overriding procedure Set( 
+      result : in out Model_Benefit_Unit_Result;
+      pid    : Sernum_Value; 
+      which  : Calculated_Incomes_Range; 
+      value  : Amount;
+      op     : Operation_Type := Replace );
+      
+   overriding procedure Set( 
+      result : in out Model_Benefit_Unit_Result;
+      pid    : Sernum_Value; 
+      which  : Broad_Calculated_Type; 
+      value  : Amount;
+      op     : Operation_Type := Replace );
+      
+   overriding function Get( 
+      result : Model_Benefit_Unit_Result; 
+      which  : Broad_Calculated_Type ) return Amount;
+      
+   overriding procedure Zero( 
+      result : in out Model_Benefit_Unit_Result );
+      
+      
 
 end  Model.Example_Results.Impl;
