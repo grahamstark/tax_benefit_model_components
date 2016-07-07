@@ -98,10 +98,18 @@ package body Model.Example_Results.Impl is
    begin
       for pno in result.people'Range loop
          if pid = result.people( pno ).pid then
-            result.people( pno ).Set(
-               which,
-               value, 
-               op );            
+            case op is
+              when add =>
+                 Inc( result.people( pno ).income( which ), value );
+              when replace =>
+                 result.people( pno ).income( which ) := value;
+              when subtract =>
+                 Inc( result.people( pno ).income( which ), -value );
+              when multiply =>
+                 result.people( pno ).income( which ) := result.people( pno ).income( which ) * value;
+              when divide =>
+                 result.people( pno ).income( which ) := result.people( pno ).income( which ) / value;
+              end case;
          end if;
       end loop;
    end Set;
