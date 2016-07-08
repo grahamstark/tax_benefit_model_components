@@ -113,7 +113,8 @@ package body Model.Example_Results.Impl is
          end if;
       end loop;
    end Set;
-      
+
+   
    procedure Set( 
       result : in out Model_Benefit_Unit_Result;
       pid    : Sernum_Value; 
@@ -138,9 +139,31 @@ package body Model.Example_Results.Impl is
          end if;
       end loop;
    end Set;
-      
+   
    function Get( 
       result : Model_Benefit_Unit_Result; 
+      which  : Broad_Calculated_Type ) return Amount is 
+      tot : Amount := 0.0;
+   begin 
+      for pers of result.people loop
+         tot := tot + pers.intermediate( which );
+      end loop;
+      return tot;
+   end Get;
+   
+    function Get( 
+      result : Model_Household_Result; 
+      which  : Broad_Calculated_Type ) return Amount is 
+      tot : Amount := 0.0;
+   begin 
+      for pers of result.people loop
+         tot := tot + pers.intermediate( which );
+      end loop;
+      return tot;
+   end Get;
+  
+   function Get( 
+      result : Model_Household_Result; 
       which  : Broad_Calculated_Type ) return Amount is 
       tot : Amount := 0.0;
    begin 
@@ -159,5 +182,38 @@ package body Model.Example_Results.Impl is
       end loop;
    end Zero;
 
+   procedure Zero( result : in out Model_Household_Result ) is
+   begin
+      for pno in result.people'Range loop
+         result.people( pno ).income := ( others => 0.0 );
+         result.people( pno ).intermediate := ( others => 0.0 );
+      end loop;
+   end Zero;
+
+
+   procedure Set( 
+      result : in out Model_Household_Result;
+      pid    : Sernum_Value; 
+      value  : mar.Personal_Result'Class ) is
+    begin
+      for pno in result.people'Range loop
+         if result.people( pno ).pid = pid then
+            result.people( pno ) :=Personal_Result( value );
+         end if;         
+      end loop;
+    end Set;
+
+   --
+   -- since 1 bu by assumption
+   --
+   procedure Set( 
+      result : in out Model_Household_Result;
+      which : Benefit_Unit_Number; 
+      value : mar.Benefit_Unit_Result'Class ) is
+   begin
+      for pno in result.people'Range loop
+         result.people( pno ) := value.people( pno ); 
+      end loop;
+   end Set;
 
 end  Model.Example_Results.Impl;
