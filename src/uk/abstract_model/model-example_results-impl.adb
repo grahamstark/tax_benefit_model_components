@@ -119,14 +119,45 @@ package body Model.Example_Results.Impl is
       pid    : Sernum_Value; 
       which  : Broad_Calculated_Type; 
       value  : Amount;
-      op     : Operation_Type := Replace );
+      op     : Operation_Type := Replace ) is
+   begin
+      for pno in result.people'Range loop
+         if pid = result.people( pno ).pid then
+            case op is
+            when add =>
+               Inc( result.people( pno ).intermediate( which ), value );
+            when replace =>
+               result.people( pno ).intermediate( which ) := value;
+            when subtract =>
+               Inc( result.people( pno ).intermediate( which ), -value );
+            when multiply =>
+               result.people( pno ).intermediate( which ) := result.people( pno ).intermediate( which ) * value;
+            when divide =>
+               result.people( pno ).intermediate( which ) := result.people( pno ).intermediate( which ) / value;
+            end case;
+         end if;
+      end loop;
+   end Set;
       
    function Get( 
       result : Model_Benefit_Unit_Result; 
-      which  : Broad_Calculated_Type ) return Amount;
+      which  : Broad_Calculated_Type ) return Amount is 
+      tot : Amount := 0.0;
+   begin 
+      for pers of result.people loop
+         tot := tot + pers.intermediate( which );
+      end loop;
+      return tot;
+   end Get;
       
    procedure Zero( 
-      result : in out Model_Benefit_Unit_Result );
+      result : in out Model_Benefit_Unit_Result ) is
+   begin
+      for pno in result.people'Range loop
+         result.people( pno ).income := ( others => 0.0 );
+         result.people( pno ).intermediate := ( others => 0.0 );
+      end loop;
+   end Zero;
 
 
 end  Model.Example_Results.Impl;
