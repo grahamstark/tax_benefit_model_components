@@ -2,12 +2,45 @@ with Model.Abstract_Result;
 
 package body Model.Example_Results.Impl is
 
-    procedure Set( 
+   function Initialise( hh : Example_Household.Household ) return Model_Household_Result is
+      np : Person_Count := hh.people'Length;
+      res : Model_Household_Result( np );
+   begin
+      for pno in 1 .. np  loop
+         res.people( pno ).pid := hh.people( pno ).pid;
+         res.people( pno ).income := ( others => 0.0 );
+         res.people( pno ).intermediate := ( others => 0.0 );
+      end loop;
+      return res;
+   end Initialise;
+
+   procedure Zero( 
+      result : in out Model_Benefit_Unit_Result ) is
+   begin
+      for pno in result.people'Range loop
+         result.people( pno ).income := ( others => 0.0 );
+         result.people( pno ).intermediate := ( others => 0.0 );
+      end loop;
+   end Zero;
+
+   procedure Zero( result : in out Model_Household_Result ) is
+   begin
+      for pno in result.people'Range loop
+         result.people( pno ).income := ( others => 0.0 );
+         result.people( pno ).intermediate := ( others => 0.0 );
+      end loop;
+   end Zero;
+
+   --
+   -- personal level
+   --
+   
+   procedure Set( 
       result : in out Model_Personal_Result;
       which  : Calculated_Incomes_Range; 
       value  : Amount;
       op     : Operation_Type := replace ) is
-    begin
+   begin
       case op is
       when add =>
          Inc( result.income( which ), value );
@@ -64,7 +97,9 @@ package body Model.Example_Results.Impl is
        result.intermediate := ( others => 0.0 );
     end Zero;
     
-    
+    --
+    -- benefit unit level; we assume a single benefit unit here
+    --
     
     procedure Set( 
       result : in out Model_Benefit_Unit_Result;
@@ -162,57 +197,57 @@ package body Model.Example_Results.Impl is
       return tot;
    end Get;
   
+
    function Get( 
       result : Model_Household_Result; 
-      which  : Broad_Calculated_Type ) return Amount is 
-      tot : Amount := 0.0;
-   begin 
-      for pers of result.people loop
-         tot := tot + pers.intermediate( which );
-      end loop;
-      return tot;
-   end Get;
-      
-   procedure Zero( 
-      result : in out Model_Benefit_Unit_Result ) is
-   begin
-      for pno in result.people'Range loop
-         result.people( pno ).income := ( others => 0.0 );
-         result.people( pno ).intermediate := ( others => 0.0 );
-      end loop;
-   end Zero;
-
-   procedure Zero( result : in out Model_Household_Result ) is
-   begin
-      for pno in result.people'Range loop
-         result.people( pno ).income := ( others => 0.0 );
-         result.people( pno ).intermediate := ( others => 0.0 );
-      end loop;
-   end Zero;
-
-
-   procedure Set( 
-      result : in out Model_Household_Result;
-      pid    : Sernum_Value; 
-      value  : mar.Personal_Result'Class ) is
+      which  : Benefit_Unit_Number ) return mar.Benefit_Unit_Result'Class  is
+      np : constant Person_Count := result.people'Length;
+      bu : Model_Benefit_Unit_Result( np );
     begin
-      for pno in result.people'Range loop
-         if result.people( pno ).pid = pid then
-            result.people( pno ) :=Personal_Result( value );
-         end if;         
+      for pno in 1 .. np loop
+         bu.people( pno ) := result.people( pno );
       end loop;
-    end Set;
+      return bu;
+    end Get;
 
+   function Get_Personal( 
+      result : Model_Household_Result; 
+      pid    : Sernum_Value ) return mar.Personal_Result'Class is
+      found : Boolean;
+      pres : Personal_Result := Personal_Result( result.Find( pid, found ));
+      mpers : Model_Personal_Result := ( pres with null record );
+   begin
+      return mpers;
+   end Get_Personal;
    --
    -- since 1 bu by assumption
    --
+   procedure Set( 
+      result : in out Model_Household_Result;
+      pid    : Sernum_Value;
+      value  : mar.Personal_Result'Class;
+      op     : Operation_Type := Replace ) is
+   begin
+      for pno in result.people'Range loop
+         if result.people( pno ).pid = pid then 
+            result.people( pno ) := Personal_Result( value );
+          end if;
+      end loop;
+   end Set;
+   
    procedure Set( 
       result : in out Model_Household_Result;
       which : Benefit_Unit_Number; 
       value : mar.Benefit_Unit_Result'Class ) is
    begin
       for pno in result.people'Range loop
-         result.people( pno ) := value.people( pno ); 
+         declare
+            pid : Sernum_Value := result.people( pno ).pid;
+            newp : Personal_Result := 
+               Personal_Result( value.Get( pid ));
+         begin
+            result.people( pno ) := newp;
+         end;
       end loop;
    end Set;
 
