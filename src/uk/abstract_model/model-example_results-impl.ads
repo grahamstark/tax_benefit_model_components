@@ -1,4 +1,5 @@
 with Model.Abstract_Result;
+with Model.Example_Household;
 
 package Model.Example_Results.Impl is
 
@@ -88,6 +89,7 @@ package Model.Example_Results.Impl is
       result : Model_Household_Result; 
       pid    : Sernum_Value ) return mar.Personal_Result'Class ;
    
-   procedure Zero( result : in out Model_Household_Result ) ;      
+   procedure Zero( result : in out Model_Household_Result );
+   function Initialise( hh : Example_Household.Household ) return Model_Household_Result;
 
 end  Model.Example_Results.Impl;
