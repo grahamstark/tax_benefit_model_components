@@ -3,11 +3,35 @@ with "gnatcoll";
 with "tb_2012.gpr";
 
 project tb_uk_tests is
-
+   --
+   -- FIXME make this a child/derived project of tb_2012; see: 
+   -- https://docs.adacore.com/gprbuild-docs/html/gprbuild_ug.html
+   --
    for Languages use( "Ada" );
    for Source_Dirs use( "tests/uk_model" );
    for Ignore_Source_Sub_Dirs use (".svn", ".git" );
         
    for Exec_Dir use "bin/";
+   for Object_Dir use "bin/";
+   
+   for Main use ( "uk_harness.adb" );
+      
+   package Compiler is
+      for Default_Switches ("ada") use ("-g", "-gnato", "-E", "-fstack-check" );
+   end Compiler;
+
+   package Binder is
+      for Default_Switches ("ada") use ("-static", "-E" );
+   end Binder;
+
+   package Linker is
+      for Linker_Options use ( "-lpq", "-lgnatcoll_postgres" );
+      for Default_Switches ("ada") use ("-g", "-ftest-coverage" );
+   end Linker;
+
+   package Builder is
+      for Default_Switches ("ada")
+      use ("-g", "-gnatQ", "-x",  "-E" );   
+   end Builder;
 
 end tb_uk_tests;
