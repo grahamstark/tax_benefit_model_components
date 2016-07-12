@@ -23,7 +23,8 @@ function UK_Suite return Access_Test_Suite is
 
    HELP_MESSAGE : constant String :=
       " driver for test suite. Use: " & LINE_BREAK &
-      " i => HH Impl Tests "  & LINE_BREAK;
+      " i => HH Impl Tests "  & LINE_BREAK &
+      " r => Result Impl Tests "  & LINE_BREAK;
 
    result : Access_Test_Suite := new Test_Suite;
 
