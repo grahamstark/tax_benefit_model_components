@@ -8,6 +8,7 @@ with GNAT.Command_Line;
 with Base_Model_Types;
 with Model.Example_Household.Impl.Tests;
 with Model.Example_Results.Impl.Tests;
+with Model.Calculator.Direct_Tax.Tests;
 
 use AUnit.Test_Suites;
 use GNAT.Command_Line;
@@ -24,6 +25,7 @@ function UK_Suite return Access_Test_Suite is
    HELP_MESSAGE : constant String :=
       " driver for test suite. Use: " & LINE_BREAK &
       " i => HH Impl Tests "  & LINE_BREAK &
+      " t => Direct Tax Tests "  & LINE_BREAK &
       " r => Result Impl Tests "  & LINE_BREAK;
 
    result : Access_Test_Suite := new Test_Suite;
@@ -37,6 +39,8 @@ begin
          Put_Line( HELP_MESSAGE );
       when 'i' =>
          Add_Test( result, new Model.Example_Household.Impl.Tests.Test_Case );
+      when 't' =>
+         Add_Test( result, new Model.Calculator.Direct_Tax.Tests.Test_Case );
       when 'r' =>
          Add_Test( result, new Model.Example_Results.Impl.Tests.Test_Case );
       when others =>
