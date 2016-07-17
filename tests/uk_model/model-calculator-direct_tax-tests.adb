@@ -28,8 +28,15 @@
 pragma License( Modified_GPL );
 
 with Ada.Text_IO;
-with Model.Example_Household.Cases;
 with Ada.Containers;
+with Model.Example_Household.Cases;
+with Model.Example_Household.Impl;
+with Model.Example_Household.Cases;
+with Model.Example_Result;
+with Model.Example_Result.Impl;
+with Model.Parameter_System;
+
+with Model.Abstract_Household;
 
 with AUnit.Assertions;
 
@@ -38,19 +45,26 @@ package body Model.Calculator.Direct_Tax.Tests is
    use AUnit.Assertions;             
    use Ada.Text_IO;
    use Ada.Containers;
+   use Model.Example_Household;
    
    procedure Set_Up ( T : in out Test_Case ) is
    begin
       null;
    end Set_Up;
    
+   function Get_Sys return Complete_System is
+      sys : Complete_System;
+   begin
+      return sys;
+   end Get_Sys;
+      
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
    begin
       for ext in Example_Type loop
          declare
             hh  : Household := Get_Household( ext );
-            mhh : Model_Household := ( hh with null record );
+            mhh : Impl.Model_Household := ( hh with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );
             pno : Person_Number;
@@ -58,9 +72,37 @@ package body Model.Calculator.Direct_Tax.Tests is
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
          end;
       end loop;
-   end Test_Impls;
+   end Test_Calculate_National_Insurance;
    
-   
+    procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+      use Model.Example_Household.Cases;
+      sys : Complete_System := Get_Sys;
+   begin
+      for ext in Example_Type loop
+         declare
+            hh  : Household := Get_Household( ext );
+            mhh : Impl.Model_Household := ( hh with null record );
+            ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
+            sn  : Sernum_Set := ss.Element( 1 );
+            pno : Person_Number;
+            res : Model_Household_Result := Initialise( hh );
+         begin
+            Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
+            for pid of sn loop
+               declare
+                  pers   :  Abstract_Household.Person'Class := mhh.Get_Person( pid );
+                  result :  mar.Benefit_Unit_Result'Class := res.Get_Personal( pid );
+               begin
+                  Calculate_Income_Tax( 
+                     sys.it, 
+                     mhh.Get_Person( pid ),
+                     result );
+               end;
+            end loop;
+         end;
+      end loop;
+   end Test_Calculate_Income_Tax;
+  
    --------------------
    -- Register_Tests --
    --------------------
@@ -68,6 +110,7 @@ package body Model.Calculator.Direct_Tax.Tests is
       use AUnit.Test_Cases.Registration;
    begin
       Register_Routine (T, Test_Calculate_National_Insurance'Access, "Test_Calculate_National_Insurance");
+      Register_Routine (T, Test_Income_Tax'Access, "Test_Income_Tax");
    end Register_Tests;
 
    ----------
