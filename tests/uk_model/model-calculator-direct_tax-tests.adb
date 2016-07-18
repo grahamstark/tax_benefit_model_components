@@ -32,8 +32,8 @@ with Ada.Containers;
 with Model.Example_Household.Cases;
 with Model.Example_Household.Impl;
 with Model.Example_Household.Cases;
-with Model.Example_Result;
-with Model.Example_Result.Impl;
+with Model.Example_Results;
+with Model.Example_Results.Impl;
 with Model.Parameter_System;
 
 with Model.Abstract_Household;
@@ -76,27 +76,28 @@ package body Model.Calculator.Direct_Tax.Tests is
    
     procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
+      use Model.Example_Results.Impl;
       sys : Complete_System := Get_Sys;
    begin
       for ext in Example_Type loop
          declare
-            hh  : Household := Get_Household( ext );
-            mhh : Impl.Model_Household := ( hh with null record );
+            mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );
             pno : Person_Number;
-            res : Model_Household_Result := Initialise( hh );
+            res : Model_Household_Result := Initialise( mhh );
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             for pid of sn loop
                declare
-                  pers   :  Abstract_Household.Person'Class := mhh.Get_Person( pid );
-                  result :  mar.Benefit_Unit_Result'Class := res.Get_Personal( pid );
+                  pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
+                  pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
+                  bu_result :  mar.Benefit_Unit_Result'Class := res.Get( 1 ); -- just 1 bu in examples
                begin
                   Calculate_Income_Tax( 
                      sys.it, 
-                     mhh.Get_Person( pid ),
-                     result );
+                     pers,
+                     pers_result );
                end;
             end loop;
          end;
@@ -110,7 +111,7 @@ package body Model.Calculator.Direct_Tax.Tests is
       use AUnit.Test_Cases.Registration;
    begin
       Register_Routine (T, Test_Calculate_National_Insurance'Access, "Test_Calculate_National_Insurance");
-      Register_Routine (T, Test_Income_Tax'Access, "Test_Income_Tax");
+      Register_Routine (T, Test_Calculate_Income_Tax'Access, "Test_Income_Tax");
    end Register_Tests;
 
    ----------
