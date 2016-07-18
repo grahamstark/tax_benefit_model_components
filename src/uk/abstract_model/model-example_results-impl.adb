@@ -2,7 +2,7 @@ with Model.Abstract_Result;
 
 package body Model.Example_Results.Impl is
 
-   function Initialise( hh : Example_Household.Household ) return Model_Household_Result is
+   function Initialise( hh : Example_Household.Household'Class ) return Model_Household_Result is
       np : Person_Count := hh.people'Length;
       res : Model_Household_Result( np );
    begin

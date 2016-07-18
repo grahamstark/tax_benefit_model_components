@@ -90,6 +90,6 @@ package Model.Example_Results.Impl is
       pid    : Sernum_Value ) return mar.Personal_Result'Class ;
    
    procedure Zero( result : in out Model_Household_Result );
-   function Initialise( hh : Example_Household.Household ) return Model_Household_Result;
+   function Initialise( hh : Example_Household.Household'Class ) return Model_Household_Result;
 
 end  Model.Example_Results.Impl;
