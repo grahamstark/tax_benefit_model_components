@@ -29,6 +29,7 @@ pragma License( Modified_GPL );
 
 with Ada.Text_IO;
 with Ada.Containers;
+with Ada.Calendar;
 with Model.Example_Household.Cases;
 with Model.Example_Household.Impl;
 with Model.Example_Household.Cases;
@@ -36,6 +37,7 @@ with Model.Example_Results;
 with Model.Example_Results.Impl;
 with Model.Parameter_System;
 with Model.Parameter_System.Defaults;
+with Model.Parameter_System.Operations;
 
 with Model.Abstract_Household;
 
@@ -43,7 +45,8 @@ with AUnit.Assertions;
 
 package body Model.Calculator.Direct_Tax.Tests is
 
-   use AUnit.Assertions;             
+   use AUnit.Assertions;
+   use Ada.Calendar;
    use Ada.Text_IO;
    use Ada.Containers;
    use Model.Example_Household;
@@ -52,6 +55,15 @@ package body Model.Calculator.Direct_Tax.Tests is
    begin
       null;
    end Set_Up;
+   
+   function Make_Complete_System( year :Year_Number )return Complete_System is
+      sys : Complete_System := Defaults.Get_Complete_System( year );
+   begin
+      Operations.To_Weekly( sys ); 
+      return sys;
+   end Make_Complete_System;
+   
+   sys : Complete_System := Make_Complete_System( 2015 );
    
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
@@ -72,7 +84,6 @@ package body Model.Calculator.Direct_Tax.Tests is
     procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
-      it_sys : Income_Tax_System := Defaults.Get_Income_Tax_System( Year => 2015 );
    begin
       for ext in Example_Type loop
          declare
@@ -89,7 +100,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                   pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
                begin
                   Calculate_Income_Tax( 
-                     it_sys, 
+                     sys.it, 
                      pers,
                      pers_result );
                   res.Set( pers.pid, pers_result );   

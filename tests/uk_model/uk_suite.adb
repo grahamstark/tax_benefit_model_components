@@ -32,7 +32,7 @@ function UK_Suite return Access_Test_Suite is
 
 begin
    loop
-      case Getopt ("h i r") is
+      case Getopt ("h i r t") is
       when ASCII.NUL => exit;
           -- when 's' =>
       when 'h' =>
