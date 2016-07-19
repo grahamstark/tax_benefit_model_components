@@ -35,6 +35,7 @@ with Model.Example_Household.Cases;
 with Model.Example_Results;
 with Model.Example_Results.Impl;
 with Model.Parameter_System;
+with Model.Parameter_System.Defaults;
 
 with Model.Abstract_Household;
 
@@ -52,12 +53,6 @@ package body Model.Calculator.Direct_Tax.Tests is
       null;
    end Set_Up;
    
-   function Get_Sys return Complete_System is
-      sys : Complete_System;
-   begin
-      return sys;
-   end Get_Sys;
-      
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
    begin
@@ -77,14 +72,14 @@ package body Model.Calculator.Direct_Tax.Tests is
     procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
-      sys : Complete_System := Get_Sys;
+      it_sys : Income_Tax_System := Defaults.Get_Income_Tax_System( Year => 2015 );
    begin
       for ext in Example_Type loop
          declare
             mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );
-            pno : Person_Number;
+            pno : Person_Number := 1;
             res : Model_Household_Result := Initialise( mhh );
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
@@ -92,13 +87,33 @@ package body Model.Calculator.Direct_Tax.Tests is
                declare
                   pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
                   pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
-                  bu_result :  mar.Benefit_Unit_Result'Class := res.Get( 1 ); -- just 1 bu in examples
                begin
                   Calculate_Income_Tax( 
-                     sys.it, 
+                     it_sys, 
                      pers,
                      pers_result );
+                  res.Set( pers.pid, pers_result );   
+                  declare
+                     it    : Amount := pers_result.Get( income_tax );
+                     gross : Amount := pers_result.Get( gross_income );
+                   begin
+                     Put_Line( "on " & ext'Img & " gross income " & Format( gross ) & " income tax " & Format( it ));
+                     case ext is
+                        when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
+                        when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                        when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                     end case;
+                   end;
                end;
+               pno := pno + 1;
             end loop;
          end;
       end loop;
