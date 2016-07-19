@@ -209,6 +209,22 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
+        when 2016   => -- WEEKLY!!!!
+            declare
+               employee_in_rates  : V4 := ( 0.0, 0.0, 12.0, 2.0 );
+               employee_out_rates : V4 := ( 0.0, 0.0, 10.6, 2.0 ); -- 2 1.6-rebate
+               employer_in_rates  : V4 := ( 0.0, 0.0, 13.80, 13.8 );
+               employer_out_rates : V4 := ( 0.0, 0.0, 10.4, 10.4 );
+               bands              : V4 := ( 111.0, 153.0, 805.00, 999_999_999_99_99.99 );
+            begin
+               Set_Rates_And_Bands_NI(
+                  sys,
+                  bands,
+                  employee_in_rates,
+                  employee_out_rates,
+                  employer_in_rates,
+                  employer_out_rates );
+            end;
         when others => null;
       end case;
       return sys;
@@ -296,6 +312,16 @@ package body Model.Parameter_System.Defaults is
                Set_Rates_And_Bands( sys, bands, non_savings_income, savings_income, dividends_income );
             end;
         when 2015   =>
+            declare
+               non_savings_income : V4 := ( 20.0, 20.0, 40.0, 45.0 );
+               savings_income     : V4 := ( 10.0, 20.0, 40.0, 45.0 );
+               dividends_income   : V4 := ( 10.0, 10.0, 32.50, 32.50 );
+               bands              : V4 := ( 4_905.0, 31_785.0, 150_000.0, 999_999_999_99_99.99);
+            begin
+               sys.personal_allowance := 10_600.00;
+               Set_Rates_And_Bands( sys, bands, non_savings_income, savings_income, dividends_income );
+            end;
+        when 2016 =>
             declare
                non_savings_income : V4 := ( 20.0, 20.0, 40.0, 45.0 );
                savings_income     : V4 := ( 10.0, 20.0, 40.0, 45.0 );
