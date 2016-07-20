@@ -59,7 +59,14 @@ package Model.Example_Household.Impl is
       buno    : Benefit_Unit_Number;
       head : Sernum_Value := Sernum_Value'Last ) return Model.Abstract_Household.Benefit_Unit'Class;
    
-   overriding function Get_Default_Benefit_Unit_PIDs( hh : Model_Household )  return Sernum_Set_List;     
+   overriding function Get_Default_Benefit_Unit_PIDs( hh : Model_Household )  return Sernum_Set_List;
+   
+   overriding  procedure Set_Income( 
+      hh    : in out Model_Household; 
+      pid   : Sernum_Value;
+      which : Broad_Incomes_Type; 
+      value : Amount; 
+      op    :  Operation_Type := Replace );
       
       
 end  Model.Example_Household.Impl;

@@ -184,4 +184,31 @@ package body Model.Example_Household.Impl is
       return mpers;
    end Find_Person;
    
+   procedure Set_Income( 
+      hh    : in out Model_Household; 
+      pid   : Sernum_Value;
+      which : Broad_Incomes_Type; 
+      value : Amount; 
+      op    :  Operation_Type := Replace ) is
+   begin
+      for pno in hh.people'Range loop
+         if hh.people( pno ).pid = pid then
+           case op is
+            when add =>
+               Inc( hh.people( pno ).incomes( which ), value );
+            when replace =>
+               hh.people( pno ).incomes( which ) := value;
+            when subtract =>
+               Inc( hh.people( pno ).incomes( which ), -value );
+            when multiply =>
+               hh.people( pno ).incomes( which ) := hh.people( pno ).incomes( which ) * value;
+            when divide =>
+               hh.people( pno ).incomes( which ) := hh.people( pno ).incomes( which ) / value;
+            end case;
+          
+         end if;         
+      end loop;
+   end Set_Income;
+      
+   
 end Model.Example_Household.Impl;

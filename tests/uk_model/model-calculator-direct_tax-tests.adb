@@ -99,6 +99,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                   pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
                   pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
                begin
+                  
                   Calculate_Income_Tax( 
                      sys.it, 
                      pers,
@@ -108,6 +109,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                      it    : Amount := pers_result.Get( income_tax );
                      gross : Amount := pers_result.Get( gross_income );
                    begin
+                     
                      Put_Line( "on " & ext'Img & " gross income " & Format( gross ) & " income tax " & Format( it ));
                      case ext is
                         when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 

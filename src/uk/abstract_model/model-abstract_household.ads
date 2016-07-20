@@ -8,6 +8,7 @@ package Model.Abstract_Household is
    type Incomes is interface;
    function Get_Income( i : Incomes; w : Non_Calculated_Incomes_Range ) return Amount is abstract;
    function Get_Incomes( i : Incomes ) return Incomes_List is abstract;
+   
 
    type Demog is interface;
    function Age( d : Demog ) return Age_Range is abstract;
@@ -79,6 +80,22 @@ package Model.Abstract_Household is
 
    function Get_Housing_Cost( hh : Household; htype : Housing_Cost_Type ) return Amount is abstract;
    function Get_Tenure_Type( hh : Household ) return Broad_Tenure_Type is abstract;
+
+   --
+   -- for budget constraints and the like
+   --
+   procedure Set_Income( 
+      hh    : in out Household; 
+      pid   : Sernum_Value;
+      which : Broad_Incomes_Type; 
+      value : Amount; 
+      op    :  Operation_Type := Replace ) is null;
+
+   procedure Set_Housing_Cost( 
+      hh    : in out Household; 
+      htype : Housing_Cost_Type;
+      value : Amount; 
+      op    :  Operation_Type := Replace ) is null;
    
 
    function Get_Default_Benefit_Unit_PIDs( hh : Household ) return Sernum_Set_List is abstract; 
