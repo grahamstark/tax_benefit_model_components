@@ -85,7 +85,11 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
    begin
+      Families:
       for ext in Example_Type loop
+         Put_Line( "HHLD " & ext'Img );
+         Put_Line( "pno,wages,dividends,bank_interest,ni,income_tax" );
+                              
          declare
             mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
@@ -94,59 +98,80 @@ package body Model.Calculator.Direct_Tax.Tests is
             res : Model_Household_Result := Initialise( mhh );
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
+            People:
             for pid of sn loop
-               declare
-                  wage : Amount := 0.0;
-               begin
-                  for i in 1 .. 50 loop
-                     mhh.Set_Income( pid, wages, wage );
-                     declare
-                        pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
-                        pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
-                     begin
-                        
-                        Calculate_Income_Tax( 
-                           sys.it, 
-                           pers,
-                           pers_result );
-                        Calculate_National_Insurance( 
-                           sys.ni, 
-                           pers,
-                           pers_result );
-                        res.Set( pers.pid, pers_result );   
+               Income_Type:
+               for inctype in 1 .. 3 loop
+                  declare
+                     income : Amount := 0.0;
+                  begin
+                     Incomes:
+                     for i in 1 .. 50 loop
+                        case inctype is
+                        when 1 => mhh.Set_Income( pid, wages, income );
+                                  mhh.Set_Income( pid, dividends, 100.0 );
+                                  mhh.Set_Income( pid, bank_interest, 100.0 );
+                        when 2 => mhh.Set_Income( pid, dividends, income );
+                                  mhh.Set_Income( pid, wages, 500.0 );
+                                  mhh.Set_Income( pid, bank_interest, 100.0 );
+                        when 3 => mhh.Set_Income( pid, bank_interest, income );
+                                  mhh.Set_Income( pid, wages, 500.0 );
+                                  mhh.Set_Income( pid, dividends, 100.0 );                                     
+                       end case;
                         declare
-                           it    : Amount := pers_result.Get( income_tax );
-                           ni    : Amount := pers_result.Get( national_insurance );
-                           gross : Amount := pers_result.Get( gross_income );
-                         begin
+                           pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
+                           pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
+                        begin
                            
-                           Put_Line( "on hh " & ext'Img 
-                              & " pno " & pno'Img
-                              & " gross income " & Format( wage ) 
-                              & " ni " & Format( ni ) 
-                              & " income tax " & Format( it ));
-                           case ext is
-                              when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
-                              when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                           end case;
-                         end;
-                     end;
-                     Inc( wage, 1000.0 );
-                  end loop;
-               end;
+                           Calculate_Income_Tax( 
+                              sys.it, 
+                              pers,
+                              pers_result );
+                           Calculate_National_Insurance( 
+                              sys.ni, 
+                              pers,
+                              pers_result );
+                           res.Set( pers.pid, pers_result );   
+                           declare
+                              it             : Amount := pers_result.Get( income_tax );
+                              ni             : Amount := pers_result.Get( national_insurance );
+                              wage           : Amount := pers.Get_Income( wages );
+                              dividend       : Amount := pers.Get_Income( dividends );
+                              bank_intr      : Amount := pers.Get_Income( bank_interest );
+                              gross          : Amount := pers_result.Get( gross_income );
+                            begin
+                              Put_Line( 
+                                 pno'Img & ","
+                                 & Format( wage ) & "," 
+                                 & Format( dividend ) & "," 
+                                 & Format( bank_intr ) & "," 
+                                 & Format( ni ) & ","
+                                 & Format( it ));
+                                 case ext is
+                                 when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
+                                 when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              end case;
+                            end;
+                        end;
+                        Inc( income, 100.0 );
+                     end loop Incomes;
+                  end;
+               end loop Income_Type;
                pno := pno + 1;
-            end loop;
-         end;
-      end loop;
+               New_Line;
+            end loop People;
+            New_Line;
+         end;         
+      end loop Families;
    end Test_Calculate_Income_Tax;
   
    --------------------
