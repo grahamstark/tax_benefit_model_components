@@ -96,35 +96,52 @@ package body Model.Calculator.Direct_Tax.Tests is
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             for pid of sn loop
                declare
-                  pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
-                  pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
+                  wage : Amount := 0.0;
                begin
-                  
-                  Calculate_Income_Tax( 
-                     sys.it, 
-                     pers,
-                     pers_result );
-                  res.Set( pers.pid, pers_result );   
-                  declare
-                     it    : Amount := pers_result.Get( income_tax );
-                     gross : Amount := pers_result.Get( gross_income );
-                   begin
-                     
-                     Put_Line( "on " & ext'Img & " gross income " & Format( gross ) & " income tax " & Format( it ));
-                     case ext is
-                        when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
-                        when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                        when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                     end case;
-                   end;
+                  for i in 1 .. 50 loop
+                     mhh.Set_Income( pid, wages, wage );
+                     declare
+                        pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
+                        pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
+                     begin
+                        
+                        Calculate_Income_Tax( 
+                           sys.it, 
+                           pers,
+                           pers_result );
+                        Calculate_National_Insurance( 
+                           sys.ni, 
+                           pers,
+                           pers_result );
+                        res.Set( pers.pid, pers_result );   
+                        declare
+                           it    : Amount := pers_result.Get( income_tax );
+                           ni    : Amount := pers_result.Get( national_insurance );
+                           gross : Amount := pers_result.Get( gross_income );
+                         begin
+                           
+                           Put_Line( "on hh " & ext'Img 
+                              & " pno " & pno'Img
+                              & " gross income " & Format( wage ) 
+                              & " ni " & Format( ni ) 
+                              & " income tax " & Format( it ));
+                           case ext is
+                              when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
+                              when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                           end case;
+                         end;
+                     end;
+                     Inc( wage, 1000.0 );
+                  end loop;
                end;
                pno := pno + 1;
             end loop;
