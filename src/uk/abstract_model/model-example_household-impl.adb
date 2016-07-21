@@ -205,7 +205,6 @@ package body Model.Example_Household.Impl is
             when divide =>
                hh.people( pno ).incomes( which ) := hh.people( pno ).incomes( which ) / value;
             end case;
-          
          end if;         
       end loop;
    end Set_Income;
