@@ -5,13 +5,22 @@
 --
 --  basic types for our models;
 --  originally UK-centric, but now moved out since really
-with Ada.Text_IO; use Ada.Text_IO;
 
-with Ada.Strings.Bounded; use Ada.Strings.Bounded;
+with GNATColl.Traces;
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Assertions;
+with Ada.Strings.Bounded; 
 
 with Text_Utils;
 
 package body Base_Model_Types is
+
+   use Ada.Assertions;
+   use Ada.Strings.Bounded;
+   
+   log_trace : GNATColl.Traces.Trace_Handle := 
+      GNATColl.Traces.Create( "BASE_MODEL_TYPES" );
+
    
    procedure Add_To_Map( map : in out Auxiliary_Results; key : String; value : Amount ) is
       use Ada.Strings.Unbounded;

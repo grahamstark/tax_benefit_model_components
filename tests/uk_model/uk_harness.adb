@@ -24,11 +24,13 @@ with UK_Suite;
 
 with AUnit.Run;
 with AUnit.Reporter.Text;
+with GNATColl.Traces;
 
 procedure UK_Harness is
 
    procedure Run is new AUnit.Run.Test_Runner( UK_Suite );
    reporter : AUnit.Reporter.Text.Text_Reporter;
 begin
+   GNATColl.Traces.Parse_Config_File( "./etc/logging_config_file.txt" );
    Run( reporter );
 end UK_Harness;

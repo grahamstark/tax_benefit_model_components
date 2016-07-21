@@ -2,7 +2,7 @@
 -- + on next line: enable everything by default
 -
 -- log to this file
->/home/graham_s/VirtualWorlds/projects/southampton/model/log/MSC1.log
+>./log/tb_components.log
 --
 -- decorators; see 4.3 in gnatcoll manual
 --
@@ -12,12 +12,10 @@ DEBUG.ENCLOSING_ENTITY=no
 --
 -- DRIVERS
 --
-BASIC_DATA_MERGER_DRIVER=yes
-DATA_CREATION_DRIVER=yes
 --
 -- tbsys core modules
 --
-DATASET_IO=no
+BASE_MODEL_TYPES=no
 FORMAT_UTILS=no
 GAIN_LOSE_IO=no
 INEQUALITY_GENERATOR.UTILS=no
