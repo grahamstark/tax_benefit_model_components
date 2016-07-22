@@ -2,17 +2,13 @@
 -- + on next line: enable everything by default
 -
 -- log to this file
->../log/tb_components.log
+>./log/tb_components.log
 --
 -- decorators; see 4.3 in gnatcoll manual
 --
 DEBUG.ABSOLUTE_TIME=no
 DEBUG.LOCATION=yes
 DEBUG.ENCLOSING_ENTITY=no
---
--- DRIVERS
---
---
 -- tbsys core modules
 --
 BASE_MODEL_TYPES=no
@@ -28,6 +24,7 @@ MATHS_FUNCTIONS.WEIGHTS_GENERATOR=no
 MATHS_FUNCTIONS=no
 UTILS=no
 XML_UTILS.CONVERSIONS=no
+
 --
 -- generic calcs (finish this!)
 --
@@ -35,9 +32,16 @@ MODEL.CALCULATOR.UNIVERSAL_CREDIT=no
 MODEL.CALCULATOR.DIRECT_TAX=yes
 MODEL.CALCULATOR.PENSIONER_BENEFITS=no
 MODEL.CALCULATOR.UTILS=no
+--
+-- Front End
+--
 PARAMETER_SYSTEM.INPUT_BUFFER.HTML_RENDERER=no
 PARAMETER_SYSTEM.INPUT_BUFFER=no
 PARAMETER_SYSTEM.XML=no
 PARAMETER_SYSTEM=no
 COSTS_TABULATOR.STATISTICS_IO=no
-KEYED_BUFFER.TESTS=yes
+--
+-- the test suite
+--
+MATHS_FUNCTIONS.SIMPLE_STATISTICS.TESTS=no
+KEYED_BUFFER.TESTS=no
