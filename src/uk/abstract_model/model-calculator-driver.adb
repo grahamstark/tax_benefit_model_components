@@ -51,7 +51,11 @@ package body Model.Calculator.Driver is
                   example_person : Example_Data.Person renames hh.benefit_units( buno ).people( pno );
                begin
                   Model.Calculator.Direct_Tax.Calculate_Income_Tax( sys.it, person, pres );
-                  Model.Calculator.Direct_Tax.Calculate_National_Insurance( sys.ni, person, pres );
+                  Model.Calculator.Direct_Tax.Calculate_National_Insurance( 
+                     sys.ni,
+                     sys.benefits.state_pension,                     
+                     person, 
+                     pres );
                   Model.Calculator.Foster_Care_Sim.Calculate_Student_Loan_Repayments( sys.sl, example_person, pres );
                end;
             end loop;

@@ -250,7 +250,7 @@ package body Model.Parameter_System.Defaults is
       -- national_savings,
       sys.savings_income( bank_interest ) := 1.0;
       sys.savings_income( building_society ) := 1.0;
-      sys.savings_income( stocks_shares ) := 1.0;
+      -- sys.savings_income( stocks_shares ) := 1.0;
       sys.savings_income( peps ) := 1.0;
       sys.savings_income( other_investment_income ) := 1.0;
       -- isa,

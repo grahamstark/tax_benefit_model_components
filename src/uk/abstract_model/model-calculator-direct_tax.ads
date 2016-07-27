@@ -17,9 +17,10 @@ package Model.Calculator.Direct_Tax is
       res : in out mar.Personal_Result'Class );
 
    procedure Calculate_National_Insurance(
-      sys : National_Insurance_System;
-      ad  : Model.Abstract_Household.Person'Class;
-      res : in out mar.Personal_Result'Class );
+      ni_sys  : National_Insurance_System;
+      pen_sys : Pension_System; -- to feed in pension age 
+      ad      : Model.Abstract_Household.Person'Class;
+      res     : in out mar.Personal_Result'Class );
       
 -- 
    -- procedure Accumulate_To_HHld_Level(

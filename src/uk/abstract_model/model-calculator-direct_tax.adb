@@ -142,25 +142,30 @@ package body Model.Calculator.Direct_Tax is
    end Calculate_Income_Tax;
 
    procedure Calculate_National_Insurance(
-      sys : National_Insurance_System;
-      ad  : Model.Abstract_Household.Person'Class;
-      res : in out mar.Personal_Result'Class ) is
+      ni_sys  : National_Insurance_System;
+      pen_sys : Pension_System; -- to feed in pension age       
+      ad      : Model.Abstract_Household.Person'Class;
+      res     : in out mar.Personal_Result'Class ) is
       earnings : constant Amount := ad.Get_Income( wages );
    begin
-      if( ad.Is_Contracted_In_To_Serps )then
-            res.Set( national_insurance, 
-               UK_Tax_Utils.Calc_Tax_Due(
-                  sys.employee_in_rates, earnings ).due );
-            res.Set( employers_ni, 
-               UK_Tax_Utils.Calc_Tax_Due(
-                  sys.employer_in_rates, earnings ).due );
-      else
-            res.Set( national_insurance, 
-               UK_Tax_Utils.Calc_Tax_Due(
-                  sys.employee_out_rates, earnings ).due );
-            res.Set( employers_ni, 
-               UK_Tax_Utils.Calc_Tax_Due(
-                  sys.employer_out_rates, earnings ).due );
+      if( ad.gender = male and ad.age < pen_sys.age_men ) or 
+        ( ad.gender = female and ad.age < pen_sys.age_women )then
+
+         if( ad.Is_Contracted_In_To_Serps )then
+               res.Set( national_insurance, 
+                  UK_Tax_Utils.Calc_Tax_Due(
+                     ni_sys.employee_in_rates, earnings ).due );
+               res.Set( employers_ni, 
+                  UK_Tax_Utils.Calc_Tax_Due(
+                     ni_sys.employer_in_rates, earnings ).due );
+         else
+               res.Set( national_insurance, 
+                  UK_Tax_Utils.Calc_Tax_Due(
+                     ni_sys.employee_out_rates, earnings ).due );
+               res.Set( employers_ni, 
+                  UK_Tax_Utils.Calc_Tax_Due(
+                     ni_sys.employer_out_rates, earnings ).due );
+         end if;
       end if;
    end Calculate_National_Insurance;
  

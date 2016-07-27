@@ -86,7 +86,7 @@ package Standard_UK_Enums is
       national_savings,
       bank_interest,
       building_society,
-      stocks_shares,
+      -- stocks_shares,
       peps,
       isa,
       dividends,
