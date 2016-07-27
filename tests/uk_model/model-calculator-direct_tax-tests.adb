@@ -129,6 +129,8 @@ package body Model.Calculator.Direct_Tax.Tests is
                               pers_result );
                            Calculate_National_Insurance( 
                               sys.ni, 
+                              sys.benefits.state_pension,
+                     
                               pers,
                               pers_result );
                            res.Set( pers.pid, pers_result );   
