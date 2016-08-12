@@ -1,7 +1,7 @@
 with AUnit;
 with AUnit.Test_Cases; 
 
-package Model.Calculator.Direct_Tax.Tests is
+package Model.Calculator.Pensioner_Benefits.Tests is
 
    use AUnit.Test_Cases;
    use AUnit;
@@ -17,4 +17,4 @@ package Model.Calculator.Direct_Tax.Tests is
    --  Preparation performed before each routine:
     procedure Set_Up( T : in out Test_Case );
 
-end Model.Calculator.Direct_Tax.Tests;
+end Model.Calculator.Pensioner_Benefits.Tests;

@@ -43,7 +43,7 @@ with Model.Abstract_Household;
 
 with AUnit.Assertions;
 
-package body Model.Calculator.Direct_Tax.Tests is
+package body Model.Calculator.Pensioner_Benefits.Tests is
 
    use AUnit.Assertions;
    use Ada.Calendar;
@@ -64,38 +64,24 @@ package body Model.Calculator.Direct_Tax.Tests is
    end Make_Complete_System;
    
    sys : Complete_System := Make_Complete_System( 2015 );
-   
-   procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
-      use Model.Example_Household.Cases;
-   begin
-      for ext in Example_Type loop
-         declare
-            hh  : Household := Get_Household( ext );
-            mhh : Impl.Model_Household := ( hh with null record );
-            ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
-            sn  : Sernum_Set := ss.Element( 1 );
-            pno : Person_Number;
-         begin
-            Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
-         end;
-      end loop;
-   end Test_Calculate_National_Insurance;
-   
-    procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+
+   procedure Test_Calculate_Guaranteed_Pension_Credit( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
    begin
       Families:
-      for ext in Example_Type loop
+      for ext in single_retired_person .. couple_bu_retired loop
          Put_Line( "HHLD " & ext'Img );
          Put_Line( "pno,wages,dividends,bank_interest,ni,income_tax" );
                               
          declare
-            mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
+            mhh : Impl.Model_Household := ( Get_Household( ext ) with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );
+            mbu : Impl.Model_Benefit_Unit := mhh.Get_Benefit_Unit( mhh, sn, 1 ); 
             pno : Person_Number := 1;
             res : Model_Household_Result := Initialise( mhh );
+            bres : Model_Benefit_Unit_Result := res.Get( 1 );
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             People:
@@ -117,24 +103,23 @@ package body Model.Calculator.Direct_Tax.Tests is
                         when 3 => mhh.Set_Income( pid, bank_interest, income );
                                   mhh.Set_Income( pid, wages, 500.0 );
                                   mhh.Set_Income( pid, dividends, 100.0 );                                     
-                       end case;
+                        end case;
+                        Calculate_State_Pension( 
+                           sys      => sys.benefits.state_pension, 
+                           bu       => mbu  
+                           res      => bres );
+                        Calculate_Guaranteed_Pension_Credit(
+                           gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
+                           pensys   => sys.benefits.state_pension,
+                           bu       => mbu,  
+                           res      => bres );
+                        Calculate_Savings_Credit(
+                           sys      =>  sys.benefits.pension_credit.savings_credit,
+                           bu       =>  mah.Benefit_Unit'Class;  
+                           bu       => mbu,  
+                           res      => bres );
+                        res.Set( 1, bres );   
                         declare
-                           pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
-                           pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
-                        begin
-                           
-                           Calculate_Income_Tax( 
-                              sys.it, 
-                              pers,
-                              pers_result );
-                           Calculate_National_Insurance( 
-                              sys.ni, 
-                              sys.benefits.state_pension,
-                     
-                              pers,
-                              pers_result );
-                           res.Set( pers.pid, pers_result );   
-                           declare
                               it             : Amount := pers_result.Get( income_tax );
                               ni             : Amount := pers_result.Get( national_insurance );
                               wage           : Amount := pers.Get_Income( wages );
@@ -174,7 +159,7 @@ package body Model.Calculator.Direct_Tax.Tests is
             New_Line;
          end;         
       end loop Families;
-   end Test_Calculate_Income_Tax;
+   end Test_Calculate_Guaranteed_Pension_Credit;
   
    --------------------
    -- Register_Tests --
@@ -182,8 +167,7 @@ package body Model.Calculator.Direct_Tax.Tests is
    procedure Register_Tests( t : in out Test_Case) is
       use AUnit.Test_Cases.Registration;
    begin
-      Register_Routine (T, Test_Calculate_National_Insurance'Access, "Test_Calculate_National_Insurance");
-      Register_Routine (T, Test_Calculate_Income_Tax'Access, "Test_Income_Tax");
+      Register_Routine (T, Test_Calculate_Guaranteed_Pension_Credit'Access, "Test_Calculate_Guaranteed_Pension_Credit");
    end Register_Tests;
 
    ----------
@@ -194,4 +178,4 @@ package body Model.Calculator.Direct_Tax.Tests is
       return Format( " Model.Example_Household.Impl.Tests" );
    end Name;
 
-end Model.Calculator.Direct_Tax.Tests;
+end Model.Calculator.Pensioner_Benefits.Tests;

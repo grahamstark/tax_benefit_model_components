@@ -9,6 +9,7 @@ with Base_Model_Types;
 with Model.Example_Household.Impl.Tests;
 with Model.Example_Results.Impl.Tests;
 with Model.Calculator.Direct_Tax.Tests;
+with Model.Calculator.Pensioner_Benefits.Tests;
 
 use AUnit.Test_Suites;
 use GNAT.Command_Line;
@@ -26,6 +27,7 @@ function UK_Suite return Access_Test_Suite is
       " driver for test suite. Use: " & LINE_BREAK &
       " i => HH Impl Tests "  & LINE_BREAK &
       " t => Direct Tax Tests "  & LINE_BREAK &
+      " p => Pensioner Benefit Tests "  & LINE_BREAK &
       " r => Result Impl Tests "  & LINE_BREAK;
 
    result : Access_Test_Suite := new Test_Suite;
@@ -41,6 +43,8 @@ begin
          Add_Test( result, new Model.Example_Household.Impl.Tests.Test_Case );
       when 't' =>
          Add_Test( result, new Model.Calculator.Direct_Tax.Tests.Test_Case );
+      when 'p' =>
+         Add_Test( result, new Model.Calculator.Pensioner_Benefits.Tests.Test_Case );
       when 'r' =>
          Add_Test( result, new Model.Example_Results.Impl.Tests.Test_Case );
       when others =>
