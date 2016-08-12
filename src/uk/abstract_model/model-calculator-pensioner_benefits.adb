@@ -53,8 +53,10 @@ package body Model.Calculator.Pensioner_Benefits is
       additional_amounts : Amount := 0.0;
       mig                : Amount := 0.0;
       standard_guarantee : Amount;
+      gpc : Amount;
       has_non_dependent_adult : Boolean := False; -- FIXME we have to look at all other BUs for this, too.
-     pids : Sernum_Set := bu.Get_Pids( start_age => 18, end_age=>Age_Range'Last );
+      pids : Sernum_Set := bu.Get_Pids( start_age => 18, end_age=>Age_Range'Last );
+      heads_pid : Sernum_Value := Utils.Get_Head_Of_Benefit_Unit( bu );
    begin
       if( not Test_Ages( bu, pensys.age_men, pensys.age_women ))then
          return;
@@ -93,7 +95,17 @@ package body Model.Calculator.Pensioner_Benefits is
       Log( "GPC: Additional Amounts", additional_amounts );
       Log( "GPC: Standard Guarantee", standard_guarantee );
       Log( "GPC: Income", income );
-      -- Log( "GPC: amount = ", res.Get( pension_credit ));
+      
+      income := Utils.Calculate_Incomes( 
+         bu, 
+         res, 
+         gpcsys.incomes );
+ 
+      Assert( income >= 0.0, " income must be non-negative " & Format( income ));
+      -- FIXME not person 1? bu.head_id ??
+      gpc := Amount'Max( 0.0, mig - income );
+      res.Set( heads_pid, pension_credit, gpc, add ); 
+      Log( "GPC: amount = ", gpc );
    end Calculate_Guaranteed_Pension_Credit;
   
    procedure Calculate_Savings_Credit(
