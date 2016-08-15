@@ -510,6 +510,12 @@ package body Model.Parameter_System.Defaults is
    function Get_Pension_Credit( year : Year_Number ) return Pension_Credit_System is
       pension_credit : Pension_Credit_System;
    begin
+      pension_credit.savings_credit.qualifying_incomes := Get_Default_Incomes( 
+         which => guaranteed_pension_credit,
+         itype => both );
+      pension_credit.guaranteed_credit.incomes := Get_Default_Incomes( 
+         which => savings_credit,
+         itype => both ); 
       case year is
       when 2015 =>
          pension_credit.guaranteed_credit.carer_single := 34.20;

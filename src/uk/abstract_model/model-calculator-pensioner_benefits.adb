@@ -94,17 +94,16 @@ package body Model.Calculator.Pensioner_Benefits is
       Log( "GPC: MIG", mig );
       Log( "GPC: Additional Amounts", additional_amounts );
       Log( "GPC: Standard Guarantee", standard_guarantee );
-      Log( "GPC: Income", income );
       
       income := Utils.Calculate_Incomes( 
          bu, 
          res, 
          gpcsys.incomes );
- 
+      Log( "GPC: Income", income );
       Assert( income >= 0.0, " income must be non-negative " & Format( income ));
       -- FIXME not person 1? bu.head_id ??
       gpc := Amount'Max( 0.0, mig - income );
-      res.Set( heads_pid, pension_credit, gpc, add ); 
+      res.Set( heads_pid, pension_credit, gpc ); 
       Log( "GPC: amount = ", gpc );
    end Calculate_Guaranteed_Pension_Credit;
   
