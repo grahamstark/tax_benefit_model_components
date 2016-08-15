@@ -143,7 +143,7 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
             end loop People;
             New_Line;
          end;         
-      end loop Families;
+      end loop Families;      
    end Test_Calculate_Guaranteed_Pension_Credit;
   
    --------------------
