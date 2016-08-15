@@ -72,16 +72,15 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       Families:
       for ext in single_retired_person .. young_single loop
          Put_Line( "HHLD " & ext'Img );
-         Put_Line( "pno,dividends,bank_interest,ni,income_tax" );
+         Put_Line( "pno,dividends,bank_interest,state_pen,hb,pension_credit" );
                               
          declare
             mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
             ss   : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn   : Sernum_Set := ss.Element( 1 );
-            mbu  : mah.Benefit_Unit'Class := mhh.Get_Benefit_Unit( sn, 1 ); 
+            
             pno  : Person_Number := 1;
-            res  : Model_Household_Result := Initialise( mhh );
-            bres : mar.Benefit_Unit_Result'Class := res.Get( 1 );
+            
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             People:
@@ -99,40 +98,46 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
                         when 2 => mhh.Set_Income( pid, dividends, income );
                                   mhh.Set_Income( pid, bank_interest, 100.0 );
                         end case;
-                        Calculate_State_Pension( 
-                           sys      => sys.benefits.state_pension, 
-                           bu       => mbu,  
-                           res      => bres );
-                        Calculate_Guaranteed_Pension_Credit(
-                           gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
-                           pensys   => sys.benefits.state_pension,
-                           bu       => mbu,  
-                           res      => bres );
-                        Calculate_Savings_Credit(
-                           sys      =>  sys.benefits.pension_credit.savings_credit,
-                           bu       =>  mbu,  
-                           res      =>  bres );
-                        res.Set( 1, bres );   
-                        declare
-                           pen            : Amount := bres.Get( pid ).Get( retirement_pension );
-                           hb             : Amount := bres.Get( pid ).Get( housing_benefit );
-                           pen_cred       : Amount := bres.Get( pid ).Get( pension_credit );
-                           dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
-                           bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( bank_interest );
-                           gross          : Amount := bres.Get( gross_income );
+                        declare 
+                           res  : Model_Household_Result := Initialise( mhh );
+                           bres : mar.Benefit_Unit_Result'Class := res.Get( 1 );
+                           mbu : mah.Benefit_Unit'Class := mhh.Get_Benefit_Unit( sn, 1 );
                         begin
-                           Put_Line( 
-                              pno'Img & ","
-                              & Format( dividend ) & "," 
-                              & Format( bank_intr ) & "," 
-                              & Format( pen ) & ","
-                              & Format( hb ) & ","
-                              & Format( pen_cred ));
-                           case ext is
-                              when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                           end case;
+                           Calculate_State_Pension( 
+                              sys      => sys.benefits.state_pension, 
+                              bu       => mbu,  
+                              res      => bres );
+                           Calculate_Guaranteed_Pension_Credit(
+                              gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
+                              pensys   => sys.benefits.state_pension,
+                              bu       => mbu,  
+                              res      => bres );
+                           Calculate_Savings_Credit(
+                              sys      =>  sys.benefits.pension_credit.savings_credit,
+                              bu       =>  mbu,  
+                              res      =>  bres );
+                           res.Set( 1, bres );   
+                           declare
+                              pen            : Amount := bres.Get( pid ).Get( retirement_pension );
+                              hb             : Amount := bres.Get( pid ).Get( housing_benefit );
+                              pen_cred       : Amount := bres.Get( pid ).Get( pension_credit );
+                              dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
+                              bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( bank_interest );
+                              gross          : Amount := bres.Get( gross_income );
+                           begin
+                              Put_Line( 
+                                 pno'Img & ","
+                                 & Format( dividend ) & "," 
+                                 & Format( bank_intr ) & "," 
+                                 & Format( pen ) & ","
+                                 & Format( hb ) & ","
+                                 & Format( pen_cred ));
+                              case ext is
+                                 when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              end case;
+                           end;
                         end;
                         Inc( income, 5.0 );
                      end loop Incomes;
