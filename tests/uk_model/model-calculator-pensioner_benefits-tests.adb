@@ -70,43 +70,38 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       use Model.Example_Results.Impl;
    begin
       Families:
-      for ext in single_retired_person .. couple_bu_retired loop
+      for ext in single_retired_person .. young_single loop
          Put_Line( "HHLD " & ext'Img );
-         Put_Line( "pno,wages,dividends,bank_interest,ni,income_tax" );
+         Put_Line( "pno,dividends,bank_interest,ni,income_tax" );
                               
          declare
-            mhh : Impl.Model_Household := ( Get_Household( ext ) with null record );
-            ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
-            sn  : Sernum_Set := ss.Element( 1 );
-            mbu : Impl.Model_Benefit_Unit := mhh.Get_Benefit_Unit( mhh, sn, 1 ); 
-            pno : Person_Number := 1;
-            res : Model_Household_Result := Initialise( mhh );
-            bres : Model_Benefit_Unit_Result := res.Get( 1 );
+            mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
+            ss   : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
+            sn   : Sernum_Set := ss.Element( 1 );
+            mbu  : mah.Benefit_Unit'Class := mhh.Get_Benefit_Unit( sn, 1 ); 
+            pno  : Person_Number := 1;
+            res  : Model_Household_Result := Initialise( mhh );
+            bres : mar.Benefit_Unit_Result'Class := res.Get( 1 );
          begin
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             People:
             for pid of sn loop
                Income_Type:
-               for inctype in 1 .. 3 loop
+               for inctype in 1 .. 2 loop
                   declare
                      income : Amount := 0.0;
                   begin
                      Incomes:
                      for i in 1 .. 50 loop
                         case inctype is
-                        when 1 => mhh.Set_Income( pid, wages, income );
-                                  mhh.Set_Income( pid, dividends, 100.0 );
-                                  mhh.Set_Income( pid, bank_interest, 100.0 );
+                        when 1 => mhh.Set_Income( pid, dividends, 100.0 );
+                                  mhh.Set_Income( pid, bank_interest, income );
                         when 2 => mhh.Set_Income( pid, dividends, income );
-                                  mhh.Set_Income( pid, wages, 500.0 );
                                   mhh.Set_Income( pid, bank_interest, 100.0 );
-                        when 3 => mhh.Set_Income( pid, bank_interest, income );
-                                  mhh.Set_Income( pid, wages, 500.0 );
-                                  mhh.Set_Income( pid, dividends, 100.0 );                                     
                         end case;
                         Calculate_State_Pension( 
                            sys      => sys.benefits.state_pension, 
-                           bu       => mbu  
+                           bu       => mbu,  
                            res      => bres );
                         Calculate_Guaranteed_Pension_Credit(
                            gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
@@ -115,41 +110,31 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
                            res      => bres );
                         Calculate_Savings_Credit(
                            sys      =>  sys.benefits.pension_credit.savings_credit,
-                           bu       =>  mah.Benefit_Unit'Class;  
-                           bu       => mbu,  
-                           res      => bres );
+                           bu       =>  mbu,  
+                           res      =>  bres );
                         res.Set( 1, bres );   
                         declare
-                              it             : Amount := pers_result.Get( income_tax );
-                              ni             : Amount := pers_result.Get( national_insurance );
-                              wage           : Amount := pers.Get_Income( wages );
-                              dividend       : Amount := pers.Get_Income( dividends );
-                              bank_intr      : Amount := pers.Get_Income( bank_interest );
-                              gross          : Amount := pers_result.Get( gross_income );
-                            begin
-                              Put_Line( 
-                                 pno'Img & ","
-                                 & Format( wage ) & "," 
-                                 & Format( dividend ) & "," 
-                                 & Format( bank_intr ) & "," 
-                                 & Format( ni ) & ","
-                                 & Format( it ));
-                                 case ext is
-                                 when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when young_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when old_sick_single_male => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when cpag_terry_and_julie => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it ));  -- 2012 edn p 478
-                                 when cpag_angelina_and_michael => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when zero_income => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              end case;
-                            end;
+                           pen            : Amount := bres.Get( pid ).Get( retirement_pension );
+                           hb             : Amount := bres.Get( pid ).Get( housing_benefit );
+                           pen_cred       : Amount := bres.Get( pid ).Get( pension_credit );
+                           dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
+                           bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( bank_interest );
+                           gross          : Amount := bres.Get( gross_income );
+                        begin
+                           Put_Line( 
+                              pno'Img & ","
+                              & Format( dividend ) & "," 
+                              & Format( bank_intr ) & "," 
+                              & Format( pen ) & ","
+                              & Format( hb ) & ","
+                              & Format( pen_cred ));
+                           case ext is
+                              when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                           end case;
                         end;
-                        Inc( income, 100.0 );
+                        Inc( income, 5.0 );
                      end loop Incomes;
                   end;
                end loop Income_Type;
