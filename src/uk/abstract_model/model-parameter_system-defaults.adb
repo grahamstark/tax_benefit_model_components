@@ -66,10 +66,10 @@ package body Model.Parameter_System.Defaults is
    
          inc( property ) := 1.0;
          inc( private_pensions ) := 1.0;
-         inc( national_savings ) := 1.0;
-         inc( dividends ) := 1.0;
-         inc( bank_interest ) := 1.0;
-         inc( building_society ) := 1.0;
+         -- inc( national_savings ) := 1.0;
+         -- inc( dividends ) := 1.0;
+         -- inc( bank_interest ) := 1.0;
+         -- inc( building_society ) := 1.0;
       end if;
       if itype = both or itype = earned then      
          inc( wages ) := 1.0;
@@ -512,19 +512,23 @@ package body Model.Parameter_System.Defaults is
       pension_credit : Pension_Credit_System;
    begin
       pension_credit.savings_credit.qualifying_incomes := Get_Default_Incomes( 
+         which => savings_credit_qualifying_income,
+         itype => both );
+      pension_credit.savings_credit.incomes := Get_Default_Incomes( 
          which => guaranteed_pension_credit,
          itype => both );
       pension_credit.guaranteed_credit.incomes := Get_Default_Incomes( 
-         which => savings_credit,
+         which => guaranteed_pension_credit,
          itype => both ); 
+         
       case year is
       when 2015 =>
-         pension_credit.guaranteed_credit.carer_single := 34.20;
+         pension_credit.guaranteed_credit.single := 148.35;
          pension_credit.guaranteed_credit.couple := 226.50;
+         pension_credit.guaranteed_credit.carer_single := 34.20;
          pension_credit.guaranteed_credit.preserve_for_existing_claimants := False;
          pension_credit.guaranteed_credit.severe_disability_couple := 61.10*2.0;
          pension_credit.guaranteed_credit.severe_disability_single := 61.10;
-         pension_credit.guaranteed_credit.single := 148.35;
          pension_credit.savings_credit.maximum_couple := 20.70;
          pension_credit.savings_credit.maximum_single := 16.80;
          pension_credit.savings_credit.preserve_for_existing_claimants := False;
