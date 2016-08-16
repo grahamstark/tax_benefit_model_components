@@ -72,7 +72,7 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       Families:
       for ext in single_retired_person .. young_single loop
          Put_Line( "HHLD " & ext'Img );
-         Put_Line( "pno,dividends,bank_interest,state_pen,hb,pension_credit" );
+         Put_Line( "pno,dividends,bank_interest,state_pen,hb,pension_credit,state_pen(BU),hb(BU),pension_credit(BU)" );
                               
          declare
             mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -93,10 +93,10 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
                      Incomes:
                      for i in 1 .. 50 loop
                         case inctype is
-                        when 1 => mhh.Set_Income( pid, dividends, 100.0 );
+                        when 1 => mhh.Set_Income( pid, dividends, 10.0 );
                                   mhh.Set_Income( pid, bank_interest, income );
                         when 2 => mhh.Set_Income( pid, dividends, income );
-                                  mhh.Set_Income( pid, bank_interest, 100.0 );
+                                  mhh.Set_Income( pid, bank_interest, 10.0 );
                         end case;
                         declare 
                            res  : Model_Household_Result := Initialise( mhh );
@@ -124,6 +124,9 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
                               dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
                               bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( bank_interest );
                               gross          : Amount := bres.Get( gross_income );
+                              pen_b          : Amount := bres.Get( retirement_pension );
+                              hb_b           : Amount := bres.Get( housing_benefit );
+                              pen_cred_b     : Amount := bres.Get( pension_credit );
                            begin
                               Put_Line( 
                                  pno'Img & ","
@@ -131,7 +134,10 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
                                  & Format( bank_intr ) & "," 
                                  & Format( pen ) & ","
                                  & Format( hb ) & ","
-                                 & Format( pen_cred ));
+                                 & Format( pen_cred ) & ","
+                                 & Format( pen_b ) & ","
+                                 & Format( hb_b ) & ","
+                                 & Format( pen_cred_b ));
                               case ext is
                                  when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
                                  when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
