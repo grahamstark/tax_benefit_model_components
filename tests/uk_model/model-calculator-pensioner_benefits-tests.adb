@@ -72,7 +72,7 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       Families:
       for ext in single_retired_person .. young_single loop
          Put_Line( "HHLD " & ext'Img );
-         Put_Line( "pno,dividends,bank_interest,state_pen,hb,pension_credit,state_pen(BU),hb(BU),pension_credit(BU)" );
+         Put_Line( "pno,dividends,private_pensions,state_pen,hb,pension_credit,state_pen(BU),hb(BU),pension_credit(BU)" );
                               
          declare
             mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -85,70 +85,62 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
             Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
             People:
             for pid of sn loop
-               Income_Type:
-               for inctype in 1 .. 2 loop
-                  declare
-                     income : Amount := 0.0;
-                  begin
-                     Incomes:
-                     for i in 1 .. 50 loop
-                        case inctype is
-                        when 1 => mhh.Set_Income( pid, dividends, 10.0 );
-                                  mhh.Set_Income( pid, bank_interest, income );
-                        when 2 => mhh.Set_Income( pid, dividends, income );
-                                  mhh.Set_Income( pid, bank_interest, 10.0 );
-                        end case;
-                        declare 
-                           res  : Model_Household_Result := Initialise( mhh );
-                           bres : mar.Benefit_Unit_Result'Class := res.Get( 1 );
-                           mbu : mah.Benefit_Unit'Class := mhh.Get_Benefit_Unit( sn, 1 );
+               declare
+                  income : Amount := 0.0;
+               begin
+                  Incomes:
+                  for i in 1 .. 50 loop
+                     mhh.Set_Income( pid, private_pensions, income );
+                     declare 
+                        res  : Model_Household_Result := Initialise( mhh );
+                        bres : mar.Benefit_Unit_Result'Class := res.Get( 1 );
+                        mbu : mah.Benefit_Unit'Class := mhh.Get_Benefit_Unit( sn, 1 );                     
+                     begin
+                        Calculate_State_Pension( 
+                           sys      => sys.benefits.state_pension, 
+                           bu       => mbu,  
+                           res      => bres );
+                        Calculate_Guaranteed_Pension_Credit(
+                           gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
+                           pensys   => sys.benefits.state_pension,
+                           bu       => mbu,  
+                           res      => bres );
+                        Calculate_Savings_Credit(
+                           sys      =>  sys.benefits.pension_credit.savings_credit,
+                           bu       =>  mbu,  
+                           res      =>  bres );
+                        res.Set( 1, bres );   
+                        declare
+                           pen            : Amount := bres.Get( pid ).Get( retirement_pension );
+                           hb             : Amount := bres.Get( pid ).Get( housing_benefit );
+                           pen_cred       : Amount := bres.Get( pid ).Get( pension_credit );
+                           dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
+                           bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( private_pensions );
+                           gross          : Amount := bres.Get( gross_income );
+                           pen_b          : Amount := bres.Get( retirement_pension );
+                           hb_b           : Amount := bres.Get( housing_benefit );
+                           pen_cred_b     : Amount := bres.Get( pension_credit );
                         begin
-                           Calculate_State_Pension( 
-                              sys      => sys.benefits.state_pension, 
-                              bu       => mbu,  
-                              res      => bres );
-                           Calculate_Guaranteed_Pension_Credit(
-                              gpcsys   => sys.benefits.pension_credit.guaranteed_credit,                           
-                              pensys   => sys.benefits.state_pension,
-                              bu       => mbu,  
-                              res      => bres );
-                           Calculate_Savings_Credit(
-                              sys      =>  sys.benefits.pension_credit.savings_credit,
-                              bu       =>  mbu,  
-                              res      =>  bres );
-                           res.Set( 1, bres );   
-                           declare
-                              pen            : Amount := bres.Get( pid ).Get( retirement_pension );
-                              hb             : Amount := bres.Get( pid ).Get( housing_benefit );
-                              pen_cred       : Amount := bres.Get( pid ).Get( pension_credit );
-                              dividend       : Amount := mbu.Find_Person( pid ).Get_Income( dividends );
-                              bank_intr      : Amount := mbu.Find_Person( pid ).Get_Income( bank_interest );
-                              gross          : Amount := bres.Get( gross_income );
-                              pen_b          : Amount := bres.Get( retirement_pension );
-                              hb_b           : Amount := bres.Get( housing_benefit );
-                              pen_cred_b     : Amount := bres.Get( pension_credit );
-                           begin
-                              Put_Line( 
-                                 pno'Img & ","
-                                 & Format( dividend ) & "," 
-                                 & Format( bank_intr ) & "," 
-                                 & Format( pen ) & ","
-                                 & Format( hb ) & ","
-                                 & Format( pen_cred ) & ","
-                                 & Format( pen_b ) & ","
-                                 & Format( hb_b ) & ","
-                                 & Format( pen_cred_b ));
-                              case ext is
-                                 when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                                 when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
-                              end case;
-                           end;
+                           Put_Line( 
+                              pno'Img & ","
+                              & Format( dividend ) & "," 
+                              & Format( bank_intr ) & "," 
+                              & Format( pen ) & ","
+                              & Format( hb ) & ","
+                              & Format( pen_cred ) & ","
+                              & Format( pen_b ) & ","
+                              & Format( hb_b ) & ","
+                              & Format( pen_cred_b ));
+                           case ext is
+                              when single_retired_person => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when couple_bu_retired => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                              when young_single => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                           end case;
                         end;
-                        Inc( income, 5.0 );
-                     end loop Incomes;
-                  end;
-               end loop Income_Type;
+                     end;
+                     Inc( income, 5.0 );
+                  end loop Incomes;
+               end;
                pno := pno + 1;
                New_Line;
             end loop People;
@@ -175,3 +167,4 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
    end Name;
 
 end Model.Calculator.Pensioner_Benefits.Tests;
+  
