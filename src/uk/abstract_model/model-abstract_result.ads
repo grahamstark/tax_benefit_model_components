@@ -59,6 +59,10 @@ package Model.Abstract_Result is
       result : Benefit_Unit_Result; 
       which  : Broad_Calculated_Type ) return Amount  is abstract;
       
+   function Get( 
+      result : Benefit_Unit_Result; 
+      which  : Broad_Incomes_Type ) return Amount  is abstract;
+      
    procedure Zero( 
       result : in out Benefit_Unit_Result ) is abstract;
 
@@ -79,6 +83,10 @@ package Model.Abstract_Result is
       result : Household_Result; 
       which  : Benefit_Unit_Number ) return Benefit_Unit_Result'Class  is abstract;
    
+   function Get( 
+      result : Household_Result; 
+      which  : Broad_Incomes_Type ) return Amount is abstract;
+
    function Get( 
       result : Household_Result; 
       which  : Broad_Calculated_Type ) return Amount is abstract;

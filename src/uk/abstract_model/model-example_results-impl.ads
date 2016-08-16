@@ -59,6 +59,10 @@ package Model.Example_Results.Impl is
    overriding function Get( 
       result : Model_Benefit_Unit_Result; 
       which  : Broad_Calculated_Type ) return Amount;
+
+   overriding function Get( 
+      result : Model_Benefit_Unit_Result; 
+      which  : Broad_Incomes_Type ) return Amount;
       
    overriding procedure Zero( 
       result : in out Model_Benefit_Unit_Result );
@@ -84,6 +88,10 @@ package Model.Example_Results.Impl is
    overriding function Get( 
       result : Model_Household_Result; 
       which  : Broad_Calculated_Type ) return Amount ;
+
+   overriding function Get( 
+      result : Model_Household_Result; 
+      which  : Broad_Incomes_Type ) return Amount;
       
    overriding function Get_Personal( 
       result : Model_Household_Result; 

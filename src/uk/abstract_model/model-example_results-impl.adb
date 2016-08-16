@@ -196,7 +196,28 @@ package body Model.Example_Results.Impl is
       end loop;
       return tot;
    end Get;
-  
+ 
+   function Get( 
+      result : Model_Benefit_Unit_Result; 
+      which  : Broad_Incomes_Type ) return Amount is 
+      tot : Amount := 0.0;
+   begin
+      for pers of result.people loop
+         tot := tot + pers.income( which );
+      end loop;
+      return tot;
+   end Get;
+   
+   function Get( 
+      result : Model_Household_Result; 
+      which  : Broad_Incomes_Type ) return Amount is 
+      tot : Amount := 0.0;
+   begin
+      for pers of result.people loop
+         tot := tot + pers.income( which );
+      end loop;
+      return tot;
+   end Get;
 
    function Get( 
       result : Model_Household_Result; 

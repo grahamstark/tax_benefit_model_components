@@ -67,6 +67,7 @@ package body Model.Parameter_System.Defaults is
          inc( property ) := 1.0;
          inc( private_pensions ) := 1.0;
          inc( national_savings ) := 1.0;
+         inc( dividends ) := 1.0;
          inc( bank_interest ) := 1.0;
          inc( building_society ) := 1.0;
       end if;
