@@ -7,7 +7,7 @@ require 'utils'
 require 'csv'
 
 def getConnection()
-        return DBI.connect('DBI:Pg:msc', 'postgres', '' )
+        return DBI.connect('DBI:Pg:msc:localhost', 'msc', 'msc' )
 end
 
 
