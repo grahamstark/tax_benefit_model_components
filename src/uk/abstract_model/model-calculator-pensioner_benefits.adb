@@ -61,7 +61,7 @@ package body Model.Calculator.Pensioner_Benefits is
       if( not Test_Ages( bu, pensys.age_men, pensys.age_women ))then
          return;
       end if;
-      if( is_couple )then
+      if is_couple then
          standard_guarantee := gpcsys.couple;
       else
          standard_guarantee := gpcsys.single;
@@ -130,6 +130,11 @@ package body Model.Calculator.Pensioner_Benefits is
          bu, 
          res, 
          sys.qualifying_incomes );
+      income := Utils.Calculate_Incomes( 
+         bu, 
+         res, 
+         sys.incomes );
+         
       if is_couple then
          maximum := sys.maximum_couple;
          threshold := sys.threshold_couple;

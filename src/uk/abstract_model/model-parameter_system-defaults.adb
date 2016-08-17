@@ -515,7 +515,7 @@ package body Model.Parameter_System.Defaults is
          which => savings_credit_qualifying_income,
          itype => both );
       pension_credit.savings_credit.incomes := Get_Default_Incomes( 
-         which => guaranteed_pension_credit,
+         which => savings_credit,
          itype => both );
       pension_credit.guaranteed_credit.incomes := Get_Default_Incomes( 
          which => guaranteed_pension_credit,
