@@ -112,8 +112,10 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ) := Make_Retired_Adult( hh, 90, male, start_pid, head );
       when couple_bu_retired     =>
          hh.people( 1 ) := Make_Retired_Adult( hh, 65, male, start_pid, head );
+         hh.people( 1 ).marital_status := married_or_civil_partnership;
          start_pid := start_pid + 1;              
          hh.people( 2 ) := Make_Retired_Adult( hh, 65, female, start_pid, spouse );
+         hh.people( 2 ).marital_status := married_or_civil_partnership;
       when cpag_terry_and_julie =>
          hh.people( 1 ) := Make_Retired_Adult( hh, 66, male, start_pid, head );
          hh.people( 1 ).incomes := ( others => 0.0 );
@@ -125,16 +127,22 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ) := Make_Retired_Adult( hh, 67, male, start_pid, head );
          hh.people( 1 ).incomes := ( others => 0.0 );
          hh.people( 1 ).incomes( retirement_pension ) := 102.15;
-         hh.people( 1 ).incomes( private_pensions ) := 60.0;
+         hh.people( 1 ).incomes( private_pensions ) := 60.0;        
+         hh.people( 1 ).marital_status := married_or_civil_partnership;
+
          start_pid := start_pid + 1;                       
          hh.people( 2 ) := Make_Retired_Adult( hh, 58, female, start_pid, spouse );         
          hh.people( 2 ).incomes( private_pensions ) := 60.0;
+         hh.people( 2 ).marital_status := married_or_civil_partnership;
+
       when young_single =>
          hh.people( 1 ) := Make_Working_Adult( hh, 21, male, start_pid, head );
       when young_couple =>
          hh.people( 1 ) := Make_Working_Adult( hh, 21, male, start_pid, head );
+         hh.people( 1 ).marital_status := married_or_civil_partnership;
          start_pid := start_pid + 1;                       
          hh.people( 2 ) := Make_Working_Adult( hh, 21, female, start_pid, spouse);
+         hh.people( 2 ).marital_status := married_or_civil_partnership;
       when working_single_parent =>
          hh.people( 1 ) := Make_Working_Adult( hh, 30, female, start_pid, head );
          hh.people( 1 ).incomes( wages ) := 250.00;
@@ -157,11 +165,13 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ).incomes := ( others => 0.0 );
          hh.people( 1 ).incomes( retirement_pension ) := 100.0;
          hh.people( 1 ).incomes( private_pensions ) := 100.0;
+         hh.people( 1 ).marital_status := married_or_civil_partnership;
          start_pid := start_pid + 1;                                
          hh.people( 2 ) := Make_Retired_Adult( hh, 80, male, start_pid, spouse );
          hh.people( 2 ).incomes := ( others => 0.0 );
          hh.people( 2 ).incomes( retirement_pension ) := 100.0;
          hh.people( 2 ).incomes( private_pensions ) := 100.0;
+         hh.people( 2 ).marital_status := married_or_civil_partnership;
       end case;
       return hh;
    end Make_Household;
