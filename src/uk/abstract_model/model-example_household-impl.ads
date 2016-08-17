@@ -15,6 +15,7 @@ package Model.Example_Household.Impl is
    overriding function Is_Contracted_In_To_Serps( pers : Model_Person ) return Boolean;
    overriding function Hours_Worked( pers : Model_Person ) return Work_Hours_Range;
    overriding function Average_Wage_Per_Hour( pers : Model_Person ) return Amount;
+   overriding function Get_Wealth( pers : Model_Person ) return Wealth_List;
 
    type Model_Benefit_Unit is new Benefit_Unit and Model.Abstract_Household.Benefit_Unit with null record;
 
@@ -67,6 +68,8 @@ package Model.Example_Household.Impl is
       which : Broad_Incomes_Type; 
       value : Amount; 
       op    :  Operation_Type := Replace );
-      
+
+   overriding function Get_Wealth( hh : Model_Household ) return Wealth_List;
+     
       
 end  Model.Example_Household.Impl;

@@ -21,6 +21,22 @@ package body Model.Example_Household.Impl is
       return pers.age;
    end Age;
    
+   function Get_Wealth( pers : Model_Person ) return Wealth_List is
+   begin
+      return pers.wealth;
+   end Get_Wealth;
+
+   function Get_Wealth( hh : Model_Household ) return Wealth_List is
+      w : Wealth_List := ( others => 0.0 );
+   begin
+      for pers of hh.people loop
+         for wt in w'Range loop
+            Inc( w( wt ), pers.wealth( wt ));
+         end loop;
+      end loop;
+      return w;
+   end Get_Wealth;
+   
    function Family_Relationship( pers : Model_Person ) return Relationship_Type is
    begin
       return pers.relationship;

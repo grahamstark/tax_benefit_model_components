@@ -17,14 +17,14 @@ package Model.Abstract_Household is
    function Family_Relationship( d : Demog ) return Relationship_Type is abstract;
    
    type Wealth is interface;
-   function Get_Wealth return Wealth_List is abstract;
+   function Get_Wealth( w : Wealth ) return Wealth_List is abstract;
    
    type Employment_Record is interface;
    function Is_Contracted_In_To_Serps( e : Employment_Record ) return Boolean is abstract;
    function Hours_Worked( e : Employment_Record ) return Work_Hours_Range is abstract;
    function Average_Wage_Per_Hour( e : Employment_Record ) return Amount is abstract;
 
-   type Person is interface and Demog and Incomes and Employment_Record; --  and Wealth
+   type Person is interface and Demog and Incomes and Employment_Record and Wealth; --  and Wealth
    function Pid( pers : Person ) return Sernum_Value is Abstract;
    
    package Person_List_Package is new Ada.Containers.Indefinite_Vectors( Positive, Person'Class );
@@ -68,7 +68,7 @@ package Model.Abstract_Household is
    subtype Benefit_Unit_Vector is Benefit_Unit_List_Package.Vector;
    subtype Benefit_Unit_Ptr is Benefit_Unit_List_Package.Cursor;
 
-   type Household is interface; --  and Wealth
+   type Household is interface and Wealth;
    
    function Get_Pids(
       hh        : Household;
