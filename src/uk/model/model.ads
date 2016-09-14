@@ -12,6 +12,7 @@
 pragma License( Modified_GPL );
 
 with Ada.Numerics.Generic_Elementary_Functions;
+with Ada.Calendar;
 with Base_Model_Types;
 with Financial_Functions;
 with Format_Utils;
@@ -33,6 +34,7 @@ package Model is
    use Standard_UK_Enums;
    use Standard_Result_Enums;
    use Standard_Parameter_Enums;
+   use Ada.Calendar;
 
    package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
    package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );
