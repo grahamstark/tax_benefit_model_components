@@ -2,7 +2,7 @@
 -- + on next line: enable everything by default
 -
 -- log to this file
->./log/tb_components.log
+>../log/tb_components.log
 --
 -- decorators; see 4.3 in gnatcoll manual
 --
@@ -28,9 +28,9 @@ XML_UTILS.CONVERSIONS=no
 --
 -- generic calcs (finish this!)
 --
-MODEL.CALCULATOR.UNIVERSAL_CREDIT=no
+MODEL.CALCULATOR.UNIVERSAL_CREDIT=yes
 MODEL.CALCULATOR.DIRECT_TAX=yes
-MODEL.CALCULATOR.PENSIONER_BENEFITS=no
+MODEL.CALCULATOR.PENSIONER_BENEFITS=yes
 MODEL.CALCULATOR.UTILS=no
 --
 -- Front End
