@@ -2,7 +2,7 @@
 -- + on next line: enable everything by default
 -
 -- log to this file
->./log/tb_components.log
+>../log/tb_components.log
 --
 -- decorators; see 4.3 in gnatcoll manual
 --

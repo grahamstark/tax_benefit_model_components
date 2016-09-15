@@ -1,3 +1,6 @@
+#
+# from: ??? 
+#
 isint(x)=(int(x)==x)
 Binv(p,q)=exp(lgamma(p+q)-lgamma(p)-lgamma(q))
 arcsin(x,r)=r<=0?1/0:abs(x)>r?0.0:invpi/sqrt(r*r-x*x)
