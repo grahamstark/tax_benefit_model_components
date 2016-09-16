@@ -34,5 +34,10 @@ package body Generic_Hazards is
       end loop;
       return TS( s );
    end To_String;
+      
+   function To_String( tab : Abs_Table_Type_Array ) return String is
+   begin
+      return "@@@";
+   end To_String;
    
 end Generic_Hazards;
