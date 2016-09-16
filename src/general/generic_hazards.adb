@@ -51,9 +51,9 @@ package body Generic_Hazards is
             for year in tab'Range loop
                s := s & tab( year )( r, c )'Img & ",";
             end loop;
+            s := s & LINE_BREAK;
          end loop;
-         s := s & LINE_BREAK;
-      end loop;      
+       end loop;      
       return TS( s );
    end To_String;
    
