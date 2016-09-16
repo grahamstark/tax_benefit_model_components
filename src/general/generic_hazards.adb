@@ -45,6 +45,15 @@ package body Generic_Hazards is
          s := s & year'Img & ",";
       end loop;
       s := s & LINE_BREAK;
+      for r in Values_Range loop
+         for c in Values_Range loop
+            s := s & Prettify_Image( r'Img ) & " => " & Prettify_Image( c'Img ) & ", ";
+            for year in tab'Range loop
+               s := s & tab( year )( r, c )'Img & ",";
+            end loop;
+         end loop;
+         s := s & LINE_BREAK;
+      end loop;      
       return TS( s );
    end To_String;
    
