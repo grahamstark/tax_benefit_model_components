@@ -36,8 +36,16 @@ package body Generic_Hazards is
    end To_String;
       
    function To_String( tab : Abs_Table_Type_Array ) return String is
+   use Text_Utils;
+   use Ada.Strings.Unbounded;
+      s : Unbounded_String;
    begin
-      return "@@@";
+      s := s & ",";
+      for year in tab'Range loop
+         s := s & year'Img & ",";
+      end loop;
+      s := s & LINE_BREAK;
+      return TS( s );
    end To_String;
    
 end Generic_Hazards;
