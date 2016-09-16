@@ -1,3 +1,8 @@
+--
+-- basically just a very simple crosstab, indended to capture moves from one state
+-- to another - perhaps pre/post some reform, but usually over time (employment - unemployment), etc
+-- generally, we assume the 'pre' cases are in the rows, and the 'post/next period' ones in the columns.
+-- 
 with Base_Model_Types;
 with Ada.Calendar;
 
