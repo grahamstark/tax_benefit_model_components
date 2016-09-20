@@ -7,18 +7,9 @@ package body Model.Calculator.Utils is
    use type Ada.Containers.Count_Type;
    use Ada.Assertions;
    
+   use GNATColl.Traces;
    log_trace : GNATColl.Traces.Trace_Handle := GNATColl.Traces.Create( "MODEL.CALCULATOR.UTILS" );
    
-   procedure Log( s : String ) is
-   begin
-      GNATColl.Traces.Trace( log_trace, s );
-   end Log;
-
-   procedure Log( s : String; m : Amount ) is
-   begin
-      GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
-   end Log;
- 
    function Combine_Incomes(
       non_calculated : Incomes_List;
       res            : mar.Personal_Result'Class ) return Incomes_List is
@@ -42,7 +33,7 @@ package body Model.Calculator.Utils is
       inc  : Amount := 0.0;
    begin
       for i in inct'Range loop
-         Log( "inct("&i'Img&") = " & inct( i )'Img &
+         Trace( log_trace, "inct("&i'Img&") = " & inct( i )'Img &
               "which_to_include( " & i'Img & ") " & which_to_include( i )'Img );
          inc := inc + ( inct( i ) * which_to_include( i ));
       end loop;
@@ -98,6 +89,8 @@ package body Model.Calculator.Utils is
                declare
                   pers : mah.Person'Class := bu.Find_Person( pid );
                begin
+                  Trace( log_trace, "got pid " & pid'Img );
+                  Trace( log_trace, "pers.age " & pers.age'Img );
                   if pers.age > oldest then
                      oldest := pers.age;
                      hpid := pers.pid;
@@ -144,7 +137,7 @@ package body Model.Calculator.Utils is
    begin
       if hids.Length = 0 then
          hids := bu.Get_Pids;
-         Log( "BUG!! BU with only children!! " );
+         Trace( log_trace, "BUG!! BU with only children!! " );
       end if;
       -- Assert( , "all child benefit unit " );
       --
