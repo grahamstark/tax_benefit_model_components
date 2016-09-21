@@ -68,6 +68,9 @@ package Monitor is
 
    procedure Set_User_Id( m : in out Monitor_Type; user_id : Integer );
    function Get_User_Id( m : Monitor_Type ) return Integer;
+
+   procedure Set_Task_Number( m : in out Monitor_Type; task_number : Positive );
+   function Get_Task_Number( m : Monitor_Type ) return Positive;
   
    function Get_Is_In_Error( m : Monitor_Type ) return Boolean;
    
@@ -89,6 +92,7 @@ private
       owner       : Unbounded_String := Null_Unbounded_String;
       id          : Integer := 0;
       user_id     : Integer := 0;
+      task_number : Positive := 1;
       message     : Unbounded_String := Null_Unbounded_String;
       stack_trace : Unbounded_String := Null_Unbounded_String;
    end record;

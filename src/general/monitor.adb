@@ -49,6 +49,16 @@ package body Monitor is
       m.Notify;
    end Set_Abort;
    
+
+   procedure Set_Task_Number( m : in out Monitor_Type; task_number : Positive ) is
+   begin
+      m.task_number :=task_number;
+   end Set_Task_Number;
+      
+   function Get_Task_Number( m : Monitor_Type ) return Positive is
+   begin
+      return m.task_number;
+   end Get_Task_Number;
    
    procedure Set_Stage( m : in out Monitor_Type; stage : Stage_Type ) is
    begin
