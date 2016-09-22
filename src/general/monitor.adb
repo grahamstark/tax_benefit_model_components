@@ -52,7 +52,8 @@ package body Monitor is
 
    procedure Set_Task_Number( m : in out Monitor_Type; task_number : Positive ) is
    begin
-      m.task_number :=task_number;
+      m.task_number := task_number;
+      m.notify;
    end Set_Task_Number;
       
    function Get_Task_Number( m : Monitor_Type ) return Positive is
