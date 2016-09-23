@@ -32,7 +32,7 @@ package Monitor is
    subtype Counter_Array is Abs_Counter_Array( Counter_Range );
    
    type Monitor_Type is new Root_Subject_Type with private;
-   type Monitor_Observer( m : access Monitor_Type'Class ) is new Root_Observer_Type with private;
+   type Monitor_Observer( monitor : access Monitor_Type'Class ) is new Root_Observer_Type with private;
    procedure Update( observer : access Monitor_Observer );
    
    procedure Set( 
@@ -80,8 +80,8 @@ private
    
    use Ada.Strings.Unbounded;
    
-   type Monitor_Observer( m : access Monitor_Type'Class ) is
-     new Root_Observer_Type( m ) with null record;
+   type Monitor_Observer( monitor : access Monitor_Type'Class ) is
+     new Root_Observer_Type( monitor ) with null record;
    
    type Monitor_Type is new Root_Subject_Type with record -- is tagged limited record 
       stage       : Stage_Type := Stage_Type'First;

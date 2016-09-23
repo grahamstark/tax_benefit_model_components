@@ -167,17 +167,17 @@ package body Monitor is
    
    procedure Update( observer : access Monitor_Observer ) is
    begin
-      Put_Line( "owner = " & To_String( observer.m.all.owner ));
-      Put_Line( "Id= " & Integer'Image( observer.m.all.id ));
-      Put_Line( "Stage_Type = " & Stage_Type'Image( observer.m.all.stage ));
-      Put_Line( "Health_Type = " & Health_Type'Image( observer.m.all.health ));
-      Put_Line( "In Error = " & Boolean'Image( observer.m.all.is_in_error ));
-      Put_Line( "Is Aborting = " & Boolean'Image( observer.m.all.is_aborting ));
+      Put_Line( "owner = " & To_String( observer.monitor.all.owner ));
+      Put_Line( "Id= " & Integer'Image( observer.monitor.all.id ));
+      Put_Line( "Stage_Type = " & Stage_Type'Image( observer.monitor.all.stage ));
+      Put_Line( "Health_Type = " & Health_Type'Image( observer.monitor.all.health ));
+      Put_Line( "In Error = " & Boolean'Image( observer.monitor.all.is_in_error ));
+      Put_Line( "Is Aborting = " & Boolean'Image( observer.monitor.all.is_aborting ));
       for i in Counter_Range loop
-         Put_Line( "Counter[" & Integer'Image( i ) & " ] = " & Integer'Image( observer.m.all.counters( i )));
+         Put_Line( "Counter[" & Integer'Image( i ) & " ] = " & Integer'Image( observer.monitor.all.counters( i )));
       end loop;
-      Put_Line( "message = " & To_String( observer.m.all.message ));
-      Put_Line( "stack trace = " & To_String( observer.m.all.stack_trace ));
+      Put_Line( "message = " & To_String( observer.monitor.all.message ));
+      Put_Line( "stack trace = " & To_String( observer.monitor.all.stack_trace ));
    end Update;
    
 end Monitor;
