@@ -88,8 +88,13 @@ package body Utils is
       use Ada.Strings;
       use Ada.Strings.Fixed;
       i : Positive := Random_Positive.Random( Generator );
+      is : constant String := i'Img( 2 .. i'Img'Length );
+      j : Positive := Random_Positive.Random( Generator );
+      js : constant String := j'Img( 2 .. j'Img'Length );
+      k : Positive := Random_Positive.Random( Generator );
+      ks : constant String := k'Img( 2 .. k'Img'Length );
    begin
-      return Trim( Positive'Image( i ), Both );
+      return i & j & k;
    end Random_String;
    
    --
