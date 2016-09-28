@@ -254,6 +254,25 @@ package body T_Utils is
       end if;
       return To_String(outs);
    end To_String;
+   
+   function To_String( b : Abs_Triboolean_Array; break_lines : Boolean := True ) return String is
+      outs : Unbounded_String := To_Unbounded_String( "" );
+   begin
+      for i in b'Range loop
+         
+         outs := outs & T'Image( i ) & SEPARATOR & Image( b( i ));
+         if( break_lines ) then
+            outs := outs & LINE_BREAK;
+         else
+            outs := outs & TERMINATOR;
+         end if;
+         
+      end loop;
+      if( not break_lines ) and ( Length( outs ) > 0 ) then
+         Delete_Last_Character( outs );
+      end if;
+      return To_String(outs);
+   end To_String;
 
 
    procedure From_String( str : String; s : in out Set ) is

@@ -18,11 +18,13 @@ with Financial_Functions;
 with Format_Utils;
 with Key_Value_IO;
 with Maths_Functions;
+
 with Tax_Utils;
 with Text_Utils;
 with Standard_UK_Enums;
 with Standard_Result_Enums;
 with Standard_Parameter_Enums;
+with GNATColl.Tribooleans;
 -- 
 pragma Elaborate_All (Text_Utils);
 pragma Elaborate_All (Base_Model_Types);
@@ -35,6 +37,7 @@ package Model is
    use Standard_Result_Enums;
    use Standard_Parameter_Enums;
    use Ada.Calendar;
+   use GNATColl.Tribooleans;
 
    package UK_Format_Utils is new Format_Utils( Counter_Type => Counter_Type, Float_Type => Rate );
    package UK_Tax_Utils is new Tax_Utils( Amount_Type=>Amount, Rate_Type=>Rate );

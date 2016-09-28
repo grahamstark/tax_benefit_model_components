@@ -27,7 +27,7 @@ with Ada.Containers.Ordered_Sets;
 with Ada.Containers.Vectors;
 with Ada.Strings.Unbounded;
 with Format_Utils;
-
+with GNATColl.Tribooleans;
 
 generic
 
@@ -50,7 +50,8 @@ generic
 package T_Utils is
 
    use Ada.Strings.Unbounded;
-
+   use GNATColl.Tribooleans;
+   
    package Set_Ops is new Ada.Containers.Ordered_Sets( Element_Type => T );
    subtype Set is Set_Ops.Set;
    
@@ -77,6 +78,10 @@ package T_Utils is
 
    type Abs_Boolean_Array is array( t range <> ) of Boolean;
    subtype Boolean_Array is Abs_Boolean_Array( t );
+   
+   type Abs_Triboolean_Array is array( t range <> ) of Triboolean;
+   subtype Triboolean_Array is Abs_Triboolean_Array( t );
+   
 
    type Abs_String_Array is array( t range <> ) of Unbounded_String;
    subtype String_Array is Abs_String_Array( t );
@@ -87,6 +92,8 @@ package T_Utils is
    function To_String( r : Abs_Amount_Array; break_lines : Boolean := True ) return String;
    function To_String( i : Abs_Integer_Array; break_lines : Boolean := True ) return String;
    function To_String( b : Abs_Boolean_Array; break_lines : Boolean := True ) return String;
+   function To_String( b : Abs_Triboolean_Array; break_lines : Boolean := True ) return String;
+   
    function To_String( s : Set ) return String;
 
    procedure From_String( s : String; a : in out Abs_Rate_Array );
