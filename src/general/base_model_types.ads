@@ -121,6 +121,8 @@ package Base_Model_Types is
    function To_String( i : Integer; width : Positive := 10 ) return String;
 
    package Big_Int_IO is new Ada.Text_IO.Integer_IO( Big_Integer );
+   package Sernum_IO renames Big_Int_IO;
+   
    function To_String( i : Big_Integer; width : Positive := 20 ) return String;
 
    package Rate_IO renames Real_IO;
