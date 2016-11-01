@@ -115,7 +115,7 @@ package Base_Model_Types is
    package Count_IO is new Ada.Text_IO.Decimal_IO( Counter_Type );
 
    package Real_IO is new Ada.Text_IO.Float_IO( Real );
-   function To_String( r : Real; width : Positive := 12; prec : Natural := 2 ) return String;
+   -- function To_String( r : Real; width : Positive := 12; prec : Natural := 2 ) return String;
 
    package Int_IO is new Ada.Text_IO.Integer_IO( Integer );
    function To_String( i : Integer; width : Positive := 10 ) return String;
