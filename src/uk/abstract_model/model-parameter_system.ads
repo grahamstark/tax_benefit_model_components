@@ -22,10 +22,26 @@ package Model.Parameter_System is
    type NI_Class is ( class_1, class_1a, class_1b, class_2, class_4 );
 
    type National_Insurance_System is record
-     employee_in_rates  : Rates_And_Bands;
-     employee_out_rates : Rates_And_Bands;
-     employer_in_rates  : Rates_And_Bands;
-     employer_out_rates : Rates_And_Bands;
+            
+      contacting_out_abolished : Boolean := false;
+      class_1_lower_earnings_limit : Amount;
+      class_1_rebate               : Rate   := 0.0; -- a percentage 
+      primary_threshold            : Amount := 0.0;
+      secondary_threshold          : Amount := 0.0;     
+      
+      
+      class_2_exemption            : Amount := 0.0;
+      class_2_rate                 : Amount := 0.0;
+      
+      class4_lower_profit_limit    : Amount := 0.0;
+      
+      employee_in_rates            : Rates_And_Bands;
+      employee_out_rates           : Rates_And_Bands;
+      
+      employer_in_rates            : Rates_And_Bands;
+      employer_out_rates           : Rates_And_Bands;
+      
+      class_4_rates                : Rates_And_Bands;
      --
      -- FIXME todo self employed stuff
      --

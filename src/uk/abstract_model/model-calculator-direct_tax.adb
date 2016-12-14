@@ -140,6 +140,9 @@ package body Model.Calculator.Direct_Tax is
       income_tax_amount := non_savings_tax.due + savings_tax.due + dividends_tax.due;
       res.Set( income_tax, Amount'Max( 0.0, income_tax_amount - dividend_credit ));
    end Calculate_Income_Tax;
+   
+   
+   
 
    procedure Calculate_National_Insurance(
       ni_sys  : National_Insurance_System;
