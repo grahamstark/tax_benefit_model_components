@@ -226,7 +226,23 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
-        when others => null;
+        when 2017 => 
+            declare
+               employee_in_rates  : V4 := ( 0.0, 0.0, 12.0, 2.0 );
+               employee_out_rates : V4 := ( 0.0, 0.0, 10.6, 2.0 ); -- 2 1.6-rebate
+               employer_in_rates  : V4 := ( 0.0, 0.0, 13.80, 13.8 );
+               employer_out_rates : V4 := ( 0.0, 0.0, 10.4, 10.4 );
+               bands              : V4 := ( 111.0, 153.0, 805.00, 999_999_999_99_99.99 );
+            begin
+               sys.class_1_lower_earnings_limit := 112.00;
+               Set_Rates_And_Bands_NI(
+                  sys,
+                  bands,
+                  employee_in_rates,
+                  employee_out_rates,
+                  employer_in_rates,
+                  employer_out_rates );
+            end;
       end case;
       return sys;
    end Get_National_Insurance_System;
