@@ -243,6 +243,7 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
+      when others => null;
       end case;
       return sys;
    end Get_National_Insurance_System;
