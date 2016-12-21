@@ -23,8 +23,17 @@ package Model.Abstract_Household is
    function Is_Contracted_In_To_Serps( e : Employment_Record ) return Boolean is abstract;
    function Hours_Worked( e : Employment_Record ) return Work_Hours_Range is abstract;
    function Average_Wage_Per_Hour( e : Employment_Record ) return Amount is abstract;
+   
+   type Job_Record is tagged record
+      hours :  Work_Hours_Range := Work_Hours_Range'First;
+      wage  : Amount := 0.0;
+   end record;
+   
+   type Jobs_Record is interface;
+   function Num_Jobs( jobs : Jobs_Record ) return Natural is abstract;
+   function Get_Job( jobs : Jobs_Record; which : Positive ) return Job_Record'Class is abstract;
 
-   type Person is interface and Demog and Incomes and Employment_Record and Wealth; --  and Wealth
+   type Person is interface and Demog and Incomes and Employment_Record and Jobs_Record and Wealth; --  and Wealth
    function Pid( pers : Person ) return Sernum_Value is Abstract;
    
    package Person_List_Package is new Ada.Containers.Indefinite_Vectors( Positive, Person'Class );

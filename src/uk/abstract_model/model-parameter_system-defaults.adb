@@ -96,15 +96,15 @@ package body Model.Parameter_System.Defaults is
               "array size mismatch" );
       for i in bands'Range loop
          rb.band := bands( i );
-         rb.rate := non_savings( i )/100.0;
+         rb.rate := non_savings( i );
          sys.non_savings_income_rates.Set_Rate_And_Band( rb, i );
 
          rb.band := bands( i );
-         rb.rate := savings( i )/100.0;
+         rb.rate := savings( i );
          sys.savings_income_rates.Set_Rate_And_Band( rb, i );
 
          rb.band := bands( i );
-         rb.rate := dividends( i )/100.0;
+         rb.rate := dividends( i );
          sys.dividend_income_rates.Set_Rate_And_Band( rb, i );
       end loop;
    end Set_Rates_And_Bands;
@@ -124,27 +124,41 @@ package body Model.Parameter_System.Defaults is
               "array size mismatch" );
       for i in bands'Range loop
          rb.band := bands( i );
-         rb.rate := employee_in_rates( i )/100.0;
+         rb.rate := employee_in_rates( i );
          sys.employee_in_rates.Set_Rate_And_Band( rb, i );
 
          rb.band := bands( i );
-         rb.rate := employee_out_rates( i )/100.0;
+         rb.rate := employee_out_rates( i );
          sys.employee_out_rates.Set_Rate_And_Band( rb, i );
 
          rb.band := bands( i );
-         rb.rate := employer_in_rates( i )/100.0;
+         rb.rate := employer_in_rates( i );
          sys.employer_in_rates.Set_Rate_And_Band( rb, i );
 
          rb.band := bands( i );
-         rb.rate := employer_out_rates( i )/100.0;
+         rb.rate := employer_out_rates( i );
          sys.employer_out_rates.Set_Rate_And_Band( rb, i );
       end loop;
    end Set_Rates_And_Bands_NI;
-
+   
+   function Vectors_To_RB( rates : Vector; bands : Vector ) return Rates_And_Bands is
+      rb : Rate_And_Band;
+      rbs : Rates_And_Bands;
+   begin
+      for r in rates'Range loop
+         rb.rate := rates( r );
+         rb.band := bands( r );
+         rbs.Set_Rate_And_Band( rb, r );
+      end loop;
+      return rbs;
+   end Vectors_To_RB;
+   
    function Get_National_Insurance_System( year : Year_Number ) return National_Insurance_System is
       sys : National_Insurance_System;
       subtype V4 is Vector( 1 .. 4 );
+      subtype V2 is Vector( 1 .. 2 );
    begin
+      
       case year is
         when 2007   =>
             declare
@@ -228,14 +242,29 @@ package body Model.Parameter_System.Defaults is
             end;
         when 2017 => 
             declare
-               employee_in_rates  : V4 := ( 0.0, 0.0, 12.0, 2.0 );
-               employee_out_rates : V4 := ( 0.0, 0.0, 10.6, 2.0 ); -- 2 1.6-rebate
-               employer_in_rates  : V4 := ( 0.0, 0.0, 13.80, 13.8 );
-               employer_out_rates : V4 := ( 0.0, 0.0, 10.4, 10.4 );
-               bands              : V4 := ( 111.0, 153.0, 805.00, 999_999_999_99_99.99 );
+               employee_in_rates  : V2 := ( 12.0, 2.0 );
+               employee_out_rates : V2 := ( 10.6, 2.0 );
+               employer_in_rates  : V2 := ( 13.80, 13.8 );
+               employer_out_rates : V2 := ( 10.4, 10.4 );
+               class_4_bands      : V2 := ( 43_000.0, 999_999_999_99_99.99 );
+               bands              : V2 := ( 805.00, 999_999_999_99_99.99 );
             begin
                sys.class_1_lower_earnings_limit := 112.00;
-               Set_Rates_And_Bands_NI(
+               sys.contacting_out_abolished  := False; --   : Boolean := false;
+               sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
+               sys.primary_threshold := 155.0; --            : Amount := 0.0;
+               sys.secondary_threshold := 156.0; --          : Amount := 0.0;     
+      
+      
+               sys.class_2_exemption := 5965.0; -- PA           : Amount := 0.0;
+               sys.class_2_rate := 2.80; -- per weel                 : Amount := 0.0;
+      
+               sys.class4_lower_profit_limit    := 8060.0;
+               sys.class_4_rates := Vectors_To_RB( 
+                  ( 9.0, 2.0 ),
+                  ( 805.00,999_999_999_99_99.99 ));
+                  
+               Set_Rates_And_Bands_NI( 
                   sys,
                   bands,
                   employee_in_rates,

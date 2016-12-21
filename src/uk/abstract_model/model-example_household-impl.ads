@@ -16,6 +16,8 @@ package Model.Example_Household.Impl is
    overriding function Hours_Worked( pers : Model_Person ) return Work_Hours_Range;
    overriding function Average_Wage_Per_Hour( pers : Model_Person ) return Amount;
    overriding function Get_Wealth( pers : Model_Person ) return Wealth_List;
+   overriding function Num_Jobs( pers : Model_Person ) return Natural;
+   overriding function Get_Job( pers : Model_Person; which : Positive ) return Model.Abstract_Household.Job_Record'Class;
 
    type Model_Benefit_Unit is new Benefit_Unit and Model.Abstract_Household.Benefit_Unit with null record;
 

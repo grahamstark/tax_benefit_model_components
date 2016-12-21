@@ -61,6 +61,23 @@ package body Model.Example_Household.Impl is
    begin
       return pers.hours_worked;
    end Hours_Worked;
+
+
+   function Num_Jobs( pers : Model_Person ) return Natural is
+   begin
+      return ( if pers.hours_worked > 0 then 1 else 0 );
+   end Num_Jobs;
+   
+   function Get_Job( pers : Model_Person; which : Positive ) return Model.Abstract_Household.Job_Record'Class is
+      job : Model.Abstract_Household.Job_Record;
+   begin
+      if( pers.Num_Jobs = 1 ) then
+         job.hours := pers.hours_worked;
+         job.wage := pers.incomes( wages );
+      end if;
+      return job;
+   end Get_Job;
+
    
    function Average_Wage_Per_Hour( pers : Model_Person ) return Amount is
    begin

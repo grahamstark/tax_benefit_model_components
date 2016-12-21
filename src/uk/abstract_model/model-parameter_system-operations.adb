@@ -13,13 +13,21 @@ package body Model.Parameter_System.Operations is
    procedure To_Weekly( sys : in out Complete_System ) is
    begin
       -- IT/NI annual
-      -- sys.ni.employee_in_rates.Annual_To_Weekly;
-      -- sys.ni.employee_out_rates.Annual_To_Weekly;
-      -- sys.ni.employer_in_rates.Annual_To_Weekly;
-      -- sys.ni.employer_out_rates.Annual_To_Weekly;
+      sys.ni.employee_in_rates.To_Levels;
+      sys.ni.employee_out_rates.To_Levels;
+      sys.ni.employer_in_rates.To_Levels;
+      sys.ni.employer_out_rates.To_Levels;
+      
+      A2W( sys.ni.class_2_exemption );
+      A2W( sys.ni.class4_lower_profit_limit );
+      sys.ni.class_4_rates.Annual_To_Weekly;
+      
       sys.it.non_savings_income_rates.Annual_To_Weekly;
       sys.it.savings_income_rates.Annual_To_Weekly; 
       sys.it.dividend_income_rates.Annual_To_Weekly;
+      sys.it.non_savings_income_rates.To_Levels;
+      sys.it.savings_income_rates.To_Levels; 
+      sys.it.dividend_income_rates.To_Levels;
       A2W( sys.it.personal_allowance );
       
       -- UC monthly
