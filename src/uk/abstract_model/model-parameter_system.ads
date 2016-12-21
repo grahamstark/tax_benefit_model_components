@@ -23,7 +23,7 @@ package Model.Parameter_System is
 
    type National_Insurance_System is record
             
-      contacting_out_abolished : Boolean := false;
+      contacting_out_abolished     : Boolean := false;
       class_1_lower_earnings_limit : Amount;
       class_1_rebate               : Rate   := 0.0; -- a percentage 
       primary_threshold            : Amount := 0.0;
