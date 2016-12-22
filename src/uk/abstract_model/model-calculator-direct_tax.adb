@@ -97,14 +97,14 @@ package body Model.Calculator.Direct_Tax is
    end Calculate_Employers_NICs;
    
    function Calculate_Class_1_NICs( 
-      ni_sys                 : National_Insurance_System;
-      earnings               : Amount_Array;
-      is_contracted_out      : Boolean ) return Amount is
+      ni_sys            : National_Insurance_System;
+      earnings          : Amount_Array;
+      is_contracted_out : Boolean ) return Amount is
       class_1_nics : Amount := 0.0;
       rebate       : Amount := 0.0;
       is_over_lel  : constant Boolean := (for some earn of earnings => earn > ni_sys.class_1_lower_earnings_limit );
       is_cont_out  : constant Boolean := is_contracted_out and not ni_sys.contracting_out_abolished;
-      rbs        : constant Rates_And_Bands := 
+      rbs          : constant Rates_And_Bands := 
          ( if is_contracted_out and not ni_sys.contracting_out_abolished then
             ni_sys.employer_out_rates else ni_sys.employer_in_rates );
    begin
@@ -121,6 +121,26 @@ package body Model.Calculator.Direct_Tax is
       end loop;
       return class_1_nics - rebate;
    end Calculate_Class_1_NICs;
+   
+   function Calculate_Maximum_NICs(
+      ni_sys            : National_Insurance_System;
+      earnings          : Amount_Array;
+      profits           : Amount;
+      is_contracted_out : Boolean ) return Amount is
+      income : Amount := 0.0;
+      rbs    : constant Rates_And_Bands := 
+         ( if is_contracted_out and not ni_sys.contracting_out_abolished then
+            ni_sys.employer_out_rates else ni_sys.employer_in_rates );
+      
+   begin
+      for earn of earnings loop
+         Inc( income, earn );
+      end loop;
+      Inc( income, Amount'Max( 0.0, profits, ni_sys.primary_threshold );
+      Inc( income, ni_sys.primary_threshold );
+      return UK_Tax_Utils.Calc_Tax_Due( rbs, income ).due;
+   end Calculate_Maximum_NICs; 
+      
       
    procedure Apply_Allowance(
       income    : in out Amount; 
