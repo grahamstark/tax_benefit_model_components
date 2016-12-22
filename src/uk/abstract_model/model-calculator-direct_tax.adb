@@ -140,8 +140,17 @@ package body Model.Calculator.Direct_Tax is
       Inc( income, ni_sys.primary_threshold );
       return UK_Tax_Utils.Calc_Tax_Due( rbs, income ).due;
    end Calculate_Maximum_NICs; 
+    
+   procedure Calculate_NICs(
+      ni_sys  : National_Insurance_System;
+      pen_sys : Pension_System; -- to feed in pension age       
+      ad      : Model.Abstract_Household.Person'Class;
+      res     : in out mar.Personal_Result'Class ) is
+      profits : constant Amount :=  
+   begin
       
-      
+   end Calculate_NICs;
+   
    procedure Apply_Allowance(
       income    : in out Amount; 
       allowance : in out Amount ) is
