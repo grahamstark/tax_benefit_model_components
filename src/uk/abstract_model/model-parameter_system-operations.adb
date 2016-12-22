@@ -19,7 +19,7 @@ package body Model.Parameter_System.Operations is
       sys.ni.employer_out_rates.To_Levels;
       
       A2W( sys.ni.class_2_exemption );
-      A2W( sys.ni.class4_lower_profit_limit );
+      A2W( sys.ni.class_4_lower_profit_limit );
       sys.ni.class_4_rates.Annual_To_Weekly;
       
       sys.it.non_savings_income_rates.Annual_To_Weekly;

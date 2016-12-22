@@ -33,7 +33,7 @@ package Model.Parameter_System is
       class_2_exemption            : Amount := 0.0;
       class_2_rate                 : Amount := 0.0;
       
-      class4_lower_profit_limit    : Amount := 0.0;
+      class_4_lower_profit_limit   : Amount := 0.0;
       
       employee_in_rates            : Rates_And_Bands;
       employee_out_rates           : Rates_And_Bands;

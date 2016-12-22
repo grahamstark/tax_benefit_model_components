@@ -259,7 +259,7 @@ package body Model.Parameter_System.Defaults is
                sys.class_2_exemption := 5965.0; -- PA           : Amount := 0.0;
                sys.class_2_rate := 2.80; -- per weel                 : Amount := 0.0;
       
-               sys.class4_lower_profit_limit    := 8060.0;
+               sys.class_4_lower_profit_limit    := 8060.0;
                sys.class_4_rates := Vectors_To_RB( 
                   ( 9.0, 2.0 ),
                   ( 805.00,999_999_999_99_99.99 ));
