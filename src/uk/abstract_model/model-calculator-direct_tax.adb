@@ -136,7 +136,7 @@ package body Model.Calculator.Direct_Tax is
       for earn of earnings loop
          Inc( income, earn );
       end loop;
-      Inc( income, Amount'Max( 0.0, profits, ni_sys.primary_threshold );
+      Inc( income, Amount'Max( 0.0, profits - ni_sys.primary_threshold ));
       Inc( income, ni_sys.primary_threshold );
       return UK_Tax_Utils.Calc_Tax_Due( rbs, income ).due;
    end Calculate_Maximum_NICs; 
