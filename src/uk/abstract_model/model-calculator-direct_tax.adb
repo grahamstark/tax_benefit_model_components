@@ -141,7 +141,7 @@ package body Model.Calculator.Direct_Tax is
       return UK_Tax_Utils.Calc_Tax_Due( rbs, income ).due;
    end Calculate_Maximum_NICs; 
     
-   procedure Calculate_NICs(
+   procedure Calculate_National_Insurance(
       ni_sys  : National_Insurance_System;
       pen_sys : Pension_System; -- to feed in pension age       
       ad      : Model.Abstract_Household.Person'Class;
@@ -173,7 +173,7 @@ package body Model.Calculator.Direct_Tax is
       ni := Amount'Min( maximum_ni, ni );
       res.Set( national_insurance, ni );
       res.Set( employers_ni, empl_ni );
-   end Calculate_NICs;
+   end Calculate_National_Insurance;
    
    procedure Apply_Allowance(
       income    : in out Amount; 
@@ -262,33 +262,33 @@ package body Model.Calculator.Direct_Tax is
    
    
    
-
-   procedure Calculate_National_Insurance(
-      ni_sys  : National_Insurance_System;
-      pen_sys : Pension_System; -- to feed in pension age       
-      ad      : Model.Abstract_Household.Person'Class;
-      res     : in out mar.Personal_Result'Class ) is
-      earnings : constant Amount := ad.Get_Income( wages );
-   begin
-      if( ad.gender = male and ad.age < pen_sys.age_men ) or 
-        ( ad.gender = female and ad.age < pen_sys.age_women )then
-
-         if( ad.Is_Contracted_In_To_Serps )then
-               res.Set( national_insurance, 
-                  UK_Tax_Utils.Calc_Tax_Due(
-                     ni_sys.employee_in_rates, earnings ).due );
-               res.Set( employers_ni, 
-                  UK_Tax_Utils.Calc_Tax_Due(
-                     ni_sys.employer_in_rates, earnings ).due );
-         else
-               res.Set( national_insurance, 
-                  UK_Tax_Utils.Calc_Tax_Due(
-                     ni_sys.employee_out_rates, earnings ).due );
-               res.Set( employers_ni, 
-                  UK_Tax_Utils.Calc_Tax_Due(
-                     ni_sys.employer_out_rates, earnings ).due );
-         end if;
-      end if;
-   end Calculate_National_Insurance;
- 
+-- 
+   -- procedure Calculate_National_Insurance(
+      -- ni_sys  : National_Insurance_System;
+      -- pen_sys : Pension_System; -- to feed in pension age       
+      -- ad      : Model.Abstract_Household.Person'Class;
+      -- res     : in out mar.Personal_Result'Class ) is
+      -- earnings : constant Amount := ad.Get_Income( wages );
+   -- begin
+      -- if( ad.gender = male and ad.age < pen_sys.age_men ) or 
+        -- ( ad.gender = female and ad.age < pen_sys.age_women )then
+-- 
+         -- if( ad.Is_Contracted_In_To_Serps )then
+               -- res.Set( national_insurance, 
+                  -- UK_Tax_Utils.Calc_Tax_Due(
+                     -- ni_sys.employee_in_rates, earnings ).due );
+               -- res.Set( employers_ni, 
+                  -- UK_Tax_Utils.Calc_Tax_Due(
+                     -- ni_sys.employer_in_rates, earnings ).due );
+         -- else
+               -- res.Set( national_insurance, 
+                  -- UK_Tax_Utils.Calc_Tax_Due(
+                     -- ni_sys.employee_out_rates, earnings ).due );
+               -- res.Set( employers_ni, 
+                  -- UK_Tax_Utils.Calc_Tax_Due(
+                     -- ni_sys.employer_out_rates, earnings ).due );
+         -- end if;
+      -- end if;
+   -- end Calculate_National_Insurance;
+ -- 
 end Model.Calculator.Direct_Tax;
