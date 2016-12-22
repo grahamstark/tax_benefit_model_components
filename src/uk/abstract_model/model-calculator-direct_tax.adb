@@ -146,9 +146,33 @@ package body Model.Calculator.Direct_Tax is
       pen_sys : Pension_System; -- to feed in pension age       
       ad      : Model.Abstract_Household.Person'Class;
       res     : in out mar.Personal_Result'Class ) is
-      profits : constant Amount :=  ad.Get_Income( self_employment );
+      profits  : constant Amount :=  ad.Get_Income( self_employment );
+      earnings : constant Amount_Array := ad.Get_Earnings;
+      ni       : Amount := 0.0;
+      maximum_ni : Amount;
+      empl_ni  : Amount;
+      rebate   : Amount := 0.0;
+      is_contracted_out : constant Boolean := not ad.Is_Contracted_In_To_Serps;
    begin
-      null;
+      maximum_ni := Calculate_Maximum_NICS( ni_sys, earnings, profits, is_contracted_out );
+      if earnings'Length > 1 or ( earnings'Length = 1 and earnings( 1 ) > 0.0 ) then
+         ni := Calculate_Class_1_NICs( ni_sys, earnings, is_contracted_out );
+         if ni < 0.0 then
+            rebate := -ni;
+         end if;
+         empl_ni := Calculate_Employers_NICs( ni_sys, earnings, is_contracted_out, 0.0, rebate );
+         if( ni < 0.0 )then
+            empl_ni := Amount'Max( 0.0, empl_ni - ni );
+            ni := 0.0;
+         end if;
+      end if;
+      if profits > 0.0 then
+         Inc( ni, Calculate_Class_4_NICs( ni_sys, profits ));    
+         Inc( ni, Calculate_Class_2_NICs( ni_sys, profits ));    
+      end if;
+      ni := Amount'Min( maximum_ni, ni );
+      res.Set( national_insurance, ni );
+      res.Set( employers_ni, empl_ni );
    end Calculate_NICs;
    
    procedure Apply_Allowance(
