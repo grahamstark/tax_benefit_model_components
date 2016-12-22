@@ -146,9 +146,9 @@ package body Model.Calculator.Direct_Tax is
       pen_sys : Pension_System; -- to feed in pension age       
       ad      : Model.Abstract_Household.Person'Class;
       res     : in out mar.Personal_Result'Class ) is
-      profits : constant Amount :=  
+      profits : constant Amount :=  ad.Get_Income( self_employment );
    begin
-      
+      null;
    end Calculate_NICs;
    
    procedure Apply_Allowance(
