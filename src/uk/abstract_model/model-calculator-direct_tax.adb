@@ -55,7 +55,19 @@ package body Model.Calculator.Direct_Tax is
          -- end;
       -- end loop;
    -- end Accumulate_To_HHld_Level;
--- 
+   --
+   
+   package NICs is
+   
+      function Calculate_Class_2( 
+         niSys : National_Insurance_System;
+         profits : Amount ) return Amount is
+      begin
+         return ( if profits < niSys.class_2_exemption then 0.0 else niSys.class_2_rate ); 
+      end Calculate_Class_2;
+      
+   end NICs;
+   
    procedure Apply_Allowance(
       income    : in out Amount; 
       allowance : in out Amount ) is
