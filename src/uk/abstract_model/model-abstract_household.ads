@@ -30,6 +30,7 @@ package Model.Abstract_Household is
    end record;
    
    type Jobs_Record is interface;
+   function Get_Earnings( jobs : Jobs_Record ) return Amount_Array is abstract;
    function Num_Jobs( jobs : Jobs_Record ) return Natural is abstract;
    function Get_Job( jobs : Jobs_Record; which : Positive ) return Job_Record'Class is abstract;
 

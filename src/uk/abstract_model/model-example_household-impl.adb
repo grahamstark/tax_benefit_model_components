@@ -77,6 +77,22 @@ package body Model.Example_Household.Impl is
       end if;
       return job;
    end Get_Job;
+   
+   function Get_Earnings( pers : Model_Person ) return Amount_Array is
+      n : constant Natural := pers.Num_Jobs;
+   begin
+      if n = 0 then
+         return ( 0.0 );
+      else
+         declare
+            a : Amount_Array( 1 .. n );
+         begin
+            for i in 1 .. n loop
+               a( i ) := pers.Get_Job( i ).wage;
+            end loop;
+            
+   end Get_Earnings;
+
 
    
    function Average_Wage_Per_Hour( pers : Model_Person ) return Amount is

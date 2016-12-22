@@ -75,6 +75,10 @@ package body Model.Calculator.Direct_Tax is
       return UK_Tax_Utils.Calc_Tax_Due(
             ni_sys.class_4_rates, taxable_profits ).due;
    end Calculate_Class_4_NICs;
+   
+   function calculate_Employers_NICs(
+      ni_sys  : National_Insurance_System;
+      is_contracted_out_boolean      
       
    procedure Apply_Allowance(
       income    : in out Amount; 
