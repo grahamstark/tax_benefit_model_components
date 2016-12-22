@@ -250,7 +250,7 @@ package body Model.Parameter_System.Defaults is
                bands              : V2 := ( 805.00, 999_999_999_99_99.99 );
             begin
                sys.class_1_lower_earnings_limit := 112.00;
-               sys.contacting_out_abolished  := False; --   : Boolean := false;
+               sys.contracting_out_abolished  := False; --   : Boolean := false;
                sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
                sys.primary_threshold := 155.0; --            : Amount := 0.0;
                sys.secondary_threshold := 156.0; --          : Amount := 0.0;     

@@ -76,9 +76,51 @@ package body Model.Calculator.Direct_Tax is
             ni_sys.class_4_rates, taxable_profits ).due;
    end Calculate_Class_4_NICs;
    
-   function calculate_Employers_NICs(
-      ni_sys  : National_Insurance_System;
-      is_contracted_out_boolean      
+   function Calculate_Employers_NICs(
+      ni_sys                 : National_Insurance_System;
+      earnings               : Amount_Array;
+      is_contracted_out      : Boolean;
+      other_taxable_benefits : Amount;
+      rebate                 : Amount )return Amount is
+      total_earn : Amount := 0.0;
+      ni_due     : Amount;
+      rbs        : constant Rates_And_Bands := 
+         ( if is_contracted_out and not ni_sys.contracting_out_abolished then
+            ni_sys.employer_out_rates else ni_sys.employer_in_rates );
+   begin
+      for earn of earnings loop
+         Inc( total_earn, Amount'Max( 0.0, earn - ni_sys.secondary_threshold ));
+      end loop;
+      Inc( total_earn, other_taxable_benefits );
+      ni_due := UK_Tax_Utils.Calc_Tax_Due( rbs, total_earn ).due;
+      return Amount'Max( ni_due - rebate, 0.0 );
+   end Calculate_Employers_NICs;
+   
+   function Calculate_Class_1_NICs( 
+      ni_sys                 : National_Insurance_System;
+      earnings               : Amount_Array;
+      is_contracted_out      : Boolean ) return Amount is
+      class_1_nics : Amount := 0.0;
+      rebate       : Amount := 0.0;
+      is_over_lel  : constant Boolean := (for some earn of earnings => earn > ni_sys.class_1_lower_earnings_limit );
+      is_cont_out  : constant Boolean := is_contracted_out and not ni_sys.contracting_out_abolished;
+      rbs        : constant Rates_And_Bands := 
+         ( if is_contracted_out and not ni_sys.contracting_out_abolished then
+            ni_sys.employer_out_rates else ni_sys.employer_in_rates );
+   begin
+      if not is_over_lel then
+         return 0.0;
+      end if;
+      for earn of earnings loop
+         Inc( class_1_nics, UK_Tax_Utils.Calc_Tax_Due( rbs, earn ).due );
+         if is_cont_out then
+            if earn > ni_sys.class_1_lower_earnings_limit and earn < ni_sys.primary_threshold then
+               Inc( rebate, ni_sys.class_1_rebate * ( ni_sys.primary_threshold - earn ));
+            end if;
+         end if;
+      end loop;
+      return class_1_nics - rebate;
+   end Calculate_Class_1_NICs;
       
    procedure Apply_Allowance(
       income    : in out Amount; 
