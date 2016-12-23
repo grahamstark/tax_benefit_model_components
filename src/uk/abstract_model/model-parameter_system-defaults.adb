@@ -435,11 +435,11 @@ package body Model.Parameter_System.Defaults is
             uc.one_bedroom_in_shared_accommodation_rate := 234.37; 
             -- straight unweighted average over all wales councils; 
             -- see http://wales.gov.uk/topics/housingandcommunity/housing/private/renting/rentofficers/publications/lha13/?lang=en
-            uc.withdrawal_rate :=  65.0/100.0;
+            uc.withdrawal_rate :=  65.0;
             uc.limited_capability_for_work :=  123.62;
             uc.limited_capability_for_work_and_work_related_activity :=  303.66;
             uc.caring_for_a_severely_disabled_person_for_at_least_35_hours_a_week :=  144.70;
-            uc.childcare_costs_percent :=  70.0/100.0;
+            uc.childcare_costs_percent :=  70.0;
             uc.maximum_childcare_award_families :=  500.0;
             uc.maximum_childcare_award_lone_parents :=  350.0;
             uc.maximum_payment_families :=   500.0;
@@ -473,12 +473,12 @@ package body Model.Parameter_System.Defaults is
             -- FIXME!!!
             -- straight unweighted average over all wales councils; 
             -- see http://wales.gov.uk/topics/housingandcommunity/housing/private/renting/rentofficers/publications/lha13/?lang=en
-            uc.withdrawal_rate :=  65.0/100.0;
+            uc.withdrawal_rate :=  65.0;
             -- DON
             uc.limited_capability_for_work :=  126.11;
             uc.limited_capability_for_work_and_work_related_activity :=  315.60;
             uc.caring_for_a_severely_disabled_person_for_at_least_35_hours_a_week :=  150.30;
-            uc.childcare_costs_percent :=  70.0/100.0;
+            uc.childcare_costs_percent :=  70.0;
             uc.maximum_childcare_award_families :=  2_000.0;
             -- FIXME what are these numbers???
             uc.maximum_childcare_award_lone_parents :=  350.0/12.0;
@@ -526,7 +526,7 @@ package body Model.Parameter_System.Defaults is
             aa.low_age         := 65;
             aa.high_age        := Age_Range'Last;
             aa.benefit_rate    := ( high => 81.3, low=> 54.45, nil=> 0.0 );
-            aa.test_generosity := 1.0;
+            aa.test_generosity := 100.0;
             aa.preserve_for_existing_claimants := True;
          when others => null;
       end case;
@@ -542,12 +542,12 @@ package body Model.Parameter_System.Defaults is
          dla.mobility.low_age         := 0;
          dla.mobility.high_age        := 64;
          dla.mobility.benefit_rate    := ( low => 21.55, high=>56.75, nil=> 0.0 );
-         dla.mobility.test_generosity := 1.0;
+         dla.mobility.test_generosity := 100.0;
          dla.mobility.preserve_for_existing_claimants := True;
          dla.care.low_age             := 0;
          dla.care.high_age            := 64;
          dla.care.benefit_rate        := ( high=>81.30, middle=>54.45, low=>21.55, nil=> 0.0 );
-         dla.care.test_generosity     := 1.0;
+         dla.care.test_generosity     := 100.0;
          dla.care.preserve_for_existing_claimants := True;
       when others => null;
       end case;

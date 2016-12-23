@@ -10,6 +10,11 @@ package body Model.Parameter_System.Operations is
       a := a / WEEKS_PER_YEAR;
    end Annual_To_Weekly;
    
+   procedure To_Level( a : in out Amount ) is
+   begin
+      a := a/100.0;
+   end To_Level;
+   
    procedure To_Weekly( sys : in out Complete_System ) is
    begin
       -- IT/NI annual
@@ -18,7 +23,7 @@ package body Model.Parameter_System.Operations is
       sys.ni.employer_in_rates.To_Levels;
       sys.ni.employer_out_rates.To_Levels;
       
-      A2W( sys.ni.class_2_exemption );
+      A2W( sys.ni.class_2_exemption);
       A2W( sys.ni.class_4_lower_profit_limit );
       sys.ni.class_4_rates.Annual_To_Weekly;
       
@@ -59,6 +64,13 @@ package body Model.Parameter_System.Operations is
       M2W( sys.benefits.universal_credit.maximum_payment_families );
       M2W( sys.benefits.universal_credit.maximum_payment_singles  );
       M2W( sys.benefits.universal_credit.one_bedroom_in_shared_accommodation_rate );
+      --
+      -- withdrawal, generosity as percentages
+      --
+      To_Level( sys.benefits.universal_credit.childcare_costs_percent );
+      To_Level( sys.benefits.universal_credit.withdrawal_rate );
+      To_Level( sys.benefits.attendence_allowance.test_generosity );
+      To_Level( sys.benefits.dla.test_generosity );
       -- 
       -- rest is weekly
       --
