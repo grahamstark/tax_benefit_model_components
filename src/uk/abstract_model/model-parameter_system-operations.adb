@@ -69,8 +69,9 @@ package body Model.Parameter_System.Operations is
       --
       To_Level( sys.benefits.universal_credit.childcare_costs_percent );
       To_Level( sys.benefits.universal_credit.withdrawal_rate );
-      To_Level( sys.benefits.attendence_allowance.test_generosity );
-      To_Level( sys.benefits.dla.test_generosity );
+      To_Level( sys.benefits.attendance_allowance.test_generosity );
+      To_Level( sys.benefits.dla.care.test_generosity );
+      To_Level( sys.benefits.dla.mobility.test_generosity );
       -- 
       -- rest is weekly
       --
