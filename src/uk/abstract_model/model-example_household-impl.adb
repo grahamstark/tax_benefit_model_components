@@ -65,7 +65,8 @@ package body Model.Example_Household.Impl is
 
    function Num_Jobs( pers : Model_Person ) return Natural is
    begin
-      return ( if pers.hours_worked > 0 then 1 else 0 );
+      return ( if pers.hours_worked > 0  or 
+             pers.incomes( wages ) > 0.0 then 1 else 0 );
    end Num_Jobs;
    
    function Get_Job( pers : Model_Person; which : Positive ) return Model.Abstract_Household.Job_Record'Class is
