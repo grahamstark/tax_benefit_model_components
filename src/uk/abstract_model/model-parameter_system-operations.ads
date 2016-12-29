@@ -7,9 +7,11 @@ package Model.Parameter_System.Operations is
    procedure Monthly_To_Weekly( a : in out Amount );
    procedure M2W( a : in out Amount ) renames Monthly_To_Weekly;
 
+   
    --
    -- FIXME: make this a class operation?? maybe not...
    -- assumes: tax and ni annual, UC monthly, everything else weekly
+   -- 
    procedure To_Weekly( sys : in out Complete_System );
 
    procedure Uprate( p : in out Pension_System; v : Rate );   
@@ -18,5 +20,11 @@ package Model.Parameter_System.Operations is
    procedure Uprate( p : in out Pension_Credit_System; v : Rate );
    
    procedure To_Level( a : in out Amount );
+   
+   --
+   -- weeklyise/uprate individual components
+   --
+   procedure To_Weekly( ni_sys : in out National_Insurance_System );
+   procedure To_Weekly( it_sys : in out Income_Tax_System );
    
 end Model.Parameter_System.Operations;

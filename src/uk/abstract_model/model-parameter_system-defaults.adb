@@ -148,6 +148,7 @@ package body Model.Parameter_System.Defaults is
       for r in rates'Range loop
          rb.rate := rates( r );
          rb.band := bands( r );
+         Put_Line( " on band " & r'Img ); 
          rbs.Set_Rate_And_Band( rb, r );
       end loop;
       return rbs;
@@ -248,6 +249,7 @@ package body Model.Parameter_System.Defaults is
                employer_out_rates : V2 := ( 10.4, 10.4 );
                class_4_bands      : V2 := ( 43_000.0, 999_999_999_99_99.99 );
                bands              : V2 := ( 805.00, 999_999_999_99_99.99 );
+               class_4_rates      : V2 := ( 9.0, 2.0 );
             begin
                sys.class_1_lower_earnings_limit := 112.00;
                sys.contracting_out_abolished  := False; --   : Boolean := false;
@@ -261,8 +263,8 @@ package body Model.Parameter_System.Defaults is
       
                sys.class_4_lower_profit_limit    := 8060.0;
                sys.class_4_rates := Vectors_To_RB( 
-                  ( 9.0, 2.0 ),
-                  ( 805.00,999_999_999_99_99.99 ));
+                  class_4_rates,
+                  class_4_bands );
                   
                Set_Rates_And_Bands_NI( 
                   sys,

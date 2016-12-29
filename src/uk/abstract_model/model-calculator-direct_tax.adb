@@ -19,6 +19,8 @@ package body Model.Calculator.Direct_Tax is
       GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
    end Log;
    
+   use GNATColl.Traces;
+   
    function Get_Net_Income(
       pers  : Model.Abstract_Household.Person'Class;
       res   : mar.Personal_Result'Class ) return Amount is
@@ -158,9 +160,12 @@ package body Model.Calculator.Direct_Tax is
       if ad.age < 16 or Pensioner_Benefits.Is_At_Pension_Age( ad, pen_sys )then
          return;
       end if;
+      Trace( log_trace, "at start of NI; earnings.length = " & earnings'Length'Img & " pid= " & ad.pid'Img );
       maximum_ni := Calculate_Maximum_NICS( ni_sys, earnings, profits, is_contracted_out );
+      Trace( log_trace, "maximum ni " & Format( maximum_ni ));
       if earnings'Length > 1 or ( earnings'Length = 1 and earnings( 1 ) > 0.0 ) then
          ni := Calculate_Class_1_NICs( ni_sys, earnings, is_contracted_out );
+         Trace( log_trace, "class1 ni=" & Format( ni ));
          if ni < 0.0 then
             rebate := -ni;
          end if;
