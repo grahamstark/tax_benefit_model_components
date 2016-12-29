@@ -596,6 +596,19 @@ package body Model.Parameter_System.Defaults is
          state_pension.citizens_pension := False;
          state_pension.class_a      := 113.10;
          state_pension.preserve_for_existing_claimants := False;
+      when 2016 =>
+         state_pension.age_men      := 65;
+         state_pension.age_women    := 62;
+         state_pension.citizens_pension := False;
+         state_pension.class_a      := 115.95;
+         state_pension.preserve_for_existing_claimants := False;
+      when 2017 =>
+         state_pension.age_men      := 65;
+         state_pension.age_women    := 63;
+         state_pension.citizens_pension := False;
+         state_pension.class_a      := 119.30;
+         state_pension.preserve_for_existing_claimants := False;
+         
       when others => null;
       end case;
       return state_pension;

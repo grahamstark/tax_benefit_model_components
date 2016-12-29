@@ -27,6 +27,6 @@ package Model.Parameter_System.Defaults is
    function Get_National_Insurance_System( year : Year_Number ) return National_Insurance_System;
    function Get_Universal_Credit_System( year : Year_Number ) return Universal_Credit_System;
    function Get_Child_Benefit_System( year : Year_Number ) return Child_Benefit_System;
-
+   function Get_State_Pension( year : Year_Number ) return Pension_System;
    
 end Model.Parameter_System.Defaults;

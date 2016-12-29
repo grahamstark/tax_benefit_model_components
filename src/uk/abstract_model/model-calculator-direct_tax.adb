@@ -1,6 +1,7 @@
 with Ada.Assertions;
 with GNATColl.Traces;
 with Model.Calculator.Utils;
+with Model.Calculator.Pensioner_Benefits;
 
 package body Model.Calculator.Direct_Tax is
    
@@ -154,6 +155,9 @@ package body Model.Calculator.Direct_Tax is
       rebate   : Amount := 0.0;
       is_contracted_out : constant Boolean := not ad.Is_Contracted_In_To_Serps;
    begin
+      if ad.age < 16 or Pensioner_Benefits.Is_At_Pension_Age( ad, pen_sys )then
+         return;
+      end if;
       maximum_ni := Calculate_Maximum_NICS( ni_sys, earnings, profits, is_contracted_out );
       if earnings'Length > 1 or ( earnings'Length = 1 and earnings( 1 ) > 0.0 ) then
          ni := Calculate_Class_1_NICs( ni_sys, earnings, is_contracted_out );

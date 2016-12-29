@@ -18,6 +18,10 @@ package Model.Calculator.Pensioner_Benefits is
       sys      : Savings_Credit_System; 
       bu       : mah.Benefit_Unit'Class;  
       res      : in out mar.Benefit_Unit_Result'Class );
+
+   function Is_At_Pension_Age( 
+      pers : mah.Person'Class; 
+      sys  : Pension_System ) return Boolean;
       
    procedure Calculate_State_Pension( 
       sys      : Pension_System; 

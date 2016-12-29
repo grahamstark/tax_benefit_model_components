@@ -19,6 +19,14 @@ package body Model.Calculator.Pensioner_Benefits is
       GNATColl.Traces.Trace( log_trace, s & " = " & Format( m ));
    end Log;
    
+   function Is_At_Pension_Age( 
+      pers : mah.Person'Class; 
+      sys  : Pension_System ) return Boolean is
+   begin
+      return ( pers.gender = male and pers.age >= sys.age_men ) or 
+             ( pers.gender = female and pers.age >= sys.age_women );
+   end Is_At_Pension_Age;
+
 
    procedure Calculate_State_Pension( 
       sys      : Pension_System; 
@@ -33,8 +41,7 @@ package body Model.Calculator.Pensioner_Benefits is
          declare
             pers : mah.Person'Class renames bu.Find_Person( pid );
          begin
-            if( pers.gender = male and pers.age >= sys.age_men ) or 
-              ( pers.gender = female and pers.age >= sys.age_women )then
+            if Is_At_Pension_Age( pers, sys ) then
                   res.Set( pid, retirement_pension, sys.class_a );
             end if;
          end;
