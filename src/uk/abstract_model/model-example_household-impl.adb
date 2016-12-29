@@ -95,7 +95,9 @@ package body Model.Example_Household.Impl is
             for i in 1 .. n loop
                a( i ) := pers.Get_Job( i ).wage;
             end loop;
+            return a;
          end;
+         
       end if;
    end Get_Earnings;
 
