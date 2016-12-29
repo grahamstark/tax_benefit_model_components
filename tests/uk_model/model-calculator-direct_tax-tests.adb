@@ -50,6 +50,11 @@ package body Model.Calculator.Direct_Tax.Tests is
    use Ada.Text_IO;
    use Ada.Containers;
    use Model.Example_Household;
+
+
+   subtype A_Pers is Abstract_Household.Person'Class;
+   subtype A_HH is Abstract_Household.Household'Class;
+   subtype A_Res is mar.Personal_Result'Class;
    
    procedure Set_Up ( T : in out Test_Case ) is
    begin
@@ -67,21 +72,32 @@ package body Model.Calculator.Direct_Tax.Tests is
    
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
+      use Model.Example_Results.Impl;
    begin
       for ext in Example_Type loop
          declare
-            hh  : Household := Get_Household( ext );
-            mhh : Impl.Model_Household := ( hh with null record );
-            ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
-            sn  : Sernum_Set := ss.Element( 1 );
-            pno : Person_Number;
+            mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
+            pids    : Sernum_Set := mhh.Get_PIDs;
+            ni_sys  : National_Insurance_System := 
+               Model.Parameter_System.Defaults.Get_National_Insurance_System( 2017 );
+            pen_sys : Pension_System := 
+               Model.Parameter_System.Defaults.Get_State_Pension( 2017 );
          begin
-            Assert( ss.Length = 1, "ss length always 1; was " & ss.Length'Img );
+            for pid of pids loop
+               declare
+                  pers : A_Pers := mhh.Find_Person( pid );
+                  res : Model_Personal_Result;
+               begin
+                  res.Zero;
+                  Calculate_National_Insurance( ni_sys, pen_sys, pers, res );
+               end;
+            end loop;
          end;
       end loop;
    end Test_Calculate_National_Insurance;
    
-    procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+   
+   procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
    begin
@@ -119,8 +135,8 @@ package body Model.Calculator.Direct_Tax.Tests is
                                   mhh.Set_Income( pid, dividends, 100.0 );                                     
                        end case;
                         declare
-                           pers   :  Abstract_Household.Person'Class := mhh.Find_Person( pid );
-                           pers_result : mar.Personal_Result'Class := res.Get_Personal( pid );
+                           pers   :  A_Pers := mhh.Find_Person( pid );
+                           pers_result : A_Res := res.Get_Personal( pid );
                         begin
                            
                            Calculate_Income_Tax( 
