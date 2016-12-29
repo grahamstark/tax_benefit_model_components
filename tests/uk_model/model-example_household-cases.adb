@@ -52,6 +52,8 @@ package body Model.Example_Household.Cases is
       ad.pid := pid;
       ad.wealth( financial ) := 5_000.00;
       ad.incomes( wages ) := 1_000.00;
+      ad.hours_worked := 40;
+         
       ad.age := age;
       ad.employment := full_time;  
       ad.relationship := relationship;
@@ -146,6 +148,7 @@ package body Model.Example_Household.Cases is
       when working_single_parent =>
          hh.people( 1 ) := Make_Working_Adult( hh, 30, female, start_pid, head );
          hh.people( 1 ).incomes( wages ) := 250.00;
+         hh.people( 1 ).hours_worked := 20;
          start_pid := start_pid + 1;                       
          hh.people( 2 ) := Make_Child( hh, 12, female, start_pid );
        when zero_income =>   

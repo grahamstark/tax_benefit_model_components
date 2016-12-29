@@ -73,16 +73,17 @@ package body Model.Calculator.Direct_Tax.Tests is
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
+      ni_sys  : National_Insurance_System := 
+         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2017 );
+      pen_sys : Pension_System := 
+         Model.Parameter_System.Defaults.Get_State_Pension( 2017 );
    begin
+      Operations.To_Weekly( ni_sys );
       for ext in Example_Type loop
          Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
             pids    : Sernum_Set := mhh.Get_PIDs;
-            ni_sys  : National_Insurance_System := 
-               Model.Parameter_System.Defaults.Get_National_Insurance_System( 2017 );
-            pen_sys : Pension_System := 
-               Model.Parameter_System.Defaults.Get_State_Pension( 2017 );
          begin
             for pid of pids loop
                declare
@@ -92,7 +93,15 @@ package body Model.Calculator.Direct_Tax.Tests is
                   Put_Line( "on person " & pers.pid'Img & " age " & pers.age'Img );
                   res.Zero;
                   Calculate_National_Insurance( ni_sys, pen_sys, pers, res );
-                  
+                  declare
+                     ni : Amount := res.Get( national_insurance );
+                     empl_ni : Amount := res.Get( employers_ni );
+                  begin
+                     Put( "Wage: " & Format( pers.Get_Income( wages )));
+                     Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
+                     Put( "; NI: " & Format( ni ));
+                     Put_Line( "; Empl NI: " & Format( empl_ni ));
+                  end;
                end;
             end loop;
          end;
