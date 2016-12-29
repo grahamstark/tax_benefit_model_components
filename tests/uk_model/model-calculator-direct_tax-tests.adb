@@ -75,6 +75,7 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Results.Impl;
    begin
       for ext in Example_Type loop
+         Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
             pids    : Sernum_Set := mhh.Get_PIDs;
@@ -88,8 +89,10 @@ package body Model.Calculator.Direct_Tax.Tests is
                   pers : A_Pers := mhh.Find_Person( pid );
                   res : Model_Personal_Result;
                begin
+                  Put_Line( "on person " & pers.pid'Img & " age " & pers.age'Img );
                   res.Zero;
                   Calculate_National_Insurance( ni_sys, pen_sys, pers, res );
+                  
                end;
             end loop;
          end;
