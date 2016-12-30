@@ -16,6 +16,7 @@ package body Model.Parameter_System.Operations is
    end To_Level;
    
    procedure To_Weekly( ni_sys : in out National_Insurance_System ) is
+      rb : Rate_And_Band;
    begin
       ni_sys.employee_in_rates.To_Levels;
       ni_sys.employee_out_rates.To_Levels;
@@ -25,6 +26,17 @@ package body Model.Parameter_System.Operations is
       A2W( ni_sys.class_2_exemption);
       A2W( ni_sys.class_4_lower_profit_limit );
       ni_sys.class_4_rates.Annual_To_Weekly;
+      --
+      -- inject a zero band      
+      --
+      rb.rate := 0.0;
+      rb.band := ni_sys.primary_threshold;
+      ni_sys.employee_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      ni_sys.employee_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      rb.band := ni_sys.secondary_threshold;
+      ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      
    end To_Weekly;
    
    procedure To_Weekly( it_sys : in out Income_Tax_System ) is

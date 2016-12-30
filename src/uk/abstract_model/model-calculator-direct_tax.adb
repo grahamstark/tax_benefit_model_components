@@ -114,7 +114,9 @@ package body Model.Calculator.Direct_Tax is
       if not is_over_lel then
          return 0.0;
       end if;
+      Trace( log_trace, "is_over_lel=" & is_over_lel'Img & " is_cont_out " & is_cont_out'Img );
       for earn of earnings loop
+         Trace( log_trace, " earn " & Format( earn ));
          Inc( class_1_nics, UK_Tax_Utils.Calc_Tax_Due( rbs, earn ).due );
          if is_cont_out then
             if earn > ni_sys.class_1_lower_earnings_limit and earn < ni_sys.primary_threshold then
