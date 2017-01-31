@@ -17,6 +17,10 @@ package body Model.Example_Household.Cases is
          cpag_angelina_and_michael |
          caring_couple |
          working_single_parent => n := 2;
+      when 
+         hmrc_ni_example_1 |
+         hmrc_ni_example_2 |
+         hmrc_ni_example_3   => n := 1;       
       end case;
       return n;
    end  Get_HH_Size;
@@ -90,6 +94,12 @@ package body Model.Example_Household.Cases is
       hh.hid := hid;
       hh.tenure := social_rented;
       case which is   
+      when 
+            hmrc_ni_example_1 |
+            hmrc_ni_example_2 |
+            hmrc_ni_example_3 =>
+              hh.housing_costs( rent ) := 0.0;
+              hh.wealth( property ) := 0.0;               
       when single_retired_person |
            couple_bu_retired |
            old_sick_single_male |
@@ -175,6 +185,9 @@ package body Model.Example_Household.Cases is
          hh.people( 2 ).incomes( retirement_pension ) := 100.0;
          hh.people( 2 ).incomes( private_pensions ) := 100.0;
          hh.people( 2 ).marital_status := married_or_civil_partnership;
+      when hmrc_ni_example_1 => null;
+      when hmrc_ni_example_2 => null;
+      when hmrc_ni_example_3 => null;
       end case;
       return hh;
    end Make_Household;
@@ -219,6 +232,15 @@ package body Model.Example_Household.Cases is
       when working_single_parent =>
          hid := 39_000_000;
          pid := 39_000_001;
+      when hmrc_ni_example_1 => 
+         hid := 40_000_000;
+         pid := 40_000_001;
+      when hmrc_ni_example_2 => 
+         hid := 41_000_000;
+         pid := 41_000_001;
+      when hmrc_ni_example_3 => null;
+         hid := 42_000_000;
+         pid := 42_000_001;
       end case;
       return Make_Household( which, hid, pid, year );
    end Get_Household;

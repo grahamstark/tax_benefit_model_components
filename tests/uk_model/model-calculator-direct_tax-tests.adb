@@ -189,6 +189,9 @@ package body Model.Calculator.Direct_Tax.Tests is
                                  when care_home_resident => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
                                  when caring_couple => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
                                  when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
+                                 when hmrc_ni_example_1 => null;
+                                 when hmrc_ni_example_2 => null;
+                                 when hmrc_ni_example_3 => null;
                               end case;
                             end;
                         end;
