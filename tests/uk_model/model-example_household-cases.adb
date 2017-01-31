@@ -185,9 +185,18 @@ package body Model.Example_Household.Cases is
          hh.people( 2 ).incomes( retirement_pension ) := 100.0;
          hh.people( 2 ).incomes( private_pensions ) := 100.0;
          hh.people( 2 ).marital_status := married_or_civil_partnership;
-      when hmrc_ni_example_1 => null;
+      when hmrc_ni_example_1 =>  -- P 20-26 of "National Insurance Contributions guidance for software developers "
+         hh.people( 1 ) := Make_Working_Adult( hh, 28, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( wages => 112.53, others => 0.0 );
       when hmrc_ni_example_2 => null;
+         hh.people( 1 ) := Make_Working_Adult( hh, 44, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( wages => 869.00, others => 0.0 );
       when hmrc_ni_example_3 => null;
+         hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( wages => 834.00, others => 0.0 );
       end case;
       return hh;
    end Make_Household;

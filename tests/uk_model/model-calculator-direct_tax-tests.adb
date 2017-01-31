@@ -79,7 +79,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          Model.Parameter_System.Defaults.Get_State_Pension( 2017 );
    begin
       Operations.To_Weekly( ni_sys );
-      for ext in Example_Type loop
+      for ext in hmrc_ni_example_1 .. hmrc_ni_example_3 loop
          Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -101,6 +101,17 @@ package body Model.Calculator.Direct_Tax.Tests is
                      Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
                      Put( "; NI: " & Format( ni ));
                      Put_Line( "; Empl NI: " & Format( empl_ni ));
+                     case ext is
+                        when hmrc_ni_example_1 =>
+                           Assert( Nearly_Equal( ni, 0.0 ), " ex. 1 should be 0.0; was " & ni'Img );
+                           Assert( Nearly_Equal( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & ni'Img );
+                        when hmrc_ni_example_2 =>
+                           Assert( Nearly_Equal( ni, 81.48 ), " ex. 2 should be 81.48; was " & ni'Img );
+                           Assert( Nearly_Equal( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & ni'Img );
+                        when hmrc_ni_example_3 =>
+                           Assert( Nearly_Equal( ni, 0.97 ), " ex. 4 should be 0.97; was " & ni'Img );
+                           Assert( Nearly_Equal( empl_ni, 80.78 ), " ex. 2 exmpl ni should be 80.78 ; was " & ni'Img );
+                        
                   end;
                end;
             end loop;
