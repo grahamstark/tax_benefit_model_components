@@ -111,7 +111,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                         when hmrc_ni_example_3 =>
                            Assert( Nearly_Equal( ni, 0.97 ), " ex. 4 should be 0.97; was " & ni'Img );
                            Assert( Nearly_Equal( empl_ni, 80.78 ), " ex. 2 exmpl ni should be 80.78 ; was " & ni'Img );
-                        
+                     end case;
                   end;
                end;
             end loop;
