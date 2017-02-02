@@ -57,7 +57,7 @@ package body Model.Example_Household.Cases is
       ad.wealth( financial ) := 5_000.00;
       ad.incomes( wages ) := 1_000.00;
       ad.hours_worked := 40;
-         
+      ad.is_contracted_in_to_serps := True;   
       ad.age := age;
       ad.employment := full_time;  
       ad.relationship := relationship;

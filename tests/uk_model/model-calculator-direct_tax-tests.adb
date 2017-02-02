@@ -38,6 +38,7 @@ with Model.Example_Results.Impl;
 with Model.Parameter_System;
 with Model.Parameter_System.Defaults;
 with Model.Parameter_System.Operations;
+with UK_Test_Utils;
 
 with Model.Abstract_Household;
 
@@ -50,7 +51,7 @@ package body Model.Calculator.Direct_Tax.Tests is
    use Ada.Text_IO;
    use Ada.Containers;
    use Model.Example_Household;
-
+   use UK_Test_Utils;
 
    subtype A_Pers is Abstract_Household.Person'Class;
    subtype A_HH is Abstract_Household.Household'Class;
@@ -74,9 +75,9 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
       ni_sys  : National_Insurance_System := 
-         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2017 );
+         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2016 );
       pen_sys : Pension_System := 
-         Model.Parameter_System.Defaults.Get_State_Pension( 2017 );
+         Model.Parameter_System.Defaults.Get_State_Pension( 2016 );
    begin
       Operations.To_Weekly( ni_sys );
       for ext in hmrc_ni_example_1 .. hmrc_ni_example_3 loop
@@ -103,14 +104,14 @@ package body Model.Calculator.Direct_Tax.Tests is
                      Put_Line( "; Empl NI: " & Format( empl_ni ));
                      case ext is
                         when hmrc_ni_example_1 =>
-                           Assert( Nearly_Equal( ni, 0.0 ), " ex. 1 should be 0.0; was " & ni'Img );
-                           Assert( Nearly_Equal( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & ni'Img );
+                           Assert( Within_1P( ni, 0.0 ), " ex. 1 should be 0.0; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & Format( ni ));
                         when hmrc_ni_example_2 =>
-                           Assert( Nearly_Equal( ni, 81.48 ), " ex. 2 should be 81.48; was " & ni'Img );
-                           Assert( Nearly_Equal( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & ni'Img );
+                           Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
                         when hmrc_ni_example_3 =>
-                           Assert( Nearly_Equal( ni, 0.97 ), " ex. 4 should be 0.97; was " & ni'Img );
-                           Assert( Nearly_Equal( empl_ni, 80.78 ), " ex. 2 exmpl ni should be 80.78 ; was " & ni'Img );
+                           Assert( Within_1P( ni, 0.97 ), " ex. 4 should be 0.97; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 80.78 ), " ex. 2 exmpl ni should be 80.78 ; was " & Format( empl_ni ));
                      end case;
                   end;
                end;
@@ -225,7 +226,7 @@ package body Model.Calculator.Direct_Tax.Tests is
       use AUnit.Test_Cases.Registration;
    begin
       Register_Routine (T, Test_Calculate_National_Insurance'Access, "Test_Calculate_National_Insurance");
-      Register_Routine (T, Test_Calculate_Income_Tax'Access, "Test_Income_Tax");
+      -- Register_Routine (T, Test_Calculate_Income_Tax'Access, "Test_Income_Tax");
    end Register_Tests;
 
    ----------
