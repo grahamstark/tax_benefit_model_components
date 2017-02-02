@@ -33,9 +33,11 @@ package body Model.Parameter_System.Operations is
       rb.band := ni_sys.primary_threshold;
       ni_sys.employee_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
       ni_sys.employee_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
-      rb.band := ni_sys.secondary_threshold;
-      ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
-      ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      -- because of the way we aggregate wages for employer's NI, we don't
+      -- actually need this.
+      -- rb.band := ni_sys.secondary_threshold;
+      -- ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
+      -- ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
       
    end To_Weekly;
    

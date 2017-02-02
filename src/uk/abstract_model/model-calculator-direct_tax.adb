@@ -95,6 +95,8 @@ package body Model.Calculator.Direct_Tax is
          Inc( total_earn, Amount'Max( 0.0, earn - ni_sys.secondary_threshold ));
       end loop;
       Inc( total_earn, other_taxable_benefits );
+      Trace( log_trace, "employer's NI: earn " & Format( total_earn ));
+      Trace( log_trace, "rates and bands " & rbs.To_String );
       ni_due := UK_Tax_Utils.Calc_Tax_Due( rbs, total_earn ).due;
       return Amount'Max( ni_due - rebate, 0.0 );
    end Calculate_Employers_NICs;
@@ -107,9 +109,11 @@ package body Model.Calculator.Direct_Tax is
       rebate       : Amount := 0.0;
       is_over_lel  : constant Boolean := (for some earn of earnings => earn > ni_sys.class_1_lower_earnings_limit );
       is_cont_out  : constant Boolean := is_contracted_out and not ni_sys.contracting_out_abolished;
+      is_a_contributer : Boolean := False;
+      
       rbs          : constant Rates_And_Bands := 
          ( if is_contracted_out and not ni_sys.contracting_out_abolished then
-            ni_sys.employer_out_rates else ni_sys.employer_in_rates );
+            ni_sys.employee_out_rates else ni_sys.employee_in_rates );
    begin
       if not is_over_lel then
          return 0.0;
@@ -117,6 +121,10 @@ package body Model.Calculator.Direct_Tax is
       Trace( log_trace, "is_over_lel=" & is_over_lel'Img & " is_cont_out " & is_cont_out'Img );
       for earn of earnings loop
          Trace( log_trace, " earn " & Format( earn ));
+         Trace( log_trace, "rates and bands " & rbs.To_String );
+         if ( earn > ni_sys.class_1_lower_earnings_limit ) then
+            is_a_contributer := True;
+         end if;
          Inc( class_1_nics, UK_Tax_Utils.Calc_Tax_Due( rbs, earn ).due );
          if is_cont_out then
             if earn > ni_sys.class_1_lower_earnings_limit and earn < ni_sys.primary_threshold then
@@ -182,6 +190,8 @@ package body Model.Calculator.Direct_Tax is
          Inc( ni, Calculate_Class_2_NICs( ni_sys, profits ));    
       end if;
       ni := Amount'Min( maximum_ni, ni );
+      Trace( log_trace, "final NI " & Format( ni ));
+      Trace( log_trace, "final employers NI " & Format( empl_ni ));
       res.Set( national_insurance, ni );
       res.Set( employers_ni, empl_ni );
    end Calculate_National_Insurance;

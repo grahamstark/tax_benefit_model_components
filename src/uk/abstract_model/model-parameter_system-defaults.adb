@@ -225,15 +225,49 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
-        when 2016   => -- WEEKLY!!!!
+        -- when 2016   => -- WEEKLY!!!!
+            -- declare
+               -- employee_in_rates  : V4 := ( 0.0, 0.0, 12.0, 2.0 );
+               -- employee_out_rates : V4 := ( 0.0, 0.0, 10.6, 2.0 ); -- 2 1.6-rebate
+               -- employer_in_rates  : V4 := ( 0.0, 0.0, 13.80, 13.8 );
+               -- employer_out_rates : V4 := ( 0.0, 0.0, 10.4, 10.4 );
+               -- bands              : V4 := ( 111.0, 153.0, 805.00, 999_999_999_99_99.99 );
+            -- begin
+               -- Set_Rates_And_Bands_NI(
+                  -- sys,
+                  -- bands,
+                  -- employee_in_rates,
+                  -- employee_out_rates,
+                  -- employer_in_rates,
+                  -- employer_out_rates );
+            -- end;
+            -- 
+        when 2016 => 
             declare
-               employee_in_rates  : V4 := ( 0.0, 0.0, 12.0, 2.0 );
-               employee_out_rates : V4 := ( 0.0, 0.0, 10.6, 2.0 ); -- 2 1.6-rebate
-               employer_in_rates  : V4 := ( 0.0, 0.0, 13.80, 13.8 );
-               employer_out_rates : V4 := ( 0.0, 0.0, 10.4, 10.4 );
-               bands              : V4 := ( 111.0, 153.0, 805.00, 999_999_999_99_99.99 );
+               employee_in_rates  : V2 := ( 12.0, 2.0 );
+               employee_out_rates : V2 := ( 10.6, 2.0 );
+               employer_in_rates  : V2 := ( 13.80, 13.8 );
+               employer_out_rates : V2 := ( 10.4, 10.4 );
+               class_4_bands      : V2 := ( 43_000.0, 999_999_999_99_99.99 );
+               bands              : V2 := ( 827.00, 999_999_999_99_99.99 );
+               class_4_rates      : V2 := ( 9.0, 2.0 );
             begin
-               Set_Rates_And_Bands_NI(
+               sys.class_1_lower_earnings_limit := 112.00;
+               sys.contracting_out_abolished  := False; --   : Boolean := false;
+               sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
+               sys.primary_threshold := 155.0; --            : Amount := 0.0;
+               sys.secondary_threshold := 156.0; --          : Amount := 0.0;     
+      
+      
+               sys.class_2_exemption := 5965.0; -- PA           : Amount := 0.0;
+               sys.class_2_rate := 2.80; -- per weel                 : Amount := 0.0;
+      
+               sys.class_4_lower_profit_limit    := 8060.0;
+               sys.class_4_rates := Vectors_To_RB( 
+                  class_4_rates,
+                  class_4_bands );
+                  
+               Set_Rates_And_Bands_NI( 
                   sys,
                   bands,
                   employee_in_rates,
@@ -241,6 +275,8 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
+            
+            
         when 2017 => 
             declare
                employee_in_rates  : V2 := ( 12.0, 2.0 );
