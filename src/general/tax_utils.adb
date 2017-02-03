@@ -409,6 +409,21 @@ package body Tax_Utils is
    end FN;
 
 
+   procedure Replace_Rate( ratebands : in out Rates_And_Bands; new_rate : Rate_Type; which : Positive ) is
+      rb : Rate_And_Band := ratebands.Get_Rate_And_Band( which );
+   begin
+      rb.rate := new_rate;
+      ratebands.Set_Rate_And_Band( rb, which );
+   end Replace_Rate;
+   
+   procedure Replace_Band( ratebands : in out Rates_And_Bands; new_band : Amount_Type; which : Positive ) is
+      rb : Rate_And_Band := ratebands.Get_Rate_And_Band( which );
+   begin
+      rb.band := new_band;
+      ratebands.Set_Rate_And_Band( rb, which );
+   end Replace_Band;
+
+
 
    function To_String( ratebands : Rates_And_Bands ) return String is
    use Rates_And_Bands_List;

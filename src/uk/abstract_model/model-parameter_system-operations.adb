@@ -27,14 +27,26 @@ package body Model.Parameter_System.Operations is
       A2W( ni_sys.class_4_lower_profit_limit );
       ni_sys.class_4_rates.Annual_To_Weekly;
       --
-      -- inject a zero band      
+      -- inject a zero band into employees NI, at the level of the primary threshold      
       --
       rb.rate := 0.0;
       rb.band := ni_sys.primary_threshold;
       ni_sys.employee_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
       ni_sys.employee_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
-      -- because of the way we aggregate wages for employer's NI, we don't
-      -- actually need this.
+      
+      --
+      -- this is because employer NI works differently, with a single
+      -- secondary_threshold applied to all jobs - so we reduce the band by that amount
+      -- only really matters for (e.g.) young person's rate
+      -- since otherwise it's presently a flat rate
+      --
+      rb := ni_sys.employer_in_rates.Get_Rate_And_Band( Which => 1 );
+      rb.band := Amount'Max( 0.0, rb.band - ni_sys.secondary_threshold );
+      ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      rb := ni_sys.employer_out_rates.Get_Rate_And_Band( Which => 1 );
+      rb.band := Amount'Max( 0.0, rb.band - ni_sys.secondary_threshold );
+      ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      
       -- rb.band := ni_sys.secondary_threshold;
       -- ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );
       -- ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );

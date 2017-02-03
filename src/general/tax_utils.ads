@@ -62,6 +62,8 @@ package Tax_Utils is
 
    function To_String( ratebands : Rates_And_Bands ) return String;
 
+   procedure Replace_Rate( ratebands : in out Rates_And_Bands; new_rate : Rate_Type; which : Positive );
+   procedure Replace_Band( ratebands : in out Rates_And_Bands; new_band : Amount_Type; which : Positive );  
    procedure Set_Rate_And_Band( ratebands : in out Rates_And_Bands; rb : Rate_And_Band; pos : Positive; replace : Boolean := true );
    function Get_Rate_And_Band( ratebands : Rates_And_Bands; which : Positive ) return Rate_And_Band;
    procedure Delete_Rate_And_Band( ratebands :  in out Rates_And_Bands; which : Positive );

@@ -81,19 +81,22 @@ package body Model.Calculator.Direct_Tax is
    
    function Calculate_Employers_NICs(
       ni_sys                 : National_Insurance_System;
-      earnings               : Amount_Array;
+      ad                     : Model.Abstract_Household.Person'Class;
       is_contracted_out      : Boolean;
       other_taxable_benefits : Amount;
       rebate                 : Amount )return Amount is
       total_earn : Amount := 0.0;
       ni_due     : Amount;
-      rbs        : constant Rates_And_Bands := 
+      rbs        : Rates_And_Bands := 
          ( if is_contracted_out and not ni_sys.contracting_out_abolished then
             ni_sys.employer_out_rates else ni_sys.employer_in_rates );
    begin
-      for earn of earnings loop
+      for earn of ad.Get_Earnings loop
          Inc( total_earn, Amount'Max( 0.0, earn - ni_sys.secondary_threshold ));
       end loop;
+      if ni_sys.zero_employers_rate_for_young_people and ad.Age < 21 then
+         rbs.Replace_Rate( 0.0, 1 );
+      end if;
       Inc( total_earn, other_taxable_benefits );
       Trace( log_trace, "employer's NI: earn " & Format( total_earn ));
       Trace( log_trace, "rates and bands " & rbs.To_String );
@@ -179,7 +182,7 @@ package body Model.Calculator.Direct_Tax is
          if ni < 0.0 then
             rebate := -ni;
          end if;
-         empl_ni := Calculate_Employers_NICs( ni_sys, earnings, is_contracted_out, 0.0, rebate );
+         empl_ni := Calculate_Employers_NICs( ni_sys, ad, is_contracted_out, 0.0, rebate );
          if( ni < 0.0 )then
             empl_ni := Amount'Max( 0.0, empl_ni - ni );
             ni := 0.0;

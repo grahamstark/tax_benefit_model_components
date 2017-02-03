@@ -257,12 +257,11 @@ package body Model.Parameter_System.Defaults is
                sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
                sys.primary_threshold := 155.0; --            : Amount := 0.0;
                sys.secondary_threshold := 156.0; --          : Amount := 0.0;     
-      
-      
+               sys.zero_employers_rate_for_young_people := True;
                sys.class_2_exemption := 5965.0; -- PA           : Amount := 0.0;
                sys.class_2_rate := 2.80; -- per weel                 : Amount := 0.0;
       
-               sys.class_4_lower_profit_limit    := 8060.0;
+               sys.class_4_lower_profit_limit := 8060.0;
                sys.class_4_rates := Vectors_To_RB( 
                   class_4_rates,
                   class_4_bands );
@@ -289,6 +288,7 @@ package body Model.Parameter_System.Defaults is
             begin
                sys.class_1_lower_earnings_limit := 112.00;
                sys.contracting_out_abolished  := False; --   : Boolean := false;
+               sys.zero_employers_rate_for_young_people := True;
                sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
                sys.primary_threshold := 155.0; --            : Amount := 0.0;
                sys.secondary_threshold := 156.0; --          : Amount := 0.0;     
