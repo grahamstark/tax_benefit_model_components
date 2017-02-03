@@ -72,9 +72,11 @@ package body Model.Example_Household.Impl.Tests is
                cpag_angelina_and_michael|
                caring_couple =>
                   Assert( sn.Length = 2, "sn for " & ext'Img & " /= 2; was " & sn.Length'Img );
-            when hmrc_ni_example_1 => null;
-            when hmrc_ni_example_2 => null;
-            when hmrc_ni_example_3 => null;
+            when hmrc_ni_example_1 |
+                  hmrc_ni_example_2 |
+                  hmrc_ni_example_4 |
+                  hmrc_ni_example_7 =>
+               Assert( sn.Length = 1, "sn for " & ext'Img & " /= 1; was " & sn.Length'Img );
                 
             end case;
             pno := 1;

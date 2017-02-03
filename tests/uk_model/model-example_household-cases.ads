@@ -12,10 +12,12 @@ package Model.Example_Household.Cases is
       care_home_resident,
       caring_couple,
       working_single_parent,
+      -- NI Test cases;
       -- from: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/489983/ni-guidance-2016-2017.pdf
       hmrc_ni_example_1,
       hmrc_ni_example_2,
-      hmrc_ni_example_3 );
+      hmrc_ni_example_4,
+      hmrc_ni_example_7 );
    
    function Get_Household( which : Example_Type ) return Household;
    

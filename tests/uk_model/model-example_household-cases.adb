@@ -20,7 +20,8 @@ package body Model.Example_Household.Cases is
       when 
          hmrc_ni_example_1 |
          hmrc_ni_example_2 |
-         hmrc_ni_example_3   => n := 1;       
+         hmrc_ni_example_4 |
+         hmrc_ni_example_7 => n := 1;       
       end case;
       return n;
    end  Get_HH_Size;
@@ -97,7 +98,7 @@ package body Model.Example_Household.Cases is
       when 
             hmrc_ni_example_1 |
             hmrc_ni_example_2 |
-            hmrc_ni_example_3 =>
+            hmrc_ni_example_4 =>
               hh.housing_costs( rent ) := 0.0;
               hh.wealth( property ) := 0.0;               
       when single_retired_person |
@@ -186,17 +187,23 @@ package body Model.Example_Household.Cases is
          hh.people( 2 ).incomes( private_pensions ) := 100.0;
          hh.people( 2 ).marital_status := married_or_civil_partnership;
       when hmrc_ni_example_1 =>  -- P 20-26 of "National Insurance Contributions guidance for software developers "
+         -- A 28 year old employee earns £112.53 a week and pays standard NICs
          hh.people( 1 ) := Make_Working_Adult( hh, 28, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 112.53, others => 0.0 );
-      when hmrc_ni_example_2 => null;
+      when hmrc_ni_example_2 => 
+         -- A 44 year old employee earns £869 a week and pays standard NICs
          hh.people( 1 ) := Make_Working_Adult( hh, 44, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 869.00, others => 0.0 );
-      when hmrc_ni_example_3 => null;
+      when hmrc_ni_example_4 => 
+         -- A 19 year old employee earns £834 a week and pays standard NICs
          hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 834.00, others => 0.0 );
+      when hmrc_ni_example_7 => null;
+         -- example 7: An 18 year old director for the whole tax year earns £52,000. Pays standard
+         -- NICs. Has paid no NICs to date.
       end case;
       return hh;
    end Make_Household;
@@ -247,9 +254,12 @@ package body Model.Example_Household.Cases is
       when hmrc_ni_example_2 => 
          hid := 41_000_000;
          pid := 41_000_001;
-      when hmrc_ni_example_3 => null;
+      when hmrc_ni_example_4 => null;
          hid := 42_000_000;
          pid := 42_000_001;
+      when hmrc_ni_example_7 => null;
+         hid := 43_000_000;
+         pid := 43_000_001;
       end case;
       return Make_Household( which, hid, pid, year );
    end Get_Household;

@@ -80,7 +80,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          Model.Parameter_System.Defaults.Get_State_Pension( 2016 );
    begin
       Operations.To_Weekly( ni_sys );
-      for ext in hmrc_ni_example_1 .. hmrc_ni_example_3 loop
+      for ext in hmrc_ni_example_1 .. hmrc_ni_example_4 loop
          Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -109,9 +109,13 @@ package body Model.Calculator.Direct_Tax.Tests is
                         when hmrc_ni_example_2 =>
                            Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
                            Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
-                        when hmrc_ni_example_3 =>
-                           Assert( Within_1P( ni, 0.97 ), " ex. 4 should be 0.97; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 80.78 ), " ex. 2 exmpl ni should be 80.78 ; was " & Format( empl_ni ));
+                        when hmrc_ni_example_4 =>
+                           Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 0.97 ), " ex. 2 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                        when hmrc_ni_example_7 =>
+                           Assert( Within_1P( ni, 4_372.80/52.0 ), " ex. 4 should be 80.78; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 1_242.00/52.0 ), " ex. 2 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                           
                      end case;
                   end;
                end;
@@ -203,7 +207,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                                  when working_single_parent => null; -- Assert( NearlyEqual( it, XX ), " it should be " & Format( XX ) & " was " & Format( it )); 
                                  when hmrc_ni_example_1 => null;
                                  when hmrc_ni_example_2 => null;
-                                 when hmrc_ni_example_3 => null;
+                                 when hmrc_ni_example_4 => null;
                               end case;
                             end;
                         end;
