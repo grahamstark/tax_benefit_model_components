@@ -215,6 +215,8 @@ package body Model.Calculator.Direct_Tax.Tests is
                                  when hmrc_ni_example_2 => null;
                                  when hmrc_ni_example_4 => null;
                                  when hmrc_ni_example_7 => null;
+                                 when se_example_1 => null;
+                                 when se_example_2 => null;
                               end case;
                             end;
                         end;
