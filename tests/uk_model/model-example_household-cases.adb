@@ -21,7 +21,9 @@ package body Model.Example_Household.Cases is
          hmrc_ni_example_1 |
          hmrc_ni_example_2 |
          hmrc_ni_example_4 |
-         hmrc_ni_example_7 => n := 1;       
+         hmrc_ni_example_7 |
+         se_example_1 |
+         se_example_2 => n := 1;       
       end case;
       return n;
    end  Get_HH_Size;
@@ -202,12 +204,21 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 834.00, others => 0.0 );
-      when hmrc_ni_example_7 => null;
+      when hmrc_ni_example_7 =>
          hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 52_000.0/52.0, others => 0.0 );
          -- example 7: An 18 year old director for the whole tax year earns £52,000. Pays standard
          -- NICs. Has paid no NICs to date.
+      when se_example_1 =>
+         hh.people( 1 ) := Make_Working_Adult( hh, 40, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( self_employment => 10_000.0/52.0, others => 0.0 );
+      when se_example_2 =>
+         hh.people( 1 ) := Make_Working_Adult( hh, 40, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( self_employment => 52_000.0/52.0, others => 0.0 );
+         
       end case;
       return hh;
    end Make_Household;
@@ -264,6 +275,12 @@ package body Model.Example_Household.Cases is
       when hmrc_ni_example_7 => null;
          hid := 43_000_000;
          pid := 43_000_001;
+      when se_example_1 => null;
+         hid := 44_000_000;
+         pid := 44_000_001;
+      when se_example_2 => null;
+         hid := 45_000_000;
+         pid := 45_000_001;
       end case;
       return Make_Household( which, hid, pid, year );
    end Get_Household;

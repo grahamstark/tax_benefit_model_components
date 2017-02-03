@@ -75,7 +75,9 @@ package body Model.Example_Household.Impl.Tests is
             when hmrc_ni_example_1 |
                   hmrc_ni_example_2 |
                   hmrc_ni_example_4 |
-                  hmrc_ni_example_7 =>
+                  hmrc_ni_example_7 |
+                  se_example_1 |
+                  se_example_2 =>
                Assert( sn.Length = 1, "sn for " & ext'Img & " /= 1; was " & sn.Length'Img );
                 
             end case;

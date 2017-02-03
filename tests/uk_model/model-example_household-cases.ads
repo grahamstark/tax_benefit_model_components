@@ -17,7 +17,9 @@ package Model.Example_Household.Cases is
       hmrc_ni_example_1,
       hmrc_ni_example_2,
       hmrc_ni_example_4,
-      hmrc_ni_example_7 );
+      hmrc_ni_example_7,
+      se_example_1,
+      se_example_2 );
    
    function Get_Household( which : Example_Type ) return Household;
    

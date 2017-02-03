@@ -80,7 +80,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          Model.Parameter_System.Defaults.Get_State_Pension( 2016 );
    begin
       Operations.To_Weekly( ni_sys );
-      for ext in hmrc_ni_example_1 .. hmrc_ni_example_7 loop
+      for ext in hmrc_ni_example_1 .. se_example_2 loop
          Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -113,6 +113,12 @@ package body Model.Calculator.Direct_Tax.Tests is
                            Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
                            Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
                         when hmrc_ni_example_7 =>
+                           Assert( Within_1P( ni, 84.09 ), " ex. 4 should be 84.09; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
+                        when se_example_1 =>
+                           Assert( Within_1P( ni, 84.09 ), " ex. 4 should be 84.09; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
+                        when se_example_2 =>
                            Assert( Within_1P( ni, 84.09 ), " ex. 4 should be 84.09; was " & Format( ni ));
                            Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
                            
