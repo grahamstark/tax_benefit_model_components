@@ -63,8 +63,10 @@ package body Model.Calculator.Direct_Tax is
    function Calculate_Class_2_NICs( 
       ni_sys  : National_Insurance_System;
       profits : Amount ) return Amount is
+      class2 : constant Amount := ( if profits < ni_sys.class_2_exemption then 0.0 else ni_sys.class_2_rate );
    begin
-      return ( if profits < ni_sys.class_2_exemption then 0.0 else ni_sys.class_2_rate ); 
+      Trace( log_trace, "Calculate_Class_2_NICs: class2= " & Format( class2 ));
+      return class2; 
    end Calculate_Class_2_NICs;
    
    function Calculate_Class_4_NICs( 
@@ -75,6 +77,7 @@ package body Model.Calculator.Direct_Tax is
       if taxable_profits <= 0.0 then
          return 0.0;
       end if;
+      Trace( log_trace, "Calculate_Class_4_NICs: taxable profits " & Format( taxable_profits ));
       return UK_Tax_Utils.Calc_Tax_Due(
             ni_sys.class_4_rates, taxable_profits ).due;
    end Calculate_Class_4_NICs;
