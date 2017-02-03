@@ -98,7 +98,8 @@ package body Model.Example_Household.Cases is
       when 
             hmrc_ni_example_1 |
             hmrc_ni_example_2 |
-            hmrc_ni_example_4 =>
+            hmrc_ni_example_4 | 
+            hmrc_ni_example_7 =>
               hh.housing_costs( rent ) := 0.0;
               hh.wealth( property ) := 0.0;               
       when single_retired_person |

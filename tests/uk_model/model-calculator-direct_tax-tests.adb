@@ -80,7 +80,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          Model.Parameter_System.Defaults.Get_State_Pension( 2016 );
    begin
       Operations.To_Weekly( ni_sys );
-      for ext in hmrc_ni_example_1 .. hmrc_ni_example_4 loop
+      for ext in hmrc_ni_example_1 .. hmrc_ni_example_7 loop
          Put_Line( "on household " & ext'Img );
          declare
             mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
@@ -208,6 +208,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                                  when hmrc_ni_example_1 => null;
                                  when hmrc_ni_example_2 => null;
                                  when hmrc_ni_example_4 => null;
+                                 when hmrc_ni_example_7 => null;
                               end case;
                             end;
                         end;
