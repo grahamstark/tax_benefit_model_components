@@ -203,6 +203,9 @@ package body Model.Example_Household.Cases is
          hh.people( 1 ).marital_status := single;
          hh.people( 1 ).incomes := ( wages => 834.00, others => 0.0 );
       when hmrc_ni_example_7 => null;
+         hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
+         hh.people( 1 ).marital_status := single;
+         hh.people( 1 ).incomes := ( wages => 52_000.0/52.0, others => 0.0 );
          -- example 7: An 18 year old director for the whole tax year earns £52,000. Pays standard
          -- NICs. Has paid no NICs to date.
       end case;

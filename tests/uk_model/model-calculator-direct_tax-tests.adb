@@ -111,10 +111,10 @@ package body Model.Calculator.Direct_Tax.Tests is
                            Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
                         when hmrc_ni_example_4 =>
                            Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 0.97 ), " ex. 2 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                           Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
                         when hmrc_ni_example_7 =>
-                           Assert( Within_1P( ni, 4_372.80/52.0 ), " ex. 4 should be 80.78; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 1_242.00/52.0 ), " ex. 2 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                           Assert( Within_1P( ni, 84.09 ), " ex. 4 should be 84.09; was " & Format( ni ));
+                           Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
                            
                      end case;
                   end;
