@@ -18,8 +18,23 @@ package body Model.Parameter_System.Operations is
    procedure To_Weekly( ni_sys : in out National_Insurance_System ) is
       rb : Rate_And_Band;
    begin
+
+      -- --
+      -- -- construct NI out rates from in plus rebate
+      -- --
+      -- ni_sys.employee_out_rates := ni_sys.employee_in_rates;
+      -- rb := ni_sys.employee_in_rates.Get_Rate_And_Band( Which => 1 );
+      -- rb.rate := Amount'Max( 0.0, rb.rate - sys.employees_contracted_out_rebate );
+      -- ni_sys.employee_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      -- 
+      -- ni_sys.employee_out_rates := ni_sys.employee_in_rates;
+      -- rb := ni_sys.employee_in_rates.Get_Rate_And_Band( Which => 1 );
+      -- rb.rate := Amount'Max( 0.0, rb.rate - sys.employees_contracted_out_rebate );
+      -- ni_sys.employee_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      -- 
       ni_sys.employee_in_rates.To_Levels;
       ni_sys.employee_out_rates.To_Levels;
+      
       ni_sys.employer_in_rates.To_Levels;
       ni_sys.employer_out_rates.To_Levels;
       ni_sys.employer_out_rates.To_Levels;

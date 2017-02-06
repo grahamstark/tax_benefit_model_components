@@ -43,6 +43,11 @@ package Model.Parameter_System is
       
       class_4_rates                : Rates_And_Bands;
       zero_employers_rate_for_young_people  : Boolean := True;
+      -- maybe ... 
+      -- employers_contracted_out_rebate : Amount := 0.0;
+      -- employees_contracted_out_rebate : Amount := 0.0;
+      
+      
      --
      -- FIXME todo self employed stuff
      --
