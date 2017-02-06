@@ -73,9 +73,9 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
       ni_sys  : National_Insurance_System := 
-         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2016 );
+         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2015 );
       pen_sys : Pension_System := 
-         Model.Parameter_System.Defaults.Get_State_Pension( 2016 );
+         Model.Parameter_System.Defaults.Get_State_Pension( 2015 );
    begin
       Operations.To_Weekly( ni_sys );
       for ext in hmrc_ni_example_1 .. se_example_2 loop
