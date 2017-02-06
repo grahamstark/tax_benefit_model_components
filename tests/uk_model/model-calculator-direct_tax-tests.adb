@@ -69,8 +69,6 @@ package body Model.Calculator.Direct_Tax.Tests is
       return sys;
    end Make_Complete_System;
    
-   sys : Complete_System := Make_Complete_System( 2015 );
-   
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
@@ -116,7 +114,7 @@ package body Model.Calculator.Direct_Tax.Tests is
                            Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
                            Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
                         when se_example_1 =>
-                           Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.6; was " & Format( ni ));
+                           Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
                            Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
                         when se_example_2 =>
                            Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
@@ -134,6 +132,8 @@ package body Model.Calculator.Direct_Tax.Tests is
    procedure Test_Calculate_Income_Tax( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
+      sys : Complete_System := Make_Complete_System( 2015 );
+     
    begin
       Families:
       for ext in Example_Type loop

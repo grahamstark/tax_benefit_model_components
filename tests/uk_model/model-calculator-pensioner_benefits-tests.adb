@@ -63,9 +63,9 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       return sys;
    end Make_Complete_System;
    
-   sys : Complete_System := Make_Complete_System( 2015 );
-
+   
    procedure Test_Calculate_Guaranteed_Pension_Credit( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+      sys : Complete_System := Make_Complete_System( 2015 );
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
    begin
