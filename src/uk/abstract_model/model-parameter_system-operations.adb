@@ -22,10 +22,7 @@ package body Model.Parameter_System.Operations is
       ni_sys.employee_out_rates.To_Levels;
       ni_sys.employer_in_rates.To_Levels;
       ni_sys.employer_out_rates.To_Levels;
-      
-      A2W( ni_sys.class_2_exemption);
-      A2W( ni_sys.class_4_lower_profit_limit );
-      ni_sys.class_4_rates.Annual_To_Weekly;
+      ni_sys.employer_out_rates.To_Levels;
       --
       -- inject a zero band into employees NI, at the level of the primary threshold      
       --
@@ -46,6 +43,20 @@ package body Model.Parameter_System.Operations is
       rb := ni_sys.employer_out_rates.Get_Rate_And_Band( Which => 1 );
       rb.band := Amount'Max( 0.0, rb.band - ni_sys.secondary_threshold );
       ni_sys.employer_out_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      
+
+      --
+      -- add lpr to class 4 
+      rb := ni_sys.class_4_rates.Get_Rate_And_Band( Which => 1 );
+      rb.band := Amount'Max( 0.0, rb.band - ni_sys.class_4_lower_profit_limit );
+      ni_sys.class_4_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>True );
+      
+      ni_sys.class_4_rates.Annual_To_Weekly;
+      ni_sys.class_4_rates.To_Levels;
+      A2W( ni_sys.class_2_exemption);
+      A2W( ni_sys.class_4_lower_profit_limit );
+      
+      
       
       -- rb.band := ni_sys.secondary_threshold;
       -- ni_sys.employer_in_rates.Set_Rate_And_Band( RB => rb, Pos => 1, replace=>False );

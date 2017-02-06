@@ -78,6 +78,7 @@ package body Model.Calculator.Direct_Tax is
          return 0.0;
       end if;
       Trace( log_trace, "Calculate_Class_4_NICs: taxable profits " & Format( taxable_profits ));
+      Trace( log_trace, "Calculate_Class_4_NICs: rbs: " & ni_sys.class_4_rates.To_String );
       return UK_Tax_Utils.Calc_Tax_Due(
             ni_sys.class_4_rates, taxable_profits ).due;
    end Calculate_Class_4_NICs;

@@ -35,8 +35,8 @@ with Text_Utils;
 package body Tax_Utils is
 
    DAYS_PER_YEAR   : constant Rate_Type := 365.25;
-   WEEKS_PER_YEAR  : constant Rate_Type := DAYS_PER_YEAR / 7.0;
-   WEEKS_PER_MONTH : constant Rate_Type := WEEKS_PER_YEAR / 12.0;
+   WEEKS_PER_YEAR  : constant Rate_Type := 52.00; -- DAYS_PER_YEAR / 7.0;
+   WEEKS_PER_MONTH : constant Rate_Type := 4.00; -- WEEKS_PER_YEAR / 12.0;
    
    procedure Set_Rate_And_Band( ratebands : in out Rates_And_Bands; rb : Rate_And_Band; pos : Positive; replace : Boolean := true ) is
    use Rates_And_Bands_List;
@@ -432,7 +432,8 @@ package body Tax_Utils is
       s : Unbounded_String;
 
       procedure To_String( pos : Cursor ) is
-         la : Rate_And_Band :=  element( pos );
+         la : Rate_And_Band := Element( pos );
+         index : Integer := To_Index( pos );
       begin
          -- la.limit := la.limit * Amount_Type(amount);
          if( la.band < 999999999.99 )then
@@ -440,6 +441,7 @@ package body Tax_Utils is
          else
             s := s & "  inf        ";
          end if;
+         s := s & index'Img & " ";
          s := s & FN( la.rate * 100.0, 10 );
          s := s & LINE_BREAK;
       end To_String;

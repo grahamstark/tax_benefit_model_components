@@ -298,6 +298,7 @@ package body Model.Parameter_System.Defaults is
                sys.class_2_rate := 2.80; -- per weel                 : Amount := 0.0;
       
                sys.class_4_lower_profit_limit    := 8060.0;
+               
                sys.class_4_rates := Vectors_To_RB( 
                   class_4_rates,
                   class_4_bands );
