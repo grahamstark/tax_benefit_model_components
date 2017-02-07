@@ -12,6 +12,7 @@ package Model.Example_Household is
       sex                       : Gender_Type := male;
       relationship              : Relationship_Type := head;
       marital_status            : Marital_Status_Type := na;
+      birth_year                : Year_Number := Year_Number'First;
       incomes                   : Incomes_List := ( others => 0.0 );
       wealth                    : Wealth_List := ( others => 0.0 );
       employment                : Broad_Employment_Status := full_time;

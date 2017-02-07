@@ -1,7 +1,10 @@
 with Model.Abstract_Household;
+with Ada.Calendar;
 
 package Model.Example_Household.Impl is
 
+
+   use Ada.Calendar;
 
    type Model_Person is new Person and Model.Abstract_Household.Person with null record;
    
@@ -12,6 +15,7 @@ package Model.Example_Household.Impl is
    overriding function Family_Relationship( pers : Model_Person ) return Relationship_Type;
    overriding function Employment( pers : Model_Person ) return Broad_Employment_Status;
    overriding function Gender( pers : Model_Person ) return Gender_Type;
+   overriding function Birth_Year( pers : Model_Person ) return Year_Number;
    overriding function Is_Contracted_In_To_Serps( pers : Model_Person ) return Boolean;
    overriding function Hours_Worked( pers : Model_Person ) return Work_Hours_Range;
    overriding function Average_Wage_Per_Hour( pers : Model_Person ) return Amount;
@@ -19,7 +23,7 @@ package Model.Example_Household.Impl is
    overriding function Num_Jobs( pers : Model_Person ) return Natural;
    overriding function Get_Job( pers : Model_Person; which : Positive ) return Model.Abstract_Household.Job_Record'Class;
    overriding function Get_Earnings( pers : Model_Person ) return Amount_Array;
-
+   
    type Model_Benefit_Unit is new Benefit_Unit and Model.Abstract_Household.Benefit_Unit with null record;
 
    overriding function Get_Pids(

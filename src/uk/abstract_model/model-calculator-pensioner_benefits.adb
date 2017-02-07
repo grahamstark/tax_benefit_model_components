@@ -42,7 +42,13 @@ package body Model.Calculator.Pensioner_Benefits is
             pers : mah.Person'Class renames bu.Find_Person( pid );
          begin
             if Is_At_Pension_Age( pers, sys ) then
+               if(( sys.new_pension > 0.0 ) and
+                  (( pers.gender = female and pers.Birth_Year >= sys.qualifying_year_women ) or
+                   ( pers.gender = male and pers.Birth_Year >= sys.qualifying_year_men ))) then
+                  res.Set( pid, retirement_pension, sys.new_pension );
+               else   
                   res.Set( pid, retirement_pension, sys.class_a );
+               end if;
             end if;
          end;
       end loop;

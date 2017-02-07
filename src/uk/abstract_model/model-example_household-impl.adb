@@ -41,6 +41,13 @@ package body Model.Example_Household.Impl is
    begin
       return pers.relationship;
    end Family_Relationship;
+
+
+   function Birth_Year( pers : Model_Person ) return Year_Number is
+   begin
+      return pers.birth_year;
+   end Birth_Year;
+
    
    function Employment( pers : Model_Person ) return Broad_Employment_Status is
    begin

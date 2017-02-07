@@ -1,7 +1,10 @@
 with Standard_UK_Enums;
+with Ada.Calendar;
 
 package Model.Parameter_System is
 
+   use Ada.Calendar;
+   
    type Income_Tax_System is record
      non_savings_income_rates : Rates_And_Bands;
      savings_income_rates     : Rates_And_Bands;
@@ -190,9 +193,12 @@ package Model.Parameter_System is
    type Pension_System is record
       age_men   : Age_Range;
       age_women : Age_Range;
-      citizens_pension  : Boolean ;
-      class_a : Amount;
+      citizens_pension  : Boolean := False;
+      class_a : Amount  := 0.0;
       preserve_for_existing_claimants : Boolean;
+      new_pension : Amount := 0.0;
+      qualifying_year_women : Year_Number := 2050;
+      qualifying_year_men   : Year_Number := 2050;
    end record;
    
    type Guaranteed_Credit_System is record

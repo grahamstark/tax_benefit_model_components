@@ -1,9 +1,11 @@
 with Ada.Containers.Indefinite_Vectors;
 with Standard_UK_Enums;
+with Ada.Calendar;
 
 package Model.Abstract_Household is
                 
    use Standard_UK_Enums;
+   use Ada.Calendar;
    
    type Incomes is interface;
    function Get_Income( i : Incomes; w : Non_Calculated_Incomes_Range ) return Amount is abstract;
@@ -15,6 +17,7 @@ package Model.Abstract_Household is
    function Employment( d : Demog ) return Broad_Employment_Status is abstract;
    function Gender( d : Demog ) return Gender_Type is abstract;
    function Family_Relationship( d : Demog ) return Relationship_Type is abstract;
+   function Birth_Year( d : Demog ) return Year_Number is abstract;
    
    type Wealth is interface;
    function Get_Wealth( w : Wealth ) return Wealth_List is abstract;
