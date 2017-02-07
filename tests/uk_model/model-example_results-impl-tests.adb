@@ -33,6 +33,7 @@ with Model.Example_Household.Cases;
 with Model.Example_Household.Impl;
 with Model.Abstract_Household;
 with AUnit.Assertions;
+with Ada.Calendar;
 
 package body Model.Example_Results.Impl.Tests is
 
@@ -40,15 +41,16 @@ package body Model.Example_Results.Impl.Tests is
    use Ada.Text_IO;                          
    use Ada.Containers;
    use Model.Example_Household;
-   
+   use Ada.Calendar;
    
    procedure Test_Set_Pers( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Cases;
+      year : Year_Number := 2016;
    begin
       Each_HHLd:
       for ht in Example_Type loop
          declare
-            hh : Household := Cases.Get_Household( ht );
+            hh : Household := Cases.Get_Household( ht, year );
             mp : Person_Count := hh.people'Length;
             res : Model_Household_Result := Initialise( hh );
             m   : Amount := Amount( Example_Type'Pos( ht ));

@@ -1,4 +1,8 @@
+with Ada.Calendar;
+
 package Model.Example_Household.Cases is
+   
+   use Ada.Calendar;
 
    type Example_Type is (
       single_retired_person,
@@ -21,6 +25,6 @@ package Model.Example_Household.Cases is
       se_example_1,
       se_example_2 );
    
-   function Get_Household( which : Example_Type ) return Household;
+   function Get_Household( which : Example_Type; year : Year_Number ) return Household;
    
 end Model.Example_Household.Cases;

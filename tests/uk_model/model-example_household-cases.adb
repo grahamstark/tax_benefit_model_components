@@ -225,11 +225,10 @@ package body Model.Example_Household.Cases is
       return hh;
    end Make_Household;
    
-   function Get_Household( which : Example_Type ) return Household is
+   function Get_Household( which : Example_Type; year : Year_Number ) return Household is
    use Ada.Calendar;
       pid  : Sernum_Value;
       hid  : Sernum_Value;
-      year : Year_Number := 2016;      
    begin
       case which is
       when single_retired_person =>

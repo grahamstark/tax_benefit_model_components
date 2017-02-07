@@ -30,7 +30,7 @@ pragma License( Modified_GPL );
 with Ada.Text_IO;
 with Model.Example_Household.Cases;
 with Ada.Containers;
-
+with Ada.Calendar;
 with AUnit.Assertions;
 
 package body Model.Example_Household.Impl.Tests is
@@ -38,6 +38,7 @@ package body Model.Example_Household.Impl.Tests is
    use AUnit.Assertions;             
    use Ada.Text_IO;
    use Ada.Containers;
+   use Ada.Calendar;
    
    procedure Set_Up ( T : in out Test_Case ) is
    begin
@@ -46,10 +47,11 @@ package body Model.Example_Household.Impl.Tests is
    
    procedure Test_Impls( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
+      year : Year_Number := 2016;
    begin
       for ext in Example_Type loop
          declare
-            hh  : Household := Get_Household( ext );
+            hh  : Household := Get_Household( ext, year );
             mhh : Model_Household := ( hh with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );

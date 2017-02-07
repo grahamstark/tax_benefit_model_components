@@ -68,6 +68,7 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
       sys : Complete_System := Make_Complete_System( 2015 );
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
+      year : Year_Number := 2016;
    begin
       Families:
       for ext in single_retired_person .. young_single loop
@@ -75,7 +76,7 @@ package body Model.Calculator.Pensioner_Benefits.Tests is
          Put_Line( "pno,dividends,private_pensions,state_pen,hb,pension_credit,state_pen(BU),hb(BU),pension_credit(BU)" );
                               
          declare
-            mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
+            mhh  : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
             ss   : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn   : Sernum_Set := ss.Element( 1 );
             

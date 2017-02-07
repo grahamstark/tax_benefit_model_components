@@ -72,60 +72,64 @@ package body Model.Calculator.Direct_Tax.Tests is
    procedure Test_Calculate_National_Insurance( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
-      ni_sys  : National_Insurance_System := 
-         Model.Parameter_System.Defaults.Get_National_Insurance_System( 2015 );
-      pen_sys : Pension_System := 
-         Model.Parameter_System.Defaults.Get_State_Pension( 2015 );
+      ni_sys  : National_Insurance_System;
+      pen_sys : Pension_System;
    begin
-      Operations.To_Weekly( ni_sys );
-      for ext in hmrc_ni_example_1 .. se_example_2 loop
-         Put_Line( "on household " & ext'Img );
-         declare
-            mhh     : Impl.Model_Household := ( Get_Household( ext ) with null record );
-            pids    : Sernum_Set := mhh.Get_PIDs;
-         begin
-            for pid of pids loop
-               declare
-                  pers : A_Pers := mhh.Find_Person( pid );
-                  res : Model_Personal_Result;
-               begin
-                  Put_Line( "on person " & pers.pid'Img & " age " & pers.age'Img );
-                  res.Zero;
-                  Calculate_National_Insurance( ni_sys, pen_sys, pers, res );
+      Years:
+      for year in 2016 .. 2017 loop
+         ni_sys := Model.Parameter_System.Defaults.Get_National_Insurance_System( year );
+         pen_sys := Model.Parameter_System.Defaults.Get_State_Pension( year );
+         Operations.To_Weekly( ni_sys );
+         HHLDs:
+         for ext in hmrc_ni_example_1 .. se_example_2 loop
+            Put_Line( "on household " & ext'Img );
+            declare
+               mhh     : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
+               pids    : Sernum_Set := mhh.Get_PIDs;
+            begin
+               for pid of pids loop
                   declare
-                     ni : Amount := res.Get( national_insurance );
-                     empl_ni : Amount := res.Get( employers_ni );
+                     pers : A_Pers := mhh.Find_Person( pid );
+                     res : Model_Personal_Result;
                   begin
-                     Put( "Wage: " & Format( pers.Get_Income( wages )));
-                     Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
-                     Put( "; NI: " & Format( ni ));
-                     Put_Line( "; Empl NI: " & Format( empl_ni ));
-                     case ext is
-                        when hmrc_ni_example_1 =>
-                           Assert( Within_1P( ni, 0.0 ), " ex. 1 should be 0.0; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & Format( ni ));
-                        when hmrc_ni_example_2 =>
-                           Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
-                        when hmrc_ni_example_4 =>
-                           Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
-                        when hmrc_ni_example_7 =>
-                           Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
-                        when se_example_1 =>
-                           Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
-                        when se_example_2 =>
-                           Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
-                           Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
-                           
-                     end case;
+                     Put_Line( "on person " & pers.pid'Img & " age " & pers.age'Img );
+                     res.Zero;
+                     Calculate_National_Insurance( ni_sys, pen_sys, pers, res );
+                     declare
+                        ni : Amount := res.Get( national_insurance );
+                        empl_ni : Amount := res.Get( employers_ni );
+                     begin
+                        Put( "Wage: " & Format( pers.Get_Income( wages )));
+                        Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
+                        Put( "; NI: " & Format( ni ));
+                        Put_Line( "; Empl NI: " & Format( empl_ni ));
+                        case ext is
+                           when hmrc_ni_example_1 =>
+                              Assert( Within_1P( ni, 0.0 ), " ex. 1 should be 0.0; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & Format( ni ));
+                           when hmrc_ni_example_2 =>
+                              Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
+                           when hmrc_ni_example_4 =>
+                              Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                           when hmrc_ni_example_7 =>
+                              Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
+                           when se_example_1 =>
+                              Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
+                           when se_example_2 =>
+                              Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
+                              Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
+                              
+                        end case;
+                     end;
                   end;
-               end;
-            end loop;
-         end;
-      end loop;
+               end loop;
+            end;
+         end loop HHLDs;
+      end loop Years;
    end Test_Calculate_National_Insurance;
    
    
@@ -133,7 +137,7 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Household.Cases;
       use Model.Example_Results.Impl;
       sys : Complete_System := Make_Complete_System( 2015 );
-     
+      year : Year_Number := 2015;
    begin
       Families:
       for ext in Example_Type loop
@@ -141,7 +145,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          Put_Line( "pno,wages,dividends,bank_interest,ni,income_tax" );
                               
          declare
-            mhh  : Impl.Model_Household := ( Get_Household( ext ) with null record );
+            mhh  : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
             ss  : Sernum_Set_List := mhh.Get_Default_Benefit_Unit_PIDs;
             sn  : Sernum_Set := ss.Element( 1 );
             pno : Person_Number := 1;
