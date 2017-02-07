@@ -310,15 +310,15 @@ package body Model.Parameter_System.Defaults is
         when 2016 => 
             declare
                employee_in_rates  : V2 := ( 12.0, 2.0 );
-               employee_out_rates : V2 := ( 10.6, 2.0 );
+               employee_out_rates : V2 := ( 12.0, 2.0 );
                employer_in_rates  : V2 := ( 13.80, 13.8 );
-               employer_out_rates : V2 := ( 10.4, 10.4 );
+               employer_out_rates : V2 := ( 13.80, 13.80 );
                class_4_bands      : V2 := ( 43_000.0, 999_999_999_99_99.99 );
-               bands              : V2 := ( 805.00, 999_999_999_99_99.99 );
+               bands              : V2 := ( 827.00, 999_999_999_99_99.99 );
                class_4_rates      : V2 := ( 9.0, 2.0 );
             begin
                sys.class_1_lower_earnings_limit := 112.00;
-               sys.contracting_out_abolished  := False; --   : Boolean := false;
+               sys.contracting_out_abolished  := True; --   : Boolean := false;
                sys.zero_employers_rate_for_young_people := True;
                sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
                sys.primary_threshold := 155.0; --            : Amount := 0.0;
@@ -342,6 +342,42 @@ package body Model.Parameter_System.Defaults is
                   employer_in_rates,
                   employer_out_rates );
             end;
+      when 2017 =>
+            declare
+               employee_in_rates  : V2 := ( 12.0, 2.0 );
+               employee_out_rates : V2 := ( 12.0, 2.0 );
+               employer_in_rates  : V2 := ( 13.80, 13.80 );
+               employer_out_rates : V2 := ( 13.80, 13.80 );
+               class_4_bands      : V2 := ( 45_000.0, 999_999_999_99_99.99 );
+               bands              : V2 := ( 866.00, 999_999_999_99_99.99 );
+               class_4_rates      : V2 := ( 9.0, 2.0 );
+            begin
+               sys.class_1_lower_earnings_limit := 113.00;
+               sys.contracting_out_abolished  := True; --   : Boolean := false;
+               sys.zero_employers_rate_for_young_people := True;
+               sys.class_1_rebate := 0.0;--               : Rate   := 0.0; -- a percentage 
+               sys.primary_threshold := 157.0; --            : Amount := 0.0;
+               sys.secondary_threshold := 157.0; --          : Amount := 0.0;     
+      
+      
+               sys.class_2_exemption := 6_025.0; -- PA           : Amount := 0.0;
+               sys.class_2_rate := 2.85; -- per weel                 : Amount := 0.0;
+      
+               sys.class_4_lower_profit_limit    := 8164.0;
+               
+               sys.class_4_rates := Vectors_To_RB( 
+                  class_4_rates,
+                  class_4_bands );
+                  
+               Set_Rates_And_Bands_NI( 
+                  sys,
+                  bands,
+                  employee_in_rates,
+                  employee_out_rates,
+                  employer_in_rates,
+                  employer_out_rates );
+            end;
+         
       when others => null;
       end case;
       return sys;
