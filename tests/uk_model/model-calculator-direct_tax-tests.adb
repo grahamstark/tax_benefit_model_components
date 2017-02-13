@@ -100,6 +100,9 @@ package body Model.Calculator.Direct_Tax.Tests is
          HHLDs:
          for ext in NI_Target_People loop
             Put_Line( "on household " & ext'Img );
+            --
+            -- there's only ever 1 person in these hhlds so this is a bit silly.
+            --
             declare
                mhh     : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
                pids    : Sernum_Set := mhh.Get_PIDs;
@@ -122,29 +125,6 @@ package body Model.Calculator.Direct_Tax.Tests is
                         Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
                         Put( "; NI: " & Format( ni ));
                         Put_Line( "; Empl NI: " & Format( empl_ni ));
-                        -- case ext is
-                           -- when hmrc_ni_example_1 =>
-                              -- ni_target := 0.0;
-                              -- empl_ni_target := 0.0;
-                           -- when hmrc_ni_example_2 =>
-                              -- ni_target := ( if year = 2015 then 81.48 else xxx  );
-                              -- empl_ni_target 
-                              -- Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
-                              -- Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
-                           -- when hmrc_ni_example_4 =>
-                              -- Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
-                              -- Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
-                           -- when hmrc_ni_example_7 =>
-                              -- Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
-                              -- Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
-                           -- when se_example_1 =>
-                              -- Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
-                              -- Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
-                           -- when se_example_2 =>
-                              -- Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
-                              -- Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
-                              -- 
-                        -- end case;
                         Assert( Within_1P( ni, ni_target ), 
                            " employee's NI for " & ext'Img & " for year " & year'Img & " should be " & 
                            Format( ni_target ) & " was " & Format( ni ));
