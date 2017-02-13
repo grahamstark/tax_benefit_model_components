@@ -205,7 +205,7 @@ package body Model.Example_Household.Cases is
          -- A 19 year old employee earns £834 a week and pays standard NICs
          hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
          hh.people( 1 ).marital_status := single;
-         hh.people( 1 ).incomes := ( wages => 834.00, others => 0.0 );
+         hh.people( 1 ).incomes := ( wages => ( if year = 2016 then 834.00 else 934.00 ), others => 0.0 );
       when hmrc_ni_example_7 =>
          hh.people( 1 ) := Make_Working_Adult( hh, 19, male, start_pid, head );
          hh.people( 1 ).marital_status := single;

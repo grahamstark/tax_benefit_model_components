@@ -74,14 +74,31 @@ package body Model.Calculator.Direct_Tax.Tests is
       use Model.Example_Results.Impl;
       ni_sys  : National_Insurance_System;
       pen_sys : Pension_System;
+      
+      type Employee_Employer is ( employee, employer );
+      subtype NI_Targets is Example_Type range( hmrc_ni_example_1 .. se_example_2 );
+      subtype NI_Years is Year_Number range( 2016 .. 2017 );
+      
+      type Target_Array is array( NI_Targets, Employee_Employer, NI_Years ) of Amount;
+      --
+      -- from: 
+      -- ni-guidance-2017-2018.pdf ni-guidance-2016-2017.pdf
+      -- 
+      NI_TARGETS : constant Target_Array := ( 
+         hmrc_ni_example_1 => ( Employee => ( 2016 =>  0.00, 2017 =>  0.00 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )),  
+         hmrc_ni_example_2 => ( Employee => ( 2016 => 81.48, 2017 => 85.14 ), Employer => ( 2016 => 98.40, 2017 => 98.25 )),
+         hmrc_ni_example_4 => ( Employee => ( 2016 => 80.78, 2017 => 86.44 ), Employer => ( 2016 =>  0.97, 2017 =>  9.38 )),
+         hmrc_ni_example_7 => ( Employee => ( 2016 => 84.09, 2017 => 87.90 ), Employer => ( 2016 => 23.88, 2017 => 19.15 )),
+         se_example_1      => ( Employee => ( 2016 =>  6.16, 2017 =>  6.16 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )),
+         se_example_2      => ( Employee => ( 2016 => 66.73, 2017 => 66.73 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )));
    begin
       Years:
-      for year in 2016 .. 2017 loop
+      for year in NI_Years loop
          ni_sys := Model.Parameter_System.Defaults.Get_National_Insurance_System( year );
          pen_sys := Model.Parameter_System.Defaults.Get_State_Pension( year );
          Operations.To_Weekly( ni_sys );
          HHLDs:
-         for ext in hmrc_ni_example_1 .. se_example_2 loop
+         for ext in NI_Targets loop
             Put_Line( "on household " & ext'Img );
             declare
                mhh     : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
@@ -98,32 +115,42 @@ package body Model.Calculator.Direct_Tax.Tests is
                      declare
                         ni : Amount := res.Get( national_insurance );
                         empl_ni : Amount := res.Get( employers_ni );
+                        ni_target : constant Amount := ni_targets( ext, employee, year );
+                        empl_ni_target : constant Amount := ni_targets( ext, employer, year ); 
                      begin
                         Put( "Wage: " & Format( pers.Get_Income( wages )));
                         Put( "; Profits: " & Format( pers.Get_Income( self_employment )));
                         Put( "; NI: " & Format( ni ));
                         Put_Line( "; Empl NI: " & Format( empl_ni ));
-                        case ext is
-                           when hmrc_ni_example_1 =>
-                              Assert( Within_1P( ni, 0.0 ), " ex. 1 should be 0.0; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 0.0 ), " ex. 1 empl_ni should be 0.0; was " & Format( ni ));
-                           when hmrc_ni_example_2 =>
-                              Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
-                           when hmrc_ni_example_4 =>
-                              Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
-                           when hmrc_ni_example_7 =>
-                              Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
-                           when se_example_1 =>
-                              Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
-                           when se_example_2 =>
-                              Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
-                              Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
-                              
-                        end case;
+                        -- case ext is
+                           -- when hmrc_ni_example_1 =>
+                              -- ni_target := 0.0;
+                              -- empl_ni_target := 0.0;
+                           -- when hmrc_ni_example_2 =>
+                              -- ni_target := ( if year = 2015 then 81.48 else xxx  );
+                              -- empl_ni_target 
+                              -- Assert( Within_1P( ni, 81.48 ), " ex. 2 should be 81.48; was " & Format( ni ));
+                              -- Assert( Within_1P( empl_ni, 98.40 ), " ex. 2 exmpl ni should be 98.40; was " & Format( empl_ni ));
+                           -- when hmrc_ni_example_4 =>
+                              -- Assert( Within_1P( ni, 80.78 ), " ex. 4 should be 80.78; was " & Format( ni ));
+                              -- Assert( Within_1P( empl_ni, 0.97 ), " ex. 4 exmpl ni should be 0.97 ; was " & Format( empl_ni ));
+                           -- when hmrc_ni_example_7 =>
+                              -- Assert( Within_1P( ni, 84.09 ), " ex. 7 should be 84.09; was " & Format( ni ));
+                              -- Assert( Within_1P( empl_ni, 23.88 ), " ex. 7 exmpl ni should be 23.88 ; was " & Format( empl_ni ));
+                           -- when se_example_1 =>
+                              -- Assert( Within_1P( ni, 6.16 ), " se_case_1 should be 6.16; was " & Format( ni ));
+                              -- Assert( Within_1P( empl_ni, 0.0 ), " se_case_1 ni should be 0.0 ; was " & Format( empl_ni ));
+                           -- when se_example_2 =>
+                              -- Assert( Within_1P( ni, 66.73 ), " se_case_2 should be 66.73; was " & Format( ni ));
+                              -- Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
+                              -- 
+                        -- end case;
+                        Assert( Within_1P( ni, ni_target, 
+                           " employee's NI for " & ext'Img & " for year " & year'Img " should be " & 
+                           Format( ni_target ) & " was " & Format( ni ));
+                        Assert( Within_1P( empl_ni, empl_ni_target ), 
+                           " employer's NI for " & ext'Img & " for year " & year'Img " should be " & 
+                           Format( empl_ni_target ) & " was " & Format( empl_ni ));
                      end;
                   end;
                end loop;
