@@ -76,10 +76,10 @@ package body Model.Calculator.Direct_Tax.Tests is
       pen_sys : Pension_System;
       
       type Employee_Employer is ( employee, employer );
-      subtype NI_Targets is Example_Type range( hmrc_ni_example_1 .. se_example_2 );
-      subtype NI_Years is Year_Number range( 2016 .. 2017 );
+      subtype NI_Target_People is Example_Type range hmrc_ni_example_1 .. se_example_2;
+      subtype NI_Years is Year_Number range 2016 .. 2017;
       
-      type Target_Array is array( NI_Targets, Employee_Employer, NI_Years ) of Amount;
+      type Target_Array is array( NI_Target_People, Employee_Employer, NI_Years ) of Amount;
       --
       -- from: 
       -- ni-guidance-2017-2018.pdf ni-guidance-2016-2017.pdf
@@ -98,7 +98,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          pen_sys := Model.Parameter_System.Defaults.Get_State_Pension( year );
          Operations.To_Weekly( ni_sys );
          HHLDs:
-         for ext in NI_Targets loop
+         for ext in NI_Target_People loop
             Put_Line( "on household " & ext'Img );
             declare
                mhh     : Impl.Model_Household := ( Get_Household( ext, year ) with null record );
@@ -145,11 +145,11 @@ package body Model.Calculator.Direct_Tax.Tests is
                               -- Assert( Within_1P( empl_ni, 0.0 ), " se_case_2 exmpl ni should be 0.0 ; was " & Format( empl_ni ));
                               -- 
                         -- end case;
-                        Assert( Within_1P( ni, ni_target, 
-                           " employee's NI for " & ext'Img & " for year " & year'Img " should be " & 
+                        Assert( Within_1P( ni, ni_target ), 
+                           " employee's NI for " & ext'Img & " for year " & year'Img & " should be " & 
                            Format( ni_target ) & " was " & Format( ni ));
                         Assert( Within_1P( empl_ni, empl_ni_target ), 
-                           " employer's NI for " & ext'Img & " for year " & year'Img " should be " & 
+                           " employer's NI for " & ext'Img & " for year " & year'Img & " should be " & 
                            Format( empl_ni_target ) & " was " & Format( empl_ni ));
                      end;
                   end;
