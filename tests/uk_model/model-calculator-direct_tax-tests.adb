@@ -88,7 +88,7 @@ package body Model.Calculator.Direct_Tax.Tests is
          hmrc_ni_example_1 => ( Employee => ( 2016 =>  0.00, 2017 =>  0.00 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )),  
          hmrc_ni_example_2 => ( Employee => ( 2016 => 81.48, 2017 => 85.14 ), Employer => ( 2016 => 98.40, 2017 => 98.25 )),
          hmrc_ni_example_4 => ( Employee => ( 2016 => 80.78, 2017 => 86.44 ), Employer => ( 2016 =>  0.97, 2017 =>  9.38 )),
-         hmrc_ni_example_7 => ( Employee => ( 2016 => 84.09, 2017 => 87.90 ), Employer => ( 2016 => 23.88, 2017 => 19.15 )),
+         hmrc_ni_example_7 => ( Employee => ( 2016 => 84.09, 2017 => 87.70 ), Employer => ( 2016 => 23.88, 2017 => 18.58 )),
          se_example_1      => ( Employee => ( 2016 =>  6.16, 2017 =>  6.16 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )),
          se_example_2      => ( Employee => ( 2016 => 66.73, 2017 => 66.73 ), Employer => ( 2016 =>  0.00, 2017 =>  0.00 )));
    begin
