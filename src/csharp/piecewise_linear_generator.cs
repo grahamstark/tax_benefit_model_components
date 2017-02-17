@@ -190,8 +190,8 @@ namespace PiecewiseLinearGenerator{
                         ref List<Point> pointsList,
                         ref int depth,
                         double startPos,
-                        double endtPos ){
-                        if( Math.Abs( startPos - endtPos ) < TOLERANCE ){
+                        double endPos ){
+                        if( Math.Abs( startPos - endPos ) < TOLERANCE ){
                                 return;        
                         }
                         if( depth > MAX_DEPTH ){
@@ -210,9 +210,9 @@ namespace PiecewiseLinearGenerator{
                         //
                         // right line in 3,4
                         //
-                        points[3].X = endtPos;
+                        points[3].X = endPos;
                         points[3].Y = calculator.GetNet( points[3].X );
-                        points[2].X = endtPos - INCREMENT;
+                        points[2].X = endPos - INCREMENT;
                         points[2].Y = calculator.GetNet( points[2].X );
                         
                         lines[0] = MakeLine( points[0], points[1] );
@@ -236,8 +236,8 @@ namespace PiecewiseLinearGenerator{
                         // at its edge, pick an arbitrary point between the line starts.
                         //
                         points[4] = FindIntersection( lines[0], lines[1] );
-                        if(( points[4].X <= startPos ) || ( points[4].X >= endtPos )){
-                                anchor = startPos + ( endtPos - startPos ) / 2.0;
+                        if(( points[4].X <= startPos ) || ( points[4].X >= endPos )){
+                                anchor = startPos + ( endPos - startPos ) / 2.0;
                         } else {
                                 anchor = points[4].X;
                         }
@@ -249,7 +249,7 @@ namespace PiecewiseLinearGenerator{
                         //
                         // .. then to the right.
                         //
-                        Generate( calculator, ref pointsList, ref depth, anchor, endtPos );
+                        Generate( calculator, ref pointsList, ref depth, anchor, endPos );
                         depth -= 1;                
                 }
         
