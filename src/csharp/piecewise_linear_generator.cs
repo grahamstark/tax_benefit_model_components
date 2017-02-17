@@ -189,9 +189,9 @@ namespace PiecewiseLinearGenerator{
                         NetIncome calculator,
                         ref List<Point> pointsList,
                         ref int depth,
-                        double start_pos,
-                        double end_pos ){
-                        if( Math.Abs( start_pos - end_pos ) < TOLERANCE ){
+                        double startPos,
+                        double endtPos ){
+                        if( Math.Abs( startPos - endtPos ) < TOLERANCE ){
                                 return;        
                         }
                         if( depth > MAX_DEPTH ){
@@ -203,16 +203,16 @@ namespace PiecewiseLinearGenerator{
                         //
                         // left line in points 1,2 
                         //
-                        points[0].X = start_pos;
+                        points[0].X = startPos;
                         points[0].Y = calculator.GetNet( points[0].X );
-                        points[1].X = start_pos + INCREMENT;
+                        points[1].X = startPos + INCREMENT;
                         points[1].Y = calculator.GetNet( points[1].X );
                         //
                         // right line in 3,4
                         //
-                        points[3].X = end_pos;
+                        points[3].X = endtPos;
                         points[3].Y = calculator.GetNet( points[3].X );
-                        points[2].X = end_pos - INCREMENT;
+                        points[2].X = endtPos - INCREMENT;
                         points[2].Y = calculator.GetNet( points[2].X );
                         
                         lines[0] = MakeLine( points[0], points[1] );
@@ -236,8 +236,8 @@ namespace PiecewiseLinearGenerator{
                         // at its edge, pick an arbitrary point between the line starts.
                         //
                         points[4] = FindIntersection( lines[0], lines[1] );
-                        if(( points[4].X <= start_pos ) || ( points[4].X >= end_pos )){
-                                anchor = start_pos + ( end_pos - start_pos ) / 2.0;
+                        if(( points[4].X <= startPos ) || ( points[4].X >= endtPos )){
+                                anchor = startPos + ( endtPos - startPos ) / 2.0;
                         } else {
                                 anchor = points[4].X;
                         }
@@ -245,11 +245,11 @@ namespace PiecewiseLinearGenerator{
                         //
                         // recursively explore to the left of our new anchor point
                         //
-                        Generate( calculator, ref pointsList, ref depth, start_pos, anchor );
+                        Generate( calculator, ref pointsList, ref depth, startPos, anchor );
                         //
                         // .. then to the right.
                         //
-                        Generate( calculator, ref pointsList, ref depth, anchor, end_pos );
+                        Generate( calculator, ref pointsList, ref depth, anchor, endtPos );
                         depth -= 1;                
                 }
         
