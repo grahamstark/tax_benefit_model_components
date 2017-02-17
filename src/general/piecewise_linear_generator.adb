@@ -193,7 +193,7 @@ package body Piecewise_Linear_Generator is
       end loop;
       i := 1;
       loop
-         if( NearlySamePoint( points_l.Element(i), points_l.Element( i+1 ) )) then
+         if( Nearly_Same_Point( points_l.Element(i), points_l.Element( i+1 ) )) then
             points_l.Delete( i );
             npoints := npoints - 1;
          end if;
