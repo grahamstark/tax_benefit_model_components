@@ -82,8 +82,6 @@ namespace PiecewiseLinearGenerator{
                 const double MAX_INCOME = 20000.0;
                 const double MIN_INCOME = 0.0;
                 
-
-                
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
                         if( point_1.X == point_2.X ){
@@ -258,7 +256,6 @@ namespace PiecewiseLinearGenerator{
                 public static List<Point> Generate( NetIncome calculator ){
                         List<Point> points = new List<Point>();
                         int depth = 0;
-                        // parameterise start and end points
                         Generate( calculator, ref points, ref depth, MIN_INCOME, MAX_INCOME );
                         Censor( ref points );
                         // make this optional
