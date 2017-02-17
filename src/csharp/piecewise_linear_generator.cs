@@ -21,7 +21,10 @@
 //
 // Implementation of a Piecewise-Linear function generator. See Stark and Duncan 2001.
 //
-
+//
+// NOTE: on Linux, compile with:
+// mono-csc tests.cs piecewise_linear_generator.cs -out:../../bin/monotest
+//
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,8 +42,7 @@ namespace PiecewiseLinearGenerator{
         
         // copied from: https://msdn.microsoft.com/en-us/library/87cdya3t(v=vs.110).aspx
         public class GeneratorException: Exception{
-            public GeneratorException()
-            {
+            public GeneratorException(){
             }
         
             public GeneratorException(string message)
