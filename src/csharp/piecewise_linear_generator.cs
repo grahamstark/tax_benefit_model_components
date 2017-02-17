@@ -133,8 +133,9 @@ namespace PiecewiseLinearGenerator{
                         return ((( Math.Abs(l1.A-l2.A)) <= TOLERANCE ) && (( Math.Abs (l1.B-l2.B)) <= TOLERANCE ));
                 }
         
+                // FIXME parameterise this tolerance seperately
                 private static bool NearlySamePoint( Point p1, Point p2 ){
-                        return ((( Math.Abs(p1.X-p2.X)) < 0.01 ) && (( Math.Abs (p1.Y-p2.Y)) < 0.01 ));
+                        return ((( Math.Abs(p1.X-p2.X)) < TOLERANCE*10 ) && (( Math.Abs (p1.Y-p2.Y)) < TOLERANCE*10 ));
                 }
                 
                 private static double Trunc( double x ){

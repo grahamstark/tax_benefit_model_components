@@ -123,9 +123,10 @@ package body Piecewise_Linear_Generator is
       return (( (abs (l1.a-l2.a)) < TOLERANCE) and ( (abs (l1.b-l2.b)) < TOLERANCE));
    end Nearly_Same_Line;
    
-   function Nearly_Same_Point( l1, l2 : Point ) return Boolean is
+   function Nearly_Same_Point( l1, l2 : Point; reltol : Rate := 10.0 ) return Boolean is
+      tol : constant Rate := reltol*TOLERANCE;
    begin
-      return (( (abs (l1.x-l2.x)) < TOLERANCE) and ( (abs (l1.y-l2.y)) < TOLERANCE));
+      return (( (abs (l1.x-l2.x)) < tol ) and ( (abs (l1.y-l2.y)) < tol ));
    end Nearly_Same_Point;
    
    procedure Round(  
