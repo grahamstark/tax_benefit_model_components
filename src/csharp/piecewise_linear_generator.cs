@@ -75,9 +75,9 @@ namespace PiecewiseLinearGenerator{
                 //
                 // fixme maybe make thes settable and nothing static .. 
                 //
-                const double VERTICAL  = 999999999.9999;
-                const double TOLERANCE = 0.001;
-                const double INCREMENT = 0.00001;
+                const double VERTICAL  = 9999999999.9999;
+                const double TOLERANCE = 0.0001;
+                const double INCREMENT = 0.0001;
                 const int MAX_DEPTH    = 500;
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
@@ -132,7 +132,7 @@ namespace PiecewiseLinearGenerator{
                 }
         
                 private static bool NearlySamePoint( Point p1, Point p2 ){
-                        return ((( Math.Abs(p1.X-p2.X)) < TOLERANCE ) && (( Math.Abs (p1.Y-p2.Y)) < TOLERANCE));
+                        return ((( Math.Abs(p1.X-p2.X)) < 0.01 ) && (( Math.Abs (p1.Y-p2.Y)) < 0.01 ));
                 }
                 
                 private static double Trunc( double x ){
@@ -151,7 +151,6 @@ namespace PiecewiseLinearGenerator{
                 }
                 
                 private static void Censor( ref List<Point> points ){
-                        // Round( ref points );
                         points.Sort( ComparePoints );
                         int n = points.Count;
                         if( n < 3 ){
@@ -172,6 +171,14 @@ namespace PiecewiseLinearGenerator{
                                 } else {
                                         i++;       
                                 }
+                        }
+                        i = 0;
+                        while( i < n-1 ){
+                                if( NearlySamePoint( points[i], points[i+1] )){
+                                        points.RemoveAt( i );
+                                        n = points.Count;
+                                }
+                                i++;       
                         }
                 }
                 
@@ -245,11 +252,14 @@ namespace PiecewiseLinearGenerator{
         
                 
                 public static List<Point> Generate( NetIncome calculator ){
-                        List<Point> a = new List<Point>();
+                        List<Point> points = new List<Point>();
                         int depth = 0;
-                        Generate( calculator, ref a, ref depth, 0.0, 10000.0 );
-                        Censor( ref a );
-                        return a;
+                        // parameterise start and end points
+                        Generate( calculator, ref points, ref depth, 0.0, 20000.0 );
+                        Censor( ref points );
+                        // make this optional
+                        Round( ref points );                        
+                        return points;
                 }
                 
         }

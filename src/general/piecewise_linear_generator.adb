@@ -191,6 +191,14 @@ package body Piecewise_Linear_Generator is
          end if;
          exit when ( i >= npoints-1 );
       end loop;
+      i := 1;
+      loop
+         if( NearlySamePoint( points_l.Element(i), points_l.Element( i+1 ) )) then
+            points_l.Delete( i );
+            npoints := npoints - 1;
+         end if;
+         exit when ( i >= npoints-1 );
+      end loop;
    end Censor;
    
    procedure Generate(
@@ -272,6 +280,7 @@ package body Piecewise_Linear_Generator is
    begin
       Generate( points, controls, depth, start_pos, end_pos );
       Censor( points );
+      Round( points );
       return points;
    end Generate;
      
