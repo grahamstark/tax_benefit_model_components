@@ -75,10 +75,14 @@ namespace PiecewiseLinearGenerator{
                 //
                 // fixme maybe make thes settable and nothing static .. 
                 //
-                const double VERTICAL  = 9999999999.9999;
-                const double TOLERANCE = 0.0001;
-                const double INCREMENT = 0.0001;
-                const int MAX_DEPTH    = 500;
+                const double VERTICAL   = 9999999999.9999;
+                const double TOLERANCE  = 0.0001;
+                const double INCREMENT  = 0.0001;
+                const int MAX_DEPTH     = 500;
+                const double MAX_INCOME = 20000.0;
+                const double MIN_INCOME = 0.0;
+                
+
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
@@ -255,7 +259,7 @@ namespace PiecewiseLinearGenerator{
                         List<Point> points = new List<Point>();
                         int depth = 0;
                         // parameterise start and end points
-                        Generate( calculator, ref points, ref depth, 0.0, 20000.0 );
+                        Generate( calculator, ref points, ref depth, MIN_INCOME, MAX_INCOME );
                         Censor( ref points );
                         // make this optional
                         Round( ref points );                        
