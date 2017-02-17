@@ -75,13 +75,13 @@ namespace PiecewiseLinearGenerator{
                 //
                 // fixme maybe make thes settable and nothing static .. 
                 //
-                const double VERTICAL   = 9999999999.9999;
-                const double TOLERANCE  = 0.0001;
-                const double INCREMENT  = 0.0001;
-                const int MAX_DEPTH     = 500;
-                const double MAX_INCOME = 20000.0;
-                const double MIN_INCOME = 0.0;
-                const bool ROUND_OUTPUT = true;
+                const double VERTICAL     = 9999999999.9999;
+                const double TOLERANCE    = 0.0001;
+                const double INCREMENT    = 0.0001;
+                const int    MAX_DEPTH    = 500;
+                const double MAX_INCOME   = 20000.0;
+                const double MIN_INCOME   = 0.0;
+                const bool   ROUND_OUTPUT = true;
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
@@ -91,13 +91,7 @@ namespace PiecewiseLinearGenerator{
                                  return l;
                         };
                         l.B = (point_1.Y - point_2.Y)/(point_1.X - point_2.X );
-                        //if( l.B < 0.0 ){
-                        //        l.B = l.B * (-1.0);
-                        //};
                         l.B = Math.Min( l.B, VERTICAL );
-                        //if( l.B < 0.0 ){
-                        //        l.B = l.B * (-1.0);
-                        //}
                         l.A = ( point_1.Y - point_1.X*l.B );                
                         return l;
                 }
