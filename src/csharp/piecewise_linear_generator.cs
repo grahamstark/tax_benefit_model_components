@@ -81,6 +81,7 @@ namespace PiecewiseLinearGenerator{
                 const int MAX_DEPTH     = 500;
                 const double MAX_INCOME = 20000.0;
                 const double MIN_INCOME = 0.0;
+                const bool ROUND_OUTPUT = true;
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
@@ -140,7 +141,7 @@ namespace PiecewiseLinearGenerator{
                 
                 private static double Trunc( double x ){
                         x *= 100.0;
-                        return ((double) Math.Truncate( x )/100.0);
+                        return ((double) Math.Round( x )/100.0);
                 }
                 
                 private static void Round( ref List<Point> points ){
@@ -260,7 +261,9 @@ namespace PiecewiseLinearGenerator{
                         Generate( calculator, ref points, ref depth, MIN_INCOME, MAX_INCOME );
                         Censor( ref points );
                         // make this optional
-                        Round( ref points );                        
+                        if( ROUND_OUTPUT ){
+                                Round( ref points );
+                        }
                         return points;
                 }
                 

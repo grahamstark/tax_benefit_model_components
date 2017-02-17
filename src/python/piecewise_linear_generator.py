@@ -24,13 +24,13 @@ def makeLine( point_1, point_2 ):
                 l.a = VERTICAL
                 return l
         line_as_rate = (point_1.y - point_2.y)/(point_1.x - point_2.x )
-        if( line_as_rate < 0.0 ):
-                line_as_rate *= -1
-        line_as_rate = min( line_as_rate, VERTICAL )
+        #if( line_as_rate < 0.0 ):
+        #        line_as_rate *= -1
+        #line_as_rate = min( line_as_rate, VERTICAL )
         l.b = line_as_rate
-        if( l.b < 0.0 ):
-                l.b *= -1.0
-        l.a = ( point_1.y - point_1.x*l.b )
+        #if( l.b < 0.0 ):
+        #        l.b *= -1.0
+        #l.a = ( point_1.y - point_1.x*l.b )
         return l
 
 def findIntersection( line_1, line_2 ):
@@ -52,7 +52,7 @@ def nearlySameLine( l1, l2 ):
 
 
 def nearlySamePoint( l1, l2 ):
-        return ((( abs( l1.x-l2.x )) < TOLERANCE ) and (( abs( l1.y-l2.y )) < TOLERANCE ))
+        return ((( abs( l1.x-l2.x )) < TOLERANCE*10 ) and (( abs( l1.y-l2.y )) < TOLERANCE*10 ))
 
 def censor( points_l ):
         #
@@ -79,7 +79,7 @@ def censor( points_l ):
                 elif( nearlySamePoint( points[1], points[2] )):
                         del points_l[ pos ]
                 else:
-                        pos += 1       
+                        pos += 1
         return points_l
 
 def generate( calculator, points_l, depth, start_pos, end_pos ):

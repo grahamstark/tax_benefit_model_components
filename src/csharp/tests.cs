@@ -42,9 +42,9 @@ public class TBSys : NetIncome{
                 return ( gross <= benefit ? benefit-gross : 0.0 );
         }
         
-        // vertical segment : give 30 to everyone earning over 200 euros
+        // vertical segment : give 30 to everyone earning over 200.03 euros
         private double CalculateBenefit2( double gross ){
-                return ( gross >= 200 ? 30.0 : 0.0 );
+                return ( gross >= 200.03 ? 30.0 : 0.0 );
         }
         
         public double GetNet( double gross ){
