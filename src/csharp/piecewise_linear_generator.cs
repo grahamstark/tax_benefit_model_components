@@ -139,8 +139,8 @@ namespace PiecewiseLinearGenerator{
                 }
                 
                 private static double Trunc( double x ){
-                        x *= 100.0;
-                        return ((double) Math.Truncate( x )/100.0);
+                        //x *= 100.0;
+                        return Math.Round( x, 2 );
                 }
                 
                 private static void Round( ref List<Point> points ){
