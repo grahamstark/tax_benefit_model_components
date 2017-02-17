@@ -16,8 +16,7 @@ public class TBSys : NetIncome{
         
         private double benefit = 150.0;
         
-        // allowance and 4 tax rates
-        private double Tax( double gross ){
+        private double CalculateTax( double gross ){
                 double ia = gross - it_allow;
                 if( ia < 0.0 ){
                         return 0.0;       
@@ -38,18 +37,18 @@ public class TBSys : NetIncome{
         }
         
         // horizontal segment: give min 150 to everyone
-        private double Benefit( double gross ){
+        private double CalculateBenefit1( double gross ){
                 return ( gross <= benefit ? benefit-gross : 0.0 );
         }
         
         // vertical segment : give 30 to everyone earning over 200 euros
-        private double Benefit2( double gross ){
+        private double CalculateBenefit2( double gross ){
                 return ( gross >= 200 ? 30.0 : 0.0 );
         }
         
         public double GetNet( double gross ){
-                double tax = Tax( gross );
-                double benefit = Benefit( gross-tax ) + Benefit2( gross );
+                double tax = CalculateTax( gross );
+                double benefit = CalculateBenefit1( gross-tax ) + CalculateBenefit2( gross );
                 double net = gross - tax + benefit;
                 return net;       
         }
