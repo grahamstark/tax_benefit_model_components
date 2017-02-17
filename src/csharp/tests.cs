@@ -11,8 +11,9 @@ public class TBSys : NetIncome{
        
         private double it_allow = 500.0; 
         
-        private double[] it_rate = new double[7]{ 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0 };
-        private double[] it_band = new double[7]{ 2500, 4000, 5000, 8000, 9000, 10000, 9999999999999999999.99 };
+        // FIXME: just discovered this breaks with rates > 100%
+        private double[] it_rate = new double[8]{ 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2 };
+        private double[] it_band = new double[8]{ 2500, 4000, 5000, 8000, 9000, 10000, 12000, 9999999999999999999.99 };
         
         private double benefit = 150.0;
         

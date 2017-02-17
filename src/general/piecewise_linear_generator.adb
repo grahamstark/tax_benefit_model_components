@@ -52,14 +52,14 @@ package body Piecewise_Linear_Generator is
          return l;
       end if;
       line_as_rate := (point_1.y - point_2.y)/(point_1.x - point_2.x );
-      if( line_as_rate < 0.0 ) then
-         line_as_rate := line_as_rate * (-1.0);
-      end if;
+      -- if( line_as_rate < 0.0 ) then
+         -- line_as_rate := line_as_rate * (-1.0);
+      -- end if;
       line_as_rate := Rate'Min( line_as_rate, VERTICAL );
       l.b := Rate( line_as_rate );
-      if( l.b < 0.0 ) then
-         l.b := l.b * (-1.0);
-      end if;
+      -- if( l.b < 0.0 ) then
+         -- l.b := l.b * (-1.0);
+      -- end if;
       l.a := ( point_1.y - point_1.x*l.b );
       return l;
    end Make_Line;

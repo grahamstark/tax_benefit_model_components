@@ -90,13 +90,13 @@ namespace PiecewiseLinearGenerator{
                                  return l;
                         };
                         l.B = (point_1.Y - point_2.Y)/(point_1.X - point_2.X );
-                        if( l.B < 0.0 ){
-                                l.B = l.B * (-1.0);
-                        };
+                        //if( l.B < 0.0 ){
+                        //        l.B = l.B * (-1.0);
+                        //};
                         l.B = Math.Min( l.B, VERTICAL );
-                        if( l.B < 0.0 ){
-                                l.B = l.B * (-1.0);
-                        }
+                        //if( l.B < 0.0 ){
+                        //        l.B = l.B * (-1.0);
+                        //}
                         l.A = ( point_1.Y - point_1.X*l.B );                
                         return l;
                 }
