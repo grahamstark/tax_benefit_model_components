@@ -84,7 +84,8 @@ public class Calculator{
 }
 
 //
-// simple test case: 
+// simple test wrapper class: would be initialised with some parameters 
+// and then fed households
 //
 public class BCWrapper : NetIncome{
 
@@ -95,7 +96,8 @@ public class BCWrapper : NetIncome{
         public BCWrapper( Parameters sys ){                
                 calculator = new Calculator( sys );       
         }
-                
+        
+        // this implements the interface
         public double GetNet( double gross ){
                 Pers.wage = gross;
                 return calculator.netIncome( Pers );       
@@ -107,14 +109,25 @@ public class BCWrapper : NetIncome{
 class Test{
         
         public static int Main( string[] args ){
+                // feed the wrapper class with a parameter system
+                // probably only need to this once
                 Parameters sys = new Parameters();
                 BCWrapper wrapper = new BCWrapper( sys );
+                
+                // feed wrapper with a person 
+                // .. this would likely be an entire household
+                // likely be a household loop here ...
+                // possibly loop round people in hhls/benunit
 		 Person pers = new Person( 40 );
                 wrapper.Pers = pers;
+                
                 List<Point> bc = Generator.Generate( wrapper );
                 for( int i = 0; i < bc.Count; i++ ){
                         Console.WriteLine( "Point[{0}] : Gross = {1} Net = {2} ", i, bc[i].X, bc[i].Y );
                 }
+                //
+                // household loop would end here
+                //
                 return 0;
         }
 
