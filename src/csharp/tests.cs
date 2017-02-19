@@ -15,7 +15,7 @@ public class Person{
         
 }
 
-public class Params{
+public class Parameters{
         
         public double it_allow = 500.0; 
         
@@ -31,23 +31,16 @@ public class Params{
         
 }
 
-
-
-//
-// simple test case: move this somewhere.. 
-//
-public class TBSys : NetIncome{
-
-        private Params Sys { get; set; }
-
-        public Person Pers { get; set; }
+public class Calculator{
         
-        public TBSys( Params sys ){
-                this.Sys = sys;       
+        private Parameters pars;
+        
+        public Calculator( Parameters pars ){
+                this.pars = pars;        
         }
         
         private double CalculateTax( double gross ){
-                double ia = gross - Sys.it_allow;
+                double ia = gross - pars.it_allow;
                 if( ia < 0.0 ){
                         return 0.0;       
                 }
@@ -56,11 +49,11 @@ public class TBSys : NetIncome{
                 double remaining = ia;
                 double last = 0.0;
                 while( remaining > 0.0 ){
-                        double gap = Sys.it_band[i] - last;
+                        double gap = pars.it_band[i] - last;
                         double t = Math.Min( remaining, gap );
-                        due += t * Sys.it_rate[i];
+                        due += t * pars.it_rate[i];
                         remaining -= gap;
-                        last = Sys.it_band[i];
+                        last = pars.it_band[i];
                         i++;
                 }
                 return due;
@@ -68,24 +61,44 @@ public class TBSys : NetIncome{
         
         // horizontal segment: give min 150 to everyone
         private double CalculateBenefit1( double gross ){
-                return ( gross <= Sys.benefit1 ? Sys.benefit1-gross : 0.0 );
+                return ( gross <= pars.benefit1 ? pars.benefit1-gross : 0.0 );
         }
         
         // vertical segments : give 60 to everyone earning over 200.03 euros, cut to 30 at 300
         private double CalculateBenefit2( double gross ){
-                double b = ( gross >= Sys.ben2_l_limit ? Sys.benefit2 : 0.0 );
-                if( gross > Sys.ben2_u_limit ){ 
+                double b = ( gross >= pars.ben2_l_limit ? pars.benefit2 : 0.0 );
+                if( gross > pars.ben2_u_limit ){ 
                         b -= 30;
                 }
                 return b;
         }
         
+        public double netIncome( Person pers ){ 
+                double tax = CalculateTax( pers.wage );
+                double benefit = 
+                        CalculateBenefit1( pers.wage-tax ) + 
+                        CalculateBenefit2( pers.wage );
+                return pers.wage - tax + benefit;
+        }
+
+}
+
+//
+// simple test case: 
+//
+public class BCWrapper : NetIncome{
+
+        private Calculator calculator;
+
+        public Person Pers { get; set; }
+        
+        public BCWrapper( Parameters sys ){                
+                calculator = new Calculator( sys );       
+        }
+                
         public double GetNet( double gross ){
                 Pers.wage = gross;
-                double tax = CalculateTax( Pers.wage );
-                double benefit = CalculateBenefit1( Pers.wage-tax ) + CalculateBenefit2( Pers.wage );
-                double net = Pers.wage - tax + benefit;
-                return net;       
+                return calculator.netIncome( Pers );       
         }
         
 }
@@ -94,11 +107,11 @@ public class TBSys : NetIncome{
 class Test{
         
         public static int Main( string[] args ){
-                Params sys = new Params();
-                TBSys calc = new TBSys( sys );
-		Person pers = new Person( 40 );
-                calc.Pers = pers;
-                List<Point> bc = Generator.Generate( calc );
+                Parameters sys = new Parameters();
+                BCWrapper wrapper = new BCWrapper( sys );
+		 Person pers = new Person( 40 );
+                wrapper.Pers = pers;
+                List<Point> bc = Generator.Generate( wrapper );
                 for( int i = 0; i < bc.Count; i++ ){
                         Console.WriteLine( "Point[{0}] : Gross = {1} Net = {2} ", i, bc[i].X, bc[i].Y );
                 }
@@ -106,4 +119,3 @@ class Test{
         }
 
 }
-                
