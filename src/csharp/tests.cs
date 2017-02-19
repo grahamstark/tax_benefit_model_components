@@ -93,8 +93,8 @@ public class BCWrapper : NetIncome{
 
         public Person Pers { get; set; }
         
-        public BCWrapper( Parameters sys ){                
-                calculator = new Calculator( sys );       
+        public BCWrapper( Parameters pars ){                
+                calculator = new Calculator( pars );       
         }
         
         // this implements the interface
@@ -111,8 +111,8 @@ class Test{
         public static int Main( string[] args ){
                 // feed the wrapper class with a parameter system
                 // probably only need to this once
-                Parameters sys = new Parameters();
-                BCWrapper wrapper = new BCWrapper( sys );
+                Parameters pars = new Parameters();
+                BCWrapper wrapper = new BCWrapper( pars );
                 
                 // feed wrapper with a person 
                 // .. this would likely be an entire household
