@@ -102,8 +102,8 @@ namespace PiecewiseLinearGenerator{
                                 p.X = (line_2.A - line_1.A) / (line_1.B - line_2.B);
                                 p.Y = line_1.A + (p.X * line_1.B );
                         } else {
-                                 p.X = 0.0;
-                                 p.Y = line_1.A;
+                                p.X = 0.0;
+                                p.Y = line_1.A;
                         }
                         return p;
                 }
