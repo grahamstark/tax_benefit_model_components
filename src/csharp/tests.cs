@@ -19,7 +19,6 @@ public class Parameters{
         
         public double it_allow = 500.0; 
         
-        // FIXME: just discovered this breaks with rates > 100%
         public double[] it_rate = new double[8]{ 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2 };
         public double[] it_band = new double[8]{ 2500, 4000, 5000, 8000, 9000, 10000, 12000, 9999999999999999999.99 };
         
@@ -59,7 +58,12 @@ public class Calculator{
                 return due;
         }
         
-        // horizontal segment: give min 150 to everyone
+        ///
+        /// <summary>
+        /// JSA type benefit that produces a horizontal BC segment: give min 150 to everyone
+        /// </summary>
+        /// <returns>a benefit amount</returns>
+        ///
         private double CalculateBenefit1( double gross ){
                 return ( gross <= pars.benefit1 ? pars.benefit1-gross : 0.0 );
         }
@@ -83,10 +87,11 @@ public class Calculator{
 
 }
 
-//
-// simple test wrapper class: would be initialised with some parameters 
-// and then fed households
-//
+/// <summary>
+/// simple test wrapper class: would be initialised with some parameters 
+/// and then fed households
+/// </summary>
+///
 public class BCWrapper : NetIncome{
 
         private Calculator calculator;
