@@ -19,9 +19,6 @@
 // Boston, MA 02110-1301, USA.
 // 
 //
-// Implementation of a Piecewise-Linear function generator. See Stark and Duncan 2001.
-//
-//
 // NOTE: on Linux, compile with:
 // mono-csc tests.cs piecewise_linear_generator.cs -out:../../bin/monotest
 //
@@ -29,18 +26,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+///
+/// <summary>
+/// Implementation of a Piecewise-Linear function generator. See Stark and Duncan 2001.
+/// </summary>
+///
 namespace PiecewiseLinearGenerator{
 
-        //
-        // just implemment this interface
-        //
+        /// <summary>
+        /// This is the interface the caller needs to implement
+        /// </summary>
         public interface NetIncome{
                 
+                /// <param name="gross">(e.g.) a gross wage - your routine should assign this to, for example, the gross wage value for some person.</param>  
+                /// <returns>Your routine calculates net income figure for the given gross income, hhld characteristics, etc.</returns>
                 double GetNet( double gross );
                 
         }
         
         // copied from: https://msdn.microsoft.com/en-us/library/87cdya3t(v=vs.110).aspx
+        ///
+        ///<summary>Thrown if recursion depth is exceeded.</summary>
+        ///
         public class GeneratorException: Exception{
             public GeneratorException(){
             }
@@ -75,13 +82,13 @@ namespace PiecewiseLinearGenerator{
                 //
                 // fixme maybe make thes settable and nothing static .. 
                 //
-                const double VERTICAL     = 9999999999.9999;
-                const double TOLERANCE    = 0.0001;
-                const double INCREMENT    = 0.0001;
-                const int    MAX_DEPTH    = 500;
-                const double MAX_INCOME   = 20000.0;
-                const double MIN_INCOME   = 0.0;
-                const bool   ROUND_OUTPUT = true;
+                private const double VERTICAL     = 9999999999.9999;
+                private const double TOLERANCE    = 0.0001;
+                private const double INCREMENT    = 0.0001;
+                private const int    MAX_DEPTH    = 500;
+                private const double MAX_INCOME   = 20000.0;
+                private const double MIN_INCOME   = 0.0;
+                private const bool   ROUND_OUTPUT = true;
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
@@ -179,7 +186,7 @@ namespace PiecewiseLinearGenerator{
                         }
                 }
                 
-                public static void Generate(
+                private static void Generate(
                         NetIncome calculator,
                         ref List<Point> pointsList,
                         ref int depth,
@@ -259,6 +266,5 @@ namespace PiecewiseLinearGenerator{
                         }
                         return points;
                 }
-                
-        }
-}
+        } // class
+} // namespace
