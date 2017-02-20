@@ -123,7 +123,7 @@ class Test{
                 // .. this would likely be an entire household
                 // likely be a household loop here ...
                 // possibly loop round people in hhls/benunit
-		 Person pers = new Person( 40 );
+                Person pers = new Person( age: 40 );
                 wrapper.Pers = pers;
                 
                 List<Point> bc = Generator.Generate( wrapper );
