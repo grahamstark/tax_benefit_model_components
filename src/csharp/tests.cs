@@ -30,6 +30,16 @@ public class Parameters{
         
 }
 
+public struct ControlRec{
+        
+        public enum NetType{ NetIncome, TotalTaxes, BenefitsOnly };
+        public NetType netType {get; set; }
+        public int whichPerson;
+        // other assumptions
+                
+        
+}
+
 public struct Results{
         public double Tax {get;set;}      
         public double Benefit1 {get;set;}      
@@ -107,6 +117,8 @@ public class BCWrapper : NetIncome{
 
         public Person Pers { get; set; }
         
+        public ControlRec Control{ get; set; }
+        
         public BCWrapper( Parameters pars ){                
                 calculator = new Calculator( pars );       
         }
@@ -135,7 +147,20 @@ public class BCWrapper : NetIncome{
         // this implements the interface
         public double GetNet( double gross ){
                 Pers.wage = gross;
-                return calculator.Calculate( Pers ).NetIncome;       
+                double n = 0;
+                Results r = calculator.Calculate( Pers );
+                switch( Control.netType ){
+                case ControlRec.NetType.NetIncome :
+                        n = r.NetIncome;
+                        break;
+                case ControlRec.NetType.TotalTaxes :
+                        n = r.Tax;
+                        break;
+                case ControlRec.NetType.BenefitsOnly :
+                        n = r.Benefit1 + r.Benefit2;
+                        break;
+                }
+                return n;        
         }
         
 }
@@ -155,14 +180,16 @@ class Test{
                 // possibly loop round people in hhls/benunit
                 Person pers = new Person( age: 40 );
                 wrapper.Pers = pers;
-                
+                ControlRec control = new ControlRec();
+                control.netType = ControlRec.NetType.NetIncome;
+                wrapper.Control = control; 
                 List<Point> bc = Generator.Generate( wrapper );
                 Console.WriteLine( "p,gross,net" );
                 for( int i = 0; i < bc.Count; i++ ){
                         Console.WriteLine( "{0},{1:F4},{2:F4} ", i, bc[i].X, bc[i].Y );
                 }
                 Console.WriteLine( "events" );
-                for( int i = 0; i < bc.Count; i++ ){
+                for( int i = 1; i < bc.Count; i++ ){
                         List<String> events = wrapper.eventsAt( bc[i-1].X, bc[i].X );
                         
                         double mr = Generator.CalcMarginalRate( bc[i-1], bc[i] );
@@ -174,6 +201,29 @@ class Test{
                                 
                         }
                 }
+                control.netType = ControlRec.NetType.TotalTaxes;
+                wrapper.Control = control; 
+                List<Point> taxes = Generator.Generate( wrapper );
+                Console.WriteLine( "\n\np,gross,totalTax" );
+                for( int i = 0; i < taxes.Count; i++ ){
+                        double mr = 0.0;
+                        if( i > 0 ){
+                            mr = 100 - ( Generator.CalcMarginalRate( taxes[i-1], taxes[i] ));    
+                        }    
+                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, taxes[i].X, taxes[i].Y, mr );
+                }
+                control.netType = ControlRec.NetType.BenefitsOnly;
+                wrapper.Control = control; 
+                List<Point> benefits = Generator.Generate( wrapper );
+                Console.WriteLine( "\n\np,gross,benefits" );
+                for( int i = 0; i < benefits.Count; i++ ){
+                        double mr = 0.0;
+                        if( i > 0 ){
+                            mr = 100-( Generator.CalcMarginalRate( benefits[i-1], benefits[i] ));    
+                        }    
+                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, benefits[i].X, benefits[i].Y, mr );
+                }
+                
                 //
                 // household loop would end here
                 //
