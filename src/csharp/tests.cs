@@ -167,7 +167,7 @@ public class BCWrapper : NetIncome{
 
 
 class Test{
-        
+
         public static int Main( string[] args ){
                 // feed the wrapper class with a parameter system
                 // probably only need to this once
@@ -201,6 +201,8 @@ class Test{
                                 
                         }
                 }
+                
+                //taxes
                 control.netType = ControlRec.NetType.TotalTaxes;
                 wrapper.Control = control; 
                 List<Point> taxes = Generator.Generate( wrapper );
@@ -208,10 +210,13 @@ class Test{
                 for( int i = 0; i < taxes.Count; i++ ){
                         double mr = 0.0;
                         if( i > 0 ){
-                            mr = 100 - ( Generator.CalcMarginalRate( taxes[i-1], taxes[i] ));    
+                            
+                                mr = 100 - ( Generator.CalcMarginalRate( taxes[i-1], taxes[i] ));    
                         }    
                         Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, taxes[i].X, taxes[i].Y, mr );
                 }
+                
+                // benefits
                 control.netType = ControlRec.NetType.BenefitsOnly;
                 wrapper.Control = control; 
                 List<Point> benefits = Generator.Generate( wrapper );
@@ -219,7 +224,8 @@ class Test{
                 for( int i = 0; i < benefits.Count; i++ ){
                         double mr = 0.0;
                         if( i > 0 ){
-                            mr = 100-( Generator.CalcMarginalRate( benefits[i-1], benefits[i] ));    
+                                
+                                mr = 100 - ( Generator.CalcMarginalRate( benefits[i-1], benefits[i] ));    
                         }    
                         Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, benefits[i].X, benefits[i].Y, mr );
                 }
