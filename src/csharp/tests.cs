@@ -127,8 +127,9 @@ class Test{
                 wrapper.Pers = pers;
                 
                 List<Point> bc = Generator.Generate( wrapper );
+                Console.WriteLine( "p,gross,net" );
                 for( int i = 0; i < bc.Count; i++ ){
-                        Console.WriteLine( "Point[{0}] : Gross = {1} Net = {2} ", i, bc[i].X, bc[i].Y );
+                        Console.WriteLine( "{0},{1:F2},{2:F2} ", i, bc[i].X, bc[i].Y );
                 }
                 //
                 // household loop would end here
