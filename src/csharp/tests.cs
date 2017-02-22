@@ -30,6 +30,14 @@ public class Parameters{
         
 }
 
+public struct Results{
+        public double Tax {get;set;}      
+        public double Benefit1 {get;set;}      
+        public double Benefit2 {get;set;}      
+        public double NetIncome {get;set;}      
+
+}
+
 public class Calculator{
         
         private Parameters pars;
@@ -77,12 +85,13 @@ public class Calculator{
                 return b;
         }
         
-        public double netIncome( Person pers ){ 
-                double tax = CalculateTax( pers.wage );
-                double benefit = 
-                        CalculateBenefit1( pers.wage-tax ) + 
-                        CalculateBenefit2( pers.wage );
-                return pers.wage - tax + benefit;
+        public Results Calculate( Person pers ){ 
+                Results r;
+                r.Tax = CalculateTax( pers.wage );
+                r.Benefit1 = CalculateBenefit1( pers.wage-r.Tax ); 
+                r.Benefit2 = CalculateBenefit2( pers.wage );
+                r.NetIncome = pers.wage - r.Tax + r.Benefit1 + r.Benefit2;
+                return r;
         }
 
 }
@@ -102,10 +111,31 @@ public class BCWrapper : NetIncome{
                 calculator = new Calculator( pars );       
         }
         
+        public List<String> eventsAt( double gross1, double gross2 ){
+                List<String> events = new List<String>();
+                Pers.wage = gross1;
+                Results r1 = calculator.Calculate( Pers );
+                Pers.wage = gross2;
+                Results r2 = calculator.Calculate( Pers );
+                if(( r1.Benefit1 > 0 ) && ( r2.Benefit1 == 0 )){
+                        events.Add( "Benefit 1 ends" );      
+                } else if(( r1.Benefit1 == 0 ) && ( r1.Benefit1 > 0 )){
+                        events.Add( "Benefit 1 starts" );      
+                } else if(( r1.Benefit2 > 0 ) && ( r2.Benefit2 == 0 )){
+                        events.Add( "Benefit 2 ends" );      
+                } else if(( r2.Benefit2 > 0 ) && ( r1.Benefit2 == 0 )){
+                        events.Add( "Benefit 2 starts" );      
+                } if( Math.Abs( r2.Benefit2 - r1.Benefit2 ) > Generator.INCREMENT ){
+                        events.Add( "Benefit 2 jumps" );      
+                } 
+                // and so on
+                return events;
+        }
+        
         // this implements the interface
         public double GetNet( double gross ){
                 Pers.wage = gross;
-                return calculator.netIncome( Pers );       
+                return calculator.Calculate( Pers ).NetIncome;       
         }
         
 }
@@ -129,7 +159,20 @@ class Test{
                 List<Point> bc = Generator.Generate( wrapper );
                 Console.WriteLine( "p,gross,net" );
                 for( int i = 0; i < bc.Count; i++ ){
-                        Console.WriteLine( "{0},{1:F2},{2:F2} ", i, bc[i].X, bc[i].Y );
+                        Console.WriteLine( "{0},{1:F4},{2:F4} ", i, bc[i].X, bc[i].Y );
+                }
+                Console.WriteLine( "events" );
+                for( int i = 0; i < bc.Count; i++ ){
+                        List<String> events = wrapper.eventsAt( bc[i-1].X, bc[i].X );
+                        
+                        double mr = Generator.CalcMarginalRate( bc[i-1], bc[i] );
+                                
+                        if( events.Count > 0 ){         
+                                Console.WriteLine( "{0},{1:F4},{2:F4} : {3}", i, bc[i].X, mr, events[0] );
+                        } else {
+                                Console.WriteLine( "{0},{1:F4},{2:F4}", i, bc[i].X, mr );
+                                
+                        }
                 }
                 //
                 // household loop would end here

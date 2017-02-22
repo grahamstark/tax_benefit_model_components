@@ -82,13 +82,13 @@ namespace PiecewiseLinearGenerator{
                 //
                 // fixme maybe make thes settable and nothing static .. 
                 //
-                private const double VERTICAL     = 9999999999.9999;
+                public  const double VERTICAL     = 9999999999.9999;
                 private const double TOLERANCE    = 0.0001;
-                private const double INCREMENT    = 0.0001;
+                public  const double INCREMENT    = 0.0001;
                 private const int    MAX_DEPTH    = 500;
                 private const double MAX_INCOME   = 20000.0;
                 private const double MIN_INCOME   = 0.0;
-                private const bool   ROUND_OUTPUT = true;
+                private const bool   ROUND_OUTPUT = false;
                 
                 private static Line MakeLine( Point point_1, Point point_2 ){ 
                         Line l;
@@ -129,6 +129,19 @@ namespace PiecewiseLinearGenerator{
                                 return -1;               
                         }
                         return 0;
+                }
+                
+                public static double CalcMarginalRate( Point point_1, Point point_2 ){
+                        double mr;
+                        if( point_2.X != point_1.X ){
+                                mr = 100.0 * (1-(point_2.Y-point_1.Y) / (point_2.X - point_1.X));
+                        } else {
+                                mr = VERTICAL;
+                                if( point_2.Y < point_1.Y ){
+                                        mr *= -1;        
+                                }
+                        }
+                        return mr;
                 }
                 
                 private static bool NearlySameLine( Line l1, Line l2 ){
