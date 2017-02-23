@@ -83,7 +83,7 @@ namespace PiecewiseLinearGenerator{
                 // fixme maybe make thes settable and nothing static .. 
                 //
                 public  const double VERTICAL     = 9999999999.9999;
-                private const double TOLERANCE    = 0.0001;
+                public  const double TOLERANCE    = 0.0001;
                 public  const double INCREMENT    = 0.0001;
                 private const int    MAX_DEPTH    = 500;
                 private const double MAX_INCOME   = 20000.0;

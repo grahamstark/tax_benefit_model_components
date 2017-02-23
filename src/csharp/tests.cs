@@ -34,7 +34,8 @@ public struct Results{
         public double Tax {get;set;}      
         public double Benefit1 {get;set;}      
         public double Benefit2 {get;set;}      
-        public double NetIncome {get;set;}      
+        public double NetIncome {get;set;}  
+        public double MR {get;set;}
 
 }
 
@@ -86,7 +87,7 @@ public class Calculator{
         }
         
         public Results Calculate( Person pers ){ 
-                Results r;
+                Results r = new Results();
                 r.Tax = CalculateTax( pers.wage );
                 r.Benefit1 = CalculateBenefit1( pers.wage-r.Tax ); 
                 r.Benefit2 = CalculateBenefit2( pers.wage );
@@ -119,26 +120,59 @@ public class BCWrapper : NetIncome{
                 calculator = new Calculator( pars );       
         }
         
-        public List<String> GetEventsAt( Point p1, Point p2 ){
+        public List<String> GetEventsAt( Point baseP ){
+                Person savedp = Pers;
+                
                 List<String> events = new List<String>();
-                Pers.wage = p1.X;
+                Pers.wage = baseP.X;
+                Results r0 = calculator.Calculate( Pers );
+                Point p0 = new Point();
+                p0.X = Pers.wage;
+                
+                Pers.wage = baseP.X - Generator.INCREMENT;
                 Results r1 = calculator.Calculate( Pers );
-                Pers.wage = p2.X;
+                Point p1 = new Point();
+                p1.X = Pers.wage;
+                
+                
+                Pers.wage -= Generator.INCREMENT;
+                Results r3 = calculator.Calculate( Pers );
+                Point p3 = new Point();
+                p3.X = Pers.wage;
+                
+                Pers.wage = baseP.X + Generator.INCREMENT;
                 Results r2 = calculator.Calculate( Pers );
+                Point p2 = new Point();
+                p2.X = Pers.wage;
+                
                 if(( r1.Benefit1 > 0 ) && ( r2.Benefit1 == 0 )){
                         events.Add( "Benefit 1 ends" );      
-                } else if(( r1.Benefit1 == 0 ) && ( r1.Benefit1 > 0 )){
+                } else if(( r1.Benefit1 == 0 ) && ( r2.Benefit1 > 0 )){
                         events.Add( "Benefit 1 starts" );      
                 } else if(( r1.Benefit2 > 0 ) && ( r2.Benefit2 == 0 )){
                         events.Add( "Benefit 2 ends" );      
                 } else if(( r2.Benefit2 > 0 ) && ( r1.Benefit2 == 0 )){
                         events.Add( "Benefit 2 starts" );      
-                } if( Math.Abs( r2.Benefit2 - r1.Benefit2 ) > Generator.INCREMENT ){
+                } if( Math.Abs( r2.Benefit2 - r1.Benefit2 ) > 0 ){
                         events.Add( "Benefit 2 jumps" );      
                 }
                 if(( r1.Tax == 0 ) && ( r2.Tax > 0 )){
                         events.Add( "Income Tax Starts" );
                 }
+                
+                p0.Y = r0.Tax;
+                p1.Y = r1.Tax;
+                p2.Y = r2.Tax;
+                p3.Y = r3.Tax;
+                
+                double taxMr1 = 100 - Generator.CalcMarginalRate( p3, p1 );
+                double taxMr2 = 100 - Generator.CalcMarginalRate( p0, p2 );
+                
+                if( Math.Abs( taxMr1 - taxMr2 ) > Generator.TOLERANCE ){
+                        events.Add( String.Format( "income tax MR changes from {0:F1}% to {1:F1}% ", taxMr1, taxMr2  ));       
+                }
+                // everything back the way it was
+                Pers = savedp;
                 // FIXME something to add chanding MR tax rates - needs 3 points, precomputed MRs??
                 // and so on
                 return events;
@@ -190,14 +224,15 @@ class Test{
                 Console.WriteLine( "p, gross,mr,event" );
                 double mr = 0.0;
                 for( int i = 0; i < bc.Count; i++ ){
-                        List<String> events = new List<String>();
-                        events.Add("bc starts");
                         if( i < bc.Count -1 ){
                                 mr = Generator.CalcMarginalRate( bc[i], bc[i+1] );
                         }
-                        if( i > 0 ){
-                                events = wrapper.GetEventsAt( bc[i-1], bc[i] );
-                                        
+                        List<String> events = wrapper.GetEventsAt( bc[i] );
+                        if( i == 0 ){
+                                events.Add("bc starts");
+                        }
+                        if( i == bc.Count - 1){
+                                events.Add("bc ends");
                         }
                         if( events.Count > 0 ){         
                                 Console.WriteLine( "{0},{1:F4},{2:F2} : {3}", i, bc[i].X, mr, events[0] );
