@@ -110,6 +110,7 @@ public class BCWrapper : NetIncome{
         public enum NetType{ NetIncome, TotalTaxes, BenefitsOnly };
         public NetType netType {get; set; }
         public int whichPerson;
+        
         // other assumptions
                 
 
@@ -118,11 +119,11 @@ public class BCWrapper : NetIncome{
                 calculator = new Calculator( pars );       
         }
         
-        public List<String> GetEventsAt( double gross1, double gross2 ){
+        public List<String> GetEventsAt( Point p1, Point p2 ){
                 List<String> events = new List<String>();
-                Pers.wage = gross1;
+                Pers.wage = p1.X;
                 Results r1 = calculator.Calculate( Pers );
-                Pers.wage = gross2;
+                Pers.wage = p2.X;
                 Results r2 = calculator.Calculate( Pers );
                 if(( r1.Benefit1 > 0 ) && ( r2.Benefit1 == 0 )){
                         events.Add( "Benefit 1 ends" );      
@@ -134,7 +135,11 @@ public class BCWrapper : NetIncome{
                         events.Add( "Benefit 2 starts" );      
                 } if( Math.Abs( r2.Benefit2 - r1.Benefit2 ) > Generator.INCREMENT ){
                         events.Add( "Benefit 2 jumps" );      
-                } 
+                }
+                if(( r1.Tax == 0 ) && ( r2.Tax > 0 )){
+                        events.Add( "Income Tax Starts" );
+                }
+                // FIXME something to add chanding MR tax rates - needs 3 points, precomputed MRs??
                 // and so on
                 return events;
         }
@@ -184,7 +189,6 @@ class Test{
                 Console.WriteLine( "events" );
                 Console.WriteLine( "p, gross,mr,event" );
                 double mr = 0.0;
-                        
                 for( int i = 0; i < bc.Count; i++ ){
                         List<String> events = new List<String>();
                         events.Add("bc starts");
@@ -192,7 +196,7 @@ class Test{
                                 mr = Generator.CalcMarginalRate( bc[i], bc[i+1] );
                         }
                         if( i > 0 ){
-                                events = wrapper.GetEventsAt( bc[i-1].X, bc[i].X );
+                                events = wrapper.GetEventsAt( bc[i-1], bc[i] );
                                         
                         }
                         if( events.Count > 0 ){         
