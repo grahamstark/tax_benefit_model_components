@@ -189,11 +189,12 @@ class Test{
                         Console.WriteLine( "{0},{1:F4},{2:F4} ", i, bc[i].X, bc[i].Y );
                 }
                 Console.WriteLine( "events" );
+                Console.WriteLine( "p, gross,mr,event" );
                 for( int i = 1; i < bc.Count; i++ ){
                         List<String> events = wrapper.eventsAt( bc[i-1].X, bc[i].X );
                         
                         double mr = Generator.CalcMarginalRate( bc[i-1], bc[i] );
-                                
+                        // mr wrong place - 1 behind!        
                         if( events.Count > 0 ){         
                                 Console.WriteLine( "{0},{1:F4},{2:F4} : {3}", i, bc[i].X, mr, events[0] );
                         } else {
