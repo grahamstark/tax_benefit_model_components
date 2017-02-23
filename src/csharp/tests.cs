@@ -190,11 +190,18 @@ class Test{
                 }
                 Console.WriteLine( "events" );
                 Console.WriteLine( "p, gross,mr,event" );
-                for( int i = 1; i < bc.Count; i++ ){
-                        List<String> events = wrapper.eventsAt( bc[i-1].X, bc[i].X );
+                double mr = 0.0;
                         
-                        double mr = Generator.CalcMarginalRate( bc[i-1], bc[i] );
-                        // mr wrong place - 1 behind!        
+                for( int i = 0; i < bc.Count; i++ ){
+                        List<String> events = new List<String>();
+                        events.Add("bc starts");
+                        if( i < bc.Count -1 ){
+                                mr = Generator.CalcMarginalRate( bc[i], bc[i+1] );
+                        }
+                        if( i > 0 ){
+                                events = wrapper.eventsAt( bc[i-1].X, bc[i].X );
+                                        
+                        }
                         if( events.Count > 0 ){         
                                 Console.WriteLine( "{0},{1:F4},{2:F4} : {3}", i, bc[i].X, mr, events[0] );
                         } else {
@@ -209,9 +216,8 @@ class Test{
                 List<Point> taxes = Generator.Generate( wrapper );
                 Console.WriteLine( "\n\np,gross,totalTax" );
                 for( int i = 0; i < taxes.Count; i++ ){
-                        double mr = 0.0;
-                        if( i > 0 ){
-                                mr = 100 - ( Generator.CalcMarginalRate( taxes[i-1], taxes[i] ));    
+                        if( i < taxes.Count-1 ){
+                                mr = 100 - ( Generator.CalcMarginalRate( taxes[i], taxes[i+1] ));    
                         }    
                         Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, taxes[i].X, taxes[i].Y, mr );
                 }
@@ -222,9 +228,8 @@ class Test{
                 List<Point> benefits = Generator.Generate( wrapper );
                 Console.WriteLine( "\n\np,gross,benefits" );
                 for( int i = 0; i < benefits.Count; i++ ){
-                        double mr = 0.0;
-                        if( i > 0 ){
-                                mr = 100 - ( Generator.CalcMarginalRate( benefits[i-1], benefits[i] ));    
+                        if( i < benefits.Count-1 ){
+                                mr = 100 - ( Generator.CalcMarginalRate( benefits[i], benefits[i+1] ));    
                         }    
                         Console.WriteLine( "{0},{1:F4},{2:F4},{3:F4}  ", i, benefits[i].X, benefits[i].Y, mr );
                 }
