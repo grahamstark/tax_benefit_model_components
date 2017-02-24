@@ -32,8 +32,7 @@ public class Parameters{
 
 public struct Results{
         public double Tax {get;set;}      
-        public double Benefit1 {get;set;}      
-        public double Benefit2 {get;set;}      
+        public double[] Benefit {get;set;}      
         public double NetIncome {get;set;}  
         public double MR {get;set;}
 
@@ -73,12 +72,12 @@ public class Calculator{
         /// </summary>
         /// <returns>a benefit amount</returns>
         ///
-        private double CalculateBenefit1( double gross ){
+        private double CalculateBenefit0( double gross ){
                 return ( gross <= pars.benefit1 ? pars.benefit1-gross : 0.0 );
         }
         
         // vertical segments : give 60 to everyone earning over 200.03 euros, cut to 30 at 300
-        private double CalculateBenefit2( double gross ){
+        private double CalculateBenefit1( double gross ){
                 double b = ( gross >= pars.ben2_l_limit ? pars.benefit2 : 0.0 );
                 if( gross > pars.ben2_u_limit ){ 
                         b -= 30;
@@ -89,9 +88,10 @@ public class Calculator{
         public Results Calculate( Person pers ){ 
                 Results r = new Results();
                 r.Tax = CalculateTax( pers.wage );
-                r.Benefit1 = CalculateBenefit1( pers.wage-r.Tax ); 
-                r.Benefit2 = CalculateBenefit2( pers.wage );
-                r.NetIncome = pers.wage - r.Tax + r.Benefit1 + r.Benefit2;
+                r.Benefit = new double[3];
+                r.Benefit[0] = CalculateBenefit0( pers.wage-r.Tax ); 
+                r.Benefit[1] = CalculateBenefit1( pers.wage );
+                r.NetIncome = pers.wage - r.Tax + r.Benefit[0] + r.Benefit[1];
                 return r;
         }
 
@@ -128,36 +128,35 @@ public class BCWrapper : NetIncome{
                 // since the base point is 1 increment above the actual kink
                 //
                 List<String> events = new List<String>();
-                Pers.wage = baseP.X;
-                Results r2 = calculator.Calculate( Pers );
-                Point p2 = new Point();
-                p2.X = Pers.wage;
+                
+                Pers.wage = baseP.X - Generator.INCREMENT*2;
+                Results r0 = calculator.Calculate( Pers );
+                Point p0 = new Point();
+                p0.X = Pers.wage;
                 
                 Pers.wage = baseP.X - Generator.INCREMENT;
                 Results r1 = calculator.Calculate( Pers );
                 Point p1 = new Point();
                 p1.X = Pers.wage;                
                 
-                Pers.wage -= Generator.INCREMENT;
-                Results r0 = calculator.Calculate( Pers );
-                Point p0 = new Point();
-                p0.X = Pers.wage;
-                
+                Pers.wage = baseP.X;
+                Results r2 = calculator.Calculate( Pers );
+                Point p2 = new Point();
+                p2.X = Pers.wage;
+
                 Pers.wage = baseP.X + Generator.INCREMENT;
                 Results r3 = calculator.Calculate( Pers );
                 Point p3 = new Point();
                 p3.X = Pers.wage;
-                
-                if(( r1.Benefit1 > 0 ) && ( r2.Benefit1 == 0 )){
-                        events.Add( "Benefit 1 ends" );      
-                } else if(( r1.Benefit1 == 0 ) && ( r2.Benefit1 > 0 )){
-                        events.Add( "Benefit 1 starts" );      
-                } else if(( r1.Benefit2 > 0 ) && ( r2.Benefit2 == 0 )){
-                        events.Add( "Benefit 2 ends" );      
-                } else if(( r2.Benefit2 > 0 ) && ( r1.Benefit2 == 0 )){
-                        events.Add( "Benefit 2 starts" );      
-                } if( Math.Abs( r2.Benefit2 - r1.Benefit2 ) > 0 ){
-                        events.Add( "Benefit 2 jumps" );      
+                for( int i = 0;i < 3; i++ ){
+                        double d12Diff = Math.Abs( r2.Benefit[i] - r1.Benefit[i] );
+                        if(( r1.Benefit[i] > 0 ) && ( r2.Benefit[i] == 0 )){
+                                events.Add( "Benefit "+i+" ends" );      
+                        } else if(( r1.Benefit[i] == 0 ) && ( r2.Benefit[i] > 0 )){
+                                events.Add( "Benefit "+i+" starts" );      
+                        } else if( d12Diff > Generator.INCREMENT ){
+                                events.Add( String.Format( "Benefit " + i + " jumps by {0:F2}", d12Diff ));      
+                        }
                 }
                 if(( r1.Tax == 0 ) && ( r2.Tax > 0 )){
                         events.Add( "Income Tax Starts" );
@@ -171,7 +170,7 @@ public class BCWrapper : NetIncome{
                 double taxMr1 = 100 - Generator.CalcMarginalRate( p0, p1 );
                 double taxMr2 = 100 - Generator.CalcMarginalRate( p2, p3 );
                 
-                if( Math.Abs( taxMr1 - taxMr2 ) > Generator.TOLERANCE ){
+                if( Math.Abs( taxMr1 - taxMr2 ) > Generator.INCREMENT ){
                         events.Add( String.Format( "income tax MR changes from {0:F1}% to {1:F1}% ", taxMr1, taxMr2  ));       
                 }
                 // everything back the way it was
@@ -194,7 +193,7 @@ public class BCWrapper : NetIncome{
                         n = r.Tax;
                         break;
                 case NetType.BenefitsOnly :
-                        n = r.Benefit1 + r.Benefit2;
+                        n = r.Benefit[0] + r.Benefit[1];
                         break;
                 }
                 return n;        
@@ -232,11 +231,12 @@ class Test{
                         }
                         List<String> events = wrapper.GetEventsAt( bc[i] );
                         if( i == 0 ){
-                                events.Add("bc starts");
+                                events.Insert( 0, "bc starts");
                         }
                         if( i == bc.Count - 1){
-                                events.Add("bc ends");
+                                events.Insert( 0, "bc ends");
                         }
+                        
                         if( events.Count > 0 ){         
                                 Console.WriteLine( "{0},{1:F4},{2:F2} : {3}", i, bc[i].X, mr, events[0] );
                         } else {
