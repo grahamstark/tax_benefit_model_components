@@ -122,28 +122,31 @@ public class BCWrapper : NetIncome{
         
         public List<String> GetEventsAt( Point baseP ){
                 Person savedp = Pers;
-                
+                //
+                // 4 points 0..3 from lowest X to highest with the base point as 3rd (p2)
+                // mr below base point is from 2 points both below the base point
+                // since the base point is 1 increment above the actual kink
+                //
                 List<String> events = new List<String>();
                 Pers.wage = baseP.X;
-                Results r0 = calculator.Calculate( Pers );
-                Point p0 = new Point();
-                p0.X = Pers.wage;
+                Results r2 = calculator.Calculate( Pers );
+                Point p2 = new Point();
+                p2.X = Pers.wage;
                 
                 Pers.wage = baseP.X - Generator.INCREMENT;
                 Results r1 = calculator.Calculate( Pers );
                 Point p1 = new Point();
-                p1.X = Pers.wage;
-                
+                p1.X = Pers.wage;                
                 
                 Pers.wage -= Generator.INCREMENT;
+                Results r0 = calculator.Calculate( Pers );
+                Point p0 = new Point();
+                p0.X = Pers.wage;
+                
+                Pers.wage = baseP.X + Generator.INCREMENT;
                 Results r3 = calculator.Calculate( Pers );
                 Point p3 = new Point();
                 p3.X = Pers.wage;
-                
-                Pers.wage = baseP.X + Generator.INCREMENT;
-                Results r2 = calculator.Calculate( Pers );
-                Point p2 = new Point();
-                p2.X = Pers.wage;
                 
                 if(( r1.Benefit1 > 0 ) && ( r2.Benefit1 == 0 )){
                         events.Add( "Benefit 1 ends" );      
@@ -165,8 +168,8 @@ public class BCWrapper : NetIncome{
                 p2.Y = r2.Tax;
                 p3.Y = r3.Tax;
                 
-                double taxMr1 = 100 - Generator.CalcMarginalRate( p3, p1 );
-                double taxMr2 = 100 - Generator.CalcMarginalRate( p0, p2 );
+                double taxMr1 = 100 - Generator.CalcMarginalRate( p0, p1 );
+                double taxMr2 = 100 - Generator.CalcMarginalRate( p2, p3 );
                 
                 if( Math.Abs( taxMr1 - taxMr2 ) > Generator.TOLERANCE ){
                         events.Add( String.Format( "income tax MR changes from {0:F1}% to {1:F1}% ", taxMr1, taxMr2  ));       
