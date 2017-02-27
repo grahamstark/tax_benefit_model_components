@@ -32,7 +32,7 @@ using System.Collections.Generic;
 /// </summary>
 ///
 namespace PiecewiseLinearGenerator{
-
+        
         /// <summary>
         /// This is the interface the caller needs to implement
         /// </summary>

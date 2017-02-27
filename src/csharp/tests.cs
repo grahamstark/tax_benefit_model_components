@@ -4,7 +4,8 @@ using System.Collections.Generic;
 // TODO using NUnit.Framework;
 using PiecewiseLinearGenerator;
 
-
+public enum NetType{ NetIncome, TotalTaxes, BenefitsOnly };
+        
 public class Person{
         public double wage;
         public int age;
@@ -108,7 +109,6 @@ public class BCWrapper : NetIncome{
 
         public Person Pers { get; set; }
         
-        public enum NetType{ NetIncome, TotalTaxes, BenefitsOnly };
         public NetType netType {get; set; }
         public int whichPerson;
         
@@ -170,7 +170,7 @@ public class BCWrapper : NetIncome{
                 double taxMr1 = 100 - Generator.CalcMarginalRate( p0, p1 );
                 double taxMr2 = 100 - Generator.CalcMarginalRate( p2, p3 );
                 
-                if( Math.Abs( taxMr1 - taxMr2 ) > Generator.INCREMENT ){
+                if( Math.Abs( taxMr1 - taxMr2 ) > Generator.TOLERANCE ){
                         events.Add( String.Format( "income tax MR changes from {0:F1}% to {1:F1}% ", taxMr1, taxMr2  ));       
                 }
                 // everything back the way it was
@@ -216,7 +216,7 @@ class Test{
                 // possibly loop round people in hhls/benunit
                 Person pers = new Person( age: 40 );
                 wrapper.Pers = pers;
-                wrapper.netType = BCWrapper.NetType.NetIncome;
+                wrapper.netType = NetType.NetIncome;
                 List<Point> bc = Generator.Generate( wrapper );
                 Console.WriteLine( "p,gross,net" );
                 for( int i = 0; i < bc.Count; i++ ){
@@ -246,7 +246,7 @@ class Test{
                 }
                 
                 // taxes
-                wrapper.netType = BCWrapper.NetType.TotalTaxes;
+                wrapper.netType = NetType.TotalTaxes;
                 List<Point> taxes = Generator.Generate( wrapper );
                 Console.WriteLine( "\n\np,gross,totalTax" );
                 for( int i = 0; i < taxes.Count; i++ ){
@@ -257,7 +257,7 @@ class Test{
                 }
                 
                 // benefits
-                wrapper.netType = BCWrapper.NetType.BenefitsOnly;
+                wrapper.netType = NetType.BenefitsOnly;
                 List<Point> benefits = Generator.Generate( wrapper );
                 Console.WriteLine( "\n\np,gross,benefits" );
                 for( int i = 0; i < benefits.Count; i++ ){
