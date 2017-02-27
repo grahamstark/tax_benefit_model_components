@@ -13,13 +13,11 @@ public class Person{
         public Person( int age ){
                 this.age = age;        
         }
-        
 }
 
 public class Parameters{
-        
+
         public double it_allow = 500.0; 
-        
         public double[] it_rate = new double[8]{ 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2 };
         public double[] it_band = new double[8]{ 2500, 4000, 5000, 8000, 9000, 10000, 12000, 9999999999999999999.99 };
         
@@ -27,16 +25,14 @@ public class Parameters{
         public double benefit2 = 60.0;
         public double ben2_l_limit = 200.03;
         public double ben2_u_limit = 300.20;
-        
-        
 }
 
 public struct Results{
+        
         public double Tax {get;set;}      
         public double[] Benefit {get;set;}      
         public double NetIncome {get;set;}  
         public double MR {get;set;}
-
 }
 
 public class Calculator{
@@ -95,7 +91,6 @@ public class Calculator{
                 r.NetIncome = pers.wage - r.Tax + r.Benefit[0] + r.Benefit[1];
                 return r;
         }
-
 }
 
 /// <summary>
@@ -113,8 +108,6 @@ public class BCWrapper : NetIncome{
         public int whichPerson;
         
         // other assumptions
-                
-
         
         public BCWrapper( Parameters pars ){                
                 calculator = new Calculator( pars );       
@@ -198,7 +191,6 @@ public class BCWrapper : NetIncome{
                 }
                 return n;        
         }
-        
 }
 
 
@@ -272,5 +264,4 @@ class Test{
                 //
                 return 0;
         }
-
 }
