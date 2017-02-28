@@ -1,6 +1,6 @@
-VERTICAL = 99999999999.9999
-TOLERANCE = 0.0002
-INCREMENT = 0.001
+VERTICAL = 9999999999999.9999
+TOLERANCE = 0.0001
+INCREMENT = 0.0001
 MAX_DEPTH = 100
 
 class Line:
@@ -18,19 +18,14 @@ def  printPoints( l ):
                 print "l["+str(i)+"]: x=" + str( l[i].x ) + ' y=' + str( l[i].y ) 
         
 def makeLine( point_1, point_2 ):
-        l = Line( 0, 0 )
+        l = Line( 0.0, 0.0 )
         if( point_1.x == point_2.x ):
                 l.b = point_1.x
                 l.a = VERTICAL
                 return l
-        line_as_rate = (point_1.y - point_2.y)/(point_1.x - point_2.x )
-        #if( line_as_rate < 0.0 ):
-        #        line_as_rate *= -1
-        #line_as_rate = min( line_as_rate, VERTICAL )
-        l.b = line_as_rate
-        #if( l.b < 0.0 ):
-        #        l.b *= -1.0
-        #l.a = ( point_1.y - point_1.x*l.b )
+        l.b = (point_1.y - point_2.y)/(point_1.x - point_2.x )
+        l.b = min( VERTICAL, l.b )
+        l.a = point_1.y - point_1.x*l.b
         return l
 
 def findIntersection( line_1, line_2 ):
@@ -149,8 +144,8 @@ def makeBudgetConstraint( calculator, start_pos, end_pos, final_precision ):
         # points on same lines...
         points = censor( points )
         # .. then round everything to nearest 1p and censor again
-        for i in range( 0, points.__len__() ):
-                points[ i ].x = round( points[ i ].x, final_precision )
-                points[ i ].y = round( points[ i ].y, final_precision )
-        points = censor( points )
+        #for i in range( 0, points.__len__() ):
+        #        points[ i ].x = round( points[ i ].x, final_precision )
+        #        points[ i ].y = round( points[ i ].y, final_precision )
+        # points = censor( points )
         return points
