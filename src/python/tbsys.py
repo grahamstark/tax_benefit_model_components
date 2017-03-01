@@ -83,7 +83,7 @@ class BCWrapper:
 	
 start_pos = 0 
 end_pos = 20000
-final_precision = 2
+final_precision = 3
 
 pars = Parameters()
 pers = Person( 45 )

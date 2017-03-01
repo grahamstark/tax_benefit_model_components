@@ -144,8 +144,8 @@ def makeBudgetConstraint( calculator, start_pos, end_pos, final_precision ):
         # points on same lines...
         points = censor( points )
         # .. then round everything to nearest 1p and censor again
-        #for i in range( 0, points.__len__() ):
-        #        points[ i ].x = round( points[ i ].x, final_precision )
-        #        points[ i ].y = round( points[ i ].y, final_precision )
-        # points = censor( points )
+        for i in range( 0, points.__len__() ):
+                points[ i ].x = round( points[ i ].x, final_precision )
+                points[ i ].y = round( points[ i ].y, final_precision )
+        points = censor( points )
         return points
