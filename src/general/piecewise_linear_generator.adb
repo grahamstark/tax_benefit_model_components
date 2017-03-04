@@ -30,9 +30,12 @@ pragma License( Modified_GPL );
 
 with Ada.Exceptions; 
 with Maths_Functions;
+with Ada.Text_IO;
 
 package body Piecewise_Linear_Generator is
 
+   use Ada.Text_IO;
+   
    VERTICAL : constant := 999999999.9999;
 
    package maths is new Maths_Functions( Rate );
@@ -145,7 +148,6 @@ package body Piecewise_Linear_Generator is
    begin
       Iterate( points_l, Round_One'Access );
    end Round;
-
    
    -- 
    -- Sort the points into ascending x values,
@@ -154,7 +156,7 @@ package body Piecewise_Linear_Generator is
    -- 
    procedure Censor( 
       points_l     : in out  Points_List ) is
-      npoints      : Natural := Natural( Points_Package.Length( points_l ));
+      npoints      : Natural := Natural( points_l.Length );
       l : array( 1 .. 2 ) of Line;
       p : array( 1 .. 3 ) of Point;
       i : Natural;
@@ -170,33 +172,25 @@ package body Piecewise_Linear_Generator is
       -- 
       i := 2;
       loop
-         p(1) := Points_Package.Element( points_l, i-1 );
-         p(2) := Points_Package.Element( points_l, i );
-         p(3) := Points_Package.Element( points_l, i+1 );
+         p(1) := points_l.Element( i-1 );
+         p(2) := points_l.Element( i );
+         p(3) := points_l.Element( i+1 );
          l(1) := Make_Line( p(1), p(2) );
          l(2) := Make_Line( p(2), p(3) );
          if Nearly_Same_Line( l(1), l(2) ) then
             --
             -- 2 lines are the same? Delete the middle point.
             --
-            Points_Package.Delete( points_l, i );
+            points_l.Delete( i );
             npoints := npoints - 1;
          elsif Nearly_Same_Point( p(2), p(3) ) then
             --
             -- 2 points are same? Delete one or the other.
             --
-            Points_Package.Delete( points_l, i );
+            points_l.Delete( i );
             npoints := npoints - 1;
          else
             i := i+1;
-         end if;
-         exit when ( i >= npoints-1 );
-      end loop;
-      i := 1;
-      loop
-         if( Nearly_Same_Point( points_l.Element(i), points_l.Element( i+1 ) )) then
-            points_l.Delete( i );
-            npoints := npoints - 1;
          end if;
          exit when ( i >= npoints-1 );
       end loop;
@@ -215,6 +209,7 @@ package body Piecewise_Linear_Generator is
       if( abs(start_pos - end_pos) < TOLERANCE ) then
          return;      
       end if;
+      Put_Line( "depth " & depth'Img );
       if( depth > MAX_DEPTH ) then
          Ada.Exceptions.Raise_Exception( 
             Piecewise_Generator_Exception'Identity, 
@@ -280,6 +275,7 @@ package body Piecewise_Linear_Generator is
    depth  : integer := 0;
    begin
       Generate( points, controls, depth, start_pos, end_pos );
+      Put_Line( "generate finished" );
       Censor( points );
       Round( points );
       return points;

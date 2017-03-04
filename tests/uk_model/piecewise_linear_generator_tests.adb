@@ -10,8 +10,10 @@ package body Piecewise_Linear_Generator_Tests is
    use AUnit.Assertions;   
    use Ada.Exceptions;           
    use Ada.Text_IO;
-   use Base_Model_Types;
-   
+   use Base_Model_Types;      
+   use AUnit.Test_Cases.Registration;
+   use AUnit.Test_Cases;
+
    type Person is record
       wage : Amount;
       age  : Age_Range;
@@ -106,13 +108,38 @@ package body Piecewise_Linear_Generator_Tests is
       Rate                   => Amount,
       TOLERANCE              => 0.0001,
       INCREMENT              => 0.0001,
-      MAX_DEPTH              => 50,
+      MAX_DEPTH              => 500,
       Control_Record         => Control_Record,
       Details                => Details,
       Calculate_One_Position => Calculate_One_Position,
       Run_Inspector          => Run_Inspector );
    
-   
+   procedure Test_BCs( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+      plist : PLG.Points_List;
+      controls : Control_Record;
+      i : Positive := 1;
+      type V8 is array( 1 .. 8 ) of Amount;
+      rate : V8 := ( 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2 );
+      band : V8 := ( 2500.0, 4000.0, 5000.0, 8000.0, 9000.0, 10000.0, 12000.0, 9999999999999999999.99 );
+   begin
+      controls.net_t := net_income;
+      for i in 1 .. 8 loop
+         declare
+            rb : TUs.Rate_And_Band;
+         begin
+            rb.rate := rate( i );
+            rb.band := band( i );
+            controls.pars.ratebands.Set_Rate_And_Band( rb, i );  
+         end;
+      end loop;
+      Put_Line( "P1" );
+      plist := PLG.Generate( controls, 0.0, 20_000.0 );
+      Put_Line( "P2" );
+      for p of plist loop
+         Put_Line( i'Img & " = " & PLG.To_String( p ));
+         i := i + 1;
+      end loop;
+   end Test_BCs;
    
    --------------------
    -- Register_Tests --
@@ -120,7 +147,7 @@ package body Piecewise_Linear_Generator_Tests is
    
    procedure Register_Tests (T : in out Test_Case) is
    begin
-      -- Register_Routine (T, Test_Indirect'Access, "Test Indirect");
+      Register_Routine (T, Test_BCs'Access, "Test BCs");
       null;
    end Register_Tests;
    

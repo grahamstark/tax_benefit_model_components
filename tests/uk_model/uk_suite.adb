@@ -26,6 +26,7 @@ function UK_Suite return Access_Test_Suite is
 
    HELP_MESSAGE : constant String :=
       " driver for test suite. Use: " & LINE_BREAK &
+      " b => BC Tests "  & LINE_BREAK &
       " i => HH Impl Tests "  & LINE_BREAK &
       " t => Direct Tax Tests "  & LINE_BREAK &
       " p => Pensioner Benefit Tests "  & LINE_BREAK &
@@ -35,11 +36,13 @@ function UK_Suite return Access_Test_Suite is
 
 begin
    loop
-      case Getopt ("h i r t p") is
+      case Getopt ("h i r t p b") is
       when ASCII.NUL => exit;
           -- when 's' =>
       when 'h' =>
          Put_Line( HELP_MESSAGE );
+      when 'b' =>
+         Add_Test( result, new Piecewise_Linear_Generator_Tests.Test_Case );
       when 'i' =>
          Add_Test( result, new Model.Example_Household.Impl.Tests.Test_Case );
       when 't' =>
