@@ -30,12 +30,9 @@ pragma License( Modified_GPL );
 
 with Ada.Exceptions; 
 with Maths_Functions;
-with Ada.Text_IO;
 
 package body Piecewise_Linear_Generator is
 
-   use Ada.Text_IO;
-   
    VERTICAL : constant := 999999999.9999;
 
    package maths is new Maths_Functions( Rate );
@@ -209,7 +206,6 @@ package body Piecewise_Linear_Generator is
       if( abs(start_pos - end_pos) < TOLERANCE ) then
          return;      
       end if;
-      Put_Line( "depth " & depth'Img );
       if( depth > MAX_DEPTH ) then
          Ada.Exceptions.Raise_Exception( 
             Piecewise_Generator_Exception'Identity, 
@@ -275,7 +271,6 @@ package body Piecewise_Linear_Generator is
    depth  : integer := 0;
    begin
       Generate( points, controls, depth, start_pos, end_pos );
-      Put_Line( "generate finished" );
       Censor( points );
       Round( points );
       return points;
