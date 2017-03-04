@@ -81,7 +81,7 @@ generic
    -- but handy.
    -- 
    with function Run_Inspector( 
-      x, y : Rate; 
+      x, y     : Rate; 
       controls : Control_Record ) return Details;
                  
 package Piecewise_Linear_Generator is
