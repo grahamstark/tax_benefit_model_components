@@ -1,7 +1,7 @@
 with AUnit;
 with AUnit.Test_Cases;
 
-package Piecewise_Linear_Generator.Tests is
+package Piecewise_Linear_Generator_Tests is
    use AUnit;
    use AUnit.Test_Cases;
  
@@ -18,4 +18,4 @@ package Piecewise_Linear_Generator.Tests is
    --  Preparation performed before each routine:
    procedure Set_Up( t : in out Test_Case );
 
-end  Piecewise_Linear_Generator.Tests;
+end  Piecewise_Linear_Generator_Tests;

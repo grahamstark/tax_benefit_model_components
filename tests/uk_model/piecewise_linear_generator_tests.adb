@@ -4,7 +4,7 @@ with Ada.Exceptions;
 with Ada.Text_IO;
 with Tax_Utils;
 
-package body Piecewise_Linear_Generator.Tests is
+package body Piecewise_Linear_Generator_Tests is
   
    use AUnit.Assertions;   
    use Ada.Exceptions;           
@@ -138,4 +138,4 @@ package body Piecewise_Linear_Generator.Tests is
    begin
           return Format( "Piecewise_Linear_Generator.Tests");
    end Name;
-end  Piecewise_Linear_Generator.Tests;
+end  Piecewise_Linear_Generator_Tests;
