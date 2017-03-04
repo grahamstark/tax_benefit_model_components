@@ -120,7 +120,7 @@ package body Piecewise_Linear_Generator_Tests is
       i : Positive := 1;
       type V8 is array( 1 .. 8 ) of Amount;
       rate : V8 := ( 0.1, 0.25, 0.4, 0.5, 0.7, 0.9, 1.0, 1.2 );
-      band : V8 := ( 2500.0, 4000.0, 5000.0, 8000.0, 9000.0, 10000.0, 12000.0, 9999999999999999999.99 );
+      band : V8 := ( 2_500.0, 4_000.0, 5_000.0, 8_000.0, 9_000.0, 10_000.0, 12_000.0, 9_999_999_999_999_999_999.99 );
    begin
       controls.net_t := net_income;
       for i in 1 .. 8 loop
@@ -132,9 +132,7 @@ package body Piecewise_Linear_Generator_Tests is
             controls.pars.ratebands.Set_Rate_And_Band( rb, i );  
          end;
       end loop;
-      Put_Line( "P1" );
       plist := PLG.Generate( controls, 0.0, 20_000.0 );
-      Put_Line( "P2" );
       for p of plist loop
          Put_Line( i'Img & " = " & PLG.To_String( p ));
          i := i + 1;
