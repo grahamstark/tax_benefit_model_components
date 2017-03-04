@@ -10,7 +10,8 @@ with Model.Example_Household.Impl.Tests;
 with Model.Example_Results.Impl.Tests;
 with Model.Calculator.Direct_Tax.Tests;
 with Model.Calculator.Pensioner_Benefits.Tests;
-
+with Piecewise_Linear_Generator.Tests;
+ 
 use AUnit.Test_Suites;
 use GNAT.Command_Line;
 use Ada.Text_IO;
