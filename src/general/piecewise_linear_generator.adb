@@ -33,8 +33,7 @@ with Maths_Functions;
 
 package body Piecewise_Linear_Generator is
 
-   VERTICAL : constant := 999999999.9999;
-
+   VERTICAL : constant := 9999999999.9999;
    package maths is new Maths_Functions( Rate );
    
    --
@@ -52,14 +51,8 @@ package body Piecewise_Linear_Generator is
          return l;
       end if;
       line_as_rate := (point_1.y - point_2.y)/(point_1.x - point_2.x );
-      -- if( line_as_rate < 0.0 ) then
-         -- line_as_rate := line_as_rate * (-1.0);
-      -- end if;
       line_as_rate := Rate'Min( line_as_rate, VERTICAL );
       l.b := Rate( line_as_rate );
-      -- if( l.b < 0.0 ) then
-         -- l.b := l.b * (-1.0);
-      -- end if;
       l.a := ( point_1.y - point_1.x*l.b );
       return l;
    end Make_Line;
@@ -180,16 +173,24 @@ package body Piecewise_Linear_Generator is
             --
             points_l.Delete( i );
             npoints := npoints - 1;
-         elsif Nearly_Same_Point( p(2), p(3) ) then
+         else
+            i := i+1;
+         end if;
+         exit when ( i >= npoints );
+      end loop;
+      i := 1;
+      loop
+         p(1) := points_l.Element( i );
+         p(2) := points_l.Element( i+1 );
+         if Nearly_Same_Point( p(1), p(2) ) then
             --
             -- 2 points are same? Delete one or the other.
             --
             points_l.Delete( i );
             npoints := npoints - 1;
-         else
-            i := i+1;
          end if;
-         exit when ( i >= npoints-1 );
+         i := i + 1;
+         exit when ( i > npoints-1 );
       end loop;
    end Censor;
    
