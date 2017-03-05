@@ -137,6 +137,24 @@ package body Piecewise_Linear_Generator_Tests is
          Put_Line( i'Img & " = " & PLG.To_String( p ));
          i := i + 1;
       end loop;
+      
+      i := 1;
+      controls.net_t := total_taxes;
+      plist := PLG.Generate( controls, 0.0, 20_000.0 );
+      Put_Line( "Taxes" );
+      for p of plist loop
+         Put_Line( i'Img & " = " & PLG.To_String( p ));
+         i := i + 1;
+      end loop;
+      
+      i := 1;
+      controls.net_t := benefits_only;
+      plist := PLG.Generate( controls, 0.0, 20_000.0 );
+      Put_Line( "Benefits" );
+      for p of plist loop
+         Put_Line( i'Img & " = " & PLG.To_String( p ));
+         i := i + 1;
+      end loop;
    end Test_BCs;
    
    --------------------
