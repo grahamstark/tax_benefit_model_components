@@ -130,6 +130,7 @@ package Piecewise_Linear_Generator is
     
    Piecewise_Generator_Exception : exception;
    
+   function To_String( r : Rate ) return String;
    function To_String( p : Point ) return String;
    function To_String( l : Line ) return String;
 

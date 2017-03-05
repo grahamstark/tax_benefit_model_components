@@ -56,6 +56,13 @@ package body Piecewise_Linear_Generator is
       l.a := ( point_1.y - point_1.x*l.b );
       return l;
    end Make_Line;
+   
+
+   function To_String( r : Rate ) return String is
+   begin
+      return maths.To_String( r ); 
+   end To_String;
+
 
    --
    -- The point at which two lines intersect
@@ -103,7 +110,7 @@ package body Piecewise_Linear_Generator is
    
    function To_String( p : Point ) return String is
    begin
-      return " x = " & Rate'Image(p.x) & " y = " & Rate'Image(p.y);
+      return " x = " & To_String( p.x ) & " y = " & To_String( p.y );
    end To_String;
    
    function To_String( l : Line ) return String is
@@ -273,7 +280,7 @@ package body Piecewise_Linear_Generator is
    begin
       Generate( points, controls, depth, start_pos, end_pos );
       Censor( points );
-      Round( points );
+      -- Round( points );
       return points;
    end Generate;
      
