@@ -60,7 +60,7 @@ package body Piecewise_Linear_Generator is
 
    function To_String( r : Rate ) return String is
    begin
-      return maths.To_String( r ); 
+      return maths.To_String( r, width=>30, prec=>3 ); 
    end To_String;
 
 

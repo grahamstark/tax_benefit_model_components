@@ -515,15 +515,22 @@ package body Maths_Functions is
    
    function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String is
       s : String( 1 .. width ) := ( others => ' ' );
+      dp : Positive := 1;
    begin
       begin
          FIO.Put( s, r, prec, 0 );
+         for i in reverse 1 .. width loop
+            if s( i ) = ' ' then
+               dp := i+1;
+               exit;
+            end if;
+         end loop;
       exception
          when others => -- Layout_Error all that's possible?
             -- fall back on one with an exponent; should (??) always work
             return Real'Image( r );
       end;     
-      return s;
+      return s( dp .. width );
    end To_String;
 
    function Interpolate( 
@@ -570,7 +577,9 @@ package body Maths_Functions is
        end case;       
        return v;
     end Interpolate;
-   
+
 begin
+   
    Ada.Numerics.Float_Random.Reset( zero_one_random_generator );
+   
 end Maths_Functions;
