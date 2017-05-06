@@ -2,12 +2,13 @@
 # very basic thing to parse and store File-level information from UKDS data dictionaries.
 # These are usually .rtf files stored in the mrdoc/allissue/ directory.
 # 
-require 'dbi'
+require 'sequel'
 require 'utils'
 require 'csv'
 
 def getConnection()
-        return DBI.connect('DBI:Pg:msc:localhost', 'msc', 'msc' )
+        # return DBI.connect('DBI:Pg:msc:localhost', 'msc', 'msc' )
+        return Sequel.connect(:adapter=>'postgres', :host=>'localhost', :database=>'msc', :user=>'msc' )
 end
 
 
@@ -32,15 +33,17 @@ DEFAULT_DATE = '01/01/1900'
 # see: http://stackoverflow.com/questions/12117024/decimal-number-regular-expression
 DECIMAL_FORMAT = Regexp.new( "^ *[+-]?((\d+(\.\d*)?)|(\.\d+)) *$", Regexp::IGNORECASE )
 
-INSERT_TABLES_STMT = CONNECTION.prepare( "insert into dictionaries.tables( \
+INSERT_TABLES_STMT = CONNECTION["insert into dictionaries.tables( \
         dataset, \
         year, \
         name ) select ?, ?, ?  \
         where not exists \ 
          ( \
             select dataset from dictionaries.tables where dataset = ? and year = ? and name = ? \
-         )" )
-INSERT_ENUM_STMT = CONNECTION.prepare( "insert into dictionaries.enums( \
+         )", 
+         :$dataset, :$year, :$name, :$dataset_t, :$year_t, :$name_t ]
+         
+INSERT_ENUM_STMT = CONNECTION[ "insert into dictionaries.enums( \
         dataset,\
         year, \ 
         tables, \ 
@@ -52,8 +55,11 @@ INSERT_ENUM_STMT = CONNECTION.prepare( "insert into dictionaries.enums( \
          ( \
             select dataset from dictionaries.enums where dataset =? and year = ? and tables = ? and 
             variable_name = ? and value = ? \
-         )"  )
-INSERT_VARIABLE_STMT = CONNECTION.prepare( "insert into dictionaries.variables( \
+         )" , 
+         :$dataset, :$year ,:$tables, :$variable_name, :$value, :$label, :$enum_value,
+         :$dataset_t, :$year_t ,:$tables_t, :$variable_name_t, :$value_t  ]
+              
+INSERT_VARIABLE_STMT = CONNECTION["insert into dictionaries.variables( \
          dataset,\
          year,\
          tables,\ 
@@ -68,7 +74,13 @@ INSERT_VARIABLE_STMT = CONNECTION.prepare( "insert into dictionaries.variables( 
          ( \
             select dataset from dictionaries.variables where dataset =? and year = ? and tables = ? \
             and name = ? \
-         )" )
+         )", 
+         
+         :$dataset, :$year ,:$tables, :$name, :$pos, :$var_fmt, :$measurement_level, :$label,
+         :$data_type,
+         :$dataset_t, :$year_t ,:$tables_t, :$name_t
+         
+         ]
 
 def fixupField( var, field )
         return '' if field.nil?
@@ -232,40 +244,26 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec, nam
                         colname = nameEditor.edit( topline[i].downcase() )
                         puts "changing #{} to #{maxvals[i]}\n"
                         puts "#{maxvals[i]} #{dataset}, #{tablename}, #{year}, #{colname}\n"
-                        updateVarType( maxvals[i], dataset, tablename, year, colname, connection )                 
+                        updateVarType( maxvals[i], dataset, tablename, year, colname )                 
                         # statement.execute( maxvals[i], dataset, tablename, year, colname )                 
                 end
         }
         connection.disconnect()
 end
 
-def updateVarType( dataType, dataset, tableName, year, colname, connection = nil )
-        if connection.nil? then
-                connection = getConnection() 
-                local = true
-        else
-                local = false
-        end
-        statement = connection.prepare( "update dictionaries.variables set data_type=? where dataset=? and tables=? and year=? and name=? and data_type < ?" )
-        statement.execute( dataType, dataset, tableName, year, colname, dataType ) 
-        connection.disconnect() if local
+def updateVarType( dataType, dataset, tableName, year, colname )
+        connection = getConnection() 
+        ds = connection[ "update dictionaries.variables set data_type='#{dataType}' where dataset='#{dataset}' and tables='#{tableName}' and year=#{year} and name='#{colname}' and data_type < #{dataType}" ]
+        ds.update();
 end
 
 #
 # @param colpatt e.g. sic%
 #
-def updateVarGroup( dataType, dataset, tableName, colpatt, connection = nil )
-        if connection.nil? then
-                connection = getConnection() 
-                local = true
-        else
-                local = false
-        end
-        statement = connection.prepare( "update dictionaries.variables set data_type=? where dataset=? and tables=? and name like ? and data_type < ?" )
-        statement.execute( dataType, dataset, tableName, colpatt, dataType ) 
-        if local then
-                connection.disconnect()
-        end
+def updateVarGroup( dataType, dataset, tableName, colpatt )
+        connection = getConnection() 
+        statement = connection[ "update dictionaries.variables set data_type=? where dataset=? and tables=? and name like ? and data_type < ?", dataType, dataset, tableName, colpatt, dataType ]
+        statement.update() 
 end 
 
 # @nameEdit - a class with 1 method - edit( the varname )
@@ -273,7 +271,7 @@ end
 def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
         f = File.new( filename, 'r' );
         # tablename = File.basename( filename, ".txt" )
-        INSERT_TABLES_STMT.execute( dataset, year, tablename, dataset, year, tablename )
+        INSERT_TABLES_STMT.call( :insert, :dataset=>dataset, :year=>year, :name=>tablename, :dataset_t=>dataset, :year_t=>year, :name_t=>tablename )
         data_type = INT
         inserted = []
         varname = ''
@@ -305,16 +303,42 @@ def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
                         measurement_level = $2
                         puts "var_fmt |#{var_fmt}| measurement_level |#{measurement_level}|\n"
                         if not inserted.include?( varname )then                                
-                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type,
-                                                              dataset, year, tablename, varname )
+                                INSERT_VARIABLE_STMT.call( 
+                                        :insert,
+                                        :dataset => dataset, 
+                                        :year => year, 
+                                        :tables => tablename, 
+                                        :name => varname, 
+                                        :pos => pos, 
+                                        :var_fmt => var_fmt, 
+                                        :measurement_level => measurement_level, 
+                                        :label => label, 
+                                        :data_type => data_type,
+                                        :dataset_t => dataset, 
+                                        :year_t => year, 
+                                        :tables_t => tablename, 
+                                        :name_t => varname )
                                 inserted << varname
                         end
                 elsif line =~ /.*This variable is *'other'.*/i or line =~ /.*Value label information for.*/i then # this turns up in WAS e.g. DisType8W1 and elsa_data_v3
                         var_fmt = 'numeric'
                         measurement_level = 'scale'
                         if not inserted.include?( varname )then
-                                INSERT_VARIABLE_STMT.execute( dataset, year, tablename, varname, pos, var_fmt, measurement_level, label, data_type,
-                                        dataset, year, tablename, varname )
+                                INSERT_VARIABLE_STMT.call(
+                                        :insert,
+                                        :dataset => dataset, 
+                                        :year => year, 
+                                        :tables => tablename, 
+                                        :name => varname, 
+                                        :pos => pos, 
+                                        :var_fmt => var_fmt, 
+                                        :measurement_level => measurement_level, 
+                                        :label => label, 
+                                        :data_type => data_type,
+                                        :dataset_t => dataset, 
+                                        :year_t => year, 
+                                        :tables_t => tablename, 
+                                        :name_t => varname )
                                 inserted << varname
                         end
                 elsif line =~ /Value\s*=\s*([0-9\-]+)\.?[0-9]*+\s*Label\s*=(.*)/i then
@@ -322,8 +346,20 @@ def readOneRTF( dataset, year, filename, tablename, nameEdit = nil )
                         label = $2.strip
                         enum_value  = basicCensor( label )
                         puts "value = |#{$1}| label=|#{label}| enum_value=|#{enum_value}|\n"
-                        INSERT_ENUM_STMT.execute( dataset, year, tablename, varname, value, label, enum_value, 
-                                                  dataset, year, tablename, varname, value );
+                        INSERT_ENUM_STMT.call( 
+                                :insert,
+                                :dataset         => dataset, 
+                                :year            => year, 
+                                :tables          => tablename, 
+                                :variable_name   => varname, 
+                                :value           => value, 
+                                :label           => label, 
+                                :enum_value      => enum_value, 
+                                :dataset_t       => dataset, 
+                                :year_t          => year,
+                                :tables_t        => tablename, 
+                                :variable_name_t => varname,
+                                :value_t         => value );
                 end
         }
         f.close
@@ -526,44 +562,36 @@ end
 def loadTable( dataset, year, tableName )
         tab = Table.new( dataset, year, tableName )
         puts "on table #{tableName}\n"
-        stmt = "select * from dictionaries.variables where dataset='#{dataset}' and tables='#{tableName}' and year=#{year} and pos > 0 order by pos  "
-        print stmt
-        connection = getConnection()
-        rs = connection.execute( stmt )
-        rs.fetch_hash{
+        CONNECTION.fetch( "select * from dictionaries.variables where dataset='#{dataset}' and tables='#{tableName}' and year=#{year} and pos > 0 order by pos  " ){
                 |res|
                 var = Variable.new( 
-                        res['name'], 
-                        res['pos'].to_i(), 
-                        res['var_fmt'], 
-                        res['measurement_level'], 
-                        res['label'], 
-                        res['data_type'] )
+                        res[:name], 
+                        res[:pos].to_i(), 
+                        res[:var_fmt], 
+                        res[:measurement_level], 
+                        res[:label], 
+                        res[:data_type] )
                 # var.adaType = getAdaType( tableName, var )
-                enumStmt = "select value, label from dictionaries.enums where dataset='#{dataset}' and year=#{year} and tables='#{tableName}' and variable_name = '#{var.name}'  order by value"
-                ers = connection.execute( enumStmt )
-                if( ers.rows() > 0 )then
-                        ers.fetch_hash{
-                                |eres|
-                                value = eres['value'].to_i
-                                if( value >= 0 )then
-                                        label = eres['label'] 
-                                        puts "add enum |#{value}| = |#{label}|\n"
-                                        var.addEnum( value, label )
-                                else
-                                        puts "added #{value} as a missing value\n"
-                                        var.addMissingValue( value )     
-                                end
-                                
-                        }
-                end
+                CONNECTION.fetch( "select value, label from dictionaries.enums where dataset='#{dataset}' and year=#{year} and tables='#{tableName}' and variable_name = '#{var.name}'  order by value" ){
+                        |eres|
+                        value = eres[:value].to_i
+                        if( value >= 0 )then
+                                label = eres[:label] 
+                                puts "add enum |#{value}| = |#{label}|\n"
+                                var.addEnum( value, label )
+                        else
+                                puts "added #{value} as a missing value\n"
+                                var.addMissingValue( value )     
+                        end
+                        
+                }
                 puts "made variable #{var}\n"
                 tab.variableNames << var.name
                 tab.variables[ var.name ] = var
         }
-        connection.disconnect
         return tab
 end
+
 # 
 # def loadTable( dataset, year, tableName )
         # tab = Table.new( dataset, year, tableName )
