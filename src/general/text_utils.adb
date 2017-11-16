@@ -222,6 +222,23 @@ package body Text_Utils is
       return s;
     end Read_Whole_File;
     
+    function Join( l : Unbounded_String_List; delim : String := TAB ) return String is
+       use Unbounded_String_Vector_Package;
+       s : Unbounded_String;
+       
+       procedure Print_One( c : Cursor ) is
+       begin
+          s := s & Element( c );
+          if c /= l.Last then
+             s := s & delim;
+          end if;
+       end Print_One;
+       
+    begin
+        Iterate( l, Print_One'Access );
+        return TS( s );
+    end Join;
+    
     function To_One_String( l : Unbounded_String_List ) return String is
        use Unbounded_String_Vector_Package;
        s : Unbounded_String;

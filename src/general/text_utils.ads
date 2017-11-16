@@ -85,7 +85,7 @@ package Text_Utils is
    function To_One_String( l : Unbounded_String_List ) return String;
    procedure Add_To( l : in out Unbounded_String_List; item : String );
    function Get( l : Unbounded_String_List; which : Positive ) return String;
-   
+   function Join( l : Unbounded_String_List; delim : String := TAB ) return String;
    function Split( s : String; sep : Character ) return Unbounded_String_List;
    function Join( s : Unbounded_String_List; sep : Character ) return String;
    

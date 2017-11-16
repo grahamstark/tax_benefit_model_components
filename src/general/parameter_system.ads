@@ -53,7 +53,7 @@ package Parameter_System is
         money,
         rate,
         no_unit );
-   type Description_Kind is ( tooltip, journalese, description, label );
+   type Description_Kind is ( tooltip, journalese, description, label, units_string );
    type Descriptions_Array is array( Description_Kind ) of Language_Texts;
    type Index_Kind is ( none, integer_type, enumerated_type, string_type );
    type Collection_Kind is ( set, map, list, singular ); 

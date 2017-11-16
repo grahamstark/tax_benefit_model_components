@@ -13,7 +13,7 @@ end
 
 
 
-FRS_TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamt', 'penprov', 'nimigr', 'owner' ]
+FRS_TABLES_THAT_NEED_COUNTERS = [ 'benefits', 'job', 'care', 'benefits', 'govpay', 'oddjob', 'penamt', 'penprov', 'nimigr', 'owner', 'nimigra' ]
 # note the last 2 are actually SQL keywords
 KEYWORD_TRANSLATIONS = { 'access'=>'x_access', 'out'=>'xxout', "month_"=>"month", "grant" => "x_grant", "where" => "x_where", "case" => "x_case", 'both' => 'x_both', 'amount' => 'x_amount', 'type' => 'x_type' };
 KEYWORD_TRANSLATIONS_REVERSE = KEYWORD_TRANSLATIONS.invert() 
@@ -237,7 +237,7 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec, nam
                 end
         }
         file.close()
-        connection = getConnection()
+        # connection = getConnection()
         n.times{
                 |i|
                 if maxvals[i] != INT then # since we default to INT anyway
@@ -248,21 +248,22 @@ def inferDataTypes( dataset, year, filename, tablename, single_point_as_dec, nam
                         # statement.execute( maxvals[i], dataset, tablename, year, colname )                 
                 end
         }
-        connection.disconnect()
+        # connection.disconnect()
 end
 
 def updateVarType( dataType, dataset, tableName, year, colname )
-        connection = getConnection() 
-        ds = connection[ "update dictionaries.variables set data_type='#{dataType}' where dataset='#{dataset}' and tables='#{tableName}' and year=#{year} and name='#{colname}' and data_type < #{dataType}" ]
+        # connection = getConnection() 
+        ds = CONNECTION[ "update dictionaries.variables set data_type='#{dataType}' where dataset='#{dataset}' and tables='#{tableName}' and year=#{year} and name='#{colname}' and data_type < #{dataType}" ]
         ds.update();
+        # con
 end
 
 #
 # @param colpatt e.g. sic%
 #
 def updateVarGroup( dataType, dataset, tableName, colpatt )
-        connection = getConnection() 
-        statement = connection[ "update dictionaries.variables set data_type=? where dataset=? and tables=? and name like ? and data_type < ?", dataType, dataset, tableName, colpatt, dataType ]
+        #connection = getConnection() 
+        statement = CONNECTION[ "update dictionaries.variables set data_type=? where dataset=? and tables=? and name like ? and data_type < ?", dataType, dataset, tableName, colpatt, dataType ]
         statement.update() 
 end 
 
@@ -655,8 +656,8 @@ end
 
 def makeAllMissingValues( dataset, year )
         stmt = "select distinct value from dictionaries.enums where dataset='#{dataset}' and year=#{year} and cast(value as integer ) < 0 ";
-        connection = getConnection()
-        rs = connection.execute( stmt )
+        # connection = getConnection()
+        rs = CONNECTION.run( stmt )
         mvs = []
         rs.fetch_hash{
                 |res|
@@ -664,6 +665,29 @@ def makeAllMissingValues( dataset, year )
                 mvs << "setmiss #{mv}"
         }
         return mvs        
+end
+
+def makeRDummiesDecl( frameName, var )
+        enumStmts = []
+        vname = basicCensor( var.name ) #.downcase
+        vname = "#{framename}$#{vname}" 
+        var.enums.each{
+                |enum|
+                # p enum
+                enumName = basicCensor( enum.label )
+                dummyName = "#{vname}_#{enumName}"
+                enumStmts << "\# #{dummyName} Dummy Variable: #{var.name} : #{enum.label} (variable=#{var.name}, value=#{enum.value})"
+                enumStmts << "#{dummyName} = #{vname} == #{enum.value}"
+        }
+        return enumStmts
+end
+
+def makeRFactorConversion( frameName, var )
+        vname = basicCensor( var.name ) 
+        vname = "#{framename}$#{vname}" 
+        labstr = var.enums.join( "," );
+        return "#{vname} = factor( #{vname},labels=#{labstr} );"
+        
 end
 
 def makeGretlDummies( var )
