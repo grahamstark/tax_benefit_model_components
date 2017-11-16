@@ -532,6 +532,23 @@ package body Maths_Functions is
       end;     
       return s( dp .. width );
    end To_String;
+   
+   function Extrapolate( 
+      v            : Vector;
+      length       : Positive;
+      last_period  : Positive := 1 ) return Vector is
+      l : Positive := v'Length + length;
+      outv : Vector( 1 .. l );
+      lastv : constant Real := v( v'Length );
+      prevv : constant Real := v( v'Length - last_period );
+      growth : constant Real := ( lastv - prevv )/prevv*Real( last_period ); -- FIXME not right
+   begin
+      outv( 1 .. v'Length ) := v;
+      for t in V'Length+1 .. l loop
+         outv( t ) := outv( t-1 )*growth;
+      end loop;
+      return outv;
+   end Extrapolate;
 
    function Interpolate( 
       v1             : Real; 

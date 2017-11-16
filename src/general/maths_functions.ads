@@ -95,7 +95,15 @@ package Maths_Functions is
       tolf       : Real;
       iterations : out Natural;
       error      : out Eval_Error_Type );
- 
+      
+   --
+   -- extend a dataset by taking the growth between final and last_period 
+   -- and using that from the final obs
+   --
+   function Extrapolate( 
+      v            : Vector;
+      length       : Positive;
+      last_period  : Positive := 1 ) return Vector;
    --
    -- make an array periods long interpolating between two values
    -- v1 - 1st value
