@@ -71,29 +71,20 @@ namespace PiecewiseLinearGenerator{
         // note there is a point class in Drawing .. 
         public class Point{
                 
-                public Point(){
-                        this.Y = -999.99;       
-                }
-                
                 public BCResult Res {get;set;}
                 
                 
                 // FIXME this causes stack overflows ...
-                public double Y
-                { 
-                        get{
-                                if( this.Y == -999.99 ){
-                                        return this.Res.getY();
-                                } else {
-                                        return this.Y;       
-                                }
-                        }
-                        
-                        set{
-                                Console.WriteLine( "Y " + Y );
-                                this.Y = value;              
+                public double Y;
+
+                public double getY(){
+                        if( this.Res != null ){
+                                return this.Res.getY();
+                        } else {
+                                return Y;       
                         }
                 }
+                
                 
                 public double X {get;set;}
         }
@@ -125,9 +116,9 @@ namespace PiecewiseLinearGenerator{
                                  l.A = VERTICAL;
                                  return l;
                         };
-                        l.B = (point_1.Y - point_2.Y)/(point_1.X - point_2.X );
+                        l.B = (point_1.getY() - point_2.getY())/(point_1.X - point_2.X );
                         l.B = Math.Min( l.B, VERTICAL );
-                        l.A = ( point_1.Y - point_1.X*l.B );                
+                        l.A = ( point_1.getY() - point_1.X*l.B );                
                         return l;
                 }
                 
@@ -150,10 +141,10 @@ namespace PiecewiseLinearGenerator{
                         if( point_1.X < point_2.X ){
                                 return -1;       
                         }
-                        if( point_1.Y > point_2.Y ){
+                        if( point_1.getY() > point_2.getY() ){
                                 return 1;               
                         }
-                        if( point_1.Y < point_2.Y ){
+                        if( point_1.getY() < point_2.getY() ){
                                 return -1;               
                         }
                         return 0;
@@ -162,10 +153,10 @@ namespace PiecewiseLinearGenerator{
                 public static double CalcMarginalRate( Point point_1, Point point_2 ){
                         double mr;
                         if( point_2.X != point_1.X ){
-                                mr = 100.0 * (1-(point_2.Y-point_1.Y) / (point_2.X - point_1.X));
+                                mr = 100.0 * (1-(point_2.getY()-point_1.getY()) / (point_2.X - point_1.X));
                         } else {
                                 mr = VERTICAL;
-                                if( point_2.Y < point_1.Y ){
+                                if( point_2.getY() < point_1.getY() ){
                                         mr *= -1;        
                                 }
                         }
@@ -178,7 +169,7 @@ namespace PiecewiseLinearGenerator{
         
                 // FIXME parameterise this tolerance seperately
                 private static bool NearlySamePoint( Point p1, Point p2 ){
-                        return ((( Math.Abs(p1.X-p2.X)) < TOLERANCE*10 ) && (( Math.Abs (p1.Y-p2.Y)) < TOLERANCE*10 ));
+                        return ((( Math.Abs(p1.X-p2.X)) < TOLERANCE*10 ) && (( Math.Abs (p1.getY()-p2.getY())) < TOLERANCE*10 ));
                 }
                 
                 private static double Trunc( double x ){
@@ -193,14 +184,14 @@ namespace PiecewiseLinearGenerator{
                         }
                         int i = 1;
                         Line[] l = new Line[2];
-                        Point[] p = new Point[3];
                         while( i < n-1 ){
-                                p[0] = points[i-1]; 
-                                p[1] = points[i]; 
-                                p[2] = points[i+1];
-                                l[0] = MakeLine( p[0], p[1] );
-                                l[1] = MakeLine( p[1], p[2] );
+                                //fixme deepcopy
+                                l[0] = MakeLine( points[i-1], points[i] );
+                                l[1] = MakeLine( points[i], points[i+1] );
+                                Console.WriteLine( "l[0] A " + l[0].A + " B " + l[0].B );
+                                Console.WriteLine( "l[1] A " + l[1].A + " B " + l[1].B );
                                 if( NearlySameLine( l[0], l[1] )){
+                                        Console.WriteLine( "same" );
                                         points.RemoveAt( i );
                                         n = points.Count;
                                 } else {
@@ -230,7 +221,6 @@ namespace PiecewiseLinearGenerator{
                                 throw new GeneratorException( "Max Depth Exceeded" );                               
                         }
                         double anchor;
-                        Console.WriteLine( "#1 depth=" + depth );    
                         Point[] points = new Point[5];
                         for( int i = 0; i < 5; i++ ){
                                 points[i] = new Point();

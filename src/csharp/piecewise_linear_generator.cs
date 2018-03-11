@@ -182,7 +182,10 @@ namespace PiecewiseLinearGenerator{
                                 p[2] = points[i+1];
                                 l[0] = MakeLine( p[0], p[1] );
                                 l[1] = MakeLine( p[1], p[2] );
+                                Console.WriteLine( "l[0] A " + l[0].A + " B " + l[0].B );
+                                Console.WriteLine( "l[1] A " + l[1].A + " B " + l[1].B );
                                 if( NearlySameLine( l[0], l[1] )){
+                                        Console.WriteLine( "same" );
                                         points.RemoveAt( i );
                                         n = points.Count;
                                 } else {

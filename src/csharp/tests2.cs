@@ -209,8 +209,8 @@ class Test{
                 
                 Point p = new Point();
                 //p.Y = 212;
-                Console.WriteLine( "p.Y " + p.Y );
-                /*
+                Console.WriteLine( "p.Y " + p.getY() );
+                
                 Parameters pars = new Parameters();
                 BCWrapper wrapper = new BCWrapper( pars );
                 
@@ -224,7 +224,7 @@ class Test{
                 List<Point> bc = Generator.Generate( wrapper );
                 Console.WriteLine( "p,gross,net" );
                 for( int i = 0; i < bc.Count; i++ ){
-                        Console.WriteLine( "{0},{1:F4},{2:F4} ", i, bc[i].X, bc[i].Y );
+                        Console.WriteLine( "{0},{1:F4},{2:F4} ", i, bc[i].X, bc[i].getY() );
                 }
                 Console.WriteLine( "events" );
                 Console.WriteLine( "p, gross,mr,event" );
@@ -257,7 +257,7 @@ class Test{
                         if( i < taxes.Count-1 ){
                                 mr = 100 - ( Generator.CalcMarginalRate( taxes[i], taxes[i+1] ));    
                         }    
-                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F2}  ", i, taxes[i].X, taxes[i].Y, mr );
+                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F2}  ", i, taxes[i].X, taxes[i].getY(), mr );
                 }
                 
                 // benefits
@@ -268,13 +268,13 @@ class Test{
                         if( i < benefits.Count-1 ){
                                 mr = ( Generator.CalcMarginalRate( benefits[i], benefits[i+1] )) - 100;    
                         }    
-                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F2}  ", i, benefits[i].X, benefits[i].Y, mr );
+                        Console.WriteLine( "{0},{1:F4},{2:F4},{3:F2}  ", i, benefits[i].X, benefits[i].getY(), mr );
                 }
                 
                 //
                 // household loop would end here
                 //
-                */
+                
                 return 0;
         }
 }
