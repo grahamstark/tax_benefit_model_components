@@ -105,7 +105,7 @@ package body Long_Menu is
       is_selectable : Boolean;
       is_selected   : Boolean := False;       
       after       : String := "" ) is
-      item : Menu_Item := Create( key, label, is_selected );
+      item : Menu_Item := Create( key, label, is_selectable, is_selected );
    begin
       menu.Add( item, after );
    end Add;

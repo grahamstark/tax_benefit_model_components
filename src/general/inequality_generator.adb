@@ -367,16 +367,15 @@ package body Inequality_Generator is
       -- palma index; see (e.g) https://rss-onlinelibrary-wiley-com.libezproxy.open.ac.uk/doi/full/10.1111/j.1740-9713.2014.00718.x
       --
       declare
-         bottom_40 : Rate;
-         top_10    : Rate;
+         bottom_40 : Rate := 0.0;
+         top_10    : Rate := 0.0;
+         found_bottom : Boolean := False;
       begin
          for q of aq_list loop
-            if q.popn_accum / sum.population >= 0.40 then
+            if not found_bottom and ( q.popn_accum / sum.population >= 0.40  )then
                bottom_40 := q.income_accum;
-               exit;
+               found_bottom := True;
             end if;
-         end loop;
-         for q of aq_list loop
             if q.popn_accum / sum.population >= 0.90 then
                top_10 := sum.income - q.income_accum;
                exit;
