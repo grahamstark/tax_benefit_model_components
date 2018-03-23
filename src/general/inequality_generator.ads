@@ -91,7 +91,8 @@ package Inequality_Generator is
       Platon_Inequality, 
       Theil_Redundancy, 
       Kullback_Leibler_Redundancy, 
-      Williamson_Variation, 
+      Williamson_Variation,
+      Palma,
       Negative_Warning ); 
 
    subtype Simple_Statistics is Measures range Mean .. Total_Population;

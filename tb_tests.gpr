@@ -44,7 +44,7 @@ project tb_tests is
 
    package Builder is
       for Default_Switches ("ada")
-      use ("-g", "-gnatQ", IncludeOPT, "-x", "-gnat05", "-E" ); -- ada 2005 mode, 
+      use ("-g", "-gnatQ", IncludeOPT, "-x", "-E" ); -- ada 2005 mode, 
    end Builder;
 
 
