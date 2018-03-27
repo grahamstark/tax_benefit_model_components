@@ -4,6 +4,7 @@ with component_tests;
 with legal_aid_tests;
 with PovLine_Tests;
 with Input_Collection_Tests;
+with Maths_Functions.Poverty_Inequality.Tests;
 with ZA_Tests;
 
 function suite return Access_Test_Suite is
