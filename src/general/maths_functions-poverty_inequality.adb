@@ -19,7 +19,7 @@ package body Maths_Functions.Poverty_Inequality is
    function Binify( 
       quantiles : Quantile_Array; 
       num_bins : Positive ) return Quantile_Array is
-      outa : Quantile_List( 1 .. num_bins );
+      outa : Quantile_Array( 1 .. num_bins );
    begin
       return outa;
    end Binify;

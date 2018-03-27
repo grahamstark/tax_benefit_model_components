@@ -64,9 +64,6 @@ private
       num_bins : Positive ) return Quantile_Array;
    
    type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
-   
-   
-   
-   
+    
 end  Maths_Functions.Poverty_Inequality;
 
