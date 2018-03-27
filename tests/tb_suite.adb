@@ -7,6 +7,7 @@ with General_Tests;
 -- with Input_Collection_Tests;
 -- with BHPS_Tests;
 with Weighting_Tests;
+with Maths_Functions.Poverty_Inequality.Tests;
 
 function TB_Suite return AUnit.Test_Suites.Access_Test_Suite is
    

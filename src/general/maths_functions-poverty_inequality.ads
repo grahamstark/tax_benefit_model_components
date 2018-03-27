@@ -13,7 +13,7 @@ package Maths_Functions.Poverty_Inequality is
 
    subtype Row_Range is Positive range 1 .. Num_Observations;
    
-   type Summary_Array is array( 
+   type Summary_Array is array( Measures ) of Real;
    
    type Quantile is record
       index      : Positive := Positive'First;
@@ -29,7 +29,7 @@ package Maths_Functions.Poverty_Inequality is
    
    type Quantile_Array is array( Positive range <> ) of Quantile;
    
-   subtype Array_For_Ginis is 
+   subtype Array_For_Ginis is Quantile_Array( 1 .. 100 );
    
    function Lower_Income( left, right : Quantile ) return Boolean;
 
@@ -54,6 +54,7 @@ package Maths_Functions.Poverty_Inequality is
       foster_greer_thorndyke : Vector( 1 .. 5 );
       deciles                : Decile;
       quintiles              : Quintile;
+      gini_data              : Array_For_Ginis;
    end record;
    
 private   
