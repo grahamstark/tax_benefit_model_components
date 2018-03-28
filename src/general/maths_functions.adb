@@ -57,6 +57,13 @@ package body Maths_Functions is
       return L_DEBUG;
    end Debug;
    
+
+   procedure Inc( x : in out Real; by : Real := 1.0 ) is
+   begin
+      x := x + by;
+   end Inc;
+
+   
    procedure Do_Debug( onoff : Boolean ) is
    begin
       L_DEBUG := onoff;

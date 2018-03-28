@@ -82,6 +82,8 @@ package Maths_Functions is
    
    function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String;
    
+   procedure Inc( x : in out Real; by : Real := 1.0 );
+   
   generic 
     with procedure Evaluate(  
           inputs               : in  Vector;
