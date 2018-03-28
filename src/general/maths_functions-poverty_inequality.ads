@@ -2,6 +2,7 @@ pragma License( Modified_GPL );
 
 with Poverty_Inequality_Commons;
 with Ada.Containers.Generic_Array_Sort;
+with Ada.Unchecked_Deallocation;
 
 generic
    
@@ -21,24 +22,29 @@ package Maths_Functions.Poverty_Inequality is
       population : Real;
    end record;
    
-   type Ranking_Rec is record
-      index : Positive;
-      rank  : Positive;
-      cumulative_population : REAL;
-   end record;
-   
+   -- type Ranking_Rec is record
+      -- index : Positive;
+      -- rank  : Positive;
+      -- cumulative_population : REAL;
+   -- end record;
+   -- 
    type Quantile_Array is array( Positive range <> ) of Quantile;
    
    subtype Array_For_Ginis is Quantile_Array( 1 .. 100 );
    
    function Lower_Income( left, right : Quantile ) return Boolean;
 
-   procedure QSort is new Ada.Containers.Generic_Array_Sort(
+   procedure Quantile_Sort is new Ada.Containers.Generic_Array_Sort(
       Index_Type   => Positive,
       Element_Type => Quantile,
       Array_Type   => Quantile_Array,
       "<"          => Lower_Income );
 
+   type Quantile_Array_Access is access Quantile_Array;
+   procedure Free_Dataset is new Ada.Unchecked_Deallocation(
+      Object => Quantile_Array, Name => Quantile_Array_Access );
+         
+      
    
    subtype Decile is Quantile_Array( 1 .. 10 );
    subtype Quintile is Quantile_Array( 1 .. 5 );
@@ -56,14 +62,36 @@ package Maths_Functions.Poverty_Inequality is
       quintiles              : Quintile;
       gini_data              : Array_For_Ginis;
    end record;
-   
-private   
-   
+
    function Binify( 
       quantiles : Quantile_Array; 
       num_bins : Positive ) return Quantile_Array;
    
-   type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
+   
+   type Augmented_Quantile is record
+      index         : Positive;
+      position      : Positive;
+      income        : Real;
+      population    : Real;
+      log           : Real := 0.0;
+      income_accum  : Real := 0.0;
+      popn_accum    : Real := 0.0;
+      growth        : Real := 0.0;
+   end record;
+
+   -- type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
+   type Augmented_Quantile_Array is array( Positive range <> ) of Augmented_Quantile;
+   
+   function Lower_Income( left, right : Augmented_Quantile ) return Boolean;
+   
+   procedure Augmented_Quantile_Sort is new Ada.Containers.Generic_Array_Sort(
+      Index_Type   => Positive,
+      Element_Type => Augmented_Quantile,
+      Array_Type   => Augmented_Quantile_Array,
+      "<"          => Lower_Income );
+
+   type Augmented_Quantile_Array_Access is access Augmented_Quantile_Array;
+   procedure Free_Dataset is new Ada.Unchecked_Deallocation(
+      Object => Augmented_Quantile_Array, Name => Augmented_Quantile_Array_Access );
     
 end  Maths_Functions.Poverty_Inequality;
-

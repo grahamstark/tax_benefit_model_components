@@ -15,6 +15,11 @@ package body Maths_Functions.Poverty_Inequality is
    begin
       return left.income < right.income;
    end Lower_Income;
+   
+   function Lower_Income( left, right : Augmented_Quantile ) return Boolean is
+   begin
+      return left.income < right.income;
+   end Lower_Income;
                              
    function Binify( 
       quantiles : Quantile_Array; 
