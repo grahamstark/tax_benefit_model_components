@@ -46,7 +46,7 @@ package body Maths_Functions.Poverty_Inequality is
             Inc( cumulative_population, q.population );
             if cumulative_population > bin_limit then
                outa( p ).income := cumulative_income;
-               outa( p ).population := cumulative_populaton;
+               outa( p ).population := cumulative_population;
                Inc( bin_limit, bin_size );
                p := p + 1;
             end if;
