@@ -4,6 +4,7 @@ with Ada.Exceptions;
 with Ada.Text_IO;
 with Tax_Utils;
 with Piecewise_Linear_Generator;
+with Text_Utils;
 
 package body Piecewise_Linear_Generator_Tests is
   

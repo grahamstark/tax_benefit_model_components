@@ -2,6 +2,8 @@
    a simple XML DTD for describing a Parameter system 
    new, much simplified version 14/12/2004
 
+   ** This is the version for ADRS with various macro things and subjects and models **
+
    all the main elements have these:
     - Description: as much text as you like about whatever this is
     - Tooltip: about 1 sentence of plain text e.g. "increase this to raise revenue"
@@ -13,6 +15,13 @@
    lang CDATA "en"
    country CDATA "GB"
    type   (tooltip|journalese|description|label) "description"
+>
+
+<!ELEMENT UnitsString (#PCDATA)>
+
+<!ATTLIST Description 
+   lang CDATA "en"
+   country CDATA "GB"
 >
 
 <!ELEMENT ParameterSystem (
@@ -53,6 +62,9 @@
                        id ID #IMPLIED
                        logicalType CDATA #IMPLIED
                        instanceName CDATA #IMPLIED
+                       displayType (standard,final,referenceOnly) "standard"
+                       subjects CDATA #IMPLIED
+                       models  CDATA #IMPLIED
                        enabled (true|false) "true" 
 >
 
@@ -103,16 +115,16 @@
     from  macroeconomic things mostly junk and could be got rid of in a well-ordered universe, but needed for the ADRS macro models  
 -->
 
-<!ELEMENT Parameter ( ( Description | EditInfo )* )>
+<!ELEMENT Parameter ( ( Description | EditInfo | UnitsString )* )>
 
 
 <!ATTLIST Parameter 
 		    name CDATA #IMPLIED
          	    instanceName CDATA #REQUIRED
                     indexType (none|integer|enumerated|string) "none"
-        	    units  (timeless|day|week|month|year|percent|level|counts|money|rate|no_unit) "money"
+        	     units  (timeless|day|week|month|year|percent|level|counts|money|rate|no_unit) "money"
                     type   (real|integer|enumerated|boolean|string|date|decimal) "real"
-		    logicalType CDATA #IMPLIED
+		     logicalType CDATA #IMPLIED
                     enumTypeRef IDREF #IMPLIED
                     indexEnumTypeRef IDREF #IMPLIED
                     indexSubsetRef IDREF #IMPLIED
@@ -141,6 +153,7 @@
           lang CDATA 'en'
           country CDATA 'GB'                    
 >
+
 
 <!ELEMENT Subset ( Description* ) >
 

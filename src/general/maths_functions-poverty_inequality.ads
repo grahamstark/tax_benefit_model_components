@@ -49,20 +49,32 @@ package Maths_Functions.Poverty_Inequality is
    subtype Decile is Quantile_Array( 1 .. 10 );
    subtype Quintile is Quantile_Array( 1 .. 5 );
    
-   type Poverty_Inequality_Rec is record
+   type Poverty_Rec is record
+      headcount              : Real;
+      foster_greer_thorndyke : Vector( 1 .. 5 );    
+      sen                    : Real;
+      shorrocks              : Real;
+      watts                  : Real;
+      time_to_exit           : Real;
+   end record;
+   
+   type Poverty_Rec_Array is array( Positive range <> ) of Poverty_Rec;
+   
+   type Inequality_Rec is record
       thiel                  : Vector( 1 .. 3 );
       atkinson               : Vector( 1 .. 5 );
       gini                   : Real;
       hoover                 : Real;
+   end record;
+   
+   type Summary_Rec is record
       summary                : Summary_Array; 
-      hbai                   : Vector( 1 .. 5 );
-      absolute_poverty       : Real;
-      foster_greer_thorndyke : Vector( 1 .. 5 );
       deciles                : Decile;
       quintiles              : Quintile;
       gini_data              : Array_For_Ginis;
    end record;
-
+      
+      
    function Binify( 
       quantiles : Quantile_Array; 
       num_bins : Positive ) return Quantile_Array;
@@ -78,9 +90,12 @@ package Maths_Functions.Poverty_Inequality is
       popn_accum    : Real := 0.0;
       growth        : Real := 0.0;
    end record;
-
+   
    -- type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
    type Augmented_Quantile_Array is array( Positive range <> ) of Augmented_Quantile;
+   
+   procedure To_Augmented_Quantile_Array( ina : Quantile_Array; outa : out Augmented_Quantile_Array );  
+
    
    function Lower_Income( left, right : Augmented_Quantile ) return Boolean;
    
