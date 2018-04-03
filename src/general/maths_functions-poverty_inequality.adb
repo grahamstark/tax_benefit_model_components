@@ -23,39 +23,37 @@ package body Maths_Functions.Poverty_Inequality is
    
 
    function Make_Summary( qa : Augmented_Quantile_Array ) return Summary_Array is
-      v : Summary_Array;
-      sum : Real;
-      last_qa : Quantile;
-      i  : Positive := 1;
-      mp : constant Positive := aq'Length/2;
-      popn : Real := 0.0;
-      popn_sq : Real := 0.0;
-      
+      v       : Summary_Array;
+      last_qa : Augmented_Quantile;
+      i       : Positive := 1;
+      sum     : Real := 0.0;
+      popn    : Real := 0.0;
+      popn_sq : Real := 0.0;      
    begin
       for a of qa loop
          if i > 1 then
             Assert( a.income >= last_qa.income, "array not sorted at position " & i'Img );
          end if;
-         Inc( sum, qa.income*qa.weight );
-         Inc( popn, qa.weight );
-         Inc( popn_sq, qa.weight**2 );
+         Inc( sum, a.weighted_income );
+         Inc( popn, a.weight );
+         Inc( popn_sq, a.weight**2 );
          last_qa := a;
          i := i + 1;
       end loop;
       v( effective_sample_size ) := popn_sq / ( popn**2 );
       for a of qa loop
-         if (qa.popn_accum/popn) >= 0.5 then
-            v( median ) := qa.income;
+         if ( a.popn_accum/popn) >= 0.5 then
+            v( median ) := a.income;
             exit;
          end if;
       end loop;      
       v( maximum ) := qa( qa'Last ).income;
-      v( minumum ) := qa( qa'First ).income;
+      v( minimum ) := qa( qa'First ).income;
       v( mean ) := sum/popn;
       v( observations ) := popn;
       for a of qa loop
          declare
-            x : constant Real := a.weight*a.income - v( mean );
+            x : constant Real := a.weighted_income - v( mean );
          begin
             Inc( v( average_deviation ), x );
             Inc( v( variance ), x**2 );
@@ -72,29 +70,30 @@ package body Maths_Functions.Poverty_Inequality is
          v( skewness ) := v( skewness ) / ( popn * ( v( standard_deviation )**3 ));
          v( kurtosis ) := v( skewness ) / ( popn * ( v( standard_deviation )**4 ) - 3.0);
       end if;
-      return sa;
+      return v;
    end Make_Summary;
 
    procedure To_Augmented_Quantile_Array( 
       ina : in Quantile_Array; 
       outa : out Augmented_Quantile_Array ) is
       cumulative_weight : Real := 0.0;
-      ina : Quantile;      
+      cumulative_income : Real := 0.0;
    begin
       Assert( ina'Length = outa'Length, "array size mismatch " );
       for i in ina'Range loop
          outa( i ).index := i;
          outa( i ).income := ina( i ).income;
          outa( i ).weight := ina( i ).weight;
+         outa( i ).weighted_income := ina( i ).weight * ina( i ).income;
          Inc( cumulative_weight, ina( i ).weight );
-         Inc( cumulative_income, ina( i ).income );
+         Inc( cumulative_income, outa( i ).weighted_income );
          outa( i ).popn_accum := cumulative_weight;
          outa( i ).income_accum := cumulative_income;
-         outa( i ).log := Log( ina( i ).income( i )/ina( i ).weight( i ));
-         outa( i ).weighted_income := ina( i ).weight * ina( i ).income;
+         -- fixme do we need this?
+         outa( i ).log := Log( ina( i ).income/ina( i ).weight );
          if i > 1 then
             Assert( ina( i ).income >= ina( i -1 ).income, "incomes out of seq at " & i'Img ); 
-            outa( i ).growth := exp( ina( i ).log - ina( i - 1 ).log );
+            outa( i ).growth := exp( outa( i ).log - outa( i - 1 ).log );
          end if;
       end loop;
    end To_Augmented_Quantile_Array;  
@@ -118,31 +117,33 @@ package body Maths_Functions.Poverty_Inequality is
          end if;
       end loop;
       declare
-         outa : Quantile_Array( 1 .. n );
+         outa : Augmented_Quantile_Array( 1 .. n );
          i : Natural := 0;
       begin
          for a of ina loop
             if a.income < line then
                i := i + 1;
-               outa[i] := a;
+               outa(i) := a;
             end if;
          end loop;
-         return a;
+         return outa;
       end;
-   end Make_All_Below_Line;
+    end Make_All_Below_Line;
        
       
    function Make_Poverty( 
-      ina    : Quantile_Array; 
+      ina    : Augmented_Quantile_Array; 
       line   : Real;
       growth : Real ) return Inequality_Rec is
-      last_a : Quantile;
+      last_a : Augmented_Quantile;
+      irec : Inequality_Rec;
    begin
-      for a in ina loop
+      for a of ina loop
          if a.income <= line then
             null;
          end if;
       end loop;
+      return irec;
    end Make_Poverty;
                              
    function Binify( 

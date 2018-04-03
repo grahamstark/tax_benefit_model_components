@@ -30,10 +30,6 @@ package Maths_Functions.Poverty_Inequality is
    -- 
    type Quantile_Array is array( Positive range <> ) of Quantile;
 
-   function Make_Summary( qa : Quantile_Array ) return Summary_Array; 
-   
-   
-   
    subtype Array_For_Ginis is Quantile_Array( 1 .. 100 );
    
    function Lower_Income( left, right : Quantile ) return Boolean;
