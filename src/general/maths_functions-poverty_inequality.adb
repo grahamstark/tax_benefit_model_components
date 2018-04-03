@@ -99,12 +99,16 @@ package body Maths_Functions.Poverty_Inequality is
    end To_Augmented_Quantile_Array;  
    
    
-   function Gini( 
-      ina    : Quantile_Array ) return Real is
-      g : Real;
+   function Make_Gini( 
+      ina    : Augmented_Quantile_Array ) return Real is
+      lorenz : Real := 0.0;
+      lasta  : constant Augmented_Quantile := ina( ina'Last );
    begin
-      return g;
-   end Gini; 
+      for a of ina loop
+         Inc( lorenz, ( 2.0*a.income_accum - a.weighted_income );
+      end loop;      
+      return 1.0 - ( lorenz/lasta.cumulative_income ) / lasta.pop_accum;
+   end Make_Gini; 
    
    function Make_All_Below_Line( 
       ina    : Augmented_Quantile_Array;

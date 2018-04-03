@@ -51,6 +51,7 @@ package Maths_Functions.Poverty_Inequality is
    
    type Poverty_Rec is record
       headcount              : Real;
+      gap                    : Real;
       foster_greer_thorndyke : Vector( 1 .. 5 );    
       sen                    : Real;
       shorrocks              : Real;
