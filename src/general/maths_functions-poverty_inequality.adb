@@ -134,16 +134,30 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Poverty( 
       ina    : Augmented_Quantile_Array; 
       line   : Real;
-      growth : Real ) return Inequality_Rec is
+      growth : Real ) return Poverty_Rec is
       last_a : Augmented_Quantile;
-      irec : Inequality_Rec;
+      pov_rec : Poverty_Rec;
+      gap  : Real;
+      below_line : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
+      gini_amongst_poor : Real := Make_Gini( below_line );
    begin
-      for a of ina loop
-         if a.income <= line then
-            null;
-         end if;
+      for a of below_line loop
+         gap := line - a.income; 
+         Assert( gap > 0.0, "Gap should always be positive " );
+         Inc( pov_rec.headcount, a.weight );
+         Inc( pov_rec.gap, a.weight * gap );
+         for p in 0 .. 4 loop
+            Inc( pov_rec.foster_greer_thorndyke( p+1 ), a.weight*(gap**p ));
+         end loop;
       end loop;
-      return irec;
+      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.headcount ), 
+         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
+         pov_rec.headcount'Img );
+      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 2 ), pov_rec.gap ), 
+         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 2 )'Img & " vs " &
+         pov_rec.gap'Img );
+         
+      return pov_rec;
    end Make_Poverty;
                              
    function Binify( 
