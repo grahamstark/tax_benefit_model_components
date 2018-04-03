@@ -84,6 +84,8 @@ package Maths_Functions is
    
    procedure Inc( x : in out Real; by : Real := 1.0 );
    
+   function Nearly_Equal( a, b : Real; tol : Real := 0.000001 ) return Boolean;
+   
   generic 
     with procedure Evaluate(  
           inputs               : in  Vector;

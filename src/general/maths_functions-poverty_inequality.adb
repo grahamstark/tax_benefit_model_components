@@ -105,9 +105,9 @@ package body Maths_Functions.Poverty_Inequality is
       lasta  : constant Augmented_Quantile := ina( ina'Last );
    begin
       for a of ina loop
-         Inc( lorenz, ( 2.0*a.income_accum - a.weighted_income );
+         Inc( lorenz, 2.0*a.income_accum - a.weighted_income );
       end loop;      
-      return 1.0 - ( lorenz/lasta.cumulative_income ) / lasta.pop_accum;
+      return 1.0 - ( lorenz/lasta.income_accum ) / lasta.popn_accum;
    end Make_Gini; 
    
    function Make_All_Below_Line( 

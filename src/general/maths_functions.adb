@@ -20,6 +20,18 @@ package body Maths_Functions is
       GNATColl.Traces.Trace( log_trace, s );
    end Log;
 
+
+   function Nearly_Equal( a, b : Real; tol : Real := 0.000001 ) return Boolean is
+   begin
+      if a = b then
+         return True;
+      end if;
+      if b = 0.0 then
+         return False;
+      end if;
+      return ( 1.0 - a/b ) < tol;
+    end Nearly_Equal;
+
    
    function Truncate_To( r : Real; prec : Natural ) return Real is
       type LR1 is digits 1;
