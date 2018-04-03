@@ -7,6 +7,8 @@ package Statistics_Commons is
    type Simple_Measures is (
       mean,
       median, 
+      observations,
+      effective_sample_size,
       average_deviation,
       standard_deviation,
       variance,

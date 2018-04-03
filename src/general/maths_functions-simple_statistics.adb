@@ -82,6 +82,8 @@ package body Maths_Functions.Simple_Statistics is
             v( kurtosis ) := v( kurtosis ) + a**4;            
          end;
       end loop;
+      v( observations ) := RN;
+      v( effective_sample_size ) := RN;
       v( average_deviation ) := v( average_deviation )/RN;
       v( variance ) := v( variance ) / (RN-1.0);
       v( standard_deviation ) := sqrt( v( variance ));

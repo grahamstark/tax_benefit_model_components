@@ -86,11 +86,9 @@ package Maths_Functions.Poverty_Inequality is
    
    type Augmented_Quantile is record
       index           : Positive;
-      position        : Positive;
       income          : Real;
       weighted_income : Real;
-      weight          : Real; -- the population/total_population
-      population      : Real;
+      weight          : Real; 
       log             : Real := 0.0;
       income_accum    : Real := 0.0;
       popn_accum      : Real := 0.0;
@@ -100,7 +98,12 @@ package Maths_Functions.Poverty_Inequality is
    -- type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
    type Augmented_Quantile_Array is array( Positive range <> ) of Augmented_Quantile;
    
-   procedure To_Augmented_Quantile_Array( ina : Quantile_Array; outa : out Augmented_Quantile_Array );  
+   --
+   -- ina most be sorted using Quantile_Sort above
+   -- 
+   procedure To_Augmented_Quantile_Array( 
+      ina : in Quantile_Array; 
+      outa : out Augmented_Quantile_Array );  
 
    
    function Lower_Income( left, right : Augmented_Quantile ) return Boolean;
@@ -114,5 +117,11 @@ package Maths_Functions.Poverty_Inequality is
    type Augmented_Quantile_Array_Access is access Augmented_Quantile_Array;
    procedure Free_Dataset is new Ada.Unchecked_Deallocation(
       Object => Augmented_Quantile_Array, Name => Augmented_Quantile_Array_Access );
-    
+   
+   function Make_Summary( qa : Augmented_Quantile_Array ) return Summary_Array;
+   
+   function Make_All_Below_Line( 
+      ina    : Augmented_Quantile_Array;
+      line   : Real ) return Augmented_Quantile_Array;
+      
 end  Maths_Functions.Poverty_Inequality;

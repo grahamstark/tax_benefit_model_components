@@ -28,64 +28,62 @@ package body Maths_Functions.Poverty_Inequality is
       last_qa : Quantile;
       i  : Positive := 1;
       mp : constant Positive := aq'Length/2;
+      popn : Real := 0.0;
+      popn_sq : Real := 0.0;
+      
    begin
       for a of qa loop
          if i > 1 then
             Assert( a.income >= last_qa.income, "array not sorted at position " & i'Img );
          end if;
-         Inc( sum, qa.weighted_income );
+         Inc( sum, qa.income*qa.weight );
          Inc( popn, qa.weight );
+         Inc( popn_sq, qa.weight**2 );
          last_qa := a;
          i := i + 1;
       end loop;
+      v( effective_sample_size ) := popn_sq / ( popn**2 );
+      for a of qa loop
+         if (qa.popn_accum/popn) >= 0.5 then
+            v( median ) := qa.income;
+            exit;
+         end if;
+      end loop;      
       v( maximum ) := qa( qa'Last ).income;
       v( minumum ) := qa( qa'First ).income;
       v( mean ) := sum/popn;
-      
+      v( observations ) := popn;
       for a of qa loop
          declare
-            x : constant Real := a.weighted_income - v( mean );
+            x : constant Real := a.weight*a.income - v( mean );
          begin
-            Inc( v( average_deviation ), a );
-            Inc( v( variance ), a**2 );
-            Inc( v( skewness ), a**3 );
-            Inc( v( kurtosis ), a**4 );
+            Inc( v( average_deviation ), x );
+            Inc( v( variance ), x**2 );
+            Inc( v( skewness ), x**3 );
+            Inc( v( kurtosis ), x**4 );
          end;
       end loop;
+      
       v( average_deviation ) := v( average_deviation )/popn;
-      v( variance ) := v( variance )/popn;
+      v( variance ) := v( variance )/(popn-1.0); -- CHECK THIS AGAIN: should it be popn - (mean weight)
       v( standard_deviation ) := sqrt( v( variance ));
-      if v( variance ) /= 0.0 then 
-         v( skewness ) := v( skewness ) / ( popn * ( v( standard_deviation )**3 ))'
-         v( kurtosis ), a**4 );
       
-      
-      
-      if( mp mod 2 ) = 0 then
-         declare
-            v1 : constant Real := aq( mp ).weighted_income;
-            v2 : constant Real := aq( mp+1 ).weighted_income;
-            w  : constant Real := aq( mp ).weight + aq( mp + 1 ).weight;
-         begin
-            v( median ) := ( v1 + v2 ) / w;
-         end;
-      else  
-         v( median ) := aq( mp ).income;
+      if v( variance ) /= 0.0 then -- NOTE THESE ARE POPULATION NOT SAMPLE; 
+         v( skewness ) := v( skewness ) / ( popn * ( v( standard_deviation )**3 ));
+         v( kurtosis ) := v( skewness ) / ( popn * ( v( standard_deviation )**4 ) - 3.0);
       end if;
       return sa;
    end Make_Summary;
-   
- 
-   
 
    procedure To_Augmented_Quantile_Array( 
-      ina : Quantile_Array; 
+      ina : in Quantile_Array; 
       outa : out Augmented_Quantile_Array ) is
       cumulative_weight : Real := 0.0;
-      ina : Quantile;
+      ina : Quantile;      
    begin
       Assert( ina'Length = outa'Length, "array size mismatch " );
       for i in ina'Range loop
+         outa( i ).index := i;
          outa( i ).income := ina( i ).income;
          outa( i ).weight := ina( i ).weight;
          Inc( cumulative_weight, ina( i ).weight );
@@ -93,6 +91,7 @@ package body Maths_Functions.Poverty_Inequality is
          outa( i ).popn_accum := cumulative_weight;
          outa( i ).income_accum := cumulative_income;
          outa( i ).log := Log( ina( i ).income( i )/ina( i ).weight( i ));
+         outa( i ).weighted_income := ina( i ).weight * ina( i ).income;
          if i > 1 then
             Assert( ina( i ).income >= ina( i -1 ).income, "incomes out of seq at " & i'Img ); 
             outa( i ).growth := exp( ina( i ).log - ina( i - 1 ).log );
@@ -109,8 +108,8 @@ package body Maths_Functions.Poverty_Inequality is
    end Gini; 
    
    function Make_All_Below_Line( 
-      ina    : Quantile_Array;
-      line   : Real ) return Quantile_Array is
+      ina    : Augmented_Quantile_Array;
+      line   : Real ) return Augmented_Quantile_Array is
          n  : Natural := 0;
    begin
       for a of ina loop
