@@ -1,6 +1,6 @@
 pragma License( Modified_GPL );
 
-with Poverty_Inequality_Commons;
+with Statistics_Commons;
 with Ada.Containers.Generic_Array_Sort;
 with Ada.Unchecked_Deallocation;
 
@@ -10,25 +10,29 @@ generic
    
 package Maths_Functions.Poverty_Inequality is
 
-   use Poverty_Inequality_Commons;
+   use Statistics_Commons;
 
    subtype Row_Range is Positive range 1 .. Num_Observations;
    
-   type Summary_Array is array( Measures ) of Real;
+   type Summary_Array is array( Simple_Measures ) of Real;
    
    type Quantile is record
-      index      : Positive := Positive'First;
-      income     : Real;
-      population : Real;
+      index  : Positive := Positive'First;
+      income : Real;
+      weight : Real;
    end record;
    
    -- type Ranking_Rec is record
       -- index : Positive;
       -- rank  : Positive;
-      -- cumulative_population : REAL;
+      -- cumulative_weight : REAL;
    -- end record;
    -- 
    type Quantile_Array is array( Positive range <> ) of Quantile;
+
+   function Make_Summary( qa : Quantile_Array ) return Summary_Array; 
+   
+   
    
    subtype Array_For_Ginis is Quantile_Array( 1 .. 100 );
    
@@ -81,14 +85,16 @@ package Maths_Functions.Poverty_Inequality is
    
    
    type Augmented_Quantile is record
-      index         : Positive;
-      position      : Positive;
-      income        : Real;
-      population    : Real;
-      log           : Real := 0.0;
-      income_accum  : Real := 0.0;
-      popn_accum    : Real := 0.0;
-      growth        : Real := 0.0;
+      index           : Positive;
+      position        : Positive;
+      income          : Real;
+      weighted_income : Real;
+      weight          : Real; -- the population/total_population
+      population      : Real;
+      log             : Real := 0.0;
+      income_accum    : Real := 0.0;
+      popn_accum      : Real := 0.0;
+      growth          : Real := 0.0;
    end record;
    
    -- type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
