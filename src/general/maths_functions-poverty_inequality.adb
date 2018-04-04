@@ -230,7 +230,6 @@ package body Maths_Functions.Poverty_Inequality is
       growth : Real := 0.0 ) return Poverty_Rec is
       pov_rec           : Poverty_Rec;
       gap               : Real;
-      data_for_gap_gini : Augmented_Quantile_Array := ina;
       below_line        : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
       
       population        : constant Real := ina( ina'Last ).popn_accum;
@@ -265,15 +264,28 @@ package body Maths_Functions.Poverty_Inequality is
       --
       -- Gini of poverty gaps; see: WB pp 74-5
       --
-      for dg of data_for_gap_gini loop
-         gap := line - dg.income;
-         if gap < 0.0 then 
-            gap := 0.0; 
+      declare
+         ci : Real := 0.0;
+         cp : Real := 0.0;
+         data_for_gap_gini : Augmented_Quantile_Array := ina;
+      begin
+         for dg of data_for_gap_gini loop
+            gap := line - dg.income;
+            if gap < 0.0 then 
+               gap := 0.0; 
+            end if;
+            dg.income := gap;
+         end loop;
+         Augmented_Quantile_Sort( data_for_gap_gini );
+         for dg of data_for_gap_gini loop            
+            dg.weighted_income := dg.income * dg.weight;
+            Inc( ci, dg.weighted_income );
+            Inc( cp, dg.weight );
+            dg.income_accum := ci;
+            dg.popn_accum := cp;
          end if;
-         dg.income := gap;
-      end loop;      
-      Augmented_Quantile_Sort( data_for_gap_gini );
-      pov_rec.poverty_gap_gini := Make_Gini( data_for_gap_gini );
+         pov_rec.poverty_gap_gini := Make_Gini( data_for_gap_gini );
+      end;
          
       declare
          gp : Real renames pov_rec.poverty_gap_gini;
