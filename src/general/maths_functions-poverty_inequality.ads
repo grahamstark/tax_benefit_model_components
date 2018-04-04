@@ -125,6 +125,10 @@ generic package Maths_Functions.Poverty_Inequality is
    function Make_All_Below_Line( 
       ina    : Augmented_Quantile_Array;
       line   : Real ) return Augmented_Quantile_Array;
+      
+   --
+   -- growth should be (e.g.) 0.01 for 10% growth
+   --
    function Make_Poverty( 
       ina    : Augmented_Quantile_Array; 
       line   : Real;

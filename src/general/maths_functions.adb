@@ -28,7 +28,7 @@ package body Maths_Functions is
       if b = 0.0 then
          return False;
       end if;
-      return ( 1.0 - a/b ) < tol;
+      return abs( 1.0 - a/b ) < tol;
     end Nearly_Equal;
 
    

@@ -231,7 +231,7 @@ package body Maths_Functions.Poverty_Inequality is
       pov_rec           : Poverty_Rec;
       gap               : Real;
       below_line        : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
-      
+   use Elementary_Functions;    
       population        : constant Real := ina( ina'Last ).popn_accum;
       total_income      : constant Real := ina( ina'Last ).income_accum;
    begin
@@ -241,12 +241,18 @@ package body Maths_Functions.Poverty_Inequality is
          Assert( gap > 0.0, "Gap should always be positive " );
          Inc( pov_rec.headcount, a.weight );
          Inc( pov_rec.gap, a.weight * gap/line );
+         Put_Line( "watts add " & F10( log( line/a.income )));
+         Inc( pov_rec.watts, a.weight*log( line/a.income ));
          for p in 0 .. 4 loop
             Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**p ));
          end loop;
       end loop;
       
+      pov_rec.watts := pov_rec.watts/population; 
       
+      if growth > 0.0 then -- no point otherwise ..
+         pov_rec.time_to_exit := pov_rec.watts/(1.0+growth );   
+      end if;
       pov_rec.headcount := pov_rec.headcount/population;      
       pov_rec.gap := pov_rec.gap / population;
       
@@ -263,7 +269,7 @@ package body Maths_Functions.Poverty_Inequality is
 
       --
       -- Gini of poverty gaps; see: WB pp 74-5
-      --
+      -- FIXME: actually simpler to use quantile and then make aug. version
       declare
          ci : Real := 0.0;
          cp : Real := 0.0;

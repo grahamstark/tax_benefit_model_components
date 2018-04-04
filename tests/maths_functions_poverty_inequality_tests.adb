@@ -32,12 +32,18 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       return Make_Poverty( aqa, line );         
    end Generate_Pov;
       
+   
+   
       
    procedure Test_WB_CH_4( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use MFP;
-      
+      --
+      -- This test (roughly) tries to replicate some of the examples in
+      -- World Bank "Handbook on poverty and inequality" Ch. 4
+      --
       country_a : Quantile_Array( 1 .. 4 ); 
       country_b : Quantile_Array( 1 .. 4 ); 
+      country_c : Quantile_Array( 1 .. 4 );
       country_a_2 : Quantile_Array( 1 .. 2 ); 
       country_b_2 : Quantile_Array( 1 .. 2 );
    begin
@@ -49,6 +55,15 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       country_b( 1 ).income := 124.0;
       country_b( 2 ).income := 124.0;
       
+      country_c( 1 ).income := 100.0;
+      country_c( 2 ).income := 110.0;
+      country_c( 3 ).income := 150.0;
+      country_c( 4 ).income := 160.0;
+      
+      --
+      -- these should be the same as country_a and _b, 
+      -- but with 2 obs of weight 2 rather than 4 of weight 1
+      --
       country_a_2( 1 ).income := 100.0;
       country_a_2( 1 ).weight := 2.0;
       country_a_2( 2 ).income := 150.0;
@@ -61,6 +76,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          c_a_2_pov : Poverty_Rec := Generate_Pov( country_a_2, line );
          c_b_pov : Poverty_Rec := Generate_Pov( country_b, line );
          c_b_2_pov : Poverty_Rec := Generate_Pov( country_b_2, line );
+         c_c_pov : Poverty_Rec := Generate_Pov( country_c, line );
       begin
          --
          -- simple checks of weights
@@ -77,7 +93,8 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          Assert( Nearly_Equal( c_a_2_pov.gap, c_a_pov.gap ), "GAP: p_a_2 /= pa " 
            & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
          Assert( Nearly_Equal( c_b_2_pov.gap, c_b_pov.gap ), "GAP: p_b_2 /= pb " 
-           & To_String( c_b_2_pov ) & To_String( c_b_pov )); 
+           & To_String( c_b_2_pov ) & To_String( c_b_pov ));
+           
          --
          -- not quite ch.4, but ..
          -- 
@@ -86,12 +103,16 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          
          Assert( Nearly_Equal( c_b_pov.headcount, 0.5 ), "Headcount: p_b_2 /= 0.5 "  
            & To_String( c_b_pov )); 
-         Assert( Nearly_Equal( c_a_pov.gap, 0.1 ), "Headcount: p_a /= 0.1 "  
+         Assert( Nearly_Equal( c_a_pov.gap, 0.1 ), "GAP: p_a /= 0.1 "  
            & To_String( c_a_pov )); 
          Assert( Nearly_Equal( c_b_pov.gap, 1.0/250.0 ), "GAP: p_b_2 /= 1/250 " 
            & To_String( c_b_pov )); 
+         
+         Assert( Nearly_Equal( c_c_pov.watts, 0.087744, 0.00001 ), "Watts: p_c /= 0.087744 " 
+           & To_String( c_c_pov )); 
          Put_Line( "finished! c_a_pov = " & To_String( c_a_pov ));
          Put_Line( "finished! c_b_pov = " & To_String( c_b_pov ));
+         Put_Line( "finished! c_c_pov = " & To_String( c_c_pov ));
       end;
    end Test_WB_CH_4;
    
