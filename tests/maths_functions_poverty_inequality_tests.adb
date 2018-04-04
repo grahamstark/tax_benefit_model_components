@@ -58,8 +58,8 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       declare
          line : constant Amount := 125.0;
          c_a_pov : Poverty_Rec := Generate_Pov( country_a, line );
-         c_b_pov : Poverty_Rec := Generate_Pov( country_b, line );
          c_a_2_pov : Poverty_Rec := Generate_Pov( country_a_2, line );
+         c_b_pov : Poverty_Rec := Generate_Pov( country_b, line );
          c_b_2_pov : Poverty_Rec := Generate_Pov( country_b_2, line );
       begin
          --
