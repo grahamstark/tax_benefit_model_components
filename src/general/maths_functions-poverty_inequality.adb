@@ -74,7 +74,8 @@ package body Maths_Functions.Poverty_Inequality is
       s := s & "sen = " & F10( pr.sen ) & ";" & LINE_BREAK;
       s := s & "shorrocks = " & F10( pr.shorrocks ) & ";" & LINE_BREAK;
       s := s & "watts = " & F10( pr.watts ) & ";" & LINE_BREAK;
-      s := s & "time_to_exit = " & F10( pr.time_to_exit ) & ";" & LINE_BREAK;
+      s := s & "gini_amongst_poor = " & F10( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
+      s := s & "poverty_gap_gini = " & F10( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
@@ -224,11 +225,13 @@ package body Maths_Functions.Poverty_Inequality is
       growth : Real := 0.0 ) return Poverty_Rec is
       pov_rec           : Poverty_Rec;
       gap               : Real;
+      data_for_gap_gini : Augmented_Quantile_Array := ina;
       below_line        : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
-      gini_amongst_poor : Real := Make_Gini( below_line );
+      
       population        : constant Real := ina( ina'Last ).popn_accum;
       total_income      : constant Real := ina( ina'Last ).income_accum;
    begin
+      pov_rec.gini_amongst_poor := Make_Gini( below_line );
       for a of below_line loop
          gap := line - a.income; 
          Assert( gap > 0.0, "Gap should always be positive " );
@@ -239,8 +242,10 @@ package body Maths_Functions.Poverty_Inequality is
          end loop;
       end loop;
       
+      
       pov_rec.headcount := pov_rec.headcount/population;      
       pov_rec.gap := pov_rec.gap / population;
+      
       for p in pov_rec.foster_greer_thorndyke'Range loop
          pov_rec.foster_greer_thorndyke( p ) := pov_rec.foster_greer_thorndyke( p )/population; 
       end loop;
@@ -251,6 +256,29 @@ package body Maths_Functions.Poverty_Inequality is
       Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.gap ), 
          "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
          pov_rec.gap'Img );
+
+      --
+      -- Gini of poverty gaps; see: WB pp 74-5
+      --
+      for dg of data_for_gap_gini loop
+         gap := line - dg.income;
+         if gap < 0.0 then 
+            gap := 0.0; 
+         end if;
+         dg.income := gap;
+      end loop;      
+      Augmented_Quantile_Sort( data_for_gap_gini );
+      pov_rec.poverty_gap_gini := Make_Gini( data_for_gap_gini );
+         
+      declare
+         gp : Real renames pov_rec.poverty_gap_gini;
+         g  : Real renames pov_rec.gini_amongst_poor;
+         p0 : Real renames pov_rec.headcount;
+         p1 : Real renames pov_rec.gap;
+      begin
+         pov_rec.sen := p0*g + p1*(1.0-g);
+         pov_rec.shorrocks := p0*p1*(1.0+gp);
+      end;
          
       return pov_rec;
    end Make_Poverty;

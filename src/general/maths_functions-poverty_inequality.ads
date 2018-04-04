@@ -54,6 +54,8 @@ generic package Maths_Functions.Poverty_Inequality is
       shorrocks              : Real := 0.0;
       watts                  : Real := 0.0;
       time_to_exit           : Real := 0.0;
+      gini_amongst_poor      : Real := 0.0;
+      poverty_gap_gini       : Real := 0.0;
    end record;
    
    function To_String( pr : Poverty_Rec ) return String;
