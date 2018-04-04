@@ -20,7 +20,7 @@ package body Maths_Functions is
       GNATColl.Traces.Trace( log_trace, s );
    end Log;
 
-   function Nearly_Equal( a, b : Real; tol : Real := 0.000001 ) return Boolean is
+   function Nearly_Equal( a, b : Real; tol : Real := 0.00001 ) return Boolean is
    begin
       if a = b then
          return True;
