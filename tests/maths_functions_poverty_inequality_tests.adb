@@ -39,20 +39,20 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       country_a_2 : Quantile_Array( 1 .. 2 ); 
       country_b_2 : Quantile_Array( 1 .. 2 );
    begin
-      country_a( 1 ).income := 124.0;
-      country_a( 2 ).income := 124.0;
+      country_a( 1 ).income := 100.0;
+      country_a( 2 ).income := 100.0;
       country_a( 3 ).income := 150.0;
       country_a( 4 ).income := 150.0;
       country_b := country_a;
-      country_b( 1 ).income := 100.0;
-      country_b( 2 ).income := 100.0;
+      country_b( 1 ).income := 124.0;
+      country_b( 2 ).income := 124.0;
       
-      country_a_2( 1 ).income := 124.0;
+      country_a_2( 1 ).income := 100.0;
       country_a_2( 1 ).weight := 2.0;
       country_a_2( 2 ).income := 150.0;
       country_a_2( 2 ).weight := 2.0;
       country_b_2 := country_a_2;
-      country_b_2( 1 ).income := 100.0;
+      country_b_2( 1 ).income := 124.0;
       declare
          line : constant Amount := 125.0;
          c_a_pov : Poverty_Rec := Generate_Pov( country_a, line );
@@ -60,10 +60,31 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          c_a_2_pov : Poverty_Rec := Generate_Pov( country_a_2, line );
          c_b_2_pov : Poverty_Rec := Generate_Pov( country_b_2, line );
       begin
-         Assert( Nearly_Equal( c_a_2_pov.headcount, c_a_pov.headcount ), "GAP: p_a_2 /= pa " ); 
-         Assert( Nearly_Equal( c_b_2_pov.headcount, c_b_pov.headcount ), "GAP: p_b_2 /= pb " ); 
-         Assert( Nearly_Equal( c_a_2_pov.gap, c_a_pov.gap ), "GAP: p_a_2 /= pa " ); 
-         Assert( Nearly_Equal( c_b_2_pov.gap, c_b_pov.gap ), "GAP: p_b_2 /= pb " ); 
+         --
+         -- simple checks of weights
+         --
+         Assert( Nearly_Equal( c_a_2_pov.headcount, c_a_pov.headcount ), "Headcount: p_a_2 /= pa " 
+            & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
+         Assert( Nearly_Equal( c_b_2_pov.headcount, c_b_pov.headcount ), "Headcount: p_b_2 /= pb " 
+           & To_String( c_b_2_pov ) & To_String( c_b_pov )); 
+ 
+         Assert( Nearly_Equal( c_a_2_pov.gap, c_a_pov.gap ), "GAP: p_a_2 /= pa " 
+           & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
+         Assert( Nearly_Equal( c_b_2_pov.gap, c_b_pov.gap ), "GAP: p_b_2 /= pb " 
+           & To_String( c_b_2_pov ) & To_String( c_b_pov )); 
+         --
+         -- not quite ch.4, but ..
+         -- 
+         Assert( Nearly_Equal( c_a_pov.headcount, 0.5 ), "Headcount: p_a /= 0.5 " 
+           & To_String( c_a_pov )); 
+         
+         Assert( Nearly_Equal( c_b_pov.headcount, 0.5 ), "Headcount: p_b_2 /= 0.5 "  
+           & To_String( c_b_pov )); 
+         Assert( Nearly_Equal( c_a_pov.gap, 0.1 ), "Headcount: p_a /= 0.1 "  
+           & To_String( c_a_pov )); 
+         Assert( Nearly_Equal( c_b_pov.gap, 1.0/250.0 ), "GAP: p_b_2 /= 1/250 " 
+           & To_String( c_b_pov )); 
+         
       end;
    end Test_WB_CH_4;
    
