@@ -49,7 +49,7 @@ generic package Maths_Functions.Poverty_Inequality is
    type Poverty_Rec is record
       headcount              : Real := 0.0;
       gap                    : Real := 0.0;
-      foster_greer_thorndyke : Vector( 1 .. 5 ) := ( others => 0.0 );    
+      foster_greer_thorndyke : Vector( 0 .. 4 ) := ( others => 0.0 );    
       sen                    : Real := 0.0;
       shorrocks              : Real := 0.0;
       watts                  : Real := 0.0;

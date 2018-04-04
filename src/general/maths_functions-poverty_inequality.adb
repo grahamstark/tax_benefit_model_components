@@ -69,7 +69,7 @@ package body Maths_Functions.Poverty_Inequality is
       s := s & "headcount = " & F10( pr.headcount ) & ";" & LINE_BREAK;
       s := s & "gap = " & F10( pr.gap ) & ";" & LINE_BREAK;
       for i in 0 .. 4 loop
-         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F10( pr.foster_greer_thorndyke( i+1 )) & ";" & LINE_BREAK;
+         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F10( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
       end loop;
       s := s & "sen = " & F10( pr.sen ) & ";" & LINE_BREAK;
       s := s & "shorrocks = " & F10( pr.shorrocks ) & ";" & LINE_BREAK;
@@ -235,21 +235,21 @@ package body Maths_Functions.Poverty_Inequality is
          Inc( pov_rec.headcount, a.weight );
          Inc( pov_rec.gap, a.weight * gap/line );
          for p in 0 .. 4 loop
-            Inc( pov_rec.foster_greer_thorndyke( p+1 ), a.weight*((gap/line)**p ));
+            Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**p ));
          end loop;
       end loop;
       
       pov_rec.headcount := pov_rec.headcount/population;      
       pov_rec.gap := pov_rec.gap / population;
-      for p in 1 .. 5 loop
+      for p in pov_rec.foster_greer_thorndyke'Range loop
          pov_rec.foster_greer_thorndyke( p ) := pov_rec.foster_greer_thorndyke( p )/population; 
       end loop;
       
-      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.headcount ), 
-         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
+      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 0 ), pov_rec.headcount ), 
+         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 0 )'Img & " vs " &
          pov_rec.headcount'Img );
-      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 2 ), pov_rec.gap ), 
-         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 2 )'Img & " vs " &
+      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.gap ), 
+         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
          pov_rec.gap'Img );
          
       return pov_rec;
