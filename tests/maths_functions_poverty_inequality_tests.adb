@@ -18,21 +18,23 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    begin
       null;
    end Set_Up;
+
+   function Generate_Pov( 
+      qa : in out MFP.Quantile_Array; 
+      line : Amount ) return MFP.Poverty_Rec is
+   use MFP;
+      aqa : Augmented_Quantile_Array( qa'Range );
+      summary : Summary_Array;
+   begin
+      Quantile_Sort( qa );
+      To_Augmented_Quantile_Array( qa, aqa );
+      summary := Make_Summary( aqa );
+      return Make_Poverty( aqa, line );         
+   end Generate_Pov;
+      
       
    procedure Test_WB_CH_4( t : in out AUnit.Test_Cases.Test_Case'Class ) is
       use MFP;
-      
-      function Generate_Pov( 
-         qa : in out Quantile_Array; 
-         line : Amount ) return Poverty_Rec is
-         aqa : Augmented_Quantile_Array( qa'Range );
-         summary : Summary_Array;
-      begin
-         Quantile_Sort( qa );
-         To_Augmented_Quantile_Array( qa, aqa );
-         summary := Make_Summary( aqa );
-         return Make_Poverty( aqa, line );         
-      end Generate_Pov;
       
       country_a : Quantile_Array( 1 .. 4 ); 
       country_b : Quantile_Array( 1 .. 4 ); 
@@ -84,7 +86,8 @@ package body Maths_Functions_Poverty_Inequality_Tests is
            & To_String( c_a_pov )); 
          Assert( Nearly_Equal( c_b_pov.gap, 1.0/250.0 ), "GAP: p_b_2 /= 1/250 " 
            & To_String( c_b_pov )); 
-         
+         Put_Line( "finished! c_a_pov = " & To_String( c_a_pov ));
+         Put_Line( "finished! c_b_pov = " & To_String( c_b_pov ));
       end;
    end Test_WB_CH_4;
    
