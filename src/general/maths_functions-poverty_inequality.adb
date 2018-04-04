@@ -283,7 +283,7 @@ package body Maths_Functions.Poverty_Inequality is
             Inc( cp, dg.weight );
             dg.income_accum := ci;
             dg.popn_accum := cp;
-         end if;
+         end loop;
          pov_rec.poverty_gap_gini := Make_Gini( data_for_gap_gini );
       end;
          
