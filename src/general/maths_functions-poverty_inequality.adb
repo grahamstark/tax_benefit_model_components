@@ -191,7 +191,7 @@ package body Maths_Functions.Poverty_Inequality is
       for a of ina loop
          Put_Line( "a.income_accum " & F10( a.income_accum ) & 
                    " a.weighted_income " & F10( a.weighted_income ));
-         Inc( lorenz, 2.0*a.income_accum - a.weighted_income );
+         Inc( lorenz, a.weight*(2.0*a.income_accum - a.weighted_income) );
       end loop;       
       Put_Line( "lorenz " & F10( lorenz ) & 
                 " lasta.income_accum " & F10( lasta.income_accum ) &
