@@ -189,8 +189,13 @@ package body Maths_Functions.Poverty_Inequality is
       lasta  : constant Augmented_Quantile := ina( ina'Last );
    begin
       for a of ina loop
+         Put_Line( "a.income_accum " & F10( a.income_accum ) & 
+                   " a.weighted_income " & F10( a.weighted_income ));
          Inc( lorenz, 2.0*a.income_accum - a.weighted_income );
-      end loop;      
+      end loop;       
+      Put_Line( "lorenz " & F10( lorenz ) & 
+                " lasta.income_accum " & F10( lasta.income_accum ) &
+                "lasta.popn_accum " & F10( lasta.popn_accum ));
       return 1.0 - ( lorenz/lasta.income_accum ) / lasta.popn_accum;
    end Make_Gini; 
    
