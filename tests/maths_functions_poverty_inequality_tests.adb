@@ -2,7 +2,7 @@ with AUnit.Assertions;
 with Ada.Text_IO;
 with Ada.Calendar;
 
-package body Maths_Functions.Poverty_Inequality.Tests is
+package body Maths_Functions_Poverty_Inequality_Tests is
    
    use AUnit.Assertions;
    use Ada.Calendar;
@@ -33,4 +33,4 @@ package body Maths_Functions.Poverty_Inequality.Tests is
       return Format( " Model.Example_Household.Impl.Tests" );
    end Name;
 
-end  Maths_Functions.Poverty_Inequality.Tests;
+end  Maths_Functions_Poverty_Inequality_Tests;

@@ -154,6 +154,10 @@ package body Maths_Functions.Poverty_Inequality is
             Inc( pov_rec.foster_greer_thorndyke( p+1 ), a.weight*(gap**p ));
          end loop;
       end loop;
+      
+      pov_rec.gap := pov_rec.gap/ 
+      
+      
       Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.headcount ), 
          "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
          pov_rec.headcount'Img );

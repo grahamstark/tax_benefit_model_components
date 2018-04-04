@@ -1,9 +1,7 @@
 with AUnit;
 with AUnit.Test_Cases; 
 
-generic
-
-package Maths_Functions.Poverty_Inequality.Tests is
+package Maths_Functions_Poverty_Inequality_Tests is
    
    use AUnit.Test_Cases;
    use AUnit;
@@ -20,4 +18,4 @@ package Maths_Functions.Poverty_Inequality.Tests is
     procedure Set_Up( T : in out Test_Case );
 
 
-end  Maths_Functions.Poverty_Inequality.Tests;
+end  Maths_Functions_Poverty_Inequality_Tests;
