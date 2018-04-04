@@ -4,23 +4,19 @@ with Statistics_Commons;
 with Ada.Containers.Generic_Array_Sort;
 with Ada.Unchecked_Deallocation;
 
-generic
-   
-   Num_Observations : Positive;
-   
-package Maths_Functions.Poverty_Inequality is
+generic package Maths_Functions.Poverty_Inequality is
 
    use Statistics_Commons;
 
-   subtype Row_Range is Positive range 1 .. Num_Observations;
-   
    type Summary_Array is array( Simple_Measures ) of Real;
    
    type Quantile is record
       index  : Positive := Positive'First;
-      income : Real;
-      weight : Real;
+      income : Real := 0.0;
+      weight : Real := 1.0;
    end record;
+   
+   function To_String( q : Quantile ) return String;
    
    -- type Ranking_Rec is record
       -- index : Positive;
@@ -29,6 +25,7 @@ package Maths_Functions.Poverty_Inequality is
    -- end record;
    -- 
    type Quantile_Array is array( Positive range <> ) of Quantile;
+   
 
    subtype Array_For_Ginis is Quantile_Array( 1 .. 100 );
    
@@ -50,23 +47,27 @@ package Maths_Functions.Poverty_Inequality is
    subtype Quintile is Quantile_Array( 1 .. 5 );
    
    type Poverty_Rec is record
-      headcount              : Real;
-      gap                    : Real;
-      foster_greer_thorndyke : Vector( 1 .. 5 );    
-      sen                    : Real;
-      shorrocks              : Real;
-      watts                  : Real;
-      time_to_exit           : Real;
+      headcount              : Real := 0.0;
+      gap                    : Real := 0.0;
+      foster_greer_thorndyke : Vector( 1 .. 5 ) := ( others => 0.0 );    
+      sen                    : Real := 0.0;
+      shorrocks              : Real := 0.0;
+      watts                  : Real := 0.0;
+      time_to_exit           : Real := 0.0;
    end record;
+   
+   function To_String( pr : Poverty_Rec ) return String;
    
    type Poverty_Rec_Array is array( Positive range <> ) of Poverty_Rec;
    
    type Inequality_Rec is record
-      thiel                  : Vector( 1 .. 3 );
-      atkinson               : Vector( 1 .. 5 );
-      gini                   : Real;
-      hoover                 : Real;
+      theil                  : Vector( 1 .. 3 ) := ( others => 0.0 );
+      atkinson               : Vector( 1 .. 5 ) := ( others => 0.0 );
+      gini                   : Real := 0.0;
+      hoover                 : Real := 0.0;
    end record;
+
+   function To_String( ir : Inequality_Rec ) return String;
    
    type Summary_Rec is record
       summary                : Summary_Array; 
@@ -83,14 +84,16 @@ package Maths_Functions.Poverty_Inequality is
    
    type Augmented_Quantile is record
       index           : Positive;
-      income          : Real;
-      weighted_income : Real;
-      weight          : Real; 
+      income          : Real := 0.0;
+      weighted_income : Real := 0.0;
+      weight          : Real := 0.0; 
       log             : Real := 0.0;
       income_accum    : Real := 0.0;
       popn_accum      : Real := 0.0;
       growth          : Real := 0.0;
    end record;
+
+   function To_String( aq : Augmented_Quantile ) return String;
    
    -- type Ranking_Array is array( Positive range <> ) of Ranking_Rec;
    type Augmented_Quantile_Array is array( Positive range <> ) of Augmented_Quantile;
@@ -120,5 +123,9 @@ package Maths_Functions.Poverty_Inequality is
    function Make_All_Below_Line( 
       ina    : Augmented_Quantile_Array;
       line   : Real ) return Augmented_Quantile_Array;
+   function Make_Poverty( 
+      ina    : Augmented_Quantile_Array; 
+      line   : Real;
+      growth : Real := 0.0 ) return Poverty_Rec;
       
 end  Maths_Functions.Poverty_Inequality;

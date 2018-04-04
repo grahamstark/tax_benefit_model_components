@@ -3,14 +3,97 @@ pragma License( Modified_GPL );
 with Ada.Assertions;
 with Ada.Text_IO;
 with GNATColl.Traces;
+with Ada.Strings.Unbounded;
+with Text_Utils;
 
 package body Maths_Functions.Poverty_Inequality is
    
    use Elementary_Functions;
    use Ada.Assertions;
    use Ada.Text_IO;
+   use Ada.Strings.Unbounded;
+   use Text_Utils;
    
+   package IIO is new Ada.Text_IO.Integer_IO( Integer );
+   
+   function FN( r : Real; n : Positive ) return String is
+      s : String( 1 .. n ) := ( others => ' ' );
+   begin
+      FIO.Put( s, r, 6, 0 );
+      return s;
+   end FN;
 
+   function FN( i : Integer; n : Positive ) return String is
+      s : String( 1 .. n ) := ( others => ' ' );
+   begin
+      IIO.Put( s, i );
+      return s;
+   end FN;
+
+   function F10( i : Integer ) return String is
+   begin
+      return FN( i, 10 );
+   end F10;
+   
+   function F10( r : Real ) return String is
+   begin
+      return FN( r, 10 );
+   end F10;
+    
+   function To_String( q : Quantile ) return String is
+      s : Unbounded_String;
+   begin
+      s := s & "index           = " & F10( q.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & F10( q.income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & F10( q.weight ) & ";" & LINE_BREAK;
+      return TS( s );
+   end To_String;
+  
+   function To_String( aq : Augmented_Quantile ) return String is
+      s : Unbounded_String;
+   begin
+      s := s & "index           = " & F10( aq.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & F10( aq.income ) & ";" & LINE_BREAK;
+      s := s & "weighted_income = " & F10( aq.weighted_income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & F10( aq.weight ) & ";" & LINE_BREAK;
+      s := s & "log             = " & F10( aq.log ) & ";" & LINE_BREAK;
+      s := s & "income_accum    = " & F10( aq.income_accum ) & ";" & LINE_BREAK;
+      s := s & "popn_accum      = " & F10( aq.popn_accum ) & ";" & LINE_BREAK;
+      s := s & "growth%         = " & F10( 100.0*(aq.growth-1.0)) & ";" & LINE_BREAK;
+      return TS( s );
+   end To_String;
+   
+   function To_String( pr : Poverty_Rec ) return String is
+      s : Unbounded_String;
+   begin
+      s := s & "headcount = " & F10( pr.headcount ) & ";" & LINE_BREAK;
+      s := s & "gap = " & F10( pr.gap ) & ";" & LINE_BREAK;
+      for i in 0 .. 4 loop
+         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F10( pr.foster_greer_thorndyke( i+1 )) & ";" & LINE_BREAK;
+      end loop;
+      s := s & "sen = " & F10( pr.sen ) & ";" & LINE_BREAK;
+      s := s & "shorrocks = " & F10( pr.shorrocks ) & ";" & LINE_BREAK;
+      s := s & "watts = " & F10( pr.watts ) & ";" & LINE_BREAK;
+      s := s & "time_to_exit = " & F10( pr.time_to_exit ) & ";" & LINE_BREAK;
+      return TS( s );
+   end To_String;
+   
+   function To_String( ir : Inequality_Rec ) return String is
+      s : Unbounded_String;
+   begin
+      for i in ir.theil'Range loop
+         s := s & "theil["&i'Img & " ] = " & F10( ir.theil(i)) & ";" & LINE_BREAK;
+      end loop;
+      for i in ir.atkinson'Range loop
+         s := s & "atkinson["&i'Img & " ] = " & F10( ir.atkinson(i)) & ";" & LINE_BREAK;
+      end loop;
+      s := s & "gini = " & F10( ir.gini ) & ";" & LINE_BREAK;
+      s := s & "hoover = " & F10( ir.hoover ) & ";" & LINE_BREAK;
+      return TS( s );
+   end To_String;
+   
+ 
+   
    function Lower_Income( left, right : Quantile ) return Boolean is
    begin
       return left.income < right.income;
@@ -138,25 +221,29 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Poverty( 
       ina    : Augmented_Quantile_Array; 
       line   : Real;
-      growth : Real ) return Poverty_Rec is
-      last_a : Augmented_Quantile;
-      pov_rec : Poverty_Rec;
-      gap  : Real;
-      below_line : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
+      growth : Real := 0.0 ) return Poverty_Rec is
+      pov_rec           : Poverty_Rec;
+      gap               : Real;
+      below_line        : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
       gini_amongst_poor : Real := Make_Gini( below_line );
+      population        : constant Real := ina( ina'Last ).popn_accum;
+      total_income      : constant Real := ina( ina'Last ).income_accum;
    begin
       for a of below_line loop
          gap := line - a.income; 
          Assert( gap > 0.0, "Gap should always be positive " );
          Inc( pov_rec.headcount, a.weight );
-         Inc( pov_rec.gap, a.weight * gap );
+         Inc( pov_rec.gap, a.weight * gap/line );
          for p in 0 .. 4 loop
-            Inc( pov_rec.foster_greer_thorndyke( p+1 ), a.weight*(gap**p ));
+            Inc( pov_rec.foster_greer_thorndyke( p+1 ), a.weight*((gap/line)**p ));
          end loop;
       end loop;
       
-      pov_rec.gap := pov_rec.gap/ 
-      
+      pov_rec.headcount := pov_rec.headcount/population;      
+      pov_rec.gap := pov_rec.gap / population;
+      for p in 1 .. 5 loop
+         pov_rec.foster_greer_thorndyke( p ) := pov_rec.foster_greer_thorndyke( p )/population; 
+      end loop;
       
       Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.headcount ), 
          "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
