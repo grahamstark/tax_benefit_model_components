@@ -69,6 +69,10 @@ package body Maths_Functions_Poverty_Inequality_Tests is
             & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
          Assert( Nearly_Equal( c_b_2_pov.headcount, c_b_pov.headcount ), "Headcount: p_b_2 /= pb " 
            & To_String( c_b_2_pov ) & To_String( c_b_pov )); 
+         Assert( Nearly_Equal( c_a_2_pov.shorrocks, c_a_pov.shorrocks ), "Shorrocks: p_a_2 /= pa " 
+            & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
+         Assert( Nearly_Equal( c_a_2_pov.sen, c_a_pov.sen ), "Sen: p_a_2 /= pa " 
+            & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
  
          Assert( Nearly_Equal( c_a_2_pov.gap, c_a_pov.gap ), "GAP: p_a_2 /= pa " 
            & To_String( c_a_2_pov ) & To_String( c_a_pov )); 
