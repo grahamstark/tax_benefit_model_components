@@ -320,7 +320,7 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Inequality( 
       ina    : Augmented_Quantile_Array; 
       summary : Summary_Array ) return Inequality_Rec is
-      ineq_rec : Inequality_Rec;
+      ineq_rec : Inequality_Rec( 10 );
       alpha   : Real := 1.0;
       e       : Real := 0.0;
       popn    : constant Real := ina( ina'Last ).popn_accum;

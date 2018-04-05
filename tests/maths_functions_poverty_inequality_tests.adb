@@ -131,7 +131,6 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    -- WB Table 6.3
    use MFP;
       country : Quantile_Array( 1 .. 10 );
-      ir : Inequality_Rec;
    begin
       country( 1 ).income := 10.0;
       country( 2 ).income := 15.0;
@@ -143,8 +142,11 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       country( 8 ).income := 35.0;
       country( 9 ).income := 45.0;
       country( 10 ).income := 90.0;
-      ir := Generate_Ineq( country );
-      Put_Line( To_String( ir ));
+      declare
+         ir : Inequality_Rec := Generate_Ineq( country );
+      begin
+         Put_Line( To_String( ir ));
+      end;
    end Test_WB_CH_6;
    
     

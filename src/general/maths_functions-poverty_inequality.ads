@@ -67,9 +67,9 @@ generic package Maths_Functions.Poverty_Inequality is
    -- of  the coefficients of atk and ge measures
    -- or make these <e><i> Maps
    -- 
-   type Inequality_Rec is record
+   type Inequality_Rec( n : Positive ) is tagged record
       theil                        : Vector( 0 .. 1 ) := ( others => 0.0 );
-      generalised_entropy          : Vector( 1 .. 10 ) := ( others => 0.0 );
+      generalised_entropy          : Vector( 1 .. n ) := ( others => 0.0 );
       atkinson                     : Vector( 1 .. 10 ) := ( others => 0.0 );
       gini                         : Real := 0.0;
       hoover                       : Real := 0.0;
