@@ -88,11 +88,19 @@ package body Maths_Functions.Poverty_Inequality is
       for i in ir.theil'Range loop
          s := s & "theil["&i'Img & " ] = " & FS( ir.theil(i)) & ";" & LINE_BREAK;
       end loop;
-      for i in ir.atkinson'Range loop
-         s := s & "atkinson["&i'Img & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
+      for i in ir.atkinson_es'Range loop
+         declare
+            es : constant String := FN( ir.atkinson_es( i ), 4, 2 );
+         begin
+            s := s & "atkinson["& es & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
+         end;
       end loop;
-      for i in ir.generalised_entropy'Range loop
-         s := s & "generalised_entropy["&i'Img & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
+      for i in ir.generalised_entropy_alphas'Range loop
+         declare
+            ea : constant String := FN( ir.generalised_entropy_alphas( i ), 4, 2 );
+         begin
+            s := s & "generalised_entropy[" & ea & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
+         end;
       end loop;
       s := s & "gini = " & FS( ir.gini ) & ";" & LINE_BREAK;
       s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
@@ -321,8 +329,6 @@ package body Maths_Functions.Poverty_Inequality is
       ina    : Augmented_Quantile_Array; 
       summary : Summary_Array ) return Inequality_Rec is
       ineq_rec : Inequality_Rec := Construct;
-      alpha   : Real := 1.0;
-      e       : Real := 0.0;
       popn    : constant Real := ina( ina'Last ).popn_accum;
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
@@ -330,10 +336,8 @@ package body Maths_Functions.Poverty_Inequality is
       -- Put_Line( "y_bar " & FS( y_bar ));
       -- Put_Line( "popn " & FS( popn ));
       
-      e := 0.0;
-      for i in ineq_rec.atkinson'Range loop
-         Inc( e, 0.25 ); 
-         if e /= 1.0 then 
+      for i in ineq_rec.atkinson_es'Range loop
+         if ineq_rec.atkinson_es( i ) /= 1.0 then 
             ineq_rec.atkinson( i ) := 0.0;
          else
             ineq_rec.atkinson( i ) := 1.0; 
@@ -356,22 +360,26 @@ package body Maths_Functions.Poverty_Inequality is
                -- Put_Line( "ln_y_yb " & FS( ln_y_yb ));
                Inc( ineq_rec.theil( 0 ), a.weight*ln_yb_y );
                Inc( ineq_rec.theil( 1 ), a.weight*y_yb*ln_y_yb );
-               e := 0.0;
-               for i in ineq_rec.atkinson'Range loop
-                  Inc( e, 0.25 ); 
-                  if e /= 1.0 then 
-                     Inc( ineq_rec.atkinson( i ), a.weight*( y_yb )**( 1.0 - e ));
-                  else
-                     -- Put_Line( "ATK times " & FS( ( a.income )**( pop_div )));
-                     ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( pop_div )); 
-                  end if;
+               for i in ineq_rec.atkinson_es'Range loop
+                  declare
+                     e : Real renames ineq_rec.atkinson_es( i );
+                  begin
+                     if e /= 1.0 then 
+                        Inc( ineq_rec.atkinson( i ), a.weight*( y_yb )**( 1.0 - e ));
+                     else
+                        -- Put_Line( "ATK times " & FS( ( a.income )**( pop_div )));
+                        ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( pop_div )); 
+                     end if;
+                  end;
                end loop;
-               alpha := 1.0;
-               for i in ineq_rec.generalised_entropy'Range loop
-                  Inc( alpha, 0.25 ); 
-                  -- Put_Line( "alpha " & FS( alpha ));
-                  -- Put_Line( "( y_yb )**alpha)" & FS(( y_yb )**alpha));
-                  Inc( ineq_rec.generalised_entropy( i ), a.weight*(( y_yb )**alpha) );            
+               for i in ineq_rec.generalised_entropy_alphas'Range loop
+                  declare
+                     alpha : Real renames ineq_rec.generalised_entropy_alphas( i );
+                  begin
+                     -- Put_Line( "alpha " & FS( alpha ));
+                     -- Put_Line( "( y_yb )**alpha)" & FS(( y_yb )**alpha));
+                     Inc( ineq_rec.generalised_entropy( i ), a.weight*(( y_yb )**alpha) );
+                  end;
                end loop;            
             end;
          else
@@ -379,21 +387,25 @@ package body Maths_Functions.Poverty_Inequality is
          end if;
       end loop;
       
-      alpha := 1.0;
-      for i in ineq_rec.generalised_entropy'Range loop
-         Inc( alpha, 0.25 ); 
-         ineq_rec.generalised_entropy( i ) := 
-            (1.0/(popn*alpha*(alpha-1.0))) * (ineq_rec.generalised_entropy( i ) - 1.0 );
+      for i in ineq_rec.generalised_entropy_alphas'Range loop
+         declare
+            alpha : Real renames ineq_rec.generalised_entropy_alphas( i );
+         begin
+            ineq_rec.generalised_entropy( i ) := 
+               (1.0/(popn*alpha*(alpha-1.0))) * (ineq_rec.generalised_entropy( i ) - 1.0 );
+         end;
       end loop;
                              
-      e  := 0.0;
-      for i in ineq_rec.atkinson'Range loop
-         Inc( e, 0.25 );
-         if e /= 1.0 then
-            ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
-         else
-            ineq_rec.atkinson( i ) := 1.0 - ( ineq_rec.atkinson( i ) / y_bar ); 
-         end if;
+      for i in ineq_rec.atkinson_es'Range loop
+         declare
+            e : Real renames ineq_rec.atkinson_es( i );
+         begin
+            if e /= 1.0 then
+               ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
+            else
+               ineq_rec.atkinson( i ) := 1.0 - ( ineq_rec.atkinson( i ) / y_bar ); 
+            end if;
+         end;
       end loop;            
        
       ineq_rec.theil( 0 ) := ineq_rec.theil( 0 )*pop_div;
