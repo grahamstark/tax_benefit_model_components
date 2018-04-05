@@ -81,6 +81,7 @@ package body Maths_Functions.Poverty_Inequality is
    
    function To_String( ir : Inequality_Rec ) return String is
       s : Unbounded_String;
+      alpha : Real := 0.0; -- fix this
    begin
       for i in ir.theil'Range loop
          s := s & "theil["&i'Img & " ] = " & F20( ir.theil(i)) & ";" & LINE_BREAK;
@@ -88,12 +89,16 @@ package body Maths_Functions.Poverty_Inequality is
       for i in ir.atkinson'Range loop
          s := s & "atkinson["&i'Img & " ] = " & F20( ir.atkinson(i)) & ";" & LINE_BREAK;
       end loop;
+      for i in ir.generalised_entropy'Range loop
+         s := s & "generalised_entropy["&i'Img & " ] = " & F20( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
+      end loop;
       s := s & "gini = " & F20( ir.gini ) & ";" & LINE_BREAK;
       s := s & "hoover = " & F20( ir.hoover ) & ";" & LINE_BREAK;
+      if ir.zero_or_negative_income_flag then
+         s := s & "WARNING: zero or negative incomes encountered; Thiel indexes may be wrong " & LINE_BREAK;
+      end if;
       return TS( s );
    end To_String;
-   
- 
    
    function Lower_Income( left, right : Quantile ) return Boolean is
    begin
@@ -309,6 +314,40 @@ package body Maths_Functions.Poverty_Inequality is
          
       return pov_rec;
    end Make_Poverty;
+   
+   function Make_Inequality( 
+      ina    : Augmented_Quantile_Array; 
+      summary : Summary_Array ) return Inequality_Rec is
+      ineq_rec : Inequality_Rec;
+      alpha   : Real := 1.0;
+      popn    : constant Real := ina( ina'Last ).popn_accum;
+      pop_div : constant Real := 1.0/popn;      
+      y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
+   begin
+      ineq_rec.gini := Make_Gini( ina );
+      for a of ina loop
+         if a.income > 0.0 then
+            Inc( ineq_rec.theil( 0 ), a.weight*Log( y_bar/a.income ));
+            Inc( ineq_rec.theil( 1 ), a.weight*( a.income/y_bar )*log( a.income/y_bar ));            
+         else
+            ineq_rec.zero_or_negative_income_flag := True;
+         end if;
+            
+         for i in ineq_rec.generalised_entropy'Range loop
+            Inc( alpha, 0.25 ); 
+            Inc( ineq_rec.generalised_entropy( i ), a.weight*( a.income/y_bar )**alpha );            
+         end loop;            
+      end loop;
+      alpha := 1.0;
+      for i in ineq_rec.generalised_entropy'Range loop
+         Inc( alpha, 0.25 ); 
+         ineq_rec.generalised_entropy( i ) := 
+            1.0/(alpha*(alpha-1.0)) * ( pop_div*ineq_rec.generalised_entropy( i ) - 1.0 );
+      end loop;            
+      
+      
+      return ineq_rec;
+   end Make_Inequality;
                              
    function Binify( 
       quantiles : Quantile_Array; 

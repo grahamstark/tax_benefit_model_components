@@ -180,6 +180,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
 
       total_population : constant Amount := 6.35859E+07; 
       average_income : constant Amount := 1154.4;
+      total_income :  constant Amount := average_income * total_population;
       line : constant Amount := 46.7686; -- rescale to data mean
       pov : Poverty_Rec;
    begin
@@ -207,8 +208,8 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       uk(19) := ( index => 19, weight => 0.049699999999999966, income => 0.09614 );
       uk(20) := ( index => 20, weight => 0.04781000000000002, income => 0.16142 );
       for u of uk loop
+         u.income := u.income * total_income;
          u.weight := u.weight*total_population;
-         u.income := u.income * average_income/u.weight;
       end loop;
       pov :=  Generate_Pov( uk, line );
       Put_Line( To_String( pov ));

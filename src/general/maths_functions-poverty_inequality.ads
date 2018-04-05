@@ -63,10 +63,12 @@ generic package Maths_Functions.Poverty_Inequality is
    type Poverty_Rec_Array is array( Positive range <> ) of Poverty_Rec;
    
    type Inequality_Rec is record
-      theil                  : Vector( 1 .. 3 ) := ( others => 0.0 );
+      theil                  : Vector( 1 .. 2 ) := ( others => 0.0 );
+      generalised_entropy    : Vector( 1 .. 12 ) := ( others => 0.0 );
       atkinson               : Vector( 1 .. 5 ) := ( others => 0.0 );
       gini                   : Real := 0.0;
       hoover                 : Real := 0.0;
+      zero_or_negative_income_flag : Boolean := False;
    end record;
 
    function To_String( ir : Inequality_Rec ) return String;
@@ -133,5 +135,9 @@ generic package Maths_Functions.Poverty_Inequality is
       ina    : Augmented_Quantile_Array; 
       line   : Real;
       growth : Real := 0.0 ) return Poverty_Rec;
+      
+   function Make_Inequality( 
+      ina    : Augmented_Quantile_Array; 
+      summary : Summary_Array ) return Inequality_Rec;
       
 end  Maths_Functions.Poverty_Inequality;
