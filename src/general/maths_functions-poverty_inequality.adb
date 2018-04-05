@@ -335,7 +335,11 @@ package body Maths_Functions.Poverty_Inequality is
          end if;
          for i in ineq_rec.atkinson'Range loop
             Inc( e, 0.25 ); 
-            Inc( ineq_rec.atkinson( i ), a.weight*( a.income/y_bar )**(1.0/e )); 
+            if e /= 1.0 then 
+               Inc( ineq_rec.atkinson( i ), a.weight*( a.income/y_bar )**(1.0/e ));
+            else
+               ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (a.income/y_bar)**(pop_div ); 
+            end if;
          end loop;   
          for i in ineq_rec.generalised_entropy'Range loop
             Inc( alpha, 0.25 ); 
@@ -351,8 +355,12 @@ package body Maths_Functions.Poverty_Inequality is
                              
       e  := 0.0;
       for i in ineq_rec.atkinson'Range loop
-         Inc( e, 0.25 ); 
-         ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
+         Inc( e, 0.25 );
+         if e /= 1.0 then
+            ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
+         else
+            ineq_rec.atkinson( i ) := 1.0 - ( ineq_rec.atkinson( i ) / y_bar ); 
+         end if;
       end loop;            
        
       ineq_rec.theil( 0 ) := ineq_rec.theil( 0 )*pop_div;
