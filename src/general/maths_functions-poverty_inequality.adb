@@ -30,52 +30,54 @@ package body Maths_Functions.Poverty_Inequality is
       return s;
    end FN;
 
-   function F20( i : Integer ) return String is
+   function FS( i : Integer ) return String is
+      s : String := FN( i, 40 );
    begin
-      return FN( i, 30 );
-   end F20;
+      return Text_Utils.Trim( s );
+   end FS;
    
-   function F20( r : Real ) return String is
+   function FS( r : Real ) return String is
+      s : String := FN( r, 40 );
    begin
-      return FN( r, 30 );
-   end F20;
+      return Text_Utils.Trim( s );
+   end FS;
     
    function To_String( q : Quantile ) return String is
       s : Unbounded_String;
    begin
-      s := s & "index           = " & F20( q.index ) & ";" & LINE_BREAK;
-      s := s & "income          = " & F20( q.income ) & ";" & LINE_BREAK;
-      s := s & "weight          = " & F20( q.weight ) & ";" & LINE_BREAK;
+      s := s & "index           = " & FS( q.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & FS( q.income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & FS( q.weight ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
   
    function To_String( aq : Augmented_Quantile ) return String is
       s : Unbounded_String;
    begin
-      s := s & "index           = " & F20( aq.index ) & ";" & LINE_BREAK;
-      s := s & "income          = " & F20( aq.income ) & ";" & LINE_BREAK;
-      s := s & "weighted_income = " & F20( aq.weighted_income ) & ";" & LINE_BREAK;
-      s := s & "weight          = " & F20( aq.weight ) & ";" & LINE_BREAK;
-      s := s & "log             = " & F20( aq.log ) & ";" & LINE_BREAK;
-      s := s & "income_accum    = " & F20( aq.income_accum ) & ";" & LINE_BREAK;
-      s := s & "popn_accum      = " & F20( aq.popn_accum ) & ";" & LINE_BREAK;
-      s := s & "growth%         = " & F20( 100.0*(aq.growth-1.0)) & ";" & LINE_BREAK;
+      s := s & "index           = " & FS( aq.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & FS( aq.income ) & ";" & LINE_BREAK;
+      s := s & "weighted_income = " & FS( aq.weighted_income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & FS( aq.weight ) & ";" & LINE_BREAK;
+      s := s & "log             = " & FS( aq.log ) & ";" & LINE_BREAK;
+      s := s & "income_accum    = " & FS( aq.income_accum ) & ";" & LINE_BREAK;
+      s := s & "popn_accum      = " & FS( aq.popn_accum ) & ";" & LINE_BREAK;
+      s := s & "growth%         = " & FS( 100.0*(aq.growth-1.0)) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
    function To_String( pr : Poverty_Rec ) return String is
       s : Unbounded_String;
    begin
-      s := s & "headcount = " & F20( pr.headcount ) & ";" & LINE_BREAK;
-      s := s & "gap = " & F20( pr.gap ) & ";" & LINE_BREAK;
+      s := s & "headcount = " & FS( pr.headcount ) & ";" & LINE_BREAK;
+      s := s & "gap = " & FS( pr.gap ) & ";" & LINE_BREAK;
       for i in 0 .. 4 loop
-         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F20( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
+         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & FS( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
       end loop;
-      s := s & "sen = " & F20( pr.sen ) & ";" & LINE_BREAK;
-      s := s & "shorrocks = " & F20( pr.shorrocks ) & ";" & LINE_BREAK;
-      s := s & "watts = " & F20( pr.watts ) & ";" & LINE_BREAK;
-      s := s & "gini_amongst_poor = " & F20( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
-      s := s & "poverty_gap_gini = " & F20( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
+      s := s & "sen = " & FS( pr.sen ) & ";" & LINE_BREAK;
+      s := s & "shorrocks = " & FS( pr.shorrocks ) & ";" & LINE_BREAK;
+      s := s & "watts = " & FS( pr.watts ) & ";" & LINE_BREAK;
+      s := s & "gini_amongst_poor = " & FS( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
+      s := s & "poverty_gap_gini = " & FS( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
@@ -84,16 +86,16 @@ package body Maths_Functions.Poverty_Inequality is
       alpha : Real := 0.0; -- fix this
    begin
       for i in ir.theil'Range loop
-         s := s & "theil["&i'Img & " ] = " & F20( ir.theil(i)) & ";" & LINE_BREAK;
+         s := s & "theil["&i'Img & " ] = " & FS( ir.theil(i)) & ";" & LINE_BREAK;
       end loop;
       for i in ir.atkinson'Range loop
-         s := s & "atkinson["&i'Img & " ] = " & F20( ir.atkinson(i)) & ";" & LINE_BREAK;
+         s := s & "atkinson["&i'Img & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
       end loop;
       for i in ir.generalised_entropy'Range loop
-         s := s & "generalised_entropy["&i'Img & " ] = " & F20( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
+         s := s & "generalised_entropy["&i'Img & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
       end loop;
-      s := s & "gini = " & F20( ir.gini ) & ";" & LINE_BREAK;
-      s := s & "hoover = " & F20( ir.hoover ) & ";" & LINE_BREAK;
+      s := s & "gini = " & FS( ir.gini ) & ";" & LINE_BREAK;
+      s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
       if ir.zero_or_negative_income_flag then
          s := s & "WARNING: zero or negative incomes encountered; Thiel indexes may be wrong " & LINE_BREAK;
       end if;
@@ -198,13 +200,13 @@ package body Maths_Functions.Poverty_Inequality is
       end if;
       lasta := ina( ina'Last );
       for a of ina loop
-         Put_Line( "a.income_accum " & F20( a.income_accum ) & 
-                   " a.weighted_income " & F20( a.weighted_income ));
+         -- Put_Line( "a.income_accum " & FS( a.income_accum ) & 
+                   -- " a.weighted_income " & FS( a.weighted_income ));
          Inc( lorenz, a.weight*(2.0*a.income_accum - a.weighted_income) );
       end loop;       
-      Put_Line( "lorenz " & F20( lorenz ) & 
-                " lasta.income_accum " & F20( lasta.income_accum ) &
-                "lasta.popn_accum " & F20( lasta.popn_accum ));
+      -- Put_Line( "lorenz " & FS( lorenz ) & 
+                -- " lasta.income_accum " & FS( lasta.income_accum ) &
+                -- "lasta.popn_accum " & FS( lasta.popn_accum ));
       return 1.0 - ( lorenz/lasta.income_accum ) / lasta.popn_accum;
    end Make_Gini; 
    
@@ -250,7 +252,7 @@ package body Maths_Functions.Poverty_Inequality is
          Assert( gap > 0.0, "Gap should always be positive " );
          Inc( pov_rec.headcount, a.weight );
          Inc( pov_rec.gap, a.weight * gap/line );
-         Put_Line( "watts add " & F20( log( line/a.income )));
+         Put_Line( "watts add " & FS( log( line/a.income )));
          Inc( pov_rec.watts, a.weight*log( line/a.income ));
          for p in 0 .. 4 loop
             Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**p ));
@@ -325,8 +327,8 @@ package body Maths_Functions.Poverty_Inequality is
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
    begin
-      Put_Line( "y_bar " & F20( y_bar ));
-      Put_Line( "popn " & F20( popn ));
+      -- Put_Line( "y_bar " & FS( y_bar ));
+      -- Put_Line( "popn " & FS( popn ));
       
       e := 0.0;
       for i in ineq_rec.atkinson'Range loop
@@ -347,11 +349,11 @@ package body Maths_Functions.Poverty_Inequality is
                ln_y_yb : constant Real := Log( y_yb );
                ln_yb_y : constant Real := Log( yb_y );
             begin
-               Put_Line( "income" & F20( a.income ));
-               Put_Line( "weight " & F20( a.weight ));
-               Put_Line( "y_yb " & F20( y_yb ));
-               Put_Line( "yb_y " & F20( yb_y ));
-               Put_Line( "ln_y_yb " & F20( ln_y_yb ));
+               -- Put_Line( "income" & FS( a.income ));
+               -- Put_Line( "weight " & FS( a.weight ));
+               -- Put_Line( "y_yb " & FS( y_yb ));
+               -- Put_Line( "yb_y " & FS( yb_y ));
+               -- Put_Line( "ln_y_yb " & FS( ln_y_yb ));
                Inc( ineq_rec.theil( 0 ), a.weight*ln_yb_y );
                Inc( ineq_rec.theil( 1 ), a.weight*y_yb*ln_y_yb );
                e := 0.0;
@@ -360,23 +362,23 @@ package body Maths_Functions.Poverty_Inequality is
                   if e /= 1.0 then 
                      Inc( ineq_rec.atkinson( i ), a.weight*( y_yb )**( 1.0 - e ));
                   else
-                     Put_Line( "ATK times " & F20( ( a.income )**( pop_div )));
+                     -- Put_Line( "ATK times " & FS( ( a.income )**( pop_div )));
                      ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( pop_div )); 
                   end if;
                end loop;
                alpha := 1.0;
                for i in ineq_rec.generalised_entropy'Range loop
                   Inc( alpha, 0.25 ); 
-                  Put_Line( "alpha " & F20( alpha ));
-                  Put_Line( "( y_yb )**alpha)" & F20(( y_yb )**alpha));
+                  -- Put_Line( "alpha " & FS( alpha ));
+                  -- Put_Line( "( y_yb )**alpha)" & FS(( y_yb )**alpha));
                   Inc( ineq_rec.generalised_entropy( i ), a.weight*(( y_yb )**alpha) );            
                end loop;            
             end;
          else
             ineq_rec.zero_or_negative_income_flag := True;
          end if;
-
       end loop;
+      
       alpha := 1.0;
       for i in ineq_rec.generalised_entropy'Range loop
          Inc( alpha, 0.25 ); 
@@ -396,8 +398,7 @@ package body Maths_Functions.Poverty_Inequality is
        
       ineq_rec.theil( 0 ) := ineq_rec.theil( 0 )*pop_div;
       ineq_rec.theil( 1 ) := ineq_rec.theil( 1 )*pop_div;
-      
-      
+
       return ineq_rec;
    end Make_Inequality;
                              
