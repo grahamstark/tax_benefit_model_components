@@ -320,7 +320,7 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Inequality( 
       ina    : Augmented_Quantile_Array; 
       summary : Summary_Array ) return Inequality_Rec is
-      ineq_rec : Inequality_Rec( 10 );
+      ineq_rec : Inequality_Rec := Construct;
       alpha   : Real := 1.0;
       e       : Real := 0.0;
       popn    : constant Real := ina( ina'Last ).popn_accum;
@@ -437,7 +437,16 @@ package body Maths_Functions.Poverty_Inequality is
    end Binify;
    
    
-   
+   function Construct( 
+      atkinson_es : Vector := DEFAULT_ATKINSONS;  
+      generalised_entropy_alphas : Vector := DEFAULT_ENTROPIES ) return Inequality_Rec is
+      ir : Inequality_Rec( atkinson_es'Last, generalised_entropy_alphas'Last );
+   begin
+      ir.generalised_entropy_alphas := generalised_entropy_alphas;
+      ir.atkinson_es := atkinson_es;
+      return ir;      
+   end Construct;
+    
    
 
    

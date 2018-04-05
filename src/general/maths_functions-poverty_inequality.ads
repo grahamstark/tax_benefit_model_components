@@ -46,7 +46,7 @@ generic package Maths_Functions.Poverty_Inequality is
    subtype Decile is Quantile_Array( 1 .. 10 );
    subtype Quintile is Quantile_Array( 1 .. 5 );
    
-   type Poverty_Rec is record
+   type Poverty_Rec is tagged record
       headcount              : Real := 0.0;
       gap                    : Real := 0.0;
       foster_greer_thorndyke : Vector( 0 .. 4 ) := ( others => 0.0 );    
@@ -67,14 +67,22 @@ generic package Maths_Functions.Poverty_Inequality is
    -- of  the coefficients of atk and ge measures
    -- or make these <e><i> Maps
    -- 
-   type Inequality_Rec( n : Positive ) is tagged record
+   type Inequality_Rec( num_atkinsons : Positive; num_entropies : Positive ) is tagged record
       theil                        : Vector( 0 .. 1 ) := ( others => 0.0 );
-      generalised_entropy          : Vector( 1 .. n ) := ( others => 0.0 );
-      atkinson                     : Vector( 1 .. 10 ) := ( others => 0.0 );
+      generalised_entropy_alphas   : Vector( 1 .. num_entropies );
+      generalised_entropy          : Vector( 1 .. num_entropies ) := ( others => 0.0 );
+      atkinson_es                  : Vector( 1 .. num_atkinsons );
+      atkinson                     : Vector( 1 .. num_atkinsons ) := ( others => 0.0 );
       gini                         : Real := 0.0;
       hoover                       : Real := 0.0;
       zero_or_negative_income_flag : Boolean := False;
    end record;
+   
+   DEFAULT_ENTROPIES : constant Vector( 1 .. 6 ) := ( 1.25, 1.50, 1.75, 2.0, 2.25, 2.50 );
+   DEFAULT_ATKINSONS : constant Vector( 1 .. 9 ) := ( 0.25, 0.50, 0.75, 1.0, 1.25, 1.50, 1.75, 2.0, 2.25 );
+   
+   function Construct( atkinson_es : Vector := DEFAULT_ATKINSONS;  generalised_entropy_alphas : Vector := DEFAULT_ENTROPIES ) return Inequality_Rec;
+   
 
    function To_String( ir : Inequality_Rec ) return String;
    
