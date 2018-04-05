@@ -320,6 +320,7 @@ package body Maths_Functions.Poverty_Inequality is
       summary : Summary_Array ) return Inequality_Rec is
       ineq_rec : Inequality_Rec;
       alpha   : Real := 1.0;
+      e       : Real := 0.0;
       popn    : constant Real := ina( ina'Last ).popn_accum;
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
@@ -332,7 +333,10 @@ package body Maths_Functions.Poverty_Inequality is
          else
             ineq_rec.zero_or_negative_income_flag := True;
          end if;
-            
+         for i in ineq_rec.atkinson'Range loop
+            Inc( e, 0.25 ); 
+            Inc( ineq_rec.atkinson( i ), a.weight*( a.income/y_bar )**(1.0/e )); 
+         end loop;   
          for i in ineq_rec.generalised_entropy'Range loop
             Inc( alpha, 0.25 ); 
             Inc( ineq_rec.generalised_entropy( i ), a.weight*( a.income/y_bar )**alpha );            
@@ -343,7 +347,16 @@ package body Maths_Functions.Poverty_Inequality is
          Inc( alpha, 0.25 ); 
          ineq_rec.generalised_entropy( i ) := 
             1.0/(alpha*(alpha-1.0)) * ( pop_div*ineq_rec.generalised_entropy( i ) - 1.0 );
+      end loop;
+                             
+      e  := 0.0;
+      for i in ineq_rec.atkinson'Range loop
+         Inc( e, 0.25 ); 
+         ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
       end loop;            
+       
+      ineq_rec.theil( 0 ) := ineq_rec.theil( 0 )*pop_div;
+      ineq_rec.theil( 1 ) := ineq_rec.theil( 1 )*pop_div;
       
       
       return ineq_rec;
