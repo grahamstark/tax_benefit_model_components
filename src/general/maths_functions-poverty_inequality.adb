@@ -325,32 +325,63 @@ package body Maths_Functions.Poverty_Inequality is
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
    begin
-      ineq_rec.gini := Make_Gini( ina );
+      Put_Line( "y_bar " & F20( y_bar ));
+      Put_Line( "popn " & F20( popn ));
+      
+      e := 0.0;
+      for i in ineq_rec.atkinson'Range loop
+         Inc( e, 0.25 ); 
+         if e /= 1.0 then 
+            ineq_rec.atkinson( i ) := 0.0;
+         else
+            ineq_rec.atkinson( i ) := 1.0; 
+         end if;
+      end loop;
+      
+      ineq_rec.gini := Make_Gini( ina );                                      
       for a of ina loop
          if a.income > 0.0 then
-            Inc( ineq_rec.theil( 0 ), a.weight*Log( y_bar/a.income ));
-            Inc( ineq_rec.theil( 1 ), a.weight*( a.income/y_bar )*log( a.income/y_bar ));            
+            declare
+               y_yb : constant Real := a.income/y_bar;
+               yb_y : constant Real := y_bar/a.income;
+               ln_y_yb : constant Real := Log( y_yb );
+               ln_yb_y : constant Real := Log( yb_y );
+            begin
+               Put_Line( "income" & F20( a.income ));
+               Put_Line( "weight " & F20( a.weight ));
+               Put_Line( "y_yb " & F20( y_yb ));
+               Put_Line( "yb_y " & F20( yb_y ));
+               Put_Line( "ln_y_yb " & F20( ln_y_yb ));
+               Inc( ineq_rec.theil( 0 ), a.weight*ln_yb_y );
+               Inc( ineq_rec.theil( 1 ), a.weight*y_yb*ln_y_yb );
+               e := 0.0;
+               for i in ineq_rec.atkinson'Range loop
+                  Inc( e, 0.25 ); 
+                  if e /= 1.0 then 
+                     Inc( ineq_rec.atkinson( i ), a.weight*( y_yb )**( 1.0 - e ));
+                  else
+                     Put_Line( "ATK times " & F20( ( a.income )**( pop_div )));
+                     ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( pop_div )); 
+                  end if;
+               end loop;
+               alpha := 1.0;
+               for i in ineq_rec.generalised_entropy'Range loop
+                  Inc( alpha, 0.25 ); 
+                  Put_Line( "alpha " & F20( alpha ));
+                  Put_Line( "( y_yb )**alpha)" & F20(( y_yb )**alpha));
+                  Inc( ineq_rec.generalised_entropy( i ), a.weight*(( y_yb )**alpha) );            
+               end loop;            
+            end;
          else
             ineq_rec.zero_or_negative_income_flag := True;
          end if;
-         for i in ineq_rec.atkinson'Range loop
-            Inc( e, 0.25 ); 
-            if e /= 1.0 then 
-               Inc( ineq_rec.atkinson( i ), a.weight*( a.income/y_bar )**(1.0/e ));
-            else
-               ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (a.income/y_bar)**(pop_div ); 
-            end if;
-         end loop;   
-         for i in ineq_rec.generalised_entropy'Range loop
-            Inc( alpha, 0.25 ); 
-            Inc( ineq_rec.generalised_entropy( i ), a.weight*( a.income/y_bar )**alpha );            
-         end loop;            
+
       end loop;
       alpha := 1.0;
       for i in ineq_rec.generalised_entropy'Range loop
          Inc( alpha, 0.25 ); 
          ineq_rec.generalised_entropy( i ) := 
-            1.0/(alpha*(alpha-1.0)) * ( pop_div*ineq_rec.generalised_entropy( i ) - 1.0 );
+            (1.0/(popn*alpha*(alpha-1.0))) * (ineq_rec.generalised_entropy( i ) - 1.0 );
       end loop;
                              
       e  := 0.0;

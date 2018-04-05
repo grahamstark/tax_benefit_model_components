@@ -62,10 +62,15 @@ generic package Maths_Functions.Poverty_Inequality is
    
    type Poverty_Rec_Array is array( Positive range <> ) of Poverty_Rec;
    
+   --
+   -- TODO some sort of class or something that allows proper initialising 
+   -- of  the coefficients of atk and ge measures
+   -- or make these <e><i> Maps
+   -- 
    type Inequality_Rec is record
-      theil                        : Vector( 1 .. 2 ) := ( others => 0.0 );
-      generalised_entropy          : Vector( 1 .. 12 ) := ( others => 0.0 );
-      atkinson                     : Vector( 1 .. 5 ) := ( others => 0.0 );
+      theil                        : Vector( 0 .. 1 ) := ( others => 0.0 );
+      generalised_entropy          : Vector( 1 .. 10 ) := ( others => 0.0 );
+      atkinson                     : Vector( 1 .. 10 ) := ( others => 0.0 );
       gini                         : Real := 0.0;
       hoover                       : Real := 0.0;
       zero_or_negative_income_flag : Boolean := False;
