@@ -16,10 +16,10 @@ package body Maths_Functions.Poverty_Inequality is
    
    package IIO is new Ada.Text_IO.Integer_IO( Integer );
    
-   function FN( r : Real; n : Positive ) return String is
+   function FN( r : Real; n : Positive; prec : Positive := 5 ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
-      FIO.Put( s, r, 6, 0 );
+      FIO.Put( s, r, prec, 0 );
       return s;
    end FN;
 
