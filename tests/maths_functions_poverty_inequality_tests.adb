@@ -116,15 +116,113 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       end;
    end Test_WB_CH_4;
    
+   
+   procedure Test_UK_2014( t : in out AUnit.Test_Cases.Test_Case'Class ) is
+      -- IGNORE: this is bollocks
+      use MFP;
+      uk : Quantile_Array( 1 .. 20 );
+      -- From http://iresearch.worldbank.org/PovcalNet/povOnDemand.aspx
+      -- detail view, UK, 2014
+      -- original data
+      -- Seems to be based on 400 datapoints from somewhere ...
+      -- ----------- Distribution ------------
+      --    i           P           L 
+      -- -------------------------------------
+      --    0    0.052484     0.01229
+      --    1      0.1025     0.02994
+      --    2     0.15239    0.050433
+      --    3     0.20248    0.073837
+      --    4     0.25246    0.099866
+      --    5      0.3025     0.12865
+      --    6     0.35248     0.16001
+      --    7     0.40236     0.19409
+      --    8     0.45243     0.23123
+      --    9     0.50247     0.27125
+      --   10     0.55247     0.31442
+      --   11     0.60245     0.36095
+      --   12     0.65242     0.41142
+      --   13     0.70221     0.46601
+      --   14     0.75242     0.52563
+      --   15      0.8025     0.59047
+      --   16     0.85247     0.66169
+      --   17     0.90249     0.74244
+      --   18     0.95219     0.83858
+      --   19           1           1
+      --   
+      -- ----------------- PPP$ and local currency --------------
+      --          PPP used in computation: 0.756404
+      --      Data mean in local currency: 1154.4
+      --                Data mean in PPP$: 1426.48
+      --         Poverty line in PPP$/Day: 1.9
+      --       Poverty line in PPP$/Month: 57.7917
+      --   Poverty line in local currency: 46.7686
+      -- -------------------------------------------------------
+      -- 
+      -- ----------------- Estimation result --------------
+      --      Number of observation: 400
+      --           Total population: 6.35859E+07
+      --               Total wealth: 9.70424E+10(PPP$)
+      --                    Minimum: 39.5797(PPP$)
+      --                    Maximum: 16678.5(PPP$)
+      --              Headcount(HC): 0.00241165
+      --           Poverty gap (PG): 0.000867867
+      --        Poverty gap squared: 0.000312314
+      --                       Gini: 0.340661
+      --                     Median: 1183.08
+      --                        MLD: 0.201623
+      --                       Watt: 0.00107578
+      -- --------------------------------------------------
+      -- 
+      -- -------------------------------- Income or Consumption share by deciles (%) -------------------------------------
+      --      2.9058     4.3621     5.4534     6.5261     7.6801     8.9397     10.492     12.365     15.117     26.159
+      -- -----------------------------------------------------------------------------------------------------------------
+
+
+      total_population : constant Amount := 6.35859E+07; 
+      average_income : constant Amount := 1154.4;
+      line : constant Amount := 46.7686; -- rescale to data mean
+      pov : Poverty_Rec;
+   begin
+      --
+      -- converted from Lorenz plots by wb_pars1.rb
+      --
+      uk(1) := ( index => 1, weight => 0.052484, income => 0.01229 );
+      uk(2) := ( index => 2, weight => 0.05001599999999999, income => 0.01765 );
+      uk(3) := ( index => 3, weight => 0.049890000000000004, income => 0.020492999999999997 );
+      uk(4) := ( index => 4, weight => 0.050089999999999996, income => 0.023404 );
+      uk(5) := ( index => 5, weight => 0.049980000000000024, income => 0.026028999999999997 );
+      uk(6) := ( index => 6, weight => 0.05003999999999997, income => 0.02878399999999999 );
+      uk(7) := ( index => 7, weight => 0.049980000000000024, income => 0.03136000000000003 );
+      uk(8) := ( index => 8, weight => 0.04987999999999998, income => 0.03408 );
+      uk(9) := ( index => 9, weight => 0.05007, income => 0.03713999999999998 );
+      uk(10) := ( index => 10, weight => 0.05003999999999997, income => 0.04002 );
+      uk(11) := ( index => 11, weight => 0.050000000000000044, income => 0.043169999999999986 );
+      uk(12) := ( index => 12, weight => 0.049980000000000024, income => 0.046530000000000016 );
+      uk(13) := ( index => 13, weight => 0.04996999999999996, income => 0.050470000000000015 );
+      uk(14) := ( index => 14, weight => 0.04979, income => 0.05458999999999997 );
+      uk(15) := ( index => 15, weight => 0.05020999999999998, income => 0.05962000000000006 );
+      uk(16) := ( index => 16, weight => 0.05008000000000001, income => 0.06484000000000001 );
+      uk(17) := ( index => 17, weight => 0.04996999999999996, income => 0.07121999999999995 );
+      uk(18) := ( index => 18, weight => 0.050020000000000064, income => 0.08074999999999999 );
+      uk(19) := ( index => 19, weight => 0.049699999999999966, income => 0.09614 );
+      uk(20) := ( index => 20, weight => 0.04781000000000002, income => 0.16142 );
+      for u of uk loop
+         u.weight := u.weight*total_population;
+         u.income := u.income * average_income/u.weight;
+      end loop;
+      pov :=  Generate_Pov( uk, line );
+      Put_Line( To_String( pov ));
+   end Test_UK_2014;
+   
+   
   --------------------
    -- Register_Tests --
    --------------------
    procedure Register_Tests( t : in out Test_Case) is
       use AUnit.Test_Cases.Registration;
    begin
-      null;
-      -- Register_Routine (T, Test_Calculate_National_Insurance'Access, "Test_Calculate_National_Insurance");
       Register_Routine( T, Test_WB_CH_4'Access, "Test Basic Poverty");
+      Register_Routine( T, Test_UK_2014'Access, "Test_UK_2014");
    end Register_Tests;
 
    ----------
@@ -132,7 +230,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    ----------
    function Name ( T : Test_Case ) return Message_String is
    begin
-      return Format( " Model.Example_Household.Impl.Tests" );
+      return Format( "Maths_Functions_Poverty_Inequality_Tests" );
    end Name;
 
 end  Maths_Functions_Poverty_Inequality_Tests;

@@ -30,52 +30,52 @@ package body Maths_Functions.Poverty_Inequality is
       return s;
    end FN;
 
-   function F10( i : Integer ) return String is
+   function F20( i : Integer ) return String is
    begin
-      return FN( i, 10 );
-   end F10;
+      return FN( i, 30 );
+   end F20;
    
-   function F10( r : Real ) return String is
+   function F20( r : Real ) return String is
    begin
-      return FN( r, 10 );
-   end F10;
+      return FN( r, 30 );
+   end F20;
     
    function To_String( q : Quantile ) return String is
       s : Unbounded_String;
    begin
-      s := s & "index           = " & F10( q.index ) & ";" & LINE_BREAK;
-      s := s & "income          = " & F10( q.income ) & ";" & LINE_BREAK;
-      s := s & "weight          = " & F10( q.weight ) & ";" & LINE_BREAK;
+      s := s & "index           = " & F20( q.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & F20( q.income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & F20( q.weight ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
   
    function To_String( aq : Augmented_Quantile ) return String is
       s : Unbounded_String;
    begin
-      s := s & "index           = " & F10( aq.index ) & ";" & LINE_BREAK;
-      s := s & "income          = " & F10( aq.income ) & ";" & LINE_BREAK;
-      s := s & "weighted_income = " & F10( aq.weighted_income ) & ";" & LINE_BREAK;
-      s := s & "weight          = " & F10( aq.weight ) & ";" & LINE_BREAK;
-      s := s & "log             = " & F10( aq.log ) & ";" & LINE_BREAK;
-      s := s & "income_accum    = " & F10( aq.income_accum ) & ";" & LINE_BREAK;
-      s := s & "popn_accum      = " & F10( aq.popn_accum ) & ";" & LINE_BREAK;
-      s := s & "growth%         = " & F10( 100.0*(aq.growth-1.0)) & ";" & LINE_BREAK;
+      s := s & "index           = " & F20( aq.index ) & ";" & LINE_BREAK;
+      s := s & "income          = " & F20( aq.income ) & ";" & LINE_BREAK;
+      s := s & "weighted_income = " & F20( aq.weighted_income ) & ";" & LINE_BREAK;
+      s := s & "weight          = " & F20( aq.weight ) & ";" & LINE_BREAK;
+      s := s & "log             = " & F20( aq.log ) & ";" & LINE_BREAK;
+      s := s & "income_accum    = " & F20( aq.income_accum ) & ";" & LINE_BREAK;
+      s := s & "popn_accum      = " & F20( aq.popn_accum ) & ";" & LINE_BREAK;
+      s := s & "growth%         = " & F20( 100.0*(aq.growth-1.0)) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
    function To_String( pr : Poverty_Rec ) return String is
       s : Unbounded_String;
    begin
-      s := s & "headcount = " & F10( pr.headcount ) & ";" & LINE_BREAK;
-      s := s & "gap = " & F10( pr.gap ) & ";" & LINE_BREAK;
+      s := s & "headcount = " & F20( pr.headcount ) & ";" & LINE_BREAK;
+      s := s & "gap = " & F20( pr.gap ) & ";" & LINE_BREAK;
       for i in 0 .. 4 loop
-         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F10( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
+         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & F20( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
       end loop;
-      s := s & "sen = " & F10( pr.sen ) & ";" & LINE_BREAK;
-      s := s & "shorrocks = " & F10( pr.shorrocks ) & ";" & LINE_BREAK;
-      s := s & "watts = " & F10( pr.watts ) & ";" & LINE_BREAK;
-      s := s & "gini_amongst_poor = " & F10( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
-      s := s & "poverty_gap_gini = " & F10( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
+      s := s & "sen = " & F20( pr.sen ) & ";" & LINE_BREAK;
+      s := s & "shorrocks = " & F20( pr.shorrocks ) & ";" & LINE_BREAK;
+      s := s & "watts = " & F20( pr.watts ) & ";" & LINE_BREAK;
+      s := s & "gini_amongst_poor = " & F20( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
+      s := s & "poverty_gap_gini = " & F20( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
@@ -83,13 +83,13 @@ package body Maths_Functions.Poverty_Inequality is
       s : Unbounded_String;
    begin
       for i in ir.theil'Range loop
-         s := s & "theil["&i'Img & " ] = " & F10( ir.theil(i)) & ";" & LINE_BREAK;
+         s := s & "theil["&i'Img & " ] = " & F20( ir.theil(i)) & ";" & LINE_BREAK;
       end loop;
       for i in ir.atkinson'Range loop
-         s := s & "atkinson["&i'Img & " ] = " & F10( ir.atkinson(i)) & ";" & LINE_BREAK;
+         s := s & "atkinson["&i'Img & " ] = " & F20( ir.atkinson(i)) & ";" & LINE_BREAK;
       end loop;
-      s := s & "gini = " & F10( ir.gini ) & ";" & LINE_BREAK;
-      s := s & "hoover = " & F10( ir.hoover ) & ";" & LINE_BREAK;
+      s := s & "gini = " & F20( ir.gini ) & ";" & LINE_BREAK;
+      s := s & "hoover = " & F20( ir.hoover ) & ";" & LINE_BREAK;
       return TS( s );
    end To_String;
    
@@ -186,16 +186,20 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Gini( 
       ina    : Augmented_Quantile_Array ) return Real is
       lorenz : Real := 0.0;
-      lasta  : constant Augmented_Quantile := ina( ina'Last );
+      lasta  : Augmented_Quantile;
    begin
+      if ina'Length <= 0 then
+         return -1.0;
+      end if;
+      lasta := ina( ina'Last );
       for a of ina loop
-         Put_Line( "a.income_accum " & F10( a.income_accum ) & 
-                   " a.weighted_income " & F10( a.weighted_income ));
+         Put_Line( "a.income_accum " & F20( a.income_accum ) & 
+                   " a.weighted_income " & F20( a.weighted_income ));
          Inc( lorenz, a.weight*(2.0*a.income_accum - a.weighted_income) );
       end loop;       
-      Put_Line( "lorenz " & F10( lorenz ) & 
-                " lasta.income_accum " & F10( lasta.income_accum ) &
-                "lasta.popn_accum " & F10( lasta.popn_accum ));
+      Put_Line( "lorenz " & F20( lorenz ) & 
+                " lasta.income_accum " & F20( lasta.income_accum ) &
+                "lasta.popn_accum " & F20( lasta.popn_accum ));
       return 1.0 - ( lorenz/lasta.income_accum ) / lasta.popn_accum;
    end Make_Gini; 
    
@@ -241,7 +245,7 @@ package body Maths_Functions.Poverty_Inequality is
          Assert( gap > 0.0, "Gap should always be positive " );
          Inc( pov_rec.headcount, a.weight );
          Inc( pov_rec.gap, a.weight * gap/line );
-         Put_Line( "watts add " & F10( log( line/a.income )));
+         Put_Line( "watts add " & F20( log( line/a.income )));
          Inc( pov_rec.watts, a.weight*log( line/a.income ));
          for p in 0 .. 4 loop
             Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**p ));
