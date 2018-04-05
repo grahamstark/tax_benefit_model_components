@@ -70,8 +70,12 @@ package body Maths_Functions.Poverty_Inequality is
    begin
       s := s & "headcount = " & FS( pr.headcount ) & ";" & LINE_BREAK;
       s := s & "gap = " & FS( pr.gap ) & ";" & LINE_BREAK;
-      for i in 0 .. 4 loop
-         s := s & "foster_greer_thorndyke[ " & i'Img & " ] = " & FS( pr.foster_greer_thorndyke( i )) & ";" & LINE_BREAK;
+      for p in pr.foster_greer_thorndyke_alphas'Range loop
+         declare
+            as : String := FN( pr.foster_greer_thorndyke_alphas( p ), 5, 2 );
+         begin
+            s := s & "foster_greer_thorndyke[" & as & " ] = " & FS( pr.foster_greer_thorndyke( p )) & ";" & LINE_BREAK;
+         end;   
       end loop;
       s := s & "sen = " & FS( pr.sen ) & ";" & LINE_BREAK;
       s := s & "shorrocks = " & FS( pr.shorrocks ) & ";" & LINE_BREAK;
@@ -90,14 +94,14 @@ package body Maths_Functions.Poverty_Inequality is
       end loop;
       for i in ir.atkinson_es'Range loop
          declare
-            es : constant String := FN( ir.atkinson_es( i ), 4, 2 );
+            es : constant String := FN( ir.atkinson_es( i ), 5, 2 );
          begin
             s := s & "atkinson["& es & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
          end;
       end loop;
       for i in ir.generalised_entropy_alphas'Range loop
          declare
-            ea : constant String := FN( ir.generalised_entropy_alphas( i ), 4, 2 );
+            ea : constant String := FN( ir.generalised_entropy_alphas( i ), 5, 2 );
          begin
             s := s & "generalised_entropy[" & ea & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
          end;
@@ -246,8 +250,9 @@ package body Maths_Functions.Poverty_Inequality is
    function Make_Poverty( 
       ina    : Augmented_Quantile_Array; 
       line   : Real;
-      growth : Real := 0.0 ) return Poverty_Rec is
-      pov_rec           : Poverty_Rec;
+      growth : Real := 0.0;
+      foster_greer_thorndyke_alphas : Vector := DEFAULT_FGT_ALPHAS ) return Poverty_Rec is
+      pov_rec           : Poverty_Rec := Construct( foster_greer_thorndyke_alphas );
       gap               : Real;
       below_line        : Augmented_Quantile_Array := Make_All_Below_Line( ina, line );
    use Elementary_Functions;    
@@ -262,8 +267,12 @@ package body Maths_Functions.Poverty_Inequality is
          Inc( pov_rec.gap, a.weight * gap/line );
          Put_Line( "watts add " & FS( log( line/a.income )));
          Inc( pov_rec.watts, a.weight*log( line/a.income ));
-         for p in 0 .. 4 loop
-            Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**p ));
+         for p in pov_rec.foster_greer_thorndyke_alphas'Range loop
+            declare
+               alpha : Real := pov_rec.foster_greer_thorndyke_alphas( p );
+            begin
+               Inc( pov_rec.foster_greer_thorndyke( p ), a.weight*((gap/line)**alpha ));
+            end;
          end loop;
       end loop;
       
@@ -275,17 +284,26 @@ package body Maths_Functions.Poverty_Inequality is
       pov_rec.headcount := pov_rec.headcount/population;      
       pov_rec.gap := pov_rec.gap / population;
       
-      for p in pov_rec.foster_greer_thorndyke'Range loop
+      for p in pov_rec.foster_greer_thorndyke_alphas'Range loop
          pov_rec.foster_greer_thorndyke( p ) := pov_rec.foster_greer_thorndyke( p )/population; 
       end loop;
       
-      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 0 ), pov_rec.headcount ), 
-         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 0 )'Img & " vs " &
-         pov_rec.headcount'Img );
-      Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( 1 ), pov_rec.gap ), 
-         "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( 1 )'Img & " vs " &
-         pov_rec.gap'Img );
-
+      for p in pov_rec.foster_greer_thorndyke_alphas'Range loop
+         declare
+            alpha : Real := pov_rec.foster_greer_thorndyke_alphas( p );
+         begin
+            if alpha = 0.0 then
+               Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( p ), pov_rec.headcount ), 
+                  "mismatch hc/fgt(0) " &  pov_rec.foster_greer_thorndyke( p )'Img & " vs " &
+                  pov_rec.headcount'Img );
+            end if;
+            if alpha = 1.0 then
+               Assert( Nearly_Equal( pov_rec.foster_greer_thorndyke( p ), pov_rec.gap ), 
+                  "mismatch hc/fgt(1) " &  pov_rec.foster_greer_thorndyke( p )'Img & " vs " &
+                  pov_rec.gap'Img );
+            end if;
+         end;
+      end loop;
       --
       -- Gini of poverty gaps; see: WB pp 74-5
       -- FIXME: actually simpler to use quantile and then make aug. version
@@ -326,9 +344,11 @@ package body Maths_Functions.Poverty_Inequality is
    end Make_Poverty;
    
    function Make_Inequality( 
-      ina    : Augmented_Quantile_Array; 
-      summary : Summary_Array ) return Inequality_Rec is
-      ineq_rec : Inequality_Rec := Construct;
+      ina                        : Augmented_Quantile_Array; 
+      atkinson_es                : Vector := DEFAULT_ATKINSONS;  
+      generalised_entropy_alphas : Vector := DEFAULT_ENTROPIES ) return Inequality_Rec is
+         
+      ineq_rec : Inequality_Rec := Construct( atkinson_es, generalised_entropy_alphas );
       popn    : constant Real := ina( ina'Last ).popn_accum;
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
@@ -459,6 +479,13 @@ package body Maths_Functions.Poverty_Inequality is
       return ir;      
    end Construct;
     
+   function Construct( 
+      foster_greer_thorndyke_alphas : Vector := DEFAULT_FGT_ALPHAS ) return Poverty_Rec is
+      ip : Poverty_Rec( foster_greer_thorndyke_alphas'Last );
+   begin
+      ip.foster_greer_thorndyke_alphas := foster_greer_thorndyke_alphas;
+      return ip;
+   end Construct;
    
 
    

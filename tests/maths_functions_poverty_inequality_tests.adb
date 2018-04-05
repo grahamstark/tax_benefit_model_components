@@ -41,7 +41,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       Quantile_Sort( qa );
       To_Augmented_Quantile_Array( qa, aqa );
       summary := Make_Summary( aqa );
-      return Make_Inequality( aqa, summary );         
+      return Make_Inequality( aqa );         
    end Generate_Ineq;
    
    
