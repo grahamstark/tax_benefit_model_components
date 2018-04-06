@@ -134,8 +134,15 @@ package body Maths_Functions.Poverty_Inequality is
       s : Unbounded_String;
       alpha : Real := 0.0; -- fix this
    begin
-      for i in ir.theil'Range loop
-         s := s & "theil["&i'Img & " ] = " & FS( ir.theil(i)) & ";" & LINE_BREAK;
+      s := s & "gini = " & FS( ir.gini ) & ";" & LINE_BREAK;
+      s := s & "theil[0] L  = " & FS( ir.theil(0)) & ";" & LINE_BREAK;
+      s := s & "theil[1] T  = " & FS( ir.theil(1)) & ";" & LINE_BREAK;
+      for i in ir.generalised_entropy_alphas'Range loop
+         declare
+            ea : constant String := FN( ir.generalised_entropy_alphas( i ), 5, 2 );
+         begin
+            s := s & "generalised_entropy[" & ea & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
+         end;
       end loop;
       for i in ir.atkinson_es'Range loop
          declare
@@ -144,15 +151,7 @@ package body Maths_Functions.Poverty_Inequality is
             s := s & "atkinson["& es & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
          end;
       end loop;
-      for i in ir.generalised_entropy_alphas'Range loop
-         declare
-            ea : constant String := FN( ir.generalised_entropy_alphas( i ), 5, 2 );
-         begin
-            s := s & "generalised_entropy[" & ea & " ] = " & FS( ir.generalised_entropy(i)) & ";" & LINE_BREAK;
-         end;
-      end loop;
-      s := s & "gini = " & FS( ir.gini ) & ";" & LINE_BREAK;
-      s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
+      -- s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
       if ir.zero_or_negative_income_flag then
          s := s & "WARNING: zero or negative incomes encountered; Thiel indexes may be wrong " & LINE_BREAK;
       end if;
