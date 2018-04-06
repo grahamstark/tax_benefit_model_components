@@ -185,15 +185,21 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          ir9 : Inequality_Rec := Generate_Ineq( c9 );
          ir10k : Inequality_Rec := Generate_Ineq( c10k );
        begin
+         Put_Line( "ir1" );
          Put_Line( To_String( ir1 ));
+         Put_Line( "ir2" );
          Put_Line( To_String( ir2 ));
+         Put_Line( "ir3" );
          Put_Line( To_String( ir3 ));
+         Put_Line( "ir9" );
          Put_Line( To_String( ir9 ));
+         Put_Line( "ir10k" );
          Put_Line( To_String( ir10k ));
-         Assert( ir2 = ir1, "" );
-         Assert( ir3 = ir1, "" );
-         Assert( ir9 = ir1, "" );
-         Assert( ir10k = ir1, "" );
+         
+         Assert( Nearly_Equal( ir2, ir1 ), "ir1/=ir2" );
+         Assert( Nearly_Equal( ir3, ir1 ), "ir3/=ir1" );
+         Assert( Nearly_Equal( ir9, ir1 ), "ir9/=ir1" );
+         Assert( Nearly_Equal( ir10k, ir1 ), "ir10k/=ir1" );
       end; 
    end Test_WB_CH_6;
    
