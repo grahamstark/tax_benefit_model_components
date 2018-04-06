@@ -176,7 +176,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       
       for i in c10k'Range loop
          declare
-            p :positive := 1+(i mod 9);
+            p : Positive := 1+(i mod 9);
          begin
             c10k(i) := c9(p);
          end;
