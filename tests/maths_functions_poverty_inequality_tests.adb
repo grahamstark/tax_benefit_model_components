@@ -94,6 +94,20 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          c_b_pov : Poverty_Rec := Generate_Pov( country_b, line );
          c_b_2_pov : Poverty_Rec := Generate_Pov( country_b_2, line );
          c_c_pov : Poverty_Rec := Generate_Pov( country_c, line );
+         country_d : Quantile_Array := country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a &
+            country_a & country_a & country_a;
+         c_d_pov : Poverty_Rec := Generate_Pov( country_d, line );         
       begin
          --
          -- simple checks of weights
@@ -130,6 +144,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
            
          Assert( Nearly_Equal( c_a_pov, c_a_2_pov, 0.0001 ), "c_a/=c_a_2" );
          Assert( Nearly_Equal( c_b_pov, c_b_2_pov, 0.0001 ), "c_b/=c_b_2" );
+         Assert( Nearly_Equal( c_a_pov, c_d_pov, 0.0001 ), "c_a/=c_d" );
            
            
          Put_Line( "finished! c_a_pov = " & To_String( c_a_pov ));
@@ -146,12 +161,12 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    --    2. has N in wrong place for ge(2) - outside bracket
    --
    use MFP;
-      c1 : Quantile_Array( 1 .. 10 );
-      c3 : Quantile_Array := c1;
-      c9 : Quantile_Array( 1 .. 9 );
-      c10k : Quantile_Array( 1 .. 180_000 );
-      c64k : Quantile_Array( 1 .. 60_004 );
-      k : Natural := 0;
+      c1    : Quantile_Array( 1 .. 10 );
+      c3    : Quantile_Array := c1;
+      c9    : Quantile_Array( 1 .. 9 );
+      c180k : Quantile_Array( 1 .. 180_000 );
+      c64k  : Quantile_Array( 1 .. 60_004 );
+      k     : Natural := 0;
    begin
       -- c1 is the case in the table,with 1 weights
       c1( 1 ).income := 10.0;
@@ -165,7 +180,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c1( 9 ).income := 45.0;
       c1( 10 ).income := 90.0;
       
-      -- copy with 1 20 with weight 2
+      -- copy with 1 x 20 with weight 2
       c9( 1 ).income := 10.0;
       c9( 2 ).income := 15.0;
       c9( 3 ).income := 20.0;
@@ -184,11 +199,11 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       end loop;
       
       -- large repeat copy of c1, const weight
-      for i in c10k'Range loop
+      for i in c180k'Range loop
          declare
             p : Positive := 1+(i mod 9);
          begin
-            c10k(i) := c9(p);
+            c180k(i) := c9(p);
          end;
       end loop;
       
@@ -218,13 +233,13 @@ package body Maths_Functions_Poverty_Inequality_Tests is
             c1&c1&c1&c1&c1&c1&c1&c1&
             c1&c1&c1&c1&c1&c1&c1&c1&
             c1&c1&c1&c1&c1&c1&c1;
-         ir1 : Inequality_Rec := Generate_Ineq( c1 );
-         ir2 : Inequality_Rec := Generate_Ineq( c2 );
-         ir3 : Inequality_Rec := Generate_Ineq( c3 );
-         ir9 : Inequality_Rec := Generate_Ineq( c9 );
-         ir10k : Inequality_Rec := Generate_Ineq( c10k );
-         ir64k : Inequality_Rec := Generate_Ineq( c64k );
-       begin
+         ir1    : Inequality_Rec := Generate_Ineq( c1 );
+         ir2    : Inequality_Rec := Generate_Ineq( c2 );
+         ir3    : Inequality_Rec := Generate_Ineq( c3 );
+         ir9    : Inequality_Rec := Generate_Ineq( c9 );
+         ir180k : Inequality_Rec := Generate_Ineq( c180k );
+         ir64k  : Inequality_Rec := Generate_Ineq( c64k );
+       begin 
          Put_Line( "ir1" );
          Put_Line( To_String( ir1 ));
          Put_Line( "ir2" );
@@ -233,15 +248,15 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          Put_Line( To_String( ir3 ));
          Put_Line( "ir9" );
          Put_Line( To_String( ir9 ));
-         Put_Line( "ir10k" );
-         Put_Line( To_String( ir10k ));
+         Put_Line( "ir180k" );
+         Put_Line( To_String( ir180k ));
          Put_Line( "ir64k" );
          Put_Line( To_String( ir64k ));
          
          Assert( Nearly_Equal( ir2, ir1, 0.0001 ), "ir1/=ir2" );
          Assert( Nearly_Equal( ir3, ir1, 0.0001 ), "ir3/=ir1" );
          Assert( Nearly_Equal( ir9, ir1, 0.0001 ), "ir9/=ir1" );
-         Assert( Nearly_Equal( ir10k, ir1, 0.0001 ), "ir10k/=ir1" );
+         Assert( Nearly_Equal( ir180k, ir1, 0.0001 ), "ir180k/=ir1" );
          Assert( Nearly_Equal( ir64k, ir1, 0.0001 ), "ir64k/=ir1" );
       end; 
    end Test_WB_CH_6;

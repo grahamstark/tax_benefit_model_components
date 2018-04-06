@@ -310,7 +310,7 @@ package body Maths_Functions.Poverty_Inequality is
          Assert( gap > 0.0, "Gap should always be positive " );
          Inc( pov_rec.headcount, a.weight );
          Inc( pov_rec.gap, a.weight * gap/line );
-         Put_Line( "watts add " & FS( log( line/a.income )));
+         -- Put_Line( "watts add " & FS( log( line/a.income )));
          Inc( pov_rec.watts, a.weight*log( line/a.income ));
          for p in pov_rec.foster_greer_thorndyke_alphas'Range loop
             declare
