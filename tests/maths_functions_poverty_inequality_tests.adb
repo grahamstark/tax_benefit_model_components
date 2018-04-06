@@ -193,10 +193,13 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c64k( 60_003 ).weight := 10_000.0;
       c64k( 60_004 ).income := 90.0;
       c64k( 60_004 ).weight := 10_000.0;
-      
 
       declare
-         c2  : Quantile_Array := country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country;
+         c2  : Quantile_Array := country&country&country&country&country&
+            country&country&country&country&country&country&country&country&
+            country&country&country&country&country&country&country&country&
+            country&country&country&country&country&country&country&country&
+            country&country&country&country&country&country&country;
          ir1 : Inequality_Rec := Generate_Ineq( country );
          ir2 : Inequality_Rec := Generate_Ineq( c2 );
          ir3 : Inequality_Rec := Generate_Ineq( c3 );
