@@ -101,6 +101,8 @@ generic package Maths_Functions.Poverty_Inequality is
    
    function To_String( pr : Poverty_Rec ) return String;
    
+   function Nearly_Equal( p1:Poverty_Rec; p2 : Poverty_Rec'Class )return Boolean;
+   
    function Make_Poverty( 
       ina                           : Augmented_Quantile_Array; 
       line                          : Real;
@@ -129,6 +131,9 @@ generic package Maths_Functions.Poverty_Inequality is
    function Construct( 
       atkinson_es                : Vector := DEFAULT_ATKINSONS;  
       generalised_entropy_alphas : Vector := DEFAULT_ENTROPIES ) return Inequality_Rec;
+
+   function Nearly_Equal( p1: Inequality_Rec; p2 : Inequality_Rec'Class )return Boolean;
+   
    --
    -- growth should be (e.g.) 0.01 for 10% growth
    --
