@@ -193,7 +193,7 @@ package body Maths_Functions.Poverty_Inequality is
          outa( i ).popn_accum := cumulative_weight;
          outa( i ).income_accum := cumulative_income;
          -- fixme do we need this?
-         outa( i ).log := Log( ina( i ).income/ina( i ).weight );
+         -- outa( i ).log := Log( ina( i ).income/ina( i ).weight );
          if i > 1 then
             Assert( ina( i ).income >= ina( i -1 ).income, "incomes out of seq at " & i'Img ); 
             outa( i ).growth := exp( outa( i ).log - outa( i - 1 ).log );
@@ -353,8 +353,8 @@ package body Maths_Functions.Poverty_Inequality is
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
    begin
-      -- Put_Line( "y_bar " & FS( y_bar ));
-      -- Put_Line( "popn " & FS( popn ));
+      Put_Line( "y_bar " & FS( y_bar ));
+      Put_Line( "popn " & FS( popn ));
       
       for i in ineq_rec.atkinson_es'Range loop
          if ineq_rec.atkinson_es( i ) /= 1.0 then 
@@ -412,7 +412,7 @@ package body Maths_Functions.Poverty_Inequality is
             alpha : Real renames ineq_rec.generalised_entropy_alphas( i );
          begin
             ineq_rec.generalised_entropy( i ) := 
-               (1.0/(popn*alpha*(alpha-1.0))) * (ineq_rec.generalised_entropy( i ) - 1.0 );
+               (1.0/(alpha*(alpha-1.0))) * (pop_div*ineq_rec.generalised_entropy( i ) - 1.0 );
          end;
       end loop;
                              
@@ -420,6 +420,7 @@ package body Maths_Functions.Poverty_Inequality is
          declare
             e : Real renames ineq_rec.atkinson_es( i );
          begin
+            Put_Line( "ineq_rec.atkinson( i ) " & FS( ineq_rec.atkinson( i )));
             if e /= 1.0 then
                ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
             else

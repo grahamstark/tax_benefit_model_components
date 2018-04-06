@@ -35,13 +35,19 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    function Generate_Ineq( 
       qa : in out MFP.Quantile_Array ) return MFP.Inequality_Rec is
    use MFP;
-      aqa : Augmented_Quantile_Array( qa'Range );
+      -- Augmented_Quantile_Array_Access
+      aqa : Augmented_Quantile_Array_Access := new Augmented_Quantile_Array( qa'Range );
       summary : Summary_Array;
    begin
       Quantile_Sort( qa );
-      To_Augmented_Quantile_Array( qa, aqa );
-      summary := Make_Summary( aqa );
-      return Make_Inequality( aqa );         
+      To_Augmented_Quantile_Array( qa, aqa.all );
+      summary := Make_Summary( aqa.all );
+      declare
+        ir : Inequality_Rec := Make_Inequality( aqa.all );
+      begin
+        Free_Dataset( aqa );   
+        return ir;
+      end;
    end Generate_Ineq;
    
    
@@ -131,7 +137,12 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    -- WB Table 6.3
    use MFP;
       country : Quantile_Array( 1 .. 10 );
+      c3 : Quantile_Array := country;
+      c9 : Quantile_Array( 1 .. 9 );
+      c10k : Quantile_Array( 1 .. 180_000 );
    begin
+      
+   
       country( 1 ).income := 10.0;
       country( 2 ).income := 15.0;
       country( 3 ).income := 20.0;
@@ -142,11 +153,48 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       country( 8 ).income := 35.0;
       country( 9 ).income := 45.0;
       country( 10 ).income := 90.0;
+      c9( 1 ).income := 10.0;
+      c9( 2 ).income := 15.0;
+      c9( 3 ).income := 20.0;
+      c9( 3 ).weight := 2.0;
+      c9( 4 ).income := 25.0;
+      c9( 5 ).income := 40.0;
+      c9( 6 ).income := 30.0;
+      c9( 7 ).income := 35.0;
+      c9( 8 ).income := 45.0;
+      c9( 9 ).income := 90.0;
+      
+      c3 := country;
+      for c of c3 loop
+         c.weight := 10_000.0;
+      end loop;
+      
+      for i in c10k'Range loop
+         declare
+            p :positive := 1+(i mod 9);
+         begin
+            c10k(i) := c9(p);
+         end;
+      end loop;
+
       declare
-         ir : Inequality_Rec := Generate_Ineq( country );
-      begin
-         Put_Line( To_String( ir ));
-      end;
+         c2  : Quantile_Array := country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country;
+         ir1 : Inequality_Rec := Generate_Ineq( country );
+         ir2 : Inequality_Rec := Generate_Ineq( c2 );
+         ir3 : Inequality_Rec := Generate_Ineq( c3 );
+         ir9 : Inequality_Rec := Generate_Ineq( c9 );
+         ir10k : Inequality_Rec := Generate_Ineq( c10k );
+       begin
+         Put_Line( To_String( ir1 ));
+         Put_Line( To_String( ir2 ));
+         Put_Line( To_String( ir3 ));
+         Put_Line( To_String( ir9 ));
+         Put_Line( To_String( ir10k ));
+         Assert( ir2 = ir1, "" );
+         Assert( ir3 = ir1, "" );
+         Assert( ir9 = ir1, "" );
+         Assert( ir10k = ir1, "" );
+      end; 
    end Test_WB_CH_6;
    
     
