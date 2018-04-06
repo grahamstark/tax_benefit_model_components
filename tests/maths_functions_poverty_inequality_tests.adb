@@ -140,6 +140,8 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c3 : Quantile_Array := country;
       c9 : Quantile_Array( 1 .. 9 );
       c10k : Quantile_Array( 1 .. 180_000 );
+      c64k : Quantile_Array( 1 .. 60_004 );
+      k : Natural := 0;
    begin
       
    
@@ -176,6 +178,22 @@ package body Maths_Functions_Poverty_Inequality_Tests is
             c10k(i) := c9(p);
          end;
       end loop;
+      
+      for i in 1 .. 10_000 loop
+         for j in 1 .. 6 loop
+            k := k + 1;
+            c64k( k ) := country( j );
+         end loop;
+      end loop;
+      c64k( 60_001 ).income := 30.0;
+      c64k( 60_001 ).weight := 10_000.0;
+      c64k( 60_002 ).income := 35.0;
+      c64k( 60_002 ).weight := 10_000.0;
+      c64k( 60_003 ).income := 45.0;
+      c64k( 60_003 ).weight := 10_000.0;
+      c64k( 60_004 ).income := 90.0;
+      c64k( 60_004 ).weight := 10_000.0;
+      
 
       declare
          c2  : Quantile_Array := country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country&country;
@@ -184,6 +202,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          ir3 : Inequality_Rec := Generate_Ineq( c3 );
          ir9 : Inequality_Rec := Generate_Ineq( c9 );
          ir10k : Inequality_Rec := Generate_Ineq( c10k );
+         ir64k : Inequality_Rec := Generate_Ineq( c64k );
        begin
          Put_Line( "ir1" );
          Put_Line( To_String( ir1 ));
@@ -195,11 +214,14 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          Put_Line( To_String( ir9 ));
          Put_Line( "ir10k" );
          Put_Line( To_String( ir10k ));
+         Put_Line( "ir64k" );
+         Put_Line( To_String( ir64k ));
          
          Assert( Nearly_Equal( ir2, ir1, 0.0001 ), "ir1/=ir2" );
          Assert( Nearly_Equal( ir3, ir1, 0.0001 ), "ir3/=ir1" );
          Assert( Nearly_Equal( ir9, ir1, 0.0001 ), "ir9/=ir1" );
          Assert( Nearly_Equal( ir10k, ir1, 0.0001 ), "ir10k/=ir1" );
+         Assert( Nearly_Equal( ir64k, ir1, 0.0001 ), "ir64k/=ir1" );
       end; 
    end Test_WB_CH_6;
    
