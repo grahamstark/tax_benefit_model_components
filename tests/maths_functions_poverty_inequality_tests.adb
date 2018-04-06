@@ -134,7 +134,12 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    end Test_WB_CH_4;
    
    procedure Test_WB_CH_6( t : in out AUnit.Test_Cases.Test_Case'Class ) is
-   -- WB Table 6.3
+   -- reproduce WB Table 6.3 with various cominations ofweights & data
+   -- note table has errors:
+   -- 
+   --    1. uses log10 not ln for  theil 
+   --    2. has N in wrong place for ge(2) - outside bracket
+   --
    use MFP;
       country : Quantile_Array( 1 .. 10 );
       c3 : Quantile_Array := country;
@@ -143,8 +148,6 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c64k : Quantile_Array( 1 .. 60_004 );
       k : Natural := 0;
    begin
-      
-   
       country( 1 ).income := 10.0;
       country( 2 ).income := 15.0;
       country( 3 ).income := 20.0;
@@ -179,6 +182,9 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          end;
       end loop;
       
+      --
+      -- test with very unbalaced weights
+      --
       for i in 1 .. 10_000 loop
          for j in 1 .. 6 loop
             k := k + 1;
