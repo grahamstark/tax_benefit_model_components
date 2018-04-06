@@ -147,9 +147,9 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          Assert( Nearly_Equal( c_a_pov, c_d_pov, 0.0001 ), "c_a/=c_d" );
            
            
-         Put_Line( "finished! c_a_pov = " & To_String( c_a_pov ));
-         Put_Line( "finished! c_b_pov = " & To_String( c_b_pov ));
-         Put_Line( "finished! c_c_pov = " & To_String( c_c_pov ));
+         Put_Line( "c_a_pov " );Put_Line( To_String( c_a_pov ));
+         Put_Line( "c_b_pov = " );Put_Line( To_String( c_b_pov ));
+         Put_Line( "c_c_pov = " );Put_Line( To_String( c_c_pov ));
       end;
    end Test_WB_CH_4;
    
@@ -161,6 +161,7 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    --    2. has N in wrong place for ge(2) - outside bracket
    --
    use MFP;
+      -- all these datasets should produce near-identical inequalityresults.
       c1    : Quantile_Array( 1 .. 10 );
       c3    : Quantile_Array := c1;
       c9    : Quantile_Array( 1 .. 9 );
@@ -210,7 +211,6 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       --
       -- very unbalanced weights - 10,000 copies of c1(1..6),
       -- 1 copy of 7..10 with 10,000 weight each
-      -- should = c1
       -- 
       for i in 1 .. 10_000 loop
          for j in 1 .. 6 loop
@@ -228,6 +228,10 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c64k( 60_004 ).weight := 10_000.0;
 
       declare
+         --
+         -- 1st version of larger replicated dataset
+         -- I think " * 20 " should also work, but it didn't.
+         -- 
          c2  : Quantile_Array := c1&c1&c1&c1&c1&
             c1&c1&c1&c1&c1&c1&c1&c1&
             c1&c1&c1&c1&c1&c1&c1&c1&

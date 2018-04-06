@@ -125,6 +125,7 @@ package body Maths_Functions.Poverty_Inequality is
       s := s & "sen = " & FS( pr.sen ) & ";" & LINE_BREAK;
       s := s & "shorrocks = " & FS( pr.shorrocks ) & ";" & LINE_BREAK;
       s := s & "watts = " & FS( pr.watts ) & ";" & LINE_BREAK;
+      s := s & "time_to_exit = " & FS( pr.time_to_exit ) & ";" & LINE_BREAK;
       s := s & "gini_amongst_poor = " & FS( pr.gini_amongst_poor ) & ";" & LINE_BREAK;
       s := s & "poverty_gap_gini = " & FS( pr.poverty_gap_gini ) & ";" & LINE_BREAK;
       return TS( s );
@@ -151,7 +152,7 @@ package body Maths_Functions.Poverty_Inequality is
             s := s & "atkinson["& es & " ] = " & FS( ir.atkinson(i)) & ";" & LINE_BREAK;
          end;
       end loop;
-      -- s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
+      s := s & "hoover = " & FS( ir.hoover ) & ";" & LINE_BREAK;
       if ir.zero_or_negative_income_flag then
          s := s & "WARNING: zero or negative incomes encountered; Thiel indexes may be wrong " & LINE_BREAK;
       end if;
@@ -323,7 +324,7 @@ package body Maths_Functions.Poverty_Inequality is
       pov_rec.watts := pov_rec.watts/population; 
       
       if growth > 0.0 then -- no point otherwise ..
-         pov_rec.time_to_exit := pov_rec.watts/(1.0+growth );   
+         pov_rec.time_to_exit := pov_rec.watts/growth;   
       end if;
       pov_rec.headcount := pov_rec.headcount/population;      
       pov_rec.gap := pov_rec.gap / population;
@@ -392,10 +393,11 @@ package body Maths_Functions.Poverty_Inequality is
       atkinson_es                : Vector := DEFAULT_ATKINSONS;  
       generalised_entropy_alphas : Vector := DEFAULT_ENTROPIES ) return Inequality_Rec is
          
-      ineq_rec : Inequality_Rec := Construct( atkinson_es, generalised_entropy_alphas );
-      popn    : constant Real := ina( ina'Last ).popn_accum;
-      pop_div : constant Real := 1.0/popn;      
-      y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
+      ineq_rec     : Inequality_Rec := Construct( atkinson_es, generalised_entropy_alphas );
+      popn         : Real renames ina( ina'Last ).popn_accum;
+      pop_div      : constant Real := 1.0/popn;      
+      total_income : Real renames ina( ina'Last ).income_accum; 
+      y_bar        : constant Real := total_income * pop_div;
    begin
       -- Put_Line( "y_bar " & FS( y_bar ));
       -- Put_Line( "popn " & FS( popn ));
@@ -410,6 +412,7 @@ package body Maths_Functions.Poverty_Inequality is
       
       ineq_rec.gini := Make_Gini( ina );                                      
       for a of ina loop
+         
          if a.income > 0.0 then
             declare
                y_yb : constant Real := a.income/y_bar;
@@ -422,6 +425,7 @@ package body Maths_Functions.Poverty_Inequality is
                -- Put_Line( "y_yb " & FS( y_yb ));
                -- Put_Line( "yb_y " & FS( yb_y ));
                -- Put_Line( "ln_y_yb " & FS( ln_y_yb ));
+               Inc( ineq_rec.hoover,  a.weight*abs( a.income-y_bar ));
                Inc( ineq_rec.theil( 0 ), a.weight*ln_yb_y );
                Inc( ineq_rec.theil( 1 ), a.weight*y_yb*ln_y_yb );
                for i in ineq_rec.atkinson_es'Range loop
@@ -450,7 +454,7 @@ package body Maths_Functions.Poverty_Inequality is
             ineq_rec.zero_or_negative_income_flag := True;
          end if;
       end loop;
-      
+      ineq_rec.hoover := 0.5 * ineq_rec.hoover / total_income;
       for i in ineq_rec.generalised_entropy_alphas'Range loop
          declare
             alpha : Real renames ineq_rec.generalised_entropy_alphas( i );
