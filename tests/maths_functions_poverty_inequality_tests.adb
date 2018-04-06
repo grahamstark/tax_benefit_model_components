@@ -127,6 +127,11 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          
          Assert( Nearly_Equal( c_c_pov.watts, 0.087744, 0.00001 ), "Watts: p_c /= 0.087744 " 
            & To_String( c_c_pov )); 
+           
+         Assert( Nearly_Equal( c_a_pov, c_a_2_pov, 0.0001 ), "c_a/=c_a_2" );
+         Assert( Nearly_Equal( c_b_pov, c_b_2_pov, 0.0001 ), "c_b/=c_b_2" );
+           
+           
          Put_Line( "finished! c_a_pov = " & To_String( c_a_pov ));
          Put_Line( "finished! c_b_pov = " & To_String( c_b_pov ));
          Put_Line( "finished! c_c_pov = " & To_String( c_c_pov ));
