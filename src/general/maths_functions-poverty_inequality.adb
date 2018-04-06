@@ -16,7 +16,7 @@ package body Maths_Functions.Poverty_Inequality is
    
    package IIO is new Ada.Text_IO.Integer_IO( Integer );
    
-   function FN( r : Real; n : Positive; prec : Positive := 5 ) return String is
+   function FN( r : Real; n : Positive; prec : Positive := 7 ) return String is
       s : String( 1 .. n ) := ( others => ' ' );
    begin
       FIO.Put( s, r, prec, 0 );
@@ -47,21 +47,24 @@ package body Maths_Functions.Poverty_Inequality is
    begin
       if i1.num_atkinsons /= i2.num_atkinsons then return false; end if;
       if i1.num_entropies /= i2.num_entropies then return false; end if;
-      for i in 1 .. 2 loop
+      for i in 0 .. 1 loop
          if not Nearly_Equal( i1.theil(i), i2.theil(i), tol ) then return false; end if;
       end loop;
-      
+      -- Put_Line("#p1");
       for i in i1.generalised_entropy_alphas'Range loop
          if not Nearly_Equal( i1.generalised_entropy_alphas(i), i2.generalised_entropy_alphas(i), tol ) then return false; end if;
          if not Nearly_Equal( i1.generalised_entropy(i), i2.generalised_entropy(i), tol ) then return false; end if;
       end loop;
+      -- Put_Line("#p2");
       
       for i in i1.atkinson_es'Range loop
          if not Nearly_Equal( i1.atkinson_es(i), i2.atkinson_es(i), tol ) then return false; end if;
          if not Nearly_Equal( i1.atkinson(i), i2.atkinson(i), tol ) then return false; end if;
       end loop;
+      -- Put_Line("#p3");
       
       if not Nearly_Equal( i1.gini, i2.gini, tol ) then return false; end if;
+      -- Put_Line("#p4");
       if not Nearly_Equal( i1.hoover, i2.hoover, tol ) then return false; end if;
       return true;
    end Nearly_Equal;
@@ -395,8 +398,8 @@ package body Maths_Functions.Poverty_Inequality is
       pop_div : constant Real := 1.0/popn;      
       y_bar   : constant Real := ina( ina'Last ).income_accum*pop_div;
    begin
-      Put_Line( "y_bar " & FS( y_bar ));
-      Put_Line( "popn " & FS( popn ));
+      -- Put_Line( "y_bar " & FS( y_bar ));
+      -- Put_Line( "popn " & FS( popn ));
       
       for i in ineq_rec.atkinson_es'Range loop
          if ineq_rec.atkinson_es( i ) /= 1.0 then 
@@ -430,7 +433,7 @@ package body Maths_Functions.Poverty_Inequality is
                         Inc( ineq_rec.atkinson( i ), a.weight*( y_yb )**( 1.0 - e ));
                      else
                         -- Put_Line( "ATK times " & FS( ( a.income )**( pop_div )));
-                        ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( pop_div )); 
+                        ineq_rec.atkinson( i ) := ineq_rec.atkinson( i ) * (( a.income )**( a.weight*pop_div )); 
                      end if;
                   end;
                end loop;
@@ -462,7 +465,7 @@ package body Maths_Functions.Poverty_Inequality is
          declare
             e : Real renames ineq_rec.atkinson_es( i );
          begin
-            Put_Line( "ineq_rec.atkinson( i ) " & FS( ineq_rec.atkinson( i )));
+            -- Put_Line( "ineq_rec.atkinson( i ) " & FS( ineq_rec.atkinson( i )));
             if e /= 1.0 then
                ineq_rec.atkinson( i ) := 1.0 - ( pop_div*ineq_rec.atkinson( i ))**(1.0/(1.0-e));
             else

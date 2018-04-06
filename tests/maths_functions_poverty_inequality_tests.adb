@@ -196,10 +196,10 @@ package body Maths_Functions_Poverty_Inequality_Tests is
          Put_Line( "ir10k" );
          Put_Line( To_String( ir10k ));
          
-         Assert( Nearly_Equal( ir2, ir1 ), "ir1/=ir2" );
-         Assert( Nearly_Equal( ir3, ir1 ), "ir3/=ir1" );
-         Assert( Nearly_Equal( ir9, ir1 ), "ir9/=ir1" );
-         Assert( Nearly_Equal( ir10k, ir1 ), "ir10k/=ir1" );
+         Assert( Nearly_Equal( ir2, ir1, 0.0001 ), "ir1/=ir2" );
+         Assert( Nearly_Equal( ir3, ir1, 0.0001 ), "ir3/=ir1" );
+         Assert( Nearly_Equal( ir9, ir1, 0.0001 ), "ir9/=ir1" );
+         Assert( Nearly_Equal( ir10k, ir1, 0.0001 ), "ir10k/=ir1" );
       end; 
    end Test_WB_CH_6;
    
