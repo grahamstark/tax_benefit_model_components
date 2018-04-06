@@ -41,6 +41,48 @@ package body Maths_Functions.Poverty_Inequality is
    begin
       return Text_Utils.Trim( s );
    end FS;
+   
+
+   function Nearly_Equal( i1: Inequality_Rec; i2 : Inequality_Rec'Class; tol : Real := 0.00001 )return Boolean is
+   begin
+      if i1.num_atkinsons /= i2.num_atkinsons then return false; end if;
+      if i1.num_entropies /= i2.num_entropies then return false; end if;
+      for i in 1 .. 2 loop
+         if not Nearly_Equal( i1.theil(i), i2.theil(i), tol ) then return false; end if;
+      end loop;
+      
+      for i in i1.generalised_entropy_alphas'Range loop
+         if not Nearly_Equal( i1.generalised_entropy_alphas(i), i2.generalised_entropy_alphas(i), tol ) then return false; end if;
+         if not Nearly_Equal( i1.generalised_entropy(i), i2.generalised_entropy(i), tol ) then return false; end if;
+      end loop;
+      
+      for i in i1.atkinson_es'Range loop
+         if not Nearly_Equal( i1.atkinson_es(i), i2.atkinson_es(i), tol ) then return false; end if;
+         if not Nearly_Equal( i1.atkinson(i), i2.atkinson(i), tol ) then return false; end if;
+      end loop;
+      
+      if not Nearly_Equal( i1.gini, i2.gini, tol ) then return false; end if;
+      if not Nearly_Equal( i1.hoover, i2.hoover, tol ) then return false; end if;
+      return true;
+   end Nearly_Equal;
+   
+   function Nearly_Equal( p1:Poverty_Rec; p2 : Poverty_Rec'Class; tol : Real := 0.00001 )return Boolean is
+   begin
+      if p1.num_foster_greer_thorndyke_alphas /= p2.num_foster_greer_thorndyke_alphas then return false; end if;
+      if not Nearly_Equal( p1.headcount, p2.headcount, tol ) then return false; end if;
+      if not Nearly_Equal( p1.gap, p2.gap, tol ) then return false; end if;
+      for i in p1.foster_greer_thorndyke_alphas'Range loop
+         if not Nearly_Equal( p1.foster_greer_thorndyke_alphas(i), p2.foster_greer_thorndyke_alphas(i), tol ) then return false; end if;
+         if not Nearly_Equal( p1.foster_greer_thorndyke(i), p2.foster_greer_thorndyke(i), tol ) then return false; end if;
+      end loop;
+      if not Nearly_Equal( p1.sen, p2.sen, tol ) then return false; end if;
+      if not Nearly_Equal( p1.shorrocks, p2.shorrocks, tol ) then return false; end if;
+      if not Nearly_Equal( p1.watts, p2.watts, tol ) then return false; end if;
+      if not Nearly_Equal( p1.time_to_exit, p2.time_to_exit, tol ) then return false; end if;
+      if not Nearly_Equal( p1.gini_amongst_poor, p2.gini_amongst_poor, tol ) then return false; end if;
+      if not Nearly_Equal( p1.poverty_gap_gini, p2.poverty_gap_gini, tol ) then return false; end if;
+      return true;
+   end Nearly_Equal;
     
    function To_String( q : Quantile ) return String is
       s : Unbounded_String;
