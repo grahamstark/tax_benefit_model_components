@@ -146,23 +146,26 @@ package body Maths_Functions_Poverty_Inequality_Tests is
    --    2. has N in wrong place for ge(2) - outside bracket
    --
    use MFP;
-      country : Quantile_Array( 1 .. 10 );
-      c3 : Quantile_Array := country;
+      c1 : Quantile_Array( 1 .. 10 );
+      c3 : Quantile_Array := c1;
       c9 : Quantile_Array( 1 .. 9 );
       c10k : Quantile_Array( 1 .. 180_000 );
       c64k : Quantile_Array( 1 .. 60_004 );
       k : Natural := 0;
    begin
-      country( 1 ).income := 10.0;
-      country( 2 ).income := 15.0;
-      country( 3 ).income := 20.0;
-      country( 4 ).income := 25.0;
-      country( 5 ).income := 40.0;
-      country( 6 ).income := 20.0;
-      country( 7 ).income := 30.0;
-      country( 8 ).income := 35.0;
-      country( 9 ).income := 45.0;
-      country( 10 ).income := 90.0;
+      -- c1 is the case in the table,with 1 weights
+      c1( 1 ).income := 10.0;
+      c1( 2 ).income := 15.0;
+      c1( 3 ).income := 20.0;
+      c1( 4 ).income := 25.0;
+      c1( 5 ).income := 40.0;
+      c1( 6 ).income := 20.0;
+      c1( 7 ).income := 30.0;
+      c1( 8 ).income := 35.0;
+      c1( 9 ).income := 45.0;
+      c1( 10 ).income := 90.0;
+      
+      -- copy with 1 20 with weight 2
       c9( 1 ).income := 10.0;
       c9( 2 ).income := 15.0;
       c9( 3 ).income := 20.0;
@@ -174,11 +177,13 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c9( 8 ).income := 45.0;
       c9( 9 ).income := 90.0;
       
-      c3 := country;
+      -- copy with constant large weight 
+      c3 := c1;
       for c of c3 loop
          c.weight := 10_000.0;
       end loop;
       
+      -- large repeat copy of c1, const weight
       for i in c10k'Range loop
          declare
             p : Positive := 1+(i mod 9);
@@ -188,12 +193,14 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       end loop;
       
       --
-      -- test with very unbalaced weights
-      --
+      -- very unbalanced weights - 10,000 copies of c1(1..6),
+      -- 1 copy of 7..10 with 10,000 weight each
+      -- should = c1
+      -- 
       for i in 1 .. 10_000 loop
          for j in 1 .. 6 loop
             k := k + 1;
-            c64k( k ) := country( j );
+            c64k( k ) := c1( j );
          end loop;
       end loop;
       c64k( 60_001 ).income := 30.0;
@@ -206,12 +213,12 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       c64k( 60_004 ).weight := 10_000.0;
 
       declare
-         c2  : Quantile_Array := country&country&country&country&country&
-            country&country&country&country&country&country&country&country&
-            country&country&country&country&country&country&country&country&
-            country&country&country&country&country&country&country&country&
-            country&country&country&country&country&country&country;
-         ir1 : Inequality_Rec := Generate_Ineq( country );
+         c2  : Quantile_Array := c1&c1&c1&c1&c1&
+            c1&c1&c1&c1&c1&c1&c1&c1&
+            c1&c1&c1&c1&c1&c1&c1&c1&
+            c1&c1&c1&c1&c1&c1&c1&c1&
+            c1&c1&c1&c1&c1&c1&c1;
+         ir1 : Inequality_Rec := Generate_Ineq( c1 );
          ir2 : Inequality_Rec := Generate_Ineq( c2 );
          ir3 : Inequality_Rec := Generate_Ineq( c3 );
          ir9 : Inequality_Rec := Generate_Ineq( c9 );
