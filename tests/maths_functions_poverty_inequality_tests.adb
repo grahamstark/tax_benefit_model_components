@@ -23,19 +23,19 @@ package body Maths_Functions_Poverty_Inequality_Tests is
       qa : in out MFP.Quantile_Array; 
       line : Amount ) return MFP.Poverty_Rec is
    use MFP;
+      growth : constant Amount := 0.05;
       aqa : Augmented_Quantile_Array( qa'Range );
       summary : Summary_Array;
    begin
       Quantile_Sort( qa );
       To_Augmented_Quantile_Array( qa, aqa );
       summary := Make_Summary( aqa );
-      return Make_Poverty( aqa, line );         
+      return Make_Poverty( aqa, line, growth );         
    end Generate_Pov;
       
    function Generate_Ineq( 
       qa : in out MFP.Quantile_Array ) return MFP.Inequality_Rec is
    use MFP;
-      -- Augmented_Quantile_Array_Access
       aqa : Augmented_Quantile_Array_Access := new Augmented_Quantile_Array( qa'Range );
       summary : Summary_Array;
    begin
