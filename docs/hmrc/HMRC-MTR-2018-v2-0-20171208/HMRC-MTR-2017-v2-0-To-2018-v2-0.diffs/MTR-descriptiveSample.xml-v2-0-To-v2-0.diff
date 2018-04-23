@@ -1,0 +1,410 @@
+@@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<hd:GovTalkMessage xmlns:MTR='http://www.govtalk.gov.uk/taxation/SA/SA100/16-17/2' xmlns:dsig='http://www.w3.org/2000/09/xmldsig#' xmlns:hd='http://www.govtalk.gov.uk/CM/envelope'>
++<hd:GovTalkMessage xmlns:MTR='http://www.govtalk.gov.uk/taxation/SA/SA100/17-18/2' xmlns:dsig='http://www.w3.org/2000/09/xmldsig#' xmlns:hd='http://www.govtalk.gov.uk/CM/envelope'>
+   <hd:EnvelopeVersion>EnvelopeVersion</hd:EnvelopeVersion>
+   <hd:Header>
+     <hd:MessageDetails>
+       <hd:Class>Identifier to allow gateway to determine target department, queue and validation needed.</hd:Class>
+       <hd:Qualifier>eGIF Class qualifier</hd:Qualifier>
+@@
+           <MTR:GiltEdgeSecuritiesInterest>
+             <MTR:NetGiltInterest>Other income from UK savings (after tax taken off)</MTR:NetGiltInterest>
+             <MTR:TaxTakenOffGiltInterest>Other income from UK savings (tax taken off)</MTR:TaxTakenOffGiltInterest>
+             <MTR:GrossGiltInterest>Other income from UK savings (Gross)</MTR:GrossGiltInterest>
+           </MTR:GiltEdgeSecuritiesInterest>
+-<!--DESCRIPTION of following node: Life insurance gains-->
++<!--DESCRIPTION of following node: Gains from life insurance policies, capital redemption policies and life annuity contracts-->
+           <MTR:LifeInsuranceGains>
+ <!--DESCRIPTION of following node: Life insurance gains - insurance policies on which tax is treated as paid (amount of gain)-->
+             <MTR:LifeInsuranceGainsTaxTreatedAsPaid>
+-              <MTR:AmountOfGain>Gains on UK life insurance policies on which tax is treated as paid (amount of gain)</MTR:AmountOfGain>
++              <MTR:AmountOfGain>UK policy or contract gains on which tax was treated as paid – the amount of the gain</MTR:AmountOfGain>
+               <MTR:NumberOfYears>Gains on UK life insurance policies on which tax is treated as paid (number of years)</MTR:NumberOfYears>
+             </MTR:LifeInsuranceGainsTaxTreatedAsPaid>
+ <!--DESCRIPTION of following node: Life insurance gains - UK annuities and friendly societies where no tax paid ( amount of gain)-->
+             <MTR:LifeInsuranceGainsNoTaxTreatedAsPaid>
+-              <MTR:AmountOfGain>Gains on UK annuities and friendly societies where no tax paid ( amount of gain) </MTR:AmountOfGain>
++              <MTR:AmountOfGain>UK policy or contract gains where no tax was treated as paid – the amount of the gain</MTR:AmountOfGain>
+               <MTR:NumberOfYears>Gains on UK annuities and friendly societies where no tax paid (number of years) </MTR:NumberOfYears>
+             </MTR:LifeInsuranceGainsNoTaxTreatedAsPaid>
+ <!--DESCRIPTION of following node: Life insurance gains - UK annuities and friendly societies where no tax paid ( amount of gain)-->
+             <MTR:LifeInsuranceGainsFromVoidedISAs>
+-              <MTR:AmountOfGain>Gains on life insurance policies in ISAs made void (amount of gain)</MTR:AmountOfGain>
++              <MTR:AmountOfGain>UK policy or contract gains from voided ISAs</MTR:AmountOfGain>
+               <MTR:NumberOfYears>Gains on life insurance policies in ISAs made void (no of years)</MTR:NumberOfYears>
+             </MTR:LifeInsuranceGainsFromVoidedISAs>
+             <MTR:TaxTakenOffGainsFromVoidedISAs>Gains on life insurance policies in ISAs made void (tax taken off)</MTR:TaxTakenOffGainsFromVoidedISAs>
+             <MTR:DeficiencyRelief>Corresponding deficiency relief</MTR:DeficiencyRelief>
+           </MTR:LifeInsuranceGains>
+@@
+               <MTR:LumpSumPensionBenefitsInExcessOfALA>Pension benefits in excess of Available Allowance taken as a lump sum</MTR:LumpSumPensionBenefitsInExcessOfALA>
+               <MTR:NonlumpSumPensionBenefitsExceedingALA>Pension benefits in excess of Available Lifetime Allowance not taken as a lump sum</MTR:NonlumpSumPensionBenefitsExceedingALA>
+               <MTR:LifetimeAllowanceTaxPaid>Lifetime Allowance tax paid by your pension scheme</MTR:LifetimeAllowanceTaxPaid>
+               <MTR:AmountSavedExceedingAnnualAllowance>Amount saved towards pension in excess of the Annual Allowance</MTR:AmountSavedExceedingAnnualAllowance>
+               <MTR:AnnualAllowanceTaxPaidByPensionScheme>Annual Allowance tax paid by pension scheme</MTR:AnnualAllowanceTaxPaidByPensionScheme>
++              <MTR:PensionBenefitTransferredSubjectToOTC>Value of pension benefits transferred subject to the overseas transfer charge</MTR:PensionBenefitTransferredSubjectToOTC>
++              <MTR:TaxPaidByPensionSchemeOnOTC>Tax paid by your pension scheme on your overseas transfer charge</MTR:TaxPaidByPensionSchemeOnOTC>
+               <MTR:PensionSchemeTaxRef>Pension scheme tax reference</MTR:PensionSchemeTaxRef>
+               <MTR:UnauthorisedPaymentNotSubjectToSurcharge>Amount of unauthorised payment not subject to Surcharge</MTR:UnauthorisedPaymentNotSubjectToSurcharge>
+               <MTR:UnauthorisedPaymentSubjectToSurcharge>Amount of unauthorised payment subject to Surcharge</MTR:UnauthorisedPaymentSubjectToSurcharge>
+               <MTR:ForeignTaxPaidOnUnauthorisedPayment>Foreign tax paid on an unauthorised payment</MTR:ForeignTaxPaidOnUnauthorisedPayment>
+               <MTR:OverseasPensionContributionShortServiceRefund>Taxable short service refund from overseas pension</MTR:OverseasPensionContributionShortServiceRefund>
+-              <MTR:OverseasPensionLumpSumDeathBenefitPayment>Taxable lump sum death benefit from overseas pension scheme</MTR:OverseasPensionLumpSumDeathBenefitPayment>
+               <MTR:ForeignTaxPaid>Foreign tax paid </MTR:ForeignTaxPaid>
+             </MTR:PensionTaxAndLumpSums>
+ <!--DESCRIPTION of following node: Tax avoidance schemes-->
+             <MTR:TaxAvoidanceSchemes>
+               <MTR:TaxAvoidanceSchemeReferenceNumber>Tax Avoidance Schemes - reference number</MTR:TaxAvoidanceSchemeReferenceNumber>
+@@
+           </MTR:OtherInformation>
+ <!--DESCRIPTION of following node: Business income-->
+           <MTR:BusinessIncome>
+             <MTR:Turnover>Sales/business income</MTR:Turnover>
+             <MTR:OtherBusinessIncome>Other income/profits</MTR:OtherBusinessIncome>
++            <MTR:TradingIncomeAllowance>Amount of trading income allowance claimed</MTR:TradingIncomeAllowance>
+           </MTR:BusinessIncome>
+ <!--DESCRIPTION of following node: Business expenses-->
+           <MTR:BusinessExpenses>
+ <!--DESCRIPTION of following node: Total expenses-->
+             <MTR:TotalExpenses>
+@@
+           <MTR:CapitalAllowances>
+             <MTR:AnnualInvestmentAllowance>Annual Investment Allowance</MTR:AnnualInvestmentAllowance>
+             <MTR:AnnualAllowancesAtHigherRate>Annual allowances at higher rate</MTR:AnnualAllowancesAtHigherRate>
+             <MTR:AnnualAllowancesAtLowerRate>Annual allowances at lower rate</MTR:AnnualAllowancesAtLowerRate>
+             <MTR:ZeroEmissionGoodsVehicleAllowance>Zero-emission goods vehicle allowance</MTR:ZeroEmissionGoodsVehicleAllowance>
+-            <MTR:BusinessPremisesRenovationAllowance>Business Premises Renovation Allowance</MTR:BusinessPremisesRenovationAllowance>
+             <MTR:OtherCapitalAllowances>Other capital allowances claimed this year</MTR:OtherCapitalAllowances>
+             <MTR:BalancingAllowancesOnSaleOrCessation>Allowances on sale of cessation of business</MTR:BalancingAllowancesOnSaleOrCessation>
+             <MTR:TotalCapitalAllowances>Total allowances</MTR:TotalCapitalAllowances>
+-            <MTR:ChargesOnCessationOfBusiness>Charges on cessation of business</MTR:ChargesOnCessationOfBusiness>
+-            <MTR:TotalBalancingCharges>Total charges on sale or cessation</MTR:TotalBalancingCharges>
++            <MTR:TotalBalancingCharges>Balancing charges on sale or cessation (including BPRA)</MTR:TotalBalancingCharges>
+           </MTR:CapitalAllowances>
+ <!--DESCRIPTION of following node: Taxable profit or loss-->
+           <MTR:TaxableProfitOrLoss>
+             <MTR:OwnGoodsAndServices>Personal Use</MTR:OwnGoodsAndServices>
+             <MTR:AdditionsToNetProfitDeductionsFromNetLoss>Total additions to net profit</MTR:AdditionsToNetProfitDeductionsFromNetLoss>
+@@
+           </MTR:BusinessDetails>
+ <!--DESCRIPTION of following node: Business income-->
+           <MTR:BusinessIncome>
+             <MTR:Turnover>Sales/business income</MTR:Turnover>
+             <MTR:OtherBusinessIncome>Other income/profits</MTR:OtherBusinessIncome>
++            <MTR:TradingIncomeAllowance>Amount of trading income allowance claimed</MTR:TradingIncomeAllowance>
+           </MTR:BusinessIncome>
+ <!--DESCRIPTION of following node: Allowable business expenses-->
+           <MTR:AllowableBusinessExpenses>
+             <MTR:CostOfGoods>Cost of sales</MTR:CostOfGoods>
+             <MTR:CarVanAndTravelExpenses>Motor expenses</MTR:CarVanAndTravelExpenses>
+@@
+ <!--DESCRIPTION of following node: UK interest-->
+             <MTR:UKInterest>
+               <MTR:BankEtcAndGiltUntaxedInterest>Interest on gilts from UK banks or building societies</MTR:BankEtcAndGiltUntaxedInterest>
+               <MTR:AccruedIncomeSchemeAggregateAmount>Accrued income scheme aggregrate amount</MTR:AccruedIncomeSchemeAggregateAmount>
+               <MTR:TaxedUnitTrustEtcInterest>Interest from UK unit trusts etc. and any other income from UK savings and investments</MTR:TaxedUnitTrustEtcInterest>
+-              <MTR:TaxTakenOff>Tax deducted</MTR:TaxTakenOff>
++              <MTR:TaxTakenOff>Tax taken off</MTR:TaxTakenOff>
+               <MTR:TotalUKInterestAndTaxTakenOff>Total UK interest and tax deducted</MTR:TotalUKInterestAndTaxTakenOff>
+             </MTR:UKInterest>
+ <!--DESCRIPTION of following node: UK dividends-->
+             <MTR:UKDividends>
+               <MTR:StockDividendsAmountReceived>Stock dividends from UK companies </MTR:StockDividendsAmountReceived>
+-              <MTR:StockDividendsTaxCredit>Notional income tax on stock dividends from UK companies </MTR:StockDividendsTaxCredit>
+               <MTR:BonusIssuesOfSecuritiesAndRedeemableShares>Bonus issues of securities and redeemable shares</MTR:BonusIssuesOfSecuritiesAndRedeemableShares>
+               <MTR:OtherDistributionsAmountReceived>Other dividends and distributions from UK companies - the amount received</MTR:OtherDistributionsAmountReceived>
+-              <MTR:OtherDistributionsTaxCredit>Dividends/distributions from UK companies - Tax credit</MTR:OtherDistributionsTaxCredit>
+-              <MTR:TotalUKDividendsAndDistributions>Total dividends/distributions plus credit </MTR:TotalUKDividendsAndDistributions>
++              <MTR:TotalUKDividendsAndDistributions>Total UK company dividends &amp; distributions </MTR:TotalUKDividendsAndDistributions>
+             </MTR:UKDividends>
+           </MTR:UKIncome>
+ <!--DESCRIPTION of following node: Foreign sources income from assets in personal funds at Lloyd's-->
+           <MTR:ForeignIncome>
+ <!--DESCRIPTION of following node: Interest-->
+             <MTR:Interest>
+               <MTR:ForeignInterestEtcAmount>Non UK interest/other foreign source income net amount received </MTR:ForeignInterestEtcAmount>
+-              <MTR:ForeignTaxDeducted>Amount of foreign tax deducted</MTR:ForeignTaxDeducted>
+-              <MTR:UKTaxDeducted>Amount of UK tax deducted</MTR:UKTaxDeducted>
++              <MTR:ForeignTaxDeducted>Amount of foreign tax taken off</MTR:ForeignTaxDeducted>
++              <MTR:UKTaxDeducted>Amount of UK tax taken off</MTR:UKTaxDeducted>
+             </MTR:Interest>
+ <!--DESCRIPTION of following node: Dividends-->
+             <MTR:Dividends>
+-              <MTR:NonUKDividendsAmount>Dividends from overseas sources - Net Income/Dividends </MTR:NonUKDividendsAmount>
+-              <MTR:ForeignTaxDeducted>Foreign tax taken off from dividends from overseas sources </MTR:ForeignTaxDeducted>
+-              <MTR:UKTaxDeducted>UK tax taken off from dividends from overseas sources </MTR:UKTaxDeducted>
+-              <MTR:TotalNonUKIncome>Dividends from overseas sources before tax taken off </MTR:TotalNonUKIncome>
++              <MTR:NonUKDividendsAmount>Non-UK dividends - Amount received</MTR:NonUKDividendsAmount>
++              <MTR:ForeignTaxDeducted>Amount of foreign tax taken off</MTR:ForeignTaxDeducted>
++              <MTR:UKTaxDeducted>Amount of Special Withholding tax or UK tax taken off</MTR:UKTaxDeducted>
++              <MTR:TotalNonUKIncome>Total non-UK income</MTR:TotalNonUKIncome>
+             </MTR:Dividends>
+           </MTR:ForeignIncome>
+-          <MTR:AmountNonQualifyingForUKTaxCredit>Amount received (before 6 April 2016) and tax taken off it that does not qualify for dividend tax credit</MTR:AmountNonQualifyingForUKTaxCredit>
+ <!--DESCRIPTION of following node: Other receipts-->
+           <MTR:OtherReceipts>
+             <MTR:AggregateSyndicateProfits>Syndicate Profits</MTR:AggregateSyndicateProfits>
+             <MTR:SpecialReserveFundNetWithdrawalRelease>Net withdrawal/release from SRF</MTR:SpecialReserveFundNetWithdrawalRelease>
+             <MTR:StopLossRecoveries>Stop Loss recoveries</MTR:StopLossRecoveries>
+@@
+           <MTR:PartnershipDetails>
+             <MTR:PartnershipReferenceNumber>Partnership reference number</MTR:PartnershipReferenceNumber>
+             <MTR:PartnershipDescription>Partnership Trade or profession</MTR:PartnershipDescription>
+             <MTR:DateJoinedPartnership>Date started as a partner (If during year of Return)</MTR:DateJoinedPartnership>
+             <MTR:DateLeftPartnership>Date stopped being a partner  (If during year of Return)</MTR:DateLeftPartnership>
+-            <MTR:CashBasis>Cash basis</MTR:CashBasis>
++            <MTR:CashBasis>Partnership used cash basis for trading and professional profits</MTR:CashBasis>
+           </MTR:PartnershipDetails>
+ <!--DESCRIPTION of following node: Your share of the partnership's trading or professional profits-->
+           <MTR:ShareOfProfits>
+             <MTR:DateBasisPeriodBegan>Income tax basis period begins</MTR:DateBasisPeriodBegan>
+             <MTR:DateBasisPeriodEnded>Income tax basis period ends</MTR:DateBasisPeriodEnded>
+@@
+             <MTR:ChangeOfAccountingPracticeAdjustment>This year's instalment of adjustment on withdrawal of cash basis, or other adjustment for change of basis</MTR:ChangeOfAccountingPracticeAdjustment>
+             <MTR:AveragingAdjustment>Adjustment for farmers’ averaging</MTR:AveragingAdjustment>
+             <MTR:ForeignTaxClaimedAsDeduction>Total tax credit relief on your income</MTR:ForeignTaxClaimedAsDeduction>
+             <MTR:OverlapReliefUsed>Overlap used</MTR:OverlapReliefUsed>
+             <MTR:OverlapProfitCarriedForward>Overlap CF</MTR:OverlapProfitCarriedForward>
+-            <MTR:PartnersShareOfBPRA>Partner's share of BPRA</MTR:PartnersShareOfBPRA>
+             <MTR:AdjustedProfitForYear>Adjusted Profit</MTR:AdjustedProfitForYear>
+             <MTR:LossesBroughtForward>Losses brought forward from last year used this year</MTR:LossesBroughtForward>
+             <MTR:TaxableProfitsAfterLosses>Taxable profit after losses brought forward</MTR:TaxableProfitsAfterLosses>
+             <MTR:OtherBusinessIncome>Add amounts not included in the partnership accounts</MTR:OtherBusinessIncome>
+             <MTR:TotalTaxableBusinessProfits>Total taxable profits from this business</MTR:TotalTaxableBusinessProfits>
+@@
+               <MTR:BasisPeriodAdjustment>Adjustment to profit or loss for basis period</MTR:BasisPeriodAdjustment>
+               <MTR:LossBroughtForward>UK Land &amp; Property - Loss Brought Forward</MTR:LossBroughtForward>
+               <MTR:LossForYearSetOffAgainstOtherIncome>Loss offset against total income</MTR:LossForYearSetOffAgainstOtherIncome>
+               <MTR:LossToBeCarriedForward>UK Land &amp; Property - Loss Carried Forward</MTR:LossToBeCarriedForward>
+               <MTR:TaxableProfitsAfterAdjustmentAndLosses>Taxable profit after losses (UK land and property)</MTR:TaxableProfitsAfterAdjustmentAndLosses>
++              <MTR:ResidentialFinanceCosts>Residential finance costs</MTR:ResidentialFinanceCosts>
+             </MTR:UKPropertyIncome>
+             <MTR:ShareOfFHLProfit>Share of FHL profit</MTR:ShareOfFHLProfit>
+             <MTR:AdjustmentsToFHLProfit>Adjustments to FHL profit</MTR:AdjustmentsToFHLProfit>
+             <MTR:TaxableFHLProfit>Taxable FHL profit</MTR:TaxableFHLProfit>
+ <!--DESCRIPTION of following node: Other untaxed UK income-->
+@@
+               <MTR:ForeignLosses>
+                 <MTR:ShareOfLossFromOtherUntaxedForeignIncome>Other Untaxed Foreign Income - Allocated Loss</MTR:ShareOfLossFromOtherUntaxedForeignIncome>
+                 <MTR:BasisPeriodAdjustment>Other Untaxed Foreign Income - Adjustment to Loss For Basis Period</MTR:BasisPeriodAdjustment>
+                 <MTR:TotalLossToCarryForward>Other Untaxed Foreign Income - Loss Carried Forward</MTR:TotalLossToCarryForward>
+               </MTR:ForeignLosses>
++              <MTR:ResidentialFinanceCosts>Residential finance costs</MTR:ResidentialFinanceCosts>
+             </MTR:OtherUntaxedForeignIncome>
+ <!--DESCRIPTION of following node: total untaxed income-->
+             <MTR:TotalUntaxedIncome>
+               <MTR:TotalUntaxedIncome>Untaxed Income</MTR:TotalUntaxedIncome>
+               <MTR:OverlapReliefUsed>Overlap relief used</MTR:OverlapReliefUsed>
+@@
+             <MTR:ChangeOfAccountingPracticeAdjustment>This year's instalment of adjustment on withdrawal of cash basis, or other adjustment for change of basis</MTR:ChangeOfAccountingPracticeAdjustment>
+             <MTR:AveragingAdjustment>Adjustment for farmers’ averaging</MTR:AveragingAdjustment>
+             <MTR:ForeignTaxClaimedAsDeduction>Foreign tax claimed as a deduction</MTR:ForeignTaxClaimedAsDeduction>
+             <MTR:OverlapReliefUsed>Overlap used</MTR:OverlapReliefUsed>
+             <MTR:OverlapProfitCarriedForward>Overlap CF</MTR:OverlapProfitCarriedForward>
+-            <MTR:PartnersShareOfBPRA>Partner's share of BPRA</MTR:PartnersShareOfBPRA>
+             <MTR:AdjustedProfitForYear>Adjusted profit</MTR:AdjustedProfitForYear>
+             <MTR:LossesBroughtForward>Losses brought forward from last year used this year</MTR:LossesBroughtForward>
+             <MTR:TaxableProfitsAfterLosses>Taxable profit after losses brought forward</MTR:TaxableProfitsAfterLosses>
+             <MTR:OtherBusinessIncome>Add amounts not included in the partnership accounts</MTR:OtherBusinessIncome>
+             <MTR:TotalTaxableBusinessProfits>Total taxable profits from this business</MTR:TotalTaxableBusinessProfits>
+@@
+ <!--the following siblings are subject to a 'choice', please refer to the schema-->
+             <MTR:Class4NICexempt>Tick this box if you are Class 4 exempt</MTR:Class4NICexempt>
+             <MTR:AdjustmentToClass4NICProfits>Adjustment to profit chargeable to Class 4 National Insurance</MTR:AdjustmentToClass4NICProfits>
+ <!--end of 'choice'-->
+           </MTR:NICs>
+-          <MTR:ShareOfUntaxedInterestEtc>Your share of untaxed interest etc</MTR:ShareOfUntaxedInterestEtc>
++          <MTR:ShareOfUntaxedInterestEtc>Your share of untaxed interest</MTR:ShareOfUntaxedInterestEtc>
+ <!--DESCRIPTION of following node: Your share of the partnership tax paid-->
+           <MTR:ShareOfPartnershipsTaxPaid>
+             <MTR:ShareOfTaxTakenOffByContractors>Share of /CIS25 deductions</MTR:ShareOfTaxTakenOffByContractors>
+             <MTR:ShareOfTaxTakenOffTradingIncome>Share of tax deducted from trading income (not /CIS25)</MTR:ShareOfTaxTakenOffTradingIncome>
+           </MTR:ShareOfPartnershipsTaxPaid>
+@@
+             <MTR:RentARoomReliefClaim>Claiming Rent a Room relief</MTR:RentARoomReliefClaim>
+           </MTR:UKPropertyDetails>
+ <!--DESCRIPTION of following node: Furnished holiday lettings-->
+           <MTR:FurnishedHolidayLettings>
+             <MTR:FurnishedHolidayLettingsIncome>Income from furnished holiday lettings</MTR:FurnishedHolidayLettingsIncome>
++            <MTR:PropertyIncomeAllowance>Amount of property income allowance claimed</MTR:PropertyIncomeAllowance>
++            <MTR:TraditionalAccounting>Used traditional accounting rather than cash basis to calculate income and expenses</MTR:TraditionalAccounting>
+             <MTR:FurnishedHolidayLettingsExpenses>Rent rates insurances and ground rents etc.</MTR:FurnishedHolidayLettingsExpenses>
+             <MTR:FurnishedHolidayLettingsInterestEtcCosts>Finance charges including interest</MTR:FurnishedHolidayLettingsInterestEtcCosts>
+             <MTR:FurnishedHolidayLettingsManagementEtcFees>Legal and professional costs</MTR:FurnishedHolidayLettingsManagementEtcFees>
+             <MTR:FurnishedHolidayLettingsOtherExpenses>Other expenses</MTR:FurnishedHolidayLettingsOtherExpenses>
+             <MTR:PrivateUseAdjustment>Private use proportions</MTR:PrivateUseAdjustment>
+@@
+             <MTR:PeriodOfGraceElection>Furnished lets period of grace election</MTR:PeriodOfGraceElection>
+           </MTR:FurnishedHolidayLettings>
+ <!--DESCRIPTION of following node: Property income and expenses-->
+           <MTR:PropertyIncomeAndExpenses>
+             <MTR:TotalRentsAndOtherIncomeFromProperty>Total rents and other income including furnished holiday lettings</MTR:TotalRentsAndOtherIncomeFromProperty>
++            <MTR:PropertyIncomeAllowance>Amount of property income allowance claimed</MTR:PropertyIncomeAllowance>
++            <MTR:TraditionalAccounting>Used traditional accounting rather than cash basis to calculate income and expenses</MTR:TraditionalAccounting>
+             <MTR:TaxTakenOffAnyIncome>Tax taken off</MTR:TaxTakenOffAnyIncome>
+             <MTR:PremiumsForGrantOfALease>Chargeable premium</MTR:PremiumsForGrantOfALease>
+             <MTR:ReversePremiumsAndInducements>Reverse Premiums</MTR:ReversePremiumsAndInducements>
+             <MTR:RentRatesInsuranceEtc>Rent rates insurance ground rents etc.</MTR:RentRatesInsuranceEtc>
+             <MTR:RepairsAndMaintenance>Repairs and maintenance</MTR:RepairsAndMaintenance>
+@@
+ <!--DESCRIPTION of following node: Calculating your taxable profit or loss-->
+           <MTR:TaxableProfitOrLoss>
+             <MTR:PrivateUseAdjustment>Private use proportions</MTR:PrivateUseAdjustment>
+             <MTR:BalancingCharges>Balancing charges</MTR:BalancingCharges>
+             <MTR:AnnualInvestmentAllowance>Investment allowance</MTR:AnnualInvestmentAllowance>
+-            <MTR:BusinessPremisesRenovationAllowance>Business Premises Renovation Allowance</MTR:BusinessPremisesRenovationAllowance>
+             <MTR:ZeroEmissionGoodsVehicleAllowance>Zero-emission goods vehicle allowance</MTR:ZeroEmissionGoodsVehicleAllowance>
+             <MTR:EnhancedCapitalAllowances>Capital allowances</MTR:EnhancedCapitalAllowances>
+             <MTR:CostsOfReplacingDomesticItems>Costs of replacing domestic items - for residential lettings only</MTR:CostsOfReplacingDomesticItems>
+             <MTR:RentARoomExemptAmount>Rent a room exempt amount</MTR:RentARoomExemptAmount>
+-            <MTR:AdjustedProfitForTheYear>Adjusted Profit for year</MTR:AdjustedProfitForTheYear>
++            <MTR:AdjustedProfitForTheYear>Adjusted Profit for the year</MTR:AdjustedProfitForTheYear>
+             <MTR:LossBroughtForward>Loss B/F from P/Y</MTR:LossBroughtForward>
+             <MTR:TaxableProfitForTheYear>Taxable Profit</MTR:TaxableProfitForTheYear>
+             <MTR:AdjustedLossForTheYear>Adjusted loss for the year</MTR:AdjustedLossForTheYear>
+             <MTR:LossSetOffAgainstTotalIncomeOfTheYear>Loss set off against total income of the year</MTR:LossSetOffAgainstTotalIncomeOfTheYear>
+             <MTR:LossToCarryForward>Loss to carry forward to following year</MTR:LossToCarryForward>
++            <MTR:ResidentialFinanceCosts>Residential finance costs</MTR:ResidentialFinanceCosts>
+           </MTR:TaxableProfitOrLoss>
+         </MTR:SA105>
+ <!--DESCRIPTION of following node: Foreign-->
+         <MTR:SA106>
+           <MTR:UnremittableIncome>Unremittable Income sig</MTR:UnremittableIncome>
+@@
+             <MTR:Totals>
+               <MTR:SWTOrUKTax>Standard decimal type</MTR:SWTOrUKTax>
+               <MTR:TaxableAmount>Standard decimal type</MTR:TaxableAmount>
+             </MTR:Totals>
+           </MTR:OverseasTrustIncome>
+-<!--DESCRIPTION of following node: Container FIG-INCOME-LET-PROPERTY boxes [FOR14] to [FOR24]  and [FOR30A] - [FOR30F]-->
++          <MTR:ResidentialPropertyIncomeOrRestrictedFinanceCosts>Amount of residential property income or restricted finance costs</MTR:ResidentialPropertyIncomeOrRestrictedFinanceCosts>
++<!--DESCRIPTION of following node: Container [FOR14-FOR24.1 / FOR30A-FOR30F] boxes [FOR14] to [FOR24.1] and [FOR30A] - [FOR30F]-->
+           <MTR:OverseasLandAndPropertyIncomeDetails>
+             <MTR:TotalRentsAndOtherPropertyReceipts>Total rents and receipts</MTR:TotalRentsAndOtherPropertyReceipts>
++            <MTR:PropertyIncomeAllowance>Amount of property income allowance claimed</MTR:PropertyIncomeAllowance>
++            <MTR:TraditionalAccounting>Used traditional accounting rather than cash basis to calculate income and expenses</MTR:TraditionalAccounting>
+             <MTR:NumberOfProperties>Number of properties</MTR:NumberOfProperties>
+             <MTR:PremiumsPaidForLease>Premuims Paid</MTR:PremiumsPaidForLease>
+             <MTR:PropertyExpenses>Total expenditure</MTR:PropertyExpenses>
+             <MTR:NetProfitOrLoss>Net profit/loss</MTR:NetProfitOrLoss>
+             <MTR:PrivateUseAdjustment>Private use adjustments</MTR:PrivateUseAdjustment>
+             <MTR:BalancingCharges>Balancing charges</MTR:BalancingCharges>
+             <MTR:CapitalAllowances>Capital allowances</MTR:CapitalAllowances>
+             <MTR:ZeroEmissionGoodsVehicleAllowance>Zero-emission goods vehicle allowance</MTR:ZeroEmissionGoodsVehicleAllowance>
+             <MTR:CostsOfReplacingDomesticItems>Costs of replacing domestic items - for residential lettings only</MTR:CostsOfReplacingDomesticItems>
+             <MTR:AdjustedProfitOrLossForTheYear>Adjusted profit/loss</MTR:AdjustedProfitOrLossForTheYear>
++            <MTR:ResidentialFinanceCosts>Residential finance costs</MTR:ResidentialFinanceCosts>
+             <MTR:PropertyAbroadCountry>Property abroad - Country</MTR:PropertyAbroadCountry>
+             <MTR:PropertyAbroadProfitOrLoss>Property abraod - profit or loss</MTR:PropertyAbroadProfitOrLoss>
+             <MTR:PropertyAbroadForeignTax>Property abroad - Foreign Tax</MTR:PropertyAbroadForeignTax>
+             <MTR:PropertyAbroadSpecialWithholdingTax>Property abroad - special withholding tax</MTR:PropertyAbroadSpecialWithholdingTax>
+             <MTR:PropertyAbroadClaimToFTCR>Property abroad - Claim to FTCR</MTR:PropertyAbroadClaimToFTCR>
+@@
+           </MTR:CapitalGains>
+ <!--DESCRIPTION of following node: Other overseas income and gains-->
+           <MTR:OtherOverseasIncomeAndGains>
+             <MTR:OffshoreFundGainsAndNonResidentTrustIncome>Gains from Offshore funds and discretionary payment</MTR:OffshoreFundGainsAndNonResidentTrustIncome>
+             <MTR:BenefitsFromOverseasTrustsEtc>Benefit from overseas trust or other entity</MTR:BenefitsFromOverseasTrustsEtc>
+-            <MTR:ForeignLifeInsuranceGains>Gains on Life Insurance Policies</MTR:ForeignLifeInsuranceGains>
++            <MTR:ForeignLifeInsuranceGains>Gains on Life Insurance Policies, capital redemption policies and life annuity contracts</MTR:ForeignLifeInsuranceGains>
+             <MTR:NumberOfYearsSincePolicyMade>Number of years </MTR:NumberOfYearsSincePolicyMade>
+             <MTR:TaxTreatedAsPaid>Tax on Gain</MTR:TaxTreatedAsPaid>
+             <MTR:OmittedAmountTransferOfAssetsExemption>Omitted income</MTR:OmittedAmountTransferOfAssetsExemption>
+           </MTR:OtherOverseasIncomeAndGains>
+         </MTR:SA106>
+@@
+               <MTR:DiscretionaryIncomePaymentNetAmount>Discretionary income payment from a trust. Net amount</MTR:DiscretionaryIncomePaymentNetAmount>
+               <MTR:PaymentsFromSettlorInterestedTrusts>Total payments in tax year from settlor interested trusts</MTR:PaymentsFromSettlorInterestedTrusts>
+             </MTR:DiscretionaryIncomePayment>
+ <!--DESCRIPTION of following node: Non-discretionary income entitlement from trusts-->
+             <MTR:NondiscretionaryIncomeEntitlementFromTrusts>
+-              <MTR:NonDiscretionaryIncomeTaxedAtBasicRate>Non-discretionary income taxed at basic rate. Net Amount</MTR:NonDiscretionaryIncomeTaxedAtBasicRate>
+-              <MTR:NonDiscretionaryIncomeTaxedAtLowerRate>Non-discretionary income taxed at lower rate. Net amount</MTR:NonDiscretionaryIncomeTaxedAtLowerRate>
+-              <MTR:NonDiscretionaryIncomeTaxedAtDividendRate>Non-discretionary income taxed at non-payable dividend rate. Net amount</MTR:NonDiscretionaryIncomeTaxedAtDividendRate>
++              <MTR:NonDiscretionaryIncomeTaxedAtBasicRate>Net amount of non-savings income</MTR:NonDiscretionaryIncomeTaxedAtBasicRate>
++              <MTR:NonDiscretionaryIncomeTaxedAtLowerRate>Net amount of savings income</MTR:NonDiscretionaryIncomeTaxedAtLowerRate>
++              <MTR:NonDiscretionaryIncomeTaxedAtDividendRate>Net amount of dividend income</MTR:NonDiscretionaryIncomeTaxedAtDividendRate>
+               <MTR:IncomeFromTrustsEtcNonResidentTrustees>Tick box - trust or settlement income with non-resident trustees included elsewhere on the return</MTR:IncomeFromTrustsEtcNonResidentTrustees>
+             </MTR:NondiscretionaryIncomeEntitlementFromTrusts>
+           </MTR:IncomeFromTrustsAndSettlements>
+ <!--DESCRIPTION of following node: Income chargeable on settlors-->
+           <MTR:IncomeChargeableOnSettlors>
+-            <MTR:NetSettlorIncomeTaxedAtBasicRate>Income on settlors taxed at basic rate. Net amount </MTR:NetSettlorIncomeTaxedAtBasicRate>
+-            <MTR:NetSettlorIncomeTaxedAtLowerRate>Income on settlors taxed at lower rate. Net amount</MTR:NetSettlorIncomeTaxedAtLowerRate>
+-            <MTR:NetSettlorIncomeTaxedAtDividendRate>Income on settlors taxed at dividend rate. Net amount</MTR:NetSettlorIncomeTaxedAtDividendRate>
+-            <MTR:NetSettlorIncomeTaxedAtTrustRate>Income on settlors taxed at special trust rate. Net amount</MTR:NetSettlorIncomeTaxedAtTrustRate>
+-            <MTR:SavingsIncomeAtTrustRate>savings income on settlor at trust rate</MTR:SavingsIncomeAtTrustRate>
+-            <MTR:NetSettlorIncomeTaxedAtDividendTrustRate>Income on settlors taxed at dividend trust rate. Net amount</MTR:NetSettlorIncomeTaxedAtDividendTrustRate>
+-            <MTR:GrossSettlorIncomeToBeTaxedAtBasicRate>Nonsavings income at basic rate</MTR:GrossSettlorIncomeToBeTaxedAtBasicRate>
+-            <MTR:GrossSettlorIncomeToBeTaxedAtLowerRate>Non savings income paid gross</MTR:GrossSettlorIncomeToBeTaxedAtLowerRate>
++            <MTR:NetSettlorIncomeTaxedAtBasicRate>Net amount of non-savings income taxed at basic rate</MTR:NetSettlorIncomeTaxedAtBasicRate>
++            <MTR:NetSettlorIncomeTaxedAtLowerRate>Net amount of savings income taxed at basic rate</MTR:NetSettlorIncomeTaxedAtLowerRate>
++            <MTR:NetSettlorIncomeTaxedAtDividendRate>Net amount of dividend income at dividend rate</MTR:NetSettlorIncomeTaxedAtDividendRate>
++            <MTR:NetSettlorIncomeTaxedAtTrustRate>Net amount of non-savings income taxed at trust rate</MTR:NetSettlorIncomeTaxedAtTrustRate>
++            <MTR:SavingsIncomeAtTrustRate>Net amount of savings income taxed at trust rate</MTR:SavingsIncomeAtTrustRate>
++            <MTR:NetSettlorIncomeTaxedAtDividendTrustRate>Net amount of dividend income at dividend trust rate</MTR:NetSettlorIncomeTaxedAtDividendTrustRate>
++            <MTR:GrossSettlorIncomeToBeTaxedAtBasicRate>Non savings income paid gross</MTR:GrossSettlorIncomeToBeTaxedAtBasicRate>
++            <MTR:GrossSettlorIncomeToBeTaxedAtLowerRate>Savings income paid gross</MTR:GrossSettlorIncomeToBeTaxedAtLowerRate>
+             <MTR:AmountOfUKLifeInsurancePolicy>amount of UK life insurance policy</MTR:AmountOfUKLifeInsurancePolicy>
+           </MTR:IncomeChargeableOnSettlors>
+ <!--DESCRIPTION of following node: Income from the estates of deceased persons-->
+           <MTR:IncomeFromEstates>
+ <!--DESCRIPTION of following node: Income from the estates of deceased persons-->
+             <MTR:UKEstates>
+-              <MTR:EstateIncomeTaxedAtBasicRate>Income from estates taxed at Basic Rate Tax. Net amount</MTR:EstateIncomeTaxedAtBasicRate>
+-              <MTR:EstateIncomeTaxedAtLowerRate>Income from estates taxed at lower rate. Net amount</MTR:EstateIncomeTaxedAtLowerRate>
+-              <MTR:EstateIncomeTaxedAtDividendRate>Income from estates taxed at dividend rate. Net amount</MTR:EstateIncomeTaxedAtDividendRate>
+-              <MTR:EstateIncomeTaxedAtNonrepayableBasicRate>Income from estates taxed at  non repayable Basic Rate </MTR:EstateIncomeTaxedAtNonrepayableBasicRate>
+-              <MTR:IncomeTaxedAtNonrepayableLowerRate>income taxed at non-repayable lower rate</MTR:IncomeTaxedAtNonrepayableLowerRate>
++              <MTR:EstateIncomeTaxedAtBasicRate>Income from estates - Non-savings income (after tax taken off)</MTR:EstateIncomeTaxedAtBasicRate>
++              <MTR:EstateIncomeTaxedAtLowerRate>Income from estates - Savings income (after tax taken off)</MTR:EstateIncomeTaxedAtLowerRate>
++              <MTR:EstateIncomeTaxedAtDividendRate>Income from estates - Dividend income (after tax taken off)</MTR:EstateIncomeTaxedAtDividendRate>
++              <MTR:EstateIncomeTaxedAtNonrepayableBasicRate>Income from estates - Non-savings income taxed at non repayable Basic Rate</MTR:EstateIncomeTaxedAtNonrepayableBasicRate>
++              <MTR:IncomeTaxedAtNonrepayableLowerRate>Income from estates taxed at 22%</MTR:IncomeTaxedAtNonrepayableLowerRate>
+             </MTR:UKEstates>
+ <!--DESCRIPTION of following node: Income from foreign estates-->
+             <MTR:ForeignEstates>
+-              <MTR:ForeignEstateIncome>Income from estates taxed at non repayable lower rate. Net amount </MTR:ForeignEstateIncome>
+-              <MTR:ReliefForUKTaxAccountedFor>Income from estates taxed at non-payable dividend rate. Net amount</MTR:ReliefForUKTaxAccountedFor>
++              <MTR:ForeignEstateIncome>Income from foreign estates</MTR:ForeignEstateIncome>
++              <MTR:ReliefForUKTaxAccountedFor>Relief for UK tax already accounted for</MTR:ReliefForUKTaxAccountedFor>
+             </MTR:ForeignEstates>
+           </MTR:IncomeFromEstates>
+           <MTR:ForeignTax>Total foreign tax for which tax credit relief not claimed</MTR:ForeignTax>
++<!--DESCRIPTION of following node: Residential property income-->
++          <MTR:IncomeFromResidentialProperty>
++            <MTR:ResidentialPropertyIncomeOrRestrictedFinanceCosts>Amount of residential property income or restricted finance costs from trusts and estates 
++</MTR:ResidentialPropertyIncomeOrRestrictedFinanceCosts>
++          </MTR:IncomeFromResidentialProperty>
+           <MTR:AnyOtherInformationSpace>Additional Information</MTR:AnyOtherInformationSpace>
+         </MTR:SA107>
+ <!--DESCRIPTION of following node: Capital Gains Summary-->
+         <MTR:SA108>
+ <!--DESCRIPTION of following node: Residential property and carried interest-->
+@@
+             <MTR:DTAReliefClaimOtherProvisions>Relief by virtue of other provisions of the agreement</MTR:DTAReliefClaimOtherProvisions>
+           </MTR:ResidenceInOtherCountries>
+ <!--DESCRIPTION of following node: Domicile-->
+           <MTR:Domicile>
+             <MTR:DomiciledOutsideTheUKForTax>Domiciled outside the UK and it is relevant to your Income Tax or Capital Gains Tax liability  </MTR:DomiciledOutsideTheUKForTax>
++            <MTR:ConditionA>Deemed UK domicile under Condition A</MTR:ConditionA>
++            <MTR:ConditionB>Deemed UK domicile under Condition B</MTR:ConditionB>
++            <MTR:YearsUKresident>Number of years resident in the UK in the previous 20 years</MTR:YearsUKresident>
+             <MTR:FirstYearOrAlwaysDomiciledOutsideUK>First year domicile outside UK</MTR:FirstYearOrAlwaysDomiciledOutsideUK>
+             <MTR:DateDomicileChanged>Date domicile of origin in UK changed</MTR:DateDomicileChanged>
+             <MTR:BornInUKButNonUKDomicile>Born in UK ticked box [NRD23] but no entry in [NRD25]</MTR:BornInUKButNonUKDomicile>
+             <MTR:DateOfComingToLiveInUK>Born outside the UK date came here to live</MTR:DateOfComingToLiveInUK>
+           </MTR:Domicile>
+ <!--DESCRIPTION of following node: Remittance Basis-->
+           <MTR:RemittanceBasis>
+             <MTR:Remittancebasisclaim>claim for remittance</MTR:Remittancebasisclaim>
+             <MTR:UnremitedIncomeAndGainsUnremittedIncomeAndGainsUnder2000>Unremitted income and gains under £2000</MTR:UnremitedIncomeAndGainsUnremittedIncomeAndGainsUnder2000>
+-            <MTR:UKresidentFor17outOf20years>UK resident for the year and for 17 or more of the preceding 20 tax years</MTR:UKresidentFor17outOf20years>
++            <MTR:DeemedUKdomicileAndPreviouslyClaimedRemitanceBasis>Deemed domicile and have remitted to the UK any foreign income or gains that arose in a year when the remittance basis was previously claimed</MTR:DeemedUKdomicileAndPreviouslyClaimedRemitanceBasis>
+             <MTR:UKResidentFor12OutOf14Years>UK resident for the year and for 12 or more of the preceding 14 tax years</MTR:UKResidentFor12OutOf14Years>
+             <MTR:UKResidentFor7OutOf9YearsUKResident>Resident Qualify signal</MTR:UKResidentFor7OutOf9YearsUKResident>
+             <MTR:LessThan18Years>under 18</MTR:LessThan18Years>
+             <MTR:NominatedIncomeAmount>Nominated Amount</MTR:NominatedIncomeAmount>
+             <MTR:NominatedCapitalGainsAmount>Nominated Capital Gains</MTR:NominatedCapitalGainsAmount>

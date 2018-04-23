@@ -1,0 +1,117 @@
+Based on 'HMRC-MTR-2018-v2-0-20171208' of the Individual RIM artefacts.
+ 
+Version 1.0 - Changes since 2016-17 including 2nd Finance Bill
+
+
+SA101
+=====
+
+* AIL11.1 - New box on return
+
+* AIL11.2 - New box on return
+
+* AIL17 - box removed
+
+
+SA103F
+======
+
+* FSE16.1 - New box on return
+
+* FSE54 - box removed
+
+* FSE58 - box removed
+
+
+SA103S
+======
+
+* SSE10.1 - New box on return
+
+
+SA103L
+======
+
+* LUN7 - box removed
+
+* LUN10 - box removed
+
+* LUN19 - box removed
+
+
+SA104F
+======
+
+* FPS15 - box removed
+
+* FPS41.1 - New box on return
+
+* FPS63.1 - New box on return
+
+
+SA104S
+======
+
+* SPS15 - box removed
+
+
+SA105
+=====
+
+* PR05.1 - New box on return
+
+* PR05.2 - New box on return
+
+* PRO20.1 - New box on return
+
+* PRO20.2 - New box on return
+
+* PRO33 - box removed
+
+* PRO44 - New box on return
+
+
+SA106
+=====
+
+* FOR13.1 - New box on return
+
+* FOR14.1 - New box on return
+
+* FOR14.2 - New box on return
+
+* FOR24.1 - New box on return
+
+
+SA107
+=====
+
+* TRU25 - Now <ResidentialPropertyIncomeOrRestrictedFinanceCosts>. Was <AnyOtherInformationSpace> in 2016/17 
+
+* TRU26 - New box on return was TRU25 in 2016/17
+
+
+SA109
+=====
+
+* NRD23.1 -   New box on return
+
+* NRD23.2 -   New box on return
+  
+* NRD23.3 -   New box on return
+
+* NRD30 - Now <DeemedUKdomicileAndPreviouslyClaimedRemitanceBasis>. Was <UKresidentFor17outOf20years>
+          in 2016/17. <Xpath> and <ShortDesc> updated.
+
+
+
+
+
+
+
+
+
+
+
+                            
+

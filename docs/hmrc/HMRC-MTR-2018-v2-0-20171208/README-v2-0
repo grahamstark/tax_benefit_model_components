@@ -1,0 +1,16 @@
+Project:                SA Main Tax Return (SA100)
+Distribution Version:   2.0
+Distribution Date:      2017-12-08
+JAR Version:            2.2
+
+Changes v2.0-draft -> v2.0 (2017-12-08)
+ * Updated error messages from the Error Capture JAR attached to Bug 4705 comment 12.
+
+Changes v1.0 -> v2.0-draft (2017-11-29)
+ * Changes as specified up to JAR v2.2 [see JAR change log for additional details]
+
+Changes v0.1 -> v1.0 (2017-10-05)
+ * Updated error messages from the Error Capture JAR attached to Bug 4643 comment 7 and the correction confirmed in Comment 10.
+
+Changes 2017 -> 2018 v0.1 (2017-09-25) 
+ * Changes as specified up to JAR v1.2 [see JAR change log for additional details]

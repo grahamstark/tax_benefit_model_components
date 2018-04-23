@@ -1,0 +1,833 @@
+@@
+     <sch:diagnostic id='transactional.X-SCHEDULE.5'>The total of all instances [SSECL2] + [FSECL2] + [FPSCL2] + [SPSCL2]) + [LUNCL2] must be less than or equal to [£185.50]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.X-SCHEDULE.5' xml:lang='en'>The total of all instances [SSECL2] + [FSECL2] + [FPSCL2] + [SPSCL2]) + [LUNCL2] must be less than or equal to [£185.50]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.X-SCHEDULE.6'>8374</sch:diagnostic>
+     <sch:diagnostic id='transactional.X-SCHEDULE.6'>As there is an entry in any of [SSE36], [FSE100], [LUN63], [SPS25] or [FPS25] the sum of all instances [SSE31] + sum of all instances [FSE76] + [LUN52] + sum of all instances [SPS20] + sum of all instances [FPS20] - (sum of all instances [FSE102] + [LUN65] + sum of all instances [SPS27] + sum of all instances [FPS27]) should be less than [£6,025]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.X-SCHEDULE.6' xml:lang='en'>As there is an entry in any of [SSE36], [FSE100], [LUN63], [SPS25] or [FPS25] the sum of all instances [SSE31] + sum of all instances [FSE76] + [LUN52] + sum of all instances [SPS20] + sum of all instances [FPS20] - (sum of all instances [FSE102] + [LUN65] + sum of all instances [SPS27] + sum of all instances [FPS27]) should be less than [£6,025]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.PRE-CALC.l'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.PRE-CALC.l'>The total of all instances of [SSE10.1] and [FSE16.1] exceeds [£1,000].</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.PRE-CALC.l' xml:lang='en'>The total of all instances of [SSE10.1] and [FSE16.1] exceeds [£1,000].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.PRE-CALC.m'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.PRE-CALC.m'>The total of all instances of [PRO5.1], [PRO20.1] and [FOR14.1] must not exceed [£1,000].</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.PRE-CALC.m' xml:lang='en'>The total of all instances of [PRO5.1], [PRO20.1] and [FOR14.1] must not exceed [£1,000].</sch:diagnostic>
++    <sch:diagnostic id='errorCode.PRE-CALC.l'>8554</sch:diagnostic>
++    <sch:diagnostic id='transactional.PRE-CALC.l'>The total of all instances of [SSE10.1] and [FSE16.1] exceeds [£1,000]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.PRE-CALC.l' xml:lang='en'>The total of all instances of [SSE10.1] and [FSE16.1] exceeds [£1,000]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.PRE-CALC.m'>8449</sch:diagnostic>
++    <sch:diagnostic id='transactional.PRE-CALC.m'>The total of all instances of [PRO5.1], [PRO20.1] and [FOR14.1] must not exceed [£1,000]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.PRE-CALC.m' xml:lang='en'>The total of all instances of [PRO5.1], [PRO20.1] and [FOR14.1] must not exceed [£1,000]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA100.0'>6180</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA100.0'>There is an entry in box [YTR1A.1A]. Please complete box [YTR1A.1B].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA100.0' xml:lang='en'>There is an entry in box [YTR1A.1A]. Please complete box [YTR1A.1B].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.ITF1-TAXPAYER-DATE-OF-BIRTH.0'>6428</sch:diagnostic>
+     <sch:diagnostic id='transactional.ITF1-TAXPAYER-DATE-OF-BIRTH.0'>Date of birth cannot be later than 5 April of the year of the return. Please check.</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SLF-BUSINESS-SALES-TURNOVER.1'>There is an amount in box [FSE15]. Please complete box [FSE8].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-BUSINESS-SALES-TURNOVER.1' xml:lang='en'>There is an amount in box [FSE15]. Please complete box [FSE8].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-OTHER-INCOME-PROFITS.1'>6437</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-OTHER-INCOME-PROFITS.1'>There is an amount in box [FSE16]. Please complete box [FSE8].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-OTHER-INCOME-PROFITS.1' xml:lang='en'>There is an amount in box [FSE16]. Please complete box [FSE8].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-TRADING-INCOME-ALLOWANCE.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-TRADING-INCOME-ALLOWANCE.0'>8450</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-TRADING-INCOME-ALLOWANCE.0'>[FSE16.1] must be less than or equal to ( [FSE64 / FSE65] + [FSE68] ).</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-TRADING-INCOME-ALLOWANCE.0' xml:lang='en'>[FSE16.1] must be less than or equal to ( [FSE64 / FSE65] + [FSE68] ).</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-TRADING-INCOME-ALLOWANCE.1'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-TRADING-INCOME-ALLOWANCE.1'>8451</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-TRADING-INCOME-ALLOWANCE.1'>If [FSE16.1] and [FSE77] are both present then [FSE69] must also be present</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-TRADING-INCOME-ALLOWANCE.1' xml:lang='en'>If [FSE16.1] and [FSE77] are both present then [FSE69] must also be present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-COST-OF-SALES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-COST-OF-SALES.0'>[FSE17] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-COST-OF-SALES.0' xml:lang='en'>[FSE17] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-SUB-CONTRACTOR-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-SUB-CONTRACTOR-COSTS.0'>[FSE18] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-SUB-CONTRACTOR-COSTS.0' xml:lang='en'>[FSE18] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-EMPLOYEE-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-EMPLOYEE-COSTS.0'>[FSE19] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-EMPLOYEE-COSTS.0' xml:lang='en'>[FSE19] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-MOTOR-EXPENSES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-MOTOR-EXPENSES.0'>[FSE20] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-MOTOR-EXPENSES.0' xml:lang='en'>[FSE20] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-PREMISES-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-PREMISES-COSTS.0'>[FSE21] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-PREMISES-COSTS.0' xml:lang='en'>[FSE21] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-REPAIRS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-REPAIRS.0'>[FSE22] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-REPAIRS.0' xml:lang='en'>[FSE22] must not be present if [FSE16.1] is present</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-GENERAL-ADMIN-EXPENSES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-GENERAL-ADMIN-EXPENSES.0'>[FSE23] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-GENERAL-ADMIN-EXPENSES.0' xml:lang='en'>[FSE23] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-ADVERTISING.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-ADVERTISING.0'>[FSE24] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-ADVERTISING.0' xml:lang='en'>[FSE24] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-LOAN-INTEREST.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-LOAN-INTEREST.0'>[FSE25] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-LOAN-INTEREST.0' xml:lang='en'>[FSE25] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-FINANCE-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-FINANCE-CHARGES.0'>[FSE26] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-FINANCE-CHARGES.0' xml:lang='en'>[FSE26] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-BAD-DEBTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-BAD-DEBTS.0'>[FSE27] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-BAD-DEBTS.0' xml:lang='en'>[FSE27] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-LEGAL-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-LEGAL-COSTS.0'>[FSE28] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-LEGAL-COSTS.0' xml:lang='en'>[FSE28] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DEPRECIATION.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DEPRECIATION.0'>[FSE29] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DEPRECIATION.0' xml:lang='en'>[FSE29] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-OTHER-EXPENDITURE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-OTHER-EXPENDITURE.0'>[FSE30] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-OTHER-EXPENDITURE.0' xml:lang='en'>[FSE30] must not be present if [FSE16.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-COST-OF-SALES.0'>8452</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-COST-OF-SALES.0'>The entry in box [FSE17] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-COST-OF-SALES.0' xml:lang='en'>The entry in box [FSE17] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-SUB-CONTRACTOR-COSTS.0'>8453</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-SUB-CONTRACTOR-COSTS.0'>The entry in box [FSE18] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-SUB-CONTRACTOR-COSTS.0' xml:lang='en'>The entry in box [FSE18] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-EMPLOYEE-COSTS.0'>8454</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-EMPLOYEE-COSTS.0'>The entry in box [FSE19] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-EMPLOYEE-COSTS.0' xml:lang='en'>The entry in box [FSE19] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-MOTOR-EXPENSES.0'>8455</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-MOTOR-EXPENSES.0'>The entry in box [FSE20] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-MOTOR-EXPENSES.0' xml:lang='en'>The entry in box [FSE20] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-PREMISES-COSTS.0'>8456</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-PREMISES-COSTS.0'>The entry in box [FSE21] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-PREMISES-COSTS.0' xml:lang='en'>The entry in box [FSE21] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-REPAIRS.0'>8457</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-REPAIRS.0'>The entry in box [FSE22] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-REPAIRS.0' xml:lang='en'>The entry in box [FSE22] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-GENERAL-ADMIN-EXPENSES.0'>8458</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-GENERAL-ADMIN-EXPENSES.0'>The entry in box [FSE23] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-GENERAL-ADMIN-EXPENSES.0' xml:lang='en'>The entry in box [FSE23] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-ADVERTISING.0'>8459</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-ADVERTISING.0'>The entry in box [FSE24] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-ADVERTISING.0' xml:lang='en'>The entry in box [FSE24] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-LOAN-INTEREST.0'>8460</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-LOAN-INTEREST.0'>The entry in box [FSE25] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-LOAN-INTEREST.0' xml:lang='en'>The entry in box [FSE25] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-FINANCE-CHARGES.0'>8461</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-FINANCE-CHARGES.0'>The entry in box [FSE26] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-FINANCE-CHARGES.0' xml:lang='en'>The entry in box [FSE26] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-BAD-DEBTS.0'>8462</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-BAD-DEBTS.0'>The entry in box [FSE27] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-BAD-DEBTS.0' xml:lang='en'>The entry in box [FSE27] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-LEGAL-COSTS.0'>8463</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-LEGAL-COSTS.0'>The entry in box [FSE28] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-LEGAL-COSTS.0' xml:lang='en'>The entry in box [FSE28] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DEPRECIATION.0'>8464</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DEPRECIATION.0'>The entry in box [FSE29] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DEPRECIATION.0' xml:lang='en'>The entry in box [FSE29] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-OTHER-EXPENDITURE.0'>8465</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-OTHER-EXPENDITURE.0'>The entry in box [FSE30] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-OTHER-EXPENDITURE.0' xml:lang='en'>The entry in box [FSE30] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-TOTAL-EXPENDITURE.1'>6053</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-TOTAL-EXPENDITURE.1'>The amount in box [FSE31] must equal ( the sum of [FSE17],[FSE18],[FSE19],[FSE20],[FSE21],[FSE22],[FSE23],[FSE24],[FSE25],[FSE26],[FSE27],[FSE28],[FSE29] and [FSE30] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-TOTAL-EXPENDITURE.1' xml:lang='en'>The amount in box [FSE31] must equal ( the sum of [FSE17],[FSE18],[FSE19],[FSE20],[FSE21],[FSE22],[FSE23],[FSE24],[FSE25],[FSE26],[FSE27],[FSE28],[FSE29] and [FSE30] ). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-TOTAL-EXPENDITURE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-TOTAL-EXPENDITURE.0'>[FSE31] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-TOTAL-EXPENDITURE.0' xml:lang='en'>[FSE31] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-DISALLOW-COST-OF-SALES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-DISALLOW-COST-OF-SALES.0'>[FSE32] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-COST-OF-SALES.0' xml:lang='en'>[FSE32] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-SUB-CON-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-SUB-CON-COSTS.0'>[FSE33] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-SUB-CON-COSTS.0' xml:lang='en'>[FSE33] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-EMPLOYEE-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-EMPLOYEE-COSTS.0'>[FSE34] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-EMPLOYEE-COSTS.0' xml:lang='en'>[FSE34] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-MOTOR-EXPENSES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-MOTOR-EXPENSES.0'>[FSE35] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-MOTOR-EXPENSES.0' xml:lang='en'>[FSE35] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-DISALLOW-PREMISES-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-DISALLOW-PREMISES-COSTS.0'>[FSE36] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-PREMISES-COSTS.0' xml:lang='en'>[FSE36] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-DISALLOW-REPAIRS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-DISALLOW-REPAIRS.0'>[FSE37] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-REPAIRS.0' xml:lang='en'>[FSE37] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-GENERAL-ADMIN-EXP.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-GENERAL-ADMIN-EXP.0'>[FSE38] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-GENERAL-ADMIN-EXP.0' xml:lang='en'>[FSE38] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-ADVERTISING.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-ADVERTISING.0'>[FSE39] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-ADVERTISING.0' xml:lang='en'>[FSE39] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-DISALLOW-LOAN-INTEREST.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-DISALLOW-LOAN-INTEREST.0'>[FSE40] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-LOAN-INTEREST.0' xml:lang='en'>[FSE40] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF2-DISALLOW-FINANCE-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF2-DISALLOW-FINANCE-CHARGES.0'>[FSE41] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-FINANCE-CHARGES.0' xml:lang='en'>[FSE41] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-BAD-DEBTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-BAD-DEBTS.0'>[FSE42] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-BAD-DEBTS.0' xml:lang='en'>[FSE42] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-LEGAL-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-LEGAL-COSTS.0'>[FSE43] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-LEGAL-COSTS.0' xml:lang='en'>[FSE43] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-DEPRECIATION.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-DEPRECIATION.0'>[FSE44] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-DEPRECIATION.0' xml:lang='en'>[FSE44] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-OTHER.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-OTHER.0'>[FSE45] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-OTHER.0' xml:lang='en'>[FSE45] must not be present if [FSE16.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-TOTAL-EXPENDITURE.0'>8466</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-TOTAL-EXPENDITURE.0'>The entry in box [FSE31] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-TOTAL-EXPENDITURE.0' xml:lang='en'>The entry in box [FSE31] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-DISALLOW-COST-OF-SALES.0'>8467</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-DISALLOW-COST-OF-SALES.0'>The entry in box [FSE32] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-COST-OF-SALES.0' xml:lang='en'>The entry in box [FSE32] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-SUB-CON-COSTS.0'>8468</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-SUB-CON-COSTS.0'>The entry in box [FSE33] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-SUB-CON-COSTS.0' xml:lang='en'>The entry in box [FSE33] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-EMPLOYEE-COSTS.0'>8469</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-EMPLOYEE-COSTS.0'>The entry in box [FSE34] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-EMPLOYEE-COSTS.0' xml:lang='en'>The entry in box [FSE34] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-MOTOR-EXPENSES.0'>8470</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-MOTOR-EXPENSES.0'>The entry in box [FSE35] should not be present as there is an entry in  [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-MOTOR-EXPENSES.0' xml:lang='en'>The entry in box [FSE35] should not be present as there is an entry in  [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-DISALLOW-PREMISES-COSTS.0'>8471</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-DISALLOW-PREMISES-COSTS.0'>The entry in box [FSE36] should not be present as there is an entry in  [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-PREMISES-COSTS.0' xml:lang='en'>The entry in box [FSE36] should not be present as there is an entry in  [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-DISALLOW-REPAIRS.0'>8472</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-DISALLOW-REPAIRS.0'>The entry in box [FSE37] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-REPAIRS.0' xml:lang='en'>The entry in box [FSE37] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-GENERAL-ADMIN-EXP.0'>8473</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-GENERAL-ADMIN-EXP.0'>The entry in box [FSE38] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-GENERAL-ADMIN-EXP.0' xml:lang='en'>The entry in box [FSE38] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-ADVERTISING.0'>8474</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-ADVERTISING.0'>The entry in box [FSE39] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-ADVERTISING.0' xml:lang='en'>The entry in box [FSE39] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-DISALLOW-LOAN-INTEREST.0'>8475</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-DISALLOW-LOAN-INTEREST.0'>The entry in box [FSE40] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-LOAN-INTEREST.0' xml:lang='en'>The entry in box [FSE40] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF2-DISALLOW-FINANCE-CHARGES.0'>8476</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF2-DISALLOW-FINANCE-CHARGES.0'>The entry in box [FSE41] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF2-DISALLOW-FINANCE-CHARGES.0' xml:lang='en'>The entry in box [FSE41] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-BAD-DEBTS.0'>8477</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-BAD-DEBTS.0'>The entry in box [FSE42] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-BAD-DEBTS.0' xml:lang='en'>The entry in box [FSE42] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-LEGAL-COSTS.0'>8478</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-LEGAL-COSTS.0'>The entry in box [FSE43] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-LEGAL-COSTS.0' xml:lang='en'>The entry in box [FSE43] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-DEPRECIATION.0'>8479</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-DEPRECIATION.0'>The entry in box [FSE44] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-DEPRECIATION.0' xml:lang='en'>The entry in box [FSE44] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-OTHER.0'>8480</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-OTHER.0'>The entry in box [FSE45] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-OTHER.0' xml:lang='en'>The entry in box [FSE45] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-DISALLOW-EXPENDITURE.1'>8301</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-DISALLOW-EXPENDITURE.1'>If entry in any of [FSE32], [FSE33], [FSE34], [FSE35], [FSE36], [FSE37], [FSE38], [FSE39], [FSE40], [FSE41], [FSE42], [FSE43], [FSE44], [FSE45] then total of those boxes must equal [FSE46]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-DISALLOW-EXPENDITURE.1' xml:lang='en'>If entry in any of [FSE32], [FSE33], [FSE34], [FSE35], [FSE36], [FSE37], [FSE38], [FSE39], [FSE40], [FSE41], [FSE42], [FSE43], [FSE44], [FSE45] then total of those boxes must equal [FSE46]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISALLOW-EXPENDITURE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISALLOW-EXPENDITURE.0'>[FSE46] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISALLOW-EXPENDITURE.0' xml:lang='en'>[FSE46] must not be present if [FSE16.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISALLOW-EXPENDITURE.0'>8481</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISALLOW-EXPENDITURE.0'>The entry in box [FSE46] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISALLOW-EXPENDITURE.0' xml:lang='en'>The entry in box [FSE46] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-NET-PROFIT-LOSS-AMT-merged.1'>6055</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-NET-PROFIT-LOSS-AMT-merged.1'>The amount in box [FSE47/FSE48] must equal the sum of [FSE15] plus [FSE16] minus [FSE31]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-NET-PROFIT-LOSS-AMT-merged.1' xml:lang='en'>The amount in box [FSE47/FSE48] must equal the sum of [FSE15] plus [FSE16] minus [FSE31]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-ANNUAL-INV-ALLCE-AMT.1'>8333</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-ANNUAL-INV-ALLCE-AMT.1'>There is an entry in [FSE49]. Please complete [FSE57].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.0'>There is an entry in [FSE56]. Please complete [FSE57]. </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.0' xml:lang='en'>There is an entry in [FSE56]. Please complete [FSE57]. </sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-ANNUAL-INV-ALLCE-AMT.0'>6062</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-ANNUAL-INV-ALLCE-AMT.0'>The amount in box [FSE49] exceeds [£375,000]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF-ANNUAL-INV-ALLCE-AMT.0' xml:lang='en'>The amount in box [FSE49] exceeds [£375,000]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-ANNUAL-INV-ALLCE-AMT.2'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-ANNUAL-INV-ALLCE-AMT.2'>[FSE49] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-ANNUAL-INV-ALLCE-AMT.2' xml:lang='en'>[FSE49] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-PLANT-MACHINERY-ALLCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-PLANT-MACHINERY-ALLCE.1'>[FSE50] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-PLANT-MACHINERY-ALLCE.1' xml:lang='en'>[FSE50] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-YEAR1-ALLCE-AMT.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-YEAR1-ALLCE-AMT.1'>[FSE51] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-YEAR1-ALLCE-AMT.1' xml:lang='en'>[FSE51] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-ZERO-EMISSIONS-GV-ALLCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-ZERO-EMISSIONS-GV-ALLCE.1'>[FSE52] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-ZERO-EMISSIONS-GV-ALLCE.1' xml:lang='en'>[FSE52] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF3-OTHER-CAPITAL-ALLOWANCES.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF3-OTHER-CAPITAL-ALLOWANCES.1'>[FSE55] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF3-OTHER-CAPITAL-ALLOWANCES.1' xml:lang='en'>[FSE55] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1'>[FSE56] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1' xml:lang='en'>[FSE56] must not be present if [FSE16.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-ANNUAL-INV-ALLCE-AMT.2'>8482</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-ANNUAL-INV-ALLCE-AMT.2'>The entry in box [FSE49] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-ANNUAL-INV-ALLCE-AMT.2' xml:lang='en'>The entry in box [FSE49] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-PLANT-MACHINERY-ALLCE.1'>8483</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-PLANT-MACHINERY-ALLCE.1'>The entry in box [FSE50] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-PLANT-MACHINERY-ALLCE.1' xml:lang='en'>The entry in box [FSE50] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-YEAR1-ALLCE-AMT.1'>8484</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-YEAR1-ALLCE-AMT.1'>The entry in box [FSE51] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-YEAR1-ALLCE-AMT.1' xml:lang='en'>The entry in box [FSE51] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-ZERO-EMISSIONS-GV-ALLCE.1'>8485</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-ZERO-EMISSIONS-GV-ALLCE.1'>The entry in box [FSE52] should  not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-ZERO-EMISSIONS-GV-ALLCE.1' xml:lang='en'>The entry in box [FSE52] should  not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF3-OTHER-CAPITAL-ALLOWANCES.1'>8486</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF3-OTHER-CAPITAL-ALLOWANCES.1'>The entry in box [FSE55] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF3-OTHER-CAPITAL-ALLOWANCES.1' xml:lang='en'>The entry in box [FSE55] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1'>8487</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1'>The entry in box [FSE56] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF-DISPOSAL-LOWVAL-ALLCE-AMT.1' xml:lang='en'>The entry in box [FSE56] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF4-TOTAL-CAPITAL-ALLOWANCES.0'>6056</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF4-TOTAL-CAPITAL-ALLOWANCES.0'>The amount in box [FSE57] must equal ( the sum of [FSE49], [FSE50], [FSE51], [FSE52], [FSE55], and [FSE56] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF4-TOTAL-CAPITAL-ALLOWANCES.0' xml:lang='en'>The amount in box [FSE57] must equal ( the sum of [FSE49], [FSE50], [FSE51], [FSE52], [FSE55], and [FSE56] ). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SLF4-TOTAL-CAPITAL-ALLOWANCES.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SLF4-TOTAL-CAPITAL-ALLOWANCES.1'>[FSE57] must not be present if [FSE16.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SLF4-TOTAL-CAPITAL-ALLOWANCES.1' xml:lang='en'>[FSE57] must not be present if [FSE16.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SLF4-TOTAL-CAPITAL-ALLOWANCES.1'>8488</sch:diagnostic>
++    <sch:diagnostic id='transactional.SLF4-TOTAL-CAPITAL-ALLOWANCES.1'>The entry in box [FSE57] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SLF4-TOTAL-CAPITAL-ALLOWANCES.1' xml:lang='en'>The entry in box [FSE57] should not be present as there is an entry in [FSE16.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF1-ADDITIONS-TO-NET-PROFIT.0'>6059</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF1-ADDITIONS-TO-NET-PROFIT.0'>The amount in box [FSE61] must equal ( the sum of [FSE46], [FSE59], and [FSE60] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SLF1-ADDITIONS-TO-NET-PROFIT.0' xml:lang='en'>The amount in box [FSE61] must equal ( the sum of [FSE46], [FSE59], and [FSE60] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SLF-TOTAL-DEDUCTIONS.1'>6065</sch:diagnostic>
+     <sch:diagnostic id='transactional.SLF-TOTAL-DEDUCTIONS.1'>The amount in box [FSE63] must equal ( [FSE57] plus [FSE62] ). Please check.</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SA103S.3'>The sum of ( ( [SSE28] plus [SSE30] ) minus [SSE29] ) exceeds 0. Please complete box [SSE31].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA103S.3' xml:lang='en'>The sum of ( ( [SSE28] plus [SSE30] ) minus [SSE29] ) exceeds 0. Please complete box [SSE31].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA103S.4'>6069</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA103S.4'>The sum of ( ( [SSE23], [SSE24], and [SSE25] ) minus ( [SSE21/SSE22], [SSE26], and [SSE27] ) ) exceeds 0. Please complete box [SSE32].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA103S.4' xml:lang='en'>The sum of ( ( [SSE23], [SSE24], and [SSE25] ) minus ( [SSE21/SSE22], [SSE26], and [SSE27] ) ) exceeds 0. Please complete box [SSE32].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SA103S.5'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SA103S.5'>[SSE10.1] must be less than or equal to the sum of ( [SSE21/SSE22] + [SSE26] + [SSE27] ) if [SSE21/SSE22] is not negative.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SA103S.5' xml:lang='en'>[SSE10.1] must be less than or equal to the sum of ( [SSE21/SSE22] + [SSE26] + [SSE27] ) if [SSE21/SSE22] is not negative.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SA103S.5'>8489</sch:diagnostic>
++    <sch:diagnostic id='transactional.SA103S.5'>The amount in box [SSE10.1] must be less than or equal to the sum of ( [SSE21/SSE22] + [SSE26] + [SSE27] ) if [SSE21/SSE22] is not negative. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SA103S.5' xml:lang='en'>The amount in box [SSE10.1] must be less than or equal to the sum of ( [SSE21/SSE22] + [SSE26] + [SSE27] ) if [SSE21/SSE22] is not negative. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-COMMENCEMENT-DATE.1'>6433</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-COMMENCEMENT-DATE.1'>Must be a date between 6 April and 5 April of the year of the return. Please amend the entry.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-COMMENCEMENT-DATE.1' xml:lang='en'>Must be a date between 6 April and 5 April of the year of the return. Please amend the entry.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-CESSATION-DATE.1'>6433</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-CESSATION-DATE.1'>Must be a date between 6 April and 5 April of the year of the return. Please amend the entry.</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SSE-BUSINESS-SALES-TURNOVER.2'>As there is an entry in [SSE6] but [SSE5] is absent, the amount in box [SSE9] must be below ( [£85,000] x number of days / (365 or 366) ) where number of days equals the number of days from [6 April 2017] to [SSE6] inclusive. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-BUSINESS-SALES-TURNOVER.2' xml:lang='en'>As there is an entry in [SSE6] but [SSE5] is absent, the amount in box [SSE9] must be below ( [£85,000] x number of days / (365 or 366) ) where number of days equals the number of days from [6 April 2017] to [SSE6] inclusive. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-BUSINESS-SALES-TURNOVER.3'>6238</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-BUSINESS-SALES-TURNOVER.3'>As there is an entry in both [SSE5] and [SSE6], the amount in box [SSE9] must be below ( [£85,000] x number of days / (365 or 366) ) where number of days equals the number of days from [SSE5] to [SSE6] inclusive. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-BUSINESS-SALES-TURNOVER.3' xml:lang='en'>As there is an entry in both [SSE5] and [SSE6], the amount in box [SSE9] must be below ( [£85,000] x number of days / (365 or 366) ) where number of days equals the number of days from [SSE5] to [SSE6] inclusive. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-TRADING-INCOME-ALLOWANCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-TRADING-INCOME-ALLOWANCE.1'>If [SSE10.1] is present then [SSE21/SSE22] can not be negative</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-TRADING-INCOME-ALLOWANCE.1' xml:lang='en'>If [SSE10.1] is present then [SSE21/SSE22] can not be negative</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-COST-OF-SALES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-COST-OF-SALES.0'>[SSE11] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-COST-OF-SALES.0' xml:lang='en'>[SSE11] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-MOTOR-EXPENSES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-MOTOR-EXPENSES.0'>[SSE12] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-MOTOR-EXPENSES.0' xml:lang='en'>[SSE12] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-EMPLOYEE-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-EMPLOYEE-COSTS.0'>[SSE13] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-EMPLOYEE-COSTS.0' xml:lang='en'>[SSE13] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-PREMISES-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-PREMISES-COSTS.0'>[SSE14] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-PREMISES-COSTS.0' xml:lang='en'>[SSE14] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-REPAIRS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-REPAIRS.0'>[SSE15] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-REPAIRS.0' xml:lang='en'>[SSE15] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-LEGAL-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-LEGAL-COSTS.0'>[SSE16] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-LEGAL-COSTS.0' xml:lang='en'>[SSE16] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-LOAN-INTEREST.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-LOAN-INTEREST.0'>[SSE17] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-LOAN-INTEREST.0' xml:lang='en'>[SSE17] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-GENERAL-ADMIN-EXPENSES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-GENERAL-ADMIN-EXPENSES.0'>[SSE18] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-GENERAL-ADMIN-EXPENSES.0' xml:lang='en'>[SSE18] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-OTHER-EXPENDITURE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-OTHER-EXPENDITURE.0'>[SSE19] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-OTHER-EXPENDITURE.0' xml:lang='en'>[SSE19] must not be present if [SSE10.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-TRADING-INCOME-ALLOWANCE.1'>8490</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-TRADING-INCOME-ALLOWANCE.1'>If there is an entry in box [SSE10.1] then [SSE21/SSE22] can not be negative. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-TRADING-INCOME-ALLOWANCE.1' xml:lang='en'>If there is an entry in box [SSE10.1] then [SSE21/SSE22] can not be negative. Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-COST-OF-SALES.0'>8491</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-COST-OF-SALES.0'>The entry in box [SSE11] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-COST-OF-SALES.0' xml:lang='en'>The entry in box [SSE11] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-MOTOR-EXPENSES.0'>8492</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-MOTOR-EXPENSES.0'>The entry in box [SSE12] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-MOTOR-EXPENSES.0' xml:lang='en'>The entry in box [SSE12] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-EMPLOYEE-COSTS.0'>8493</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-EMPLOYEE-COSTS.0'>The entry in box [SSE13] should not be present as there is an entry in box [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-EMPLOYEE-COSTS.0' xml:lang='en'>The entry in box [SSE13] should not be present as there is an entry in box [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-PREMISES-COSTS.0'>8494</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-PREMISES-COSTS.0'>The entry in box [SSE14] should not be present as there is an entry in box [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-PREMISES-COSTS.0' xml:lang='en'>The entry in box [SSE14] should not be present as there is an entry in box [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-REPAIRS.0'>8495</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-REPAIRS.0'>The entry in box [SSE15] should not be present as there is an entry in[SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-REPAIRS.0' xml:lang='en'>The entry in box [SSE15] should not be present as there is an entry in[SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-LEGAL-COSTS.0'>8496</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-LEGAL-COSTS.0'>The entry in box [SSE16] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-LEGAL-COSTS.0' xml:lang='en'>The entry in box [SSE16] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-LOAN-INTEREST.0'>8497</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-LOAN-INTEREST.0'>The entry in box [SSE17] should not be present as there is an entry in  [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-LOAN-INTEREST.0' xml:lang='en'>The entry in box [SSE17] should not be present as there is an entry in  [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-GENERAL-ADMIN-EXPENSES.0'>8498</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-GENERAL-ADMIN-EXPENSES.0'>The entry in box [SSE18] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-GENERAL-ADMIN-EXPENSES.0' xml:lang='en'>The entry in box [SSE18] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-OTHER-EXPENDITURE.0'>8499</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-OTHER-EXPENDITURE.0'>The entry in box [SSE19] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-OTHER-EXPENDITURE.0' xml:lang='en'>The entry in box [SSE19] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-TOTAL-EXPENDITURE.1'>6163</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-TOTAL-EXPENDITURE.1'>As the amount in box [SSE20] is greater than zero and [SSE9] is equal to or greater than [£85,000] there must be an entry in at least one of [SSE11] to [SSE19] and [SSE20] must equal the total of those boxes. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-TOTAL-EXPENDITURE.1' xml:lang='en'>As the amount in box [SSE20] is greater than zero and [SSE9] is equal to or greater than [£85,000] there must be an entry in at least one of [SSE11] to [SSE19] and [SSE20] must equal the total of those boxes. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-TOTAL-EXPENDITURE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-TOTAL-EXPENDITURE.0'>[SSE20] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-TOTAL-EXPENDITURE.0' xml:lang='en'>[SSE20] must not be present if [SSE10.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-TOTAL-EXPENDITURE.0'>8500</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-TOTAL-EXPENDITURE.0'>The entry in box [SSE20] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-TOTAL-EXPENDITURE.0' xml:lang='en'>The entry in box [SSE20] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-NET-PROFIT-LOSS-AMT-merged.1'>6176</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-NET-PROFIT-LOSS-AMT-merged.1'>The amount in [SSE21/SSE22] must equal the sum of [SSE9] plus [SSE10] minus [SSE20]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-NET-PROFIT-LOSS-AMT-merged.1' xml:lang='en'>The amount in [SSE21/SSE22] must equal the sum of [SSE9] plus [SSE10] minus [SSE20]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-ANNUAL-INV-ALLCE-AMT.0'>6070</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-ANNUAL-INV-ALLCE-AMT.0'>The amount in box [SSE23] exceeds [£375,000]. Please check. </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-ANNUAL-INV-ALLCE-AMT.0' xml:lang='en'>The amount in box [SSE23] exceeds [£375,000]. Please check. </sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-ANNUAL-INV-ALLCE-AMT.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-ANNUAL-INV-ALLCE-AMT.1'>[SSE23] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-ANNUAL-INV-ALLCE-AMT.1' xml:lang='en'>[SSE23] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-SMALL-BAL-EXP-ALLCE-AMT.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-ANNUAL-INV-ALLCE-AMT.1'>8501</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-ANNUAL-INV-ALLCE-AMT.1'>The entry in box [SSE23] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-ANNUAL-INV-ALLCE-AMT.1' xml:lang='en'>The entry in box [SSE23] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-SMALL-BAL-EXP-ALLCE-AMT.0'>8502</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-SMALL-BAL-EXP-ALLCE-AMT.0'>[SSE24] must not be present if [SSE10.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-SMALL-BAL-EXP-ALLCE-AMT.0' xml:lang='en'>[SSE24] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-TOTAL-CAPITAL-ALLOWANCES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-TOTAL-CAPITAL-ALLOWANCES.0'>[SSE25] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-TOTAL-CAPITAL-ALLOWANCES.0' xml:lang='en'>[SSE25] must not be present if [SSE10.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-TOTAL-CAPITAL-ALLOWANCES.0'>8503</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-TOTAL-CAPITAL-ALLOWANCES.0'>The entry in box [SSE25] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-TOTAL-CAPITAL-ALLOWANCES.0' xml:lang='en'>The entry in box [SSE25] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-NET-BUSINESS-PROFIT-LOSS.0'>6177</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-NET-BUSINESS-PROFIT-LOSS.0'>The amount in box [SSE28] must equal the sum of ( ( [SSE21/SSE22] plus [SSE26] plus [SSE27] ) minus ( [SSE23] plus [SSE24] plus [SSE25] ) ) if positive. Please check. </sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-NET-BUSINESS-PROFIT-LOSS.0' xml:lang='en'>The amount in box [SSE28] must equal the sum of ( ( [SSE21/SSE22] plus [SSE26] plus [SSE27] ) minus ( [SSE23] plus [SSE24] plus [SSE25] ) ) if positive. Please check. </sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-NET-BUSINESS-PROFIT-LOSS.0'>The amount in box [SSE28] must equal the sum of ( ( [SSE21/SSE22] plus [SSE26] plus [SSE27] ) minus ( [SSE10.1] plus [SSE23] plus [SSE24] plus [SSE25] ) ) if positive. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-NET-BUSINESS-PROFIT-LOSS.0' xml:lang='en'>The amount in box [SSE28] must equal the sum of ( ( [SSE21/SSE22] plus [SSE26] plus [SSE27] ) minus ( [SSE10.1] plus [SSE23] plus [SSE24] plus [SSE25] ) ) if positive. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-LOSSES-USED-THIS-YEAR.1'>6282</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-LOSSES-USED-THIS-YEAR.1'>The amount in box [SSE29] exceeds the amount in box [SSE28]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-LOSSES-USED-THIS-YEAR.1' xml:lang='en'>The amount in box [SSE29] exceeds the amount in box [SSE28]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-TOTAL-TAXABLE-PROFITS.0'>6178</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-TOTAL-TAXABLE-PROFITS.0'>The amount in box [SSE31] must equal ( ( [SSE28] plus [SSE30] ) minus [SSE29] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-TOTAL-TAXABLE-PROFITS.0' xml:lang='en'>The amount in box [SSE31] must equal ( ( [SSE28] plus [SSE30] ) minus [SSE29] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-ALLOWABLE-LOSS-FOR-YEAR.0'>6183</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-ALLOWABLE-LOSS-FOR-YEAR.0'>The amount in box [SSE32] must equal [SSE23] plus [SSE24] plus [SSE25] minus ([SSE21/SSE22] plus [SSE26] plus [SSE27]) if positive or zero. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-ALLOWABLE-LOSS-FOR-YEAR.0' xml:lang='en'>The amount in box [SSE32] must equal [SSE23] plus [SSE24] plus [SSE25] minus ([SSE21/SSE22] plus [SSE26] plus [SSE27]) if positive or zero. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SSE-ALLOWABLE-LOSS-FOR-YEAR.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SSE-ALLOWABLE-LOSS-FOR-YEAR.1'>[SSE32] must not be present if [SSE10.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SSE-ALLOWABLE-LOSS-FOR-YEAR.1' xml:lang='en'>[SSE32] must not be present if [SSE10.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SSE-ALLOWABLE-LOSS-FOR-YEAR.1'>8504</sch:diagnostic>
++    <sch:diagnostic id='transactional.SSE-ALLOWABLE-LOSS-FOR-YEAR.1'>The entry in box [SSE32] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SSE-ALLOWABLE-LOSS-FOR-YEAR.1' xml:lang='en'>The entry in box [SSE32] should not be present as there is an entry in [SSE10.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-LOSS-SET-OFF-OTHER-INC.1'>6224</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-LOSS-SET-OFF-OTHER-INC.1'>The amount in box [SSE33] exceeds the amount in box [SSE32]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SSE-LOSS-SET-OFF-OTHER-INC.1' xml:lang='en'>The amount in box [SSE33] exceeds the amount in box [SSE32]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SSE-LOSS-TO-CARRY-BACK.1'>6510</sch:diagnostic>
+     <sch:diagnostic id='transactional.SSE-LOSS-TO-CARRY-BACK.1'>The amount in box [SSE34] exceeds [SSE32] minus [SSE33]. Please check</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SA105.1'>The sum of ( ( [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) minus ( [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) ) exceeds 0. Please complete box [PRO41].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA105.1' xml:lang='en'>The sum of ( ( [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) minus ( [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) ) exceeds 0. Please complete box [PRO41].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA105.0'>8262</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA105.0'>[PRO38] must be present if ( ( the sum of [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) minus ( the sum of [PRO20.1], [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) ) exceeds 0</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA105.0' xml:lang='en'>[PRO38] must be present if ( ( the sum of [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) minus ( the sum of [PRO20.1], [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) ) exceeds 0</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SA105.5'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SA105.5'>8505</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA105.5'>Total of all instances of [PRO5.1] and [PRO20.1] must not exceed [£1,000]</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA105.5' xml:lang='en'>Total of all instances of [PRO5.1] and [PRO20.1] must not exceed [£1,000]</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SA105.6'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SA105.6'>8506</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA105.6'>Total of all instances of ( [PRO5] and [PRO11] where [PRO18] is absent in that instance ) plus the total of all instances of ( [PRO20], [PRO22], [PRO23] and [PRO31] ) must not exceed [£150,000] if [PRO20.2] is absent.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA105.6' xml:lang='en'>Total of all instances of ( [PRO5] and [PRO11] where [PRO18] is absent in that instance ) plus the total of all instances of ( [PRO20], [PRO22], [PRO23] and [PRO31] ) must not exceed [£150,000] if [PRO20.2] is absent.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.0'>6117</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.0'>The sum of ([PRO5] + [PRO10] + [PRO11]) minus the sum of ([PRO5.1] + [PRO6] + [PRO7] +  [PRO8] + [PRO9] + [PRO12]) is more than zero. Please complete box [PRO13].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.0' xml:lang='en'>The sum of ([PRO5] + [PRO10] + [PRO11]) minus the sum of ([PRO5.1] + [PRO6] + [PRO7] +  [PRO8] + [PRO9] + [PRO12]) is more than zero. Please complete box [PRO13].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.3'>The sum of ( [PRO13] minus [PRO14] ) exceeds 0. Please complete box [PRO15].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.3' xml:lang='en'>The sum of ( [PRO13] minus [PRO14] ) exceeds 0. Please complete box [PRO15].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.4'>8290</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.4'>The sum of ( ( [PRO6], [PRO7], [PRO8], [PRO9], and [PRO12] ) minus ( [PRO5], [PRO10], and [PRO11] ) ) exceeds 0. Please complete box [PRO16].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.4' xml:lang='en'>The sum of ( ( [PRO6], [PRO7], [PRO8], [PRO9], and [PRO12] ) minus ( [PRO5], [PRO10], and [PRO11] ) ) exceeds 0. Please complete box [PRO16].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.5'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.5'>8507</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.5'>If there is an occurrence of [PRO5-19] without [PRO18], then [PRO20.2] and the [PRO5.2] from that occurrence must either both be submitted or both be absent.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.5' xml:lang='en'>If there is an occurrence of [PRO5-19] without [PRO18], then [PRO20.2] and the [PRO5.2] from that occurrence must either both be submitted or both be absent.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.6'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.6'>8508</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.6'>If an instance of [PRO5-19] exists where [PRO18] is present, [PRO5.2] is absent and [PRO5] or [PRO11] are present then the sum of ( [PRO5] and [PRO11] ) for that instance plus the total for all instances of ( [FOR14], [FOR16] and [FOR20] ) must not exceed [£150,000].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.6' xml:lang='en'>If an instance of [PRO5-19] exists where [PRO18] is present, [PRO5.2] is absent and [PRO5] or [PRO11] are present then the sum of ( [PRO5] and [PRO11] ) for that instance plus the total for all instances of ( [FOR14], [FOR16] and [FOR20] ) must not exceed [£150,000].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LET-PPTY-INCOME-ALLCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-LET-PPTY-INCOME-ALLCE.1'>[PRO5.1] must not exceed the sum of [PRO5] and [PRO11].</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-LET-PPTY-INCOME-ALLCE.1' xml:lang='en'>[PRO5.1] must not exceed the sum of [PRO5] and [PRO11].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-FURNISHED-LETS-EXPS-AMO.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-EXPS-AMO.0'>[PRO6] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-EXPS-AMO.0' xml:lang='en'>[PRO6] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LETTINGS-FINANCE-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-LETTINGS-FINANCE-CHARGES.0'>[PRO7] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-LETTINGS-FINANCE-CHARGES.0' xml:lang='en'>[PRO7] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LETTINGS-LEGAL-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-LETTINGS-LEGAL-CHARGES.0'>[PRO8] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-LETTINGS-LEGAL-CHARGES.0' xml:lang='en'>[PRO8] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LETTINGS-OTHER-DEDUCTIONS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-LETTINGS-OTHER-DEDUCTIONS.0'>[PRO9] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-LETTINGS-OTHER-DEDUCTIONS.0' xml:lang='en'>[PRO9] must not be present if [PRO5.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LET-PPTY-INCOME-ALLCE.1'>8509</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-LET-PPTY-INCOME-ALLCE.1'>The amount in box [PRO5.1] exceeds [PRO5] and [PRO11]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-LET-PPTY-INCOME-ALLCE.1' xml:lang='en'>The amount in box [PRO5.1] exceeds [PRO5] and [PRO11]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-FURNISHED-LETS-EXPS-AMO.0'>8510</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-EXPS-AMO.0'>The entry in box [PRO6] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-EXPS-AMO.0' xml:lang='en'>The entry in box [PRO6] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LETTINGS-FINANCE-CHARGES.0'>8511</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-LETTINGS-FINANCE-CHARGES.0'>The entry in box [PRO7] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-LETTINGS-FINANCE-CHARGES.0' xml:lang='en'>The entry in box [PRO7] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LETTINGS-LEGAL-CHARGES.0'>8512</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-LETTINGS-LEGAL-CHARGES.0'>The entry in box [PRO8] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-LETTINGS-LEGAL-CHARGES.0' xml:lang='en'>The entry in box [PRO8] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LETTINGS-OTHER-DEDUCTIONS.0'>8513</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-LETTINGS-OTHER-DEDUCTIONS.0'>The entry in box [PRO9] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-LETTINGS-OTHER-DEDUCTIONS.0' xml:lang='en'>The entry in box [PRO9] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-LETTINGS-PRIVATE-USE-ADJ.1'>6140</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-LETTINGS-PRIVATE-USE-ADJ.1'>The amount in box [PRO10] exceeds ( the sum of [PRO6], [PRO7], [PRO8], and [PRO9] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-LETTINGS-PRIVATE-USE-ADJ.1' xml:lang='en'>The amount in box [PRO10] exceeds ( the sum of [PRO6], [PRO7], [PRO8], and [PRO9] ). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LETTINGS-PRIVATE-USE-ADJ.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-LETTINGS-PRIVATE-USE-ADJ.0'>[PRO10] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-LETTINGS-PRIVATE-USE-ADJ.0' xml:lang='en'>[PRO10] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-LETTINGS-CAPITAL-ALLCE.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LETTINGS-PRIVATE-USE-ADJ.0'>8514</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-LETTINGS-PRIVATE-USE-ADJ.0'>The entry in box [PRO10] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-LETTINGS-PRIVATE-USE-ADJ.0' xml:lang='en'>The entry in box [PRO10] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-LETTINGS-CAPITAL-ALLCE.0'>8515</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-LETTINGS-CAPITAL-ALLCE.0'>[PRO12] must not be present if [PRO5.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-LETTINGS-CAPITAL-ALLCE.0' xml:lang='en'>[PRO12] must not be present if [PRO5.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-FURNISHED-LETS-PROFIT-AMT.1'>8267</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-PROFIT-AMT.1'>The amount in box [PRO13] must equal the sum of [PRO5] + [PRO10] + [PRO11] minus sum of ([PRO5.1] + [PRO6] + [PRO7] + [PRO8] + [PRO9] + [PRO12]). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-PROFIT-AMT.1' xml:lang='en'>The amount in box [PRO13] must equal the sum of [PRO5] + [PRO10] + [PRO11] minus sum of ([PRO5.1] + [PRO6] + [PRO7] + [PRO8] + [PRO9] + [PRO12]). Please check.</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-LOSS-AMT.0'>There is an entry in box [PRO16], box [PRO15] must be absent or zero. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-LOSS-AMT.0' xml:lang='en'>There is an entry in box [PRO16], box [PRO15] must be absent or zero. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PRO-HOLIDAY-LETTINGS.1'>8265</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PRO-HOLIDAY-LETTINGS.1'>The amount in box [PRO16] must equal the sum of [PRO6] + [PRO7] + [PRO8] + [PRO9] + [PRO12] minus ([PRO5] + [PRO10] + [PRO11]). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PRO-HOLIDAY-LETTINGS.1' xml:lang='en'>The amount in box [PRO16] must equal the sum of [PRO6] + [PRO7] + [PRO8] + [PRO9] + [PRO12] minus ([PRO5] + [PRO10] + [PRO11]). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-FURNISHED-LETS-LOSS-AMT.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-LOSS-AMT.1'>[PRO16] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-LOSS-AMT.1' xml:lang='en'>[PRO16] must not be present if [PRO5.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-INCOME-ALLCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-INCOME-ALLCE.1'>[PRO20.1] must not exceed the sum of [PRO20] and [PRO31].</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-INCOME-ALLCE.1' xml:lang='en'>[PRO20.1] must not exceed the sum of [PRO20] and [PRO31].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-RENT-RATES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-RENT-RATES.0'>[PRO24] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-RENT-RATES.0' xml:lang='en'>[PRO24] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-REPAIRS-RENEWALS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-REPAIRS-RENEWALS.0'>[PRO25] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-REPAIRS-RENEWALS.0' xml:lang='en'>[PRO25] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-FINANCE-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-FINANCE-CHARGES.0'>[PRO26] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-FINANCE-CHARGES.0' xml:lang='en'>[PRO26] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-LEGAL-CHARGES.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-LEGAL-CHARGES.0'>[PRO27] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-LEGAL-CHARGES.0' xml:lang='en'>[PRO27] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-SERVICE-COSTS.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-SERVICE-COSTS.0'>[PRO28] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-SERVICE-COSTS.0' xml:lang='en'>[PRO28] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-OTHER-DEDUCTIONS.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-FURNISHED-LETS-LOSS-AMT.1'>8516</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-FURNISHED-LETS-LOSS-AMT.1'>The entry in box[PRO16] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-FURNISHED-LETS-LOSS-AMT.1' xml:lang='en'>The entry in box[PRO16] should not be present as there is an entry in [PRO5.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-INCOME-ALLCE.1'>8517</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-INCOME-ALLCE.1'>The amount in box [PRO20.1] exceeds [PRO20] and [PRO31]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-INCOME-ALLCE.1' xml:lang='en'>The amount in box [PRO20.1] exceeds [PRO20] and [PRO31]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-RENT-RATES.0'>8518</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-RENT-RATES.0'>The entry in box [PRO24] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-RENT-RATES.0' xml:lang='en'>The entry in box [PRO24] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-REPAIRS-RENEWALS.0'>8519</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-REPAIRS-RENEWALS.0'>The entry in box [PRO25] should not be present as there is an entry in  [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-REPAIRS-RENEWALS.0' xml:lang='en'>The entry in box [PRO25] should not be present as there is an entry in  [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-FINANCE-CHARGES.0'>8520</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-FINANCE-CHARGES.0'>The entry in box [PRO26] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-FINANCE-CHARGES.0' xml:lang='en'>The entry in box [PRO26] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-LEGAL-CHARGES.0'>8521</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-LEGAL-CHARGES.0'>The entry in box [PRO27] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-LEGAL-CHARGES.0' xml:lang='en'>The entry in box [PRO27] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-SERVICE-COSTS.0'>8522</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-SERVICE-COSTS.0'>The entry in box [PRO28] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-SERVICE-COSTS.0' xml:lang='en'>The entry in box [PRO28] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-OTHER-DEDUCTIONS.0'>8523</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-OTHER-DEDUCTIONS.0'>[PRO29] must not be present if [PRO20.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PPTY-OTHER-DEDUCTIONS.0' xml:lang='en'>[PRO29] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-PRIVATE-USE-ADJUST.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-PRIVATE-USE-ADJUST.0'>[PRO30] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-PRIVATE-USE-ADJUST.0' xml:lang='en'>[PRO30] must not be present if [PRO20.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-PRIVATE-USE-ADJUST.0'>8524</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-PRIVATE-USE-ADJUST.0'>The entry in box [PRO30] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-PRIVATE-USE-ADJUST.0' xml:lang='en'>The entry in box [PRO30] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PPTY-CAPITAL-ALLOWANCES.0'>6122</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-CAPITAL-ALLOWANCES.0'>The amount in box [PRO32] exceeds [£375,000]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PPTY-CAPITAL-ALLOWANCES.0' xml:lang='en'>The amount in box [PRO32] exceeds [£375,000]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-CAPITAL-ALLOWANCES.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-CAPITAL-ALLOWANCES.1'>[PRO32] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-CAPITAL-ALLOWANCES.1' xml:lang='en'>[PRO32] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-CAPITAL-ALLOWANCES.2'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-CAPITAL-ALLOWANCES.2'>[PRO32] must not be present if [PRO20.2] is absent</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-CAPITAL-ALLOWANCES.2' xml:lang='en'>[PRO32] must not be present if [PRO20.2] is absent</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-ZERO-EMISSION-GV-ALLCE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-ZERO-EMISSION-GV-ALLCE.0'>[PRO34] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-ZERO-EMISSION-GV-ALLCE.0' xml:lang='en'>[PRO34] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-ENH-CAPITAL-ALLCES-AMT.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-ENH-CAPITAL-ALLCES-AMT.0'>[PRO35] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-ENH-CAPITAL-ALLCES-AMT.0' xml:lang='en'>[PRO35] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-WEAR-AND-TEAR.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-CAPITAL-ALLOWANCES.1'>8525</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-CAPITAL-ALLOWANCES.1'>The entry in box [PRO32] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-CAPITAL-ALLOWANCES.1' xml:lang='en'>The entry in box [PRO32] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-CAPITAL-ALLOWANCES.2'>8526</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-CAPITAL-ALLOWANCES.2'>The entry in box [PRO32] should not be present as there is no entry in [PRO20.2] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-CAPITAL-ALLOWANCES.2' xml:lang='en'>The entry in box [PRO32] should not be present as there is no entry in [PRO20.2] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-ZERO-EMISSION-GV-ALLCE.0'>8527</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-ZERO-EMISSION-GV-ALLCE.0'>The entry in box [PRO34] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-ZERO-EMISSION-GV-ALLCE.0' xml:lang='en'>The entry in box [PRO34] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-ENH-CAPITAL-ALLCES-AMT.0'>8528</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-ENH-CAPITAL-ALLCES-AMT.0'>The entry in box [PRO35] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-ENH-CAPITAL-ALLCES-AMT.0' xml:lang='en'>The entry in box [PRO35] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-WEAR-AND-TEAR.0'>8529</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-WEAR-AND-TEAR.0'>[PRO36] must not be present if [PRO20.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PPTY-WEAR-AND-TEAR.0' xml:lang='en'>[PRO36] must not be present if [PRO20.1] is present.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-RENT-ROOM-EXEMPT-AMOUNT.1'>6468</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-RENT-ROOM-EXEMPT-AMOUNT.1'>There is an entry in box [PRO37], box [PRO4] must be absent. Please amend the incorrect entry.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-RENT-ROOM-EXEMPT-AMOUNT.1' xml:lang='en'>There is an entry in box [PRO37], box [PRO4] must be absent. Please amend the incorrect entry.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-RENT-ROOM-EXEMPT-AMOUNT.2'>6469</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-RENT-ROOM-EXEMPT-AMOUNT.2'>The amount in box [PRO37] exceeds [£7,500]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-RENT-ROOM-EXEMPT-AMOUNT.2' xml:lang='en'>The amount in box [PRO37] exceeds [£7,500]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-RENT-ROOM-EXEMPT-AMOUNT.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-RENT-ROOM-EXEMPT-AMOUNT.0'>[PRO37] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-RENT-ROOM-EXEMPT-AMOUNT.0' xml:lang='en'>[PRO37] must not be present if [PRO20.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-RENT-ROOM-EXEMPT-AMOUNT.0'>8530</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-RENT-ROOM-EXEMPT-AMOUNT.0'>The entry in box[PRO37] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-RENT-ROOM-EXEMPT-AMOUNT.0' xml:lang='en'>The entry in box[PRO37] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-ADJUSTED-PROFIT-4-YEAR-AMT.1'>8269</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-ADJUSTED-PROFIT-4-YEAR-AMT.1'>The amount in box [PRO38] must equal ( the sum of [PRO20], [PRO22], [PRO23], [PRO30] and [PRO31] ) minus ( the sum of [PRO20.1], [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36] and [PRO37] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-ADJUSTED-PROFIT-4-YEAR-AMT.1' xml:lang='en'>The amount in box [PRO38] must equal ( the sum of [PRO20], [PRO22], [PRO23], [PRO30] and [PRO31] ) minus ( the sum of [PRO20.1], [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36] and [PRO37] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PPTY-LOSS-BROUGHT-FWD.0'>8441</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-LOSS-BROUGHT-FWD.0'>The amount in box [PRO39] exceeds [PRO38] Please check</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.UKL-TAXABLE-PROFIT-FOR-YR-AMT.1'>The amount in box [PRO40] must equal( [PRO38] minus [PRO39] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-TAXABLE-PROFIT-FOR-YR-AMT.1' xml:lang='en'>The amount in box [PRO40] must equal( [PRO38] minus [PRO39] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-ADJUSTED-LOSS-AMT.1'>8270</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-ADJUSTED-LOSS-AMT.1'>The amount in box [PRO41] must equal ( ( the sum of [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) minus ( the sum of [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-ADJUSTED-LOSS-AMT.1' xml:lang='en'>The amount in box [PRO41] must equal ( ( the sum of [PRO24], [PRO25], [PRO26], [PRO27], [PRO28], [PRO29], [PRO32], [PRO34], [PRO35], [PRO36], and [PRO37] ) minus ( the sum of [PRO20], [PRO22], [PRO23], [PRO30], and [PRO31] ) ). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-ADJUSTED-LOSS-AMT.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-ADJUSTED-LOSS-AMT.0'>[PRO41] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-ADJUSTED-LOSS-AMT.0' xml:lang='en'>[PRO41] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-LOSS-OFFSET-INCOME.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-LOSS-OFFSET-INCOME.0'>[PRO42] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-LOSS-OFFSET-INCOME.0' xml:lang='en'>[PRO42] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-LOSS-OFFSET-INCOME.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-LOSS-OFFSET-INCOME.1'>[PRO42] must not be present if [PRO20.2] is absent</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-LOSS-OFFSET-INCOME.1' xml:lang='en'>[PRO42] must not be present if [PRO20.2] is absent</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-ADJUSTED-LOSS-AMT.0'>8531</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-ADJUSTED-LOSS-AMT.0'>The entry in box [PRO41] should not be present as there is an entry in box [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-ADJUSTED-LOSS-AMT.0' xml:lang='en'>The entry in box [PRO41] should not be present as there is an entry in box [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-LOSS-OFFSET-INCOME.0'>8532</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-LOSS-OFFSET-INCOME.0'>The entry in box [PRO42] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-LOSS-OFFSET-INCOME.0' xml:lang='en'>The entry in box [PRO42] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-LOSS-OFFSET-INCOME.1'>8533</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-LOSS-OFFSET-INCOME.1'>The entry in box [PRO42] should not be present as there is no entry in [PRO20.2] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-LOSS-OFFSET-INCOME.1' xml:lang='en'>The entry in box [PRO42] should not be present as there is no entry in [PRO20.2] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PPTY-RES-FIN-COSTS.0'>8442</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-RES-FIN-COSTS.0'>There is an entry in box [PRO44] so please complete [PRO26] Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PPTY-RES-FIN-COSTS.0' xml:lang='en'>There is an entry in box [PRO44] so please complete [PRO26] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.UKL-PPTY-RES-FIN-COSTS.1'>8443</sch:diagnostic>
+     <sch:diagnostic id='transactional.UKL-PPTY-RES-FIN-COSTS.1'>The amount in box [PRO44] should not exceed [PRO26]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.UKL-PPTY-RES-FIN-COSTS.1' xml:lang='en'>The amount in box [PRO44] should not exceed [PRO26]. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UKL-PPTY-RES-FIN-COSTS.2'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UKL-PPTY-RES-FIN-COSTS.2'>[PRO44] must not be present if [PRO20.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UKL-PPTY-RES-FIN-COSTS.2' xml:lang='en'>[PRO44] must not be present if [PRO20.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UKL-PPTY-RES-FIN-COSTS.2'>8534</sch:diagnostic>
++    <sch:diagnostic id='transactional.UKL-PPTY-RES-FIN-COSTS.2'>The entry in box [PRO44] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UKL-PPTY-RES-FIN-COSTS.2' xml:lang='en'>The entry in box [PRO44] should not be present as there is an entry in [PRO20.1] Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA106.3'>6124</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA106.3'>There is an entry in [FOR14] or [FOR16] or [FOR17]. Please complete box [FOR18].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA106.3' xml:lang='en'>There is an entry in [FOR14] or [FOR16] or [FOR17]. Please complete box [FOR18].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA106.6'>6127</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA106.6'>The sum of ( [FOR25] minus [FOR26] ) exceeds 0. Please complete box [FOR27].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.SA106.7'>There is an entry in box [FOR30C]. Please complete box [FOR28].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA106.7' xml:lang='en'>There is an entry in box [FOR30C]. Please complete box [FOR28].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.SA106.8'>6130</sch:diagnostic>
+     <sch:diagnostic id='transactional.SA106.8'>There is an entry in box [FOR30D]. Please complete box [FOR29].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.SA106.8' xml:lang='en'>There is an entry in box [FOR30D]. Please complete box [FOR29].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SA106.9'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SA106.9'>Total of all instances of [FOR14.1] must not exceed [£1,000]</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SA106.9' xml:lang='en'>Total of all instances of [FOR14.1] must not exceed [£1,000]</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.PRE-CALC.n'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.PRE-CALC.n'>All occurrences of [FOR14-FOR24.1 / FOR30A-FOR30F] must have the same value of [FOR14.2].</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.PRE-CALC.n' xml:lang='en'>All occurrences of [FOR14-FOR24.1 / FOR30A-FOR30F] must have the same value of [FOR14.2].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.SA106.10'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.SA106.10'>Total across all instances of [FOR14], [FOR16] &amp; [FOR20] must not exceed [£150,000] if no [FOR14.2] is present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.SA106.10' xml:lang='en'>Total across all instances of [FOR14], [FOR16] &amp; [FOR20] must not exceed [£150,000] if no [FOR14.2] is present</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SA106.9'>8535</sch:diagnostic>
++    <sch:diagnostic id='transactional.SA106.9'>Total of all instances of [FOR14.1] must not exceed [£1,000] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SA106.9' xml:lang='en'>Total of all instances of [FOR14.1] must not exceed [£1,000] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.PRE-CALC.n'>8536</sch:diagnostic>
++    <sch:diagnostic id='transactional.PRE-CALC.n'>All values in [FOR14.2] must match values in [FOR14-FOR24.1 / FOR30A-FOR30F]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.PRE-CALC.n' xml:lang='en'>All values in [FOR14.2] must match values in [FOR14-FOR24.1 / FOR30A-FOR30F]. Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.SA106.10'>8537</sch:diagnostic>
++    <sch:diagnostic id='transactional.SA106.10'>Total across all instances of [FOR14], [FOR16] &amp; [FOR20] must not exceed [£150,000] if no [FOR14.2] is present.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.SA106.10' xml:lang='en'>Total across all instances of [FOR14], [FOR16] &amp; [FOR20] must not exceed [£150,000] if no [FOR14.2] is present.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-OTHER-DIVIDENDS-ETC.1'>6598</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-OTHER-DIVIDENDS-ETC.1'>The amount in box [FOR4F] must equal [FOR4B] if box [FOR4E] completed. If box [FOR4E] not completed,   [FOR4F] must equal [FOR4B] minus [FOR4C]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-OTHER-DIVIDENDS-ETC.1' xml:lang='en'>The amount in box [FOR4F] must equal [FOR4B] if box [FOR4E] completed. If box [FOR4E] not completed,   [FOR4F] must equal [FOR4B] minus [FOR4C]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-OTHR-FI-SAV-GROSS-INC-AMO.1'>6133</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-OTHR-FI-SAV-GROSS-INC-AMO.1'>There is an entry in box [FOR4B]. Please complete box [FOR4F].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.RES-PPTY-INC-OR-REST-FIN.0'>The amount in box [FOR13.1] should not exceed [FOR13] Please check</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.RES-PPTY-INC-OR-REST-FIN.0' xml:lang='en'>The amount in box [FOR13.1] should not exceed [FOR13] Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.RES-PPTY-INC-OR-REST-FIN.1'>8445</sch:diagnostic>
+     <sch:diagnostic id='transactional.RES-PPTY-INC-OR-REST-FIN.1'>There is an entry in box [FOR13.1] please complete [FOR13] </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.RES-PPTY-INC-OR-REST-FIN.1' xml:lang='en'>There is an entry in box [FOR13.1] please complete [FOR13] </sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-INCOME-LET-PROPERTY.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG-INCOME-LET-PROPERTY.0'>Within each [FOR14-FOR24.1 / FOR30A-FOR30F], the total of [FOR14], [FOR16] and [FOR20] must not exceed [£150,000] if [FOR14.2] is absent</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG-INCOME-LET-PROPERTY.0' xml:lang='en'>Within each [FOR14-FOR24.1 / FOR30A-FOR30F], the total of [FOR14], [FOR16] and [FOR20] must not exceed [£150,000] if [FOR14.2] is absent</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-INCOME-LET-PROPERTY.1'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-INCOME-LET-PROPERTY.0'>8538</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG-INCOME-LET-PROPERTY.0'>Within each [FOR14-FOR24.1 / FOR30A-FOR30F], the total of [FOR14], [FOR16] and [FOR20] must not exceed [£150,000] if there is no entry in [FOR14.2] Please check.</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG-INCOME-LET-PROPERTY.0' xml:lang='en'>Within each [FOR14-FOR24.1 / FOR30A-FOR30F], the total of [FOR14], [FOR16] and [FOR20] must not exceed [£150,000] if there is no entry in [FOR14.2] Please check.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-INCOME-LET-PROPERTY.1'>8539</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-INCOME-LET-PROPERTY.1'>Where both an occurrence of [FOR14] and a [PRO5-19] with [PRO5] and [PRO18] present, the value of [FOR14.2] and the value of [PRO5.2] from that occurrence of [PRO5-19] must be the same.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-INCOME-LET-PROPERTY.1' xml:lang='en'>Where both an occurrence of [FOR14] and a [PRO5-19] with [PRO5] and [PRO18] present, the value of [FOR14.2] and the value of [PRO5.2] from that occurrence of [PRO5-19] must be the same.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-INCOME-AMO.1'>6586</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-INCOME-AMO.1'>Box [FOR15] must be present if [FOR14] is present. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PROPERTY-INCOME-AMO.1' xml:lang='en'>Box [FOR15] must be present if [FOR14] is present. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-PROPERTY-INCOME-ALLOWANCE.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-PROPERTY-INCOME-ALLOWANCE.0'>8540</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-PROPERTY-INCOME-ALLOWANCE.0'>There is an entry in [FOR14.1]. Please complete [FOR24].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-PROPERTY-INCOME-ALLOWANCE.0' xml:lang='en'>There is an entry in [FOR14.1]. Please complete [FOR24].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG4-PROPERTY-TOTAL-EXP-AMO.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG4-PROPERTY-TOTAL-EXP-AMO.0'>[FOR17] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-TOTAL-EXP-AMO.0' xml:lang='en'>[FOR17] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG4-PROPERTY-TOTAL-EXP-AMO.0'>8541</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG4-PROPERTY-TOTAL-EXP-AMO.0'>As [FOR14.1] is present you cannot have an entry in [FOR17]   Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-TOTAL-EXP-AMO.0' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR17]   Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-NET-PROFIT-AMO.1'>6703</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-NET-PROFIT-AMO.1'>The amount in box [FOR18] must equal ( ( [FOR14] plus [FOR16] ) minus [FOR17] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PROPERTY-NET-PROFIT-AMO.1' xml:lang='en'>The amount in box [FOR18] must equal ( ( [FOR14] plus [FOR16] ) minus [FOR17] ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-NET-PROFIT-AMO.2'>8358</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-NET-PROFIT-AMO.2'>There is an entry in [FOR18]. Please complete [FOR24].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.FIG4-PPTY-ADJUST-PERSNL-AMO.1'>The amount in box [FOR19] exceeds the amount in box [FOR17]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PPTY-ADJUST-PERSNL-AMO.1' xml:lang='en'>The amount in box [FOR19] exceeds the amount in box [FOR17]. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PPTY-ADJUST-PERSNL-AMO.2'>8359</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PPTY-ADJUST-PERSNL-AMO.2'>There is an entry in [FOR19]. Please complete [FOR24].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PPTY-ADJUST-PERSNL-AMO.2' xml:lang='en'>There is an entry in [FOR19]. Please complete [FOR24].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG4-PPTY-ADJUST-PERSNL-AMO.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG4-PPTY-ADJUST-PERSNL-AMO.0'>[FOR19] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG4-PPTY-ADJUST-PERSNL-AMO.0' xml:lang='en'>[FOR19] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG4-PPTY-ADJUST-PERSNL-AMO.0'>8542</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG4-PPTY-ADJUST-PERSNL-AMO.0'>As [FOR14.1] is present you cannot have an entry in [FOR14.1]   Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG4-PPTY-ADJUST-PERSNL-AMO.0' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR14.1]   Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-BC-AMO.1'>8360</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-BC-AMO.1'>There is an entry in [FOR20]. Please complete [FOR24]. </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PROPERTY-BC-AMO.1' xml:lang='en'>There is an entry in [FOR20]. Please complete [FOR24]. </sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-CAP-AMO.1'>8361</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-CAP-AMO.1'>There is an entry in [FOR21]. Please complete [FOR24]. </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PROPERTY-CAP-AMO.1' xml:lang='en'>There is an entry in [FOR21]. Please complete [FOR24]. </sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG4-PROPERTY-CAP-AMO.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG4-PROPERTY-CAP-AMO.0'>[FOR21] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-CAP-AMO.0' xml:lang='en'>[FOR21] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG4-PROPERTY-CAP-AMO.0'>8543</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG4-PROPERTY-CAP-AMO.0'>As [FOR14.1] is present you cannot have an entry in [FOR21]    Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-CAP-AMO.0' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR21]    Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-ZERO-EMISSION-GV-ALLCE.1'>8381</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-ZERO-EMISSION-GV-ALLCE.1'>There is an entry in [FOR22]. Please complete [FOR24].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-ZERO-EMISSION-GV-ALLCE.1' xml:lang='en'>There is an entry in [FOR22]. Please complete [FOR24].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-ZERO-EMISSION-GV-ALLCE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG-ZERO-EMISSION-GV-ALLCE.0'>[FOR22] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG-ZERO-EMISSION-GV-ALLCE.0' xml:lang='en'>[FOR22] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-ZERO-EMISSION-GV-ALLCE.0'>8544</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG-ZERO-EMISSION-GV-ALLCE.0'>As [FOR14.1] is present you cannot have an entry in [FOR22]   Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG-ZERO-EMISSION-GV-ALLCE.0' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR22]   Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-PROPERTY-WEAR-TEAR-AMO.1'>8362</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-PROPERTY-WEAR-TEAR-AMO.1'>There is an entry in [FOR23]. Please complete [FOR24].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-PROPERTY-WEAR-TEAR-AMO.1' xml:lang='en'>There is an entry in [FOR23]. Please complete [FOR24].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG4-PROPERTY-WEAR-TEAR-AMO.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG4-PROPERTY-WEAR-TEAR-AMO.0'>[FOR23] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-WEAR-TEAR-AMO.0' xml:lang='en'>[FOR23] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG4-PROPERTY-WEAR-TEAR-AMO.0'>8545</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG4-PROPERTY-WEAR-TEAR-AMO.0'>As  [FOR14.1] is present you cannot have an entry in [FOR23] Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG4-PROPERTY-WEAR-TEAR-AMO.0' xml:lang='en'>As  [FOR14.1] is present you cannot have an entry in [FOR23] Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.0'>6718</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.0'>[FOR24] must equal ( ( the sum of [FOR18], [FOR19], and [FOR20] ) minus ( the sum of [FOR14.1], [FOR21], [FOR22], and [FOR23] ) ). Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.0' xml:lang='en'>[FOR24] must equal ( ( the sum of [FOR18], [FOR19], and [FOR20] ) minus ( the sum of [FOR14.1], [FOR21], [FOR22], and [FOR23] ) ). Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.1'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.1'>8546</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.1'>If [FOR14.1] is present then [FOR24] must not be negative</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-PPTY-ADJUSTD-PROF-LOSS-AMT.1' xml:lang='en'>If [FOR14.1] is present then [FOR24] must not be negative</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-PPTY-RES-FIN-COSTS.0'>8446</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-PPTY-RES-FIN-COSTS.0'>There is an entry in box [FOR24.1] so please complete [FOR17] </sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-PPTY-RES-FIN-COSTS.0' xml:lang='en'>There is an entry in box [FOR24.1] so please complete [FOR17] </sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-PPTY-RES-FIN-COSTS.1'>8447</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-PPTY-RES-FIN-COSTS.1'>The amount in box [FOR24.1] should not exceed [FOR17]</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-PPTY-RES-FIN-COSTS.1' xml:lang='en'>The amount in box [FOR24.1] should not exceed [FOR17]</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-PPTY-RES-FIN-COSTS.2'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG-PPTY-RES-FIN-COSTS.2'>[FOR24.1] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG-PPTY-RES-FIN-COSTS.2' xml:lang='en'>[FOR24.1] must not be present if [FOR14.1] is present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-PPTY-RES-FIN-COSTS.2'>8547</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG-PPTY-RES-FIN-COSTS.2'>As [FOR14.1] is present you cannot have an entry in [FOR24.1] Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG-PPTY-RES-FIN-COSTS.2' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR24.1] Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-LET-PPTY-PROFIT-AMO.0'>6272</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-LET-PPTY-PROFIT-AMO.0'>The amount in box [FOR30B] exceeds 0. Please complete box [FOR25].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-LET-PPTY-PROFIT-AMO.0' xml:lang='en'>The amount in box [FOR30B] exceeds 0. Please complete box [FOR25].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG4-LET-PPTY-PROFIT-TOT.0'>5000</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG4-LET-PPTY-PROFIT-TOT.0'>8548</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-LET-PPTY-PROFIT-TOT.0'>If a [FOR14.1] is present then [FOR25] must not be negative</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-LET-PPTY-PROFIT-TOT.0' xml:lang='en'>If a [FOR14.1] is present then [FOR25] must not be negative</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-LET-PPTY-PROFIT-TOT.1'>6719</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-LET-PPTY-PROFIT-TOT.1'>Must equal the sum of all occurrences of box [FOR30B].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-LET-PPTY-PROFIT-TOT.1' xml:lang='en'>Must equal the sum of all occurrences of box [FOR30B].</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.FIG4-LET-PPTY-FOREIGN-TAX-TOT.1'>Must equal the sum of all occurrences of box [FOR30C].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-LET-PPTY-FOREIGN-TAX-TOT.1' xml:lang='en'>Must equal the sum of all occurrences of box [FOR30C].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG-LET-PPTY-TOT-WHOLD-TAX-AMT.1'>6721</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG-LET-PPTY-TOT-WHOLD-TAX-AMT.1'>Must equal the sum of all occurrences of box [FOR30D].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG-LET-PPTY-TOT-WHOLD-TAX-AMT.1' xml:lang='en'>Must equal the sum of all occurrences of box [FOR30D].</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-MLOFFSET-ON-INC-AMT.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG-MLOFFSET-ON-INC-AMT.0'>[FOR31] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG-MLOFFSET-ON-INC-AMT.0' xml:lang='en'>[FOR31] must not be present if [FOR14.1] is present.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.FIG-MLOFFSET-ON-INC-AMT.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.FIG-MLOFFSET-ON-INC-AMT.1'>[FOR31] must not be present if [FOR14.2] is not present</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.FIG-MLOFFSET-ON-INC-AMT.1' xml:lang='en'>[FOR31] must not be present if [FOR14.2] is not present</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-MLOFFSET-ON-INC-AMT.0'>8549</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG-MLOFFSET-ON-INC-AMT.0'>As [FOR14.1] is present you cannot have an entry in [FOR31] Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG-MLOFFSET-ON-INC-AMT.0' xml:lang='en'>As [FOR14.1] is present you cannot have an entry in [FOR31] Please check</sch:diagnostic>
++    <sch:diagnostic id='errorCode.FIG-MLOFFSET-ON-INC-AMT.1'>8550</sch:diagnostic>
++    <sch:diagnostic id='transactional.FIG-MLOFFSET-ON-INC-AMT.1'>You cannot have an entry in [FOR31] as there is no entry in  [FOR14.2] Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.FIG-MLOFFSET-ON-INC-AMT.1' xml:lang='en'>You cannot have an entry in [FOR31] as there is no entry in  [FOR14.2] Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-CRED-RLF-SAV-FRGN-TAX-AMO.0'>6273</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-CRED-RLF-SAV-FRGN-TAX-AMO.0'>There is an entry in box [FORC]. Please complete box [FORF].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.FIG4-CRED-RLF-SAV-FRGN-TAX-AMO.0' xml:lang='en'>There is an entry in box [FORC]. Please complete box [FORF].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.FIG4-CRED-RLF-SAV-UK-CHRG-AMO.1'>6858</sch:diagnostic>
+     <sch:diagnostic id='transactional.FIG4-CRED-RLF-SAV-UK-CHRG-AMO.1'>The amount in box [FORF] must exceed [FORC]. Please check.</sch:diagnostic>
+@@
+     <sch:diagnostic id='transactional.DOM-REMITTANCE-BASIS-CLAIM-SIG.0'>There is an entry in box [NRD28]. Please complete [NRD23].</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.DOM-REMITTANCE-BASIS-CLAIM-SIG.0' xml:lang='en'>There is an entry in box [NRD28]. Please complete [NRD23].</sch:diagnostic>
+     <sch:diagnostic id='errorCode.DOM-NOMINATED-CAPITAL-GAIN-AMT.0'>6172</sch:diagnostic>
+     <sch:diagnostic id='transactional.DOM-NOMINATED-CAPITAL-GAIN-AMT.0'>There is an entry in box [NRD28] and either box [NRD31] or [NRD32] and no entry in box [NRD29] or box [NRD33]. Therefore the sum of [NRD34] + [NRD35] must be greater than zero. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.DOM-NOMINATED-CAPITAL-GAIN-AMT.0' xml:lang='en'>There is an entry in box [NRD28] and either box [NRD31] or [NRD32] and no entry in box [NRD29] or box [NRD33]. Therefore the sum of [NRD34] + [NRD35] must be greater than zero. Please check.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.DOM-REMITTANCE-BASIS-CLAIM-SIG.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.DOM-REMITTANCE-BASIS-CLAIM-SIG.1'>[NRD28] is present so both [NRD23.1] and [NRD23.2] should be absent.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.DOM-REMITTANCE-BASIS-CLAIM-SIG.1' xml:lang='en'>[NRD28] is present so both [NRD23.1] and [NRD23.2] should be absent.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UK-DOM-PREVIOUS-REMITTANCE.0'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UK-DOM-PREVIOUS-REMITTANCE.0'>[NRD30] is present so both [NRD28] and [NRD29] should be absent.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UK-DOM-PREVIOUS-REMITTANCE.0' xml:lang='en'>[NRD30] is present so both [NRD28] and [NRD29] should be absent.</sch:diagnostic>
+-    <sch:diagnostic id='errorCode.UK-DOM-PREVIOUS-REMITTANCE.1'>5000</sch:diagnostic>
+-    <sch:diagnostic id='transactional.UK-DOM-PREVIOUS-REMITTANCE.1'>[NRD30] is present so at least one of [NRD23.1] and [NRD23.2] must be present.</sch:diagnostic>
+-    <sch:diagnostic id='transactional.en.UK-DOM-PREVIOUS-REMITTANCE.1' xml:lang='en'>[NRD30] is present so at least one of [NRD23.1] and [NRD23.2] must be present.</sch:diagnostic>
++    <sch:diagnostic id='errorCode.DOM-REMITTANCE-BASIS-CLAIM-SIG.1'>8551</sch:diagnostic>
++    <sch:diagnostic id='transactional.DOM-REMITTANCE-BASIS-CLAIM-SIG.1'>[NRD28] is present so both [NRD23.1] and [NRD23.2] should be absent. Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.DOM-REMITTANCE-BASIS-CLAIM-SIG.1' xml:lang='en'>[NRD28] is present so both [NRD23.1] and [NRD23.2] should be absent. Please check</sch:diagnostic>
++    <sch:diagnostic id='errorCode.UK-DOM-PREVIOUS-REMITTANCE.0'>8552</sch:diagnostic>
++    <sch:diagnostic id='transactional.UK-DOM-PREVIOUS-REMITTANCE.0'>[NRD30] is present so both [NRD28] and [NRD29] should be absent. Please check </sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UK-DOM-PREVIOUS-REMITTANCE.0' xml:lang='en'>[NRD30] is present so both [NRD28] and [NRD29] should be absent. Please check </sch:diagnostic>
++    <sch:diagnostic id='errorCode.UK-DOM-PREVIOUS-REMITTANCE.1'>8553</sch:diagnostic>
++    <sch:diagnostic id='transactional.UK-DOM-PREVIOUS-REMITTANCE.1'>[NRD30] is present so at least one of [NRD23.1] and [NRD23.2] must be present. Please check</sch:diagnostic>
++    <sch:diagnostic id='transactional.en.UK-DOM-PREVIOUS-REMITTANCE.1' xml:lang='en'>[NRD30] is present so at least one of [NRD23.1] and [NRD23.2] must be present. Please check</sch:diagnostic>
+     <sch:diagnostic id='errorCode.DOM-UK-RESIDENT-12-YEAR-SIG.0'>8292</sch:diagnostic>
+     <sch:diagnostic id='transactional.DOM-UK-RESIDENT-12-YEAR-SIG.0'>There is an entry in box [NRD31] box [NRD28] or box  [NRD29] must also be completed. Please check.</sch:diagnostic>
+     <sch:diagnostic id='transactional.en.DOM-UK-RESIDENT-12-YEAR-SIG.0' xml:lang='en'>There is an entry in box [NRD31] box [NRD28] or box  [NRD29] must also be completed. Please check.</sch:diagnostic>
+     <sch:diagnostic id='errorCode.DOM-UK-RESIDENT-QUAL-SIG.0'>8234</sch:diagnostic>
+     <sch:diagnostic id='transactional.DOM-UK-RESIDENT-QUAL-SIG.0'>There is an entry in box [NRD32]. Please complete [NRD28] or [NRD29].</sch:diagnostic>

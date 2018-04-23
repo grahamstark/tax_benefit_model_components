@@ -1,0 +1,5039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- v1.0 2018-01-15 - Based on 'HMRC-MTR-2018-v2-0-20171208' of the Individual RIM artefacts -->
+<!-- Thanks to LC for his help -->
+<MTRboxes TaxYearEnd="2018">
+	<Box mnemonic="YPD1">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Date of birth</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/DateOfBirth</Xpath>
+	</Box>
+	<Box mnemonic="A11">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Address line 1</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/AddressLine1</Xpath>
+	</Box>
+	<Box mnemonic="A12">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Address line 2</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/AddressLine2</Xpath>
+	</Box>
+	<Box mnemonic="A13">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Address line 3</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/AddressLine3</Xpath>
+	</Box>
+	<Box mnemonic="A14">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Address line 4</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/AddressLine4</Xpath>
+	</Box>
+	<Box mnemonic="A15">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Postcode</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/Postcode</Xpath>
+	</Box>
+	<Box mnemonic="YPD2">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Date address is effective from</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NewAddress/EffectiveFrom</Xpath>
+	</Box>
+	<Box mnemonic="YPD3">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Telephone number</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/TelephoneNumber</Xpath>
+	</Box>
+	<Box mnemonic="YPD4">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>National Insurance number</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/NationalInsuranceNumber</Xpath>
+	</Box>
+	<Box mnemonic="YPDTR">
+		<Form>SA100</Form>
+		<Segment>Your personal details</Segment>
+		<ShortDesc>Taxpayer status</ShortDesc>
+		<Xpath>/MTR/SA100/YourPersonalDetails/TaxpayerStatus</Xpath>
+	</Box>
+	<Box mnemonic="YTR1-1A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Employment Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/EmploymentSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR1-1B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Employment Schedules</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfEmploymentSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR1A-1A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Minister of Religion Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/MinisterOfReligionSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR1A-1B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Minister Of Religion Schedules</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfMinisterOfReligionSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR2-2A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Full Self Employment Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/FullSelfEmploymentSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR2-2B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Full Self Employment Schedules</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfFullSelfEmploymentSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR2A-2A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Short Self Employment Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/ShortSelfEmploymentSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR2A-2B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Short Self Employment Schedules</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfShortSelfEmploymentSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR2L-2A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Lloyds Underwriters Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/LloydsUnderwriterSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR3-3A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Full Partnership Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/FullPartnershipSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR3-3B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Full Partnership Schedules</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfFullPartnershipSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR3A-3A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Short Partnership Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/ShortPartnershipSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR3A-3B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Number of Short Partnership Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/NumberOfShortPartnershipSchedules</Xpath>
+	</Box>
+	<Box mnemonic="YTR4-4A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>UK Property Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/UKPropertySchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR5-5A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Foreign Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/ForeignSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR6-6A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Trusts Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/TrustsSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR7-7A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Capital Gains Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/CapitalGainsSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR7-7B">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Capital Gains Computation Attached</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/CapitalGainsComputationAttached</Xpath>
+	</Box>
+	<Box mnemonic="YTR8-8A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Resident Remittance Schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/ResidentRemittanceSchedule</Xpath>
+	</Box>
+	<Box mnemonic="YTR9B-9A">
+		<Form>SA100</Form>
+		<Segment>Your Tax Return</Segment>
+		<ShortDesc>Additional Information schedule</ShortDesc>
+		<Xpath>/MTR/SA100/YourTaxReturn/AdditionalInformationSchedule</Xpath>
+	</Box>
+	<Box mnemonic="SLR1">
+		<Form>SA100</Form>
+		<Segment>Student Loan Repayments</Segment>
+		<ShortDesc>Income contingent student loan notification</ShortDesc>
+		<Xpath>/MTR/SA100/StudentLoanRepayments/IncomeContingentStudentLoanNotification</Xpath>
+	</Box>
+	<Box mnemonic="SLR2">
+		<Form>SA100</Form>
+		<Segment>Student Loan Repayments</Segment>
+		<ShortDesc>Student loan repayment deducted amount</ShortDesc>
+		<Xpath>/MTR/SA100/StudentLoanRepayments/StudentLoanRepaymentDeductedAmount</Xpath>
+	</Box>
+	<Box mnemonic="SLR3">
+		<Form>SA100</Form>
+		<Segment>Student Loan Repayments</Segment>
+		<ShortDesc>Student Loan may be fully repaid within the next 2 years</ShortDesc>
+		<Xpath>/MTR/SA100/StudentLoanRepayments/StudentLoanMayBeFullyRepaid</Xpath>
+	</Box>
+	<Box mnemonic="SLRPT">
+		<Form>SA100</Form>
+		<Segment>Student Loan Repayments</Segment>
+		<ShortDesc>Student loan plan type</ShortDesc>
+		<Xpath>/MTR/SA100/StudentLoanRepayments/PlanType</Xpath>
+	</Box>
+	<Box mnemonic="INC1">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Taxed bank, building society etc. interest</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/TaxedBankBuildingSocietyEtcInterest</Xpath>
+	</Box>
+	<Box mnemonic="INC2">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Interest and alternative finance receipts from UK banks etc. Gross</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/UntaxedUKinterestEtc</Xpath>
+	</Box>
+	<Box mnemonic="INC3">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Untaxed foreign interest</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/UntaxedForeignInterest</Xpath>
+	</Box>
+	<Box mnemonic="INC4">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Company dividends</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/CompanyDividends</Xpath>
+	</Box>
+	<Box mnemonic="INC5">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Unit trust etc. dividends</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/UnitTrustEtcDividends</Xpath>
+	</Box>
+	<Box mnemonic="INC6">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Foreign dividends</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/ForeignDividends</Xpath>
+	</Box>
+	<Box mnemonic="INC7">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Tax taken off foreign dividends</ShortDesc>
+		<Xpath>/MTR/SA100/Income/UKInterestAndDividends/TaxTakenOffForeignDividends</Xpath>
+	</Box>
+	<Box mnemonic="INC8">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Annual state pension</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/AnnualStatePension</Xpath>
+	</Box>
+	<Box mnemonic="INC9">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>State pension lump sum</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/StatePensionLumpSum</Xpath>
+	</Box>
+	<Box mnemonic="INC10">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Tax taken off pension lump sum</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/TaxTakenOffPensionLumpSum</Xpath>
+	</Box>
+	<Box mnemonic="INC11">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Other pensions and retirement annuities</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/OtherPensionsAndRetirementAnnuities</Xpath>
+	</Box>
+	<Box mnemonic="INC12">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Tax taken off pensions and retirement annuities</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/TaxTakenOffPensionsAndRetirementAnnuities</Xpath>
+	</Box>
+	<Box mnemonic="INC13">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Incapacity benefit</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/IncapacityBenefit</Xpath>
+	</Box>
+	<Box mnemonic="INC14">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Tax taken off incapacity benefit</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/TaxTakenOffIncapacityBenefit</Xpath>
+	</Box>
+	<Box mnemonic="INC15">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Jobseekers Allowance</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/JobseekersAllowance</Xpath>
+	</Box>
+	<Box mnemonic="INC16">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Other state pensions and benefits</ShortDesc>
+		<Xpath>/MTR/SA100/Income/StateBenefits/OtherStatePensionsAndBenefits</Xpath>
+	</Box>
+	<Box mnemonic="INC17">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Other taxable income</ShortDesc>
+		<Xpath>/MTR/SA100/Income/OtherUKIncome/OtherTaxableIncomeDetails/OtherTaxableIncome</Xpath>
+	</Box>
+	<Box mnemonic="INC19">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Tax taken off other taxable income</ShortDesc>
+		<Xpath>/MTR/SA100/Income/OtherUKIncome/OtherTaxableIncomeDetails/TaxTakenOffOtherTaxableIncome</Xpath>
+	</Box>
+	<Box mnemonic="INC18">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Allowable expenses</ShortDesc>
+		<Xpath>/MTR/SA100/Income/OtherUKIncome/AllowableExpenses</Xpath>
+	</Box>
+	<Box mnemonic="INC20">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Benefit from pre-owned assets</ShortDesc>
+		<Xpath>/MTR/SA100/Income/OtherUKIncome/DeemedIncomeOrBenefits</Xpath>
+	</Box>
+	<Box mnemonic="INC21">
+		<Form>SA100</Form>
+		<Segment>Income</Segment>
+		<ShortDesc>Description of other income</ShortDesc>
+		<Xpath>/MTR/SA100/Income/OtherUKIncome/DescriptionOfOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="REL1">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Payments to registered pension schemes</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/Pensions/PaymentsToRegisteredPensionSchemes</Xpath>
+	</Box>
+	<Box mnemonic="REL2">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Retirement annuity contract payments</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/Pensions/RetirementAnnuityContractPayments</Xpath>
+	</Box>
+	<Box mnemonic="REL3">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Employer pension scheme payments</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/Pensions/EmployerPensionSchemePayments</Xpath>
+	</Box>
+	<Box mnemonic="REL4">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Non UK overseas pension scheme payments</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/Pensions/NonUKOverseasPensionSchemePayments</Xpath>
+	</Box>
+	<Box mnemonic="REL5">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Gift aid payments made in year</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/GiftAidPaymentsMadeInYear</Xpath>
+	</Box>
+	<Box mnemonic="REL6">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>One off gift aid payments</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/OneOffGiftAidPayments</Xpath>
+	</Box>
+	<Box mnemonic="REL7">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Gift aid payments carried back to previous year</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/GiftAidPaymentsCarriedBackToPreviousYear</Xpath>
+	</Box>
+	<Box mnemonic="REL8">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Gift aid payments brought back from later year</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/GiftAidPaymentsBroughtBackFromLaterYear</Xpath>
+	</Box>
+	<Box mnemonic="REL9">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Shares gifted to charity</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/SharesGiftedToCharity</Xpath>
+	</Box>
+	<Box mnemonic="REL10">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Land and buildings gifted to charity</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/LandAndBuildingsGiftedToCharity</Xpath>
+	</Box>
+	<Box mnemonic="REL11">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Investments gifted to non-UK charities</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/InvestmentsGiftedToNonUKCharities</Xpath>
+	</Box>
+	<Box mnemonic="REL12">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Donations to non-UK charities</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/CharitableGiving/DonationsToNonUKCharities</Xpath>
+	</Box>
+	<Box mnemonic="REL13">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Registered blind</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/BlindPersonsAllowance/BlindPersonsAllowanceDetails/RegisteredBlind</Xpath>
+	</Box>
+	<Box mnemonic="REL16">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Surplus blind person's allowance to spouse</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/BlindPersonsAllowance/BlindPersonsAllowanceDetails/SurplusBlindPersonsAllowanceToSpouse</Xpath>
+	</Box>
+	<Box mnemonic="REL14">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Local authority name</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/BlindPersonsAllowance/BlindPersonsAllowanceDetails/LocalAuthorityName</Xpath>
+	</Box>
+	<Box mnemonic="REL15">
+		<Form>SA100</Form>
+		<Segment>Tax Reliefs</Segment>
+		<ShortDesc>Surplus blind person's allowance from spouse</ShortDesc>
+		<Xpath>/MTR/SA100/TaxReliefs/BlindPersonsAllowance/SurplusBlindPersonsAllowanceFromSpouse</Xpath>
+	</Box>
+	<Box mnemonic="CBC1">
+		<Form>SA100</Form>
+		<Segment>HighIncomeChildBenefitCharge</Segment>
+		<ShortDesc>Total amount of child benefit received for the period</ShortDesc>
+		<Xpath>/MTR/SA100/HighIncomeChildBenefitCharge/AmountReceived</Xpath>
+	</Box>
+	<Box mnemonic="CBC2">
+		<Form>SA100</Form>
+		<Segment>HighIncomeChildBenefitCharge</Segment>
+		<ShortDesc>Number of children child benefit received for during period</ShortDesc>
+		<Xpath>/MTR/SA100/HighIncomeChildBenefitCharge/NumberOfChildren</Xpath>
+	</Box>
+	<Box mnemonic="CBC3">
+		<Form>SA100</Form>
+		<Segment>HighIncomeChildBenefitCharge</Segment>
+		<ShortDesc>Date stopped receiving all Child Benefit payments</ShortDesc>
+		<Xpath>/MTR/SA100/HighIncomeChildBenefitCharge/DateStoppedReceivingAllChildBenefitPayments</Xpath>
+	</Box>
+	<Box mnemonic="MAT1">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowance</Segment>
+		<ShortDesc>Spouse or civil partner's first name</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowance/SpouseFirstName</Xpath>
+	</Box>
+	<Box mnemonic="MAT2">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowance</Segment>
+		<ShortDesc>Spouse or civil partner's last name</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowance/SpouseLastName</Xpath>
+	</Box>
+	<Box mnemonic="MAT3">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowance</Segment>
+		<ShortDesc>Spouse or civil partner's NI number</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowance/SpouseNINO</Xpath>
+	</Box>
+	<Box mnemonic="MAT4">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowance</Segment>
+		<ShortDesc>Spouse or civil partner's date of birth</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowance/SpouseDateOfBirth</Xpath>
+	</Box>
+	<Box mnemonic="MAT5">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowance</Segment>
+		<ShortDesc>Date of marriage or civil partnership</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowance/DateOfMarriageOrCivilPartnership</Xpath>
+	</Box>
+	<Box mnemonic="MAT-IN">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowanceTransferredIn</Segment>
+		<ShortDesc>You are receiving marriage allowance from your partner</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowanceTransferredIn</Xpath>
+	</Box>
+	<Box mnemonic="MAT-OUT">
+		<Form>SA100</Form>
+		<Segment>MarriageAllowanceTransferredOut</Segment>
+		<ShortDesc>You are transferring marriage allowance to your partner</ShortDesc>
+		<Xpath>/MTR/SA100/MarriageAllowanceTransferredOut</Xpath>
+	</Box>
+	<Box mnemonic="FIN1">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax refunded or set off</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/TaxRefundedOrSetOff</Xpath>
+	</Box>
+	<Box mnemonic="FIN2">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax owed not to be coded out</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/NotPaidEnough/TaxOwedNotToBeCodedOut</Xpath>
+	</Box>
+	<Box mnemonic="FIN3">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Non PAYE income not to be coded out</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/NotPaidEnough/NonPAYEIncomeNotToBeCodedOut</Xpath>
+	</Box>
+	<Box mnemonic="FIN4">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Bank or building society name</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/BankAccountDetails/BankOrBuildingSocietyName</Xpath>
+	</Box>
+	<Box mnemonic="FIN5">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Account holder or nominee name</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/BankAccountDetails/AccountHolderOrNomineeName</Xpath>
+	</Box>
+	<Box mnemonic="FIN6">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Branch sort code</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/BankAccountDetails/BranchSortCode</Xpath>
+	</Box>
+	<Box mnemonic="FIN7">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Account number</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/BankAccountDetails/AccountNumber</Xpath>
+	</Box>
+	<Box mnemonic="FIN8">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Building society reference number</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/BankAccountDetails/BuildingSocietyReferenceNumber</Xpath>
+	</Box>
+	<Box mnemonic="FIN10">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Nominee name given</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/NomineeDetails/NomineeNameGiven</Xpath>
+	</Box>
+	<Box mnemonic="FIN11">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Nominee is tax adviser</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/NomineeDetails/NomineeIsTaxAdviser</Xpath>
+	</Box>
+	<Box mnemonic="FIN12">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Nominee address</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/PaymentDetails/NomineeDetails/NomineeAddress</Xpath>
+	</Box>
+	<Box mnemonic="FIN9">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>No bank or building society account</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/PaidTooMuch/NoBankOrBuildingSocietyAccount</Xpath>
+	</Box>
+	<Box mnemonic="FIN15">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax adviser</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/TaxAdviser/TaxAdviser</Xpath>
+	</Box>
+	<Box mnemonic="FIN16">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax adviser phone number</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/TaxAdviser/TaxAdviserPhoneNumber</Xpath>
+	</Box>
+	<Box mnemonic="FIN17">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax adviser address</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/TaxAdviser/TaxAdviserAddress</Xpath>
+	</Box>
+	<Box mnemonic="FIN18">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Tax adviser's reference</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/TaxAdviser/TaxAdvisersReference</Xpath>
+	</Box>
+	<Box mnemonic="FIN19">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Other information space</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/OtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="FIN20">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Provisional or estimated figures</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/ProvisionalOrEstimatedFigures</Xpath>
+	</Box>
+	<Box mnemonic="FIN23">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Capacity of person signing</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/CapacityOfPersonSigning</Xpath>
+	</Box>
+	<Box mnemonic="FIN24">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Name of person signed for</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/NameOfPersonSignedFor</Xpath>
+	</Box>
+	<Box mnemonic="FIN25">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Name of person signing</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/NameOfPersonSigning</Xpath>
+	</Box>
+	<Box mnemonic="FIN26">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Address of person signing</ShortDesc>
+		<Xpath>/MTR/SA100/FinishingYourTaxReturn/SigningYourForm/AddressOfPersonSigning</Xpath>
+	</Box>
+	<Box mnemonic="1A">
+		<Form>SA100</Form>
+		<Segment>Finishing your return</Segment>
+		<ShortDesc>Box 1A</ShortDesc>
+		<Xpath>/MTR/SA100/ChargeableEventGains</Xpath>
+	</Box>
+	<Box mnemonic="AOI1">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Net gilt interest</ShortDesc>
+		<Xpath>/MTR/SA101/GiltEdgeSecuritiesInterest/NetGiltInterest</Xpath>
+	</Box>
+	<Box mnemonic="AOI2">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Tax taken off gilt interest</ShortDesc>
+		<Xpath>/MTR/SA101/GiltEdgeSecuritiesInterest/TaxTakenOffGiltInterest</Xpath>
+	</Box>
+	<Box mnemonic="AOI3">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Gross gilt interest</ShortDesc>
+		<Xpath>/MTR/SA101/GiltEdgeSecuritiesInterest/GrossGiltInterest</Xpath>
+	</Box>
+	<Box mnemonic="AOI4">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Life insurance gains (tax treated as paid)</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsTaxTreatedAsPaid/AmountOfGain</Xpath>
+	</Box>
+	<Box mnemonic="AOI5">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Number of years</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsTaxTreatedAsPaid/NumberOfYears</Xpath>
+	</Box>
+	<Box mnemonic="AOI6">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Life insurance gains (no tax treated as paid)</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsNoTaxTreatedAsPaid/AmountOfGain</Xpath>
+	</Box>
+	<Box mnemonic="AOI7">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Number of years</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsNoTaxTreatedAsPaid/NumberOfYears</Xpath>
+	</Box>
+	<Box mnemonic="AOI8">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Life insurance gains from voided ISAs</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsFromVoidedISAs/AmountOfGain</Xpath>
+	</Box>
+	<Box mnemonic="AOI9">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Number of years</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/LifeInsuranceGainsFromVoidedISAs/NumberOfYears</Xpath>
+	</Box>
+	<Box mnemonic="AOI10">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Tax taken off box 8</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/TaxTakenOffGainsFromVoidedISAs</Xpath>
+	</Box>
+	<Box mnemonic="AOI11">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Deficiency relief</ShortDesc>
+		<Xpath>/MTR/SA101/LifeInsuranceGains/DeficiencyRelief</Xpath>
+	</Box>
+	<Box mnemonic="AOI12">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Stock dividends</ShortDesc>
+		<Xpath>/MTR/SA101/StockDistributionsAndLoansWrittenOff/StockDividends</Xpath>
+	</Box>
+	<Box mnemonic="AOI13">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Bonus issues of securities and redeemable shares and close company loans written off or released</ShortDesc>
+		<Xpath>/MTR/SA101/StockDistributionsAndLoansWrittenOff/BonusIssuesOfSecuritiesAndRedeemableShares</Xpath>
+	</Box>
+	<Box mnemonic="AOI14">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Post cessation or other business receipts</ShortDesc>
+		<Xpath>/MTR/SA101/BusinessTaxedIncome/PostCessationOrOtherBusinessReceipts</Xpath>
+	</Box>
+	<Box mnemonic="AOI15">
+		<Form>SA101</Form>
+		<Segment>Other UK income</Segment>
+		<ShortDesc>Tax year income to be taxed</ShortDesc>
+		<Xpath>/MTR/SA101/BusinessTaxedIncome/TaxYearIncomeToBeTaxed</Xpath>
+	</Box>
+	<Box mnemonic="ASE1">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Share schemes taxable amount</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/ShareSchemesTaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="ASE3">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Lump sum salaries and other payments</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/LumpSums/LumpSumSalariesAndOtherPayments</Xpath>
+	</Box>
+	<Box mnemonic="ASE4">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Lump sums or benefits from retirement schemes</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/LumpSums/LumpSumsOrBenefitsFromRetirementSchemes</Xpath>
+	</Box>
+	<Box mnemonic="ASE5">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Redundancy and other compensation payments</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/LumpSums/RedundancyAndOtherCompensationPayments</Xpath>
+	</Box>
+	<Box mnemonic="ASE6">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Tax taken off</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/LumpSums/TaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="ASE7">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Box 6 left blank mark</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/TaxTakenOffLumpSumsLeftBlank</Xpath>
+	</Box>
+	<Box mnemonic="ASE8">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Retirement and other exemptions</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/RetirementAndOtherExemptions</Xpath>
+	</Box>
+	<Box mnemonic="ASE9">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Compensation and lump sum exemption</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/CompensationAndLumpSumExemption</Xpath>
+	</Box>
+	<Box mnemonic="ASE10">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Disability and foreign service deduction</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/DisabilityAndForeignServiceDeduction</Xpath>
+	</Box>
+	<Box mnemonic="ASE11">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Seafarer's earnings deduction</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/SeafarersEarningsDeduction</Xpath>
+	</Box>
+	<Box mnemonic="ASE12">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Non UK taxable foreign earnings</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/NonUKTaxableForeignEarnings</Xpath>
+	</Box>
+	<Box mnemonic="ASE13">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Foreign tax (no foreign tax credit relief claim)</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/ForeignTaxNoForeignTaxCreditReliefClaim</Xpath>
+	</Box>
+	<Box mnemonic="ASE14">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>Overseas pension exempt employer contributions</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/OverseasPensionExemptEmployerContributions</Xpath>
+	</Box>
+	<Box mnemonic="ASE15">
+		<Form>SA101</Form>
+		<Segment>Shares schemes and lump sums etc.</Segment>
+		<ShortDesc>UK patent royalty payments made</ShortDesc>
+		<Xpath>/MTR/SA101/SharesEmploymentCompensationsAndDeductions/UKpatentRoyaltyPaymentsMade</Xpath>
+	</Box>
+	<Box mnemonic="AOR1">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Venture capital trust share subscriptions</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/VentureCapitalTrustShareSubscriptions</Xpath>
+	</Box>
+	<Box mnemonic="AOR2">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Enterprise investment scheme share subscriptions</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/EnterpriseInvestmentSchemeShareSubscriptions</Xpath>
+	</Box>
+	<Box mnemonic="AOR3">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Community investment tax relief</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/CommunityInvestmentTrustRelief</Xpath>
+	</Box>
+	<Box mnemonic="AOR4">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Annuities and annual payments</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/AnnuitiesAndAnnualPayments</Xpath>
+	</Box>
+	<Box mnemonic="AOR5">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Qualifying loan interest</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/QualifyingLoanInterest</Xpath>
+	</Box>
+	<Box mnemonic="AOR6">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Post cessation and other losses</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/PostCessationAndOtherLosses</Xpath>
+	</Box>
+	<Box mnemonic="AOR7">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Maintenance or alimony payments</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/MaintenanceOrAlimonyPayments</Xpath>
+	</Box>
+	<Box mnemonic="AOR8">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Trade union etc. death benefit payments</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/TradeUnionEtcDeathBenefitPayments</Xpath>
+	</Box>
+	<Box mnemonic="AOR9">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Bonus security redemption distribution relief</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/BonusSecurityRedemptionDistributionRelief</Xpath>
+	</Box>
+	<Box mnemonic="AOR10">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Subscriptions for shares under the Seed Enterprise Investment Scheme</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/SeedEnterpriseInvestmentSchemeAmount</Xpath>
+	</Box>
+	<Box mnemonic="AOR11">
+		<Form>SA101</Form>
+		<Segment>Other tax reliefs</Segment>
+		<ShortDesc>Social investment tax relief</ShortDesc>
+		<Xpath>/MTR/SA101/OtherTaxReliefs/SocialInvestmentTaxRelief</Xpath>
+	</Box>
+	<Box mnemonic="MCA1">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Spouse's name</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/HigherEarner/SpousesName</Xpath>
+	</Box>
+	<Box mnemonic="MCA2">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Spouse's date of birth</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/HigherEarner/SpousesDateOfBirth</Xpath>
+	</Box>
+	<Box mnemonic="MCA3">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Half minimum allowance transfer</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/HigherEarner/HalfMinimumAllowanceTransferToOther</Xpath>
+	</Box>
+	<Box mnemonic="MCA4">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>All minimum allowance transfer</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/HigherEarner/AllMinimumAllowanceTransferToOther</Xpath>
+	</Box>
+	<Box mnemonic="MCA5">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Previous spouse's date of birth</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/HigherEarner/PreviousSpousesDateOfBirth</Xpath>
+	</Box>
+	<Box mnemonic="MCA6">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Half minimum allowance transfer</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/LowerEarner/HalfMinimumAllowanceTransferToYou</Xpath>
+	</Box>
+	<Box mnemonic="MCA7">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>All minimum allowance transfer</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/LowerEarner/AllMinimumAllowanceTransferToYou</Xpath>
+	</Box>
+	<Box mnemonic="MCA8">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Spouse's name</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/LowerEarner/SpousesName</Xpath>
+	</Box>
+	<Box mnemonic="MCA9">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Date of marriage or civil partnership</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/DateOfMarriageOrCivilPartnership</Xpath>
+	</Box>
+	<Box mnemonic="MCA10">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Surplus allowance from spouse</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/SurplusAllowanceFromSpouse</Xpath>
+	</Box>
+	<Box mnemonic="MCA11">
+		<Form>SA101</Form>
+		<Segment>Married couples' allowance</Segment>
+		<ShortDesc>Surplus allowance to spouse</ShortDesc>
+		<Xpath>/MTR/SA101/AgeRelatedMarriedCouplesAllowance/SurplusAllowanceToSpouse</Xpath>
+	</Box>
+	<Box mnemonic="AIL1">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Earlier years' income tax losses</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/IncomeTaxLosses/EarlierYearsIncomeTaxLosses</Xpath>
+	</Box>
+	<Box mnemonic="AIL2">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Unused income tax losses carried forward</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/IncomeTaxLosses/UnusedIncomeTaxLossesCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="AIL3">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Relief now for next tax year trading</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/IncomeTaxLosses/NextYearsTradingAndCapitalLossesRelief</Xpath>
+	</Box>
+	<Box mnemonic="AIL4">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Next year's uncapped loss relief</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/IncomeTaxLosses/NextYearsUncappedLossRelief</Xpath>
+	</Box>
+	<Box mnemonic="AIL5">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Year for which relief claimed</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/IncomeTaxLosses/YearForWhichReliefClaimed</Xpath>
+	</Box>
+	<Box mnemonic="AIL6">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Amount of payroll giving</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/AmountOfPayrollGiving</Xpath>
+	</Box>
+	<Box mnemonic="AIL7">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Lump sum pension benefits in excess of Available Lifetime Allowance</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/LumpSumPensionBenefitsInExcessOfALA</Xpath>
+	</Box>
+	<Box mnemonic="AIL8">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Pension benefits in excess of Available Lifetime Allowance not taken as a lump sum</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/NonlumpSumPensionBenefitsExceedingALA</Xpath>
+	</Box>
+	<Box mnemonic="AIL9">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Lifetime Allowance tax paid</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/LifetimeAllowanceTaxPaid</Xpath>
+	</Box>
+	<Box mnemonic="AIL10">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Amount saved towards pension in excess of the Annual Allowance</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/AmountSavedExceedingAnnualAllowance</Xpath>
+	</Box>
+	<Box mnemonic="AIL11">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Annual Allowance tax paid by pension scheme</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/AnnualAllowanceTaxPaidByPensionScheme</Xpath>
+	</Box>
+	<Box mnemonic="AIL11.1">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Value of pension benefits transferred subject to the overseas transfer charge</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/PensionBenefitTransferredSubjectToOTC</Xpath>
+	</Box>
+	<Box mnemonic="AIL11.2">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Tax paid by your pension scheme on your overseas transfer charge</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/TaxPaidByPensionSchemeOnOTC</Xpath>
+	</Box>
+	<Box mnemonic="AIL12">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Pension scheme tax reference</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/PensionSchemeTaxRef</Xpath>
+	</Box>
+	<Box mnemonic="AIL13">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Unauthorised payment not subject to surcharge</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/UnauthorisedPaymentNotSubjectToSurcharge</Xpath>
+	</Box>
+	<Box mnemonic="AIL14">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Unauthorised payment subject to surcharge</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/UnauthorisedPaymentSubjectToSurcharge</Xpath>
+	</Box>
+	<Box mnemonic="AIL15">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Foreign tax paid on an unauthorised payment</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/ForeignTaxPaidOnUnauthorisedPayment</Xpath>
+	</Box>
+	<Box mnemonic="AIL16">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Overseas pension contribution short service refund</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/OverseasPensionContributionShortServiceRefund</Xpath>
+	</Box>
+	<Box mnemonic="AIL18">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Foreign tax paid</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/PensionTaxAndLumpSums/ForeignTaxPaid</Xpath>
+	</Box>
+	<Box mnemonic="AIL19">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Tax avoidance scheme reference number</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/TaxAvoidanceSchemes/TaxAvoidanceSchemeReferenceNumber</Xpath>
+	</Box>
+	<Box mnemonic="AIL20">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Expected advantage tax year</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/TaxAvoidanceSchemes/ExpectedAdvantageTaxYear</Xpath>
+	</Box>
+	<Box mnemonic="AIL21">
+		<Form>SA101</Form>
+		<Segment>Other information</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA101/OtherInformation/AdditionalInformation</Xpath>
+	</Box>
+	<Box mnemonic="EMP1">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Pay from employment</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/PayFromEmployment</Xpath>
+	</Box>
+	<Box mnemonic="EMP2">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Tax taken off pay</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/TaxTakenOffPay</Xpath>
+	</Box>
+	<Box mnemonic="EMPCL1">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Total Class 1 NICable earnings betweeen PT and UEL</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/TotalClass1NICableEarnings</Xpath>
+	</Box>
+	<Box mnemonic="EMP3">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Tips and other payments</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/TipsAndOtherPayments</Xpath>
+	</Box>
+	<Box mnemonic="EMP4">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Employer PAYE reference</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/EmployerPAYEReference</Xpath>
+	</Box>
+	<Box mnemonic="EMP5">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Employer's name</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/EmployersName</Xpath>
+	</Box>
+	<Box mnemonic="EMP6">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Company director</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/CompanyDirector</Xpath>
+	</Box>
+	<Box mnemonic="EMP6.1">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Date ceased being a director</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/DateCeasedBeingADirector</Xpath>
+	</Box>
+	<Box mnemonic="EMP7">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Close company</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/CloseCompany</Xpath>
+	</Box>
+	<Box mnemonic="EMP8">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Teacher on Repayment of Teacher's loan scheme</ShortDesc>
+		<Xpath>/MTR/SA102/Employment/TeacherOnRepaymentOfTeachersLoanScheme</Xpath>
+	</Box>
+	<Box mnemonic="EMP9">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Company cars and vans benefit</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/CompanyCarsAndVansBenefit</Xpath>
+	</Box>
+	<Box mnemonic="EMP10">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Fuel for cars and vans</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/FuelForCarsAndVans</Xpath>
+	</Box>
+	<Box mnemonic="EMP11">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Private medical/dental insurance</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/PrivateMedicalDentalInsurance</Xpath>
+	</Box>
+	<Box mnemonic="EMP12">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Vouchers, credit cards &amp; excess mileage allowance</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/VouchersCreditCardsExcessMileageAllowance</Xpath>
+	</Box>
+	<Box mnemonic="EMP13">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Goods etc. provided by employer</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/GoodsEtcProvidedByEmployer</Xpath>
+	</Box>
+	<Box mnemonic="EMP14">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Accommodation provided by employer</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/AccommodationProvidedByEmployer</Xpath>
+	</Box>
+	<Box mnemonic="EMP15">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Other benefits</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/OtherBenefits</Xpath>
+	</Box>
+	<Box mnemonic="EMP16">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Expenses payments received</ShortDesc>
+		<Xpath>/MTR/SA102/Benefits/ExpensesPaymentsReceived</Xpath>
+	</Box>
+	<Box mnemonic="EMP17">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Business travel and subsistence</ShortDesc>
+		<Xpath>/MTR/SA102/Expenses/BusinessTravelAndSubsistence</Xpath>
+	</Box>
+	<Box mnemonic="EMP18">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Fixed expenses deductions</ShortDesc>
+		<Xpath>/MTR/SA102/Expenses/FixedExpensesDeductions</Xpath>
+	</Box>
+	<Box mnemonic="EMP19">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Professional fees and subscriptions</ShortDesc>
+		<Xpath>/MTR/SA102/Expenses/ProfessionalFeesAndSubscriptions</Xpath>
+	</Box>
+	<Box mnemonic="EMP20">
+		<Form>SA102</Form>
+		<Segment>Employment</Segment>
+		<ShortDesc>Other expenses and capital allowances</ShortDesc>
+		<Xpath>/MTR/SA102/Expenses/OtherExpensesAndCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="MOR1">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Nature of post</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/NatureOfPost</Xpath>
+	</Box>
+	<Box mnemonic="MOR2">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Salary or stipend</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/SalaryOrStipend</Xpath>
+	</Box>
+	<Box mnemonic="MOR3">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Tax taken off salary/stipend</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/TaxTakenOffSalaryStipend</Xpath>
+	</Box>
+	<Box mnemonic="MORCL1">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Total Class 1 NICable earnings betweeen PT and UEL</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/TotalClass1NICableEarnings</Xpath>
+	</Box>
+	<Box mnemonic="MOR4">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Fees and offerings</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/FeesAndOfferings</Xpath>
+	</Box>
+	<Box mnemonic="MOR5">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Vicarage/manse expenses</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/VicarageManseExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR6">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Personal expenses etc. paid</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/PersonalExpensesEtcPaid</Xpath>
+	</Box>
+	<Box mnemonic="MOR7">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Excess mileage allowance etc.</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/ExcessMileageAllowanceEtc</Xpath>
+	</Box>
+	<Box mnemonic="MOR8">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Round sum expenses and rent allowances</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/RoundSumExpensesAndRentAllowances</Xpath>
+	</Box>
+	<Box mnemonic="MOR9">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Tax taken off box 8</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/TaxTakenOffRoundSumExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR10">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Other income from post</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/OtherIncomeFromPost</Xpath>
+	</Box>
+	<Box mnemonic="MOR11">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Tax taken off other income</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/TaxTakenOffOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR12">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Total income as Minister of Religion</ShortDesc>
+		<Xpath>/MTR/SA102M/Income/TotalIncomeAsMinisterOfReligion</Xpath>
+	</Box>
+	<Box mnemonic="MOR13">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Vicarage services benefit</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/VicarageServicesBenefit</Xpath>
+	</Box>
+	<Box mnemonic="MOR14">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Car provided</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/CarProvided</Xpath>
+	</Box>
+	<Box mnemonic="MOR15">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Fuel for car provided</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/FuelForCarProvided</Xpath>
+	</Box>
+	<Box mnemonic="MOR16">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Interest free loans</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/InterestFreeLoans</Xpath>
+	</Box>
+	<Box mnemonic="MOR17">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Expenses payments made</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/ExpensesPaymentsMade</Xpath>
+	</Box>
+	<Box mnemonic="MOR18">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Other benefits</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/OtherBenefits</Xpath>
+	</Box>
+	<Box mnemonic="MOR19">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Total benefits and expenses</ShortDesc>
+		<Xpath>/MTR/SA102M/BenefitsAndExpensePaymentsToYou/TotalBenefitsAndExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR20">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Income, benefits and expenses received</ShortDesc>
+		<Xpath>/MTR/SA102M/IncomeBenefitsAndExpensesReceived</Xpath>
+	</Box>
+	<Box mnemonic="MOR21">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Travelling expenses and capital allowances</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/TravellingExpensesAndCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="MOR22">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Maintenance and repairs etc.</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/MaintenanceAndRepairsEtc</Xpath>
+	</Box>
+	<Box mnemonic="MOR23">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Rent expenses</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/RentExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR24">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Secretarial assistance</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/SecretarialAssistance</Xpath>
+	</Box>
+	<Box mnemonic="MOR25">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Other expenses</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/OtherExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR26">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Total expenses paid</ShortDesc>
+		<Xpath>/MTR/SA102M/ExpensesPaidByYou/TotalExpensesPaid</Xpath>
+	</Box>
+	<Box mnemonic="MOR27">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Gross income</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/GrossIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR28">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Back pay received after year end</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/BackpayReceivedAfterYearEnd</Xpath>
+	</Box>
+	<Box mnemonic="MOR29">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Earlier years' back pay received in year</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/EarlierYearsBackpayReceivedInYear</Xpath>
+	</Box>
+	<Box mnemonic="MOR30">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Pension scheme payments</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/PensionSchemePayments</Xpath>
+	</Box>
+	<Box mnemonic="MOR31">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Net income</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/NetIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR32">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>10% of net income</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/TenPercentOfNetIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR33">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Amount paid toward service benefit</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/AmountPaidTowardServiceBenefit</Xpath>
+	</Box>
+	<Box mnemonic="MOR34">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Payments made and service benefit received</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/PaymentsMadeAndServiceBenefitReceived</Xpath>
+	</Box>
+	<Box mnemonic="MOR35">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Service benefit cap</ShortDesc>
+		<Xpath>/MTR/SA102M/ServiceBenefitCap/ServiceBenefitCap</Xpath>
+	</Box>
+	<Box mnemonic="MOR36">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Chaplaincy and other income</ShortDesc>
+		<Xpath>/MTR/SA102M/OtherIncome/ChaplaincyAndOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR37">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Tax taken of other income</ShortDesc>
+		<Xpath>/MTR/SA102M/OtherIncome/TaxTakenOfOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="MOR38">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Taxable income minus expenses</ShortDesc>
+		<Xpath>/MTR/SA102M/TaxableIncome/TaxableIncomeMinusExpenses</Xpath>
+	</Box>
+	<Box mnemonic="MOR39">
+		<Form>SA102M</Form>
+		<Segment>Ministers of Religion</Segment>
+		<ShortDesc>Total tax taken off</ShortDesc>
+		<Xpath>/MTR/SA102M/TaxableIncome/TotalTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FSE1">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Business name</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/BusinessName</Xpath>
+	</Box>
+	<Box mnemonic="FSE2">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Business description</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/BusinessDescription</Xpath>
+	</Box>
+	<Box mnemonic="FSE3">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Business address first line</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/BusinessAddressFirstLine</Xpath>
+	</Box>
+	<Box mnemonic="FSE4">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Business address postcode</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/BusinessAddressPostcode</Xpath>
+	</Box>
+	<Box mnemonic="FSE5">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Change of business details</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/ChangeOfBusinessDetails</Xpath>
+	</Box>
+	<Box mnemonic="FSE6">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date business started</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/DateBusinessStarted</Xpath>
+	</Box>
+	<Box mnemonic="FSE7">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date business ceased</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/DateBusinessCeased</Xpath>
+	</Box>
+	<Box mnemonic="FSE8">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date accounting period starts</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/DateAccountingPeriodStarts</Xpath>
+	</Box>
+	<Box mnemonic="FSE9">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date accounting period ends</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/DateAccountingPeriodEnds</Xpath>
+	</Box>
+	<Box mnemonic="FSE10">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Cash basis</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessDetails/CashBasis</Xpath>
+	</Box>
+	<Box mnemonic="FSE11">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Permanent accounting date change</ShortDesc>
+		<Xpath>/MTR/SA103F/OtherInformation/PermanentAccountingDateChange</Xpath>
+	</Box>
+	<Box mnemonic="FSE12">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Multiple accounting date changes</ShortDesc>
+		<Xpath>/MTR/SA103F/OtherInformation/MultipleAccountingDateChanges</Xpath>
+	</Box>
+	<Box mnemonic="FSE13">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Special arrangements apply</ShortDesc>
+		<Xpath>/MTR/SA103F/OtherInformation/SpecialArrangementsApply</Xpath>
+	</Box>
+	<Box mnemonic="FSE14">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Information provided last year</ShortDesc>
+		<Xpath>/MTR/SA103F/OtherInformation/InformationProvidedLastYear</Xpath>
+	</Box>
+	<Box mnemonic="FSE15">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Turnover</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessIncome/Turnover</Xpath>
+	</Box>
+	<Box mnemonic="FSE16">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other business income</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessIncome/OtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="FSE16.1">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Amount of trading income allowance claimed</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessIncome/TradingIncomeAllowance</Xpath>
+	</Box>
+	<Box mnemonic="FSE17">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Cost of goods</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/CostOfGoods</Xpath>
+	</Box>
+	<Box mnemonic="FSE18">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Subcontractor costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/SubcontractorCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE19">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Wages, salaries and staff costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/WagesSalariesAndStaffCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE20">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Car, van and travel expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/CarVanAndTravelExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE21">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Rent and other property costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/RentAndOtherPropertyCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE22">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Repairs and maintenance of property and equipment</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/RepairsAndMaintenanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE23">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Phone and other office costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/PhoneAndOtherOfficeCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE24">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Advertising and entertainment costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/AdvertisingAndEntertainmentCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE25">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Bank and loan interest</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/BankAndLoanInterest</Xpath>
+	</Box>
+	<Box mnemonic="FSE26">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other finance charges</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/OtherFinanceCharges</Xpath>
+	</Box>
+	<Box mnemonic="FSE27">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Debts written off</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/DebtsWrittenOff</Xpath>
+	</Box>
+	<Box mnemonic="FSE28">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Accountancy and legal fees</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/AccountancyAndLegalFees</Xpath>
+	</Box>
+	<Box mnemonic="FSE29">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Depreciation and loss/profit on sale</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/DepreciationAndLossProfitOnSale</Xpath>
+	</Box>
+	<Box mnemonic="FSE30">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other business expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/OtherBusinessExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE31">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/TotalExpenses/TotalExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE32">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable cost of goods</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableCostOfGoods</Xpath>
+	</Box>
+	<Box mnemonic="FSE33">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable subcontractor costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableSubcontractorCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE34">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable staff costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableStaffCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE35">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable car and travel expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableCarAndTravelExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE36">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable rent and other property costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableRentAndOtherPropertyCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE37">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable repairs and maintenance of property and equipment</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableRepairsAndMaintenanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE38">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable phone and other office costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowablePhoneAndOtherOfficeCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE39">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable advertising and entertainment costs</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableAdvertisingAndEntertainmentCosts</Xpath>
+	</Box>
+	<Box mnemonic="FSE40">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable bank and loan interest</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableBankAndLoanInterest</Xpath>
+	</Box>
+	<Box mnemonic="FSE41">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable other finance charges</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableOtherFinanceCharges</Xpath>
+	</Box>
+	<Box mnemonic="FSE42">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable debts written off</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableDebtsWrittenOff</Xpath>
+	</Box>
+	<Box mnemonic="FSE43">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable accountancy and legal fees</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableAccountancyAndLegalFees</Xpath>
+	</Box>
+	<Box mnemonic="FSE44">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable depreciation and loss/profit on sale</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableDepreciationAndLossProfitOnSale</Xpath>
+	</Box>
+	<Box mnemonic="FSE45">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Disallowable other business expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/DisallowableOtherBusinessExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE46">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total disallowable expenses</ShortDesc>
+		<Xpath>/MTR/SA103F/BusinessExpenses/DisallowableExpenses/TotalDisallowableExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FSE47">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Net profit</ShortDesc>
+		<Xpath>/MTR/SA103F/NetProfitLoss</Xpath>
+	</Box>
+	<Box mnemonic="FSE48">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Net loss</ShortDesc>
+		<Xpath>/MTR/SA103F/NetProfitLoss</Xpath>
+	</Box>
+	<Box mnemonic="FSE49">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Annual investment allowance</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/AnnualInvestmentAllowance</Xpath>
+	</Box>
+	<Box mnemonic="FSE50">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Annual allowances on cars and equipment</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/AnnualAllowancesAtHigherRate</Xpath>
+	</Box>
+	<Box mnemonic="FSE51">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Annual allowance at lower rate</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/AnnualAllowancesAtLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="FSE52">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Zero-emission goods vehicle allowance</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/ZeroEmissionGoodsVehicleAllowance</Xpath>
+	</Box>
+	<Box mnemonic="FSE55">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other capital allowances</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/OtherCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="FSE56">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Balancing allowances on sale or cessation</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/BalancingAllowancesOnSaleOrCessation</Xpath>
+	</Box>
+	<Box mnemonic="FSE57">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total capital allowances</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/TotalCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="FSE59">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total balancing charges</ShortDesc>
+		<Xpath>/MTR/SA103F/CapitalAllowances/TotalBalancingCharges</Xpath>
+	</Box>
+	<Box mnemonic="FSE60">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Own goods and services</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/OwnGoodsAndServices</Xpath>
+	</Box>
+	<Box mnemonic="FSE61">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Additions to net profit/deductions from net loss</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/AdditionsToNetProfitDeductionsFromNetLoss</Xpath>
+	</Box>
+	<Box mnemonic="FSE62">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Non taxable business income</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/NonTaxableBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="FSE63">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Deductions from net profit/additions to net loss</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/DeductionsFromNetProfitAdditionsToNetLoss</Xpath>
+	</Box>
+	<Box mnemonic="FSE64">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full) </Segment>
+		<ShortDesc>Net business profit for tax</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/NetBusinessProfitLossForTax</Xpath>
+	</Box>
+	<Box mnemonic="FSE65">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Net business loss for tax</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/NetBusinessProfitLossForTax</Xpath>
+	</Box>
+	<Box mnemonic="FSE66">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date basis period began</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/DateBasisPeriodBegan</Xpath>
+	</Box>
+	<Box mnemonic="FSE67">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Date basis period ended</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/DateBasisPeriodEnded</Xpath>
+	</Box>
+	<Box mnemonic="FSE68">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FSE69">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Overlap relief used</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/OverlapReliefUsed</Xpath>
+	</Box>
+	<Box mnemonic="FSE70">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Overlap profit carried forward</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/OverlapProfitCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="FSE71">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Change of accounting practice adjustment</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/ChangeOfAccountingPracticeAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FSE72">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Averaging adjustment</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/AveragingAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FSE73">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Adjusted profit for the year</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/AdjustedProfitForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="FSE74">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FSE75">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Any other business income</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/AnyOtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="FSE76">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total taxable business profits</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxableProfitOrLoss/TotalTaxableBusinessProfits</Xpath>
+	</Box>
+	<Box mnemonic="FSE77">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Adjusted loss for the year</ShortDesc>
+		<Xpath>/MTR/SA103F/Losses/AdjustedLossForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="FSE78">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Loss of year set against other income</ShortDesc>
+		<Xpath>/MTR/SA103F/Losses/LossOfYearSetAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="FSE79">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Loss to carry back</ShortDesc>
+		<Xpath>/MTR/SA103F/Losses/LossToCarryBack</Xpath>
+	</Box>
+	<Box mnemonic="FSE80">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA103F/Losses/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="FSE81">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Sub contractors deduction</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxTakenOff/SubContractorsTaxDeduction</Xpath>
+	</Box>
+	<Box mnemonic="FSE82">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other tax taken off trading income</ShortDesc>
+		<Xpath>/MTR/SA103F/TaxTakenOff/OtherTaxTakenOffTradingIncome</Xpath>
+	</Box>
+	<Box mnemonic="FSE83">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Equipment, machinery, vehicles</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/EquipmentMachineryVehicles</Xpath>
+	</Box>
+	<Box mnemonic="FSE84">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other fixed assets</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/OtherFixedAssets</Xpath>
+	</Box>
+	<Box mnemonic="FSE85">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Stock and work in progress</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/StockAndWorkInProgress</Xpath>
+	</Box>
+	<Box mnemonic="FSE86">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Trade debtors</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/TradeDebtors</Xpath>
+	</Box>
+	<Box mnemonic="FSE87">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Bank etc. balances</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/BankEtcBalances</Xpath>
+	</Box>
+	<Box mnemonic="FSE88">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Cash in hand</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/CashInHand</Xpath>
+	</Box>
+	<Box mnemonic="FSE89">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other current assets</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/OtherCurrentAssets</Xpath>
+	</Box>
+	<Box mnemonic="FSE90">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Total business assets</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Assets/TotalBusinessAssets</Xpath>
+	</Box>
+	<Box mnemonic="FSE91">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Trade creditors</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Liabilities/TradeCreditors</Xpath>
+	</Box>
+	<Box mnemonic="FSE92">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Loans and overdrafts</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Liabilities/LoansAndOverdrafts</Xpath>
+	</Box>
+	<Box mnemonic="FSE93">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Other liabilities</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/Liabilities/OtherLiabilities</Xpath>
+	</Box>
+	<Box mnemonic="FSE94">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Net business assets</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/NetBusinessAssets</Xpath>
+	</Box>
+	<Box mnemonic="FSE95">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Capital account balance at start</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/CapitalAccount/CapitalAccountBalanceAtStart</Xpath>
+	</Box>
+	<Box mnemonic="FSE96">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Net profit or loss</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/CapitalAccount/NetProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="FSE97">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Capital introduced</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/CapitalAccount/CapitalIntroduced</Xpath>
+	</Box>
+	<Box mnemonic="FSE98">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Drawings</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/CapitalAccount/Drawings</Xpath>
+	</Box>
+	<Box mnemonic="FSE99">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Capital account balance at end</ShortDesc>
+		<Xpath>/MTR/SA103F/BalanceSheet/CapitalAccount/CapitalAccountBalanceAtEnd</Xpath>
+	</Box>
+	<Box mnemonic="FSE100">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Choose to pay Class 2 NIC voluntarily</ShortDesc>
+		<Xpath>/MTR/SA103F/NICs/PayClass2NICvoluntarily</Xpath>
+	</Box>
+	<Box mnemonic="FSECL2">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Class 2 NIC amount</ShortDesc>
+		<Xpath>/MTR/SA103F/NICs/Class2NICamount</Xpath>
+	</Box>
+	<Box mnemonic="FSE101">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Tick this box if you are Class 4 exempt</ShortDesc>
+		<Xpath>/MTR/SA103F/NICs/Class4NICexempt</Xpath>
+	</Box>
+	<Box mnemonic="FSE102">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Adj to Profit chargeable to Class 4 NIC</ShortDesc>
+		<Xpath>/MTR/SA103F/NICs/AdjustmentToClass4NICProfits</Xpath>
+	</Box>
+	<Box mnemonic="FSE103">
+		<Form>SA103F</Form>
+		<Segment>Self employment (full)</Segment>
+		<ShortDesc>Additional information</ShortDesc>
+		<Xpath>/MTR/SA103F/OtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="SSE1">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Business description</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/BusinessDescription</Xpath>
+	</Box>
+	<Box mnemonic="SSE2">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Business address postcode</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/BusinessAddressPostcode</Xpath>
+	</Box>
+	<Box mnemonic="SSE3">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Change of business details</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/ChangeOfBusinessDetails</Xpath>
+	</Box>
+	<Box mnemonic="SSE4">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Foster etc. carer indicator</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/FosterEtcCarerIndicator</Xpath>
+	</Box>
+	<Box mnemonic="SSE5">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Date business started</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/DateBusinessStarted</Xpath>
+	</Box>
+	<Box mnemonic="SSE6">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Date business ceased</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/DateBusinessCeased</Xpath>
+	</Box>
+	<Box mnemonic="SSE7">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Date business books are made up to</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/DateBusinessBooksAreMadeUpTo</Xpath>
+	</Box>
+	<Box mnemonic="SSE8">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Cash basis</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessDetails/CashBasis</Xpath>
+	</Box>
+	<Box mnemonic="SSE9">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Turnover</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessIncome/Turnover</Xpath>
+	</Box>
+	<Box mnemonic="SSE10">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Other business income</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessIncome/OtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="SSE10.1">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Amount of trading income allowance claimed</ShortDesc>
+		<Xpath>/MTR/SA103S/BusinessIncome/TradingIncomeAllowance</Xpath>
+	</Box>
+	<Box mnemonic="SSE11">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Cost of goods</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/CostOfGoods</Xpath>
+	</Box>
+	<Box mnemonic="SSE12">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Car, van and travel expenses</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/CarVanAndTravelExpenses</Xpath>
+	</Box>
+	<Box mnemonic="SSE13">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Wages, salaries and staff costs</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/WagesSalariesAndStaffCosts</Xpath>
+	</Box>
+	<Box mnemonic="SSE14">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Rent and other property costs</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/RentAndOtherPropertyCosts</Xpath>
+	</Box>
+	<Box mnemonic="SSE15">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Repairs and maintenance of property and equipment</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/RepairsAndMaintenanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="SSE16">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Accountancy and legal fees</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/AccountancyAndLegalFees</Xpath>
+	</Box>
+	<Box mnemonic="SSE17">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Interest and finance charges</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/InterestAndFinanceCharges</Xpath>
+	</Box>
+	<Box mnemonic="SSE18">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Phone and other office costs</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/PhoneAndOtherOfficeCosts</Xpath>
+	</Box>
+	<Box mnemonic="SSE19">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Other allowable business expenses</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/OtherAllowableBusinessExpenses</Xpath>
+	</Box>
+	<Box mnemonic="SSE20">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Total allowable expenses</ShortDesc>
+		<Xpath>/MTR/SA103S/AllowableBusinessExpenses/TotalAllowableExpenses</Xpath>
+	</Box>
+	<Box mnemonic="SSE21">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Net profit</ShortDesc>
+		<Xpath>/MTR/SA103S/NetProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="SSE22">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Net loss</ShortDesc>
+		<Xpath>/MTR/SA103S/NetProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="SSE23">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Annual investment allowance</ShortDesc>
+		<Xpath>/MTR/SA103S/CapitalAllowances/AnnualInvestmentAllowance</Xpath>
+	</Box>
+	<Box mnemonic="SSE24">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Allowance for small balance of unrelieved expenditure</ShortDesc>
+		<Xpath>/MTR/SA103S/CapitalAllowances/AllowanceForSmallBalanceOfUnrelievedExpenditure</Xpath>
+	</Box>
+	<Box mnemonic="SSE25">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Other capital allowances</ShortDesc>
+		<Xpath>/MTR/SA103S/CapitalAllowances/OtherCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="SSE26">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Total balancing charges</ShortDesc>
+		<Xpath>/MTR/SA103S/CapitalAllowances/TotalBalancingCharges</Xpath>
+	</Box>
+	<Box mnemonic="SSE27">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Own goods and services</ShortDesc>
+		<Xpath>/MTR/SA103S/TaxableProfits/OwnGoodsAndServices</Xpath>
+	</Box>
+	<Box mnemonic="SSE28">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Net business profit for tax</ShortDesc>
+		<Xpath>/MTR/SA103S/TaxableProfits/NetBusinessProfitForTax</Xpath>
+	</Box>
+	<Box mnemonic="SSE29">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA103S/TaxableProfits/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="SSE30">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Any other business income</ShortDesc>
+		<Xpath>/MTR/SA103S/TaxableProfits/AnyOtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="SSE31">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Total taxable business profits</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/TotalTaxableBusinessProfits</Xpath>
+	</Box>
+	<Box mnemonic="SSE32">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Net business loss for tax</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/NetBusinessLossForTax</Xpath>
+	</Box>
+	<Box mnemonic="SSE33">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Loss of year set against other income</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/LossOfYearSetAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="SSE34">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Loss to carry back</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/LossToCarryBack</Xpath>
+	</Box>
+	<Box mnemonic="SSE35">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="SSE36">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Choose to pay Class 2 NIC voluntarily</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/PayClass2NICvoluntarily</Xpath>
+	</Box>
+	<Box mnemonic="SSECL2">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Class 2 NIC amount</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/Class2NICamount</Xpath>
+	</Box>
+	<Box mnemonic="SSE37">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Tick this box if you are Class 4 exempt</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/Class4NICexempt</Xpath>
+	</Box>
+	<Box mnemonic="SSE38">
+		<Form>SA103S</Form>
+		<Segment>Self Employment (short)</Segment>
+		<ShortDesc>Deductions made by contractors on account of tax</ShortDesc>
+		<Xpath>/MTR/SA103S/ProfitsLossesNICsAndCIS/SubContractorsTaxDeduction</Xpath>
+	</Box>
+	<Box mnemonic="LUN1">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Bank etc. and gilt untaxed interest</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKInterest/BankEtcAndGiltUntaxedInterest</Xpath>
+	</Box>
+	<Box mnemonic="LUN2">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Accrued Income Scheme aggregate amount</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKInterest/AccruedIncomeSchemeAggregateAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN3">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Interest from UK unit trusts etc. and any other income from UK savings and investments</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKInterest/TaxedUnitTrustEtcInterest</Xpath>
+	</Box>
+	<Box mnemonic="LUN4">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Tax taken off</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKInterest/TaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="LUN5">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total UK interest and tax taken off</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKInterest/TotalUKInterestAndTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="LUN6">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Stock dividends - amount received</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKDividends/StockDividendsAmountReceived</Xpath>
+	</Box>
+	<Box mnemonic="LUN8">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Bonus issues of securities and redeemable shares</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKDividends/BonusIssuesOfSecuritiesAndRedeemableShares</Xpath>
+	</Box>
+	<Box mnemonic="LUN9">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Other distributions - amount received</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKDividends/OtherDistributionsAmountReceived</Xpath>
+	</Box>
+	<Box mnemonic="LUN11">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total UK dividends and distributions</ShortDesc>
+		<Xpath>/MTR/SA103L/UKIncome/UKDividends/TotalUKDividendsAndDistributions</Xpath>
+	</Box>
+	<Box mnemonic="LUN12">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Foreign interest etc. - amount</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Interest/ForeignInterestEtcAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN13">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Foreign tax deducted</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Interest/ForeignTaxDeducted</Xpath>
+	</Box>
+	<Box mnemonic="LUN14">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Uk tax deducted</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Interest/UKTaxDeducted</Xpath>
+	</Box>
+	<Box mnemonic="LUN15">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Non UK dividends - amount</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Dividends/NonUKDividendsAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN16">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Foreign tax deducted</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Dividends/ForeignTaxDeducted</Xpath>
+	</Box>
+	<Box mnemonic="LUN17">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Uk tax deducted</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Dividends/UKTaxDeducted</Xpath>
+	</Box>
+	<Box mnemonic="LUN18">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total non-UK income</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignIncome/Dividends/TotalNonUKIncome</Xpath>
+	</Box>
+	<Box mnemonic="LUN20">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Aggregate syndicate profits</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/AggregateSyndicateProfits</Xpath>
+	</Box>
+	<Box mnemonic="LUN21">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Special Reserve Fund net withdrawal/release</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/SpecialReserveFundNetWithdrawalRelease</Xpath>
+	</Box>
+	<Box mnemonic="LUN22">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Stop loss recoveries</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/StopLossRecoveries</Xpath>
+	</Box>
+	<Box mnemonic="LUN23">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Compensation receipts</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/CompensationReceipts</Xpath>
+	</Box>
+	<Box mnemonic="LUN24">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Repayment of foreign tax (deduction)</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/RepaymentOfForeignTaxDeduction</Xpath>
+	</Box>
+	<Box mnemonic="LUN25">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Other non-syndicate income</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/OtherNonsyndicateIncome</Xpath>
+	</Box>
+	<Box mnemonic="LUN26">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total other Lloyd's receipts</ShortDesc>
+		<Xpath>/MTR/SA103L/OtherReceipts/TotalOtherLloydsReceipts</Xpath>
+	</Box>
+	<Box mnemonic="LUN27">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total Lloyd's income</ShortDesc>
+		<Xpath>/MTR/SA103L/TotalLloydsIncome</Xpath>
+	</Box>
+	<Box mnemonic="LUN28">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Repayment of foreign tax (tax credit relief)</ShortDesc>
+		<Xpath>/MTR/SA103L/RepaymentOfForeignTaxTaxCreditRelief</Xpath>
+	</Box>
+	<Box mnemonic="LUN29">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Aggregate syndicate losses</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/AggregateSyndicateLosses</Xpath>
+	</Box>
+	<Box mnemonic="LUN30">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Special Reserve Fund net transfer</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/SpecialReserveFundNetTransfer</Xpath>
+	</Box>
+	<Box mnemonic="LUN31">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Stop loss premiums paid</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/StopLossPremiumsPaid</Xpath>
+	</Box>
+	<Box mnemonic="LUN32">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Personal Quota Share and Exeat premiums</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/PersonalQuotaShareAndExeatPremiums</Xpath>
+	</Box>
+	<Box mnemonic="LUN33">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Estate Protection Plan premiums</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/EstateProtectionPlanPremiums</Xpath>
+	</Box>
+	<Box mnemonic="LUN34">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Underwriting loan interest</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/UnderwritingLoanInterest</Xpath>
+	</Box>
+	<Box mnemonic="LUN35">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Lloyd's Member's Association expenses</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/LloydsMembersAssociationExpenses</Xpath>
+	</Box>
+	<Box mnemonic="LUN36">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Member's agent profit commission and salaries</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/MembersAgentProfitCommissionAndSalaries</Xpath>
+	</Box>
+	<Box mnemonic="LUN37">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Bank guarantee/letters of credit fees</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/BankGuaranteelettersOfCreditFees</Xpath>
+	</Box>
+	<Box mnemonic="LUN38">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Accountancy fees</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/AccountancyFees</Xpath>
+	</Box>
+	<Box mnemonic="LUN39">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Other Lloyd's expenses</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/OtherLloydsExpenses</Xpath>
+	</Box>
+	<Box mnemonic="LUN40">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total losses and expenses</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesAndExpenses/TotalLossesAndExpenses</Xpath>
+	</Box>
+	<Box mnemonic="LUN41">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Profit amount</ShortDesc>
+		<Xpath>/MTR/SA103L/ProfitAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN42">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Loss amount</ShortDesc>
+		<Xpath>/MTR/SA103L/LossAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN43">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Foreign tax on personal fund income</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/ForeignTaxOnPersonalFundIncome</Xpath>
+	</Box>
+	<Box mnemonic="LUN44">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Us income tax paid</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/USIncomeTaxPaid</Xpath>
+	</Box>
+	<Box mnemonic="LUN45">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Canadian tax paid</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/CanadianTaxPaid</Xpath>
+	</Box>
+	<Box mnemonic="LUN46">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Syndicate Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/SyndicateForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="LUN47">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Additional payments of foreign tax</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/AdditionalPaymentsOfForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="LUN48">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total foreign tax</ShortDesc>
+		<Xpath>/MTR/SA103L/ForeignTax/TotalForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="LUN49">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Profit amount</ShortDesc>
+		<Xpath>/MTR/SA103L/TaxableProfits/ProfitAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN50">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters </Segment>
+		<ShortDesc>Foreign tax claimed as deduction</ShortDesc>
+		<Xpath>/MTR/SA103L/TaxableProfits/ForeignTaxClaimedAsDeduction</Xpath>
+	</Box>
+	<Box mnemonic="LUN51">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Unused losses brought forward</ShortDesc>
+		<Xpath>/MTR/SA103L/TaxableProfits/UnusedLossesBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="LUN52">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total taxable profits</ShortDesc>
+		<Xpath>/MTR/SA103L/TaxableProfits/TotalTaxableProfits</Xpath>
+	</Box>
+	<Box mnemonic="LUN53">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Loss amount</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/LossAmount</Xpath>
+	</Box>
+	<Box mnemonic="LUN54">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Foreign tax claimed as deduction</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/ForeignTaxClaimedAsDeduction</Xpath>
+	</Box>
+	<Box mnemonic="LUN55">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Loss for the year</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/LossForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="LUN56">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Loss offset against other income</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/LossOffsetAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="LUN57">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Loss carried back</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/LossCarriedBack</Xpath>
+	</Box>
+	<Box mnemonic="LUN58">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Unused losses to carry forward</ShortDesc>
+		<Xpath>/MTR/SA103L/AllowableLosses/UnusedLossesToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="LUN59">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Losses brought forward</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesReconciliation/LossesBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="LUN60">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Losses used against profits of year</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesReconciliation/LossesUsedAgainstProfitsOfYear</Xpath>
+	</Box>
+	<Box mnemonic="LUN61">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Unused loss from the year</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesReconciliation/UnusedLossFromTheYear</Xpath>
+	</Box>
+	<Box mnemonic="LUN62">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA103L/LossesReconciliation/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="LUN63">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Choose to pay Class 2 NIC voluntarily</ShortDesc>
+		<Xpath>/MTR/SA103L/NICs/PayClass2NICvoluntarily</Xpath>
+	</Box>
+	<Box mnemonic="LUNCL2">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Class 2 NIC amount</ShortDesc>
+		<Xpath>/MTR/SA103L/NICs/Class2NICamount</Xpath>
+	</Box>
+	<Box mnemonic="LUN64">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Tick this box if you are Class 4 exempt</ShortDesc>
+		<Xpath>/MTR/SA103L/NICs/Class4NICexempt</Xpath>
+	</Box>
+	<Box mnemonic="LUN65">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Adjustment to Class 4 NIC profits</ShortDesc>
+		<Xpath>/MTR/SA103L/NICs/AdjustmentToClass4NICProfits</Xpath>
+	</Box>
+	<Box mnemonic="LUN66">
+		<Form>SA103L</Form>
+		<Segment>Lloyds Underwriters</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA103L/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="FPS1">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Partnership reference number</ShortDesc>
+		<Xpath>/MTR/SA104F/PartnershipDetails/PartnershipReferenceNumber</Xpath>
+	</Box>
+	<Box mnemonic="FPS2">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Partnership description</ShortDesc>
+		<Xpath>/MTR/SA104F/PartnershipDetails/PartnershipDescription</Xpath>
+	</Box>
+	<Box mnemonic="FPS3">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Date joined partnership</ShortDesc>
+		<Xpath>/MTR/SA104F/PartnershipDetails/DateJoinedPartnership</Xpath>
+	</Box>
+	<Box mnemonic="FPS4">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Date left partnership</ShortDesc>
+		<Xpath>/MTR/SA104F/PartnershipDetails/DateLeftPartnership</Xpath>
+	</Box>
+	<Box mnemonic="FPS5">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Cash basis</ShortDesc>
+		<Xpath>/MTR/SA104F/PartnershipDetails/CashBasis</Xpath>
+	</Box>
+	<Box mnemonic="FPS6">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Date basis period began</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/DateBasisPeriodBegan</Xpath>
+	</Box>
+	<Box mnemonic="FPS7">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Date basis period ended</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/DateBasisPeriodEnded</Xpath>
+	</Box>
+	<Box mnemonic="FPS8">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of partnership profit or loss</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/ShareOfPartnershipProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="FPS9">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjustment for basis period</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/AdjustmentForBasisPeriod</Xpath>
+	</Box>
+	<Box mnemonic="FPS10">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Change of accounting practice adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/ChangeOfAccountingPracticeAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS11">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Averaging adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/AveragingAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS12">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Foreign tax claimed as deduction</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/ForeignTaxClaimedAsDeduction</Xpath>
+	</Box>
+	<Box mnemonic="FPS13">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Overlap relief used</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/OverlapReliefUsed</Xpath>
+	</Box>
+	<Box mnemonic="FPS14">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Overlap profit carried forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/OverlapProfitCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS16">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjusted profit for year</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/AdjustedProfitForYear</Xpath>
+	</Box>
+	<Box mnemonic="FPS17">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Losses brought forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/LossesBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS18">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxable profits after losses</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/TaxableProfitsAfterLosses</Xpath>
+	</Box>
+	<Box mnemonic="FPS19">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Other business income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/OtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS20">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total taxable business profits</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfProfits/TotalTaxableBusinessProfits</Xpath>
+	</Box>
+	<Box mnemonic="FPS21">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjusted loss for year</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfLosses/AdjustedLossForYear</Xpath>
+	</Box>
+	<Box mnemonic="FPS22">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss set off against other income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfLosses/LossSetOffAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS23">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss to be carried back</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfLosses/LossToBeCarriedBack</Xpath>
+	</Box>
+	<Box mnemonic="FPS24">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfLosses/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS25">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Choose to pay Class 2 NIC voluntarily</ShortDesc>
+		<Xpath>/MTR/SA104F/NICs/PayClass2NICvoluntarily</Xpath>
+	</Box>
+	<Box mnemonic="FPSCL2">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Class 2 NIC amount</ShortDesc>
+		<Xpath>/MTR/SA104F/NICs/Class2NICamount</Xpath>
+	</Box>
+	<Box mnemonic="FPS26">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Tick this box if you are Class 4 exempt</ShortDesc>
+		<Xpath>/MTR/SA104F/NICs/Class4NICexempt</Xpath>
+	</Box>
+	<Box mnemonic="FPS27">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjustment to profit chargeable to Class 4 National Insurance</ShortDesc>
+		<Xpath>/MTR/SA104F/NICs/AdjustmentToClass4NICProfits</Xpath>
+	</Box>
+	<Box mnemonic="FPS28">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Uk untaxed savings income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/UKUntaxedSavingsIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS29">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS30">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjusted UK savings income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/AdjustedUKSavingsIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS31">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Foreign untaxed savings income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/ForeignIncome/ForeignUntaxedSavingsIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS32">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/ForeignIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS33">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total foreign tax taken off</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/ForeignIncome/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS34">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjusted foreign savings income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/ForeignIncome/AdjustedForeignSavingsIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS35">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total untaxed savings income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/SavingsIncome/TotalUntaxedSavingsIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS36">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Uk property profit/loss share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/UKPropertyProfitLossShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS37">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS38">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS39">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss for year set off against other income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/LossForYearSetOffAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS40">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss to be carried forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/LossToBeCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS41">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full) </Segment>
+		<ShortDesc>Taxable profits after adjustment and losses</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/TaxableProfitsAfterAdjustmentAndLosses</Xpath>
+	</Box>
+	<Box mnemonic="FPS41.1">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full) </Segment>
+		<ShortDesc>Residential finance costs</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/UKPropertyIncome/ResidentialFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FPS42">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of FHL profit</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/ShareOfFHLProfit</Xpath>
+	</Box>
+	<Box mnemonic="FPS43">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Adjustments to FHL profit</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/AdjustmentsToFHLProfit</Xpath>
+	</Box>
+	<Box mnemonic="FPS44">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxable FHL profit</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/TaxableFHLProfit</Xpath>
+	</Box>
+	<Box mnemonic="FPS45">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Other untaxed UK income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/OtherUntaxedUKIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS46">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS47">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS48">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxable profit</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/TaxableProfit</Xpath>
+	</Box>
+	<Box mnemonic="FPS49">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of loss from other untaxed UK income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/OtherUntaxedUKIncome/ShareOfLossFromOtherUntaxedUKIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS50">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/OtherUntaxedUKIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS51">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedUKIncome/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS52">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Offshore funds income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OffshoreFundsIncome/OffshoreFundsIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS53">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OffshoreFundsIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS54">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Foreign tax taken off</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OffshoreFundsIncome/ForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS55">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxable income after adjustment and foreign tax</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OffshoreFundsIncome/TaxableIncomeAfterAdjustmentAndForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FPS56">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Other untaxed foreign income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/OtherUntaxedForeignIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS57">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS58">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS59">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total foreign tax taken off</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS60">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxable profit</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/TaxableProfit</Xpath>
+	</Box>
+	<Box mnemonic="FPS61">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of loss from other untaxed foreign income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/ForeignLosses/ShareOfLossFromOtherUntaxedForeignIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS62">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Basis period adjustment</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/ForeignLosses/BasisPeriodAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FPS63">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/ForeignLosses/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS63.1">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Residential finance costs</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/OtherUntaxedForeignIncome/ResidentialFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FPS64">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total untaxed income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/TotalUntaxedIncome/TotalUntaxedIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS65">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Overlap relief used</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/TotalUntaxedIncome/OverlapReliefUsed</Xpath>
+	</Box>
+	<Box mnemonic="FPS66">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Overlap profit carried forward</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/TotalUntaxedIncome/OverlapProfitCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="FPS67">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total untaxed income share</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfUntaxedIncome/TotalUntaxedIncome/TotalUntaxedIncomeShare</Xpath>
+	</Box>
+	<Box mnemonic="FPS68">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full) </Segment>
+		<ShortDesc>Your share of the partnership’s dividend income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfDividendIncome/DividendIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS69">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Foreign tax deducted</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfDividendIncome/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS70">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total dividend income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfDividendIncome/TotalDividendIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS71">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of taxed income taxable at 20%</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfTaxedIncomeTaxableAt20Percent/ShareOfTaxedIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS72">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Foreign Tax Deducted</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfTaxedIncomeTaxableAt20Percent/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS73">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Taxed income taxable at 20%</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfTaxedIncomeTaxableAt20Percent/TaxedIncomeTaxableAt20Percent</Xpath>
+	</Box>
+	<Box mnemonic="FPS74">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share Of Taxed Income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfOtherTaxedIncome/ShareOfTaxedIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS75">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Total foreign tax taken off</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfOtherTaxedIncome/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FPS76">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of total taxed and untaxed income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipIncome/ShareOfTotalTaxedAndUntaxedIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS77">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of Income Tax taken off partnership income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipTaxPayed/ShareOfIncomeTaxTakenOffPartnershipIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS78">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share Of TaxTaken Off By Contractors</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipTaxPayed/ShareOfTaxTakenOffByContractors</Xpath>
+	</Box>
+	<Box mnemonic="FPS79">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of tax taken off trading income</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipTaxPayed/ShareOfTaxTakenOffTradingIncome</Xpath>
+	</Box>
+	<Box mnemonic="FPS80">
+		<Form>SA104F</Form>
+		<Segment>Partnership (full)</Segment>
+		<ShortDesc>Share of total tax taken off</ShortDesc>
+		<Xpath>/MTR/SA104F/ShareOfPartnershipTaxPayed/ShareOfTotalTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="SPS1">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Partnership reference number</ShortDesc>
+		<Xpath>/MTR/SA104S/PartnershipDetails/PartnershipReferenceNumber</Xpath>
+	</Box>
+	<Box mnemonic="SPS2">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Partnership description</ShortDesc>
+		<Xpath>/MTR/SA104S/PartnershipDetails/PartnershipDescription</Xpath>
+	</Box>
+	<Box mnemonic="SPS3">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Date joined partnership</ShortDesc>
+		<Xpath>/MTR/SA104S/PartnershipDetails/DateJoinedPartnership</Xpath>
+	</Box>
+	<Box mnemonic="SPS4">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Date left partnership</ShortDesc>
+		<Xpath>/MTR/SA104S/PartnershipDetails/DateLeftPartnership</Xpath>
+	</Box>
+	<Box mnemonic="SPS5">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Cash basis</ShortDesc>
+		<Xpath>/MTR/SA104S/PartnershipDetails/CashBasis</Xpath>
+	</Box>
+	<Box mnemonic="SPS6">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Date basis period began</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/DateBasisPeriodBegan</Xpath>
+	</Box>
+	<Box mnemonic="SPS7">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Date basis period ended</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/DateBasisPeriodEnded</Xpath>
+	</Box>
+	<Box mnemonic="SPS8">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Share of partnership profit or loss</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/ShareOfPartnershipProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="SPS9">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Adjustment for basis period</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/AdjustmentForBasisPeriod</Xpath>
+	</Box>
+	<Box mnemonic="SPS10">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Change of accounting practice adjustment</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/ChangeOfAccountingPracticeAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="SPS11">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Averaging adjustment</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/AveragingAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="SPS12">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Foreign tax claimed as deduction</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/ForeignTaxClaimedAsDeduction</Xpath>
+	</Box>
+	<Box mnemonic="SPS13">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Overlap relief used</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/OverlapReliefUsed</Xpath>
+	</Box>
+	<Box mnemonic="SPS14">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Overlap profit carried forward</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/OverlapProfitCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="SPS16">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Adjusted profit</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/AdjustedProfitForYear</Xpath>
+	</Box>
+	<Box mnemonic="SPS17">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Losses brought forward from last year used this year</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/LossesBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="SPS18">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Taxable profit after losses brought forward</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/TaxableProfitsAfterLosses</Xpath>
+	</Box>
+	<Box mnemonic="SPS19">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Add amounts not included in the partnership accounts</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/OtherBusinessIncome</Xpath>
+	</Box>
+	<Box mnemonic="SPS20">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Total taxable business profits</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalProfits/TotalTaxableBusinessProfits</Xpath>
+	</Box>
+	<Box mnemonic="SPS21">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Adjusted loss for year</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalLosses/AdjustedLossForYear</Xpath>
+	</Box>
+	<Box mnemonic="SPS22">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Loss set off against other income</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalLosses/LossSetOffAgainstOtherIncome</Xpath>
+	</Box>
+	<Box mnemonic="SPS23">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Loss to be carried back</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalLosses/LossToBeCarriedBack</Xpath>
+	</Box>
+	<Box mnemonic="SPS24">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short) </Segment>
+		<ShortDesc>Total loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipTradingOrProfessionalLosses/TotalLossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="SPS25">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Choose to pay Class 2 NIC voluntarily</ShortDesc>
+		<Xpath>/MTR/SA104S/NICs/PayClass2NICvoluntarily</Xpath>
+	</Box>
+	<Box mnemonic="SPSCL2">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Class 2 NIC amount</ShortDesc>
+		<Xpath>/MTR/SA104S/NICs/Class2NICamount</Xpath>
+	</Box>
+	<Box mnemonic="SPS26">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Tick this box if you are Class 4 exempt</ShortDesc>
+		<Xpath>/MTR/SA104S/NICs/Class4NICexempt</Xpath>
+	</Box>
+	<Box mnemonic="SPS27">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Adjustment to profit chargeable to Class 4 National Insurance</ShortDesc>
+		<Xpath>/MTR/SA104S/NICs/AdjustmentToClass4NICProfits</Xpath>
+	</Box>
+	<Box mnemonic="SPS28">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Your share of untaxed interest etc</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfUntaxedInterestEtc</Xpath>
+	</Box>
+	<Box mnemonic="SPS30">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Share Of Tax Taken Off By Contractors</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipsTaxPaid/ShareOfTaxTakenOffByContractors</Xpath>
+	</Box>
+	<Box mnemonic="SPS31">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Share of tax taken off trading income</ShortDesc>
+		<Xpath>/MTR/SA104S/ShareOfPartnershipsTaxPaid/ShareOfTaxTakenOffTradingIncome</Xpath>
+	</Box>
+	<Box mnemonic="SPS32">
+		<Form>SA104S</Form>
+		<Segment>Partnership (short)</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA104S/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="PRO1">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Number of properties</ShortDesc>
+		<Xpath>/MTR/SA105/UKPropertyDetails/NumberOfProperties</Xpath>
+	</Box>
+	<Box mnemonic="PRO2">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Property income ceased in year</ShortDesc>
+		<Xpath>/MTR/SA105/UKPropertyDetails/PropertyIncomeCeasedInYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO3">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Income from property let jointly</ShortDesc>
+		<Xpath>/MTR/SA105/UKPropertyDetails/IncomeFromPropertyLetJointly</Xpath>
+	</Box>
+	<Box mnemonic="PRO4">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Rent a Room relief claim</ShortDesc>
+		<Xpath>/MTR/SA105/UKPropertyDetails/RentARoomReliefClaim</Xpath>
+	</Box>
+	<Box mnemonic="PRO5">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Furnished holiday lettings - income</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/FurnishedHolidayLettingsIncome</Xpath>
+	</Box>
+	<Box mnemonic="PRO5.1">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Amount of property income allowance claimed</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/PropertyIncomeAllowance</Xpath>
+	</Box>
+	<Box mnemonic="PRO5.2">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Used traditional accounting rather than cash basis to calculate income and expenses</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/TraditionalAccounting</Xpath>
+	</Box>
+	<Box mnemonic="PRO6">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Furnished Holiday Lettings Expenses.</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/FurnishedHolidayLettingsExpenses</Xpath>
+	</Box>
+	<Box mnemonic="PRO7">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Furnished holiday lettings - interest etc. costs</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/FurnishedHolidayLettingsInterestEtcCosts</Xpath>
+	</Box>
+	<Box mnemonic="PRO8">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Furnished holiday lettings - management etc. fees</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/FurnishedHolidayLettingsManagementEtcFees</Xpath>
+	</Box>
+	<Box mnemonic="PRO9">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Furnished holiday lettings - other expenses</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/FurnishedHolidayLettingsOtherExpenses</Xpath>
+	</Box>
+	<Box mnemonic="PRO10">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Private use adjustment</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/PrivateUseAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="PRO11">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Balancing charges</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/BalancingCharges</Xpath>
+	</Box>
+	<Box mnemonic="PRO12">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Capital allowances</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/CapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="PRO13">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Adjusted Profit For The Year</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/AdjustedProfitForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO14">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Losses Brought Forward</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/LossesBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="PRO15">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Taxable Profit For Year</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/TaxableProfitForYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO16">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Loss For Year</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/LossForYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO17">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Loss To Carry Forward</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/LossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="PRO18">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>In EEA</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/InEEA</Xpath>
+	</Box>
+	<Box mnemonic="PRO19">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Period Of Grace Election</ShortDesc>
+		<Xpath>/MTR/SA105/FurnishedHolidayLettings/PeriodOfGraceElection</Xpath>
+	</Box>
+	<Box mnemonic="PRO20">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Total Rents And OtherIncome From Property</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/TotalRentsAndOtherIncomeFromProperty</Xpath>
+	</Box>
+	<Box mnemonic="PRO20.1">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Amount of property income allowance claimed</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/PropertyIncomeAllowance</Xpath>
+	</Box>
+	<Box mnemonic="PRO20.2">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Used traditional accounting rather than cash basis to calculate income and expenses</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/TraditionalAccounting</Xpath>
+	</Box>
+	<Box mnemonic="PRO21">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Tax Taken Off Any Income</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/TaxTakenOffAnyIncome</Xpath>
+	</Box>
+	<Box mnemonic="PRO22">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Premiums For Grant Of A Lease.</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/PremiumsForGrantOfALease</Xpath>
+	</Box>
+	<Box mnemonic="PRO23">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Reverse Premiums And Inducements</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/ReversePremiumsAndInducements</Xpath>
+	</Box>
+	<Box mnemonic="PRO24">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Rent Rates Insurance Etc</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/RentRatesInsuranceEtc</Xpath>
+	</Box>
+	<Box mnemonic="PRO25">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Repairs and Maintenance</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/RepairsAndMaintenance</Xpath>
+	</Box>
+	<Box mnemonic="PRO26">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Interest And Other Financial Charges</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/InterestAndOtherFinancialCharges</Xpath>
+	</Box>
+	<Box mnemonic="PRO27">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Legal Management And Professional Fees</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/LegalManagementAndProfessionalFees</Xpath>
+	</Box>
+	<Box mnemonic="PRO28">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Costs Of Services Provided</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/CostsOfServicesProvided</Xpath>
+	</Box>
+	<Box mnemonic="PRO29">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Other Property Expenses</ShortDesc>
+		<Xpath>/MTR/SA105/PropertyIncomeAndExpenses/OtherPropertyExpenses</Xpath>
+	</Box>
+	<Box mnemonic="PRO30">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Private Use Adjustment</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/PrivateUseAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="PRO31">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Balancing Charges</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/BalancingCharges</Xpath>
+	</Box>
+	<Box mnemonic="PRO32">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Annual Investment Allowance</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/AnnualInvestmentAllowance</Xpath>
+	</Box>
+	<Box mnemonic="PRO34">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Zero-emission goods vehicle allowance</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/ZeroEmissionGoodsVehicleAllowance</Xpath>
+	</Box>
+	<Box mnemonic="PRO35">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Capital allowances</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/EnhancedCapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="PRO36">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Costs of replacing domestic items - for residential lettings only</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/CostsOfReplacingDomesticItems</Xpath>
+	</Box>
+	<Box mnemonic="PRO37">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Rent A Room Exempt Amount</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/RentARoomExemptAmount</Xpath>
+	</Box>
+	<Box mnemonic="PRO38">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Adjusted Profit For The Year</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/AdjustedProfitForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO39">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Loss Brought Forward</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="PRO40">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Taxable Profit For The Year</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/TaxableProfitForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO41">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Adjusted Loss For The Year</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/AdjustedLossForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO42">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Loss set off against total income of the year</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/LossSetOffAgainstTotalIncomeOfTheYear</Xpath>
+	</Box>
+	<Box mnemonic="PRO43">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/LossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="PRO44">
+		<Form>SA105</Form>
+		<Segment>Property</Segment>
+		<ShortDesc>Residential finance costs</ShortDesc>
+		<Xpath>/MTR/SA105/TaxableProfitOrLoss/ResidentialFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FOR1">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Unremittable income</ShortDesc>
+		<Xpath>/MTR/SA106/UnremittableIncome</Xpath>
+	</Box>
+	<Box mnemonic="FOR2">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign tax credit relief</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignTaxCreditRelief</Xpath>
+	</Box>
+	<Box mnemonic="FOR4A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Country code</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/CountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FOR4B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Income before tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/IncomeBeforeTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR4C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR4D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR4E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/ClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR4F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount on interest and other savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/IncomeSource/TaxableAmountOnInterestAndOtherSavings</Xpath>
+	</Box>
+	<Box mnemonic="FOR3">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total SWT or UK tax - overseas savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/Totals/SWTOrUKTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR4">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable amount - overseas savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasSavings/Totals/TaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR6A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Country code</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/CountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FOR6B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Income before tax</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/IncomeBeforeTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR6C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR6D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR6E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/ClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR6F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount on interest and other savings</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/IncomeSource/TaxableAmountOnInterestAndOtherSavings</Xpath>
+	</Box>
+	<Box mnemonic="FOR5">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total SWT or UK tax - foreign companies</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/Totals/SWTOrUKTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR6">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable amount - foreign companies</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignCompanies/Totals/TaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR9A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Country code</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/CountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FOR9B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Income before tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/IncomeBeforeTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR9C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR9D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR9E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/ClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR9F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount on interest and other savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/IncomeSource/TaxableAmountOnInterestAndOtherSavings</Xpath>
+	</Box>
+	<Box mnemonic="FOR8">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total SWT or UK tax - overseas pensions</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/Totals/SWTOrUKTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR9">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable amount - overseas pensions</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasPensions/Totals/TaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR11A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Country code</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/CountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FOR11B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Income before tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/IncomeBeforeTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR11C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR11D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR11E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/ClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR11F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount on interest and other savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/IncomeSource/TaxableAmountOnInterestAndOtherSavings</Xpath>
+	</Box>
+	<Box mnemonic="FOR10">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total SWT or UK tax - overseas dividend income</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/Totals/SWTOrUKTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR11">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable amount - overseas dividend income</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasDividendIncome/Totals/TaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR13A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Country code</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/CountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FOR13B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Income before tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/IncomeBeforeTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR13C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign Tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR13D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR13E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/ClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR13F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount on interest and other savings</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/IncomeSource/TaxableAmountOnInterestAndOtherSavings</Xpath>
+	</Box>
+	<Box mnemonic="FOR12">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Swt or UK tax - overseas trusts etc. other income</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/Totals/SWTOrUKTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR13">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Taxable amount - overseas trusts etc. other income</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasTrustIncome/Totals/TaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR13.1">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Amount of residential property income or restricted finance costs</ShortDesc>
+		<Xpath>/MTR/SA106/ResidentialPropertyIncomeOrRestrictedFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FOR14">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total rents and other property receipts</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/TotalRentsAndOtherPropertyReceipts</Xpath>
+	</Box>
+	<Box mnemonic="FOR14.1">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Amount of property income allowance claimed</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyIncomeAllowance</Xpath>
+	</Box>
+	<Box mnemonic="FOR14.2">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Used traditional accounting rather than cash basis to calculate income and expenses</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/TraditionalAccounting</Xpath>
+	</Box>
+	<Box mnemonic="FOR15">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Number of properties</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/NumberOfProperties</Xpath>
+	</Box>
+	<Box mnemonic="FOR16">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Premiums paid for lease</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PremiumsPaidForLease</Xpath>
+	</Box>
+	<Box mnemonic="FOR17">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property expenses</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyExpenses</Xpath>
+	</Box>
+	<Box mnemonic="FOR18">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Net profit or loss</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/NetProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="FOR19">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Private use adjustment</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PrivateUseAdjustment</Xpath>
+	</Box>
+	<Box mnemonic="FOR20">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Balancing charges</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/BalancingCharges</Xpath>
+	</Box>
+	<Box mnemonic="FOR21">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Capital allowances</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/CapitalAllowances</Xpath>
+	</Box>
+	<Box mnemonic="FOR22">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Zero-emission goods vehicle allowance</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/ZeroEmissionGoodsVehicleAllowance</Xpath>
+	</Box>
+	<Box mnemonic="FOR23">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Costs of replacing domestic items - for residential lettings only</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/CostsOfReplacingDomesticItems</Xpath>
+	</Box>
+	<Box mnemonic="FOR24">
+		<Form>SA106</Form>
+		<Segment>Foreign </Segment>
+		<ShortDesc>Adjusted profit or loss for the year</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/AdjustedProfitOrLossForTheYear</Xpath>
+	</Box>
+	<Box mnemonic="FOR24.1">
+		<Form>SA106</Form>
+		<Segment>Foreign </Segment>
+		<ShortDesc>Residential finance costs</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/ResidentialFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="FOR30A">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad country</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadCountry</Xpath>
+	</Box>
+	<Box mnemonic="FOR30B">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad profit or loss</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="FOR30C">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad foreign tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR30D">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad special withholding tax</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadSpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR30E">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad claim to FCTR</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadClaimToFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FOR30F">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Property abroad total amount</ShortDesc>
+		<Xpath>/MTR/SA106/OverseasLandAndPropertyIncomeDetails/PropertyAbroadTotalAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR25">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total adjusted profit or loss</ShortDesc>
+		<Xpath>/MTR/SA106/TotalAdjustedProfitOrLoss</Xpath>
+	</Box>
+	<Box mnemonic="FOR26">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Loss brought forward</ShortDesc>
+		<Xpath>/MTR/SA106/LossBroughtForward</Xpath>
+	</Box>
+	<Box mnemonic="FOR27">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable profit</ShortDesc>
+		<Xpath>/MTR/SA106/TotalTaxableProfit</Xpath>
+	</Box>
+	<Box mnemonic="FOR28">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total foreign tax taken off</ShortDesc>
+		<Xpath>/MTR/SA106/TotalForeignTaxTakenOff</Xpath>
+	</Box>
+	<Box mnemonic="FOR29">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total Special Withholding Tax</ShortDesc>
+		<Xpath>/MTR/SA106/TotalSpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR30">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total taxable amount</ShortDesc>
+		<Xpath>/MTR/SA106/TotalTaxableAmount</Xpath>
+	</Box>
+	<Box mnemonic="FOR31">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Loss set off against total income</ShortDesc>
+		<Xpath>/MTR/SA106/LossSetOffAgainstTotalIncome</Xpath>
+	</Box>
+	<Box mnemonic="FOR32">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Loss to carry forward</ShortDesc>
+		<Xpath>/MTR/SA106/LossToCarryForward</Xpath>
+	</Box>
+	<Box mnemonic="FORA">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR Country Code</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignTaxPaid/ClaimToFTCRCountryCode</Xpath>
+	</Box>
+	<Box mnemonic="FORC">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR foreign tax</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignTaxPaid/ClaimToFTCRForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="FORE">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR claim for FTCR</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignTaxPaid/ClaimToFTCRClaimForFTCR</Xpath>
+	</Box>
+	<Box mnemonic="FORF">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Claim to FTCR amount chargeable</ShortDesc>
+		<Xpath>/MTR/SA106/ForeignTaxPaid/ClaimToFTCRAmountChargable</Xpath>
+	</Box>
+	<Box mnemonic="FOR33">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Chargeable gains (UK rules)</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ChargeableGainsUKRules/ChargeableGains</Xpath>
+	</Box>
+	<Box mnemonic="FOR34">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Number of days over which gain accrued</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ChargeableGainsUKRules/NumberOfDaysOverWhichGainAccrued</Xpath>
+	</Box>
+	<Box mnemonic="FOR35">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Chargeable gains foreign rules</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ChargeableGainsForeignRules/ChargeableGains</Xpath>
+	</Box>
+	<Box mnemonic="FOR36">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Number of days over which gain accrued</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ChargeableGainsForeignRules/NumberOfDaysOverWhichGainAccrued</Xpath>
+	</Box>
+	<Box mnemonic="FOR37">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign tax paid</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ForeignTaxPaid</Xpath>
+	</Box>
+	<Box mnemonic="FOR38">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign tax credit relief claim</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/ForeignTaxCreditReliefClaim</Xpath>
+	</Box>
+	<Box mnemonic="FOR39">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Total foreign tax credit relief on gains</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/TotalForeignTaxCreditReliefOnGains</Xpath>
+	</Box>
+	<Box mnemonic="FOR40">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Special Withholding Tax</ShortDesc>
+		<Xpath>/MTR/SA106/CapitalGains/SpecialWithholdingTax</Xpath>
+	</Box>
+	<Box mnemonic="FOR41">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Offshore fund gains and non resident trust income</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/OffshoreFundGainsAndNonResidentTrustIncome</Xpath>
+	</Box>
+	<Box mnemonic="FOR42">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Benefits from overseas trusts etc.</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/BenefitsFromOverseasTrustsEtc</Xpath>
+	</Box>
+	<Box mnemonic="FOR43">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Foreign life insurance gains</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/ForeignLifeInsuranceGains</Xpath>
+	</Box>
+	<Box mnemonic="FOR44">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Number of years since policy made</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/NumberOfYearsSincePolicyMade</Xpath>
+	</Box>
+	<Box mnemonic="FOR45">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Tax treated as paid</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/TaxTreatedAsPaid</Xpath>
+	</Box>
+	<Box mnemonic="FOR46">
+		<Form>SA106</Form>
+		<Segment>Foreign</Segment>
+		<ShortDesc>Omitted amount transfer of assets exemption</ShortDesc>
+		<Xpath>/MTR/SA106/OtherOverseasIncomeAndGains/OmittedAmountTransferOfAssetsExemption</Xpath>
+	</Box>
+	<Box mnemonic="TRU1">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Discretionary income payment net amount</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/DiscretionaryIncomePayment/DiscretionaryIncomePaymentNetAmount</Xpath>
+	</Box>
+	<Box mnemonic="TRU2">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Payments from settlor interested trusts</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/DiscretionaryIncomePayment/PaymentsFromSettlorInterestedTrusts</Xpath>
+	</Box>
+	<Box mnemonic="TRU3">
+		<Form>SA107</Form>
+		<Segment>Trusts </Segment>
+		<ShortDesc>Non discretionary income taxed at basic rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/NondiscretionaryIncomeEntitlementFromTrusts/NonDiscretionaryIncomeTaxedAtBasicRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU4">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Non discretionary income taxed at savings rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/NondiscretionaryIncomeEntitlementFromTrusts/NonDiscretionaryIncomeTaxedAtLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU5">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Non discretionary income taxed at dividend rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/NondiscretionaryIncomeEntitlementFromTrusts/NonDiscretionaryIncomeTaxedAtDividendRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU6">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Income from trusts etc. - non resident trustees</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromTrustsAndSettlements/NondiscretionaryIncomeEntitlementFromTrusts/IncomeFromTrustsEtcNonResidentTrustees</Xpath>
+	</Box>
+	<Box mnemonic="TRU7">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Net settlor income taxed at basic rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/NetSettlorIncomeTaxedAtBasicRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU8">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Net settlor income taxed at savings rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/NetSettlorIncomeTaxedAtLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU9">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Net settlor income taxed at dividend rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/NetSettlorIncomeTaxedAtDividendRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU10">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Net settlor income taxed at trust rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/NetSettlorIncomeTaxedAtTrustRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU11">
+		<Form>SA107</Form>
+		<Segment>Trusts </Segment>
+		<ShortDesc>Savings income at trust rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/SavingsIncomeAtTrustRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU12">
+		<Form>SA107</Form>
+		<Segment>Trusts </Segment>
+		<ShortDesc>Net settlor income taxed at dividend trust rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/NetSettlorIncomeTaxedAtDividendTrustRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU13">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Gross settlor income to be taxed at basic rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/GrossSettlorIncomeToBeTaxedAtBasicRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU14">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Gross settlor income to be taxed at savings rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/GrossSettlorIncomeToBeTaxedAtLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU15">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Life insurance policy gains-additional tax paid</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeChargeableOnSettlors/AmountOfUKLifeInsurancePolicy</Xpath>
+	</Box>
+	<Box mnemonic="TRU16">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Estate income taxed at basic rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/UKEstates/EstateIncomeTaxedAtBasicRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU17">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Estate income taxed at savings rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/UKEstates/EstateIncomeTaxedAtLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU18">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Estate income taxed at dividend rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/UKEstates/EstateIncomeTaxedAtDividendRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU19">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Estate income taxed at non-repayable basic rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/UKEstates/EstateIncomeTaxedAtNonrepayableBasicRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU20">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Estate income taxed at non-repayable lower rate</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/UKEstates/IncomeTaxedAtNonrepayableLowerRate</Xpath>
+	</Box>
+	<Box mnemonic="TRU22">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Foreign estate income</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/ForeignEstates/ForeignEstateIncome</Xpath>
+	</Box>
+	<Box mnemonic="TRU23">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Relief for UK tax accounted for</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromEstates/ForeignEstates/ReliefForUKTaxAccountedFor</Xpath>
+	</Box>
+	<Box mnemonic="TRU24">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Foreign tax</ShortDesc>
+		<Xpath>/MTR/SA107/ForeignTax</Xpath>
+	</Box>
+	<Box mnemonic="TRU25">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Amount of residential property income or restricted finance costs from trusts and estates</ShortDesc>
+		<Xpath>/MTR/SA107/IncomeFromResidentialProperty/ResidentialPropertyIncomeOrRestrictedFinanceCosts</Xpath>
+	</Box>
+	<Box mnemonic="TRU26">
+		<Form>SA107</Form>
+		<Segment>Trusts</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA107/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="CGT3">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Number of disposals</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/NumberOfDisposals</Xpath>
+	</Box>
+	<Box mnemonic="CGT4">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Disposal proceeds</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/DisposalProceeds</Xpath>
+	</Box>
+	<Box mnemonic="CGT5">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Allowable costs (including purchase price)</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/AllowableCosts</Xpath>
+	</Box>
+	<Box mnemonic="CGT6">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains in the return year before losses</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/GainsInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT7">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses in the return year</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/LossesInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT8">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>The relevant code for any claim or election made</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/ClaimOrElectionMade</Xpath>
+	</Box>
+	<Box mnemonic="CGT9">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gain or loss relating to non-resident Capital Gains Tax for the disposal of a UK residential property or properties in the current year</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/GainOrLossRelatingToNRCGT</Xpath>
+	</Box>
+	<Box mnemonic="CGT10">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains chargeable to NRCGT already charged</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/NRCGTtaxAlreadyCharged</Xpath>
+	</Box>
+	<Box mnemonic="CGT11">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gain or loss reported in a Real Time Transaction Tax return for the disposal of an asset in the current year</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/GainOrLossFromRTTreturn</Xpath>
+	</Box>
+	<Box mnemonic="CGT12">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains reported in an RTT return already charged</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/RTTtaxAlreadyCharged</Xpath>
+	</Box>
+	<Box mnemonic="CGT13">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Carried interest</ShortDesc>
+		<Xpath>/MTR/SA108/ResidentialPropertyAndCarriedInterest/CarriedInterest</Xpath>
+	</Box>
+	<Box mnemonic="CGT14">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Number of disposals</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/NumberOfDisposals</Xpath>
+	</Box>
+	<Box mnemonic="CGT15">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Disposal proceeds</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/DisposalProceeds</Xpath>
+	</Box>
+	<Box mnemonic="CGT16">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Allowable costs (including purchase price)</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/AllowableCosts</Xpath>
+	</Box>
+	<Box mnemonic="CGT17">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains in the return year before losses</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/GainsInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT18">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Attributed gains where personal losses cannot be set off</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/AttributedGains</Xpath>
+	</Box>
+	<Box mnemonic="CGT19">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses in the return year</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/LossesInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT20">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>The relevant code for any claim or election made</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/ClaimOrElectionMade</Xpath>
+	</Box>
+	<Box mnemonic="CGT21">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gain or loss reported in a Real Time Transaction Tax return for the disposal of an asset of this type in the current year</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/GainFromRTTreturn</Xpath>
+	</Box>
+	<Box mnemonic="CGT22">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains reported in an RTT return already charged</ShortDesc>
+		<Xpath>/MTR/SA108/OtherPropertyAssetsAndGains/RTTtaxAlreadyCharged</Xpath>
+	</Box>
+	<Box mnemonic="CGT23">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Number of disposals</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/NumberOfDisposals</Xpath>
+	</Box>
+	<Box mnemonic="CGT24">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Disposal proceeds</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/DisposalProceeds</Xpath>
+	</Box>
+	<Box mnemonic="CGT25">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Allowable costs (including purchase price)</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/AllowableCosts</Xpath>
+	</Box>
+	<Box mnemonic="CGT26">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains in the return year, before losses</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/GainsInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT27">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses in the return year</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/LossesInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT28">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>The relevant code for any claim or election made</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/ClaimOrElectionMade</Xpath>
+	</Box>
+	<Box mnemonic="CGT29">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gain or loss reported in a Real Time Transaction Tax return for the disposal of an asset of this type in the current year</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/GainFromRTTreturn</Xpath>
+	</Box>
+	<Box mnemonic="CGT30">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains reported in an RTT return already charged</ShortDesc>
+		<Xpath>/MTR/SA108/ListedSharesAndSecurities/RTTtaxAlreadyCharged</Xpath>
+	</Box>
+	<Box mnemonic="CGT31">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Number of disposals</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/NumberOfDisposals</Xpath>
+	</Box>
+	<Box mnemonic="CGT32">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Disposal proceeds</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/DisposalProceeds</Xpath>
+	</Box>
+	<Box mnemonic="CGT33">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Allowable costs (including purchase price)</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/AllowableCosts</Xpath>
+	</Box>
+	<Box mnemonic="CGT34">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains in the return year, before losses</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/GainsInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT35">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses in the return year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/LossesInTheYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT36">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>The relevant code for any claim or election made</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/ClaimOrElectionMade</Xpath>
+	</Box>
+	<Box mnemonic="CGT37">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gain or loss reported in a Real Time Transaction Tax return for the disposal of an asset of this type in the current year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/GainFromRTTreturn</Xpath>
+	</Box>
+	<Box mnemonic="CGT38">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains reported in an RTT return already charged</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/RTTtaxAlreadyCharged</Xpath>
+	</Box>
+	<Box mnemonic="CGT39">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains exceeding the lifetime limit for Employee Shareholder Status shares</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/GainsExceedingESSlimit</Xpath>
+	</Box>
+	<Box mnemonic="CGT40">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains invested under Seed Enterprise Investment Scheme and qualifying for relief</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/GainsInvestedUnderSeedEIS</Xpath>
+	</Box>
+	<Box mnemonic="CGT41">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses claimed against Income of Return Year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/LossesUsedAgainstReturnYearIncome</Xpath>
+	</Box>
+	<Box mnemonic="CGT42">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>SEIS and EIS loss relief in Return Year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/SEISandEISlossReliefInReturnYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT43">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses claimed against Income of previous Return Year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/LossesUsedAgainstPreviousReturnYearIncome</Xpath>
+	</Box>
+	<Box mnemonic="CGT44">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>SEIS and EIS loss relief in previous Return Year</ShortDesc>
+		<Xpath>/MTR/SA108/UnlistedSharesAndSecurities/SEISandEISlossReliefInPreviousReturnYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT45">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses brought forward and used in the Return Year</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/LossesBroughtForwardAndUsedInTheReturnYear</Xpath>
+	</Box>
+	<Box mnemonic="CGT46">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Income losses of the Return Year set against gains</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/IncomeLossesOfTheReturnYearSetAgainstGains</Xpath>
+	</Box>
+	<Box mnemonic="CGT47">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses available to be carried forward to later Return Years</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/LossesToBeCarriedForward</Xpath>
+	</Box>
+	<Box mnemonic="CGT48">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Losses used against earlier Return Year's gain</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/LossesUsedAgainstEarlierReturnYearsGain</Xpath>
+	</Box>
+	<Box mnemonic="CGT49">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains qualifying for Entrepreneurs’ Relief - gains before 23 June 2010</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/GainsQualifyingForEntrepreneursReliefGainsBefore23june2010</Xpath>
+	</Box>
+	<Box mnemonic="CGT50">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Gains qualifying for Entrepreneurs’ Relief - gains on or after 23 June 2010</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/GainsQualifyingForEntrepreneursReliefGainsOnOrAfter23june2010</Xpath>
+	</Box>
+	<Box mnemonic="CGT51">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Adjustments to Capital Gains Tax</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/AdjustmentToCGT</Xpath>
+	</Box>
+	<Box mnemonic="CGT52">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Additional liability in respect of non-resident or dual resident Trusts</ShortDesc>
+		<Xpath>/MTR/SA108/LossesAndAdjustments/NonResidentdualResidentTrustLiability</Xpath>
+	</Box>
+	<Box mnemonic="CGT53">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Tax on gains reported in an RTT return already charged</ShortDesc>
+		<Xpath>/MTR/SA108/EstimateOrValuation</Xpath>
+	</Box>
+	<Box mnemonic="CGT54">
+		<Form>SA108</Form>
+		<Segment>Capital Gains</Segment>
+		<ShortDesc>Additional Information</ShortDesc>
+		<Xpath>/MTR/SA108/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="NRD1">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Not resident in UK</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/NotResidentInUK</Xpath>
+	</Box>
+	<Box mnemonic="NRD2">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Claim for overseas workday relief</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/ClaimForOverseasWorkdayRelief</Xpath>
+	</Box>
+	<Box mnemonic="NRD3">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Request for split year treatment</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/RequestForSplitYearTreatment</Xpath>
+	</Box>
+	<Box mnemonic="NRD3.1">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Tick box if more than one case of split year treatment applies</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/MoreThanOneCaseOfSplitYearTreatmentApplies</Xpath>
+	</Box>
+	<Box mnemonic="NRD4">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Resident in UK for previous year</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/ResidentInUKForPreviousYear</Xpath>
+	</Box>
+	<Box mnemonic="NRD5">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Claim for overseas workday relief which includes PY amount</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/ClaimForOverseasWorkdayReliefWhichIncludesPYamount</Xpath>
+	</Box>
+	<Box mnemonic="NRD6">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Split year treatment, date from which the UK part year begins or ends</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/SplitYearTreatmentDateFromWhichTheUKpartYearBeginsOrEnds</Xpath>
+	</Box>
+	<Box mnemonic="NRD7">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Tick box if the taxpayer meets the third automatic overseas test</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/MeetTheThirdAutomaticOverseasTest</Xpath>
+	</Box>
+	<Box mnemonic="NRD8">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Had a gap between employments in this tax year</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/HadAGapBetweenEmploymentsInThisTaxYear</Xpath>
+	</Box>
+	<Box mnemonic="NRD9">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Had a home overseas</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceStatus/HadAHomeOverseas</Xpath>
+	</Box>
+	<Box mnemonic="NRD10">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Number of days spent in UK</ShortDesc>
+		<Xpath>/MTR/SA109/TimeSpentInUK/NumberOfDaysSpentInUK</Xpath>
+	</Box>
+	<Box mnemonic="NRD11">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Number of days due to exceptional circumstances</ShortDesc>
+		<Xpath>/MTR/SA109/TimeSpentInUK/NumberOfDaysDueToExceptionalCircumstances</Xpath>
+	</Box>
+	<Box mnemonic="NRD12">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>How many ties to UK</ShortDesc>
+		<Xpath>/MTR/SA109/TimeSpentInUK/HowManyTiesToUK</Xpath>
+	</Box>
+	<Box mnemonic="NRD13">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Number of workdays in UK for employment</ShortDesc>
+		<Xpath>/MTR/SA109/TimeSpentInUK/NumberOfWorkdaysInUKForEmployment</Xpath>
+	</Box>
+	<Box mnemonic="NRD14">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Number of workdays spent overseas</ShortDesc>
+		<Xpath>/MTR/SA109/TimeSpentInUK/NumberOfWorkdaysSpentOverseas</Xpath>
+	</Box>
+	<Box mnemonic="NRD15">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Personal allowances claim due to DTA</ShortDesc>
+		<Xpath>/MTR/SA109/PersonalAllowances/PersonalAllowancesClaimDueToDTA</Xpath>
+	</Box>
+	<Box mnemonic="NRD16">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Personal allowances claim on other basis</ShortDesc>
+		<Xpath>/MTR/SA109/PersonalAllowances/PersonalAllowancesClaimOnOtherBasis</Xpath>
+	</Box>
+	<Box mnemonic="NRD17">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Code for country of nationality or residence</ShortDesc>
+		<Xpath>/MTR/SA109/PersonalAllowances/CodeForCountryOfNationalityOrResidence</Xpath>
+	</Box>
+	<Box mnemonic="NRD18">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Code for country of residence for tax in year</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceInOtherCountries/CodeForCountryOfResidenceForTaxInYear</Xpath>
+	</Box>
+	<Box mnemonic="NRD19">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Code for country of residence in previous year</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceInOtherCountries/CodeForCountryOfResidenceInPreviousYear</Xpath>
+	</Box>
+	<Box mnemonic="NRD20">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Amount of DTA income for which partial relief is claimed</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceInOtherCountries/AmountOfDTAincomeForWhichPartialReliefIsClaimed</Xpath>
+	</Box>
+	<Box mnemonic="NRD21">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Dta relief claim - residence in another country</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceInOtherCountries/DTAReliefClaimResidenceInAnotherCountry</Xpath>
+	</Box>
+	<Box mnemonic="NRD22">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Dta relief claim - other provisions</ShortDesc>
+		<Xpath>/MTR/SA109/ResidenceInOtherCountries/DTAReliefClaimOtherProvisions</Xpath>
+	</Box>
+	<Box mnemonic="NRD23">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Domiciled outside the UK for tax</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/DomiciledOutsideTheUKForTax</Xpath>
+	</Box>
+	<Box mnemonic="NRD23.1">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Deemed UK domicile under Condition A</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/ConditionA</Xpath>
+	</Box>
+	<Box mnemonic="NRD23.2">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Deemed UK domicile under Condition B</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/ConditionB</Xpath>
+	</Box>
+	<Box mnemonic="NRD23.3">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Number of years resident in the UK in the previous 20 years</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/YearsUKresident</Xpath>
+	</Box>
+	<Box mnemonic="NRD24">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>First year or always domiciled outside UK</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/FirstYearOrAlwaysDomiciledOutsideUK</Xpath>
+	</Box>
+	<Box mnemonic="NRD25">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Date domicile changed</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/DateDomicileChanged</Xpath>
+	</Box>
+	<Box mnemonic="NRD26">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Born in UK but non-UK domicile</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/BornInUKButNonUKDomicile</Xpath>
+	</Box>
+	<Box mnemonic="NRD27">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Date of coming to live in UK</ShortDesc>
+		<Xpath>/MTR/SA109/Domicile/DateOfComingToLiveInUK</Xpath>
+	</Box>
+	<Box mnemonic="NRD28">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Remittance basis claim</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/Remittancebasisclaim</Xpath>
+	</Box>
+	<Box mnemonic="NRD29">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Unremitted income and gains under £2000</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/UnremitedIncomeAndGainsUnremittedIncomeAndGainsUnder2000</Xpath>
+	</Box>
+	<Box mnemonic="NRD30">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Deemed domicile and have remitted to the UK any foreign income or gains that arose in a year when the remittance basis was previously claimed</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/DeemedUKdomicileAndPreviouslyClaimedRemitanceBasis</Xpath>
+	</Box>
+	<Box mnemonic="NRD31">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>UK resident for the year and for 12 or more of the preceding 14 tax years</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/UKResidentFor12OutOf14Years</Xpath>
+	</Box>
+	<Box mnemonic="NRD32">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>UK resident qualify signal</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/UKResidentFor7OutOf9YearsUKResident</Xpath>
+	</Box>
+	<Box mnemonic="NRD33">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Under 18</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/LessThan18Years</Xpath>
+	</Box>
+	<Box mnemonic="NRD34">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Nominated amount</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/NominatedIncomeAmount</Xpath>
+	</Box>
+	<Box mnemonic="NRD35">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Nominated capital gains</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/NominatedCapitalGainsAmount</Xpath>
+	</Box>
+	<Box mnemonic="NRD36">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Payments on account adjustment</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/AdjustmentToPaymentsOnAccount</Xpath>
+	</Box>
+	<Box mnemonic="NRD37">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Income or gains remitted</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/RemittedIncomeOrGains</Xpath>
+	</Box>
+	<Box mnemonic="NRD38">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Amount of relief claimed for investment in qualifying business</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/InvestmentInQualifyingBusiness/AmountOfReliefClaimedForInvestmentInQualifyingBusiness</Xpath>
+	</Box>
+	<Box mnemonic="NRD38A">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Company registration number of qualifying investment</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/InvestmentInQualifyingBusiness/CompanyRegistrationNumber</Xpath>
+	</Box>
+	<Box mnemonic="NRD39">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Relief previously claimed for a qualifying investment which no longer qualifies for relief</ShortDesc>
+		<Xpath>/MTR/SA109/RemittanceBasis/PreviousInvestmentNoLongerQualifies</Xpath>
+	</Box>
+	<Box mnemonic="NRD40">
+		<Form>SA109</Form>
+		<Segment>Non-Residence &amp; Domicile</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA109/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="CAL1">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Total tax etc. due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/TotalTaxEtcDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL2">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Total tax etc. overpaid</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/TotalTaxEtcDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL3">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Student loan repayment due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/StudentLoanRepaymentDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL4">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Class 4 NICs due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/Class4NICsDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL4.1">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Class 2 NICs due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/Class2NICsDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL5">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Capital Gains Tax due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/CapitalGainsTaxDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL6">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Pension charges due</ShortDesc>
+		<Xpath>/MTR/SA110/SelfAssessment/PensionChargesDue</Xpath>
+	</Box>
+	<Box mnemonic="CAL7">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Underpaid tax for earlier years included in code</ShortDesc>
+		<Xpath>/MTR/SA110/UnderpaidTax/UnderpaidTaxForEarlierYearsIncludedInCode</Xpath>
+	</Box>
+	<Box mnemonic="CAL8">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Underpaid tax for year included in future code</ShortDesc>
+		<Xpath>/MTR/SA110/UnderpaidTax/UnderpaidTaxForYearIncludedInFutureCode</Xpath>
+	</Box>
+	<Box mnemonic="CAL9">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Outstanding debt included in your tax code for the year</ShortDesc>
+		<Xpath>/MTR/SA110/UnderpaidTax/OutstandingDebtCodedOutAmount</Xpath>
+	</Box>
+	<Box mnemonic="CAL10">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Claim to reduce payments on account</ShortDesc>
+		<Xpath>/MTR/SA110/PaymentsOnAccount/ClaimToReducePaymentsOnAccount</Xpath>
+	</Box>
+	<Box mnemonic="CAL11">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>First payment on account</ShortDesc>
+		<Xpath>/MTR/SA110/PaymentsOnAccount/FirstPaymentOnAccount</Xpath>
+	</Box>
+	<Box mnemonic="CAL12">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Surplus blind person's allowance</ShortDesc>
+		<Xpath>/MTR/SA110/SurplusAllowances/SurplusBlindPersonsAllowance</Xpath>
+	</Box>
+	<Box mnemonic="CAL13">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Surplus married couple's allowance</ShortDesc>
+		<Xpath>/MTR/SA110/SurplusAllowances/SurplusMarriedCouplesAllowance</Xpath>
+	</Box>
+	<Box mnemonic="CAL14">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Increase in tax from adjustment to earlier years</ShortDesc>
+		<Xpath>/MTR/SA110/AdjustmentsToTaxDue/IncreaseInTaxFromAdjustmentToEarlierYears</Xpath>
+	</Box>
+	<Box mnemonic="CAL15">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Decrease in tax from adjustment to earlier years</ShortDesc>
+		<Xpath>/MTR/SA110/AdjustmentsToTaxDue/DecreaseInTaxFromAdjustmentToEarlierYears</Xpath>
+	</Box>
+	<Box mnemonic="CAL16">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Next year's repayment claimed now</ShortDesc>
+		<Xpath>/MTR/SA110/AdjustmentsToTaxDue/NextYearsRepaymentClaimedNow</Xpath>
+	</Box>
+	<Box mnemonic="CAL17">
+		<Form>SA110</Form>
+		<Segment>Tax Calculation</Segment>
+		<ShortDesc>Any other information space</ShortDesc>
+		<Xpath>/MTR/SA110/AnyOtherInformationSpace</Xpath>
+	</Box>
+	<Box mnemonic="WELSH-RETURN-FLAG">
+		<Form>Welsh return</Form>
+		<Segment>Welsh return</Segment>
+		<ShortDesc>Welsh return signal</ShortDesc>
+		<Xpath>/MTR/WelshReturn</Xpath>
+	</Box>
+	<Box mnemonic="TAXPAYER-NAME">
+		<Form>Taxpayer name</Form>
+		<Segment>Taxpayer name</Segment>
+		<ShortDesc>Taxpayer name</ShortDesc>
+		<Xpath>/MTR/TaxpayerName</Xpath>
+	</Box>
+	<Box mnemonic="FIN22">
+		<Form>SA100</Form>
+		<Segment>Declaration</Segment>
+		<ShortDesc>Individual declaration signature</ShortDesc>
+		<Xpath>/MTR/Declaration/IndividualDeclaration</Xpath>
+	</Box>
+	<Box mnemonic="FIN22A">
+		<Form>SA100</Form>
+		<Segment>Declaration</Segment>
+		<ShortDesc>Agent declaration signature</ShortDesc>
+		<Xpath>/MTR/Declaration/AgentDeclaration</Xpath>
+	</Box>
+	<Box mnemonic="ATTACHMENT">
+		<Form>Attached Files</Form>
+		<Segment>Attached files</Segment>
+		<ShortDesc>Attachment</ShortDesc>
+		<Xpath>//MTR/AttachedFiles/Attachment</Xpath>
+	</Box>
+</MTRboxes>
