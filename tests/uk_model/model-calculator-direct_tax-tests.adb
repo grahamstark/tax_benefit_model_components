@@ -36,6 +36,7 @@ with Model.Example_Household.Cases;
 with Model.Example_Results;
 with Model.Example_Results.Impl;
 with Model.Parameter_System;
+with Model.Rounder;
 with Model.Parameter_System.Defaults;
 with Model.Parameter_System.Operations;
 with UK_Test_Utils;

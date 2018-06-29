@@ -82,9 +82,9 @@ package Maths_Functions is
    
    function To_String( r : Real; width : Positive := 12; prec : Positive := 2 ) return String;
    
-   procedure Inc( x : in out Real; by : Real := 1.0 );
+   procedure IncR( x : in out Real; by : Real := 1.0 );
    
-   function Nearly_Equal( a, b : Real; tol : Real := 0.00001 ) return Boolean;
+   function Nearly_Equal_R( a, b : Real; tol : Real := 0.00001 ) return Boolean;
    
   generic 
     with procedure Evaluate(  

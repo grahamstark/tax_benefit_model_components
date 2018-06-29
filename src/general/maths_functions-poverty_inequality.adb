@@ -133,7 +133,6 @@ package body Maths_Functions.Poverty_Inequality is
    
    function To_String( ir : Inequality_Rec ) return String is
       s : Unbounded_String;
-      alpha : Real := 0.0; -- fix this
    begin
       s := s & "gini = " & FS( ir.gini ) & ";" & LINE_BREAK;
       s := s & "theil[0] L  = " & FS( ir.theil(0)) & ";" & LINE_BREAK;
@@ -333,6 +332,7 @@ package body Maths_Functions.Poverty_Inequality is
          pov_rec.foster_greer_thorndyke( p ) := pov_rec.foster_greer_thorndyke( p )/population; 
       end loop;
       
+      -- just checking code -can delete?
       for p in pov_rec.foster_greer_thorndyke_alphas'Range loop
          declare
             alpha : Real := pov_rec.foster_greer_thorndyke_alphas( p );
@@ -351,7 +351,7 @@ package body Maths_Functions.Poverty_Inequality is
       end loop;
       --
       -- Gini of poverty gaps; see: WB pp 74-5
-      -- FIXME: actually simpler to use quantile and then make aug. version
+      -- 
       declare
          ci : Real := 0.0;
          cp : Real := 0.0;

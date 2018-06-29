@@ -20,7 +20,7 @@ package body Maths_Functions is
       GNATColl.Traces.Trace( log_trace, s );
    end Log;
 
-   function Nearly_Equal( a, b : Real; tol : Real := 0.00001 ) return Boolean is
+   function Nearly_Equal_R( a, b : Real; tol : Real := 0.00001 ) return Boolean is
    begin
       if a = b then
          return True;
@@ -29,7 +29,7 @@ package body Maths_Functions is
          return False;
       end if;
       return abs( 1.0 - a/b ) < tol;
-    end Nearly_Equal;
+    end Nearly_Equal_R;
 
    
    function Truncate_To( r : Real; prec : Natural ) return Real is
@@ -69,10 +69,10 @@ package body Maths_Functions is
    end Debug;
    
 
-   procedure Inc( x : in out Real; by : Real := 1.0 ) is
+   procedure IncR( x : in out Real; by : Real := 1.0 ) is
    begin
       x := x + by;
-   end Inc;
+   end Incr;
 
    
    procedure Do_Debug( onoff : Boolean ) is

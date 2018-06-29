@@ -1,14 +1,14 @@
 package body Model.Rounder is
 
-   function Round( r : Rounder_Type; thing_in_pounds : Amount; strategy : Round_Strategy := exact ) is
-   begi
+   function Round( r : Rounder_Type; thing_in_pounds : Amount; strategy : Round_Strategy := exact ) return Amount is
+   begin
       if r.always_exact or strategy = exact then
          return thing_in_pounds;
       end if;
       declare 
          a : Amount := thing_in_pounds;
       begin
-         case r.strategy is 
+         case strategy is 
             when up => 
                Inc( a, 0.99999999 );
                a := Amount'Floor( a );
@@ -23,7 +23,7 @@ package body Model.Rounder is
 
    function Initialise( always_exact : Boolean := True ) return Rounder_Type is
       r : Rounder_Type;
-   begin;
+   begin
       r.always_exact := always_exact;
       return r;
    end Initialise;
