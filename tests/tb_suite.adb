@@ -19,7 +19,7 @@ begin
    -- Add_Test( result, new Component_Tests.Test_Case );
    -- Add_Test( result, new Legal_Aid_Tests.Test_Case );
    -- Add_Test( result, new PovLine_Tests.Test_Case );
-   -- Add_Test( result, new Weighting_Tests.Test_Case );
+   Add_Test( result, new Weighting_Tests.Test_Case );
    Add_Test( result, new Maths_Functions_Poverty_Inequality_Tests.Test_Case );
    
    return result;
