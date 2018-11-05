@@ -7,17 +7,17 @@
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 3, or (at your option)
 // any later version.
-// 
+//
 // It is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this software; see the file docs/gpl_v3.  If not, write to
 // the Free Software Foundation, Inc., 51 Franklin Street,
 // Boston, MA 02110-1301, USA.
-// 
+//
 //
 // NOTE: on Linux, compile with:
 // mono-csc tests.cs piecewise_linear_generator.cs -out:../../bin/monotest
@@ -32,18 +32,18 @@ using System.Collections.Generic;
 /// </summary>
 ///
 namespace PiecewiseLinearGenerator{
-        
+
         /// <summary>
         /// This is the interface the caller needs to implement
         /// </summary>
         public interface NetIncome{
-                
-                /// <param name="gross">(e.g.) a gross wage - your routine should assign this to, for example, the gross wage value for some person.</param>  
+
+                /// <param name="gross">(e.g.) a gross wage - your routine should assign this to, for example, the gross wage value for some person.</param>
                 /// <returns>Your routine calculates net income figure for the given gross income, hhld characteristics, etc.</returns>
                 double GetNet( double gross );
-                
+
         }
-        
+
         // copied from: https://msdn.microsoft.com/en-us/library/87cdya3t(v=vs.110).aspx
         ///
         ///<summary>Thrown if recursion depth is exceeded.</summary>
@@ -51,36 +51,36 @@ namespace PiecewiseLinearGenerator{
         public class GeneratorException: Exception{
             public GeneratorException(){
             }
-        
+
             public GeneratorException(string message)
                 : base(message)
             {
             }
-        
+
             public GeneratorException(string message, Exception inner)
                 : base(message, inner)
             {
             }
         }
-        
-        
-        // note there is a point class in Drawing .. 
+
+
+        // note there is a point class in Drawing ..
         public struct Point{
                 public double X {get;set;}
                 public double Y {get;set;}
         }
-        
+
         public struct Line{
                 public double A {get;set;}
                 public double B {get;set;}
         }
-        
-        
-        
+
+
+
         public class Generator{
-                
+
                 //
-                // fixme maybe make thes settable and nothing static .. 
+                // fixme maybe make thes settable and nothing static ..
                 //
                 public  const double VERTICAL     = 9999999999.9999;
                 public  const double TOLERANCE    = 0.0001;
@@ -89,8 +89,8 @@ namespace PiecewiseLinearGenerator{
                 private const double MAX_INCOME   = 20000.0;
                 private const double MIN_INCOME   = 0.0;
                 private const bool   ROUND_OUTPUT = false;
-                
-                private static Line MakeLine( Point point_1, Point point_2 ){ 
+
+                private static Line MakeLine( Point point_1, Point point_2 ){
                         Line l;
                         if( point_1.X == point_2.X ){
                                  l.B = point_1.X;
@@ -99,10 +99,10 @@ namespace PiecewiseLinearGenerator{
                         };
                         l.B = (point_1.Y - point_2.Y)/(point_1.X - point_2.X );
                         l.B = Math.Min( l.B, VERTICAL );
-                        l.A = ( point_1.Y - point_1.X*l.B );                
+                        l.A = ( point_1.Y - point_1.X*l.B );
                         return l;
                 }
-                
+
                 private static Point FindIntersection( Line line_1, Line line_2 ){
                         Point p;
                         if( line_1.B != line_2.B ){
@@ -114,23 +114,23 @@ namespace PiecewiseLinearGenerator{
                         }
                         return p;
                 }
-                
+
                 private static int ComparePoints( Point point_1, Point point_2 ){
                         if( point_1.X > point_2.X ){
-                                return 1;       
+                                return 1;
                         }
                         if( point_1.X < point_2.X ){
-                                return -1;       
+                                return -1;
                         }
                         if( point_1.Y > point_2.Y ){
-                                return 1;               
+                                return 1;
                         }
                         if( point_1.Y < point_2.Y ){
-                                return -1;               
+                                return -1;
                         }
                         return 0;
                 }
-                
+
                 public static double CalcMarginalRate( Point point_1, Point point_2 ){
                         double mr;
                         if( point_2.X != point_1.X ){
@@ -138,47 +138,47 @@ namespace PiecewiseLinearGenerator{
                         } else {
                                 mr = VERTICAL;
                                 if( point_2.Y < point_1.Y ){
-                                        mr *= -1;        
+                                        mr *= -1;
                                 }
                         }
                         return mr;
                 }
-                
+
                 private static bool NearlySameLine( Line l1, Line l2 ){
                         return ((( Math.Abs(l1.A-l2.A)) <= TOLERANCE ) && (( Math.Abs (l1.B-l2.B)) <= TOLERANCE ));
                 }
-        
+
                 // FIXME parameterise this tolerance seperately
                 private static bool NearlySamePoint( Point p1, Point p2 ){
                         return ((( Math.Abs(p1.X-p2.X)) < TOLERANCE*10 ) && (( Math.Abs (p1.Y-p2.Y)) < TOLERANCE*10 ));
                 }
-                
+
                 private static double Trunc( double x ){
                        return Math.Round( x, 2 );
                 }
-                
+
                 private static void Round( ref List<Point> points ){
                         int n = points.Count;
                         for( int i = 0; i < n; i++ ){
                                 Point p = points[i];
-                                p.X = Trunc( p.X );                        
+                                p.X = Trunc( p.X );
                                 p.Y = Trunc( p.Y );
                                 points[i] = p;
                         }
                 }
-                
+
                 private static void Censor( ref List<Point> points ){
                         points.Sort( ComparePoints );
                         int n = points.Count;
                         if( n < 3 ){
-                                return;       
+                                return;
                         }
                         int i = 1;
                         Line[] l = new Line[2];
                         Point[] p = new Point[3];
                         while( i < n-1 ){
-                                p[0] = points[i-1]; 
-                                p[1] = points[i]; 
+                                p[0] = points[i-1];
+                                p[1] = points[i];
                                 p[2] = points[i+1];
                                 l[0] = MakeLine( p[0], p[1] );
                                 l[1] = MakeLine( p[1], p[2] );
@@ -189,7 +189,7 @@ namespace PiecewiseLinearGenerator{
                                         points.RemoveAt( i );
                                         n = points.Count;
                                 } else {
-                                        i++;       
+                                        i++;
                                 }
                         }
                         i = 0;
@@ -198,10 +198,10 @@ namespace PiecewiseLinearGenerator{
                                         points.RemoveAt( i );
                                         n = points.Count;
                                 }
-                                i++;       
+                                i++;
                         }
                 }
-                
+
                 private static void Generate(
                         NetIncome calculator,
                         ref List<Point> pointsList,
@@ -209,16 +209,16 @@ namespace PiecewiseLinearGenerator{
                         double startPos,
                         double endPos ){
                         if( Math.Abs( startPos - endPos ) < TOLERANCE ){
-                                return;        
+                                return;
                         }
                         if( depth > MAX_DEPTH ){
-                                throw new GeneratorException( "Max Depth Exceeded" );                               
+                                throw( "Max Depth Exceeded depth="+depth );                               
                         }
                         double anchor;
                         Point[] points = new Point[5];
                         Line[] lines = new Line[2];
                         //
-                        // left line in points 1,2 
+                        // left line in points 1,2
                         //
                         points[0].X = startPos;
                         points[0].Y = calculator.GetNet( points[0].X );
@@ -231,7 +231,7 @@ namespace PiecewiseLinearGenerator{
                         points[3].Y = calculator.GetNet( points[3].X );
                         points[2].X = endPos - INCREMENT;
                         points[2].Y = calculator.GetNet( points[2].X );
-                        
+
                         lines[0] = MakeLine( points[0], points[1] );
                         lines[1] = MakeLine( points[2], points[3] );
                         if( NearlySameLine( lines[0], lines[1] )){
@@ -248,7 +248,7 @@ namespace PiecewiseLinearGenerator{
                                 return;
                         }
                         //
-                        // If we're not done here, find where the lines meet and explore each side of there. 
+                        // If we're not done here, find where the lines meet and explore each side of there.
                         // If the meeting point is out range of the current section being tested, or exactly
                         // at its edge, pick an arbitrary point between the line starts.
                         //
@@ -267,10 +267,10 @@ namespace PiecewiseLinearGenerator{
                         // .. then to the right.
                         //
                         Generate( calculator, ref pointsList, ref depth, anchor, endPos );
-                        depth -= 1;                
+                        depth -= 1;
                 }
-        
-                
+
+
                 public static List<Point> Generate( NetIncome calculator ){
                         List<Point> points = new List<Point>();
                         int depth = 0;
