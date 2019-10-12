@@ -209,7 +209,7 @@ end
 def basicCensor( s )
         s = s.
         strip.
-        downcase.        
+        # downcase.        
         gsub( /[ \-,\t–]/, '_' ).
         gsub( /[=\:\)\('’‘]/, '').
         gsub( /[";:\.\?\*”“]/, '' ).
@@ -219,9 +219,9 @@ def basicCensor( s )
         gsub( /_$/, '' ).
         gsub( /^_/, '' ).
         gsub( /^_/, '' ).
-        gsub( /\//, '_or_' ).
-        gsub( /\&/, '_and_' ).
-        gsub( /\+/, '_plus_' ).
+        gsub( /\//i, '_or_' ).
+        gsub( /\&/i, '_and_' ).
+        gsub( /\+/i, '_plus_' ).
         gsub( /_\$+$/, '' );
         if( s =~ /^[\d].*/ )then
                 s = "v_#{s}" # leading digit
